@@ -3,10 +3,6 @@
 
 </p>
 
-
-
-##
-
 This repository hosts the source code for cv-arxiv-daily, an useful scripts to fetch arxiv paper daily.
 
 ## Overview
@@ -23,36 +19,36 @@ This codebase is composed of the following parts:
 
 1. Fork this [repo](https://github.com/Vincentqyw/cv-arxiv-daily)
 2. Edit configs:
-    - Change `GITHUB_USER_NAME` and `GITHUB_USER_EMAIL` in [cv-arxiv-daily.yml](../.github/workflows/cv-arxiv-daily.yml) and [update_paper_links.yml](../.github/workflows/update_paper_links.yml)
-    - Change `user_name` in [config.yaml](../config.yaml)
-    - Push changes to remote repo
+   - Change `GITHUB_USER_NAME` and `GITHUB_USER_EMAIL` in [cv-arxiv-daily.yml](../.github/workflows/cv-arxiv-daily.yml) and [update_paper_links.yml](../.github/workflows/update_paper_links.yml)
+   - Change `user_name` in [config.yaml](../config.yaml)
+   - Push changes to remote repo
 3. Config Github Actions
-    - Enable read and write permissions: Setting -> Actions -> Workflow permissions, select `Read and write permissions` and save.
-    ![](../assets/4-ga-2-1.png)
-    - Enable workflows: Actions -> `I understand my workflows, go ahead and enable them` -> Select `Run Arxiv Papers Daily` in right sidebar and click `Enable workflow` -> click `Run workflow` wait about 1 min until the job update done. The same for the job `Run Update Paper Links Weekly`.
-    ![](../assets/4-ga-3-1.png)
-    ![](../assets/4-ga-5-1.png)
-    ![](../assets/4-ga-7.png)
-    ![](../assets/4-ga-8.png)
-    ![](../assets/4-ga-9.png)
+   - Enable read and write permissions: Setting -> Actions -> Workflow permissions, select `Read and write permissions` and save.
+     ![](../assets/4-ga-2-1.png)
+   - Enable workflows: Actions -> `I understand my workflows, go ahead and enable them` -> Select `Run Arxiv Papers Daily` in right sidebar and click `Enable workflow` -> click `Run workflow` wait about 1 min until the job update done. The same for the job `Run Update Paper Links Weekly`.
+     ![](../assets/4-ga-3-1.png)
+     ![](../assets/4-ga-5-1.png)
+     ![](../assets/4-ga-7.png)
+     ![](../assets/4-ga-8.png)
+     ![](../assets/4-ga-9.png)
 4. Setting Gitpages (optional)
-    - Setting -> Pages -> Build an deployment. Source: `Deploy from a branch`; Branch select `main` and `/docs` folder, then save.
-    ![](../assets/5-pages-1.png)
-    - Now you can open gitpage: https://your_github_usrname.github.io/cv-arxiv-daily
+   - Setting -> Pages -> Build an deployment. Source: `Deploy from a branch`; Branch select `main` and `/docs` folder, then save.
+     ![](../assets/5-pages-1.png)
+   - Now you can open gitpage: https://your_github_usrname.github.io/cv-arxiv-daily
 5. Add new keywords (optional)
-    - Edit `keywords` in [config.yaml](../config.yaml), you can add more filters or keywords.
-    - Push changes to remote repo and re-run Github Actions Manually.
+   - Edit `keywords` in [config.yaml](../config.yaml), you can add more filters or keywords.
+   - Push changes to remote repo and re-run Github Actions Manually.
 6. Add email config
-    - Edit `email` in [config.yaml](../config.yaml), `port` means port of smtp server, `send` means if you would like to send emails and `preview` is used for debugging, which means previewing the email to be sent in your PC local email client
-    - Add Secrets for github actions, for example (follows the # sign as the explanation): <br>
-      FROM: Your Name \<xxx@163.com\> <br>
-      TO: "xxx@qq.com,xxx@outlook.com" <br>
-      SMTP: smtp.163.com <br>
-      USERNAME: xxx@163.com <br>
-      PASSWORD: xxx <br>
-      #`Your Name` displays the sender's name, and `<>` is the sender's email address <br>
-      #The recipient's email address needs to be enclosed by `""`, use `,` to separate multiple recipients.
-      ![secrets](../assets/6-secrets-1.png)
+   - Edit `email` in [config.yaml](../config.yaml), `port` means port of smtp server, `send` means if you would like to send emails and `preview` is used for debugging, which means previewing the email to be sent in your PC local email client
+   - Add Secrets for github actions, for example (follows the # sign as the explanation): `<br>`
+     FROM: Your Name \<xxx@163.com\> `<br>`
+     TO: "xxx@qq.com,xxx@outlook.com" `<br>`
+     SMTP: smtp.163.com `<br>`
+     USERNAME: xxx@163.com `<br>`
+     PASSWORD: xxx `<br>`
+     #`Your Name` displays the sender's name, and `<>` is the sender's email address `<br>`
+     #The recipient's email address needs to be enclosed by `""`, use `,` to separate multiple recipients.
+     ![secrets](../assets/6-secrets-1.png)
 
 </details>
 
@@ -60,8 +56,8 @@ This codebase is composed of the following parts:
 
  We are still in the process of fully releasing. Here is the release plan:
 
-- [x] Configuration file
-- [x] Update code link
+- [X] Configuration file
+- [X] Update code link
 - [ ] Subscribe & Update alerting
 - [ ] Support more `arxiv` filters
 - [ ] Archive old papers
