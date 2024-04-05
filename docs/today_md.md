@@ -1,70 +1,67 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#GaSpCT:-Gaussian-Splatting-for-Novel-CT-Projection-View-Synthesis>GaSpCT: Gaussian Splatting for Novel CT Projection View Synthesis</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#GenN2N:-Generative-NeRF2NeRF-Translation>GenN2N: Generative NeRF2NeRF Translation</a></li>
-        <li><a href=#LiDAR4D:-Dynamic-Neural-Fields-for-Novel-Space-time-View-LiDAR-Synthesis>LiDAR4D: Dynamic Neural Fields for Novel Space-time View LiDAR Synthesis</a></li>
-        <li><a href=#Neural-Radiance-Fields-with-Torch-Units>Neural Radiance Fields with Torch Units</a></li>
-        <li><a href=#Freditor:-High-Fidelity-and-Transferable-NeRF-Editing-by-Frequency-Decomposition>Freditor: High-Fidelity and Transferable NeRF Editing by Frequency Decomposition</a></li>
-        <li><a href=#NeRFCodec:-Neural-Feature-Compression-Meets-Neural-Radiance-Fields-for-Memory-Efficient-Scene-Representation>NeRFCodec: Neural Feature Compression Meets Neural Radiance Fields for Memory-Efficient Scene Representation</a></li>
+        <li><a href=#RaFE:-Generative-Radiance-Fields-Restoration>RaFE: Generative Radiance Fields Restoration</a></li>
+        <li><a href=#OpenNeRF:-Open-Set-3D-Neural-Scene-Segmentation-with-Pixel-Wise-Features-and-Rendered-Novel-Views>OpenNeRF: Open Set 3D Neural Scene Segmentation with Pixel-Wise Features and Rendered Novel Views</a></li>
+        <li><a href=#VF-NeRF:-Viewshed-Fields-for-Rigid-NeRF-Registration>VF-NeRF: Viewshed Fields for Rigid NeRF Registration</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SFM  
+
+### [GaSpCT: Gaussian Splatting for Novel CT Projection View Synthesis](http://arxiv.org/abs/2404.03126)  
+Emmanouil Nikolakakis, Utkarsh Gupta, Jonathan Vengosh, Justin Bui, Razvan Marinescu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We present GaSpCT, a novel view synthesis and 3D scene representation method used to generate novel projection views for Computer Tomography (CT) scans. We adapt the Gaussian Splatting framework to enable novel view synthesis in CT based on limited sets of 2D image projections and without the need for Structure from Motion (SfM) methodologies. Therefore, we reduce the total scanning duration and the amount of radiation dose the patient receives during the scan. We adapted the loss function to our use-case by encouraging a stronger background and foreground distinction using two sparsity promoting regularizers: a beta loss and a total variation (TV) loss. Finally, we initialize the Gaussian locations across the 3D space using a uniform prior distribution of where the brain's positioning would be expected to be within the field of view. We evaluate the performance of our model using brain CT scans from the Parkinson's Progression Markers Initiative (PPMI) dataset and demonstrate that the rendered novel views closely match the original projection views of the simulated scan, and have better performance than other implicit 3D scene representations methodologies. Furthermore, we empirically observe reduced training time compared to neural network based image synthesis for sparse-view CT image reconstruction. Finally, the memory requirements of the Gaussian Splatting representations are reduced by 17% compared to the equivalent voxel grid image representations.  
+  </ol>  
+</details>  
+**comments**: Under Review Process for MICCAI 2024  
+  
+  
+
+
+
 ## NeRF  
 
-### [GenN2N: Generative NeRF2NeRF Translation](http://arxiv.org/abs/2404.02788)  
-Xiangyue Liu, Han Xue, Kunming Luo, Ping Tan, Li Yi  
+### [RaFE: Generative Radiance Fields Restoration](http://arxiv.org/abs/2404.03654)  
+Zhongkai Wu, Ziyu Wan, Jing Zhang, Jing Liao, Dong Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present GenN2N, a unified NeRF-to-NeRF translation framework for various NeRF translation tasks such as text-driven NeRF editing, colorization, super-resolution, inpainting, etc. Unlike previous methods designed for individual translation tasks with task-specific schemes, GenN2N achieves all these NeRF editing tasks by employing a plug-and-play image-to-image translator to perform editing in the 2D domain and lifting 2D edits into the 3D NeRF space. Since the 3D consistency of 2D edits may not be assured, we propose to model the distribution of the underlying 3D edits through a generative model that can cover all possible edited NeRFs. To model the distribution of 3D edited NeRFs from 2D edited images, we carefully design a VAE-GAN that encodes images while decoding NeRFs. The latent space is trained to align with a Gaussian distribution and the NeRFs are supervised through an adversarial loss on its renderings. To ensure the latent code does not depend on 2D viewpoints but truly reflects the 3D edits, we also regularize the latent code through a contrastive learning scheme. Extensive experiments on various editing tasks show GenN2N, as a universal framework, performs as well or better than task-specific specialists while possessing flexible generative power. More results on our project page: https://xiangyueliu.github.io/GenN2N/  
+    NeRF (Neural Radiance Fields) has demonstrated tremendous potential in novel view synthesis and 3D reconstruction, but its performance is sensitive to input image quality, which struggles to achieve high-fidelity rendering when provided with low-quality sparse input viewpoints. Previous methods for NeRF restoration are tailored for specific degradation type, ignoring the generality of restoration. To overcome this limitation, we propose a generic radiance fields restoration pipeline, named RaFE, which applies to various types of degradations, such as low resolution, blurriness, noise, compression artifacts, or their combinations. Our approach leverages the success of off-the-shelf 2D restoration methods to recover the multi-view images individually. Instead of reconstructing a blurred NeRF by averaging inconsistencies, we introduce a novel approach using Generative Adversarial Networks (GANs) for NeRF generation to better accommodate the geometric and appearance inconsistencies present in the multi-view images. Specifically, we adopt a two-level tri-plane architecture, where the coarse level remains fixed to represent the low-quality NeRF, and a fine-level residual tri-plane to be added to the coarse level is modeled as a distribution with GAN to capture potential variations in restoration. We validate RaFE on both synthetic and real cases for various restoration tasks, demonstrating superior performance in both quantitative and qualitative evaluations, surpassing other 3D restoration methods specific to single task. Please see our project website https://zkaiwu.github.io/RaFE-Project/.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR 2024. Project page:
-  https://xiangyueliu.github.io/GenN2N/  
+**comments**: Project Page: https://zkaiwu.github.io/RaFE-Project/  
   
-### [LiDAR4D: Dynamic Neural Fields for Novel Space-time View LiDAR Synthesis](http://arxiv.org/abs/2404.02742)  
-[[code](https://github.com/ispc-lab/lidar4d)]  
-Zehan Zheng, Fan Lu, Weiyi Xue, Guang Chen, Changjun Jiang  
+### [OpenNeRF: Open Set 3D Neural Scene Segmentation with Pixel-Wise Features and Rendered Novel Views](http://arxiv.org/abs/2404.03650)  
+Francis Engelmann, Fabian Manhardt, Michael Niemeyer, Keisuke Tateno, Marc Pollefeys, Federico Tombari  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Although neural radiance fields (NeRFs) have achieved triumphs in image novel view synthesis (NVS), LiDAR NVS remains largely unexplored. Previous LiDAR NVS methods employ a simple shift from image NVS methods while ignoring the dynamic nature and the large-scale reconstruction problem of LiDAR point clouds. In light of this, we propose LiDAR4D, a differentiable LiDAR-only framework for novel space-time LiDAR view synthesis. In consideration of the sparsity and large-scale characteristics, we design a 4D hybrid representation combined with multi-planar and grid features to achieve effective reconstruction in a coarse-to-fine manner. Furthermore, we introduce geometric constraints derived from point clouds to improve temporal consistency. For the realistic synthesis of LiDAR point clouds, we incorporate the global optimization of ray-drop probability to preserve cross-region patterns. Extensive experiments on KITTI-360 and NuScenes datasets demonstrate the superiority of our method in accomplishing geometry-aware and time-consistent dynamic reconstruction. Codes are available at https://github.com/ispc-lab/LiDAR4D.  
+    Large visual-language models (VLMs), like CLIP, enable open-set image segmentation to segment arbitrary concepts from an image in a zero-shot manner. This goes beyond the traditional closed-set assumption, i.e., where models can only segment classes from a pre-defined training set. More recently, first works on open-set segmentation in 3D scenes have appeared in the literature. These methods are heavily influenced by closed-set 3D convolutional approaches that process point clouds or polygon meshes. However, these 3D scene representations do not align well with the image-based nature of the visual-language models. Indeed, point cloud and 3D meshes typically have a lower resolution than images and the reconstructed 3D scene geometry might not project well to the underlying 2D image sequences used to compute pixel-aligned CLIP features. To address these challenges, we propose OpenNeRF which naturally operates on posed images and directly encodes the VLM features within the NeRF. This is similar in spirit to LERF, however our work shows that using pixel-wise VLM features (instead of global CLIP features) results in an overall less complex architecture without the need for additional DINO regularization. Our OpenNeRF further leverages NeRF's ability to render novel views and extract open-set VLM features from areas that are not well observed in the initial posed images. For 3D point cloud segmentation on the Replica dataset, OpenNeRF outperforms recent open-vocabulary methods such as LERF and OpenScene by at least +4.9 mIoU.  
   </ol>  
 </details>  
-**comments**: Accepted by CVPR 2024. Project Page:
-  https://dyfcalid.github.io/LiDAR4D  
+**comments**: ICLR 2024, Project page: https://opennerf.github.io  
   
-### [Neural Radiance Fields with Torch Units](http://arxiv.org/abs/2404.02617)  
-Bingnan Ni, Huanyu Wang, Dongfeng Bai, Minghe Weng, Dexin Qi, Weichao Qiu, Bingbing Liu  
+### [VF-NeRF: Viewshed Fields for Rigid NeRF Registration](http://arxiv.org/abs/2404.03349)  
+Leo Segre, Shai Avidan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) give rise to learning-based 3D reconstruction methods widely used in industrial applications. Although prevalent methods achieve considerable improvements in small-scale scenes, accomplishing reconstruction in complex and large-scale scenes is still challenging. First, the background in complex scenes shows a large variance among different views. Second, the current inference pattern, $i.e.$ , a pixel only relies on an individual camera ray, fails to capture contextual information. To solve these problems, we propose to enlarge the ray perception field and build up the sample points interactions. In this paper, we design a novel inference pattern that encourages a single camera ray possessing more contextual information, and models the relationship among sample points on each camera ray. To hold contextual information,a camera ray in our proposed method can render a patch of pixels simultaneously. Moreover, we replace the MLP in neural radiance field models with distance-aware convolutions to enhance the feature propagation among sample points from the same camera ray. To summarize, as a torchlight, a ray in our proposed method achieves rendering a patch of image. Thus, we call the proposed method, Torch-NeRF. Extensive experiments on KITTI-360 and LLFF show that the Torch-NeRF exhibits excellent performance.  
+    3D scene registration is a fundamental problem in computer vision that seeks the best 6-DoF alignment between two scenes. This problem was extensively investigated in the case of point clouds and meshes, but there has been relatively limited work regarding Neural Radiance Fields (NeRF). In this paper, we consider the problem of rigid registration between two NeRFs when the position of the original cameras is not given. Our key novelty is the introduction of Viewshed Fields (VF), an implicit function that determines, for each 3D point, how likely it is to be viewed by the original cameras. We demonstrate how VF can help in the various stages of NeRF registration, with an extensive evaluation showing that VF-NeRF achieves SOTA results on various datasets with different capturing approaches such as LLFF and Objaverese.  
   </ol>  
 </details>  
-  
-### [Freditor: High-Fidelity and Transferable NeRF Editing by Frequency Decomposition](http://arxiv.org/abs/2404.02514)  
-Yisheng He, Weihao Yuan, Siyu Zhu, Zilong Dong, Liefeng Bo, Qixing Huang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper enables high-fidelity, transferable NeRF editing by frequency decomposition. Recent NeRF editing pipelines lift 2D stylization results to 3D scenes while suffering from blurry results, and fail to capture detailed structures caused by the inconsistency between 2D editings. Our critical insight is that low-frequency components of images are more multiview-consistent after editing compared with their high-frequency parts. Moreover, the appearance style is mainly exhibited on the low-frequency components, and the content details especially reside in high-frequency parts. This motivates us to perform editing on low-frequency components, which results in high-fidelity edited scenes. In addition, the editing is performed in the low-frequency feature space, enabling stable intensity control and novel scene transfer. Comprehensive experiments conducted on photorealistic datasets demonstrate the superior performance of high-fidelity and transferable NeRF editing. The project page is at \url{https://aigc3d.github.io/freditor}.  
-  </ol>  
-</details>  
-  
-### [NeRFCodec: Neural Feature Compression Meets Neural Radiance Fields for Memory-Efficient Scene Representation](http://arxiv.org/abs/2404.02185)  
-Sicheng Li, Hao Li, Yiyi Liao, Lu Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The emergence of Neural Radiance Fields (NeRF) has greatly impacted 3D scene modeling and novel-view synthesis. As a kind of visual media for 3D scene representation, compression with high rate-distortion performance is an eternal target. Motivated by advances in neural compression and neural field representation, we propose NeRFCodec, an end-to-end NeRF compression framework that integrates non-linear transform, quantization, and entropy coding for memory-efficient scene representation. Since training a non-linear transform directly on a large scale of NeRF feature planes is impractical, we discover that pre-trained neural 2D image codec can be utilized for compressing the features when adding content-specific parameters. Specifically, we reuse neural 2D image codec but modify its encoder and decoder heads, while keeping the other parts of the pre-trained decoder frozen. This allows us to train the full pipeline via supervision of rendering loss and entropy loss, yielding the rate-distortion balance by updating the content-specific parameters. At test time, the bitstreams containing latent code, feature decoder head, and other side information are transmitted for communication. Experimental results demonstrate our method outperforms existing NeRF compression methods, enabling high-quality novel view synthesis with a memory budget of 0.5 MB.  
-  </ol>  
-</details>  
-**comments**: Accepted at CVPR2024. The source code will be released  
   
   
 
