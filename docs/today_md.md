@@ -1,32 +1,90 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#Salient-Sparse-Visual-Odometry-With-Pose-Only-Supervision>Salient Sparse Visual Odometry With Pose-Only Supervision</a></li>
+      </ul>
+    </li>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#NeRF2Points:-Large-Scale-Point-Cloud-Generation-From-Street-Views'-Radiance-Field-Optimization>NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Towards-introspective-loop-closure-in-4D-radar-SLAM>Towards introspective loop closure in 4D radar SLAM</a></li>
+        <li><a href=#Weakly-Supervised-Deep-Hyperspherical-Quantization-for-Image-Retrieval>Weakly Supervised Deep Hyperspherical Quantization for Image Retrieval</a></li>
+        <li><a href=#Soft-Prompting-with-Graph-of-Thought-for-Multi-modal-Representation-Learning>Soft-Prompting with Graph-of-Thought for Multi-modal Representation Learning</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Robust-Gaussian-Splatting>Robust Gaussian Splatting</a></li>
-        <li><a href=#SC4D:-Sparse-Controlled-Video-to-4D-Generation-and-Motion-Transfer>SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer</a></li>
+        <li><a href=#Stylizing-Sparse-View-3D-Scenes-with-Hierarchical-Neural-Representation>Stylizing Sparse-View 3D Scenes with Hierarchical Neural Representation</a></li>
+        <li><a href=#StylizedGS:-Controllable-Stylization-for-3D-Gaussian-Splatting>StylizedGS: Controllable Stylization for 3D Gaussian Splatting</a></li>
+        <li><a href=#Semantic-Flow:-Learning-Semantic-Field-of-Dynamic-Scenes-from-Monocular-Videos>Semantic Flow: Learning Semantic Field of Dynamic Scenes from Monocular Videos</a></li>
+        <li><a href=#CodecNeRF:-Toward-Fast-Encoding-and-Decoding,-Compact,-and-High-quality-Novel-view-Synthesis>CodecNeRF: Toward Fast Encoding and Decoding, Compact, and High-quality Novel-view Synthesis</a></li>
+        <li><a href=#GauU-Scene-V2:-Expanse-Lidar-Image-Dataset-Shows-Unreliable-Geometric-Reconstruction-Using-Gaussian-Splatting-and-NeRF>GauU-Scene V2: Expanse Lidar Image Dataset Shows Unreliable Geometric Reconstruction Using Gaussian Splatting and NeRF</a></li>
+        <li><a href=#NeRF2Points:-Large-Scale-Point-Cloud-Generation-From-Street-Views'-Radiance-Field-Optimization>NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization</a></li>
+        <li><a href=#DATENeRF:-Depth-Aware-Text-based-Editing-of-NeRFs>DATENeRF: Depth-Aware Text-based Editing of NeRFs</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SLAM  
 
-### [Towards introspective loop closure in 4D radar SLAM](http://arxiv.org/abs/2404.03940)  
-Maximilian Hilger, Vladimír Kubelka, Daniel Adolfsson, Henrik Andreasson, Achim J. Lilienthal  
+### [Salient Sparse Visual Odometry With Pose-Only Supervision](http://arxiv.org/abs/2404.04677)  
+Siyu Chen, Kangcheng Liu, Chen Wang, Shenghai Yuan, Jianfei Yang, Lihua Xie  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Imaging radar is an emerging sensor modality in the context of Localization and Mapping (SLAM), especially suitable for vision-obstructed environments. This article investigates the use of 4D imaging radars for SLAM and analyzes the challenges in robust loop closure. Previous work indicates that 4D radars, together with inertial measurements, offer ample information for accurate odometry estimation. However, the low field of view, limited resolution, and sparse and noisy measurements render loop closure a significantly more challenging problem. Our work builds on the previous work - TBV SLAM - which was proposed for robust loop closure with 360 $^\circ$ spinning radars. This article highlights and addresses challenges inherited from a directional 4D radar, such as sparsity, noise, and reduced field of view, and discusses why the common definition of a loop closure is unsuitable. By combining multiple quality measures for accurate loop closure detection adapted to 4D radar data, significant results in trajectory estimation are achieved; the absolute trajectory error is as low as 0.46 m over a distance of 1.8 km, with consistent operation over multiple environments.  
+    Visual Odometry (VO) is vital for the navigation of autonomous systems, providing accurate position and orientation estimates at reasonable costs. While traditional VO methods excel in some conditions, they struggle with challenges like variable lighting and motion blur. Deep learning-based VO, though more adaptable, can face generalization problems in new environments. Addressing these drawbacks, this paper presents a novel hybrid visual odometry (VO) framework that leverages pose-only supervision, offering a balanced solution between robustness and the need for extensive labeling. We propose two cost-effective and innovative designs: a self-supervised homographic pre-training for enhancing optical flow learning from pose-only labels and a random patch-based salient point detection strategy for more accurate optical flow patch extraction. These designs eliminate the need for dense optical flow labels for training and significantly improve the generalization capability of the system in diverse and challenging environments. Our pose-only supervised method achieves competitive performance on standard datasets and greater robustness and generalization ability in extreme and unseen scenarios, even compared to dense optical flow-supervised state-of-the-art methods.  
   </ol>  
 </details>  
-**comments**: Submitted to the workshop "Radar in Robotics: Resilience from Signal
-  to Navigation" at ICRA 2024  
+**comments**: Accepted by IEEE Robotics and Automation Letters  
+  
+  
+
+
+
+## SFM  
+
+### [NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization](http://arxiv.org/abs/2404.04875)  
+Peng Tu, Xun Zhou, Mingming Wang, Xiaojun Yang, Bo Peng, Ping Chen, Xiu Su, Yawen Huang, Yefeng Zheng, Chang Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have emerged as a paradigm-shifting methodology for the photorealistic rendering of objects and environments, enabling the synthesis of novel viewpoints with remarkable fidelity. This is accomplished through the strategic utilization of object-centric camera poses characterized by significant inter-frame overlap. This paper explores a compelling, alternative utility of NeRF: the derivation of point clouds from aggregated urban landscape imagery. The transmutation of street-view data into point clouds is fraught with complexities, attributable to a nexus of interdependent variables. First, high-quality point cloud generation hinges on precise camera poses, yet many datasets suffer from inaccuracies in pose metadata. Also, the standard approach of NeRF is ill-suited for the distinct characteristics of street-view data from autonomous vehicles in vast, open settings. Autonomous vehicle cameras often record with limited overlap, leading to blurring, artifacts, and compromised pavement representation in NeRF-based point clouds. In this paper, we present NeRF2Points, a tailored NeRF variant for urban point cloud synthesis, notable for its high-quality output from RGB inputs alone. Our paper is supported by a bespoke, high-resolution 20-kilometer urban street dataset, designed for point cloud generation and evaluation. NeRF2Points adeptly navigates the inherent challenges of NeRF-based point cloud synthesis through the implementation of the following strategic innovations: (1) Integration of Weighted Iterative Geometric Optimization (WIGO) and Structure from Motion (SfM) for enhanced camera pose accuracy, elevating street-view data precision. (2) Layered Perception and Integrated Modeling (LPiM) is designed for distinct radiance field modeling in urban environments, resulting in coherent point cloud representations.  
+  </ol>  
+</details>  
+**comments**: 18 pages  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Weakly Supervised Deep Hyperspherical Quantization for Image Retrieval](http://arxiv.org/abs/2404.04998)  
+[[code](https://github.com/gimpong/AAAI21-WSDHQ)]  
+Jinpeng Wang, Bin Chen, Qiang Zhang, Zaiqiao Meng, Shangsong Liang, Shu-Tao Xia  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Deep quantization methods have shown high efficiency on large-scale image retrieval. However, current models heavily rely on ground-truth information, hindering the application of quantization in label-hungry scenarios. A more realistic demand is to learn from inexhaustible uploaded images that are associated with informal tags provided by amateur users. Though such sketchy tags do not obviously reveal the labels, they actually contain useful semantic information for supervising deep quantization. To this end, we propose Weakly-Supervised Deep Hyperspherical Quantization (WSDHQ), which is the first work to learn deep quantization from weakly tagged images. Specifically, 1) we use word embeddings to represent the tags and enhance their semantic information based on a tag correlation graph. 2) To better preserve semantic information in quantization codes and reduce quantization error, we jointly learn semantics-preserving embeddings and supervised quantizer on hypersphere by employing a well-designed fusion layer and tailor-made loss functions. Extensive experiments show that WSDHQ can achieve state-of-art performance on weakly-supervised compact coding. Code is available at https://github.com/gimpong/AAAI21-WSDHQ.  
+  </ol>  
+</details>  
+**comments**: In proceedings of AAAI 2021. Code and data are available  
+  
+### [Soft-Prompting with Graph-of-Thought for Multi-modal Representation Learning](http://arxiv.org/abs/2404.04538)  
+Juncheng Yang, Zuchao Li, Shuai Xie, Wei Yu, Shijun Li, Bo Du  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The chain-of-thought technique has been received well in multi-modal tasks. It is a step-by-step linear reasoning process that adjusts the length of the chain to improve the performance of generated prompts. However, human thought processes are predominantly non-linear, as they encompass multiple aspects simultaneously and employ dynamic adjustment and updating mechanisms. Therefore, we propose a novel Aggregation-Graph-of-Thought (AGoT) mechanism for soft-prompt tuning in multi-modal representation learning. The proposed AGoT models the human thought process not only as a chain but also models each step as a reasoning aggregation graph to cope with the overlooked multiple aspects of thinking in single-step reasoning. This turns the entire reasoning process into prompt aggregation and prompt flow operations. Experiments show that our multi-modal model enhanced with AGoT soft-prompting achieves good results in several tasks such as text-image retrieval, visual question answering, and image recognition. In addition, we demonstrate that it has good domain generalization performance due to better reasoning.  
+  </ol>  
+</details>  
+**comments**: This paper is accepted to LREC-COLING 2024  
   
   
 
@@ -34,24 +92,76 @@ Maximilian Hilger, Vladimír Kubelka, Daniel Adolfsson, Henrik Andreasson, Achim
 
 ## NeRF  
 
-### [Robust Gaussian Splatting](http://arxiv.org/abs/2404.04211)  
-François Darmon, Lorenzo Porzi, Samuel Rota-Bulò, Peter Kontschieder  
+### [Stylizing Sparse-View 3D Scenes with Hierarchical Neural Representation](http://arxiv.org/abs/2404.05236)  
+Y. Wang, A. Gao, Y. Gong, Y. Zeng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we address common error sources for 3D Gaussian Splatting (3DGS) including blur, imperfect camera poses, and color inconsistencies, with the goal of improving its robustness for practical applications like reconstructions from handheld phone captures. Our main contribution involves modeling motion blur as a Gaussian distribution over camera poses, allowing us to address both camera pose refinement and motion blur correction in a unified way. Additionally, we propose mechanisms for defocus blur compensation and for addressing color in-consistencies caused by ambient light, shadows, or due to camera-related factors like varying white balancing settings. Our proposed solutions integrate in a seamless way with the 3DGS formulation while maintaining its benefits in terms of training efficiency and rendering speed. We experimentally validate our contributions on relevant benchmark datasets including Scannet++ and Deblur-NeRF, obtaining state-of-the-art results and thus consistent improvements over relevant baselines.  
+    Recently, a surge of 3D style transfer methods has been proposed that leverage the scene reconstruction power of a pre-trained neural radiance field (NeRF). To successfully stylize a scene this way, one must first reconstruct a photo-realistic radiance field from collected images of the scene. However, when only sparse input views are available, pre-trained few-shot NeRFs often suffer from high-frequency artifacts, which are generated as a by-product of high-frequency details for improving reconstruction quality. Is it possible to generate more faithful stylized scenes from sparse inputs by directly optimizing encoding-based scene representation with target style? In this paper, we consider the stylization of sparse-view scenes in terms of disentangling content semantics and style textures. We propose a coarse-to-fine sparse-view scene stylization framework, where a novel hierarchical encoding-based neural representation is designed to generate high-quality stylized scenes directly from implicit scene representations. We also propose a new optimization strategy with content strength annealing to achieve realistic stylization and better content preservation. Extensive experiments demonstrate that our method can achieve high-quality stylization of sparse-view scenes and outperforms fine-tuning-based baselines in terms of stylization quality and efficiency.  
   </ol>  
 </details>  
   
-### [SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer](http://arxiv.org/abs/2404.03736)  
-Zijie Wu, Chaohui Yu, Yanqin Jiang, Chenjie Cao, Fan Wang, Xiang Bai  
+### [StylizedGS: Controllable Stylization for 3D Gaussian Splatting](http://arxiv.org/abs/2404.05220)  
+Dingxi Zhang, Zhuoxun Chen, Yu-Jie Yuan, Fang-Lue Zhang, Zhenliang He, Shiguang Shan, Lin Gao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advances in 2D/3D generative models enable the generation of dynamic 3D objects from a single-view video. Existing approaches utilize score distillation sampling to form the dynamic scene as dynamic NeRF or dense 3D Gaussians. However, these methods struggle to strike a balance among reference view alignment, spatio-temporal consistency, and motion fidelity under single-view conditions due to the implicit nature of NeRF or the intricate dense Gaussian motion prediction. To address these issues, this paper proposes an efficient, sparse-controlled video-to-4D framework named SC4D, that decouples motion and appearance to achieve superior video-to-4D generation. Moreover, we introduce Adaptive Gaussian (AG) initialization and Gaussian Alignment (GA) loss to mitigate shape degeneration issue, ensuring the fidelity of the learned motion and shape. Comprehensive experimental results demonstrate that our method surpasses existing methods in both quality and efficiency. In addition, facilitated by the disentangled modeling of motion and appearance of SC4D, we devise a novel application that seamlessly transfers the learned motion onto a diverse array of 4D entities according to textual descriptions.  
+    With the rapid development of XR, 3D generation and editing are becoming more and more important, among which, stylization is an important tool of 3D appearance editing. It can achieve consistent 3D artistic stylization given a single reference style image and thus is a user-friendly editing way. However, recent NeRF-based 3D stylization methods face efficiency issues that affect the actual user experience and the implicit nature limits its ability to transfer the geometric pattern styles. Additionally, the ability for artists to exert flexible control over stylized scenes is considered highly desirable, fostering an environment conducive to creative exploration. In this paper, we introduce StylizedGS, a 3D neural style transfer framework with adaptable control over perceptual factors based on 3D Gaussian Splatting (3DGS) representation. The 3DGS brings the benefits of high efficiency. We propose a GS filter to eliminate floaters in the reconstruction which affects the stylization effects before stylization. Then the nearest neighbor-based style loss is introduced to achieve stylization by fine-tuning the geometry and color parameters of 3DGS, while a depth preservation loss with other regularizations is proposed to prevent the tampering of geometry content. Moreover, facilitated by specially designed losses, StylizedGS enables users to control color, stylized scale and regions during the stylization to possess customized capabilities. Our method can attain high-quality stylization results characterized by faithful brushstrokes and geometric consistency with flexible controls. Extensive experiments across various scenes and styles demonstrate the effectiveness and efficiency of our method concerning both stylization quality and inference FPS.  
   </ol>  
 </details>  
-**comments**: Project Page: https://sc4d.github.io/  
+  
+### [Semantic Flow: Learning Semantic Field of Dynamic Scenes from Monocular Videos](http://arxiv.org/abs/2404.05163)  
+Fengrui Tian, Yueqi Duan, Angtian Wang, Jianfei Guo, Shaoyi Du  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this work, we pioneer Semantic Flow, a neural semantic representation of dynamic scenes from monocular videos. In contrast to previous NeRF methods that reconstruct dynamic scenes from the colors and volume densities of individual points, Semantic Flow learns semantics from continuous flows that contain rich 3D motion information. As there is 2D-to-3D ambiguity problem in the viewing direction when extracting 3D flow features from 2D video frames, we consider the volume densities as opacity priors that describe the contributions of flow features to the semantics on the frames. More specifically, we first learn a flow network to predict flows in the dynamic scene, and propose a flow feature aggregation module to extract flow features from video frames. Then, we propose a flow attention module to extract motion information from flow features, which is followed by a semantic network to output semantic logits of flows. We integrate the logits with volume densities in the viewing direction to supervise the flow features with semantic labels on video frames. Experimental results show that our model is able to learn from multiple dynamic scenes and supports a series of new tasks such as instance-level scene editing, semantic completions, dynamic scene tracking and semantic adaption on novel scenes. Codes are available at https://github.com/tianfr/Semantic-Flow/.  
+  </ol>  
+</details>  
+**comments**: Accepted by ICLR 2024, Codes are available at
+  https://github.com/tianfr/Semantic-Flow/  
+  
+### [CodecNeRF: Toward Fast Encoding and Decoding, Compact, and High-quality Novel-view Synthesis](http://arxiv.org/abs/2404.04913)  
+Gyeongjin Kang, Younggeun Lee, Eunbyung Park  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have achieved huge success in effectively capturing and representing 3D objects and scenes. However, several factors have impeded its further proliferation as next-generation 3D media. To establish a ubiquitous presence in everyday media formats, such as images and videos, it is imperative to devise a solution that effectively fulfills three key objectives: fast encoding and decoding time, compact model sizes, and high-quality renderings. Despite significant advancements, a comprehensive algorithm that adequately addresses all objectives has yet to be fully realized. In this work, we present CodecNeRF, a neural codec for NeRF representations, consisting of a novel encoder and decoder architecture that can generate a NeRF representation in a single forward pass. Furthermore, inspired by the recent parameter-efficient finetuning approaches, we develop a novel finetuning method to efficiently adapt the generated NeRF representations to a new test instance, leading to high-quality image renderings and compact code sizes. The proposed CodecNeRF, a newly suggested encoding-decoding-finetuning pipeline for NeRF, achieved unprecedented compression performance of more than 150x and 20x reduction in encoding time while maintaining (or improving) the image quality on widely used 3D object datasets, such as ShapeNet and Objaverse.  
+  </ol>  
+</details>  
+**comments**: 34 pages, 22 figures, Project page:
+  https://gynjn.github.io/Codec-NeRF/  
+  
+### [GauU-Scene V2: Expanse Lidar Image Dataset Shows Unreliable Geometric Reconstruction Using Gaussian Splatting and NeRF](http://arxiv.org/abs/2404.04880)  
+Butian Xiong, Nanjun Zheng, Zhen Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce a novel large-scale scene reconstruction benchmark that utilizes newly developed 3D representation approaches: Gaussian Splatting and Neural Radiance Fields, on our expansive GauU-Scene V2 dataset. GauU-Scene V2 encompasses over 6.5 square kilometers and features a comprehensive RGB dataset coupled with LiDAR ground truth. This dataset offers a unique blend of urban and academic environments for advanced spatial analysis, covering more than 6.5 km2. We also provide detailed supplementary information on data collection protocols. Furthermore, we present an easy-to-follow pipeline to align the COLMAP sparse point cloud with the detailed LiDAR dataset. Our evaluation of U-Scene, which includes a detailed analysis across various novel viewpoints using image-based metrics such as SSIM, LPIPS, and PSNR, shows contradictory results when applying geometric-based metrics, such as Chamfer distance. This leads to doubts about the reliability of current image-based measurement matrices and geometric extraction methods on Gaussian Splatting. We also make the dataset available on the following anonymous project page  
+  </ol>  
+</details>  
+**comments**: 8 pages(No reference) 6 figures 4 tabs  
+  
+### [NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization](http://arxiv.org/abs/2404.04875)  
+Peng Tu, Xun Zhou, Mingming Wang, Xiaojun Yang, Bo Peng, Ping Chen, Xiu Su, Yawen Huang, Yefeng Zheng, Chang Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have emerged as a paradigm-shifting methodology for the photorealistic rendering of objects and environments, enabling the synthesis of novel viewpoints with remarkable fidelity. This is accomplished through the strategic utilization of object-centric camera poses characterized by significant inter-frame overlap. This paper explores a compelling, alternative utility of NeRF: the derivation of point clouds from aggregated urban landscape imagery. The transmutation of street-view data into point clouds is fraught with complexities, attributable to a nexus of interdependent variables. First, high-quality point cloud generation hinges on precise camera poses, yet many datasets suffer from inaccuracies in pose metadata. Also, the standard approach of NeRF is ill-suited for the distinct characteristics of street-view data from autonomous vehicles in vast, open settings. Autonomous vehicle cameras often record with limited overlap, leading to blurring, artifacts, and compromised pavement representation in NeRF-based point clouds. In this paper, we present NeRF2Points, a tailored NeRF variant for urban point cloud synthesis, notable for its high-quality output from RGB inputs alone. Our paper is supported by a bespoke, high-resolution 20-kilometer urban street dataset, designed for point cloud generation and evaluation. NeRF2Points adeptly navigates the inherent challenges of NeRF-based point cloud synthesis through the implementation of the following strategic innovations: (1) Integration of Weighted Iterative Geometric Optimization (WIGO) and Structure from Motion (SfM) for enhanced camera pose accuracy, elevating street-view data precision. (2) Layered Perception and Integrated Modeling (LPiM) is designed for distinct radiance field modeling in urban environments, resulting in coherent point cloud representations.  
+  </ol>  
+</details>  
+**comments**: 18 pages  
+  
+### [DATENeRF: Depth-Aware Text-based Editing of NeRFs](http://arxiv.org/abs/2404.04526)  
+Sara Rojas, Julien Philip, Kai Zhang, Sai Bi, Fujun Luan, Bernard Ghanem, Kalyan Sunkavall  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advancements in diffusion models have shown remarkable proficiency in editing 2D images based on text prompts. However, extending these techniques to edit scenes in Neural Radiance Fields (NeRF) is complex, as editing individual 2D frames can result in inconsistencies across multiple views. Our crucial insight is that a NeRF scene's geometry can serve as a bridge to integrate these 2D edits. Utilizing this geometry, we employ a depth-conditioned ControlNet to enhance the coherence of each 2D image modification. Moreover, we introduce an inpainting approach that leverages the depth information of NeRF scenes to distribute 2D edits across different images, ensuring robustness against errors and resampling challenges. Our results reveal that this methodology achieves more consistent, lifelike, and detailed edits than existing leading methods for text-driven NeRF scene editing.  
+  </ol>  
+</details>  
+**comments**: 14 pages, Conference paper, 3D Scene Editing, Neural Rendering,
+  Diffusion Models  
   
   
 
