@@ -1,90 +1,52 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#Salient-Sparse-Visual-Odometry-With-Pose-Only-Supervision>Salient Sparse Visual Odometry With Pose-Only Supervision</a></li>
-      </ul>
-    </li>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#NeRF2Points:-Large-Scale-Point-Cloud-Generation-From-Street-Views'-Radiance-Field-Optimization>NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Weakly-Supervised-Deep-Hyperspherical-Quantization-for-Image-Retrieval>Weakly Supervised Deep Hyperspherical Quantization for Image Retrieval</a></li>
-        <li><a href=#Soft-Prompting-with-Graph-of-Thought-for-Multi-modal-Representation-Learning>Soft-Prompting with Graph-of-Thought for Multi-modal Representation Learning</a></li>
+        <li><a href=#Learning-Embeddings-with-Centroid-Triplet-Loss-for-Object-Identification-in-Robotic-Grasping>Learning Embeddings with Centroid Triplet Loss for Object Identification in Robotic Grasping</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Matching-2D-Images-in-3D:-Metric-Relative-Pose-from-Metric-Correspondences>Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Stylizing-Sparse-View-3D-Scenes-with-Hierarchical-Neural-Representation>Stylizing Sparse-View 3D Scenes with Hierarchical Neural Representation</a></li>
-        <li><a href=#StylizedGS:-Controllable-Stylization-for-3D-Gaussian-Splatting>StylizedGS: Controllable Stylization for 3D Gaussian Splatting</a></li>
-        <li><a href=#Semantic-Flow:-Learning-Semantic-Field-of-Dynamic-Scenes-from-Monocular-Videos>Semantic Flow: Learning Semantic Field of Dynamic Scenes from Monocular Videos</a></li>
-        <li><a href=#CodecNeRF:-Toward-Fast-Encoding-and-Decoding,-Compact,-and-High-quality-Novel-view-Synthesis>CodecNeRF: Toward Fast Encoding and Decoding, Compact, and High-quality Novel-view Synthesis</a></li>
-        <li><a href=#GauU-Scene-V2:-Expanse-Lidar-Image-Dataset-Shows-Unreliable-Geometric-Reconstruction-Using-Gaussian-Splatting-and-NeRF>GauU-Scene V2: Expanse Lidar Image Dataset Shows Unreliable Geometric Reconstruction Using Gaussian Splatting and NeRF</a></li>
-        <li><a href=#NeRF2Points:-Large-Scale-Point-Cloud-Generation-From-Street-Views'-Radiance-Field-Optimization>NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization</a></li>
-        <li><a href=#DATENeRF:-Depth-Aware-Text-based-Editing-of-NeRFs>DATENeRF: Depth-Aware Text-based Editing of NeRFs</a></li>
+        <li><a href=#Magic-Boost:-Boost-3D-Generation-with-Mutli-View-Conditioned-Diffusion>Magic-Boost: Boost 3D Generation with Mutli-View Conditioned Diffusion</a></li>
+        <li><a href=#3D-Geometry-aware-Deformable-Gaussian-Splatting-for-Dynamic-View-Synthesis>3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis</a></li>
+        <li><a href=#GHNeRF:-Learning-Generalizable-Human-Features-with-Efficient-Neural-Radiance-Fields>GHNeRF: Learning Generalizable Human Features with Efficient Neural Radiance Fields</a></li>
+        <li><a href=#HFNeRF:-Learning-Human-Biomechanic-Features-with-Neural-Radiance-Fields>HFNeRF: Learning Human Biomechanic Features with Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [Salient Sparse Visual Odometry With Pose-Only Supervision](http://arxiv.org/abs/2404.04677)  
-Siyu Chen, Kangcheng Liu, Chen Wang, Shenghai Yuan, Jianfei Yang, Lihua Xie  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual Odometry (VO) is vital for the navigation of autonomous systems, providing accurate position and orientation estimates at reasonable costs. While traditional VO methods excel in some conditions, they struggle with challenges like variable lighting and motion blur. Deep learning-based VO, though more adaptable, can face generalization problems in new environments. Addressing these drawbacks, this paper presents a novel hybrid visual odometry (VO) framework that leverages pose-only supervision, offering a balanced solution between robustness and the need for extensive labeling. We propose two cost-effective and innovative designs: a self-supervised homographic pre-training for enhancing optical flow learning from pose-only labels and a random patch-based salient point detection strategy for more accurate optical flow patch extraction. These designs eliminate the need for dense optical flow labels for training and significantly improve the generalization capability of the system in diverse and challenging environments. Our pose-only supervised method achieves competitive performance on standard datasets and greater robustness and generalization ability in extreme and unseen scenarios, even compared to dense optical flow-supervised state-of-the-art methods.  
-  </ol>  
-</details>  
-**comments**: Accepted by IEEE Robotics and Automation Letters  
-  
-  
-
-
-
-## SFM  
-
-### [NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization](http://arxiv.org/abs/2404.04875)  
-Peng Tu, Xun Zhou, Mingming Wang, Xiaojun Yang, Bo Peng, Ping Chen, Xiu Su, Yawen Huang, Yefeng Zheng, Chang Xu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRF) have emerged as a paradigm-shifting methodology for the photorealistic rendering of objects and environments, enabling the synthesis of novel viewpoints with remarkable fidelity. This is accomplished through the strategic utilization of object-centric camera poses characterized by significant inter-frame overlap. This paper explores a compelling, alternative utility of NeRF: the derivation of point clouds from aggregated urban landscape imagery. The transmutation of street-view data into point clouds is fraught with complexities, attributable to a nexus of interdependent variables. First, high-quality point cloud generation hinges on precise camera poses, yet many datasets suffer from inaccuracies in pose metadata. Also, the standard approach of NeRF is ill-suited for the distinct characteristics of street-view data from autonomous vehicles in vast, open settings. Autonomous vehicle cameras often record with limited overlap, leading to blurring, artifacts, and compromised pavement representation in NeRF-based point clouds. In this paper, we present NeRF2Points, a tailored NeRF variant for urban point cloud synthesis, notable for its high-quality output from RGB inputs alone. Our paper is supported by a bespoke, high-resolution 20-kilometer urban street dataset, designed for point cloud generation and evaluation. NeRF2Points adeptly navigates the inherent challenges of NeRF-based point cloud synthesis through the implementation of the following strategic innovations: (1) Integration of Weighted Iterative Geometric Optimization (WIGO) and Structure from Motion (SfM) for enhanced camera pose accuracy, elevating street-view data precision. (2) Layered Perception and Integrated Modeling (LPiM) is designed for distinct radiance field modeling in urban environments, resulting in coherent point cloud representations.  
-  </ol>  
-</details>  
-**comments**: 18 pages  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Weakly Supervised Deep Hyperspherical Quantization for Image Retrieval](http://arxiv.org/abs/2404.04998)  
-[[code](https://github.com/gimpong/AAAI21-WSDHQ)]  
-Jinpeng Wang, Bin Chen, Qiang Zhang, Zaiqiao Meng, Shangsong Liang, Shu-Tao Xia  
+### [Learning Embeddings with Centroid Triplet Loss for Object Identification in Robotic Grasping](http://arxiv.org/abs/2404.06277)  
+Anas Gouda, Max Schwarz, Christopher Reining, Sven Behnke, Alice Kirchheim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Deep quantization methods have shown high efficiency on large-scale image retrieval. However, current models heavily rely on ground-truth information, hindering the application of quantization in label-hungry scenarios. A more realistic demand is to learn from inexhaustible uploaded images that are associated with informal tags provided by amateur users. Though such sketchy tags do not obviously reveal the labels, they actually contain useful semantic information for supervising deep quantization. To this end, we propose Weakly-Supervised Deep Hyperspherical Quantization (WSDHQ), which is the first work to learn deep quantization from weakly tagged images. Specifically, 1) we use word embeddings to represent the tags and enhance their semantic information based on a tag correlation graph. 2) To better preserve semantic information in quantization codes and reduce quantization error, we jointly learn semantics-preserving embeddings and supervised quantizer on hypersphere by employing a well-designed fusion layer and tailor-made loss functions. Extensive experiments show that WSDHQ can achieve state-of-art performance on weakly-supervised compact coding. Code is available at https://github.com/gimpong/AAAI21-WSDHQ.  
+    Foundation models are a strong trend in deep learning and computer vision. These models serve as a base for applications as they require minor or no further fine-tuning by developers to integrate into their applications. Foundation models for zero-shot object segmentation such as Segment Anything (SAM) output segmentation masks from images without any further object information. When they are followed in a pipeline by an object identification model, they can perform object detection without training. Here, we focus on training such an object identification model. A crucial practical aspect for an object identification model is to be flexible in input size. As object identification is an image retrieval problem, a suitable method should handle multi-query multi-gallery situations without constraining the number of input images (e.g. by having fixed-size aggregation layers). The key solution to train such a model is the centroid triplet loss (CTL), which aggregates image features to their centroids. CTL yields high accuracy, avoids misleading training signals and keeps the model input size flexible. In our experiments, we establish a new state of the art on the ArmBench object identification task, which shows general applicability of our model. We furthermore demonstrate an integrated unseen object detection pipeline on the challenging HOPE dataset, which requires fine-grained detection. There, our pipeline matches and surpasses related methods which have been trained on dataset-specific data.  
   </ol>  
 </details>  
-**comments**: In proceedings of AAAI 2021. Code and data are available  
   
-### [Soft-Prompting with Graph-of-Thought for Multi-modal Representation Learning](http://arxiv.org/abs/2404.04538)  
-Juncheng Yang, Zuchao Li, Shuai Xie, Wei Yu, Shijun Li, Bo Du  
+  
+
+
+
+## Image Matching  
+
+### [Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences](http://arxiv.org/abs/2404.06337)  
+Axel Barroso-Laguna, Sowmya Munukutla, Victor Adrian Prisacariu, Eric Brachmann  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The chain-of-thought technique has been received well in multi-modal tasks. It is a step-by-step linear reasoning process that adjusts the length of the chain to improve the performance of generated prompts. However, human thought processes are predominantly non-linear, as they encompass multiple aspects simultaneously and employ dynamic adjustment and updating mechanisms. Therefore, we propose a novel Aggregation-Graph-of-Thought (AGoT) mechanism for soft-prompt tuning in multi-modal representation learning. The proposed AGoT models the human thought process not only as a chain but also models each step as a reasoning aggregation graph to cope with the overlooked multiple aspects of thinking in single-step reasoning. This turns the entire reasoning process into prompt aggregation and prompt flow operations. Experiments show that our multi-modal model enhanced with AGoT soft-prompting achieves good results in several tasks such as text-image retrieval, visual question answering, and image recognition. In addition, we demonstrate that it has good domain generalization performance due to better reasoning.  
+    Given two images, we can estimate the relative camera pose between them by establishing image-to-image correspondences. Usually, correspondences are 2D-to-2D and the pose we estimate is defined only up to scale. Some applications, aiming at instant augmented reality anywhere, require scale-metric pose estimates, and hence, they rely on external depth estimators to recover the scale. We present MicKey, a keypoint matching pipeline that is able to predict metric correspondences in 3D camera space. By learning to match 3D coordinates across images, we are able to infer the metric relative pose without depth measurements. Depth measurements are also not required for training, nor are scene reconstructions or image overlap information. MicKey is supervised only by pairs of images and their relative poses. MicKey achieves state-of-the-art performance on the Map-Free Relocalisation benchmark while requiring less supervision than competing approaches.  
   </ol>  
 </details>  
-**comments**: This paper is accepted to LREC-COLING 2024  
   
   
 
@@ -92,76 +54,42 @@ Juncheng Yang, Zuchao Li, Shuai Xie, Wei Yu, Shijun Li, Bo Du
 
 ## NeRF  
 
-### [Stylizing Sparse-View 3D Scenes with Hierarchical Neural Representation](http://arxiv.org/abs/2404.05236)  
-Y. Wang, A. Gao, Y. Gong, Y. Zeng  
+### [Magic-Boost: Boost 3D Generation with Mutli-View Conditioned Diffusion](http://arxiv.org/abs/2404.06429)  
+Fan Yang, Jianfeng Zhang, Yichun Shi, Bowen Chen, Chenxu Zhang, Huichao Zhang, Xiaofeng Yang, Jiashi Feng, Guosheng Lin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recently, a surge of 3D style transfer methods has been proposed that leverage the scene reconstruction power of a pre-trained neural radiance field (NeRF). To successfully stylize a scene this way, one must first reconstruct a photo-realistic radiance field from collected images of the scene. However, when only sparse input views are available, pre-trained few-shot NeRFs often suffer from high-frequency artifacts, which are generated as a by-product of high-frequency details for improving reconstruction quality. Is it possible to generate more faithful stylized scenes from sparse inputs by directly optimizing encoding-based scene representation with target style? In this paper, we consider the stylization of sparse-view scenes in terms of disentangling content semantics and style textures. We propose a coarse-to-fine sparse-view scene stylization framework, where a novel hierarchical encoding-based neural representation is designed to generate high-quality stylized scenes directly from implicit scene representations. We also propose a new optimization strategy with content strength annealing to achieve realistic stylization and better content preservation. Extensive experiments demonstrate that our method can achieve high-quality stylization of sparse-view scenes and outperforms fine-tuning-based baselines in terms of stylization quality and efficiency.  
+    Benefiting from the rapid development of 2D diffusion models, 3D content creation has made significant progress recently. One promising solution involves the fine-tuning of pre-trained 2D diffusion models to harness their capacity for producing multi-view images, which are then lifted into accurate 3D models via methods like fast-NeRFs or large reconstruction models. However, as inconsistency still exists and limited generated resolution, the generation results of such methods still lack intricate textures and complex geometries. To solve this problem, we propose Magic-Boost, a multi-view conditioned diffusion model that significantly refines coarse generative results through a brief period of SDS optimization ( $\sim15$ min). Compared to the previous text or single image based diffusion models, Magic-Boost exhibits a robust capability to generate images with high consistency from pseudo synthesized multi-view images. It provides precise SDS guidance that well aligns with the identity of the input images, enriching the local detail in both geometry and texture of the initial generative results. Extensive experiments show Magic-Boost greatly enhances the coarse inputs and generates high-quality 3D assets with rich geometric and textural details. (Project Page: https://magic-research.github.io/magic-boost/)  
   </ol>  
 </details>  
   
-### [StylizedGS: Controllable Stylization for 3D Gaussian Splatting](http://arxiv.org/abs/2404.05220)  
-Dingxi Zhang, Zhuoxun Chen, Yu-Jie Yuan, Fang-Lue Zhang, Zhenliang He, Shiguang Shan, Lin Gao  
+### [3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis](http://arxiv.org/abs/2404.06270)  
+Zhicheng Lu, Xiang Guo, Le Hui, Tianrui Chen, Min Yang, Xiao Tang, Feng Zhu, Yuchao Dai  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    With the rapid development of XR, 3D generation and editing are becoming more and more important, among which, stylization is an important tool of 3D appearance editing. It can achieve consistent 3D artistic stylization given a single reference style image and thus is a user-friendly editing way. However, recent NeRF-based 3D stylization methods face efficiency issues that affect the actual user experience and the implicit nature limits its ability to transfer the geometric pattern styles. Additionally, the ability for artists to exert flexible control over stylized scenes is considered highly desirable, fostering an environment conducive to creative exploration. In this paper, we introduce StylizedGS, a 3D neural style transfer framework with adaptable control over perceptual factors based on 3D Gaussian Splatting (3DGS) representation. The 3DGS brings the benefits of high efficiency. We propose a GS filter to eliminate floaters in the reconstruction which affects the stylization effects before stylization. Then the nearest neighbor-based style loss is introduced to achieve stylization by fine-tuning the geometry and color parameters of 3DGS, while a depth preservation loss with other regularizations is proposed to prevent the tampering of geometry content. Moreover, facilitated by specially designed losses, StylizedGS enables users to control color, stylized scale and regions during the stylization to possess customized capabilities. Our method can attain high-quality stylization results characterized by faithful brushstrokes and geometric consistency with flexible controls. Extensive experiments across various scenes and styles demonstrate the effectiveness and efficiency of our method concerning both stylization quality and inference FPS.  
+    In this paper, we propose a 3D geometry-aware deformable Gaussian Splatting method for dynamic view synthesis. Existing neural radiance fields (NeRF) based solutions learn the deformation in an implicit manner, which cannot incorporate 3D scene geometry. Therefore, the learned deformation is not necessarily geometrically coherent, which results in unsatisfactory dynamic view synthesis and 3D dynamic reconstruction. Recently, 3D Gaussian Splatting provides a new representation of the 3D scene, building upon which the 3D geometry could be exploited in learning the complex 3D deformation. Specifically, the scenes are represented as a collection of 3D Gaussian, where each 3D Gaussian is optimized to move and rotate over time to model the deformation. To enforce the 3D scene geometry constraint during deformation, we explicitly extract 3D geometry features and integrate them in learning the 3D deformation. In this way, our solution achieves 3D geometry-aware deformation modeling, which enables improved dynamic view synthesis and 3D dynamic reconstruction. Extensive experimental results on both synthetic and real datasets prove the superiority of our solution, which achieves new state-of-the-art performance.   The project is available at https://npucvr.github.io/GaGS/  
+  </ol>  
+</details>  
+**comments**: Accepted by CVPR 2024. Project page: https://npucvr.github.io/GaGS/  
+  
+### [GHNeRF: Learning Generalizable Human Features with Efficient Neural Radiance Fields](http://arxiv.org/abs/2404.06246)  
+Arnab Dey, Di Yang, Rohith Agaram, Antitza Dantcheva, Andrew I. Comport, Srinath Sridhar, Jean Martinet  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advances in Neural Radiance Fields (NeRF) have demonstrated promising results in 3D scene representations, including 3D human representations. However, these representations often lack crucial information on the underlying human pose and structure, which is crucial for AR/VR applications and games. In this paper, we introduce a novel approach, termed GHNeRF, designed to address these limitations by learning 2D/3D joint locations of human subjects with NeRF representation. GHNeRF uses a pre-trained 2D encoder streamlined to extract essential human features from 2D images, which are then incorporated into the NeRF framework in order to encode human biomechanic features. This allows our network to simultaneously learn biomechanic features, such as joint locations, along with human geometry and texture. To assess the effectiveness of our method, we conduct a comprehensive comparison with state-of-the-art human NeRF techniques and joint estimation algorithms. Our results show that GHNeRF can achieve state-of-the-art results in near real-time.  
   </ol>  
 </details>  
   
-### [Semantic Flow: Learning Semantic Field of Dynamic Scenes from Monocular Videos](http://arxiv.org/abs/2404.05163)  
-Fengrui Tian, Yueqi Duan, Angtian Wang, Jianfei Guo, Shaoyi Du  
+### [HFNeRF: Learning Human Biomechanic Features with Neural Radiance Fields](http://arxiv.org/abs/2404.06152)  
+Arnab Dey, Di Yang, Antitza Dantcheva, Jean Martinet  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this work, we pioneer Semantic Flow, a neural semantic representation of dynamic scenes from monocular videos. In contrast to previous NeRF methods that reconstruct dynamic scenes from the colors and volume densities of individual points, Semantic Flow learns semantics from continuous flows that contain rich 3D motion information. As there is 2D-to-3D ambiguity problem in the viewing direction when extracting 3D flow features from 2D video frames, we consider the volume densities as opacity priors that describe the contributions of flow features to the semantics on the frames. More specifically, we first learn a flow network to predict flows in the dynamic scene, and propose a flow feature aggregation module to extract flow features from video frames. Then, we propose a flow attention module to extract motion information from flow features, which is followed by a semantic network to output semantic logits of flows. We integrate the logits with volume densities in the viewing direction to supervise the flow features with semantic labels on video frames. Experimental results show that our model is able to learn from multiple dynamic scenes and supports a series of new tasks such as instance-level scene editing, semantic completions, dynamic scene tracking and semantic adaption on novel scenes. Codes are available at https://github.com/tianfr/Semantic-Flow/.  
+    In recent advancements in novel view synthesis, generalizable Neural Radiance Fields (NeRF) based methods applied to human subjects have shown remarkable results in generating novel views from few images. However, this generalization ability cannot capture the underlying structural features of the skeleton shared across all instances. Building upon this, we introduce HFNeRF: a novel generalizable human feature NeRF aimed at generating human biomechanic features using a pre-trained image encoder. While previous human NeRF methods have shown promising results in the generation of photorealistic virtual avatars, such methods lack underlying human structure or biomechanic features such as skeleton or joint information that are crucial for downstream applications including Augmented Reality (AR)/Virtual Reality (VR). HFNeRF leverages 2D pre-trained foundation models toward learning human features in 3D using neural rendering, and then volume rendering towards generating 2D feature maps. We evaluate HFNeRF in the skeleton estimation task by predicting heatmaps as features. The proposed method is fully differentiable, allowing to successfully learn color, geometry, and human skeleton in a simultaneous manner. This paper presents preliminary results of HFNeRF, illustrating its potential in generating realistic virtual avatars with biomechanic features using NeRF.  
   </ol>  
 </details>  
-**comments**: Accepted by ICLR 2024, Codes are available at
-  https://github.com/tianfr/Semantic-Flow/  
-  
-### [CodecNeRF: Toward Fast Encoding and Decoding, Compact, and High-quality Novel-view Synthesis](http://arxiv.org/abs/2404.04913)  
-Gyeongjin Kang, Younggeun Lee, Eunbyung Park  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRF) have achieved huge success in effectively capturing and representing 3D objects and scenes. However, several factors have impeded its further proliferation as next-generation 3D media. To establish a ubiquitous presence in everyday media formats, such as images and videos, it is imperative to devise a solution that effectively fulfills three key objectives: fast encoding and decoding time, compact model sizes, and high-quality renderings. Despite significant advancements, a comprehensive algorithm that adequately addresses all objectives has yet to be fully realized. In this work, we present CodecNeRF, a neural codec for NeRF representations, consisting of a novel encoder and decoder architecture that can generate a NeRF representation in a single forward pass. Furthermore, inspired by the recent parameter-efficient finetuning approaches, we develop a novel finetuning method to efficiently adapt the generated NeRF representations to a new test instance, leading to high-quality image renderings and compact code sizes. The proposed CodecNeRF, a newly suggested encoding-decoding-finetuning pipeline for NeRF, achieved unprecedented compression performance of more than 150x and 20x reduction in encoding time while maintaining (or improving) the image quality on widely used 3D object datasets, such as ShapeNet and Objaverse.  
-  </ol>  
-</details>  
-**comments**: 34 pages, 22 figures, Project page:
-  https://gynjn.github.io/Codec-NeRF/  
-  
-### [GauU-Scene V2: Expanse Lidar Image Dataset Shows Unreliable Geometric Reconstruction Using Gaussian Splatting and NeRF](http://arxiv.org/abs/2404.04880)  
-Butian Xiong, Nanjun Zheng, Zhen Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce a novel large-scale scene reconstruction benchmark that utilizes newly developed 3D representation approaches: Gaussian Splatting and Neural Radiance Fields, on our expansive GauU-Scene V2 dataset. GauU-Scene V2 encompasses over 6.5 square kilometers and features a comprehensive RGB dataset coupled with LiDAR ground truth. This dataset offers a unique blend of urban and academic environments for advanced spatial analysis, covering more than 6.5 km2. We also provide detailed supplementary information on data collection protocols. Furthermore, we present an easy-to-follow pipeline to align the COLMAP sparse point cloud with the detailed LiDAR dataset. Our evaluation of U-Scene, which includes a detailed analysis across various novel viewpoints using image-based metrics such as SSIM, LPIPS, and PSNR, shows contradictory results when applying geometric-based metrics, such as Chamfer distance. This leads to doubts about the reliability of current image-based measurement matrices and geometric extraction methods on Gaussian Splatting. We also make the dataset available on the following anonymous project page  
-  </ol>  
-</details>  
-**comments**: 8 pages(No reference) 6 figures 4 tabs  
-  
-### [NeRF2Points: Large-Scale Point Cloud Generation From Street Views' Radiance Field Optimization](http://arxiv.org/abs/2404.04875)  
-Peng Tu, Xun Zhou, Mingming Wang, Xiaojun Yang, Bo Peng, Ping Chen, Xiu Su, Yawen Huang, Yefeng Zheng, Chang Xu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRF) have emerged as a paradigm-shifting methodology for the photorealistic rendering of objects and environments, enabling the synthesis of novel viewpoints with remarkable fidelity. This is accomplished through the strategic utilization of object-centric camera poses characterized by significant inter-frame overlap. This paper explores a compelling, alternative utility of NeRF: the derivation of point clouds from aggregated urban landscape imagery. The transmutation of street-view data into point clouds is fraught with complexities, attributable to a nexus of interdependent variables. First, high-quality point cloud generation hinges on precise camera poses, yet many datasets suffer from inaccuracies in pose metadata. Also, the standard approach of NeRF is ill-suited for the distinct characteristics of street-view data from autonomous vehicles in vast, open settings. Autonomous vehicle cameras often record with limited overlap, leading to blurring, artifacts, and compromised pavement representation in NeRF-based point clouds. In this paper, we present NeRF2Points, a tailored NeRF variant for urban point cloud synthesis, notable for its high-quality output from RGB inputs alone. Our paper is supported by a bespoke, high-resolution 20-kilometer urban street dataset, designed for point cloud generation and evaluation. NeRF2Points adeptly navigates the inherent challenges of NeRF-based point cloud synthesis through the implementation of the following strategic innovations: (1) Integration of Weighted Iterative Geometric Optimization (WIGO) and Structure from Motion (SfM) for enhanced camera pose accuracy, elevating street-view data precision. (2) Layered Perception and Integrated Modeling (LPiM) is designed for distinct radiance field modeling in urban environments, resulting in coherent point cloud representations.  
-  </ol>  
-</details>  
-**comments**: 18 pages  
-  
-### [DATENeRF: Depth-Aware Text-based Editing of NeRFs](http://arxiv.org/abs/2404.04526)  
-Sara Rojas, Julien Philip, Kai Zhang, Sai Bi, Fujun Luan, Bernard Ghanem, Kalyan Sunkavall  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advancements in diffusion models have shown remarkable proficiency in editing 2D images based on text prompts. However, extending these techniques to edit scenes in Neural Radiance Fields (NeRF) is complex, as editing individual 2D frames can result in inconsistencies across multiple views. Our crucial insight is that a NeRF scene's geometry can serve as a bridge to integrate these 2D edits. Utilizing this geometry, we employ a depth-conditioned ControlNet to enhance the coherence of each 2D image modification. Moreover, we introduce an inpainting approach that leverages the depth information of NeRF scenes to distribute 2D edits across different images, ensuring robustness against errors and resampling challenges. Our results reveal that this methodology achieves more consistent, lifelike, and detailed edits than existing leading methods for text-driven NeRF scene editing.  
-  </ol>  
-</details>  
-**comments**: 14 pages, Conference paper, 3D Scene Editing, Neural Rendering,
-  Diffusion Models  
   
   
 
