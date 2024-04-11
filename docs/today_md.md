@@ -3,20 +3,16 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Learning-Embeddings-with-Centroid-Triplet-Loss-for-Object-Identification-in-Robotic-Grasping>Learning Embeddings with Centroid Triplet Loss for Object Identification in Robotic Grasping</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Matching-2D-Images-in-3D:-Metric-Relative-Pose-from-Metric-Correspondences>Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences</a></li>
+        <li><a href=#Semantically-correlated-memories-in-a-dense-associative-model>Semantically-correlated memories in a dense associative model</a></li>
+        <li><a href=#Training-Free-Open-Vocabulary-Segmentation-with-Offline-Diffusion-Augmented-Prototype-Generation>Training-Free Open-Vocabulary Segmentation with Offline Diffusion-Augmented Prototype Generation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Magic-Boost:-Boost-3D-Generation-with-Mutli-View-Conditioned-Diffusion>Magic-Boost: Boost 3D Generation with Mutli-View Conditioned Diffusion</a></li>
-        <li><a href=#3D-Geometry-aware-Deformable-Gaussian-Splatting-for-Dynamic-View-Synthesis>3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis</a></li>
-        <li><a href=#GHNeRF:-Learning-Generalizable-Human-Features-with-Efficient-Neural-Radiance-Fields>GHNeRF: Learning Generalizable Human Features with Efficient Neural Radiance Fields</a></li>
-        <li><a href=#HFNeRF:-Learning-Human-Biomechanic-Features-with-Neural-Radiance-Fields>HFNeRF: Learning Human Biomechanic Features with Neural Radiance Fields</a></li>
+        <li><a href=#SplatPose-&-Detect:-Pose-Agnostic-3D-Anomaly-Detection>SplatPose & Detect: Pose-Agnostic 3D Anomaly Detection</a></li>
+        <li><a href=#MonoSelfRecon:-Purely-Self-Supervised-Explicit-Generalizable-3D-Reconstruction-of-Indoor-Scenes-from-Monocular-RGB-Views>MonoSelfRecon: Purely Self-Supervised Explicit Generalizable 3D Reconstruction of Indoor Scenes from Monocular RGB Views</a></li>
+        <li><a href=#Bayesian-NeRF:-Quantifying-Uncertainty-with-Volume-Density-in-Neural-Radiance-Fields>Bayesian NeRF: Quantifying Uncertainty with Volume Density in Neural Radiance Fields</a></li>
+        <li><a href=#SpikeNVS:-Enhancing-Novel-View-Synthesis-from-Blurry-Images-via-Spike-Camera>SpikeNVS: Enhancing Novel View Synthesis from Blurry Images via Spike Camera</a></li>
       </ul>
     </li>
   </ol>
@@ -24,29 +20,25 @@
 
 ## Visual Localization  
 
-### [Learning Embeddings with Centroid Triplet Loss for Object Identification in Robotic Grasping](http://arxiv.org/abs/2404.06277)  
-Anas Gouda, Max Schwarz, Christopher Reining, Sven Behnke, Alice Kirchheim  
+### [Semantically-correlated memories in a dense associative model](http://arxiv.org/abs/2404.07123)  
+Thomas F Burns  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Foundation models are a strong trend in deep learning and computer vision. These models serve as a base for applications as they require minor or no further fine-tuning by developers to integrate into their applications. Foundation models for zero-shot object segmentation such as Segment Anything (SAM) output segmentation masks from images without any further object information. When they are followed in a pipeline by an object identification model, they can perform object detection without training. Here, we focus on training such an object identification model. A crucial practical aspect for an object identification model is to be flexible in input size. As object identification is an image retrieval problem, a suitable method should handle multi-query multi-gallery situations without constraining the number of input images (e.g. by having fixed-size aggregation layers). The key solution to train such a model is the centroid triplet loss (CTL), which aggregates image features to their centroids. CTL yields high accuracy, avoids misleading training signals and keeps the model input size flexible. In our experiments, we establish a new state of the art on the ArmBench object identification task, which shows general applicability of our model. We furthermore demonstrate an integrated unseen object detection pipeline on the challenging HOPE dataset, which requires fine-grained detection. There, our pipeline matches and surpasses related methods which have been trained on dataset-specific data.  
+    I introduce a novel associative memory model named Correlated Dense Associative Memory (CDAM), which integrates both auto- and hetero-association in a unified framework for continuous-valued memory patterns. Employing an arbitrary graph structure to semantically link memory patterns, CDAM is theoretically and numerically analysed, revealing four distinct dynamical modes: auto-association, narrow hetero-association, wide hetero-association, and neutral quiescence. Drawing inspiration from inhibitory modulation studies, I employ anti-Hebbian learning rules to control the range of hetero-association, extract multi-scale representations of community structures in graphs, and stabilise the recall of temporal sequences. Experimental demonstrations showcase CDAM's efficacy in handling real-world data, replicating a classical neuroscience experiment, performing image retrieval, and simulating arbitrary finite automata.  
   </ol>  
 </details>  
+**comments**: 35 pages, 32 figures  
   
-  
-
-
-
-## Image Matching  
-
-### [Matching 2D Images in 3D: Metric Relative Pose from Metric Correspondences](http://arxiv.org/abs/2404.06337)  
-Axel Barroso-Laguna, Sowmya Munukutla, Victor Adrian Prisacariu, Eric Brachmann  
+### [Training-Free Open-Vocabulary Segmentation with Offline Diffusion-Augmented Prototype Generation](http://arxiv.org/abs/2404.06542)  
+Luca Barsellotti, Roberto Amoroso, Marcella Cornia, Lorenzo Baraldi, Rita Cucchiara  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Given two images, we can estimate the relative camera pose between them by establishing image-to-image correspondences. Usually, correspondences are 2D-to-2D and the pose we estimate is defined only up to scale. Some applications, aiming at instant augmented reality anywhere, require scale-metric pose estimates, and hence, they rely on external depth estimators to recover the scale. We present MicKey, a keypoint matching pipeline that is able to predict metric correspondences in 3D camera space. By learning to match 3D coordinates across images, we are able to infer the metric relative pose without depth measurements. Depth measurements are also not required for training, nor are scene reconstructions or image overlap information. MicKey is supervised only by pairs of images and their relative poses. MicKey achieves state-of-the-art performance on the Map-Free Relocalisation benchmark while requiring less supervision than competing approaches.  
+    Open-vocabulary semantic segmentation aims at segmenting arbitrary categories expressed in textual form. Previous works have trained over large amounts of image-caption pairs to enforce pixel-level multimodal alignments. However, captions provide global information about the semantics of a given image but lack direct localization of individual concepts. Further, training on large-scale datasets inevitably brings significant computational costs. In this paper, we propose FreeDA, a training-free diffusion-augmented method for open-vocabulary semantic segmentation, which leverages the ability of diffusion models to visually localize generated concepts and local-global similarities to match class-agnostic regions with semantic classes. Our approach involves an offline stage in which textual-visual reference embeddings are collected, starting from a large set of captions and leveraging visual and semantic contexts. At test time, these are queried to support the visual matching process, which is carried out by jointly considering class-agnostic regions and global semantic similarities. Extensive analyses demonstrate that FreeDA achieves state-of-the-art performance on five datasets, surpassing previous methods by more than 7.0 average points in terms of mIoU and without requiring any training.  
   </ol>  
 </details>  
+**comments**: CVPR 2024. Project page: https://aimagelab.github.io/freeda/  
   
   
 
@@ -54,40 +46,42 @@ Axel Barroso-Laguna, Sowmya Munukutla, Victor Adrian Prisacariu, Eric Brachmann
 
 ## NeRF  
 
-### [Magic-Boost: Boost 3D Generation with Mutli-View Conditioned Diffusion](http://arxiv.org/abs/2404.06429)  
-Fan Yang, Jianfeng Zhang, Yichun Shi, Bowen Chen, Chenxu Zhang, Huichao Zhang, Xiaofeng Yang, Jiashi Feng, Guosheng Lin  
+### [SplatPose & Detect: Pose-Agnostic 3D Anomaly Detection](http://arxiv.org/abs/2404.06832)  
+[[code](https://github.com/m-kruse98/splatpose)]  
+Mathis Kruse, Marco Rudolph, Dominik Woiwode, Bodo Rosenhahn  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Benefiting from the rapid development of 2D diffusion models, 3D content creation has made significant progress recently. One promising solution involves the fine-tuning of pre-trained 2D diffusion models to harness their capacity for producing multi-view images, which are then lifted into accurate 3D models via methods like fast-NeRFs or large reconstruction models. However, as inconsistency still exists and limited generated resolution, the generation results of such methods still lack intricate textures and complex geometries. To solve this problem, we propose Magic-Boost, a multi-view conditioned diffusion model that significantly refines coarse generative results through a brief period of SDS optimization ( $\sim15$ min). Compared to the previous text or single image based diffusion models, Magic-Boost exhibits a robust capability to generate images with high consistency from pseudo synthesized multi-view images. It provides precise SDS guidance that well aligns with the identity of the input images, enriching the local detail in both geometry and texture of the initial generative results. Extensive experiments show Magic-Boost greatly enhances the coarse inputs and generates high-quality 3D assets with rich geometric and textural details. (Project Page: https://magic-research.github.io/magic-boost/)  
+    Detecting anomalies in images has become a well-explored problem in both academia and industry. State-of-the-art algorithms are able to detect defects in increasingly difficult settings and data modalities. However, most current methods are not suited to address 3D objects captured from differing poses. While solutions using Neural Radiance Fields (NeRFs) have been proposed, they suffer from excessive computation requirements, which hinder real-world usability. For this reason, we propose the novel 3D Gaussian splatting-based framework SplatPose which, given multi-view images of a 3D object, accurately estimates the pose of unseen views in a differentiable manner, and detects anomalies in them. We achieve state-of-the-art results in both training and inference speed, and detection performance, even when using less training data than competing methods. We thoroughly evaluate our framework using the recently proposed Pose-agnostic Anomaly Detection benchmark and its multi-pose anomaly detection (MAD) data set.  
+  </ol>  
+</details>  
+**comments**: Visual Anomaly and Novelty Detection 2.0 Workshop at CVPR 2024  
+  
+### [MonoSelfRecon: Purely Self-Supervised Explicit Generalizable 3D Reconstruction of Indoor Scenes from Monocular RGB Views](http://arxiv.org/abs/2404.06753)  
+Runfa Li, Upal Mahbub, Vasudev Bhaskaran, Truong Nguyen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Current monocular 3D scene reconstruction (3DR) works are either fully-supervised, or not generalizable, or implicit in 3D representation. We propose a novel framework - MonoSelfRecon that for the first time achieves explicit 3D mesh reconstruction for generalizable indoor scenes with monocular RGB views by purely self-supervision on voxel-SDF (signed distance function). MonoSelfRecon follows an Autoencoder-based architecture, decodes voxel-SDF and a generalizable Neural Radiance Field (NeRF), which is used to guide voxel-SDF in self-supervision. We propose novel self-supervised losses, which not only support pure self-supervision, but can be used together with supervised signals to further boost supervised training. Our experiments show that "MonoSelfRecon" trained in pure self-supervision outperforms current best self-supervised indoor depth estimation models and is comparable to 3DR models trained in fully supervision with depth annotations. MonoSelfRecon is not restricted by specific model design, which can be used to any models with voxel-SDF for purely self-supervised manner.  
   </ol>  
 </details>  
   
-### [3D Geometry-aware Deformable Gaussian Splatting for Dynamic View Synthesis](http://arxiv.org/abs/2404.06270)  
-Zhicheng Lu, Xiang Guo, Le Hui, Tianrui Chen, Min Yang, Xiao Tang, Feng Zhu, Yuchao Dai  
+### [Bayesian NeRF: Quantifying Uncertainty with Volume Density in Neural Radiance Fields](http://arxiv.org/abs/2404.06727)  
+[[code](https://github.com/lab-of-ai-and-robotics/bayesian_nerf)]  
+Sibeak Lee, Kyeongsu Kang, Hyeonwoo Yu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we propose a 3D geometry-aware deformable Gaussian Splatting method for dynamic view synthesis. Existing neural radiance fields (NeRF) based solutions learn the deformation in an implicit manner, which cannot incorporate 3D scene geometry. Therefore, the learned deformation is not necessarily geometrically coherent, which results in unsatisfactory dynamic view synthesis and 3D dynamic reconstruction. Recently, 3D Gaussian Splatting provides a new representation of the 3D scene, building upon which the 3D geometry could be exploited in learning the complex 3D deformation. Specifically, the scenes are represented as a collection of 3D Gaussian, where each 3D Gaussian is optimized to move and rotate over time to model the deformation. To enforce the 3D scene geometry constraint during deformation, we explicitly extract 3D geometry features and integrate them in learning the 3D deformation. In this way, our solution achieves 3D geometry-aware deformation modeling, which enables improved dynamic view synthesis and 3D dynamic reconstruction. Extensive experimental results on both synthetic and real datasets prove the superiority of our solution, which achieves new state-of-the-art performance.   The project is available at https://npucvr.github.io/GaGS/  
-  </ol>  
-</details>  
-**comments**: Accepted by CVPR 2024. Project page: https://npucvr.github.io/GaGS/  
-  
-### [GHNeRF: Learning Generalizable Human Features with Efficient Neural Radiance Fields](http://arxiv.org/abs/2404.06246)  
-Arnab Dey, Di Yang, Rohith Agaram, Antitza Dantcheva, Andrew I. Comport, Srinath Sridhar, Jean Martinet  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advances in Neural Radiance Fields (NeRF) have demonstrated promising results in 3D scene representations, including 3D human representations. However, these representations often lack crucial information on the underlying human pose and structure, which is crucial for AR/VR applications and games. In this paper, we introduce a novel approach, termed GHNeRF, designed to address these limitations by learning 2D/3D joint locations of human subjects with NeRF representation. GHNeRF uses a pre-trained 2D encoder streamlined to extract essential human features from 2D images, which are then incorporated into the NeRF framework in order to encode human biomechanic features. This allows our network to simultaneously learn biomechanic features, such as joint locations, along with human geometry and texture. To assess the effectiveness of our method, we conduct a comprehensive comparison with state-of-the-art human NeRF techniques and joint estimation algorithms. Our results show that GHNeRF can achieve state-of-the-art results in near real-time.  
+    We present the Bayesian Neural Radiance Field (NeRF), which explicitly quantifies uncertainty in geometric volume structures without the need for additional networks, making it adept for challenging observations and uncontrolled images. NeRF diverges from traditional geometric methods by offering an enriched scene representation, rendering color and density in 3D space from various viewpoints. However, NeRF encounters limitations in relaxing uncertainties by using geometric structure information, leading to inaccuracies in interpretation under insufficient real-world observations. Recent research efforts aimed at addressing this issue have primarily relied on empirical methods or auxiliary networks. To fundamentally address this issue, we propose a series of formulational extensions to NeRF. By introducing generalized approximations and defining density-related uncertainty, our method seamlessly extends to manage uncertainty not only for RGB but also for depth, without the need for additional networks or empirical assumptions. In experiments we show that our method significantly enhances performance on RGB and depth images in the comprehensive dataset, demonstrating the reliability of the Bayesian NeRF approach to quantifying uncertainty based on the geometric structure.  
   </ol>  
 </details>  
   
-### [HFNeRF: Learning Human Biomechanic Features with Neural Radiance Fields](http://arxiv.org/abs/2404.06152)  
-Arnab Dey, Di Yang, Antitza Dantcheva, Jean Martinet  
+### [SpikeNVS: Enhancing Novel View Synthesis from Blurry Images via Spike Camera](http://arxiv.org/abs/2404.06710)  
+Gaole Dai, Zhenyu Wang, Qinwen Xu, Wen Cheng, Ming Lu, Boxing Shi, Shanghang Zhang, Tiejun Huang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In recent advancements in novel view synthesis, generalizable Neural Radiance Fields (NeRF) based methods applied to human subjects have shown remarkable results in generating novel views from few images. However, this generalization ability cannot capture the underlying structural features of the skeleton shared across all instances. Building upon this, we introduce HFNeRF: a novel generalizable human feature NeRF aimed at generating human biomechanic features using a pre-trained image encoder. While previous human NeRF methods have shown promising results in the generation of photorealistic virtual avatars, such methods lack underlying human structure or biomechanic features such as skeleton or joint information that are crucial for downstream applications including Augmented Reality (AR)/Virtual Reality (VR). HFNeRF leverages 2D pre-trained foundation models toward learning human features in 3D using neural rendering, and then volume rendering towards generating 2D feature maps. We evaluate HFNeRF in the skeleton estimation task by predicting heatmaps as features. The proposed method is fully differentiable, allowing to successfully learn color, geometry, and human skeleton in a simultaneous manner. This paper presents preliminary results of HFNeRF, illustrating its potential in generating realistic virtual avatars with biomechanic features using NeRF.  
+    One of the most critical factors in achieving sharp Novel View Synthesis (NVS) using neural field methods like Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) is the quality of the training images. However, Conventional RGB cameras are susceptible to motion blur. In contrast, neuromorphic cameras like event and spike cameras inherently capture more comprehensive temporal information, which can provide a sharp representation of the scene as additional training data. Recent methods have explored the integration of event cameras to improve the quality of NVS. The event-RGB approaches have some limitations, such as high training costs and the inability to work effectively in the background. Instead, our study introduces a new method that uses the spike camera to overcome these limitations. By considering texture reconstruction from spike streams as ground truth, we design the Texture from Spike (TfS) loss. Since the spike camera relies on temporal integration instead of temporal differentiation used by event cameras, our proposed TfS loss maintains manageable training costs. It handles foreground objects with backgrounds simultaneously. We also provide a real-world dataset captured with our spike-RGB camera system to facilitate future research endeavors. We conduct extensive experiments using synthetic and real-world datasets to demonstrate that our design can enhance novel view synthesis across NeRF and 3DGS. The code and dataset will be made available for public access.  
   </ol>  
 </details>  
   
