@@ -3,21 +3,14 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Boosting-Self-Supervision-for-Single-View-Scene-Completion-via-Knowledge-Distillation>Boosting Self-Supervision for Single-View Scene Completion via Knowledge Distillation</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#PRAM:-Place-Recognition-Anywhere-Model-for-Efficient-Visual-Localization>PRAM: Place Recognition Anywhere Model for Efficient Visual Localization</a></li>
-        <li><a href=#2DLIW-SLAM:2D-LiDAR-Inertial-Wheel-Odometry-with-Real-Time-Loop-Closure>2DLIW-SLAM:2D LiDAR-Inertial-Wheel Odometry with Real-Time Loop Closure</a></li>
+        <li><a href=#MonoPatchNeRF:-Improving-Neural-Radiance-Fields-with-Patch-based-Monocular-Guidance>MonoPatchNeRF: Improving Neural Radiance Fields with Patch-based Monocular Guidance</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Connecting-NeRFs,-Images,-and-Text>Connecting NeRFs, Images, and Text</a></li>
-        <li><a href=#Boosting-Self-Supervision-for-Single-View-Scene-Completion-via-Knowledge-Distillation>Boosting Self-Supervision for Single-View Scene Completion via Knowledge Distillation</a></li>
-        <li><a href=#NeuroNCAP:-Photorealistic-Closed-loop-Safety-Testing-for-Autonomous-Driving>NeuroNCAP: Photorealistic Closed-loop Safety Testing for Autonomous Driving</a></li>
-        <li><a href=#G-NeRF:-Geometry-enhanced-Novel-View-Synthesis-from-Single-View-Images>G-NeRF: Geometry-enhanced Novel View Synthesis from Single-View Images</a></li>
+        <li><a href=#OccGaussian:-3D-Gaussian-Splatting-for-Occluded-Human-Rendering>OccGaussian: 3D Gaussian Splatting for Occluded Human Rendering</a></li>
+        <li><a href=#GPN:-Generative-Point-based-NeRF>GPN: Generative Point-based NeRF</a></li>
+        <li><a href=#MonoPatchNeRF:-Improving-Neural-Radiance-Fields-with-Patch-based-Monocular-Guidance>MonoPatchNeRF: Improving Neural Radiance Fields with Patch-based Monocular Guidance</a></li>
       </ul>
     </li>
   </ol>
@@ -25,39 +18,15 @@
 
 ## SFM  
 
-### [Boosting Self-Supervision for Single-View Scene Completion via Knowledge Distillation](http://arxiv.org/abs/2404.07933)  
-Keonhee Han, Dominik Muhle, Felix Wimbauer, Daniel Cremers  
+### [MonoPatchNeRF: Improving Neural Radiance Fields with Patch-based Monocular Guidance](http://arxiv.org/abs/2404.08252)  
+Yuqun Wu, Jae Yong Lee, Chuhang Zou, Shenlong Wang, Derek Hoiem  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Inferring scene geometry from images via Structure from Motion is a long-standing and fundamental problem in computer vision. While classical approaches and, more recently, depth map predictions only focus on the visible parts of a scene, the task of scene completion aims to reason about geometry even in occluded regions. With the popularity of neural radiance fields (NeRFs), implicit representations also became popular for scene completion by predicting so-called density fields. Unlike explicit approaches. e.g. voxel-based methods, density fields also allow for accurate depth prediction and novel-view synthesis via image-based rendering. In this work, we propose to fuse the scene reconstruction from multiple images and distill this knowledge into a more accurate single-view scene reconstruction. To this end, we propose Multi-View Behind the Scenes (MVBTS) to fuse density fields from multiple posed images, trained fully self-supervised only from image data. Using knowledge distillation, we use MVBTS to train a single-view scene completion network via direct supervision called KDBTS. It achieves state-of-the-art performance on occupancy prediction, especially in occluded regions.  
+    The latest regularized Neural Radiance Field (NeRF) approaches produce poor geometry and view extrapolation for multiview stereo (MVS) benchmarks such as ETH3D. In this paper, we aim to create 3D models that provide accurate geometry and view synthesis, partially closing the large geometric performance gap between NeRF and traditional MVS methods. We propose a patch-based approach that effectively leverages monocular surface normal and relative depth predictions. The patch-based ray sampling also enables the appearance regularization of normalized cross-correlation (NCC) and structural similarity (SSIM) between randomly sampled virtual and training views. We further show that "density restrictions" based on sparse structure-from-motion points can help greatly improve geometric accuracy with a slight drop in novel view synthesis metrics. Our experiments show 4x the performance of RegNeRF and 8x that of FreeNeRF on average F1@2cm for ETH3D MVS benchmark, suggesting a fruitful research direction to improve the geometric accuracy of NeRF-based models, and sheds light on a potential future approach to enable NeRF-based optimization to eventually outperform traditional MVS.  
   </ol>  
 </details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [PRAM: Place Recognition Anywhere Model for Efficient Visual Localization](http://arxiv.org/abs/2404.07785)  
-Fei Xue, Ignas Budvytis, Roberto Cipolla  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Humans localize themselves efficiently in known environments by first recognizing landmarks defined on certain objects and their spatial relationships, and then verifying the location by aligning detailed structures of recognized objects with those in the memory. Inspired by this, we propose the place recognition anywhere model (PRAM) to perform visual localization as efficiently as humans do. PRAM consists of two main components - recognition and registration. In detail, first of all, a self-supervised map-centric landmark definition strategy is adopted, making places in either indoor or outdoor scenes act as unique landmarks. Then, sparse keypoints extracted from images, are utilized as the input to a transformer-based deep neural network for landmark recognition; these keypoints enable PRAM to recognize hundreds of landmarks with high time and memory efficiency. Keypoints along with recognized landmark labels are further used for registration between query images and the 3D landmark map. Different from previous hierarchical methods, PRAM discards global and local descriptors, and reduces over 90% storage. Since PRAM utilizes recognition and landmark-wise verification to replace global reference search and exhaustive matching respectively, it runs 2.4 times faster than prior state-of-the-art approaches. Moreover, PRAM opens new directions for visual localization including multi-modality localization, map-centric feature learning, and hierarchical scene coordinate regression.  
-  </ol>  
-</details>  
-**comments**: project page: https://feixue94.github.io/pram-project/  
-  
-### [2DLIW-SLAM:2D LiDAR-Inertial-Wheel Odometry with Real-Time Loop Closure](http://arxiv.org/abs/2404.07644)  
-Bin Zhang, Zexin Peng, Bi Zeng, Junjie Lu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Due to budgetary constraints, indoor navigation typically employs 2D LiDAR rather than 3D LiDAR. However, the utilization of 2D LiDAR in Simultaneous Localization And Mapping (SLAM) frequently encounters challenges related to motion degeneracy, particularly in geometrically similar environments. To address this problem, this paper proposes a robust, accurate, and multi-sensor-fused 2D LiDAR SLAM system specifically designed for indoor mobile robots. To commence, the original LiDAR data undergoes meticulous processing through point and line extraction. Leveraging the distinctive characteristics of indoor environments, line-line constraints are established to complement other sensor data effectively, thereby augmenting the overall robustness and precision of the system. Concurrently, a tightly-coupled front-end is created, integrating data from the 2D LiDAR, IMU, and wheel odometry, thus enabling real-time state estimation. Building upon this solid foundation, a novel global feature point matching-based loop closure detection algorithm is proposed. This algorithm proves highly effective in mitigating front-end accumulated errors and ultimately constructs a globally consistent map. The experimental results indicate that our system fully meets real-time requirements. When compared to Cartographer, our system not only exhibits lower trajectory errors but also demonstrates stronger robustness, particularly in degeneracy problem.  
-  </ol>  
-</details>  
+**comments**: 26 pages, 15 figures  
   
   
 
@@ -65,44 +34,34 @@ Bin Zhang, Zexin Peng, Bi Zeng, Junjie Lu
 
 ## NeRF  
 
-### [Connecting NeRFs, Images, and Text](http://arxiv.org/abs/2404.07993)  
-Francesco Ballerini, Pierluigi Zama Ramirez, Roberto Mirabella, Samuele Salti, Luigi Di Stefano  
+### [OccGaussian: 3D Gaussian Splatting for Occluded Human Rendering](http://arxiv.org/abs/2404.08449)  
+Jingrui Ye, Zongkai Zhang, Yujiao Jiang, Qingmin Liao, Wenming Yang, Zongqing Lu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRFs) have emerged as a standard framework for representing 3D scenes and objects, introducing a novel data type for information exchange and storage. Concurrently, significant progress has been made in multimodal representation learning for text and image data. This paper explores a novel research direction that aims to connect the NeRF modality with other modalities, similar to established methodologies for images and text. To this end, we propose a simple framework that exploits pre-trained models for NeRF representations alongside multimodal models for text and image processing. Our framework learns a bidirectional mapping between NeRF embeddings and those obtained from corresponding images and text. This mapping unlocks several novel and useful applications, including NeRF zero-shot classification and NeRF retrieval from images or text.  
+    Rendering dynamic 3D human from monocular videos is crucial for various applications such as virtual reality and digital entertainment. Most methods assume the people is in an unobstructed scene, while various objects may cause the occlusion of body parts in real-life scenarios. Previous method utilizing NeRF for surface rendering to recover the occluded areas, but it requiring more than one day to train and several seconds to render, failing to meet the requirements of real-time interactive applications. To address these issues, we propose OccGaussian based on 3D Gaussian Splatting, which can be trained within 6 minutes and produces high-quality human renderings up to 160 FPS with occluded input. OccGaussian initializes 3D Gaussian distributions in the canonical space, and we perform occlusion feature query at occluded regions, the aggregated pixel-align feature is extracted to compensate for the missing information. Then we use Gaussian Feature MLP to further process the feature along with the occlusion-aware loss functions to better perceive the occluded area. Extensive experiments both in simulated and real-world occlusions, demonstrate that our method achieves comparable or even superior performance compared to the state-of-the-art method. And we improving training and inference speeds by 250x and 800x, respectively. Our code will be available for research purposes.  
   </ol>  
 </details>  
-**comments**: Accepted at CVPRW-INRV 2024  
+**comments**: 12 April, 2024; originally announced April 2024  
   
-### [Boosting Self-Supervision for Single-View Scene Completion via Knowledge Distillation](http://arxiv.org/abs/2404.07933)  
-Keonhee Han, Dominik Muhle, Felix Wimbauer, Daniel Cremers  
+### [GPN: Generative Point-based NeRF](http://arxiv.org/abs/2404.08312)  
+Haipeng Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Inferring scene geometry from images via Structure from Motion is a long-standing and fundamental problem in computer vision. While classical approaches and, more recently, depth map predictions only focus on the visible parts of a scene, the task of scene completion aims to reason about geometry even in occluded regions. With the popularity of neural radiance fields (NeRFs), implicit representations also became popular for scene completion by predicting so-called density fields. Unlike explicit approaches. e.g. voxel-based methods, density fields also allow for accurate depth prediction and novel-view synthesis via image-based rendering. In this work, we propose to fuse the scene reconstruction from multiple images and distill this knowledge into a more accurate single-view scene reconstruction. To this end, we propose Multi-View Behind the Scenes (MVBTS) to fuse density fields from multiple posed images, trained fully self-supervised only from image data. Using knowledge distillation, we use MVBTS to train a single-view scene completion network via direct supervision called KDBTS. It achieves state-of-the-art performance on occupancy prediction, especially in occluded regions.  
-  </ol>  
-</details>  
-  
-### [NeuroNCAP: Photorealistic Closed-loop Safety Testing for Autonomous Driving](http://arxiv.org/abs/2404.07762)  
-[[code](https://github.com/wljungbergh/neuroncap)]  
-William Ljungbergh, Adam Tonderski, Joakim Johnander, Holger Caesar, Kalle Åström, Michael Felsberg, Christoffer Petersson  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present a versatile NeRF-based simulator for testing autonomous driving (AD) software systems, designed with a focus on sensor-realistic closed-loop evaluation and the creation of safety-critical scenarios. The simulator learns from sequences of real-world driving sensor data and enables reconfigurations and renderings of new, unseen scenarios. In this work, we use our simulator to test the responses of AD models to safety-critical scenarios inspired by the European New Car Assessment Programme (Euro NCAP). Our evaluation reveals that, while state-of-the-art end-to-end planners excel in nominal driving scenarios in an open-loop setting, they exhibit critical flaws when navigating our safety-critical scenarios in a closed-loop setting. This highlights the need for advancements in the safety and real-world usability of end-to-end planners. By publicly releasing our simulator and scenarios as an easy-to-run evaluation suite, we invite the research community to explore, refine, and validate their AD models in controlled, yet highly configurable and challenging sensor-realistic environments. Code and instructions can be found at https://github.com/wljungbergh/NeuroNCAP  
+    Scanning real-life scenes with modern registration devices typically gives incomplete point cloud representations, primarily due to the limitations of partial scanning, 3D occlusions, and dynamic light conditions. Recent works on processing incomplete point clouds have always focused on point cloud completion. However, these approaches do not ensure consistency between the completed point cloud and the captured images regarding color and geometry. We propose using Generative Point-based NeRF (GPN) to reconstruct and repair a partial cloud by fully utilizing the scanning images and the corresponding reconstructed cloud. The repaired point cloud can achieve multi-view consistency with the captured images at high spatial resolution. For the finetunes of a single scene, we optimize the global latent condition by incorporating an Auto-Decoder architecture while retaining multi-view consistency. As a result, the generated point clouds are smooth, plausible, and geometrically consistent with the partial scanning images. Extensive experiments on ShapeNet demonstrate that our works achieve competitive performances to the other state-of-the-art point cloud-based neural scene rendering and editing performances.  
   </ol>  
 </details>  
   
-### [G-NeRF: Geometry-enhanced Novel View Synthesis from Single-View Images](http://arxiv.org/abs/2404.07474)  
-Zixiong Huang, Qi Chen, Libo Sun, Yifan Yang, Naizhou Wang, Mingkui Tan, Qi Wu  
+### [MonoPatchNeRF: Improving Neural Radiance Fields with Patch-based Monocular Guidance](http://arxiv.org/abs/2404.08252)  
+Yuqun Wu, Jae Yong Lee, Chuhang Zou, Shenlong Wang, Derek Hoiem  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Novel view synthesis aims to generate new view images of a given view image collection. Recent attempts address this problem relying on 3D geometry priors (e.g., shapes, sizes, and positions) learned from multi-view images. However, such methods encounter the following limitations: 1) they require a set of multi-view images as training data for a specific scene (e.g., face, car or chair), which is often unavailable in many real-world scenarios; 2) they fail to extract the geometry priors from single-view images due to the lack of multi-view supervision. In this paper, we propose a Geometry-enhanced NeRF (G-NeRF), which seeks to enhance the geometry priors by a geometry-guided multi-view synthesis approach, followed by a depth-aware training. In the synthesis process, inspired that existing 3D GAN models can unconditionally synthesize high-fidelity multi-view images, we seek to adopt off-the-shelf 3D GAN models, such as EG3D, as a free source to provide geometry priors through synthesizing multi-view data. Simultaneously, to further improve the geometry quality of the synthetic data, we introduce a truncation method to effectively sample latent codes within 3D GAN models. To tackle the absence of multi-view supervision for single-view images, we design the depth-aware training approach, incorporating a depth-aware discriminator to guide geometry priors through depth maps. Experiments demonstrate the effectiveness of our method in terms of both qualitative and quantitative results.  
+    The latest regularized Neural Radiance Field (NeRF) approaches produce poor geometry and view extrapolation for multiview stereo (MVS) benchmarks such as ETH3D. In this paper, we aim to create 3D models that provide accurate geometry and view synthesis, partially closing the large geometric performance gap between NeRF and traditional MVS methods. We propose a patch-based approach that effectively leverages monocular surface normal and relative depth predictions. The patch-based ray sampling also enables the appearance regularization of normalized cross-correlation (NCC) and structural similarity (SSIM) between randomly sampled virtual and training views. We further show that "density restrictions" based on sparse structure-from-motion points can help greatly improve geometric accuracy with a slight drop in novel view synthesis metrics. Our experiments show 4x the performance of RegNeRF and 8x that of FreeNeRF on average F1@2cm for ETH3D MVS benchmark, suggesting a fruitful research direction to improve the geometric accuracy of NeRF-based models, and sheds light on a potential future approach to enable NeRF-based optimization to eventually outperform traditional MVS.  
   </ol>  
 </details>  
-**comments**: CVPR 2024 Accepted Paper  
+**comments**: 26 pages, 15 figures  
   
   
 
