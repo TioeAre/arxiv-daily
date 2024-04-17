@@ -1,82 +1,42 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#Increasing-SLAM-Pose-Accuracy-by-Ground-to-Satellite-Image-Registration>Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration</a></li>
-      </ul>
-    </li>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#LetsGo:-Large-Scale-Garage-Modeling-and-Rendering-via-LiDAR-Assisted-Gaussian-Primitives>LetsGo: Large-Scale Garage Modeling and Rendering via LiDAR-Assisted Gaussian Primitives</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#CREST:-Cross-modal-Resonance-through-Evidential-Deep-Learning-for-Enhanced-Zero-Shot-Learning>CREST: Cross-modal Resonance through Evidential Deep Learning for Enhanced Zero-Shot Learning</a></li>
+        <li><a href=#SPVLoc:-Semantic-Panoramic-Viewport-Matching-for-6D-Camera-Localization-in-Unseen-Environments>SPVLoc: Semantic Panoramic Viewport Matching for 6D Camera Localization in Unseen Environments</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#XoFTR:-Cross-modal-Feature-Matching-Transformer>XoFTR: Cross-modal Feature Matching Transformer</a></li>
-        <li><a href=#DeDoDe-v2:-Analyzing-and-Improving-the-DeDoDe-Keypoint-Detector>DeDoDe v2: Analyzing and Improving the DeDoDe Keypoint Detector</a></li>
+        <li><a href=#Exploring-selective-image-matching-methods-for-zero-shot-and-few-sample-unsupervised-domain-adaptation-of-urban-canopy-prediction>Exploring selective image matching methods for zero-shot and few-sample unsupervised domain adaptation of urban canopy prediction</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#DeferredGS:-Decoupled-and-Editable-Gaussian-Splatting-with-Deferred-Shading>DeferredGS: Decoupled and Editable Gaussian Splatting with Deferred Shading</a></li>
-        <li><a href=#VRS-NeRF:-Visual-Relocalization-with-Sparse-Neural-Radiance-Field>VRS-NeRF: Visual Relocalization with Sparse Neural Radiance Field</a></li>
+        <li><a href=#Gaussian-Splatting-Decoder-for-3D-aware-Generative-Adversarial-Networks>Gaussian Splatting Decoder for 3D-aware Generative Adversarial Networks</a></li>
+        <li><a href=#Enhancing-3D-Fidelity-of-Text-to-3D-using-Cross-View-Correspondences>Enhancing 3D Fidelity of Text-to-3D using Cross-View Correspondences</a></li>
+        <li><a href=#1st-Place-Solution-for-ICCV-2023-OmniObject3D-Challenge:-Sparse-View-Reconstruction>1st Place Solution for ICCV 2023 OmniObject3D Challenge: Sparse-View Reconstruction</a></li>
+        <li><a href=#SRGS:-Super-Resolution-3D-Gaussian-Splatting>SRGS: Super-Resolution 3D Gaussian Splatting</a></li>
+        <li><a href=#Plug-and-Play-Acceleration-of-Occupancy-Grid-based-NeRF-Rendering-using-VDB-Grid-and-Hierarchical-Ray-Traversal>Plug-and-Play Acceleration of Occupancy Grid-based NeRF Rendering using VDB Grid and Hierarchical Ray Traversal</a></li>
+        <li><a href=#Taming-Latent-Diffusion-Model-for-Neural-Radiance-Field-Inpainting>Taming Latent Diffusion Model for Neural Radiance Field Inpainting</a></li>
+        <li><a href=#Video2Game:-Real-time,-Interactive,-Realistic-and-Browser-Compatible-Environment-from-a-Single-Video>Video2Game: Real-time, Interactive, Realistic and Browser-Compatible Environment from a Single Video</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [Increasing SLAM Pose Accuracy by Ground-to-Satellite Image Registration](http://arxiv.org/abs/2404.09169)  
-Yanhao Zhang, Yujiao Shi, Shan Wang, Ankit Vora, Akhil Perincherry, Yongbo Chen, Hongdong Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Vision-based localization for autonomous driving has been of great interest among researchers. When a pre-built 3D map is not available, the techniques of visual simultaneous localization and mapping (SLAM) are typically adopted. Due to error accumulation, visual SLAM (vSLAM) usually suffers from long-term drift. This paper proposes a framework to increase the localization accuracy by fusing the vSLAM with a deep-learning-based ground-to-satellite (G2S) image registration method. In this framework, a coarse (spatial correlation bound check) to fine (visual odometry consistency check) method is designed to select the valid G2S prediction. The selected prediction is then fused with the SLAM measurement by solving a scaled pose graph problem. To further increase the localization accuracy, we provide an iterative trajectory fusion pipeline. The proposed framework is evaluated on two well-known autonomous driving datasets, and the results demonstrate the accuracy and robustness in terms of vehicle localization.  
-  </ol>  
-</details>  
-**comments**: 7 pages, 6 figures, to be published in 2024 International Conference
-  on Robotics and Automation (ICRA)  
-  
-  
-
-
-
-## SFM  
-
-### [LetsGo: Large-Scale Garage Modeling and Rendering via LiDAR-Assisted Gaussian Primitives](http://arxiv.org/abs/2404.09748)  
-Jiadi Cui, Junming Cao, Yuhui Zhong, Liao Wang, Fuqiang Zhao, Penghao Wang, Yifan Chen, Zhipeng He, Lan Xu, Yujiao Shi, Yingliang Zhang, Jingyi Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Large garages are ubiquitous yet intricate scenes in our daily lives, posing challenges characterized by monotonous colors, repetitive patterns, reflective surfaces, and transparent vehicle glass. Conventional Structure from Motion (SfM) methods for camera pose estimation and 3D reconstruction fail in these environments due to poor correspondence construction. To address these challenges, this paper introduces LetsGo, a LiDAR-assisted Gaussian splatting approach for large-scale garage modeling and rendering. We develop a handheld scanner, Polar, equipped with IMU, LiDAR, and a fisheye camera, to facilitate accurate LiDAR and image data scanning. With this Polar device, we present a GarageWorld dataset consisting of five expansive garage scenes with diverse geometric structures and will release the dataset to the community for further research. We demonstrate that the collected LiDAR point cloud by the Polar device enhances a suite of 3D Gaussian splatting algorithms for garage scene modeling and rendering. We also propose a novel depth regularizer for 3D Gaussian splatting algorithm training, effectively eliminating floating artifacts in rendered images, and a lightweight Level of Detail (LOD) Gaussian renderer for real-time viewing on web-based devices. Additionally, we explore a hybrid representation that combines the advantages of traditional mesh in depicting simple geometry and colors (e.g., walls and the ground) with modern 3D Gaussian representations capturing complex details and high-frequency textures. This strategy achieves an optimal balance between memory performance and rendering quality. Experimental results on our dataset, along with ScanNet++ and KITTI-360, demonstrate the superiority of our method in rendering quality and resource efficiency.  
-  </ol>  
-</details>  
-**comments**: Project Page: https://jdtsui.github.io/letsgo/  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [CREST: Cross-modal Resonance through Evidential Deep Learning for Enhanced Zero-Shot Learning](http://arxiv.org/abs/2404.09640)  
-[[code](https://github.com/JethroJames/CREST)]  
-Haojian Huang, Xiaozhen Qiao, Zhuo Chen, Haodong Chen, Bingyu Li, Zhe Sun, Mulin Chen, Xuelong Li  
+### [SPVLoc: Semantic Panoramic Viewport Matching for 6D Camera Localization in Unseen Environments](http://arxiv.org/abs/2404.10527)  
+Niklas Gard, Anna Hilsmann, Peter Eisert  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Zero-shot learning (ZSL) enables the recognition of novel classes by leveraging semantic knowledge transfer from known to unknown categories. This knowledge, typically encapsulated in attribute descriptions, aids in identifying class-specific visual features, thus facilitating visual-semantic alignment and improving ZSL performance. However, real-world challenges such as distribution imbalances and attribute co-occurrence among instances often hinder the discernment of local variances in images, a problem exacerbated by the scarcity of fine-grained, region-specific attribute annotations. Moreover, the variability in visual presentation within categories can also skew attribute-category associations. In response, we propose a bidirectional cross-modal ZSL approach CREST. It begins by extracting representations for attribute and visual localization and employs Evidential Deep Learning (EDL) to measure underlying epistemic uncertainty, thereby enhancing the model's resilience against hard negatives. CREST incorporates dual learning pathways, focusing on both visual-category and attribute-category alignments, to ensure robust correlation between latent and observable spaces. Moreover, we introduce an uncertainty-informed cross-modal fusion technique to refine visual-attribute inference. Extensive experiments demonstrate our model's effectiveness and unique explainability across multiple datasets. Our code and data are available at: Comments: Ongoing work; 10 pages, 2 Tables, 9 Figures; Repo is available at https://github.com/JethroJames/CREST.  
+    In this paper, we present SPVLoc, a global indoor localization method that accurately determines the six-dimensional (6D) camera pose of a query image and requires minimal scene-specific prior knowledge and no scene-specific training. Our approach employs a novel matching procedure to localize the perspective camera's viewport, given as an RGB image, within a set of panoramic semantic layout representations of the indoor environment. The panoramas are rendered from an untextured 3D reference model, which only comprises approximate structural information about room shapes, along with door and window annotations. We demonstrate that a straightforward convolutional network structure can successfully achieve image-to-panorama and ultimately image-to-model matching. Through a viewport classification score, we rank reference panoramas and select the best match for the query image. Then, a 6D relative pose is estimated between the chosen panorama and query image. Our experiments demonstrate that this approach not only efficiently bridges the domain gap but also generalizes well to previously unseen scenes that are not part of the training data. Moreover, it achieves superior localization accuracy compared to the state of the art methods and also estimates more degrees of freedom of the camera pose. We will make our source code publicly available at https://github.com/fraunhoferhhi/spvloc .  
   </ol>  
 </details>  
-**comments**: Ongoing work; 10 pages, 2 Tables, 9 Figures; Repo is available at
-  https://github.com/JethroJames/CREST  
+**comments**: This submission includes the paper and supplementary material. 24
+  pages, 11 figures  
   
   
 
@@ -84,27 +44,15 @@ Haojian Huang, Xiaozhen Qiao, Zhuo Chen, Haodong Chen, Bingyu Li, Zhe Sun, Mulin
 
 ## Image Matching  
 
-### [XoFTR: Cross-modal Feature Matching Transformer](http://arxiv.org/abs/2404.09692)  
-Önder Tuzcuoğlu, Aybora Köksal, Buğra Sofu, Sinan Kalkan, A. Aydın Alatan  
+### [Exploring selective image matching methods for zero-shot and few-sample unsupervised domain adaptation of urban canopy prediction](http://arxiv.org/abs/2404.10626)  
+John Francis, Stephen Law  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce, XoFTR, a cross-modal cross-view method for local feature matching between thermal infrared (TIR) and visible images. Unlike visible images, TIR images are less susceptible to adverse lighting and weather conditions but present difficulties in matching due to significant texture and intensity differences. Current hand-crafted and learning-based methods for visible-TIR matching fall short in handling viewpoint, scale, and texture diversities. To address this, XoFTR incorporates masked image modeling pre-training and fine-tuning with pseudo-thermal image augmentation to handle the modality differences. Additionally, we introduce a refined matching pipeline that adjusts for scale discrepancies and enhances match reliability through sub-pixel level refinement. To validate our approach, we collect a comprehensive visible-thermal dataset, and show that our method outperforms existing methods on many benchmarks.  
+    We explore simple methods for adapting a trained multi-task UNet which predicts canopy cover and height to a new geographic setting using remotely sensed data without the need of training a domain-adaptive classifier and extensive fine-tuning. Extending previous research, we followed a selective alignment process to identify similar images in the two geographical domains and then tested an array of data-based unsupervised domain adaptation approaches in a zero-shot setting as well as with a small amount of fine-tuning. We find that the selective aligned data-based image matching methods produce promising results in a zero-shot setting, and even more so with a small amount of fine-tuning. These methods outperform both an untransformed baseline and a popular data-based image-to-image translation model. The best performing methods were pixel distribution adaptation and fourier domain adaptation on the canopy cover and height tasks respectively.  
   </ol>  
 </details>  
-**comments**: CVPR Image Matching Workshop, 2024. 12 pages, 7 figures, 5 tables.
-  Codes and dataset are available at https://github.com/OnderT/XoFTR  
-  
-### [DeDoDe v2: Analyzing and Improving the DeDoDe Keypoint Detector](http://arxiv.org/abs/2404.08928)  
-[[code](https://github.com/parskatt/dedode)]  
-Johan Edstedt, Georg Bökman, Zhenjun Zhao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we analyze and improve into the recently proposed DeDoDe keypoint detector. We focus our analysis on some key issues. First, we find that DeDoDe keypoints tend to cluster together, which we fix by performing non-max suppression on the target distribution of the detector during training. Second, we address issues related to data augmentation. In particular, the DeDoDe detector is sensitive to large rotations. We fix this by including 90-degree rotations as well as horizontal flips. Finally, the decoupled nature of the DeDoDe detector makes evaluation of downstream usefulness problematic. We fix this by matching the keypoints with a pretrained dense matcher (RoMa) and evaluating two-view pose estimates. We find that the original long training is detrimental to performance, and therefore propose a much shorter training schedule. We integrate all these improvements into our proposed detector DeDoDe v2 and evaluate it with the original DeDoDe descriptor on the MegaDepth-1500 and IMC2022 benchmarks. Our proposed detector significantly increases pose estimation results, notably from 75.9 to 78.3 mAA on the IMC2022 challenge. Code and weights are available at https://github.com/Parskatt/DeDoDe  
-  </ol>  
-</details>  
-**comments**: Accepted to Sixth Workshop on Image Matching - CVPRW 2024  
+**comments**: ICLR 2024 Machine Learning for Remote Sensing (ML4RS) Workshop  
   
   
 
@@ -112,25 +60,76 @@ Johan Edstedt, Georg Bökman, Zhenjun Zhao
 
 ## NeRF  
 
-### [DeferredGS: Decoupled and Editable Gaussian Splatting with Deferred Shading](http://arxiv.org/abs/2404.09412)  
-Tong Wu, Jia-Mu Sun, Yu-Kun Lai, Yuewen Ma, Leif Kobbelt, Lin Gao  
+### [Gaussian Splatting Decoder for 3D-aware Generative Adversarial Networks](http://arxiv.org/abs/2404.10625)  
+Florian Barthel, Arian Beckmann, Wieland Morgenstern, Anna Hilsmann, Peter Eisert  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Reconstructing and editing 3D objects and scenes both play crucial roles in computer graphics and computer vision. Neural radiance fields (NeRFs) can achieve realistic reconstruction and editing results but suffer from inefficiency in rendering. Gaussian splatting significantly accelerates rendering by rasterizing Gaussian ellipsoids. However, Gaussian splatting utilizes a single Spherical Harmonic (SH) function to model both texture and lighting, limiting independent editing capabilities of these components. Recently, attempts have been made to decouple texture and lighting with the Gaussian splatting representation but may fail to produce plausible geometry and decomposition results on reflective scenes. Additionally, the forward shading technique they employ introduces noticeable blending artifacts during relighting, as the geometry attributes of Gaussians are optimized under the original illumination and may not be suitable for novel lighting conditions. To address these issues, we introduce DeferredGS, a method for decoupling and editing the Gaussian splatting representation using deferred shading. To achieve successful decoupling, we model the illumination with a learnable environment map and define additional attributes such as texture parameters and normal direction on Gaussians, where the normal is distilled from a jointly trained signed distance function. More importantly, we apply deferred shading, resulting in more realistic relighting effects compared to previous methods. Both qualitative and quantitative experiments demonstrate the superior performance of DeferredGS in novel view synthesis and editing tasks.  
+    NeRF-based 3D-aware Generative Adversarial Networks (GANs) like EG3D or GIRAFFE have shown very high rendering quality under large representational variety. However, rendering with Neural Radiance Fields poses challenges for 3D applications: First, the significant computational demands of NeRF rendering preclude its use on low-power devices, such as mobiles and VR/AR headsets. Second, implicit representations based on neural networks are difficult to incorporate into explicit 3D scenes, such as VR environments or video games. 3D Gaussian Splatting (3DGS) overcomes these limitations by providing an explicit 3D representation that can be rendered efficiently at high frame rates. In this work, we present a novel approach that combines the high rendering quality of NeRF-based 3D-aware GANs with the flexibility and computational advantages of 3DGS. By training a decoder that maps implicit NeRF representations to explicit 3D Gaussian Splatting attributes, we can integrate the representational diversity and quality of 3D GANs into the ecosystem of 3D Gaussian Splatting for the first time. Additionally, our approach allows for a high resolution GAN inversion and real-time GAN editing with 3D Gaussian Splatting scenes.  
+  </ol>  
+</details>  
+**comments**: CVPRW  
+  
+### [Enhancing 3D Fidelity of Text-to-3D using Cross-View Correspondences](http://arxiv.org/abs/2404.10603)  
+Seungwook Kim, Kejie Li, Xueqing Deng, Yichun Shi, Minsu Cho, Peng Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Leveraging multi-view diffusion models as priors for 3D optimization have alleviated the problem of 3D consistency, e.g., the Janus face problem or the content drift problem, in zero-shot text-to-3D models. However, the 3D geometric fidelity of the output remains an unresolved issue; albeit the rendered 2D views are realistic, the underlying geometry may contain errors such as unreasonable concavities. In this work, we propose CorrespondentDream, an effective method to leverage annotation-free, cross-view correspondences yielded from the diffusion U-Net to provide additional 3D prior to the NeRF optimization process. We find that these correspondences are strongly consistent with human perception, and by adopting it in our loss design, we are able to produce NeRF models with geometries that are more coherent with common sense, e.g., more smoothed object surface, yielding higher 3D fidelity. We demonstrate the efficacy of our approach through various comparative qualitative results and a solid user study.  
+  </ol>  
+</details>  
+**comments**: 25 pages, 22 figures, accepted to CVPR 2024  
+  
+### [1st Place Solution for ICCV 2023 OmniObject3D Challenge: Sparse-View Reconstruction](http://arxiv.org/abs/2404.10441)  
+Hang Du, Yaping Xue, Weidong Dai, Xuejun Yan, Jingjing Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this report, we present the 1st place solution for ICCV 2023 OmniObject3D Challenge: Sparse-View Reconstruction. The challenge aims to evaluate approaches for novel view synthesis and surface reconstruction using only a few posed images of each object. We utilize Pixel-NeRF as the basic model, and apply depth supervision as well as coarse-to-fine positional encoding. The experiments demonstrate the effectiveness of our approach in improving sparse-view reconstruction quality. We ranked first in the final test with a PSNR of 25.44614.  
   </ol>  
 </details>  
   
-### [VRS-NeRF: Visual Relocalization with Sparse Neural Radiance Field](http://arxiv.org/abs/2404.09271)  
-[[code](https://github.com/feixue94/vrs-nerf)]  
-Fei Xue, Ignas Budvytis, Daniel Olmeda Reino, Roberto Cipolla  
+### [SRGS: Super-Resolution 3D Gaussian Splatting](http://arxiv.org/abs/2404.10318)  
+Xiang Feng, Yongbo He, Yubo Wang, Yan Yang, Zhenzhong Kuang, Yu Jun, Jianping Fan, Jiajun ding  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual relocalization is a key technique to autonomous driving, robotics, and virtual/augmented reality. After decades of explorations, absolute pose regression (APR), scene coordinate regression (SCR), and hierarchical methods (HMs) have become the most popular frameworks. However, in spite of high efficiency, APRs and SCRs have limited accuracy especially in large-scale outdoor scenes; HMs are accurate but need to store a large number of 2D descriptors for matching, resulting in poor efficiency. In this paper, we propose an efficient and accurate framework, called VRS-NeRF, for visual relocalization with sparse neural radiance field. Precisely, we introduce an explicit geometric map (EGM) for 3D map representation and an implicit learning map (ILM) for sparse patches rendering. In this localization process, EGP provides priors of spare 2D points and ILM utilizes these sparse points to render patches with sparse NeRFs for matching. This allows us to discard a large number of 2D descriptors so as to reduce the map size. Moreover, rendering patches only for useful points rather than all pixels in the whole image reduces the rendering time significantly. This framework inherits the accuracy of HMs and discards their low efficiency. Experiments on 7Scenes, CambridgeLandmarks, and Aachen datasets show that our method gives much better accuracy than APRs and SCRs, and close performance to HMs but is much more efficient.  
+    Recently, 3D Gaussian Splatting (3DGS) has gained popularity as a novel explicit 3D representation. This approach relies on the representation power of Gaussian primitives to provide a high-quality rendering. However, primitives optimized at low resolution inevitably exhibit sparsity and texture deficiency, posing a challenge for achieving high-resolution novel view synthesis (HRNVS). To address this problem, we propose Super-Resolution 3D Gaussian Splatting (SRGS) to perform the optimization in a high-resolution (HR) space. The sub-pixel constraint is introduced for the increased viewpoints in HR space, exploiting the sub-pixel cross-view information of the multiple low-resolution (LR) views. The gradient accumulated from more viewpoints will facilitate the densification of primitives. Furthermore, a pre-trained 2D super-resolution model is integrated with the sub-pixel constraint, enabling these dense primitives to learn faithful texture features. In general, our method focuses on densification and texture learning to effectively enhance the representation ability of primitives. Experimentally, our method achieves high rendering quality on HRNVS only with LR inputs, outperforming state-of-the-art methods on challenging datasets such as Mip-NeRF 360 and Tanks & Temples. Related codes will be released upon acceptance.  
   </ol>  
 </details>  
-**comments**: source code https://github.com/feixue94/vrs-nerf  
+**comments**: submit ACM MM 2024  
+  
+### [Plug-and-Play Acceleration of Occupancy Grid-based NeRF Rendering using VDB Grid and Hierarchical Ray Traversal](http://arxiv.org/abs/2404.10272)  
+[[code](https://github.com/yosshi999/faster-occgrid)]  
+Yoshio Kato, Shuhei Tarashima  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Transmittance estimators such as Occupancy Grid (OG) can accelerate the training and rendering of Neural Radiance Field (NeRF) by predicting important samples that contributes much to the generated image. However, OG manages occupied regions in the form of the dense binary grid, in which there are many blocks with the same values that cause redundant examination of voxels' emptiness in ray-tracing. In our work, we introduce two techniques to improve the efficiency of ray-tracing in trained OG without fine-tuning. First, we replace the dense grids with VDB grids to reduce the spatial redundancy. Second, we use hierarchical digital differential analyzer (HDDA) to efficiently trace voxels in the VDB grids. Our experiments on NeRF-Synthetic and Mip-NeRF 360 datasets show that our proposed method successfully accelerates rendering NeRF-Synthetic dataset by 12% in average and Mip-NeRF 360 dataset by 4% in average, compared to a fast implementation of OG, NerfAcc, without losing the quality of rendered images.  
+  </ol>  
+</details>  
+**comments**: Short paper for CVPR Neural Rendering Intelligence Workshop 2024.
+  Code: https://github.com/Yosshi999/faster-occgrid  
+  
+### [Taming Latent Diffusion Model for Neural Radiance Field Inpainting](http://arxiv.org/abs/2404.09995)  
+Chieh Hubert Lin, Changil Kim, Jia-Bin Huang, Qinbo Li, Chih-Yao Ma, Johannes Kopf, Ming-Hsuan Yang, Hung-Yu Tseng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Field (NeRF) is a representation for 3D reconstruction from multi-view images. Despite some recent work showing preliminary success in editing a reconstructed NeRF with diffusion prior, they remain struggling to synthesize reasonable geometry in completely uncovered regions. One major reason is the high diversity of synthetic contents from the diffusion model, which hinders the radiance field from converging to a crisp and deterministic geometry. Moreover, applying latent diffusion models on real data often yields a textural shift incoherent to the image condition due to auto-encoding errors. These two problems are further reinforced with the use of pixel-distance losses. To address these issues, we propose tempering the diffusion model's stochasticity with per-scene customization and mitigating the textural shift with masked adversarial training. During the analyses, we also found the commonly used pixel and perceptual losses are harmful in the NeRF inpainting task. Through rigorous experiments, our framework yields state-of-the-art NeRF inpainting results on various real-world scenes. Project page: https://hubert0527.github.io/MALD-NeRF  
+  </ol>  
+</details>  
+**comments**: Project page: https://hubert0527.github.io/MALD-NeRF  
+  
+### [Video2Game: Real-time, Interactive, Realistic and Browser-Compatible Environment from a Single Video](http://arxiv.org/abs/2404.09833)  
+Hongchi Xia, Zhi-Hao Lin, Wei-Chiu Ma, Shenlong Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Creating high-quality and interactive virtual environments, such as games and simulators, often involves complex and costly manual modeling processes. In this paper, we present Video2Game, a novel approach that automatically converts videos of real-world scenes into realistic and interactive game environments. At the heart of our system are three core components:(i) a neural radiance fields (NeRF) module that effectively captures the geometry and visual appearance of the scene; (ii) a mesh module that distills the knowledge from NeRF for faster rendering; and (iii) a physics module that models the interactions and physical dynamics among the objects. By following the carefully designed pipeline, one can construct an interactable and actionable digital replica of the real world. We benchmark our system on both indoor and large-scale outdoor scenes. We show that we can not only produce highly-realistic renderings in real-time, but also build interactive games on top.  
+  </ol>  
+</details>  
+**comments**: CVPR 2024. Project page (with code): https://video2game.github.io/  
   
   
 
