@@ -1,55 +1,52 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#SPOT:-Point-Cloud-Based-Stereo-Visual-Place-Recognition-for-Similar-and-Opposing-Viewpoints>SPOT: Point Cloud Based Stereo Visual Place Recognition for Similar and Opposing Viewpoints</a></li>
+        <li><a href=#Does-Gaussian-Splatting-need-SFM-Initialization?>Does Gaussian Splatting need SFM Initialization?</a></li>
       </ul>
     </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#SPOT:-Point-Cloud-Based-Stereo-Visual-Place-Recognition-for-Similar-and-Opposing-Viewpoints>SPOT: Point Cloud Based Stereo Visual Place Recognition for Similar and Opposing Viewpoints</a></li>
+        <li><a href=#SkelFormer:-Markerless-3D-Pose-and-Shape-Estimation-using-Skeletal-Transformers>SkelFormer: Markerless 3D Pose and Shape Estimation using Skeletal Transformers</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MeshLRM:-Large-Reconstruction-Model-for-High-Quality-Mesh>MeshLRM: Large Reconstruction Model for High-Quality Mesh</a></li>
-        <li><a href=#AG-NeRF:-Attention-guided-Neural-Radiance-Fields-for-Multi-height-Large-scale-Outdoor-Scene-Rendering>AG-NeRF: Attention-guided Neural Radiance Fields for Multi-height Large-scale Outdoor Scene Rendering</a></li>
-        <li><a href=#Cicero:-Addressing-Algorithmic-and-Architectural-Bottlenecks-in-Neural-Rendering-by-Radiance-Warping-and-Memory-Optimizations>Cicero: Addressing Algorithmic and Architectural Bottlenecks in Neural Rendering by Radiance Warping and Memory Optimizations</a></li>
+        <li><a href=#FlyNeRF:-NeRF-Based-Aerial-Mapping-for-High-Quality-3D-Scene-Reconstruction>FlyNeRF: NeRF-Based Aerial Mapping for High-Quality 3D Scene Reconstruction</a></li>
+        <li><a href=#Does-Gaussian-Splatting-need-SFM-Initialization?>Does Gaussian Splatting need SFM Initialization?</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [SPOT: Point Cloud Based Stereo Visual Place Recognition for Similar and Opposing Viewpoints](http://arxiv.org/abs/2404.12339)  
-Spencer Carmichael, Rahul Agrawal, Ram Vasudevan, Katherine A. Skinner  
+### [Does Gaussian Splatting need SFM Initialization?](http://arxiv.org/abs/2404.12547)  
+Yalda Foroutan, Daniel Rebain, Kwang Moo Yi, Andrea Tagliasacchi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recognizing places from an opposing viewpoint during a return trip is a common experience for human drivers. However, the analogous robotics capability, visual place recognition (VPR) with limited field of view cameras under 180 degree rotations, has proven to be challenging to achieve. To address this problem, this paper presents Same Place Opposing Trajectory (SPOT), a technique for opposing viewpoint VPR that relies exclusively on structure estimated through stereo visual odometry (VO). The method extends recent advances in lidar descriptors and utilizes a novel double (similar and opposing) distance matrix sequence matching method. We evaluate SPOT on a publicly available dataset with 6.7-7.6 km routes driven in similar and opposing directions under various lighting conditions. The proposed algorithm demonstrates remarkable improvement over the state-of-the-art, achieving up to 91.7% recall at 100% precision in opposing viewpoint cases, while requiring less storage than all baselines tested and running faster than all but one. Moreover, the proposed method assumes no a priori knowledge of whether the viewpoint is similar or opposing, and also demonstrates competitive performance in similar viewpoint cases.  
+    3D Gaussian Splatting has recently been embraced as a versatile and effective method for scene reconstruction and novel view synthesis, owing to its high-quality results and compatibility with hardware rasterization. Despite its advantages, Gaussian Splatting's reliance on high-quality point cloud initialization by Structure-from-Motion (SFM) algorithms is a significant limitation to be overcome. To this end, we investigate various initialization strategies for Gaussian Splatting and delve into how volumetric reconstructions from Neural Radiance Fields (NeRF) can be utilized to bypass the dependency on SFM data. Our findings demonstrate that random initialization can perform much better if carefully designed and that by employing a combination of improved initialization strategies and structure distillation from low-cost NeRF models, it is possible to achieve equivalent results, or at times even superior, to those obtained from SFM initialization.  
   </ol>  
 </details>  
-**comments**: Accepted to ICRA 2024, project website:
-  https://umautobots.github.io/spot  
+**comments**: 14 pages, 6 figures  
   
   
 
 
 
-## Visual Localization  
+## Keypoint Detection  
 
-### [SPOT: Point Cloud Based Stereo Visual Place Recognition for Similar and Opposing Viewpoints](http://arxiv.org/abs/2404.12339)  
-Spencer Carmichael, Rahul Agrawal, Ram Vasudevan, Katherine A. Skinner  
+### [SkelFormer: Markerless 3D Pose and Shape Estimation using Skeletal Transformers](http://arxiv.org/abs/2404.12625)  
+Vandad Davoodnia, Saeed Ghorbani, Alexandre Messier, Ali Etemad  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recognizing places from an opposing viewpoint during a return trip is a common experience for human drivers. However, the analogous robotics capability, visual place recognition (VPR) with limited field of view cameras under 180 degree rotations, has proven to be challenging to achieve. To address this problem, this paper presents Same Place Opposing Trajectory (SPOT), a technique for opposing viewpoint VPR that relies exclusively on structure estimated through stereo visual odometry (VO). The method extends recent advances in lidar descriptors and utilizes a novel double (similar and opposing) distance matrix sequence matching method. We evaluate SPOT on a publicly available dataset with 6.7-7.6 km routes driven in similar and opposing directions under various lighting conditions. The proposed algorithm demonstrates remarkable improvement over the state-of-the-art, achieving up to 91.7% recall at 100% precision in opposing viewpoint cases, while requiring less storage than all baselines tested and running faster than all but one. Moreover, the proposed method assumes no a priori knowledge of whether the viewpoint is similar or opposing, and also demonstrates competitive performance in similar viewpoint cases.  
+    We introduce SkelFormer, a novel markerless motion capture pipeline for multi-view human pose and shape estimation. Our method first uses off-the-shelf 2D keypoint estimators, pre-trained on large-scale in-the-wild data, to obtain 3D joint positions. Next, we design a regression-based inverse-kinematic skeletal transformer that maps the joint positions to pose and shape representations from heavily noisy observations. This module integrates prior knowledge about pose space and infers the full pose state at runtime. Separating the 3D keypoint detection and inverse-kinematic problems, along with the expressive representations learned by our skeletal transformer, enhance the generalization of our method to unseen noisy data. We evaluate our method on three public datasets in both in-distribution and out-of-distribution settings using three datasets, and observe strong performance with respect to prior works. Moreover, ablation experiments demonstrate the impact of each of the modules of our architecture. Finally, we study the performance of our method in dealing with noise and heavy occlusions and find considerable robustness with respect to other solutions.  
   </ol>  
 </details>  
-**comments**: Accepted to ICRA 2024, project website:
-  https://umautobots.github.io/spot  
+**comments**: 12 pages, 8 figures  
   
   
 
@@ -57,32 +54,24 @@ Spencer Carmichael, Rahul Agrawal, Ram Vasudevan, Katherine A. Skinner
 
 ## NeRF  
 
-### [MeshLRM: Large Reconstruction Model for High-Quality Mesh](http://arxiv.org/abs/2404.12385)  
-Xinyue Wei, Kai Zhang, Sai Bi, Hao Tan, Fujun Luan, Valentin Deschaintre, Kalyan Sunkavalli, Hao Su, Zexiang Xu  
+### [FlyNeRF: NeRF-Based Aerial Mapping for High-Quality 3D Scene Reconstruction](http://arxiv.org/abs/2404.12970)  
+Maria Dronova, Vladislav Cheremnykh, Alexey Kotcov, Aleksey Fedoseev, Dzmitry Tsetserukou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose MeshLRM, a novel LRM-based approach that can reconstruct a high-quality mesh from merely four input images in less than one second. Different from previous large reconstruction models (LRMs) that focus on NeRF-based reconstruction, MeshLRM incorporates differentiable mesh extraction and rendering within the LRM framework. This allows for end-to-end mesh reconstruction by fine-tuning a pre-trained NeRF LRM with mesh rendering. Moreover, we improve the LRM architecture by simplifying several complex designs in previous LRMs. MeshLRM's NeRF initialization is sequentially trained with low- and high-resolution images; this new LRM training strategy enables significantly faster convergence and thereby leads to better quality with less compute. Our approach achieves state-of-the-art mesh reconstruction from sparse-view inputs and also allows for many downstream applications, including text-to-3D and single-image-to-3D generation. Project page: https://sarahweiii.github.io/meshlrm/  
+    Current methods for 3D reconstruction and environmental mapping frequently face challenges in achieving high precision, highlighting the need for practical and effective solutions. In response to this issue, our study introduces FlyNeRF, a system integrating Neural Radiance Fields (NeRF) with drone-based data acquisition for high-quality 3D reconstruction. Utilizing unmanned aerial vehicle (UAV) for capturing images and corresponding spatial coordinates, the obtained data is subsequently used for the initial NeRF-based 3D reconstruction of the environment. Further evaluation of the reconstruction render quality is accomplished by the image evaluation neural network developed within the scope of our system. According to the results of the image evaluation module, an autonomous algorithm determines the position for additional image capture, thereby improving the reconstruction quality. The neural network introduced for render quality assessment demonstrates an accuracy of 97%. Furthermore, our adaptive methodology enhances the overall reconstruction quality, resulting in an average improvement of 2.5 dB in Peak Signal-to-Noise Ratio (PSNR) for the 10% quantile. The FlyNeRF demonstrates promising results, offering advancements in such fields as environmental monitoring, surveillance, and digital twins, where high-fidelity 3D reconstructions are crucial.  
   </ol>  
 </details>  
   
-### [AG-NeRF: Attention-guided Neural Radiance Fields for Multi-height Large-scale Outdoor Scene Rendering](http://arxiv.org/abs/2404.11897)  
-Jingfeng Guo, Xiaohan Zhang, Baozhu Zhao, Qi Liu  
+### [Does Gaussian Splatting need SFM Initialization?](http://arxiv.org/abs/2404.12547)  
+Yalda Foroutan, Daniel Rebain, Kwang Moo Yi, Andrea Tagliasacchi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Existing neural radiance fields (NeRF)-based novel view synthesis methods for large-scale outdoor scenes are mainly built on a single altitude. Moreover, they often require a priori camera shooting height and scene scope, leading to inefficient and impractical applications when camera altitude changes. In this work, we propose an end-to-end framework, termed AG-NeRF, and seek to reduce the training cost of building good reconstructions by synthesizing free-viewpoint images based on varying altitudes of scenes. Specifically, to tackle the detail variation problem from low altitude (drone-level) to high altitude (satellite-level), a source image selection method and an attention-based feature fusion approach are developed to extract and fuse the most relevant features of target view from multi-height images for high-fidelity rendering. Extensive experiments demonstrate that AG-NeRF achieves SOTA performance on 56 Leonard and Transamerica benchmarks and only requires a half hour of training time to reach the competitive PSNR as compared to the latest BungeeNeRF.  
+    3D Gaussian Splatting has recently been embraced as a versatile and effective method for scene reconstruction and novel view synthesis, owing to its high-quality results and compatibility with hardware rasterization. Despite its advantages, Gaussian Splatting's reliance on high-quality point cloud initialization by Structure-from-Motion (SFM) algorithms is a significant limitation to be overcome. To this end, we investigate various initialization strategies for Gaussian Splatting and delve into how volumetric reconstructions from Neural Radiance Fields (NeRF) can be utilized to bypass the dependency on SFM data. Our findings demonstrate that random initialization can perform much better if carefully designed and that by employing a combination of improved initialization strategies and structure distillation from low-cost NeRF models, it is possible to achieve equivalent results, or at times even superior, to those obtained from SFM initialization.  
   </ol>  
 </details>  
-  
-### [Cicero: Addressing Algorithmic and Architectural Bottlenecks in Neural Rendering by Radiance Warping and Memory Optimizations](http://arxiv.org/abs/2404.11852)  
-Yu Feng, Zihan Liu, Jingwen Leng, Minyi Guo, Yuhao Zhu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Field (NeRF) is widely seen as an alternative to traditional physically-based rendering. However, NeRF has not yet seen its adoption in resource-limited mobile systems such as Virtual and Augmented Reality (VR/AR), because it is simply extremely slow. On a mobile Volta GPU, even the state-of-the-art NeRF models generally execute only at 0.8 FPS. We show that the main performance bottlenecks are both algorithmic and architectural. We introduce, CICERO, to tame both forms of inefficiencies. We first introduce two algorithms, one fundamentally reduces the amount of work any NeRF model has to execute, and the other eliminates irregular DRAM accesses. We then describe an on-chip data layout strategy that eliminates SRAM bank conflicts. A pure software implementation of CICERO offers an 8.0x speed-up and 7.9x energy saving over a mobile Volta GPU. When compared to a baseline with a dedicated DNN accelerator, our speed-up and energy reduction increase to 28.2x and 37.8x, respectively - all with minimal quality loss (less than 1.0 dB peak signal-to-noise ratio reduction).  
-  </ol>  
-</details>  
+**comments**: 14 pages, 6 figures  
   
   
 
