@@ -1,107 +1,52 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Scene-Coordinate-Reconstruction:-Posing-of-Image-Collections-via-Incremental-Learning-of-a-Relocalizer>Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer</a></li>
-        <li><a href=#RESFM:-Robust-Equivariant-Multiview-Structure-from-Motion>RESFM: Robust Equivariant Multiview Structure from Motion</a></li>
+        <li><a href=#Multi-Session-SLAM-with-Differentiable-Wide-Baseline-Pose-Optimization>Multi-Session SLAM with Differentiable Wide-Baseline Pose Optimization</a></li>
       </ul>
     </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#EcoPull:-Sustainable-IoT-Image-Retrieval-Empowered-by-TinyML-Models>EcoPull: Sustainable IoT Image Retrieval Empowered by TinyML Models</a></li>
-        <li><a href=#Hierarchical-localization-with-panoramic-views-and-triplet-loss-functions>Hierarchical localization with panoramic views and triplet loss functions</a></li>
-        <li><a href=#High-fidelity-Endoscopic-Image-Synthesis-by-Utilizing-Depth-guided-Neural-Surfaces>High-fidelity Endoscopic Image Synthesis by Utilizing Depth-guided Neural Surfaces</a></li>
-        <li><a href=#Collaborative-Visual-Place-Recognition-through-Federated-Learning>Collaborative Visual Place Recognition through Federated Learning</a></li>
+        <li><a href=#Adaptive-Local-Binary-Pattern:-A-Novel-Feature-Descriptor-for-Enhanced-Analysis-of-Kidney-Abnormalities-in-CT-Scan-Images-using-ensemble-based-Machine-Learning-Approach>Adaptive Local Binary Pattern: A Novel Feature Descriptor for Enhanced Analysis of Kidney Abnormalities in CT Scan Images using ensemble based Machine Learning Approach</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Scene-Coordinate-Reconstruction:-Posing-of-Image-Collections-via-Incremental-Learning-of-a-Relocalizer>Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#GaussianTalker:-Speaker-specific-Talking-Head-Synthesis-via-3D-Gaussian-Splatting>GaussianTalker: Speaker-specific Talking Head Synthesis via 3D Gaussian Splatting</a></li>
-        <li><a href=#NeRF-DetS:-Enhancing-Multi-View-3D-Object-Detection-with-Sampling-adaptive-Network-of-Continuous-NeRF-based-Representation>NeRF-DetS: Enhancing Multi-View 3D Object Detection with Sampling-adaptive Network of Continuous NeRF-based Representation</a></li>
-        <li><a href=#CT-NeRF:-Incremental-Optimizing-Neural-Radiance-Field-and-Poses-with-Complex-Trajectory>CT-NeRF: Incremental Optimizing Neural Radiance Field and Poses with Complex Trajectory</a></li>
-        <li><a href=#Neural-Radiance-Field-in-Autonomous-Driving:-A-Survey>Neural Radiance Field in Autonomous Driving: A Survey</a></li>
-        <li><a href=#ArtNeRF:-A-Stylized-Neural-Field-for-3D-Aware-Cartoonized-Face-Synthesis>ArtNeRF: A Stylized Neural Field for 3D-Aware Cartoonized Face Synthesis</a></li>
-        <li><a href=#Generalizable-Novel-View-Synthesis-using-a-Stereo-Camera>Generalizable Novel-View Synthesis using a Stereo Camera</a></li>
-        <li><a href=#High-fidelity-Endoscopic-Image-Synthesis-by-Utilizing-Depth-guided-Neural-Surfaces>High-fidelity Endoscopic Image Synthesis by Utilizing Depth-guided Neural Surfaces</a></li>
-        <li><a href=#EC-SLAM:-Real-time-Dense-Neural-RGB-D-SLAM-System-with-Effectively-Constrained-Global-Bundle-Adjustment>EC-SLAM: Real-time Dense Neural RGB-D SLAM System with Effectively Constrained Global Bundle Adjustment</a></li>
+        <li><a href=#FINEMATCH:-Aspect-based-Fine-grained-Image-and-Text-Mismatch-Detection-and-Correction>FINEMATCH: Aspect-based Fine-grained Image and Text Mismatch Detection and Correction</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer](http://arxiv.org/abs/2404.14351)  
-Eric Brachmann, Jamie Wynn, Shuai Chen, Tommaso Cavallari, Áron Monszpart, Daniyar Turmukhambetov, Victor Adrian Prisacariu  
+### [Multi-Session SLAM with Differentiable Wide-Baseline Pose Optimization](http://arxiv.org/abs/2404.15263)  
+[[code](https://github.com/princeton-vl/multislam_diffpose)]  
+Lahav Lipson, Jia Deng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We address the task of estimating camera parameters from a set of images depicting a scene. Popular feature-based structure-from-motion (SfM) tools solve this task by incremental reconstruction: they repeat triangulation of sparse 3D points and registration of more camera views to the sparse point cloud. We re-interpret incremental structure-from-motion as an iterated application and refinement of a visual relocalizer, that is, of a method that registers new views to the current state of the reconstruction. This perspective allows us to investigate alternative visual relocalizers that are not rooted in local feature matching. We show that scene coordinate regression, a learning-based relocalization approach, allows us to build implicit, neural scene representations from unposed images. Different from other learning-based reconstruction methods, we do not require pose priors nor sequential inputs, and we optimize efficiently over thousands of images. Our method, ACE0 (ACE Zero), estimates camera poses to an accuracy comparable to feature-based SfM, as demonstrated by novel view synthesis. Project page: https://nianticlabs.github.io/acezero/  
+    We introduce a new system for Multi-Session SLAM, which tracks camera motion across multiple disjoint videos under a single global reference. Our approach couples the prediction of optical flow with solver layers to estimate camera pose. The backbone is trained end-to-end using a novel differentiable solver for wide-baseline two-view pose. The full system can connect disjoint sequences, perform visual odometry, and global optimization. Compared to existing approaches, our design is accurate and robust to catastrophic failures. Code is available at github.com/princeton-vl/MultiSlam_DiffPose  
   </ol>  
 </details>  
-**comments**: Project page: https://nianticlabs.github.io/acezero/  
-  
-### [RESFM: Robust Equivariant Multiview Structure from Motion](http://arxiv.org/abs/2404.14280)  
-Fadi Khatib, Yoni Kasten, Dror Moran, Meirav Galun, Ronen Basri  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Multiview Structure from Motion is a fundamental and challenging computer vision problem. A recent deep-based approach was proposed utilizing matrix equivariant architectures for the simultaneous recovery of camera pose and 3D scene structure from large image collections. This work however made the unrealistic assumption that the point tracks given as input are clean of outliers. Here we propose an architecture suited to dealing with outliers by adding an inlier/outlier classifying module that respects the model equivariance and by adding a robust bundle adjustment step. Experiments demonstrate that our method can be successfully applied in realistic settings that include large image collections and point tracks extracted with common heuristics and include many outliers.  
-  </ol>  
-</details>  
+**comments**: Accepted to CVPR 2024  
   
   
 
 
 
-## Visual Localization  
+## Keypoint Detection  
 
-### [EcoPull: Sustainable IoT Image Retrieval Empowered by TinyML Models](http://arxiv.org/abs/2404.14236)  
-Mathias Thorsager, Victor Croisfelt, Junya Shiraishi, Petar Popovski  
+### [Adaptive Local Binary Pattern: A Novel Feature Descriptor for Enhanced Analysis of Kidney Abnormalities in CT Scan Images using ensemble based Machine Learning Approach](http://arxiv.org/abs/2404.14560)  
+Tahmim Hossain, Faisal Sayed, Solehin Islam  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces EcoPull, a sustainable Internet of Things (IoT) framework empowered by tiny machine learning (TinyML) models for fetching images from wireless visual sensor networks. Two types of learnable TinyML models are installed in the IoT devices: i) a behavior model and ii) an image compressor model. The first filters out irrelevant images for the current task, reducing unnecessary transmission and resource competition among the devices. The second allows IoT devices to communicate with the receiver via latent representations of images, reducing communication bandwidth usage. However, integrating learnable modules into IoT devices comes at the cost of increased energy consumption due to inference. The numerical results show that the proposed framework can save > 70% energy compared to the baseline while maintaining the quality of the retrieved images at the ES.  
+    The shortage of nephrologists and the growing public health concern over renal failure have spurred the demand for AI systems capable of autonomously detecting kidney abnormalities. Renal failure, marked by a gradual decline in kidney function, can result from factors like cysts, stones, and tumors. Chronic kidney disease may go unnoticed initially, leading to untreated cases until they reach an advanced stage. The dataset, comprising 12,427 images from multiple hospitals in Dhaka, was categorized into four groups: cyst, tumor, stone, and normal. Our methodology aims to enhance CT scan image quality using Cropping, Resizing, and CALHE techniques, followed by feature extraction with our proposed Adaptive Local Binary Pattern (A-LBP) feature extraction method compared with the state-of-the-art local binary pattern (LBP) method. Our proposed features fed into classifiers such as Random Forest, Decision Tree, Naive Bayes, K-Nearest Neighbor, and SVM. We explored an ensemble model with soft voting to get a more robust model for our task. We got the highest of more than 99% in accuracy using our feature descriptor and ensembling five classifiers (Random Forest, Decision Tree, Naive Bayes, K-Nearest Neighbor, Support Vector Machine) with the soft voting method.  
   </ol>  
 </details>  
-  
-### [Hierarchical localization with panoramic views and triplet loss functions](http://arxiv.org/abs/2404.14117)  
-Marcos Alfaro, Juan José Cabrera, Luis Miguel Jiménez, Óscar Reinoso, Luis Payá  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The main objective of this paper is to address the mobile robot localization problem with Triplet Convolutional Neural Networks and test their robustness against changes of the lighting conditions. We have used omnidirectional images from real indoor environments captured in dynamic conditions that have been converted to panoramic format. Two approaches are proposed to address localization by means of triplet neural networks. First, hierarchical localization, which consists in estimating the robot position in two stages: a coarse localization, which involves a room retrieval task, and a fine localization is addressed by means of image retrieval in the previously selected room. Second, global localization, which consists in estimating the position of the robot inside the entire map in a unique step. Besides, an exhaustive study of the loss function influence on the network learning process has been made. The experimental section proves that triplet neural networks are an efficient and robust tool to address the localization of mobile robots in indoor environments, considering real operation conditions.  
-  </ol>  
-</details>  
-**comments**: This work has been submitted to the Artificial Intelligence Journal
-  (Ed. Elsevier) for possible publication. Copyright may be transferred without
-  notice, after which this version may no longer be accessible  
-  
-### [High-fidelity Endoscopic Image Synthesis by Utilizing Depth-guided Neural Surfaces](http://arxiv.org/abs/2404.13437)  
-Baoru Huang, Yida Wang, Anh Nguyen, Daniel Elson, Francisco Vasconcelos, Danail Stoyanov  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In surgical oncology, screening colonoscopy plays a pivotal role in providing diagnostic assistance, such as biopsy, and facilitating surgical navigation, particularly in polyp detection. Computer-assisted endoscopic surgery has recently gained attention and amalgamated various 3D computer vision techniques, including camera localization, depth estimation, surface reconstruction, etc. Neural Radiance Fields (NeRFs) and Neural Implicit Surfaces (NeuS) have emerged as promising methodologies for deriving accurate 3D surface models from sets of registered images, addressing the limitations of existing colon reconstruction approaches stemming from constrained camera movement.   However, the inadequate tissue texture representation and confused scale problem in monocular colonoscopic image reconstruction still impede the progress of the final rendering results. In this paper, we introduce a novel method for colon section reconstruction by leveraging NeuS applied to endoscopic images, supplemented by a single frame of depth map. Notably, we pioneered the exploration of utilizing only one frame depth map in photorealistic reconstruction and neural rendering applications while this single depth map can be easily obtainable from other monocular depth estimation networks with an object scale. Through rigorous experimentation and validation on phantom imagery, our approach demonstrates exceptional accuracy in completely rendering colon sections, even capturing unseen portions of the surface. This breakthrough opens avenues for achieving stable and consistently scaled reconstructions, promising enhanced quality in cancer screening procedures and treatment interventions.  
-  </ol>  
-</details>  
-  
-### [Collaborative Visual Place Recognition through Federated Learning](http://arxiv.org/abs/2404.13324)  
-Mattia Dutto, Gabriele Berton, Debora Caldarola, Eros Fanì, Gabriele Trivigno, Carlo Masone  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual Place Recognition (VPR) aims to estimate the location of an image by treating it as a retrieval problem. VPR uses a database of geo-tagged images and leverages deep neural networks to extract a global representation, called descriptor, from each image. While the training data for VPR models often originates from diverse, geographically scattered sources (geo-tagged images), the training process itself is typically assumed to be centralized. This research revisits the task of VPR through the lens of Federated Learning (FL), addressing several key challenges associated with this adaptation. VPR data inherently lacks well-defined classes, and models are typically trained using contrastive learning, which necessitates a data mining step on a centralized database. Additionally, client devices in federated systems can be highly heterogeneous in terms of their processing capabilities. The proposed FedVPR framework not only presents a novel approach for VPR but also introduces a new, challenging, and realistic task for FL research, paving the way to other image retrieval tasks in FL.  
-  </ol>  
-</details>  
-**comments**: 13 pages, 7 figures, CVPR - The 3rd International Workshop on
-  Federated Learning for Computer Vision (FedVision-2024)  
+**comments**: 17 pages, 5 tables, 4 figures  
   
   
 
@@ -109,94 +54,12 @@ Mattia Dutto, Gabriele Berton, Debora Caldarola, Eros Fanì, Gabriele Trivigno, 
 
 ## Image Matching  
 
-### [Scene Coordinate Reconstruction: Posing of Image Collections via Incremental Learning of a Relocalizer](http://arxiv.org/abs/2404.14351)  
-Eric Brachmann, Jamie Wynn, Shuai Chen, Tommaso Cavallari, Áron Monszpart, Daniyar Turmukhambetov, Victor Adrian Prisacariu  
+### [FINEMATCH: Aspect-based Fine-grained Image and Text Mismatch Detection and Correction](http://arxiv.org/abs/2404.14715)  
+Hang Hua, Jing Shi, Kushal Kafle, Simon Jenni, Daoan Zhang, John Collomosse, Scott Cohen, Jiebo Luo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We address the task of estimating camera parameters from a set of images depicting a scene. Popular feature-based structure-from-motion (SfM) tools solve this task by incremental reconstruction: they repeat triangulation of sparse 3D points and registration of more camera views to the sparse point cloud. We re-interpret incremental structure-from-motion as an iterated application and refinement of a visual relocalizer, that is, of a method that registers new views to the current state of the reconstruction. This perspective allows us to investigate alternative visual relocalizers that are not rooted in local feature matching. We show that scene coordinate regression, a learning-based relocalization approach, allows us to build implicit, neural scene representations from unposed images. Different from other learning-based reconstruction methods, we do not require pose priors nor sequential inputs, and we optimize efficiently over thousands of images. Our method, ACE0 (ACE Zero), estimates camera poses to an accuracy comparable to feature-based SfM, as demonstrated by novel view synthesis. Project page: https://nianticlabs.github.io/acezero/  
-  </ol>  
-</details>  
-**comments**: Project page: https://nianticlabs.github.io/acezero/  
-  
-  
-
-
-
-## NeRF  
-
-### [GaussianTalker: Speaker-specific Talking Head Synthesis via 3D Gaussian Splatting](http://arxiv.org/abs/2404.14037)  
-Hongyun Yu, Zhan Qu, Qihang Yu, Jianchuan Chen, Zhonghua Jiang, Zhiwen Chen, Shengyu Zhang, Jimin Xu, Fei Wu, Chengfei Lv, Gang Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent works on audio-driven talking head synthesis using Neural Radiance Fields (NeRF) have achieved impressive results. However, due to inadequate pose and expression control caused by NeRF implicit representation, these methods still have some limitations, such as unsynchronized or unnatural lip movements, and visual jitter and artifacts. In this paper, we propose GaussianTalker, a novel method for audio-driven talking head synthesis based on 3D Gaussian Splatting. With the explicit representation property of 3D Gaussians, intuitive control of the facial motion is achieved by binding Gaussians to 3D facial models. GaussianTalker consists of two modules, Speaker-specific Motion Translator and Dynamic Gaussian Renderer. Speaker-specific Motion Translator achieves accurate lip movements specific to the target speaker through universalized audio feature extraction and customized lip motion generation. Dynamic Gaussian Renderer introduces Speaker-specific BlendShapes to enhance facial detail representation via a latent pose, delivering stable and realistic rendered videos. Extensive experimental results suggest that GaussianTalker outperforms existing state-of-the-art methods in talking head synthesis, delivering precise lip synchronization and exceptional visual quality. Our method achieves rendering speeds of 130 FPS on NVIDIA RTX4090 GPU, significantly exceeding the threshold for real-time rendering performance, and can potentially be deployed on other hardware platforms.  
-  </ol>  
-</details>  
-  
-### [NeRF-DetS: Enhancing Multi-View 3D Object Detection with Sampling-adaptive Network of Continuous NeRF-based Representation](http://arxiv.org/abs/2404.13921)  
-Chi Huang, Xinyang Li, Shengchuan Zhang, Liujuan Cao, Rongrong Ji  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    As a preliminary work, NeRF-Det unifies the tasks of novel view synthesis and 3D perception, demonstrating that perceptual tasks can benefit from novel view synthesis methods like NeRF, significantly improving the performance of indoor multi-view 3D object detection. Using the geometry MLP of NeRF to direct the attention of detection head to crucial parts and incorporating self-supervised loss from novel view rendering contribute to the achieved improvement. To better leverage the notable advantages of the continuous representation through neural rendering in space, we introduce a novel 3D perception network structure, NeRF-DetS. The key component of NeRF-DetS is the Multi-level Sampling-Adaptive Network, making the sampling process adaptively from coarse to fine. Also, we propose a superior multi-view information fusion method, known as Multi-head Weighted Fusion. This fusion approach efficiently addresses the challenge of losing multi-view information when using arithmetic mean, while keeping low computational costs. NeRF-DetS outperforms competitive NeRF-Det on the ScanNetV2 dataset, by achieving +5.02% and +5.92% improvement in mAP@.25 and mAP@.50, respectively.  
-  </ol>  
-</details>  
-  
-### [CT-NeRF: Incremental Optimizing Neural Radiance Field and Poses with Complex Trajectory](http://arxiv.org/abs/2404.13896)  
-Yunlong Ran, Yanxu Li, Qi Ye, Yuchi Huo, Zechun Bai, Jiahao Sun, Jiming Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural radiance field (NeRF) has achieved impressive results in high-quality 3D scene reconstruction. However, NeRF heavily relies on precise camera poses. While recent works like BARF have introduced camera pose optimization within NeRF, their applicability is limited to simple trajectory scenes. Existing methods struggle while tackling complex trajectories involving large rotations. To address this limitation, we propose CT-NeRF, an incremental reconstruction optimization pipeline using only RGB images without pose and depth input. In this pipeline, we first propose a local-global bundle adjustment under a pose graph connecting neighboring frames to enforce the consistency between poses to escape the local minima caused by only pose consistency with the scene structure. Further, we instantiate the consistency between poses as a reprojected geometric image distance constraint resulting from pixel-level correspondences between input image pairs. Through the incremental reconstruction, CT-NeRF enables the recovery of both camera poses and scene structure and is capable of handling scenes with complex trajectories. We evaluate the performance of CT-NeRF on two real-world datasets, NeRFBuster and Free-Dataset, which feature complex trajectories. Results show CT-NeRF outperforms existing methods in novel view synthesis and pose estimation accuracy.  
-  </ol>  
-</details>  
-  
-### [Neural Radiance Field in Autonomous Driving: A Survey](http://arxiv.org/abs/2404.13816)  
-Lei He, Leheng Li, Wenchao Sun, Zeyu Han, Yichen Liu, Sifa Zheng, Jianqiang Wang, Keqiang Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Field (NeRF) has garnered significant attention from both academia and industry due to its intrinsic advantages, particularly its implicit representation and novel view synthesis capabilities. With the rapid advancements in deep learning, a multitude of methods have emerged to explore the potential applications of NeRF in the domain of Autonomous Driving (AD). However, a conspicuous void is apparent within the current literature. To bridge this gap, this paper conducts a comprehensive survey of NeRF's applications in the context of AD. Our survey is structured to categorize NeRF's applications in Autonomous Driving (AD), specifically encompassing perception, 3D reconstruction, simultaneous localization and mapping (SLAM), and simulation. We delve into in-depth analysis and summarize the findings for each application category, and conclude by providing insights and discussions on future directions in this field. We hope this paper serves as a comprehensive reference for researchers in this domain. To the best of our knowledge, this is the first survey specifically focused on the applications of NeRF in the Autonomous Driving domain.  
-  </ol>  
-</details>  
-  
-### [ArtNeRF: A Stylized Neural Field for 3D-Aware Cartoonized Face Synthesis](http://arxiv.org/abs/2404.13711)  
-[[code](https://github.com/silence-tang/artnerf)]  
-Zichen Tang, Hongyu Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advances in generative visual models and neural radiance fields have greatly boosted 3D-aware image synthesis and stylization tasks. However, previous NeRF-based work is limited to single scene stylization, training a model to generate 3D-aware cartoon faces with arbitrary styles remains unsolved. We propose ArtNeRF, a novel face stylization framework derived from 3D-aware GAN to tackle this problem. In this framework, we utilize an expressive generator to synthesize stylized faces and a triple-branch discriminator module to improve the visual quality and style consistency of the generated faces. Specifically, a style encoder based on contrastive learning is leveraged to extract robust low-dimensional embeddings of style images, empowering the generator with the knowledge of various styles. To smooth the training process of cross-domain transfer learning, we propose an adaptive style blending module which helps inject style information and allows users to freely tune the level of stylization. We further introduce a neural rendering module to achieve efficient real-time rendering of images with higher resolutions. Extensive experiments demonstrate that ArtNeRF is versatile in generating high-quality 3D-aware cartoon faces with arbitrary styles.  
-  </ol>  
-</details>  
-  
-### [Generalizable Novel-View Synthesis using a Stereo Camera](http://arxiv.org/abs/2404.13541)  
-Haechan Lee, Wonjoon Jin, Seung-Hwan Baek, Sunghyun Cho  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we propose the first generalizable view synthesis approach that specifically targets multi-view stereo-camera images. Since recent stereo matching has demonstrated accurate geometry prediction, we introduce stereo matching into novel-view synthesis for high-quality geometry reconstruction. To this end, this paper proposes a novel framework, dubbed StereoNeRF, which integrates stereo matching into a NeRF-based generalizable view synthesis approach. StereoNeRF is equipped with three key components to effectively exploit stereo matching in novel-view synthesis: a stereo feature extractor, a depth-guided plane-sweeping, and a stereo depth loss. Moreover, we propose the StereoNVS dataset, the first multi-view dataset of stereo-camera images, encompassing a wide variety of both real and synthetic scenes. Our experimental results demonstrate that StereoNeRF surpasses previous approaches in generalizable view synthesis.  
-  </ol>  
-</details>  
-**comments**: Accepted to CVPR 2024. Project page URL:
-  https://jinwonjoon.github.io/stereonerf/  
-  
-### [High-fidelity Endoscopic Image Synthesis by Utilizing Depth-guided Neural Surfaces](http://arxiv.org/abs/2404.13437)  
-Baoru Huang, Yida Wang, Anh Nguyen, Daniel Elson, Francisco Vasconcelos, Danail Stoyanov  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In surgical oncology, screening colonoscopy plays a pivotal role in providing diagnostic assistance, such as biopsy, and facilitating surgical navigation, particularly in polyp detection. Computer-assisted endoscopic surgery has recently gained attention and amalgamated various 3D computer vision techniques, including camera localization, depth estimation, surface reconstruction, etc. Neural Radiance Fields (NeRFs) and Neural Implicit Surfaces (NeuS) have emerged as promising methodologies for deriving accurate 3D surface models from sets of registered images, addressing the limitations of existing colon reconstruction approaches stemming from constrained camera movement.   However, the inadequate tissue texture representation and confused scale problem in monocular colonoscopic image reconstruction still impede the progress of the final rendering results. In this paper, we introduce a novel method for colon section reconstruction by leveraging NeuS applied to endoscopic images, supplemented by a single frame of depth map. Notably, we pioneered the exploration of utilizing only one frame depth map in photorealistic reconstruction and neural rendering applications while this single depth map can be easily obtainable from other monocular depth estimation networks with an object scale. Through rigorous experimentation and validation on phantom imagery, our approach demonstrates exceptional accuracy in completely rendering colon sections, even capturing unseen portions of the surface. This breakthrough opens avenues for achieving stable and consistently scaled reconstructions, promising enhanced quality in cancer screening procedures and treatment interventions.  
-  </ol>  
-</details>  
-  
-### [EC-SLAM: Real-time Dense Neural RGB-D SLAM System with Effectively Constrained Global Bundle Adjustment](http://arxiv.org/abs/2404.13346)  
-Guanghao Li, Qi Chen, YuXiang Yan, Jian Pu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce EC-SLAM, a real-time dense RGB-D simultaneous localization and mapping (SLAM) system utilizing Neural Radiance Fields (NeRF). Although recent NeRF-based SLAM systems have demonstrated encouraging outcomes, they have yet to completely leverage NeRF's capability to constrain pose optimization. By employing an effectively constrained global bundle adjustment (BA) strategy, our system makes use of NeRF's implicit loop closure correction capability. This improves the tracking accuracy by reinforcing the constraints on the keyframes that are most pertinent to the optimized current frame. In addition, by implementing a feature-based and uniform sampling strategy that minimizes the number of ineffective constraint points for pose optimization, we mitigate the effects of random sampling in NeRF. EC-SLAM utilizes sparse parametric encodings and the truncated signed distance field (TSDF) to represent the map in order to facilitate efficient fusion, resulting in reduced model parameters and accelerated convergence velocity. A comprehensive evaluation conducted on the Replica, ScanNet, and TUM datasets showcases cutting-edge performance, including enhanced reconstruction accuracy resulting from precise pose estimation, 21 Hz run time, and tracking precision improvements of up to 50\%. The source code is available at https://github.com/Lightingooo/EC-SLAM.  
+    Recent progress in large-scale pre-training has led to the development of advanced vision-language models (VLMs) with remarkable proficiency in comprehending and generating multimodal content. Despite the impressive ability to perform complex reasoning for VLMs, current models often struggle to effectively and precisely capture the compositional information on both the image and text sides. To address this, we propose FineMatch, a new aspect-based fine-grained text and image matching benchmark, focusing on text and image mismatch detection and correction. This benchmark introduces a novel task for boosting and evaluating the VLMs' compositionality for aspect-based fine-grained text and image matching. In this task, models are required to identify mismatched aspect phrases within a caption, determine the aspect's class, and propose corrections for an image-text pair that may contain between 0 and 3 mismatches. To evaluate the models' performance on this new task, we propose a new evaluation metric named ITM-IoU for which our experiments show a high correlation to human evaluation. In addition, we also provide a comprehensive experimental analysis of existing mainstream VLMs, including fully supervised learning and in-context learning settings. We have found that models trained on FineMatch demonstrate enhanced proficiency in detecting fine-grained text and image mismatches. Moreover, models (e.g., GPT-4V, Gemini Pro Vision) with strong abilities to perform multimodal in-context learning are not as skilled at fine-grained compositional image and text matching analysis. With FineMatch, we are able to build a system for text-to-image generation hallucination detection and correction.  
   </ol>  
 </details>  
   
