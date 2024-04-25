@@ -1,67 +1,46 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Multi-Session-SLAM-with-Differentiable-Wide-Baseline-Pose-Optimization>Multi-Session SLAM with Differentiable Wide-Baseline Pose Optimization</a></li>
+        <li><a href=#Visual-Delta-Generator-with-Large-Multi-modal-Models-for-Semi-supervised-Composed-Image-Retrieval>Visual Delta Generator with Large Multi-modal Models for Semi-supervised Composed Image Retrieval</a></li>
       </ul>
     </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Adaptive-Local-Binary-Pattern:-A-Novel-Feature-Descriptor-for-Enhanced-Analysis-of-Kidney-Abnormalities-in-CT-Scan-Images-using-ensemble-based-Machine-Learning-Approach>Adaptive Local Binary Pattern: A Novel Feature Descriptor for Enhanced Analysis of Kidney Abnormalities in CT Scan Images using ensemble based Machine Learning Approach</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#FINEMATCH:-Aspect-based-Fine-grained-Image-and-Text-Mismatch-Detection-and-Correction>FINEMATCH: Aspect-based Fine-grained Image and Text Mismatch Detection and Correction</a></li>
+        <li><a href=#DreamCraft:-Text-Guided-Generation-of-Functional-3D-Environments-in-Minecraft>DreamCraft: Text-Guided Generation of Functional 3D Environments in Minecraft</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## Visual Localization  
 
-### [Multi-Session SLAM with Differentiable Wide-Baseline Pose Optimization](http://arxiv.org/abs/2404.15263)  
-[[code](https://github.com/princeton-vl/multislam_diffpose)]  
-Lahav Lipson, Jia Deng  
+### [Visual Delta Generator with Large Multi-modal Models for Semi-supervised Composed Image Retrieval](http://arxiv.org/abs/2404.15516)  
+Young Kyun Jang, Donghyun Kim, Zihang Meng, Dat Huynh, Ser-Nam Lim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce a new system for Multi-Session SLAM, which tracks camera motion across multiple disjoint videos under a single global reference. Our approach couples the prediction of optical flow with solver layers to estimate camera pose. The backbone is trained end-to-end using a novel differentiable solver for wide-baseline two-view pose. The full system can connect disjoint sequences, perform visual odometry, and global optimization. Compared to existing approaches, our design is accurate and robust to catastrophic failures. Code is available at github.com/princeton-vl/MultiSlam_DiffPose  
+    Composed Image Retrieval (CIR) is a task that retrieves images similar to a query, based on a provided textual modification. Current techniques rely on supervised learning for CIR models using labeled triplets of the reference image, text, target image. These specific triplets are not as commonly available as simple image-text pairs, limiting the widespread use of CIR and its scalability. On the other hand, zero-shot CIR can be relatively easily trained with image-caption pairs without considering the image-to-image relation, but this approach tends to yield lower accuracy. We propose a new semi-supervised CIR approach where we search for a reference and its related target images in auxiliary data and learn our large language model-based Visual Delta Generator (VDG) to generate text describing the visual difference (i.e., visual delta) between the two. VDG, equipped with fluent language knowledge and being model agnostic, can generate pseudo triplets to boost the performance of CIR models. Our approach significantly improves the existing supervised learning approaches and achieves state-of-the-art results on the CIR benchmarks.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR 2024  
+**comments**: 15 pages  
   
   
 
 
 
-## Keypoint Detection  
+## NeRF  
 
-### [Adaptive Local Binary Pattern: A Novel Feature Descriptor for Enhanced Analysis of Kidney Abnormalities in CT Scan Images using ensemble based Machine Learning Approach](http://arxiv.org/abs/2404.14560)  
-Tahmim Hossain, Faisal Sayed, Solehin Islam  
+### [DreamCraft: Text-Guided Generation of Functional 3D Environments in Minecraft](http://arxiv.org/abs/2404.15538)  
+Sam Earle, Filippos Kokkinos, Yuhe Nie, Julian Togelius, Roberta Raileanu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The shortage of nephrologists and the growing public health concern over renal failure have spurred the demand for AI systems capable of autonomously detecting kidney abnormalities. Renal failure, marked by a gradual decline in kidney function, can result from factors like cysts, stones, and tumors. Chronic kidney disease may go unnoticed initially, leading to untreated cases until they reach an advanced stage. The dataset, comprising 12,427 images from multiple hospitals in Dhaka, was categorized into four groups: cyst, tumor, stone, and normal. Our methodology aims to enhance CT scan image quality using Cropping, Resizing, and CALHE techniques, followed by feature extraction with our proposed Adaptive Local Binary Pattern (A-LBP) feature extraction method compared with the state-of-the-art local binary pattern (LBP) method. Our proposed features fed into classifiers such as Random Forest, Decision Tree, Naive Bayes, K-Nearest Neighbor, and SVM. We explored an ensemble model with soft voting to get a more robust model for our task. We got the highest of more than 99% in accuracy using our feature descriptor and ensembling five classifiers (Random Forest, Decision Tree, Naive Bayes, K-Nearest Neighbor, Support Vector Machine) with the soft voting method.  
+    Procedural Content Generation (PCG) algorithms enable the automatic generation of complex and diverse artifacts. However, they don't provide high-level control over the generated content and typically require domain expertise. In contrast, text-to-3D methods allow users to specify desired characteristics in natural language, offering a high amount of flexibility and expressivity. But unlike PCG, such approaches cannot guarantee functionality, which is crucial for certain applications like game design. In this paper, we present a method for generating functional 3D artifacts from free-form text prompts in the open-world game Minecraft. Our method, DreamCraft, trains quantized Neural Radiance Fields (NeRFs) to represent artifacts that, when viewed in-game, match given text descriptions. We find that DreamCraft produces more aligned in-game artifacts than a baseline that post-processes the output of an unconstrained NeRF. Thanks to the quantized representation of the environment, functional constraints can be integrated using specialized loss terms. We show how this can be leveraged to generate 3D structures that match a target distribution or obey certain adjacency rules over the block types. DreamCraft inherits a high degree of expressivity and controllability from the NeRF, while still being able to incorporate functional constraints through domain-specific objectives.  
   </ol>  
 </details>  
-**comments**: 17 pages, 5 tables, 4 figures  
-  
-  
-
-
-
-## Image Matching  
-
-### [FINEMATCH: Aspect-based Fine-grained Image and Text Mismatch Detection and Correction](http://arxiv.org/abs/2404.14715)  
-Hang Hua, Jing Shi, Kushal Kafle, Simon Jenni, Daoan Zhang, John Collomosse, Scott Cohen, Jiebo Luo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent progress in large-scale pre-training has led to the development of advanced vision-language models (VLMs) with remarkable proficiency in comprehending and generating multimodal content. Despite the impressive ability to perform complex reasoning for VLMs, current models often struggle to effectively and precisely capture the compositional information on both the image and text sides. To address this, we propose FineMatch, a new aspect-based fine-grained text and image matching benchmark, focusing on text and image mismatch detection and correction. This benchmark introduces a novel task for boosting and evaluating the VLMs' compositionality for aspect-based fine-grained text and image matching. In this task, models are required to identify mismatched aspect phrases within a caption, determine the aspect's class, and propose corrections for an image-text pair that may contain between 0 and 3 mismatches. To evaluate the models' performance on this new task, we propose a new evaluation metric named ITM-IoU for which our experiments show a high correlation to human evaluation. In addition, we also provide a comprehensive experimental analysis of existing mainstream VLMs, including fully supervised learning and in-context learning settings. We have found that models trained on FineMatch demonstrate enhanced proficiency in detecting fine-grained text and image mismatches. Moreover, models (e.g., GPT-4V, Gemini Pro Vision) with strong abilities to perform multimodal in-context learning are not as skilled at fine-grained compositional image and text matching analysis. With FineMatch, we are able to build a system for text-to-image generation hallucination detection and correction.  
-  </ol>  
-</details>  
+**comments**: 16 pages, 9 figures, accepted to Foundation of Digital Games 2024  
   
   
 
