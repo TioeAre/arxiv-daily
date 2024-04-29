@@ -1,74 +1,63 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Revisiting-Relevance-Feedback-for-CLIP-based-Interactive-Image-Retrieval>Revisiting Relevance Feedback for CLIP-based Interactive Image Retrieval</a></li>
-        <li><a href=#Simple-but-Effective-Raw-Data-Level-Multimodal-Fusion-for-Composed-Image-Retrieval>Simple but Effective Raw-Data Level Multimodal Fusion for Composed Image Retrieval</a></li>
-        <li><a href=#DVF:-Advancing-Robust-and-Accurate-Fine-Grained-Image-Retrieval-with-Retrieval-Guidelines>DVF: Advancing Robust and Accurate Fine-Grained Image Retrieval with Retrieval Guidelines</a></li>
+        <li><a href=#Camera-Motion-Estimation-from-RGB-D-Inertial-Scene-Flow>Camera Motion Estimation from RGB-D-Inertial Scene Flow</a></li>
       </ul>
     </li>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Transformer-Based-Local-Feature-Matching-for-Multimodal-Image-Registration>Transformer-Based Local Feature Matching for Multimodal Image Registration</a></li>
+        <li><a href=#Learning-text-to-video-retrieval-from-image-captioning>Learning text-to-video retrieval from image captioning</a></li>
+        <li><a href=#CriSp:-Leveraging-Tread-Depth-Maps-for-Enhanced-Crime-Scene-Shoeprint-Matching>CriSp: Leveraging Tread Depth Maps for Enhanced Crime-Scene Shoeprint Matching</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Depth-Supervised-Neural-Surface-Reconstruction-from-Airborne-Imagery>Depth Supervised Neural Surface Reconstruction from Airborne Imagery</a></li>
-        <li><a href=#NeRF-XL:-Scaling-NeRFs-with-Multiple-GPUs>NeRF-XL: Scaling NeRFs with Multiple GPUs</a></li>
-        <li><a href=#ESR-NeRF:-Emissive-Source-Reconstruction-Using-LDR-Multi-view-Images>ESR-NeRF: Emissive Source Reconstruction Using LDR Multi-view Images</a></li>
+        <li><a href=#Geometry-aware-Reconstruction-and-Fusion-refined-Rendering-for-Generalizable-Neural-Radiance-Fields>Geometry-aware Reconstruction and Fusion-refined Rendering for Generalizable Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [Camera Motion Estimation from RGB-D-Inertial Scene Flow](http://arxiv.org/abs/2404.17251)  
+Samuel Cerezo, Javier Civera  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper, we introduce a novel formulation for camera motion estimation that integrates RGB-D images and inertial data through scene flow. Our goal is to accurately estimate the camera motion in a rigid 3D environment, along with the state of the inertial measurement unit (IMU). Our proposed method offers the flexibility to operate as a multi-frame optimization or to marginalize older data, thus effectively utilizing past measurements. To assess the performance of our method, we conducted evaluations using both synthetic data from the ICL-NUIM dataset and real data sequences from the OpenLORIS-Scene dataset. Our results show that the fusion of these two sensors enhances the accuracy of camera motion estimation when compared to using only visual data.  
+  </ol>  
+</details>  
+**comments**: Accepted to CVPR2024 Workshop on Visual Odometry and Computer Vision
+  Applications  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [Revisiting Relevance Feedback for CLIP-based Interactive Image Retrieval](http://arxiv.org/abs/2404.16398)  
-Ryoya Nara, Yu-Chieh Lin, Yuji Nozawa, Youyang Ng, Goh Itoh, Osamu Torii, Yusuke Matsui  
+### [Learning text-to-video retrieval from image captioning](http://arxiv.org/abs/2404.17498)  
+Lucas Ventura, Cordelia Schmid, Gül Varol  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Many image retrieval studies use metric learning to train an image encoder. However, metric learning cannot handle differences in users' preferences, and requires data to train an image encoder. To overcome these limitations, we revisit relevance feedback, a classic technique for interactive retrieval systems, and propose an interactive CLIP-based image retrieval system with relevance feedback. Our retrieval system first executes the retrieval, collects each user's unique preferences through binary feedback, and returns images the user prefers. Even when users have various preferences, our retrieval system learns each user's preference through the feedback and adapts to the preference. Moreover, our retrieval system leverages CLIP's zero-shot transferability and achieves high accuracy without training. We empirically show that our retrieval system competes well with state-of-the-art metric learning in category-based image retrieval, despite not training image encoders specifically for each dataset. Furthermore, we set up two additional experimental settings where users have various preferences: one-label-based image retrieval and conditioned image retrieval. In both cases, our retrieval system effectively adapts to each user's preferences, resulting in improved accuracy compared to image retrieval without feedback. Overall, our work highlights the potential benefits of integrating CLIP with classic relevance feedback techniques to enhance image retrieval.  
+    We describe a protocol to study text-to-video retrieval training with unlabeled videos, where we assume (i) no access to labels for any videos, i.e., no access to the set of ground-truth captions, but (ii) access to labeled images in the form of text. Using image expert models is a realistic scenario given that annotating images is cheaper therefore scalable, in contrast to expensive video labeling schemes. Recently, zero-shot image experts such as CLIP have established a new strong baseline for video understanding tasks. In this paper, we make use of this progress and instantiate the image experts from two types of models: a text-to-image retrieval model to provide an initial backbone, and image captioning models to provide supervision signal into unlabeled videos. We show that automatically labeling video frames with image captioning allows text-to-video retrieval training. This process adapts the features to the target domain at no manual annotation cost, consequently outperforming the strong zero-shot CLIP baseline. During training, we sample captions from multiple video frames that best match the visual content, and perform a temporal pooling over frame representations by scoring frames according to their relevance to each caption. We conduct extensive ablations to provide insights and demonstrate the effectiveness of this simple framework by outperforming the CLIP zero-shot baselines on text-to-video retrieval on three standard datasets, namely ActivityNet, MSR-VTT, and MSVD.  
   </ol>  
 </details>  
-**comments**: 20 pages, 8 sugures  
+**comments**: A short version of this work appeared at CVPR 2023 Workshops. Project
+  page: https://imagine.enpc.fr/~ventural/multicaps/  
   
-### [Simple but Effective Raw-Data Level Multimodal Fusion for Composed Image Retrieval](http://arxiv.org/abs/2404.15875)  
-Haokun Wen, Xuemeng Song, Xiaolin Chen, Yinwei Wei, Liqiang Nie, Tat-Seng Chua  
+### [CriSp: Leveraging Tread Depth Maps for Enhanced Crime-Scene Shoeprint Matching](http://arxiv.org/abs/2404.16972)  
+Samia Shafique, Shu Kong, Charless Fowlkes  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed image retrieval (CIR) aims to retrieve the target image based on a multimodal query, i.e., a reference image paired with corresponding modification text. Recent CIR studies leverage vision-language pre-trained (VLP) methods as the feature extraction backbone, and perform nonlinear feature-level multimodal query fusion to retrieve the target image. Despite the promising performance, we argue that their nonlinear feature-level multimodal fusion may lead to the fused feature deviating from the original embedding space, potentially hurting the retrieval performance. To address this issue, in this work, we propose shifting the multimodal fusion from the feature level to the raw-data level to fully exploit the VLP model's multimodal encoding and cross-modal alignment abilities. In particular, we introduce a Dual Query Unification-based Composed Image Retrieval framework (DQU-CIR), whose backbone simply involves a VLP model's image encoder and a text encoder. Specifically, DQU-CIR first employs two training-free query unification components: text-oriented query unification and vision-oriented query unification, to derive a unified textual and visual query based on the raw data of the multimodal query, respectively. The unified textual query is derived by concatenating the modification text with the extracted reference image's textual description, while the unified visual query is created by writing the key modification words onto the reference image. Ultimately, to address diverse search intentions, DQU-CIR linearly combines the features of the two unified queries encoded by the VLP model to retrieve the target image. Extensive experiments on four real-world datasets validate the effectiveness of our proposed method.  
+    Shoeprints are a common type of evidence found at crime scenes and are used regularly in forensic investigations. However, existing methods cannot effectively employ deep learning techniques to match noisy and occluded crime-scene shoeprints to a shoe database due to a lack of training data. Moreover, all existing methods match crime-scene shoeprints to clean reference prints, yet our analysis shows matching to more informative tread depth maps yields better retrieval results. The matching task is further complicated by the necessity to identify similarities only in corresponding regions (heels, toes, etc) of prints and shoe treads. To overcome these challenges, we leverage shoe tread images from online retailers and utilize an off-the-shelf predictor to estimate depth maps and clean prints. Our method, named CriSp, matches crime-scene shoeprints to tread depth maps by training on this data. CriSp incorporates data augmentation to simulate crime-scene shoeprints, an encoder to learn spatially-aware features, and a masking module to ensure only visible regions of crime-scene prints affect retrieval results. To validate our approach, we introduce two validation sets by reprocessing existing datasets of crime-scene shoeprints and establish a benchmarking protocol for comparison. On this benchmark, CriSp significantly outperforms state-of-the-art methods in both automated shoeprint matching and image retrieval tailored to this task.  
   </ol>  
 </details>  
-**comments**: ACM SIGIR 2024  
-  
-### [DVF: Advancing Robust and Accurate Fine-Grained Image Retrieval with Retrieval Guidelines](http://arxiv.org/abs/2404.15771)  
-Xin Jiang, Hao Tang, Rui Yan, Jinhui Tang, Zechao Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Fine-grained image retrieval (FGIR) is to learn visual representations that distinguish visually similar objects while maintaining generalization. Existing methods propose to generate discriminative features, but rarely consider the particularity of the FGIR task itself. This paper presents a meticulous analysis leading to the proposal of practical guidelines to identify subcategory-specific discrepancies and generate discriminative features to design effective FGIR models. These guidelines include emphasizing the object (G1), highlighting subcategory-specific discrepancies (G2), and employing effective training strategy (G3). Following G1 and G2, we design a novel Dual Visual Filtering mechanism for the plain visual transformer, denoted as DVF, to capture subcategory-specific discrepancies. Specifically, the dual visual filtering mechanism comprises an object-oriented module and a semantic-oriented module. These components serve to magnify objects and identify discriminative regions, respectively. Following G3, we implement a discriminative model training strategy to improve the discriminability and generalization ability of DVF. Extensive analysis and ablation studies confirm the efficacy of our proposed guidelines. Without bells and whistles, the proposed DVF achieves state-of-the-art performance on three widely-used fine-grained datasets in closed-set and open-set settings.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Image Matching  
-
-### [Transformer-Based Local Feature Matching for Multimodal Image Registration](http://arxiv.org/abs/2404.16802)  
-Remi Delaunay, Ruisi Zhang, Filipe C. Pedrosa, Navid Feizi, Dianne Sacco, Rajni Patel, Jayender Jagadeesan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Ultrasound imaging is a cost-effective and radiation-free modality for visualizing anatomical structures in real-time, making it ideal for guiding surgical interventions. However, its limited field-of-view, speckle noise, and imaging artifacts make it difficult to interpret the images for inexperienced users. In this paper, we propose a new 2D ultrasound to 3D CT registration method to improve surgical guidance during ultrasound-guided interventions. Our approach adopts a dense feature matching method called LoFTR to our multimodal registration problem. We learn to predict dense coarse-to-fine correspondences using a Transformer-based architecture to estimate a robust rigid transformation between a 2D ultrasound frame and a CT scan. Additionally, a fully differentiable pose estimation method is introduced, optimizing LoFTR on pose estimation error during training. Experiments conducted on a multimodal dataset of ex vivo porcine kidneys demonstrate the method's promising results for intraoperative, trackerless ultrasound pose estimation. By mapping 2D ultrasound frames into the 3D CT volume space, the method provides intraoperative guidance, potentially improving surgical workflows and image interpretation.  
-  </ol>  
-</details>  
-**comments**: Accepted to SPIE Medical Imaging 2024  
   
   
 
@@ -76,34 +65,15 @@ Remi Delaunay, Ruisi Zhang, Filipe C. Pedrosa, Navid Feizi, Dianne Sacco, Rajni 
 
 ## NeRF  
 
-### [Depth Supervised Neural Surface Reconstruction from Airborne Imagery](http://arxiv.org/abs/2404.16429)  
-Vincent Hackstein, Paul Fauth-Mayer, Matthias Rothermel, Norbert Haala  
+### [Geometry-aware Reconstruction and Fusion-refined Rendering for Generalizable Neural Radiance Fields](http://arxiv.org/abs/2404.17528)  
+Tianqi Liu, Xinyi Ye, Min Shi, Zihao Huang, Zhiyu Pan, Zhan Peng, Zhiguo Cao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    While originally developed for novel view synthesis, Neural Radiance Fields (NeRFs) have recently emerged as an alternative to multi-view stereo (MVS). Triggered by a manifold of research activities, promising results have been gained especially for texture-less, transparent, and reflecting surfaces, while such scenarios remain challenging for traditional MVS-based approaches. However, most of these investigations focus on close-range scenarios, with studies for airborne scenarios still missing. For this task, NeRFs face potential difficulties at areas of low image redundancy and weak data evidence, as often found in street canyons, facades or building shadows. Furthermore, training such networks is computationally expensive. Thus, the aim of our work is twofold: First, we investigate the applicability of NeRFs for aerial image blocks representing different characteristics like nadir-only, oblique and high-resolution imagery. Second, during these investigations we demonstrate the benefit of integrating depth priors from tie-point measures, which are provided during presupposed Bundle Block Adjustment. Our work is based on the state-of-the-art framework VolSDF, which models 3D scenes by signed distance functions (SDFs), since this is more applicable for surface reconstruction compared to the standard volumetric representation in vanilla NeRFs. For evaluation, the NeRF-based reconstructions are compared to results of a publicly available benchmark dataset for airborne images.  
+    Generalizable NeRF aims to synthesize novel views for unseen scenes. Common practices involve constructing variance-based cost volumes for geometry reconstruction and encoding 3D descriptors for decoding novel views. However, existing methods show limited generalization ability in challenging conditions due to inaccurate geometry, sub-optimal descriptors, and decoding strategies. We address these issues point by point. First, we find the variance-based cost volume exhibits failure patterns as the features of pixels corresponding to the same point can be inconsistent across different views due to occlusions or reflections. We introduce an Adaptive Cost Aggregation (ACA) approach to amplify the contribution of consistent pixel pairs and suppress inconsistent ones. Unlike previous methods that solely fuse 2D features into descriptors, our approach introduces a Spatial-View Aggregator (SVA) to incorporate 3D context into descriptors through spatial and inter-view interaction. When decoding the descriptors, we observe the two existing decoding strategies excel in different areas, which are complementary. A Consistency-Aware Fusion (CAF) strategy is proposed to leverage the advantages of both. We incorporate the above ACA, SVA, and CAF into a coarse-to-fine framework, termed Geometry-aware Reconstruction and Fusion-refined Rendering (GeFu). GeFu attains state-of-the-art performance across multiple datasets. Code is available at https://github.com/TQTQliu/GeFu .  
   </ol>  
 </details>  
-  
-### [NeRF-XL: Scaling NeRFs with Multiple GPUs](http://arxiv.org/abs/2404.16221)  
-Ruilong Li, Sanja Fidler, Angjoo Kanazawa, Francis Williams  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present NeRF-XL, a principled method for distributing Neural Radiance Fields (NeRFs) across multiple GPUs, thus enabling the training and rendering of NeRFs with an arbitrarily large capacity. We begin by revisiting existing multi-GPU approaches, which decompose large scenes into multiple independently trained NeRFs, and identify several fundamental issues with these methods that hinder improvements in reconstruction quality as additional computational resources (GPUs) are used in training. NeRF-XL remedies these issues and enables the training and rendering of NeRFs with an arbitrary number of parameters by simply using more hardware. At the core of our method lies a novel distributed training and rendering formulation, which is mathematically equivalent to the classic single-GPU case and minimizes communication between GPUs. By unlocking NeRFs with arbitrarily large parameter counts, our approach is the first to reveal multi-GPU scaling laws for NeRFs, showing improvements in reconstruction quality with larger parameter counts and speed improvements with more GPUs. We demonstrate the effectiveness of NeRF-XL on a wide variety of datasets, including the largest open-source dataset to date, MatrixCity, containing 258K images covering a 25km^2 city area.  
-  </ol>  
-</details>  
-**comments**: Webpage: https://research.nvidia.com/labs/toronto-ai/nerfxl/  
-  
-### [ESR-NeRF: Emissive Source Reconstruction Using LDR Multi-view Images](http://arxiv.org/abs/2404.15707)  
-Jinseo Jeong, Junseo Koo, Qimeng Zhang, Gunhee Kim  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Existing NeRF-based inverse rendering methods suppose that scenes are exclusively illuminated by distant light sources, neglecting the potential influence of emissive sources within a scene. In this work, we confront this limitation using LDR multi-view images captured with emissive sources turned on and off. Two key issues must be addressed: 1) ambiguity arising from the limited dynamic range along with unknown lighting details, and 2) the expensive computational cost in volume rendering to backtrace the paths leading to final object colors. We present a novel approach, ESR-NeRF, leveraging neural networks as learnable functions to represent ray-traced fields. By training networks to satisfy light transport segments, we regulate outgoing radiances, progressively identifying emissive sources while being aware of reflection areas. The results on scenes encompassing emissive sources with various properties demonstrate the superiority of ESR-NeRF in qualitative and quantitative ways. Our approach also extends its applicability to the scenes devoid of emissive sources, achieving lower CD metrics on the DTU dataset.  
-  </ol>  
-</details>  
-**comments**: CVPR 2024  
+**comments**: Accepted by CVPR 2024. Project page: https://gefucvpr24.github.io  
   
   
 
