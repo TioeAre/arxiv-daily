@@ -1,77 +1,74 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#An-Attention-Based-Deep-Learning-Architecture-for-Real-Time-Monocular-Visual-Odometry:-Applications-to-GPS-free-Drone-Navigation>An Attention-Based Deep Learning Architecture for Real-Time Monocular Visual Odometry: Applications to GPS-free Drone Navigation</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Enhancing-Interactive-Image-Retrieval-With-Query-Rewriting-Using-Large-Language-Models-and-Vision-Language-Models>Enhancing Interactive Image Retrieval With Query Rewriting Using Large Language Models and Vision Language Models</a></li>
-        <li><a href=#Dual-Modal-Prompting-for-Sketch-Based-Image-Retrieval>Dual-Modal Prompting for Sketch-Based Image Retrieval</a></li>
-        <li><a href=#Semantic-Line-Combination-Detector>Semantic Line Combination Detector</a></li>
+        <li><a href=#Large-Language-Model-Informed-Patent-Image-Retrieval>Large Language Model Informed Patent Image Retrieval</a></li>
+        <li><a href=#XFeat:-Accelerated-Features-for-Lightweight-Image-Matching>XFeat: Accelerated Features for Lightweight Image Matching</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#A-Light-weight-Transformer-based-Self-supervised-Matching-Network-for-Heterogeneous-Images>A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#MinBackProp----Backpropagating-through-Minimal-Solvers>MinBackProp -- Backpropagating through Minimal Solvers</a></li>
+        <li><a href=#A-Light-weight-Transformer-based-Self-supervised-Matching-Network-for-Heterogeneous-Images>A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images</a></li>
+        <li><a href=#XFeat:-Accelerated-Features-for-Lightweight-Image-Matching>XFeat: Accelerated Features for Lightweight Image Matching</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#S3-SLAM:-Sparse-Tri-plane-Encoding-for-Neural-Implicit-SLAM>S3-SLAM: Sparse Tri-plane Encoding for Neural Implicit SLAM</a></li>
-        <li><a href=#DPER:-Diffusion-Prior-Driven-Neural-Representation-for-Limited-Angle-and-Sparse-View-CT-Reconstruction>DPER: Diffusion Prior Driven Neural Representation for Limited Angle and Sparse View CT Reconstruction</a></li>
+        <li><a href=#RTG-SLAM:-Real-time-3D-Reconstruction-at-Scale-using-Gaussian-Splatting>RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting</a></li>
+        <li><a href=#NeRF-Insert:-3D-Local-Editing-with-Multimodal-Control-Signals>NeRF-Insert: 3D Local Editing with Multimodal Control Signals</a></li>
+        <li><a href=#SAGS:-Structure-Aware-3D-Gaussian-Splatting>SAGS: Structure-Aware 3D Gaussian Splatting</a></li>
+        <li><a href=#GSTalker:-Real-time-Audio-Driven-Talking-Face-Generation-via-Deformable-Gaussian-Splatting>GSTalker: Real-time Audio-Driven Talking Face Generation via Deformable Gaussian Splatting</a></li>
+        <li><a href=#Embedded-Representation-Learning-Network-for-Animating-Styled-Video-Portrait>Embedded Representation Learning Network for Animating Styled Video Portrait</a></li>
+        <li><a href=#Simple-RF:-Regularizing-Sparse-Input-Radiance-Fields-with-Simpler-Solutions>Simple-RF: Regularizing Sparse Input Radiance Fields with Simpler Solutions</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [An Attention-Based Deep Learning Architecture for Real-Time Monocular Visual Odometry: Applications to GPS-free Drone Navigation](http://arxiv.org/abs/2404.17745)  
-Olivier Brochu Dufour, Abolfazl Mohebbi, Sofiane Achiche  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Drones are increasingly used in fields like industry, medicine, research, disaster relief, defense, and security. Technical challenges, such as navigation in GPS-denied environments, hinder further adoption. Research in visual odometry is advancing, potentially solving GPS-free navigation issues. Traditional visual odometry methods use geometry-based pipelines which, while popular, often suffer from error accumulation and high computational demands. Recent studies utilizing deep neural networks (DNNs) have shown improved performance, addressing these drawbacks. Deep visual odometry typically employs convolutional neural networks (CNNs) and sequence modeling networks like recurrent neural networks (RNNs) to interpret scenes and deduce visual odometry from video sequences. This paper presents a novel real-time monocular visual odometry model for drones, using a deep neural architecture with a self-attention module. It estimates the ego-motion of a camera on a drone, using consecutive video frames. An inference utility processes the live video feed, employing deep learning to estimate the drone's trajectory. The architecture combines a CNN for image feature extraction and a long short-term memory (LSTM) network with a multi-head attention module for video sequence modeling. Tested on two visual odometry datasets, this model converged 48% faster than a previous RNN model and showed a 22% reduction in mean translational drift and a 12% improvement in mean translational absolute trajectory error, demonstrating enhanced robustness to noise.  
-  </ol>  
-</details>  
-**comments**: 22 Pages, 3 Tables, 9 Figures  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Enhancing Interactive Image Retrieval With Query Rewriting Using Large Language Models and Vision Language Models](http://arxiv.org/abs/2404.18746)  
-Hongyi Zhu, Jia-Hong Huang, Stevan Rudinac, Evangelos Kanoulas  
+### [Large Language Model Informed Patent Image Retrieval](http://arxiv.org/abs/2404.19360)  
+Hao-Cheng Lo, Jung-Mei Chu, Jieh Hsiang, Chun-Chieh Cho  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image search stands as a pivotal task in multimedia and computer vision, finding applications across diverse domains, ranging from internet search to medical diagnostics. Conventional image search systems operate by accepting textual or visual queries, retrieving the top-relevant candidate results from the database. However, prevalent methods often rely on single-turn procedures, introducing potential inaccuracies and limited recall. These methods also face the challenges, such as vocabulary mismatch and the semantic gap, constraining their overall effectiveness. To address these issues, we propose an interactive image retrieval system capable of refining queries based on user relevance feedback in a multi-turn setting. This system incorporates a vision language model (VLM) based image captioner to enhance the quality of text-based queries, resulting in more informative queries with each iteration. Moreover, we introduce a large language model (LLM) based denoiser to refine text-based query expansions, mitigating inaccuracies in image descriptions generated by captioning models. To evaluate our system, we curate a new dataset by adapting the MSR-VTT video retrieval dataset to the image retrieval task, offering multiple relevant ground truth images for each query. Through comprehensive experiments, we validate the effectiveness of our proposed system against baseline methods, achieving state-of-the-art performance with a notable 10\% improvement in terms of recall. Our contributions encompass the development of an innovative interactive image retrieval system, the integration of an LLM-based denoiser, the curation of a meticulously designed evaluation dataset, and thorough experimental validation.  
+    In patent prosecution, image-based retrieval systems for identifying similarities between current patent images and prior art are pivotal to ensure the novelty and non-obviousness of patent applications. Despite their growing popularity in recent years, existing attempts, while effective at recognizing images within the same patent, fail to deliver practical value due to their limited generalizability in retrieving relevant prior art. Moreover, this task inherently involves the challenges posed by the abstract visual features of patent images, the skewed distribution of image classifications, and the semantic information of image descriptions. Therefore, we propose a language-informed, distribution-aware multimodal approach to patent image feature learning, which enriches the semantic understanding of patent image by integrating Large Language Models and improves the performance of underrepresented classes with our proposed distribution-aware contrastive losses. Extensive experiments on DeepPatent2 dataset show that our proposed method achieves state-of-the-art or comparable performance in image-based patent retrieval with mAP +53.3%, Recall@10 +41.8%, and MRR@10 +51.9%. Furthermore, through an in-depth user analysis, we explore our model in aiding patent professionals in their image retrieval efforts, highlighting the model's real-world applicability and effectiveness.  
   </ol>  
 </details>  
+**comments**: 8 pages. Under review  
   
-### [Dual-Modal Prompting for Sketch-Based Image Retrieval](http://arxiv.org/abs/2404.18695)  
-Liying Gao, Bingliang Jiao, Peng Wang, Shizhou Zhang, Hanwang Zhang, Yanning Zhang  
+### [XFeat: Accelerated Features for Lightweight Image Matching](http://arxiv.org/abs/2404.19174)  
+Guilherme Potje, Felipe Cadar, Andre Araujo, Renato Martins, Erickson R. Nascimento  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Sketch-based image retrieval (SBIR) associates hand-drawn sketches with their corresponding realistic images. In this study, we aim to tackle two major challenges of this task simultaneously: i) zero-shot, dealing with unseen categories, and ii) fine-grained, referring to intra-category instance-level retrieval. Our key innovation lies in the realization that solely addressing this cross-category and fine-grained recognition task from the generalization perspective may be inadequate since the knowledge accumulated from limited seen categories might not be fully valuable or transferable to unseen target categories. Inspired by this, in this work, we propose a dual-modal prompting CLIP (DP-CLIP) network, in which an adaptive prompting strategy is designed. Specifically, to facilitate the adaptation of our DP-CLIP toward unpredictable target categories, we employ a set of images within the target category and the textual category label to respectively construct a set of category-adaptive prompt tokens and channel scales. By integrating the generated guidance, DP-CLIP could gain valuable category-centric insights, efficiently adapting to novel categories and capturing unique discriminative clues for effective retrieval within each target category. With these designs, our DP-CLIP outperforms the state-of-the-art fine-grained zero-shot SBIR method by 7.3% in Acc.@1 on the Sketchy dataset. Meanwhile, in the other two category-level zero-shot SBIR benchmarks, our method also achieves promising performance.  
+    We introduce a lightweight and accurate architecture for resource-efficient visual correspondence. Our method, dubbed XFeat (Accelerated Features), revisits fundamental design choices in convolutional neural networks for detecting, extracting, and matching local features. Our new model satisfies a critical need for fast and robust algorithms suitable to resource-limited devices. In particular, accurate image matching requires sufficiently large image resolutions - for this reason, we keep the resolution as large as possible while limiting the number of channels in the network. Besides, our model is designed to offer the choice of matching at the sparse or semi-dense levels, each of which may be more suitable for different downstream applications, such as visual navigation and augmented reality. Our model is the first to offer semi-dense matching efficiently, leveraging a novel match refinement module that relies on coarse local descriptors. XFeat is versatile and hardware-independent, surpassing current deep learning-based local features in speed (up to 5x faster) with comparable or better accuracy, proven in pose estimation and visual localization. We showcase it running in real-time on an inexpensive laptop CPU without specialized hardware optimizations. Code and weights are available at www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24.  
   </ol>  
 </details>  
+**comments**: CVPR 2024; Source code available at
+  www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24  
   
-### [Semantic Line Combination Detector](http://arxiv.org/abs/2404.18399)  
-[[code](https://github.com/jinwon-ko/slcd)]  
-Jinwon Ko, Dongkwon Jin, Chang-Su Kim  
+  
+
+
+
+## Keypoint Detection  
+
+### [A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images](http://arxiv.org/abs/2404.19311)  
+Wang Zhang, Tingting Li, Yuntian Zhang, Gensheng Pei, Xiruo Jiang, Yazhou Yao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    A novel algorithm, called semantic line combination detector (SLCD), to find an optimal combination of semantic lines is proposed in this paper. It processes all lines in each line combination at once to assess the overall harmony of the lines. First, we generate various line combinations from reliable lines. Second, we estimate the score of each line combination and determine the best one. Experimental results demonstrate that the proposed SLCD outperforms existing semantic line detectors on various datasets. Moreover, it is shown that SLCD can be applied effectively to three vision tasks of vanishing point detection, symmetry axis detection, and composition-based image retrieval. Our codes are available at https://github.com/Jinwon-Ko/SLCD.  
+    Matching visible and near-infrared (NIR) images remains a significant challenge in remote sensing image fusion. The nonlinear radiometric differences between heterogeneous remote sensing images make the image matching task even more difficult. Deep learning has gained substantial attention in computer vision tasks in recent years. However, many methods rely on supervised learning and necessitate large amounts of annotated data. Nevertheless, annotated data is frequently limited in the field of remote sensing image matching. To address this challenge, this paper proposes a novel keypoint descriptor approach that obtains robust feature descriptors via a self-supervised matching network. A light-weight transformer network, termed as LTFormer, is designed to generate deep-level feature descriptors. Furthermore, we implement an innovative triplet loss function, LT Loss, to enhance the matching performance further. Our approach outperforms conventional hand-crafted local feature descriptors and proves equally competitive compared to state-of-the-art deep learning-based methods, even amidst the shortage of annotated data.  
   </ol>  
 </details>  
+**comments**: accepted by Information Fusion  
   
   
 
@@ -79,14 +76,26 @@ Jinwon Ko, Dongkwon Jin, Chang-Su Kim
 
 ## Image Matching  
 
-### [MinBackProp -- Backpropagating through Minimal Solvers](http://arxiv.org/abs/2404.17993)  
-Diana Sungatullina, Tomas Pajdla  
+### [A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images](http://arxiv.org/abs/2404.19311)  
+Wang Zhang, Tingting Li, Yuntian Zhang, Gensheng Pei, Xiruo Jiang, Yazhou Yao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present an approach to backpropagating through minimal problem solvers in end-to-end neural network training. Traditional methods relying on manually constructed formulas, finite differences, and autograd are laborious, approximate, and unstable for complex minimal problem solvers. We show that using the Implicit function theorem to calculate derivatives to backpropagate through the solution of a minimal problem solver is simple, fast, and stable. We compare our approach to (i) using the standard autograd on minimal problem solvers and relate it to existing backpropagation formulas through SVD-based and Eig-based solvers and (ii) implementing the backprop with an existing PyTorch Deep Declarative Networks (DDN) framework. We demonstrate our technique on a toy example of training outlier-rejection weights for 3D point registration and on a real application of training an outlier-rejection and RANSAC sampling network in image matching. Our method provides $100\%$ stability and is 10 times faster compared to autograd, which is unstable and slow, and compared to DDN, which is stable but also slow.  
+    Matching visible and near-infrared (NIR) images remains a significant challenge in remote sensing image fusion. The nonlinear radiometric differences between heterogeneous remote sensing images make the image matching task even more difficult. Deep learning has gained substantial attention in computer vision tasks in recent years. However, many methods rely on supervised learning and necessitate large amounts of annotated data. Nevertheless, annotated data is frequently limited in the field of remote sensing image matching. To address this challenge, this paper proposes a novel keypoint descriptor approach that obtains robust feature descriptors via a self-supervised matching network. A light-weight transformer network, termed as LTFormer, is designed to generate deep-level feature descriptors. Furthermore, we implement an innovative triplet loss function, LT Loss, to enhance the matching performance further. Our approach outperforms conventional hand-crafted local feature descriptors and proves equally competitive compared to state-of-the-art deep learning-based methods, even amidst the shortage of annotated data.  
   </ol>  
 </details>  
+**comments**: accepted by Information Fusion  
+  
+### [XFeat: Accelerated Features for Lightweight Image Matching](http://arxiv.org/abs/2404.19174)  
+Guilherme Potje, Felipe Cadar, Andre Araujo, Renato Martins, Erickson R. Nascimento  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce a lightweight and accurate architecture for resource-efficient visual correspondence. Our method, dubbed XFeat (Accelerated Features), revisits fundamental design choices in convolutional neural networks for detecting, extracting, and matching local features. Our new model satisfies a critical need for fast and robust algorithms suitable to resource-limited devices. In particular, accurate image matching requires sufficiently large image resolutions - for this reason, we keep the resolution as large as possible while limiting the number of channels in the network. Besides, our model is designed to offer the choice of matching at the sparse or semi-dense levels, each of which may be more suitable for different downstream applications, such as visual navigation and augmented reality. Our model is the first to offer semi-dense matching efficiently, leveraging a novel match refinement module that relies on coarse local descriptors. XFeat is versatile and hardware-independent, surpassing current deep learning-based local features in speed (up to 5x faster) with comparable or better accuracy, proven in pose estimation and visual localization. We showcase it running in real-time on an inexpensive laptop CPU without specialized hardware optimizations. Code and weights are available at www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24.  
+  </ol>  
+</details>  
+**comments**: CVPR 2024; Source code available at
+  www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24  
   
   
 
@@ -94,24 +103,64 @@ Diana Sungatullina, Tomas Pajdla
 
 ## NeRF  
 
-### [S3-SLAM: Sparse Tri-plane Encoding for Neural Implicit SLAM](http://arxiv.org/abs/2404.18284)  
-Zhiyao Zhang, Yunzhou Zhang, Yanmin Wu, Bin Zhao, Xingshuo Wang, Rui Tian  
+### [RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting](http://arxiv.org/abs/2404.19706)  
+Zhexi Peng, Tianjia Shao, Yong Liu, Jingke Zhou, Yin Yang, Jingdong Wang, Kun Zhou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    With the emergence of Neural Radiance Fields (NeRF), neural implicit representations have gained widespread applications across various domains, including simultaneous localization and mapping. However, current neural implicit SLAM faces a challenging trade-off problem between performance and the number of parameters. To address this problem, we propose sparse tri-plane encoding, which efficiently achieves scene reconstruction at resolutions up to 512 using only 2~4% of the commonly used tri-plane parameters (reduced from 100MB to 2~4MB). On this basis, we design S3-SLAM to achieve rapid and high-quality tracking and mapping through sparsifying plane parameters and integrating orthogonal features of tri-plane. Furthermore, we develop hierarchical bundle adjustment to achieve globally consistent geometric structures and reconstruct high-resolution appearance. Experimental results demonstrate that our approach achieves competitive tracking and scene reconstruction with minimal parameters on three datasets. Source code will soon be available.  
+    We propose RTG-SLAM, a real-time 3D reconstruction system with an RGBD camera for large-scale environments using Gaussian splatting. RTG-SLAM features a compact Gaussian representation and a highly efficient on-the-fly Gaussian optimization scheme. We force each Gaussian to be either opaque or nearly transparent, with the opaque ones fitting the surface and dominant colors, and transparent ones fitting residual colors. By rendering depth in a different way from color rendering, we let a single opaque Gaussian well fit a local surface region without the need of multiple overlapping Gaussians, hence largely reducing the memory and computation cost. For on-the-fly Gaussian optimization, we explicitly add Gaussians for three types of pixels per frame: newly observed, with large color errors and with large depth errors. We also categorize all Gaussians into stable and unstable ones, where the stable Gaussians are expected to well fit previously observed RGBD images and otherwise unstable. We only optimize the unstable Gaussians and only render the pixels occupied by unstable Gaussians. In this way, both the number of Gaussians to be optimized and pixels to be rendered are largely reduced, and the optimization can be done in real time. We show real-time reconstructions of a variety of real large scenes. Compared with the state-of-the-art NeRF-based RGBD SLAM, our system achieves comparable high-quality reconstruction but with around twice the speed and half the memory cost, and shows superior performance in the realism of novel view synthesis and camera tracking accuracy.  
+  </ol>  
+</details>  
+**comments**: To be published in ACM SIGGRAPH 2024  
+  
+### [NeRF-Insert: 3D Local Editing with Multimodal Control Signals](http://arxiv.org/abs/2404.19204)  
+Benet Oriol Sabat, Alessandro Achille, Matthew Trager, Stefano Soatto  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We propose NeRF-Insert, a NeRF editing framework that allows users to make high-quality local edits with a flexible level of control. Unlike previous work that relied on image-to-image models, we cast scene editing as an in-painting problem, which encourages the global structure of the scene to be preserved. Moreover, while most existing methods use only textual prompts to condition edits, our framework accepts a combination of inputs of different modalities as reference. More precisely, a user may provide a combination of textual and visual inputs including images, CAD models, and binary image masks for specifying a 3D region. We use generic image generation models to in-paint the scene from multiple viewpoints, and lift the local edits to a 3D-consistent NeRF edit. Compared to previous methods, our results show better visual quality and also maintain stronger consistency with the original NeRF.  
   </ol>  
 </details>  
   
-### [DPER: Diffusion Prior Driven Neural Representation for Limited Angle and Sparse View CT Reconstruction](http://arxiv.org/abs/2404.17890)  
-Chenhe Du, Xiyue Lin, Qing Wu, Xuanyu Tian, Ying Su, Zhe Luo, Hongjiang Wei, S. Kevin Zhou, Jingyi Yu, Yuyao Zhang  
+### [SAGS: Structure-Aware 3D Gaussian Splatting](http://arxiv.org/abs/2404.19149)  
+Evangelos Ververas, Rolandos Alexandros Potamias, Jifei Song, Jiankang Deng, Stefanos Zafeiriou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Limited-angle and sparse-view computed tomography (LACT and SVCT) are crucial for expanding the scope of X-ray CT applications. However, they face challenges due to incomplete data acquisition, resulting in diverse artifacts in the reconstructed CT images. Emerging implicit neural representation (INR) techniques, such as NeRF, NeAT, and NeRP, have shown promise in under-determined CT imaging reconstruction tasks. However, the unsupervised nature of INR architecture imposes limited constraints on the solution space, particularly for the highly ill-posed reconstruction task posed by LACT and ultra-SVCT. In this study, we introduce the Diffusion Prior Driven Neural Representation (DPER), an advanced unsupervised framework designed to address the exceptionally ill-posed CT reconstruction inverse problems. DPER adopts the Half Quadratic Splitting (HQS) algorithm to decompose the inverse problem into data fidelity and distribution prior sub-problems. The two sub-problems are respectively addressed by INR reconstruction scheme and pre-trained score-based diffusion model. This combination initially preserves the implicit image local consistency prior from INR. Additionally, it effectively augments the feasibility of the solution space for the inverse problem through the generative diffusion model, resulting in increased stability and precision in the solutions. We conduct comprehensive experiments to evaluate the performance of DPER on LACT and ultra-SVCT reconstruction with two public datasets (AAPM and LIDC). The results show that our method outperforms the state-of-the-art reconstruction methods on in-domain datasets, while achieving significant performance improvements on out-of-domain datasets.  
+    Following the advent of NeRFs, 3D Gaussian Splatting (3D-GS) has paved the way to real-time neural rendering overcoming the computational burden of volumetric methods. Following the pioneering work of 3D-GS, several methods have attempted to achieve compressible and high-fidelity performance alternatives. However, by employing a geometry-agnostic optimization scheme, these methods neglect the inherent 3D structure of the scene, thereby restricting the expressivity and the quality of the representation, resulting in various floating points and artifacts. In this work, we propose a structure-aware Gaussian Splatting method (SAGS) that implicitly encodes the geometry of the scene, which reflects to state-of-the-art rendering performance and reduced storage requirements on benchmark novel-view synthesis datasets. SAGS is founded on a local-global graph representation that facilitates the learning of complex scenes and enforces meaningful point displacements that preserve the scene's geometry. Additionally, we introduce a lightweight version of SAGS, using a simple yet effective mid-point interpolation scheme, which showcases a compact representation of the scene with up to 24 $\times$ size reduction without the reliance on any compression strategies. Extensive experiments across multiple benchmark datasets demonstrate the superiority of SAGS compared to state-of-the-art 3D-GS methods under both rendering quality and model size. Besides, we demonstrate that our structure-aware method can effectively mitigate floating artifacts and irregular distortions of previous methods while obtaining precise depth maps. Project page https://eververas.github.io/SAGS/.  
   </ol>  
 </details>  
-**comments**: 15 pages, 10 figures  
+**comments**: 15 pages, 8 figures, 3 tables  
+  
+### [GSTalker: Real-time Audio-Driven Talking Face Generation via Deformable Gaussian Splatting](http://arxiv.org/abs/2404.19040)  
+Bo Chen, Shoukang Hu, Qi Chen, Chenpeng Du, Ran Yi, Yanmin Qian, Xie Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We present GStalker, a 3D audio-driven talking face generation model with Gaussian Splatting for both fast training (40 minutes) and real-time rendering (125 FPS) with a 3 $\sim$ 5 minute video for training material, in comparison with previous 2D and 3D NeRF-based modeling frameworks which require hours of training and seconds of rendering per frame. Specifically, GSTalker learns an audio-driven Gaussian deformation field to translate and transform 3D Gaussians to synchronize with audio information, in which multi-resolution hashing grid-based tri-plane and temporal smooth module are incorporated to learn accurate deformation for fine-grained facial details. In addition, a pose-conditioned deformation field is designed to model the stabilized torso. To enable efficient optimization of the condition Gaussian deformation field, we initialize 3D Gaussians by learning a coarse static Gaussian representation. Extensive experiments in person-specific videos with audio tracks validate that GSTalker can generate high-fidelity and audio-lips synchronized results with fast training and real-time rendering speed.  
+  </ol>  
+</details>  
+  
+### [Embedded Representation Learning Network for Animating Styled Video Portrait](http://arxiv.org/abs/2404.19038)  
+Tianyong Wang, Xiangyu Liang, Wangguandong Zheng, Dan Niu, Haifeng Xia, Siyu Xia  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The talking head generation recently attracted considerable attention due to its widespread application prospects, especially for digital avatars and 3D animation design. Inspired by this practical demand, several works explored Neural Radiance Fields (NeRF) to synthesize the talking heads. However, these methods based on NeRF face two challenges: (1) Difficulty in generating style-controllable talking heads. (2) Displacement artifacts around the neck in rendered images. To overcome these two challenges, we propose a novel generative paradigm \textit{Embedded Representation Learning Network} (ERLNet) with two learning stages. First, the \textit{ audio-driven FLAME} (ADF) module is constructed to produce facial expression and head pose sequences synchronized with content audio and style video. Second, given the sequence deduced by the ADF, one novel \textit{dual-branch fusion NeRF} (DBF-NeRF) explores these contents to render the final images. Extensive empirical studies demonstrate that the collaboration of these two stages effectively facilitates our method to render a more realistic talking head than the existing algorithms.  
+  </ol>  
+</details>  
+  
+### [Simple-RF: Regularizing Sparse Input Radiance Fields with Simpler Solutions](http://arxiv.org/abs/2404.19015)  
+Nagabhushan Somraj, Adithyan Karanayil, Sai Harsha Mupparaju, Rajiv Soundararajan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) show impressive performance in photo-realistic free-view rendering of scenes. Recent improvements on the NeRF such as TensoRF and ZipNeRF employ explicit models for faster optimization and rendering, as compared to the NeRF that employs an implicit representation. However, both implicit and explicit radiance fields require dense sampling of images in the given scene. Their performance degrades significantly when only a sparse set of views is available. Researchers find that supervising the depth estimated by a radiance field helps train it effectively with fewer views. The depth supervision is obtained either using classical approaches or neural networks pre-trained on a large dataset. While the former may provide only sparse supervision, the latter may suffer from generalization issues. As opposed to the earlier approaches, we seek to learn the depth supervision by designing augmented models and training them along with the main radiance field. Further, we aim to design a framework of regularizations that can work across different implicit and explicit radiance fields. We observe that certain features of these radiance field models overfit to the observed images in the sparse-input scenario. Our key finding is that reducing the capability of the radiance fields with respect to positional encoding, the number of decomposed tensor components or the size of the hash table, constrains the model to learn simpler solutions, which estimate better depth in certain regions. By designing augmented models based on such reduced capabilities, we obtain better depth supervision for the main radiance field. We achieve state-of-the-art view-synthesis performance with sparse input views on popular datasets containing forward-facing and 360 $^\circ$ scenes by employing the above regularizations.  
+  </ol>  
+</details>  
+**comments**: The source code for our model can be found on our project page:
+  https://nagabhushansn95.github.io/publications/2024/Simple-RF.html. arXiv
+  admin note: substantial text overlap with arXiv:2309.03955  
   
   
 
