@@ -3,29 +3,13 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Large-Language-Model-Informed-Patent-Image-Retrieval>Large Language Model Informed Patent Image Retrieval</a></li>
-        <li><a href=#XFeat:-Accelerated-Features-for-Lightweight-Image-Matching>XFeat: Accelerated Features for Lightweight Image Matching</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#A-Light-weight-Transformer-based-Self-supervised-Matching-Network-for-Heterogeneous-Images>A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#A-Light-weight-Transformer-based-Self-supervised-Matching-Network-for-Heterogeneous-Images>A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images</a></li>
-        <li><a href=#XFeat:-Accelerated-Features-for-Lightweight-Image-Matching>XFeat: Accelerated Features for Lightweight Image Matching</a></li>
+        <li><a href=#Spherical-Linear-Interpolation-and-Text-Anchoring-for-Zero-shot-Composed-Image-Retrieval>Spherical Linear Interpolation and Text-Anchoring for Zero-shot Composed Image Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#RTG-SLAM:-Real-time-3D-Reconstruction-at-Scale-using-Gaussian-Splatting>RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting</a></li>
-        <li><a href=#NeRF-Insert:-3D-Local-Editing-with-Multimodal-Control-Signals>NeRF-Insert: 3D Local Editing with Multimodal Control Signals</a></li>
-        <li><a href=#SAGS:-Structure-Aware-3D-Gaussian-Splatting>SAGS: Structure-Aware 3D Gaussian Splatting</a></li>
-        <li><a href=#GSTalker:-Real-time-Audio-Driven-Talking-Face-Generation-via-Deformable-Gaussian-Splatting>GSTalker: Real-time Audio-Driven Talking Face Generation via Deformable Gaussian Splatting</a></li>
-        <li><a href=#Embedded-Representation-Learning-Network-for-Animating-Styled-Video-Portrait>Embedded Representation Learning Network for Animating Styled Video Portrait</a></li>
-        <li><a href=#Simple-RF:-Regularizing-Sparse-Input-Radiance-Fields-with-Simpler-Solutions>Simple-RF: Regularizing Sparse Input Radiance Fields with Simpler Solutions</a></li>
+        <li><a href=#Depth-Priors-in-Removal-Neural-Radiance-Fields>Depth Priors in Removal Neural Radiance Fields</a></li>
+        <li><a href=#NeRF-Guided-Unsupervised-Learning-of-RGB-D-Registration>NeRF-Guided Unsupervised Learning of RGB-D Registration</a></li>
       </ul>
     </li>
   </ol>
@@ -33,69 +17,14 @@
 
 ## Visual Localization  
 
-### [Large Language Model Informed Patent Image Retrieval](http://arxiv.org/abs/2404.19360)  
-Hao-Cheng Lo, Jung-Mei Chu, Jieh Hsiang, Chun-Chieh Cho  
+### [Spherical Linear Interpolation and Text-Anchoring for Zero-shot Composed Image Retrieval](http://arxiv.org/abs/2405.00571)  
+Young Kyun Jang, Dat Huynh, Ashish Shah, Wen-Kai Chen, Ser-Nam Lim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In patent prosecution, image-based retrieval systems for identifying similarities between current patent images and prior art are pivotal to ensure the novelty and non-obviousness of patent applications. Despite their growing popularity in recent years, existing attempts, while effective at recognizing images within the same patent, fail to deliver practical value due to their limited generalizability in retrieving relevant prior art. Moreover, this task inherently involves the challenges posed by the abstract visual features of patent images, the skewed distribution of image classifications, and the semantic information of image descriptions. Therefore, we propose a language-informed, distribution-aware multimodal approach to patent image feature learning, which enriches the semantic understanding of patent image by integrating Large Language Models and improves the performance of underrepresented classes with our proposed distribution-aware contrastive losses. Extensive experiments on DeepPatent2 dataset show that our proposed method achieves state-of-the-art or comparable performance in image-based patent retrieval with mAP +53.3%, Recall@10 +41.8%, and MRR@10 +51.9%. Furthermore, through an in-depth user analysis, we explore our model in aiding patent professionals in their image retrieval efforts, highlighting the model's real-world applicability and effectiveness.  
+    Composed Image Retrieval (CIR) is a complex task that retrieves images using a query, which is configured with an image and a caption that describes desired modifications to that image. Supervised CIR approaches have shown strong performance, but their reliance on expensive manually-annotated datasets restricts their scalability and broader applicability. To address these issues, previous studies have proposed pseudo-word token-based Zero-Shot CIR (ZS-CIR) methods, which utilize a projection module to map images to word tokens. However, we conjecture that this approach has a downside: the projection module distorts the original image representation and confines the resulting composed embeddings to the text-side. In order to resolve this, we introduce a novel ZS-CIR method that uses Spherical Linear Interpolation (Slerp) to directly merge image and text representations by identifying an intermediate embedding of both. Furthermore, we introduce Text-Anchored-Tuning (TAT), a method that fine-tunes the image encoder while keeping the text encoder fixed. TAT closes the modality gap between images and text, making the Slerp process much more effective. Notably, the TAT method is not only efficient in terms of the scale of the training dataset and training time, but it also serves as an excellent initial checkpoint for training supervised CIR models, thereby highlighting its wider potential. The integration of the Slerp-based ZS-CIR with a TAT-tuned model enables our approach to deliver state-of-the-art retrieval performance across CIR benchmarks.  
   </ol>  
 </details>  
-**comments**: 8 pages. Under review  
-  
-### [XFeat: Accelerated Features for Lightweight Image Matching](http://arxiv.org/abs/2404.19174)  
-Guilherme Potje, Felipe Cadar, Andre Araujo, Renato Martins, Erickson R. Nascimento  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce a lightweight and accurate architecture for resource-efficient visual correspondence. Our method, dubbed XFeat (Accelerated Features), revisits fundamental design choices in convolutional neural networks for detecting, extracting, and matching local features. Our new model satisfies a critical need for fast and robust algorithms suitable to resource-limited devices. In particular, accurate image matching requires sufficiently large image resolutions - for this reason, we keep the resolution as large as possible while limiting the number of channels in the network. Besides, our model is designed to offer the choice of matching at the sparse or semi-dense levels, each of which may be more suitable for different downstream applications, such as visual navigation and augmented reality. Our model is the first to offer semi-dense matching efficiently, leveraging a novel match refinement module that relies on coarse local descriptors. XFeat is versatile and hardware-independent, surpassing current deep learning-based local features in speed (up to 5x faster) with comparable or better accuracy, proven in pose estimation and visual localization. We showcase it running in real-time on an inexpensive laptop CPU without specialized hardware optimizations. Code and weights are available at www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24.  
-  </ol>  
-</details>  
-**comments**: CVPR 2024; Source code available at
-  www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images](http://arxiv.org/abs/2404.19311)  
-Wang Zhang, Tingting Li, Yuntian Zhang, Gensheng Pei, Xiruo Jiang, Yazhou Yao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Matching visible and near-infrared (NIR) images remains a significant challenge in remote sensing image fusion. The nonlinear radiometric differences between heterogeneous remote sensing images make the image matching task even more difficult. Deep learning has gained substantial attention in computer vision tasks in recent years. However, many methods rely on supervised learning and necessitate large amounts of annotated data. Nevertheless, annotated data is frequently limited in the field of remote sensing image matching. To address this challenge, this paper proposes a novel keypoint descriptor approach that obtains robust feature descriptors via a self-supervised matching network. A light-weight transformer network, termed as LTFormer, is designed to generate deep-level feature descriptors. Furthermore, we implement an innovative triplet loss function, LT Loss, to enhance the matching performance further. Our approach outperforms conventional hand-crafted local feature descriptors and proves equally competitive compared to state-of-the-art deep learning-based methods, even amidst the shortage of annotated data.  
-  </ol>  
-</details>  
-**comments**: accepted by Information Fusion  
-  
-  
-
-
-
-## Image Matching  
-
-### [A Light-weight Transformer-based Self-supervised Matching Network for Heterogeneous Images](http://arxiv.org/abs/2404.19311)  
-Wang Zhang, Tingting Li, Yuntian Zhang, Gensheng Pei, Xiruo Jiang, Yazhou Yao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Matching visible and near-infrared (NIR) images remains a significant challenge in remote sensing image fusion. The nonlinear radiometric differences between heterogeneous remote sensing images make the image matching task even more difficult. Deep learning has gained substantial attention in computer vision tasks in recent years. However, many methods rely on supervised learning and necessitate large amounts of annotated data. Nevertheless, annotated data is frequently limited in the field of remote sensing image matching. To address this challenge, this paper proposes a novel keypoint descriptor approach that obtains robust feature descriptors via a self-supervised matching network. A light-weight transformer network, termed as LTFormer, is designed to generate deep-level feature descriptors. Furthermore, we implement an innovative triplet loss function, LT Loss, to enhance the matching performance further. Our approach outperforms conventional hand-crafted local feature descriptors and proves equally competitive compared to state-of-the-art deep learning-based methods, even amidst the shortage of annotated data.  
-  </ol>  
-</details>  
-**comments**: accepted by Information Fusion  
-  
-### [XFeat: Accelerated Features for Lightweight Image Matching](http://arxiv.org/abs/2404.19174)  
-Guilherme Potje, Felipe Cadar, Andre Araujo, Renato Martins, Erickson R. Nascimento  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce a lightweight and accurate architecture for resource-efficient visual correspondence. Our method, dubbed XFeat (Accelerated Features), revisits fundamental design choices in convolutional neural networks for detecting, extracting, and matching local features. Our new model satisfies a critical need for fast and robust algorithms suitable to resource-limited devices. In particular, accurate image matching requires sufficiently large image resolutions - for this reason, we keep the resolution as large as possible while limiting the number of channels in the network. Besides, our model is designed to offer the choice of matching at the sparse or semi-dense levels, each of which may be more suitable for different downstream applications, such as visual navigation and augmented reality. Our model is the first to offer semi-dense matching efficiently, leveraging a novel match refinement module that relies on coarse local descriptors. XFeat is versatile and hardware-independent, surpassing current deep learning-based local features in speed (up to 5x faster) with comparable or better accuracy, proven in pose estimation and visual localization. We showcase it running in real-time on an inexpensive laptop CPU without specialized hardware optimizations. Code and weights are available at www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24.  
-  </ol>  
-</details>  
-**comments**: CVPR 2024; Source code available at
-  www.verlab.dcc.ufmg.br/descriptors/xfeat_cvpr24  
   
   
 
@@ -103,64 +32,24 @@ Guilherme Potje, Felipe Cadar, Andre Araujo, Renato Martins, Erickson R. Nascime
 
 ## NeRF  
 
-### [RTG-SLAM: Real-time 3D Reconstruction at Scale using Gaussian Splatting](http://arxiv.org/abs/2404.19706)  
-Zhexi Peng, Tianjia Shao, Yong Liu, Jingke Zhou, Yin Yang, Jingdong Wang, Kun Zhou  
+### [Depth Priors in Removal Neural Radiance Fields](http://arxiv.org/abs/2405.00630)  
+Zhihao Guo, Peng Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose RTG-SLAM, a real-time 3D reconstruction system with an RGBD camera for large-scale environments using Gaussian splatting. RTG-SLAM features a compact Gaussian representation and a highly efficient on-the-fly Gaussian optimization scheme. We force each Gaussian to be either opaque or nearly transparent, with the opaque ones fitting the surface and dominant colors, and transparent ones fitting residual colors. By rendering depth in a different way from color rendering, we let a single opaque Gaussian well fit a local surface region without the need of multiple overlapping Gaussians, hence largely reducing the memory and computation cost. For on-the-fly Gaussian optimization, we explicitly add Gaussians for three types of pixels per frame: newly observed, with large color errors and with large depth errors. We also categorize all Gaussians into stable and unstable ones, where the stable Gaussians are expected to well fit previously observed RGBD images and otherwise unstable. We only optimize the unstable Gaussians and only render the pixels occupied by unstable Gaussians. In this way, both the number of Gaussians to be optimized and pixels to be rendered are largely reduced, and the optimization can be done in real time. We show real-time reconstructions of a variety of real large scenes. Compared with the state-of-the-art NeRF-based RGBD SLAM, our system achieves comparable high-quality reconstruction but with around twice the speed and half the memory cost, and shows superior performance in the realism of novel view synthesis and camera tracking accuracy.  
+    Neural Radiance Fields (NeRF) have shown impressive results in 3D reconstruction and generating novel views. A key challenge within NeRF is the editing of reconstructed scenes, such as object removal, which requires maintaining consistency across multiple views and ensuring high-quality synthesised perspectives. Previous studies have incorporated depth priors, typically from LiDAR or sparse depth measurements provided by COLMAP, to improve the performance of object removal in NeRF. However, these methods are either costly or time-consuming. In this paper, we propose a novel approach that integrates monocular depth estimates with NeRF-based object removal models to significantly reduce time consumption and enhance the robustness and quality of scene generation and object removal. We conducted a thorough evaluation of COLMAP's dense depth reconstruction on the KITTI dataset to verify its accuracy in depth map generation. Our findings suggest that COLMAP can serve as an effective alternative to a ground truth depth map where such information is missing or costly to obtain. Additionally, we integrated various monocular depth estimation methods into the removal NeRF model, i.e., SpinNeRF, to assess their capacity to improve object removal performance. Our experimental results highlight the potential of monocular depth estimation to substantially improve NeRF applications.  
   </ol>  
 </details>  
-**comments**: To be published in ACM SIGGRAPH 2024  
+**comments**: 15 pages  
   
-### [NeRF-Insert: 3D Local Editing with Multimodal Control Signals](http://arxiv.org/abs/2404.19204)  
-Benet Oriol Sabat, Alessandro Achille, Matthew Trager, Stefano Soatto  
+### [NeRF-Guided Unsupervised Learning of RGB-D Registration](http://arxiv.org/abs/2405.00507)  
+Zhinan Yu, Zheng Qin, Yijie Tang, Yongjun Wang, Renjiao Yi, Chenyang Zhu, Kai Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose NeRF-Insert, a NeRF editing framework that allows users to make high-quality local edits with a flexible level of control. Unlike previous work that relied on image-to-image models, we cast scene editing as an in-painting problem, which encourages the global structure of the scene to be preserved. Moreover, while most existing methods use only textual prompts to condition edits, our framework accepts a combination of inputs of different modalities as reference. More precisely, a user may provide a combination of textual and visual inputs including images, CAD models, and binary image masks for specifying a 3D region. We use generic image generation models to in-paint the scene from multiple viewpoints, and lift the local edits to a 3D-consistent NeRF edit. Compared to previous methods, our results show better visual quality and also maintain stronger consistency with the original NeRF.  
+    This paper focuses on training a robust RGB-D registration model without ground-truth pose supervision. Existing methods usually adopt a pairwise training strategy based on differentiable rendering, which enforces the photometric and the geometric consistency between the two registered frames as supervision. However, this frame-to-frame framework suffers from poor multi-view consistency due to factors such as lighting changes, geometry occlusion and reflective materials. In this paper, we present NeRF-UR, a novel frame-to-model optimization framework for unsupervised RGB-D registration. Instead of frame-to-frame consistency, we leverage the neural radiance field (NeRF) as a global model of the scene and use the consistency between the input and the NeRF-rerendered frames for pose optimization. This design can significantly improve the robustness in scenarios with poor multi-view consistency and provides better learning signal for the registration model. Furthermore, to bootstrap the NeRF optimization, we create a synthetic dataset, Sim-RGBD, through a photo-realistic simulator to warm up the registration model. By first training the registration model on Sim-RGBD and later unsupervisedly fine-tuning on real data, our framework enables distilling the capability of feature extraction and registration from simulation to reality. Our method outperforms the state-of-the-art counterparts on two popular indoor RGB-D datasets, ScanNet and 3DMatch. Code and models will be released for paper reproduction.  
   </ol>  
 </details>  
-  
-### [SAGS: Structure-Aware 3D Gaussian Splatting](http://arxiv.org/abs/2404.19149)  
-Evangelos Ververas, Rolandos Alexandros Potamias, Jifei Song, Jiankang Deng, Stefanos Zafeiriou  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Following the advent of NeRFs, 3D Gaussian Splatting (3D-GS) has paved the way to real-time neural rendering overcoming the computational burden of volumetric methods. Following the pioneering work of 3D-GS, several methods have attempted to achieve compressible and high-fidelity performance alternatives. However, by employing a geometry-agnostic optimization scheme, these methods neglect the inherent 3D structure of the scene, thereby restricting the expressivity and the quality of the representation, resulting in various floating points and artifacts. In this work, we propose a structure-aware Gaussian Splatting method (SAGS) that implicitly encodes the geometry of the scene, which reflects to state-of-the-art rendering performance and reduced storage requirements on benchmark novel-view synthesis datasets. SAGS is founded on a local-global graph representation that facilitates the learning of complex scenes and enforces meaningful point displacements that preserve the scene's geometry. Additionally, we introduce a lightweight version of SAGS, using a simple yet effective mid-point interpolation scheme, which showcases a compact representation of the scene with up to 24 $\times$ size reduction without the reliance on any compression strategies. Extensive experiments across multiple benchmark datasets demonstrate the superiority of SAGS compared to state-of-the-art 3D-GS methods under both rendering quality and model size. Besides, we demonstrate that our structure-aware method can effectively mitigate floating artifacts and irregular distortions of previous methods while obtaining precise depth maps. Project page https://eververas.github.io/SAGS/.  
-  </ol>  
-</details>  
-**comments**: 15 pages, 8 figures, 3 tables  
-  
-### [GSTalker: Real-time Audio-Driven Talking Face Generation via Deformable Gaussian Splatting](http://arxiv.org/abs/2404.19040)  
-Bo Chen, Shoukang Hu, Qi Chen, Chenpeng Du, Ran Yi, Yanmin Qian, Xie Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present GStalker, a 3D audio-driven talking face generation model with Gaussian Splatting for both fast training (40 minutes) and real-time rendering (125 FPS) with a 3 $\sim$ 5 minute video for training material, in comparison with previous 2D and 3D NeRF-based modeling frameworks which require hours of training and seconds of rendering per frame. Specifically, GSTalker learns an audio-driven Gaussian deformation field to translate and transform 3D Gaussians to synchronize with audio information, in which multi-resolution hashing grid-based tri-plane and temporal smooth module are incorporated to learn accurate deformation for fine-grained facial details. In addition, a pose-conditioned deformation field is designed to model the stabilized torso. To enable efficient optimization of the condition Gaussian deformation field, we initialize 3D Gaussians by learning a coarse static Gaussian representation. Extensive experiments in person-specific videos with audio tracks validate that GSTalker can generate high-fidelity and audio-lips synchronized results with fast training and real-time rendering speed.  
-  </ol>  
-</details>  
-  
-### [Embedded Representation Learning Network for Animating Styled Video Portrait](http://arxiv.org/abs/2404.19038)  
-Tianyong Wang, Xiangyu Liang, Wangguandong Zheng, Dan Niu, Haifeng Xia, Siyu Xia  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The talking head generation recently attracted considerable attention due to its widespread application prospects, especially for digital avatars and 3D animation design. Inspired by this practical demand, several works explored Neural Radiance Fields (NeRF) to synthesize the talking heads. However, these methods based on NeRF face two challenges: (1) Difficulty in generating style-controllable talking heads. (2) Displacement artifacts around the neck in rendered images. To overcome these two challenges, we propose a novel generative paradigm \textit{Embedded Representation Learning Network} (ERLNet) with two learning stages. First, the \textit{ audio-driven FLAME} (ADF) module is constructed to produce facial expression and head pose sequences synchronized with content audio and style video. Second, given the sequence deduced by the ADF, one novel \textit{dual-branch fusion NeRF} (DBF-NeRF) explores these contents to render the final images. Extensive empirical studies demonstrate that the collaboration of these two stages effectively facilitates our method to render a more realistic talking head than the existing algorithms.  
-  </ol>  
-</details>  
-  
-### [Simple-RF: Regularizing Sparse Input Radiance Fields with Simpler Solutions](http://arxiv.org/abs/2404.19015)  
-Nagabhushan Somraj, Adithyan Karanayil, Sai Harsha Mupparaju, Rajiv Soundararajan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRF) show impressive performance in photo-realistic free-view rendering of scenes. Recent improvements on the NeRF such as TensoRF and ZipNeRF employ explicit models for faster optimization and rendering, as compared to the NeRF that employs an implicit representation. However, both implicit and explicit radiance fields require dense sampling of images in the given scene. Their performance degrades significantly when only a sparse set of views is available. Researchers find that supervising the depth estimated by a radiance field helps train it effectively with fewer views. The depth supervision is obtained either using classical approaches or neural networks pre-trained on a large dataset. While the former may provide only sparse supervision, the latter may suffer from generalization issues. As opposed to the earlier approaches, we seek to learn the depth supervision by designing augmented models and training them along with the main radiance field. Further, we aim to design a framework of regularizations that can work across different implicit and explicit radiance fields. We observe that certain features of these radiance field models overfit to the observed images in the sparse-input scenario. Our key finding is that reducing the capability of the radiance fields with respect to positional encoding, the number of decomposed tensor components or the size of the hash table, constrains the model to learn simpler solutions, which estimate better depth in certain regions. By designing augmented models based on such reduced capabilities, we obtain better depth supervision for the main radiance field. We achieve state-of-the-art view-synthesis performance with sparse input views on popular datasets containing forward-facing and 360 $^\circ$ scenes by employing the above regularizations.  
-  </ol>  
-</details>  
-**comments**: The source code for our model can be found on our project page:
-  https://nagabhushansn95.github.io/publications/2024/Simple-RF.html. arXiv
-  admin note: substantial text overlap with arXiv:2309.03955  
   
   
 
