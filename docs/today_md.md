@@ -1,36 +1,47 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#HoloGS:-Instant-Depth-based-3D-Gaussian-Splatting-with-Microsoft-HoloLens-2>HoloGS: Instant Depth-based 3D Gaussian Splatting with Microsoft HoloLens 2</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#NeRF-in-Robotics:-A-Survey>NeRF in Robotics: A Survey</a></li>
-        <li><a href=#DiL-NeRF:-Delving-into-Lidar-for-Neural-Radiance-Field-on-Street-Scenes>DiL-NeRF: Delving into Lidar for Neural Radiance Field on Street Scenes</a></li>
+        <li><a href=#WateRF:-Robust-Watermarks-in-Radiance-Fields-for-Protection-of-Copyrights>WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SFM  
+
+### [HoloGS: Instant Depth-based 3D Gaussian Splatting with Microsoft HoloLens 2](http://arxiv.org/abs/2405.02005)  
+Miriam Jäger, Theodor Kapler, Michael Feßenbecker, Felix Birkelbach, Markus Hillemann, Boris Jutzi  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In the fields of photogrammetry, computer vision and computer graphics, the task of neural 3D scene reconstruction has led to the exploration of various techniques. Among these, 3D Gaussian Splatting stands out for its explicit representation of scenes using 3D Gaussians, making it appealing for tasks like 3D point cloud extraction and surface reconstruction. Motivated by its potential, we address the domain of 3D scene reconstruction, aiming to leverage the capabilities of the Microsoft HoloLens 2 for instant 3D Gaussian Splatting. We present HoloGS, a novel workflow utilizing HoloLens sensor data, which bypasses the need for pre-processing steps like Structure from Motion by instantly accessing the required input data i.e. the images, camera poses and the point cloud from depth sensing. We provide comprehensive investigations, including the training process and the rendering quality, assessed through the Peak Signal-to-Noise Ratio, and the geometric 3D accuracy of the densified point cloud from Gaussian centers, measured by Chamfer Distance. We evaluate our approach on two self-captured scenes: An outdoor scene of a cultural heritage statue and an indoor scene of a fine-structured plant. Our results show that the HoloLens data, including RGB images, corresponding camera poses, and depth sensing based point clouds to initialize the Gaussians, are suitable as input for 3D Gaussian Splatting.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 9 figures, 2 tables. Will be published in the ISPRS The
+  International Archives of Photogrammetry, Remote Sensing and Spatial
+  Information Sciences  
+  
+  
+
+
+
 ## NeRF  
 
-### [NeRF in Robotics: A Survey](http://arxiv.org/abs/2405.01333)  
-Guangming Wang, Lei Pan, Songyou Peng, Shaohui Liu, Chenfeng Xu, Yanzi Miao, Wei Zhan, Masayoshi Tomizuka, Marc Pollefeys, Hesheng Wang  
+### [WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights](http://arxiv.org/abs/2405.02066)  
+Youngdong Jang, Dong In Lee, MinHyuk Jang, Jong Wook Kim, Feng Yang, Sangpil Kim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Meticulous 3D environment representations have been a longstanding goal in computer vision and robotics fields. The recent emergence of neural implicit representations has introduced radical innovation to this field as implicit representations enable numerous capabilities. Among these, the Neural Radiance Field (NeRF) has sparked a trend because of the huge representational advantages, such as simplified mathematical models, compact environment storage, and continuous scene representations. Apart from computer vision, NeRF has also shown tremendous potential in the field of robotics. Thus, we create this survey to provide a comprehensive understanding of NeRF in the field of robotics. By exploring the advantages and limitations of NeRF, as well as its current applications and future potential, we hope to shed light on this promising area of research. Our survey is divided into two main sections: \textit{The Application of NeRF in Robotics} and \textit{The Advance of NeRF in Robotics}, from the perspective of how NeRF enters the field of robotics. In the first section, we introduce and analyze some works that have been or could be used in the field of robotics from the perception and interaction perspectives. In the second section, we show some works related to improving NeRF's own properties, which are essential for deploying NeRF in the field of robotics. In the discussion section of the review, we summarize the existing challenges and provide some valuable future research directions for reference.  
+    The advances in the Neural Radiance Fields (NeRF) research offer extensive applications in diverse domains, but protecting their copyrights has not yet been researched in depth. Recently, NeRF watermarking has been considered one of the pivotal solutions for safely deploying NeRF-based 3D representations. However, existing methods are designed to apply only to implicit or explicit NeRF representations. In this work, we introduce an innovative watermarking method that can be employed in both representations of NeRF. This is achieved by fine-tuning NeRF to embed binary messages in the rendering process. In detail, we propose utilizing the discrete wavelet transform in the NeRF space for watermarking. Furthermore, we adopt a deferred back-propagation technique and introduce a combination with the patch-wise loss to improve rendering quality and bit accuracy with minimum trade-offs. We evaluate our method in three different aspects: capacity, invisibility, and robustness of the embedded watermarks in the 2D-rendered images. Our method achieves state-of-the-art performance with faster training speed over the compared state-of-the-art methods.  
   </ol>  
 </details>  
-**comments**: 21 pages, 19 figures  
-  
-### [DiL-NeRF: Delving into Lidar for Neural Radiance Field on Street Scenes](http://arxiv.org/abs/2405.00900)  
-Shanlin Sun, Bingbing Zhuang, Ziyu Jiang, Buyu Liu, Xiaohui Xie, Manmohan Chandraker  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Photorealistic simulation plays a crucial role in applications such as autonomous driving, where advances in neural radiance fields (NeRFs) may allow better scalability through the automatic creation of digital 3D assets. However, reconstruction quality suffers on street scenes due to largely collinear camera motions and sparser samplings at higher speeds. On the other hand, the application often demands rendering from camera views that deviate from the inputs to accurately simulate behaviors like lane changes. In this paper, we propose several insights that allow a better utilization of Lidar data to improve NeRF quality on street scenes. First, our framework learns a geometric scene representation from Lidar, which is fused with the implicit grid-based representation for radiance decoding, thereby supplying stronger geometric information offered by explicit point cloud. Second, we put forth a robust occlusion-aware depth supervision scheme, which allows utilizing densified Lidar points by accumulation. Third, we generate augmented training views from Lidar points for further improvement. Our insights translate to largely improved novel view synthesis under real driving scenes.  
-  </ol>  
-</details>  
-**comments**: CVPR2024 Highlights  
   
   
 
