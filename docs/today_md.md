@@ -1,32 +1,67 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#HoloGS:-Instant-Depth-based-3D-Gaussian-Splatting-with-Microsoft-HoloLens-2>HoloGS: Instant Depth-based 3D Gaussian Splatting with Microsoft HoloLens 2</a></li>
+        <li><a href=#A-New-Robust-Partial-$p$-Wasserstein-Based-Metric-for-Comparing-Distributions>A New Robust Partial $p$-Wasserstein-Based Metric for Comparing Distributions</a></li>
+        <li><a href=#Knowledge-aware-Text-Image-Retrieval-for-Remote-Sensing-Images>Knowledge-aware Text-Image Retrieval for Remote Sensing Images</a></li>
+        <li><a href=#Adapting-Dual-encoder-Vision-language-Models-for-Paraphrased-Retrieval>Adapting Dual-encoder Vision-language Models for Paraphrased Retrieval</a></li>
+        <li><a href=#iSEARLE:-Improving-Textual-Inversion-for-Zero-Shot-Composed-Image-Retrieval>iSEARLE: Improving Textual Inversion for Zero-Shot Composed Image Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#WateRF:-Robust-Watermarks-in-Radiance-Fields-for-Protection-of-Copyrights>WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights</a></li>
+        <li><a href=#Blending-Distributed-NeRFs-with-Tri-stage-Robust-Pose-Optimization>Blending Distributed NeRFs with Tri-stage Robust Pose Optimization</a></li>
+        <li><a href=#MVIP-NeRF:-Multi-view-3D-Inpainting-on-NeRF-Scenes-via-Diffusion-Prior>MVIP-NeRF: Multi-view 3D Inpainting on NeRF Scenes via Diffusion Prior</a></li>
+        <li><a href=#TK-Planes:-Tiered-K-Planes-with-High-Dimensional-Feature-Vectors-for-Dynamic-UAV-based-Scenes>TK-Planes: Tiered K-Planes with High Dimensional Feature Vectors for Dynamic UAV-based Scenes</a></li>
+        <li><a href=#ActiveNeuS:-Active-3D-Reconstruction-using-Neural-Implicit-Surface-Uncertainty>ActiveNeuS: Active 3D Reconstruction using Neural Implicit Surface Uncertainty</a></li>
+        <li><a href=#Learning-Robot-Soccer-from-Egocentric-Vision-with-Deep-Reinforcement-Learning>Learning Robot Soccer from Egocentric Vision with Deep Reinforcement Learning</a></li>
+        <li><a href=#Rip-NeRF:-Anti-aliasing-Radiance-Fields-with-Ripmap-Encoded-Platonic-Solids>Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded Platonic Solids</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Visual Localization  
 
-### [HoloGS: Instant Depth-based 3D Gaussian Splatting with Microsoft HoloLens 2](http://arxiv.org/abs/2405.02005)  
-Miriam Jäger, Theodor Kapler, Michael Feßenbecker, Felix Birkelbach, Markus Hillemann, Boris Jutzi  
+### [A New Robust Partial $p$ -Wasserstein-Based Metric for Comparing Distributions](http://arxiv.org/abs/2405.03664)  
+Sharath Raghvendra, Pouyan Shirzadian, Kaiyi Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In the fields of photogrammetry, computer vision and computer graphics, the task of neural 3D scene reconstruction has led to the exploration of various techniques. Among these, 3D Gaussian Splatting stands out for its explicit representation of scenes using 3D Gaussians, making it appealing for tasks like 3D point cloud extraction and surface reconstruction. Motivated by its potential, we address the domain of 3D scene reconstruction, aiming to leverage the capabilities of the Microsoft HoloLens 2 for instant 3D Gaussian Splatting. We present HoloGS, a novel workflow utilizing HoloLens sensor data, which bypasses the need for pre-processing steps like Structure from Motion by instantly accessing the required input data i.e. the images, camera poses and the point cloud from depth sensing. We provide comprehensive investigations, including the training process and the rendering quality, assessed through the Peak Signal-to-Noise Ratio, and the geometric 3D accuracy of the densified point cloud from Gaussian centers, measured by Chamfer Distance. We evaluate our approach on two self-captured scenes: An outdoor scene of a cultural heritage statue and an indoor scene of a fine-structured plant. Our results show that the HoloLens data, including RGB images, corresponding camera poses, and depth sensing based point clouds to initialize the Gaussians, are suitable as input for 3D Gaussian Splatting.  
+    The $2$-Wasserstein distance is sensitive to minor geometric differences between distributions, making it a very powerful dissimilarity metric. However, due to this sensitivity, a small outlier mass can also cause a significant increase in the $2$-Wasserstein distance between two similar distributions. Similarly, sampling discrepancy can cause the empirical $2$-Wasserstein distance on $n$ samples in $\mathbb{R}^2$ to converge to the true distance at a rate of $n^{-1/4}$, which is significantly slower than the rate of $n^{-1/2}$ for $1$-Wasserstein distance.   We introduce a new family of distances parameterized by $k \ge 0$, called $k$-RPW, that is based on computing the partial $2$-Wasserstein distance. We show that (1) $k$-RPW satisfies the metric properties, (2) $k$-RPW is robust to small outlier mass while retaining the sensitivity of $2$-Wasserstein distance to minor geometric differences, and (3) when $k$ is a constant, $k$-RPW distance between empirical distributions on $n$ samples in $\mathbb{R}^2$ converges to the true distance at a rate of $n^{-1/3}$, which is faster than the convergence rate of $n^{-1/4}$ for the $2$-Wasserstein distance.   Using the partial $p$-Wasserstein distance, we extend our distance to any $p \in [1,\infty]$. By setting parameters $k$ or $p$ appropriately, we can reduce our distance to the total variation, $p$-Wasserstein, and the L\'evy-Prokhorov distances. Experiments show that our distance function achieves higher accuracy in comparison to the $1$-Wasserstein, $2$-Wasserstein, and TV distances for image retrieval tasks on noisy real-world data sets.  
   </ol>  
 </details>  
-**comments**: 8 pages, 9 figures, 2 tables. Will be published in the ISPRS The
-  International Archives of Photogrammetry, Remote Sensing and Spatial
-  Information Sciences  
+  
+### [Knowledge-aware Text-Image Retrieval for Remote Sensing Images](http://arxiv.org/abs/2405.03373)  
+Li Mi, Xianjie Dai, Javiera Castillo-Navarro, Devis Tuia  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Image-based retrieval in large Earth observation archives is challenging because one needs to navigate across thousands of candidate matches only with the query image as a guide. By using text as information supporting the visual query, the retrieval system gains in usability, but at the same time faces difficulties due to the diversity of visual signals that cannot be summarized by a short caption only. For this reason, as a matching-based task, cross-modal text-image retrieval often suffers from information asymmetry between texts and images. To address this challenge, we propose a Knowledge-aware Text-Image Retrieval (KTIR) method for remote sensing images. By mining relevant information from an external knowledge graph, KTIR enriches the text scope available in the search query and alleviates the information gaps between texts and images for better matching. Moreover, by integrating domain-specific knowledge, KTIR also enhances the adaptation of pre-trained vision-language models to remote sensing applications. Experimental results on three commonly used remote sensing text-image retrieval benchmarks show that the proposed knowledge-aware method leads to varied and consistent retrievals, outperforming state-of-the-art retrieval methods.  
+  </ol>  
+</details>  
+**comments**: Under review  
+  
+### [Adapting Dual-encoder Vision-language Models for Paraphrased Retrieval](http://arxiv.org/abs/2405.03190)  
+Jiacheng Cheng, Hijung Valentina Shin, Nuno Vasconcelos, Bryan Russell, Fabian Caba Heilbron  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In the recent years, the dual-encoder vision-language models (\eg CLIP) have achieved remarkable text-to-image retrieval performance. However, we discover that these models usually results in very different retrievals for a pair of paraphrased queries. Such behavior might render the retrieval system less predictable and lead to user frustration. In this work, we consider the task of paraphrased text-to-image retrieval where a model aims to return similar results given a pair of paraphrased queries. To start with, we collect a dataset of paraphrased image descriptions to facilitate quantitative evaluation for this task. We then hypothesize that the undesired behavior of existing dual-encoder model is due to their text towers which are trained on image-sentence pairs and lack the ability to capture the semantic similarity between paraphrased queries. To improve on this, we investigate multiple strategies for training a dual-encoder model starting from a language model pretrained on a large text corpus. Compared to public dual-encoder models such as CLIP and OpenCLIP, the model trained with our best adaptation strategy achieves a significantly higher ranking similarity for paraphrased queries while maintaining similar zero-shot classification and retrieval accuracy.  
+  </ol>  
+</details>  
+  
+### [iSEARLE: Improving Textual Inversion for Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2405.02951)  
+[[code](https://github.com/miccunifi/searle)]  
+Lorenzo Agnolucci, Alberto Baldrati, Marco Bertini, Alberto Del Bimbo  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Given a query consisting of a reference image and a relative caption, Composed Image Retrieval (CIR) aims to retrieve target images visually similar to the reference one while incorporating the changes specified in the relative caption. The reliance of supervised methods on labor-intensive manually labeled datasets hinders their broad applicability. In this work, we introduce a new task, Zero-Shot CIR (ZS-CIR), that addresses CIR without the need for a labeled training dataset. We propose an approach named iSEARLE (improved zero-Shot composEd imAge Retrieval with textuaL invErsion) that involves mapping the visual information of the reference image into a pseudo-word token in CLIP token embedding space and combining it with the relative caption. To foster research on ZS-CIR, we present an open-domain benchmarking dataset named CIRCO (Composed Image Retrieval on Common Objects in context), the first CIR dataset where each query is labeled with multiple ground truths and a semantic categorization. The experimental results illustrate that iSEARLE obtains state-of-the-art performance on three different CIR datasets -- FashionIQ, CIRR, and the proposed CIRCO -- and two additional evaluation settings, namely domain conversion and object composition. The dataset, the code, and the model are publicly available at https://github.com/miccunifi/SEARLE.  
+  </ol>  
+</details>  
+**comments**: Extended version of the ICCV2023 paper arXiv:2303.15247  
   
   
 
@@ -34,14 +69,64 @@ Miriam Jäger, Theodor Kapler, Michael Feßenbecker, Felix Birkelbach, Markus Hi
 
 ## NeRF  
 
-### [WateRF: Robust Watermarks in Radiance Fields for Protection of Copyrights](http://arxiv.org/abs/2405.02066)  
-Youngdong Jang, Dong In Lee, MinHyuk Jang, Jong Wook Kim, Feng Yang, Sangpil Kim  
+### [Blending Distributed NeRFs with Tri-stage Robust Pose Optimization](http://arxiv.org/abs/2405.02880)  
+Baijun Ye, Caiyun Liu, Xiaoyu Ye, Yuantao Chen, Yuhai Wang, Zike Yan, Yongliang Shi, Hao Zhao, Guyue Zhou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The advances in the Neural Radiance Fields (NeRF) research offer extensive applications in diverse domains, but protecting their copyrights has not yet been researched in depth. Recently, NeRF watermarking has been considered one of the pivotal solutions for safely deploying NeRF-based 3D representations. However, existing methods are designed to apply only to implicit or explicit NeRF representations. In this work, we introduce an innovative watermarking method that can be employed in both representations of NeRF. This is achieved by fine-tuning NeRF to embed binary messages in the rendering process. In detail, we propose utilizing the discrete wavelet transform in the NeRF space for watermarking. Furthermore, we adopt a deferred back-propagation technique and introduce a combination with the patch-wise loss to improve rendering quality and bit accuracy with minimum trade-offs. We evaluate our method in three different aspects: capacity, invisibility, and robustness of the embedded watermarks in the 2D-rendered images. Our method achieves state-of-the-art performance with faster training speed over the compared state-of-the-art methods.  
+    Due to the limited model capacity, leveraging distributed Neural Radiance Fields (NeRFs) for modeling extensive urban environments has become a necessity. However, current distributed NeRF registration approaches encounter aliasing artifacts, arising from discrepancies in rendering resolutions and suboptimal pose precision. These factors collectively deteriorate the fidelity of pose estimation within NeRF frameworks, resulting in occlusion artifacts during the NeRF blending stage. In this paper, we present a distributed NeRF system with tri-stage pose optimization. In the first stage, precise poses of images are achieved by bundle adjusting Mip-NeRF 360 with a coarse-to-fine strategy. In the second stage, we incorporate the inverting Mip-NeRF 360, coupled with the truncated dynamic low-pass filter, to enable the achievement of robust and precise poses, termed Frame2Model optimization. On top of this, we obtain a coarse transformation between NeRFs in different coordinate systems. In the third stage, we fine-tune the transformation between NeRFs by Model2Model pose optimization. After obtaining precise transformation parameters, we proceed to implement NeRF blending, showcasing superior performance metrics in both real-world and simulation scenarios. Codes and data will be publicly available at https://github.com/boilcy/Distributed-NeRF.  
   </ol>  
 </details>  
+  
+### [MVIP-NeRF: Multi-view 3D Inpainting on NeRF Scenes via Diffusion Prior](http://arxiv.org/abs/2405.02859)  
+Honghua Chen, Chen Change Loy, Xingang Pan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Despite the emergence of successful NeRF inpainting methods built upon explicit RGB and depth 2D inpainting supervisions, these methods are inherently constrained by the capabilities of their underlying 2D inpainters. This is due to two key reasons: (i) independently inpainting constituent images results in view-inconsistent imagery, and (ii) 2D inpainters struggle to ensure high-quality geometry completion and alignment with inpainted RGB images.   To overcome these limitations, we propose a novel approach called MVIP-NeRF that harnesses the potential of diffusion priors for NeRF inpainting, addressing both appearance and geometry aspects. MVIP-NeRF performs joint inpainting across multiple views to reach a consistent solution, which is achieved via an iterative optimization process based on Score Distillation Sampling (SDS). Apart from recovering the rendered RGB images, we also extract normal maps as a geometric representation and define a normal SDS loss that motivates accurate geometry inpainting and alignment with the appearance. Additionally, we formulate a multi-view SDS score function to distill generative priors simultaneously from different view images, ensuring consistent visual completion when dealing with large view variations. Our experimental results show better appearance and geometry recovery than previous NeRF inpainting methods.  
+  </ol>  
+</details>  
+**comments**: 14 pages, 10 figures, conference  
+  
+### [TK-Planes: Tiered K-Planes with High Dimensional Feature Vectors for Dynamic UAV-based Scenes](http://arxiv.org/abs/2405.02762)  
+Christopher Maxey, Jaehoon Choi, Yonghan Lee, Hyungtae Lee, Dinesh Manocha, Heesung Kwon  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper, we present a new approach to bridge the domain gap between synthetic and real-world data for un- manned aerial vehicle (UAV)-based perception. Our formu- lation is designed for dynamic scenes, consisting of moving objects or human actions, where the goal is to recognize the pose or actions. We propose an extension of K-Planes Neural Radiance Field (NeRF), wherein our algorithm stores a set of tiered feature vectors. The tiered feature vectors are generated to effectively model conceptual information about a scene as well as an image decoder that transforms output feature maps into RGB images. Our technique leverages the information amongst both static and dynamic objects within a scene and is able to capture salient scene attributes of high altitude videos. We evaluate its performance on challenging datasets, including Okutama Action and UG2, and observe considerable improvement in accuracy over state of the art aerial perception algorithms.  
+  </ol>  
+</details>  
+**comments**: 8 pages, submitted to IROS2024  
+  
+### [ActiveNeuS: Active 3D Reconstruction using Neural Implicit Surface Uncertainty](http://arxiv.org/abs/2405.02568)  
+Hyunseo Kim, Hyeonseo Yang, Taekyung Kim, YoonSung Kim, Jin-Hwa Kim, Byoung-Tak Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Active learning in 3D scene reconstruction has been widely studied, as selecting informative training views is critical for the reconstruction. Recently, Neural Radiance Fields (NeRF) variants have shown performance increases in active 3D reconstruction using image rendering or geometric uncertainty. However, the simultaneous consideration of both uncertainties in selecting informative views remains unexplored, while utilizing different types of uncertainty can reduce the bias that arises in the early training stage with sparse inputs. In this paper, we propose ActiveNeuS, which evaluates candidate views considering both uncertainties. ActiveNeuS provides a way to accumulate image rendering uncertainty while avoiding the bias that the estimated densities can introduce. ActiveNeuS computes the neural implicit surface uncertainty, providing the color uncertainty along with the surface information. It efficiently handles the bias by using the surface information and a grid, enabling the fast selection of diverse viewpoints. Our method outperforms previous works on popular datasets, Blender and DTU, showing that the views selected by ActiveNeuS significantly improve performance.  
+  </ol>  
+</details>  
+  
+### [Learning Robot Soccer from Egocentric Vision with Deep Reinforcement Learning](http://arxiv.org/abs/2405.02425)  
+Dhruva Tirumala, Markus Wulfmeier, Ben Moran, Sandy Huang, Jan Humplik, Guy Lever, Tuomas Haarnoja, Leonard Hasenclever, Arunkumar Byravan, Nathan Batchelor, Neil Sreendra, Kushal Patel, Marlon Gwira, Francesco Nori, Martin Riedmiller, Nicolas Heess  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We apply multi-agent deep reinforcement learning (RL) to train end-to-end robot soccer policies with fully onboard computation and sensing via egocentric RGB vision. This setting reflects many challenges of real-world robotics, including active perception, agile full-body control, and long-horizon planning in a dynamic, partially-observable, multi-agent domain. We rely on large-scale, simulation-based data generation to obtain complex behaviors from egocentric vision which can be successfully transferred to physical robots using low-cost sensors. To achieve adequate visual realism, our simulation combines rigid-body physics with learned, realistic rendering via multiple Neural Radiance Fields (NeRFs). We combine teacher-based multi-agent RL and cross-experiment data reuse to enable the discovery of sophisticated soccer strategies. We analyze active-perception behaviors including object tracking and ball seeking that emerge when simply optimizing perception-agnostic soccer play. The agents display equivalent levels of performance and agility as policies with access to privileged, ground-truth state. To our knowledge, this paper constitutes a first demonstration of end-to-end training for multi-agent robot soccer, mapping raw pixel observations to joint-level actions, that can be deployed in the real world. Videos of the game-play and analyses can be seen on our website https://sites.google.com/view/vision-soccer .  
+  </ol>  
+</details>  
+  
+### [Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded Platonic Solids](http://arxiv.org/abs/2405.02386)  
+[[code](https://github.com/junchenliu77/rip-nerf)]  
+Junchen Liu, Wenbo Hu, Zhuo Yang, Jianteng Chen, Guoliang Wang, Xiaoxue Chen, Yantong Cai, Huan-ang Gao, Hao Zhao  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Despite significant advancements in Neural Radiance Fields (NeRFs), the renderings may still suffer from aliasing and blurring artifacts, since it remains a fundamental challenge to effectively and efficiently characterize anisotropic areas induced by the cone-casting procedure. This paper introduces a Ripmap-Encoded Platonic Solid representation to precisely and efficiently featurize 3D anisotropic areas, achieving high-fidelity anti-aliasing renderings. Central to our approach are two key components: Platonic Solid Projection and Ripmap encoding. The Platonic Solid Projection factorizes the 3D space onto the unparalleled faces of a certain Platonic solid, such that the anisotropic 3D areas can be projected onto planes with distinguishable characterization. Meanwhile, each face of the Platonic solid is encoded by the Ripmap encoding, which is constructed by anisotropically pre-filtering a learnable feature grid, to enable featurzing the projected anisotropic areas both precisely and efficiently by the anisotropic area-sampling. Extensive experiments on both well-established synthetic datasets and a newly captured real-world dataset demonstrate that our Rip-NeRF attains state-of-the-art rendering quality, particularly excelling in the fine details of repetitive structures and textures, while maintaining relatively swift training times.  
+  </ol>  
+</details>  
+**comments**: SIGGRAPH 2024, Project page: https://junchenliu77.github.io/Rip-NeRF
+  , Code: https://github.com/JunchenLiu77/Rip-NeRF  
   
   
 
