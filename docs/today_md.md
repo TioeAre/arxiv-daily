@@ -1,67 +1,98 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#Bayesian-Simultaneous-Localization-and-Multi-Lane-Tracking-Using-Onboard-Sensors-and-a-SD-Map>Bayesian Simultaneous Localization and Multi-Lane Tracking Using Onboard Sensors and a SD Map</a></li>
+        <li><a href=#IMU-Aided-Event-based-Stereo-Visual-Odometry>IMU-Aided Event-based Stereo Visual Odometry</a></li>
+      </ul>
+    </li>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Novel-View-Synthesis-with-Neural-Radiance-Fields-for-Industrial-Robot-Applications>Novel View Synthesis with Neural Radiance Fields for Industrial Robot Applications</a></li>
+        <li><a href=#Non-rigid-Structure-from-Motion:-Temporally-smooth-Procrustean-Alignment-and-Spatially-variant-Deformation-Modeling>Non-rigid Structure-from-Motion: Temporally-smooth Procrustean Alignment and Spatially-variant Deformation Modeling</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#A-New-Robust-Partial-$p$-Wasserstein-Based-Metric-for-Comparing-Distributions>A New Robust Partial $p$-Wasserstein-Based Metric for Comparing Distributions</a></li>
-        <li><a href=#Knowledge-aware-Text-Image-Retrieval-for-Remote-Sensing-Images>Knowledge-aware Text-Image Retrieval for Remote Sensing Images</a></li>
-        <li><a href=#Adapting-Dual-encoder-Vision-language-Models-for-Paraphrased-Retrieval>Adapting Dual-encoder Vision-language Models for Paraphrased Retrieval</a></li>
-        <li><a href=#iSEARLE:-Improving-Textual-Inversion-for-Zero-Shot-Composed-Image-Retrieval>iSEARLE: Improving Textual Inversion for Zero-Shot Composed Image Retrieval</a></li>
+        <li><a href=#Breast-Histopathology-Image-Retrieval-by-Attention-based-Adversarially-Regularized-Variational-Graph-Autoencoder-with-Contrastive-Learning-Based-Feature-Extraction>Breast Histopathology Image Retrieval by Attention-based Adversarially Regularized Variational Graph Autoencoder with Contrastive Learning-Based Feature Extraction</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Blending-Distributed-NeRFs-with-Tri-stage-Robust-Pose-Optimization>Blending Distributed NeRFs with Tri-stage Robust Pose Optimization</a></li>
-        <li><a href=#MVIP-NeRF:-Multi-view-3D-Inpainting-on-NeRF-Scenes-via-Diffusion-Prior>MVIP-NeRF: Multi-view 3D Inpainting on NeRF Scenes via Diffusion Prior</a></li>
-        <li><a href=#TK-Planes:-Tiered-K-Planes-with-High-Dimensional-Feature-Vectors-for-Dynamic-UAV-based-Scenes>TK-Planes: Tiered K-Planes with High Dimensional Feature Vectors for Dynamic UAV-based Scenes</a></li>
-        <li><a href=#ActiveNeuS:-Active-3D-Reconstruction-using-Neural-Implicit-Surface-Uncertainty>ActiveNeuS: Active 3D Reconstruction using Neural Implicit Surface Uncertainty</a></li>
-        <li><a href=#Learning-Robot-Soccer-from-Egocentric-Vision-with-Deep-Reinforcement-Learning>Learning Robot Soccer from Egocentric Vision with Deep Reinforcement Learning</a></li>
-        <li><a href=#Rip-NeRF:-Anti-aliasing-Radiance-Fields-with-Ripmap-Encoded-Platonic-Solids>Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded Platonic Solids</a></li>
+        <li><a href=#DistGrid:-Scalable-Scene-Reconstruction-with-Distributed-Multi-resolution-Hash-Grid>DistGrid: Scalable Scene Reconstruction with Distributed Multi-resolution Hash Grid</a></li>
+        <li><a href=#Novel-View-Synthesis-with-Neural-Radiance-Fields-for-Industrial-Robot-Applications>Novel View Synthesis with Neural Radiance Fields for Industrial Robot Applications</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [Bayesian Simultaneous Localization and Multi-Lane Tracking Using Onboard Sensors and a SD Map](http://arxiv.org/abs/2405.04290)  
+Yuxuan Xia, Erik Stenborg, Junsheng Fu, Gustaf Hendeby  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    High-definition map with accurate lane-level information is crucial for autonomous driving, but the creation of these maps is a resource-intensive process. To this end, we present a cost-effective solution to create lane-level roadmaps using only the global navigation satellite system (GNSS) and a camera on customer vehicles. Our proposed solution utilizes a prior standard-definition (SD) map, GNSS measurements, visual odometry, and lane marking edge detection points, to simultaneously estimate the vehicle's 6D pose, its position within a SD map, and also the 3D geometry of traffic lines. This is achieved using a Bayesian simultaneous localization and multi-object tracking filter, where the estimation of traffic lines is formulated as a multiple extended object tracking problem, solved using a trajectory Poisson multi-Bernoulli mixture (TPMBM) filter. In TPMBM filtering, traffic lines are modeled using B-spline trajectories, and each trajectory is parameterized by a sequence of control points. The proposed solution has been evaluated using experimental data collected by a test vehicle driving on highway. Preliminary results show that the traffic line estimates, overlaid on the satellite image, generally align with the lane markings up to some lateral offsets.  
+  </ol>  
+</details>  
+**comments**: 27th International Conference on Information Fusion  
+  
+### [IMU-Aided Event-based Stereo Visual Odometry](http://arxiv.org/abs/2405.04071)  
+[[code](https://github.com/nail-hnu/esvio_aa)]  
+Junkai Niu, Sheng Zhong, Yi Zhou  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Direct methods for event-based visual odometry solve the mapping and camera pose tracking sub-problems by establishing implicit data association in a way that the generative model of events is exploited. The main bottlenecks faced by state-of-the-art work in this field include the high computational complexity of mapping and the limited accuracy of tracking. In this paper, we improve our previous direct pipeline \textit{Event-based Stereo Visual Odometry} in terms of accuracy and efficiency. To speed up the mapping operation, we propose an efficient strategy of edge-pixel sampling according to the local dynamics of events. The mapping performance in terms of completeness and local smoothness is also improved by combining the temporal stereo results and the static stereo results. To circumvent the degeneracy issue of camera pose tracking in recovering the yaw component of general 6-DoF motion, we introduce as a prior the gyroscope measurements via pre-integration. Experiments on publicly available datasets justify our improvement. We release our pipeline as an open-source software for future research in this field.  
+  </ol>  
+</details>  
+**comments**: 10 pages, 7 figures, ICRA  
+  
+  
+
+
+
+## SFM  
+
+### [Novel View Synthesis with Neural Radiance Fields for Industrial Robot Applications](http://arxiv.org/abs/2405.04345)  
+Markus Hillemann, Robert Langendörfer, Max Heiken, Max Mehltretter, Andreas Schenk, Martin Weinmann, Stefan Hinz, Christian Heipke, Markus Ulrich  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRFs) have become a rapidly growing research field with the potential to revolutionize typical photogrammetric workflows, such as those used for 3D scene reconstruction. As input, NeRFs require multi-view images with corresponding camera poses as well as the interior orientation. In the typical NeRF workflow, the camera poses and the interior orientation are estimated in advance with Structure from Motion (SfM). But the quality of the resulting novel views, which depends on different parameters such as the number and distribution of available images, as well as the accuracy of the related camera poses and interior orientation, is difficult to predict. In addition, SfM is a time-consuming pre-processing step, and its quality strongly depends on the image content. Furthermore, the undefined scaling factor of SfM hinders subsequent steps in which metric information is required. In this paper, we evaluate the potential of NeRFs for industrial robot applications. We propose an alternative to SfM pre-processing: we capture the input images with a calibrated camera that is attached to the end effector of an industrial robot and determine accurate camera poses with metric scale based on the robot kinematics. We then investigate the quality of the novel views by comparing them to ground truth, and by computing an internal quality measure based on ensemble methods. For evaluation purposes, we acquire multiple datasets that pose challenges for reconstruction typical of industrial applications, like reflective objects, poor texture, and fine structures. We show that the robot-based pose determination reaches similar accuracy as SfM in non-demanding cases, while having clear advantages in more challenging scenarios. Finally, we present first results of applying the ensemble method to estimate the quality of the synthetic novel view in the absence of a ground truth.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 8 figures, accepted for publication in The International
+  Archives of the Photogrammetry, Remote Sensing and Spatial Information
+  Sciences (ISPRS Archives) 2024  
+  
+### [Non-rigid Structure-from-Motion: Temporally-smooth Procrustean Alignment and Spatially-variant Deformation Modeling](http://arxiv.org/abs/2405.04309)  
+Jiawei Shi, Hui Deng, Yuchao Dai  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Even though Non-rigid Structure-from-Motion (NRSfM) has been extensively studied and great progress has been made, there are still key challenges that hinder their broad real-world applications: 1) the inherent motion/rotation ambiguity requires either explicit camera motion recovery with extra constraint or complex Procrustean Alignment; 2) existing low-rank modeling of the global shape can over-penalize drastic deformations in the 3D shape sequence. This paper proposes to resolve the above issues from a spatial-temporal modeling perspective. First, we propose a novel Temporally-smooth Procrustean Alignment module that estimates 3D deforming shapes and adjusts the camera motion by aligning the 3D shape sequence consecutively. Our new alignment module remedies the requirement of complex reference 3D shape during alignment, which is more conductive to non-isotropic deformation modeling. Second, we propose a spatial-weighted approach to enforce the low-rank constraint adaptively at different locations to accommodate drastic spatially-variant deformation reconstruction better. Our modeling outperform existing low-rank based methods, and extensive experiments across different datasets validate the effectiveness of our method.  
+  </ol>  
+</details>  
+**comments**: Accepted by CVPR 2024  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [A New Robust Partial $p$ -Wasserstein-Based Metric for Comparing Distributions](http://arxiv.org/abs/2405.03664)  
-Sharath Raghvendra, Pouyan Shirzadian, Kaiyi Zhang  
+### [Breast Histopathology Image Retrieval by Attention-based Adversarially Regularized Variational Graph Autoencoder with Contrastive Learning-Based Feature Extraction](http://arxiv.org/abs/2405.04211)  
+Nematollah Saeidi, Hossein Karshenas, Bijan Shoushtarian, Sepideh Hatamikia, Ramona Woitek, Amirreza Mahbod  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The $2$-Wasserstein distance is sensitive to minor geometric differences between distributions, making it a very powerful dissimilarity metric. However, due to this sensitivity, a small outlier mass can also cause a significant increase in the $2$-Wasserstein distance between two similar distributions. Similarly, sampling discrepancy can cause the empirical $2$-Wasserstein distance on $n$ samples in $\mathbb{R}^2$ to converge to the true distance at a rate of $n^{-1/4}$, which is significantly slower than the rate of $n^{-1/2}$ for $1$-Wasserstein distance.   We introduce a new family of distances parameterized by $k \ge 0$, called $k$-RPW, that is based on computing the partial $2$-Wasserstein distance. We show that (1) $k$-RPW satisfies the metric properties, (2) $k$-RPW is robust to small outlier mass while retaining the sensitivity of $2$-Wasserstein distance to minor geometric differences, and (3) when $k$ is a constant, $k$-RPW distance between empirical distributions on $n$ samples in $\mathbb{R}^2$ converges to the true distance at a rate of $n^{-1/3}$, which is faster than the convergence rate of $n^{-1/4}$ for the $2$-Wasserstein distance.   Using the partial $p$-Wasserstein distance, we extend our distance to any $p \in [1,\infty]$. By setting parameters $k$ or $p$ appropriately, we can reduce our distance to the total variation, $p$-Wasserstein, and the L\'evy-Prokhorov distances. Experiments show that our distance function achieves higher accuracy in comparison to the $1$-Wasserstein, $2$-Wasserstein, and TV distances for image retrieval tasks on noisy real-world data sets.  
+    Breast cancer is a significant global health concern, particularly for women. Early detection and appropriate treatment are crucial in mitigating its impact, with histopathology examinations playing a vital role in swift diagnosis. However, these examinations often require a substantial workforce and experienced medical experts for proper recognition and cancer grading. Automated image retrieval systems have the potential to assist pathologists in identifying cancerous tissues, thereby accelerating the diagnostic process. Nevertheless, due to considerable variability among the tissue and cell patterns in histological images, proposing an accurate image retrieval model is very challenging.   This work introduces a novel attention-based adversarially regularized variational graph autoencoder model for breast histological image retrieval. Additionally, we incorporated cluster-guided contrastive learning as the graph feature extractor to boost the retrieval performance. We evaluated the proposed model's performance on two publicly available datasets of breast cancer histological images and achieved superior or very competitive retrieval performance, with average mAP scores of 96.5% for the BreakHis dataset and 94.7% for the BACH dataset, and mVP scores of 91.9% and 91.3%, respectively.   Our proposed retrieval model has the potential to be used in clinical settings to enhance diagnostic performance and ultimately benefit patients.  
   </ol>  
 </details>  
-  
-### [Knowledge-aware Text-Image Retrieval for Remote Sensing Images](http://arxiv.org/abs/2405.03373)  
-Li Mi, Xianjie Dai, Javiera Castillo-Navarro, Devis Tuia  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image-based retrieval in large Earth observation archives is challenging because one needs to navigate across thousands of candidate matches only with the query image as a guide. By using text as information supporting the visual query, the retrieval system gains in usability, but at the same time faces difficulties due to the diversity of visual signals that cannot be summarized by a short caption only. For this reason, as a matching-based task, cross-modal text-image retrieval often suffers from information asymmetry between texts and images. To address this challenge, we propose a Knowledge-aware Text-Image Retrieval (KTIR) method for remote sensing images. By mining relevant information from an external knowledge graph, KTIR enriches the text scope available in the search query and alleviates the information gaps between texts and images for better matching. Moreover, by integrating domain-specific knowledge, KTIR also enhances the adaptation of pre-trained vision-language models to remote sensing applications. Experimental results on three commonly used remote sensing text-image retrieval benchmarks show that the proposed knowledge-aware method leads to varied and consistent retrievals, outperforming state-of-the-art retrieval methods.  
-  </ol>  
-</details>  
-**comments**: Under review  
-  
-### [Adapting Dual-encoder Vision-language Models for Paraphrased Retrieval](http://arxiv.org/abs/2405.03190)  
-Jiacheng Cheng, Hijung Valentina Shin, Nuno Vasconcelos, Bryan Russell, Fabian Caba Heilbron  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In the recent years, the dual-encoder vision-language models (\eg CLIP) have achieved remarkable text-to-image retrieval performance. However, we discover that these models usually results in very different retrievals for a pair of paraphrased queries. Such behavior might render the retrieval system less predictable and lead to user frustration. In this work, we consider the task of paraphrased text-to-image retrieval where a model aims to return similar results given a pair of paraphrased queries. To start with, we collect a dataset of paraphrased image descriptions to facilitate quantitative evaluation for this task. We then hypothesize that the undesired behavior of existing dual-encoder model is due to their text towers which are trained on image-sentence pairs and lack the ability to capture the semantic similarity between paraphrased queries. To improve on this, we investigate multiple strategies for training a dual-encoder model starting from a language model pretrained on a large text corpus. Compared to public dual-encoder models such as CLIP and OpenCLIP, the model trained with our best adaptation strategy achieves a significantly higher ranking similarity for paraphrased queries while maintaining similar zero-shot classification and retrieval accuracy.  
-  </ol>  
-</details>  
-  
-### [iSEARLE: Improving Textual Inversion for Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2405.02951)  
-[[code](https://github.com/miccunifi/searle)]  
-Lorenzo Agnolucci, Alberto Baldrati, Marco Bertini, Alberto Del Bimbo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Given a query consisting of a reference image and a relative caption, Composed Image Retrieval (CIR) aims to retrieve target images visually similar to the reference one while incorporating the changes specified in the relative caption. The reliance of supervised methods on labor-intensive manually labeled datasets hinders their broad applicability. In this work, we introduce a new task, Zero-Shot CIR (ZS-CIR), that addresses CIR without the need for a labeled training dataset. We propose an approach named iSEARLE (improved zero-Shot composEd imAge Retrieval with textuaL invErsion) that involves mapping the visual information of the reference image into a pseudo-word token in CLIP token embedding space and combining it with the relative caption. To foster research on ZS-CIR, we present an open-domain benchmarking dataset named CIRCO (Composed Image Retrieval on Common Objects in context), the first CIR dataset where each query is labeled with multiple ground truths and a semantic categorization. The experimental results illustrate that iSEARLE obtains state-of-the-art performance on three different CIR datasets -- FashionIQ, CIRR, and the proposed CIRCO -- and two additional evaluation settings, namely domain conversion and object composition. The dataset, the code, and the model are publicly available at https://github.com/miccunifi/SEARLE.  
-  </ol>  
-</details>  
-**comments**: Extended version of the ICCV2023 paper arXiv:2303.15247  
+**comments**: 31 pages  
   
   
 
@@ -69,64 +100,27 @@ Lorenzo Agnolucci, Alberto Baldrati, Marco Bertini, Alberto Del Bimbo
 
 ## NeRF  
 
-### [Blending Distributed NeRFs with Tri-stage Robust Pose Optimization](http://arxiv.org/abs/2405.02880)  
-Baijun Ye, Caiyun Liu, Xiaoyu Ye, Yuantao Chen, Yuhai Wang, Zike Yan, Yongliang Shi, Hao Zhao, Guyue Zhou  
+### [DistGrid: Scalable Scene Reconstruction with Distributed Multi-resolution Hash Grid](http://arxiv.org/abs/2405.04416)  
+Sidun Liu, Peng Qiao, Zongxin Ye, Wenyu Li, Yong Dou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Due to the limited model capacity, leveraging distributed Neural Radiance Fields (NeRFs) for modeling extensive urban environments has become a necessity. However, current distributed NeRF registration approaches encounter aliasing artifacts, arising from discrepancies in rendering resolutions and suboptimal pose precision. These factors collectively deteriorate the fidelity of pose estimation within NeRF frameworks, resulting in occlusion artifacts during the NeRF blending stage. In this paper, we present a distributed NeRF system with tri-stage pose optimization. In the first stage, precise poses of images are achieved by bundle adjusting Mip-NeRF 360 with a coarse-to-fine strategy. In the second stage, we incorporate the inverting Mip-NeRF 360, coupled with the truncated dynamic low-pass filter, to enable the achievement of robust and precise poses, termed Frame2Model optimization. On top of this, we obtain a coarse transformation between NeRFs in different coordinate systems. In the third stage, we fine-tune the transformation between NeRFs by Model2Model pose optimization. After obtaining precise transformation parameters, we proceed to implement NeRF blending, showcasing superior performance metrics in both real-world and simulation scenarios. Codes and data will be publicly available at https://github.com/boilcy/Distributed-NeRF.  
+    Neural Radiance Field~(NeRF) achieves extremely high quality in object-scaled and indoor scene reconstruction. However, there exist some challenges when reconstructing large-scale scenes. MLP-based NeRFs suffer from limited network capacity, while volume-based NeRFs are heavily memory-consuming when the scene resolution increases. Recent approaches propose to geographically partition the scene and learn each sub-region using an individual NeRF. Such partitioning strategies help volume-based NeRF exceed the single GPU memory limit and scale to larger scenes. However, this approach requires multiple background NeRF to handle out-of-partition rays, which leads to redundancy of learning. Inspired by the fact that the background of current partition is the foreground of adjacent partition, we propose a scalable scene reconstruction method based on joint Multi-resolution Hash Grids, named DistGrid. In this method, the scene is divided into multiple closely-paved yet non-overlapped Axis-Aligned Bounding Boxes, and a novel segmented volume rendering method is proposed to handle cross-boundary rays, thereby eliminating the need for background NeRFs. The experiments demonstrate that our method outperforms existing methods on all evaluated large-scale scenes, and provides visually plausible scene reconstruction. The scalability of our method on reconstruction quality is further evaluated qualitatively and quantitatively.  
   </ol>  
 </details>  
+**comments**: Originally submitted to Siggraph Asia 2023  
   
-### [MVIP-NeRF: Multi-view 3D Inpainting on NeRF Scenes via Diffusion Prior](http://arxiv.org/abs/2405.02859)  
-Honghua Chen, Chen Change Loy, Xingang Pan  
+### [Novel View Synthesis with Neural Radiance Fields for Industrial Robot Applications](http://arxiv.org/abs/2405.04345)  
+Markus Hillemann, Robert Langendörfer, Max Heiken, Max Mehltretter, Andreas Schenk, Martin Weinmann, Stefan Hinz, Christian Heipke, Markus Ulrich  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Despite the emergence of successful NeRF inpainting methods built upon explicit RGB and depth 2D inpainting supervisions, these methods are inherently constrained by the capabilities of their underlying 2D inpainters. This is due to two key reasons: (i) independently inpainting constituent images results in view-inconsistent imagery, and (ii) 2D inpainters struggle to ensure high-quality geometry completion and alignment with inpainted RGB images.   To overcome these limitations, we propose a novel approach called MVIP-NeRF that harnesses the potential of diffusion priors for NeRF inpainting, addressing both appearance and geometry aspects. MVIP-NeRF performs joint inpainting across multiple views to reach a consistent solution, which is achieved via an iterative optimization process based on Score Distillation Sampling (SDS). Apart from recovering the rendered RGB images, we also extract normal maps as a geometric representation and define a normal SDS loss that motivates accurate geometry inpainting and alignment with the appearance. Additionally, we formulate a multi-view SDS score function to distill generative priors simultaneously from different view images, ensuring consistent visual completion when dealing with large view variations. Our experimental results show better appearance and geometry recovery than previous NeRF inpainting methods.  
+    Neural Radiance Fields (NeRFs) have become a rapidly growing research field with the potential to revolutionize typical photogrammetric workflows, such as those used for 3D scene reconstruction. As input, NeRFs require multi-view images with corresponding camera poses as well as the interior orientation. In the typical NeRF workflow, the camera poses and the interior orientation are estimated in advance with Structure from Motion (SfM). But the quality of the resulting novel views, which depends on different parameters such as the number and distribution of available images, as well as the accuracy of the related camera poses and interior orientation, is difficult to predict. In addition, SfM is a time-consuming pre-processing step, and its quality strongly depends on the image content. Furthermore, the undefined scaling factor of SfM hinders subsequent steps in which metric information is required. In this paper, we evaluate the potential of NeRFs for industrial robot applications. We propose an alternative to SfM pre-processing: we capture the input images with a calibrated camera that is attached to the end effector of an industrial robot and determine accurate camera poses with metric scale based on the robot kinematics. We then investigate the quality of the novel views by comparing them to ground truth, and by computing an internal quality measure based on ensemble methods. For evaluation purposes, we acquire multiple datasets that pose challenges for reconstruction typical of industrial applications, like reflective objects, poor texture, and fine structures. We show that the robot-based pose determination reaches similar accuracy as SfM in non-demanding cases, while having clear advantages in more challenging scenarios. Finally, we present first results of applying the ensemble method to estimate the quality of the synthetic novel view in the absence of a ground truth.  
   </ol>  
 </details>  
-**comments**: 14 pages, 10 figures, conference  
-  
-### [TK-Planes: Tiered K-Planes with High Dimensional Feature Vectors for Dynamic UAV-based Scenes](http://arxiv.org/abs/2405.02762)  
-Christopher Maxey, Jaehoon Choi, Yonghan Lee, Hyungtae Lee, Dinesh Manocha, Heesung Kwon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we present a new approach to bridge the domain gap between synthetic and real-world data for un- manned aerial vehicle (UAV)-based perception. Our formu- lation is designed for dynamic scenes, consisting of moving objects or human actions, where the goal is to recognize the pose or actions. We propose an extension of K-Planes Neural Radiance Field (NeRF), wherein our algorithm stores a set of tiered feature vectors. The tiered feature vectors are generated to effectively model conceptual information about a scene as well as an image decoder that transforms output feature maps into RGB images. Our technique leverages the information amongst both static and dynamic objects within a scene and is able to capture salient scene attributes of high altitude videos. We evaluate its performance on challenging datasets, including Okutama Action and UG2, and observe considerable improvement in accuracy over state of the art aerial perception algorithms.  
-  </ol>  
-</details>  
-**comments**: 8 pages, submitted to IROS2024  
-  
-### [ActiveNeuS: Active 3D Reconstruction using Neural Implicit Surface Uncertainty](http://arxiv.org/abs/2405.02568)  
-Hyunseo Kim, Hyeonseo Yang, Taekyung Kim, YoonSung Kim, Jin-Hwa Kim, Byoung-Tak Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Active learning in 3D scene reconstruction has been widely studied, as selecting informative training views is critical for the reconstruction. Recently, Neural Radiance Fields (NeRF) variants have shown performance increases in active 3D reconstruction using image rendering or geometric uncertainty. However, the simultaneous consideration of both uncertainties in selecting informative views remains unexplored, while utilizing different types of uncertainty can reduce the bias that arises in the early training stage with sparse inputs. In this paper, we propose ActiveNeuS, which evaluates candidate views considering both uncertainties. ActiveNeuS provides a way to accumulate image rendering uncertainty while avoiding the bias that the estimated densities can introduce. ActiveNeuS computes the neural implicit surface uncertainty, providing the color uncertainty along with the surface information. It efficiently handles the bias by using the surface information and a grid, enabling the fast selection of diverse viewpoints. Our method outperforms previous works on popular datasets, Blender and DTU, showing that the views selected by ActiveNeuS significantly improve performance.  
-  </ol>  
-</details>  
-  
-### [Learning Robot Soccer from Egocentric Vision with Deep Reinforcement Learning](http://arxiv.org/abs/2405.02425)  
-Dhruva Tirumala, Markus Wulfmeier, Ben Moran, Sandy Huang, Jan Humplik, Guy Lever, Tuomas Haarnoja, Leonard Hasenclever, Arunkumar Byravan, Nathan Batchelor, Neil Sreendra, Kushal Patel, Marlon Gwira, Francesco Nori, Martin Riedmiller, Nicolas Heess  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We apply multi-agent deep reinforcement learning (RL) to train end-to-end robot soccer policies with fully onboard computation and sensing via egocentric RGB vision. This setting reflects many challenges of real-world robotics, including active perception, agile full-body control, and long-horizon planning in a dynamic, partially-observable, multi-agent domain. We rely on large-scale, simulation-based data generation to obtain complex behaviors from egocentric vision which can be successfully transferred to physical robots using low-cost sensors. To achieve adequate visual realism, our simulation combines rigid-body physics with learned, realistic rendering via multiple Neural Radiance Fields (NeRFs). We combine teacher-based multi-agent RL and cross-experiment data reuse to enable the discovery of sophisticated soccer strategies. We analyze active-perception behaviors including object tracking and ball seeking that emerge when simply optimizing perception-agnostic soccer play. The agents display equivalent levels of performance and agility as policies with access to privileged, ground-truth state. To our knowledge, this paper constitutes a first demonstration of end-to-end training for multi-agent robot soccer, mapping raw pixel observations to joint-level actions, that can be deployed in the real world. Videos of the game-play and analyses can be seen on our website https://sites.google.com/view/vision-soccer .  
-  </ol>  
-</details>  
-  
-### [Rip-NeRF: Anti-aliasing Radiance Fields with Ripmap-Encoded Platonic Solids](http://arxiv.org/abs/2405.02386)  
-[[code](https://github.com/junchenliu77/rip-nerf)]  
-Junchen Liu, Wenbo Hu, Zhuo Yang, Jianteng Chen, Guoliang Wang, Xiaoxue Chen, Yantong Cai, Huan-ang Gao, Hao Zhao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Despite significant advancements in Neural Radiance Fields (NeRFs), the renderings may still suffer from aliasing and blurring artifacts, since it remains a fundamental challenge to effectively and efficiently characterize anisotropic areas induced by the cone-casting procedure. This paper introduces a Ripmap-Encoded Platonic Solid representation to precisely and efficiently featurize 3D anisotropic areas, achieving high-fidelity anti-aliasing renderings. Central to our approach are two key components: Platonic Solid Projection and Ripmap encoding. The Platonic Solid Projection factorizes the 3D space onto the unparalleled faces of a certain Platonic solid, such that the anisotropic 3D areas can be projected onto planes with distinguishable characterization. Meanwhile, each face of the Platonic solid is encoded by the Ripmap encoding, which is constructed by anisotropically pre-filtering a learnable feature grid, to enable featurzing the projected anisotropic areas both precisely and efficiently by the anisotropic area-sampling. Extensive experiments on both well-established synthetic datasets and a newly captured real-world dataset demonstrate that our Rip-NeRF attains state-of-the-art rendering quality, particularly excelling in the fine details of repetitive structures and textures, while maintaining relatively swift training times.  
-  </ol>  
-</details>  
-**comments**: SIGGRAPH 2024, Project page: https://junchenliu77.github.io/Rip-NeRF
-  , Code: https://github.com/JunchenLiu77/Rip-NeRF  
+**comments**: 8 pages, 8 figures, accepted for publication in The International
+  Archives of the Photogrammetry, Remote Sensing and Spatial Information
+  Sciences (ISPRS Archives) 2024  
   
   
 
