@@ -1,75 +1,56 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Power-Variable-Projection-for-Initialization-Free-Large-Scale-Bundle-Adjustment>Power Variable Projection for Initialization-Free Large-Scale Bundle Adjustment</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#Unsupervised-Skin-Feature-Tracking-with-Deep-Neural-Networks>Unsupervised Skin Feature Tracking with Deep Neural Networks</a></li>
-        <li><a href=#A-Self-Supervised-Method-for-Body-Part-Segmentation-and-Keypoint-Detection-of-Rat-Images>A Self-Supervised Method for Body Part Segmentation and Keypoint Detection of Rat Images</a></li>
-      </ul>
-    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#${M^2D}$NeRF:-Multi-Modal-Decomposition-NeRF-with-3D-Feature-Fields>${M^2D}$NeRF: Multi-Modal Decomposition NeRF with 3D Feature Fields</a></li>
+        <li><a href=#DragGaussian:-Enabling-Drag-style-Manipulation-on-3D-Gaussian-Representation>DragGaussian: Enabling Drag-style Manipulation on 3D Gaussian Representation</a></li>
+        <li><a href=#NeRFFaceSpeech:-One-shot-Audio-diven-3D-Talking-Head-Synthesis-via-Generative-Prior>NeRFFaceSpeech: One-shot Audio-diven 3D Talking Head Synthesis via Generative Prior</a></li>
+        <li><a href=#RPBG:-Towards-Robust-Neural-Point-based-Graphics-in-the-Wild>RPBG: Towards Robust Neural Point-based Graphics in the Wild</a></li>
+        <li><a href=#Benchmarking-Neural-Radiance-Fields-for-Autonomous-Robots:-An-Overview>Benchmarking Neural Radiance Fields for Autonomous Robots: An Overview</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Power Variable Projection for Initialization-Free Large-Scale Bundle Adjustment](http://arxiv.org/abs/2405.05079)  
-Simon Weber, Je Hyeong Hong, Daniel Cremers  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Initialization-free bundle adjustment (BA) remains largely uncharted. While Levenberg-Marquardt algorithm is the golden method to solve the BA problem, it generally relies on a good initialization. In contrast, the under-explored Variable Projection algorithm (VarPro) exhibits a wide convergence basin even without initialization. Coupled with object space error formulation, recent works have shown its ability to solve (small-scale) initialization-free bundle adjustment problem. We introduce Power Variable Projection (PoVar), extending a recent inverse expansion method based on power series. Importantly, we link the power series expansion to Riemannian manifold optimization. This projective framework is crucial to solve large-scale bundle adjustment problem without initialization. Using the real-world BAL dataset, we experimentally demonstrate that our solver achieves state-of-the-art results in terms of speed and accuracy. In particular, our work is the first, to our knowledge, that addresses the scalability of BA without initialization and opens new venues for initialization-free Structure-from-Motion.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [Unsupervised Skin Feature Tracking with Deep Neural Networks](http://arxiv.org/abs/2405.04943)  
-Jose Chang, Torbjörn E. M. Nordling  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Facial feature tracking is essential in imaging ballistocardiography for accurate heart rate estimation and enables motor degradation quantification in Parkinson's disease through skin feature tracking. While deep convolutional neural networks have shown remarkable accuracy in tracking tasks, they typically require extensive labeled data for supervised training. Our proposed pipeline employs a convolutional stacked autoencoder to match image crops with a reference crop containing the target feature, learning deep feature encodings specific to the object category in an unsupervised manner, thus reducing data requirements. To overcome edge effects making the performance dependent on crop size, we introduced a Gaussian weight on the residual errors of the pixels when calculating the loss function. Training the autoencoder on facial images and validating its performance on manually labeled face and hand videos, our Deep Feature Encodings (DFE) method demonstrated superior tracking accuracy with a mean error ranging from 0.6 to 3.3 pixels, outperforming traditional methods like SIFT, SURF, Lucas Kanade, and the latest transformers like PIPs++ and CoTracker. Overall, our unsupervised learning approach excels in tracking various skin features under significant motion conditions, providing superior feature descriptors for tracking, matching, and image registration compared to both traditional and state-of-the-art supervised learning methods.  
-  </ol>  
-</details>  
-**comments**: arXiv admin note: text overlap with arXiv:2112.14159  
-  
-### [A Self-Supervised Method for Body Part Segmentation and Keypoint Detection of Rat Images](http://arxiv.org/abs/2405.04650)  
-László Kopácsi, Áron Fóthi, András Lőrincz  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recognition of individual components and keypoint detection supported by instance segmentation is crucial to analyze the behavior of agents on the scene. Such systems could be used for surveillance, self-driving cars, and also for medical research, where behavior analysis of laboratory animals is used to confirm the aftereffects of a given medicine. A method capable of solving the aforementioned tasks usually requires a large amount of high-quality hand-annotated data, which takes time and money to produce. In this paper, we propose a method that alleviates the need for manual labeling of laboratory rats. To do so, first, we generate initial annotations with a computer vision-based approach, then through extensive augmentation, we train a deep neural network on the generated data. The final system is capable of instance segmentation, keypoint detection, and body part segmentation even when the objects are heavily occluded.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## NeRF  
 
-### [ ${M^2D}$ NeRF: Multi-Modal Decomposition NeRF with 3D Feature Fields](http://arxiv.org/abs/2405.05010)  
-Ning Wang, Lefei Zhang, Angel X Chang  
+### [DragGaussian: Enabling Drag-style Manipulation on 3D Gaussian Representation](http://arxiv.org/abs/2405.05800)  
+Sitian Shen, Jing Xu, Yuheng Yuan, Xingyi Yang, Qiuhong Shen, Xinchao Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural fields (NeRF) have emerged as a promising approach for representing continuous 3D scenes. Nevertheless, the lack of semantic encoding in NeRFs poses a significant challenge for scene decomposition. To address this challenge, we present a single model, Multi-Modal Decomposition NeRF (${M^2D}$NeRF), that is capable of both text-based and visual patch-based edits. Specifically, we use multi-modal feature distillation to integrate teacher features from pretrained visual and language models into 3D semantic feature volumes, thereby facilitating consistent 3D editing. To enforce consistency between the visual and language features in our 3D feature volumes, we introduce a multi-modal similarity constraint. We also introduce a patch-based joint contrastive loss that helps to encourage object-regions to coalesce in the 3D feature space, resulting in more precise boundaries. Experiments on various real-world scenes show superior performance in 3D scene decomposition tasks compared to prior NeRF-based methods.  
+    User-friendly 3D object editing is a challenging task that has attracted significant attention recently. The limitations of direct 3D object editing without 2D prior knowledge have prompted increased attention towards utilizing 2D generative models for 3D editing. While existing methods like Instruct NeRF-to-NeRF offer a solution, they often lack user-friendliness, particularly due to semantic guided editing. In the realm of 3D representation, 3D Gaussian Splatting emerges as a promising approach for its efficiency and natural explicit property, facilitating precise editing tasks. Building upon these insights, we propose DragGaussian, a 3D object drag-editing framework based on 3D Gaussian Splatting, leveraging diffusion models for interactive image editing with open-vocabulary input. This framework enables users to perform drag-based editing on pre-trained 3D Gaussian object models, producing modified 2D images through multi-view consistent editing. Our contributions include the introduction of a new task, the development of DragGaussian for interactive point-based 3D editing, and comprehensive validation of its effectiveness through qualitative and quantitative experiments.  
   </ol>  
 </details>  
+  
+### [NeRFFaceSpeech: One-shot Audio-diven 3D Talking Head Synthesis via Generative Prior](http://arxiv.org/abs/2405.05749)  
+Gihoon Kim, Kwanggyoon Seo, Sihun Cha, Junyong Noh  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Audio-driven talking head generation is advancing from 2D to 3D content. Notably, Neural Radiance Field (NeRF) is in the spotlight as a means to synthesize high-quality 3D talking head outputs. Unfortunately, this NeRF-based approach typically requires a large number of paired audio-visual data for each identity, thereby limiting the scalability of the method. Although there have been attempts to generate audio-driven 3D talking head animations with a single image, the results are often unsatisfactory due to insufficient information on obscured regions in the image. In this paper, we mainly focus on addressing the overlooked aspect of 3D consistency in the one-shot, audio-driven domain, where facial animations are synthesized primarily in front-facing perspectives. We propose a novel method, NeRFFaceSpeech, which enables to produce high-quality 3D-aware talking head. Using prior knowledge of generative models combined with NeRF, our method can craft a 3D-consistent facial feature space corresponding to a single image. Our spatial synchronization method employs audio-correlated vertex dynamics of a parametric face model to transform static image features into dynamic visuals through ray deformation, ensuring realistic 3D facial motion. Moreover, we introduce LipaintNet that can replenish the lacking information in the inner-mouth area, which can not be obtained from a given single image. The network is trained in a self-supervised manner by utilizing the generative capabilities without additional data. The comprehensive experiments demonstrate the superiority of our method in generating audio-driven talking heads from a single image with enhanced 3D consistency compared to previous approaches. In addition, we introduce a quantitative way of measuring the robustness of a model against pose changes for the first time, which has been possible only qualitatively.  
+  </ol>  
+</details>  
+**comments**: 11 pages, 5 figures  
+  
+### [RPBG: Towards Robust Neural Point-based Graphics in the Wild](http://arxiv.org/abs/2405.05663)  
+Qingtian Zhu, Zizhuang Wei, Zhongtian Zheng, Yifan Zhan, Zhuyu Yao, Jiawang Zhang, Kejian Wu, Yinqiang Zheng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Point-based representations have recently gained popularity in novel view synthesis, for their unique advantages, e.g., intuitive geometric representation, simple manipulation, and faster convergence. However, based on our observation, these point-based neural re-rendering methods are only expected to perform well under ideal conditions and suffer from noisy, patchy points and unbounded scenes, which are challenging to handle but defacto common in real applications. To this end, we revisit one such influential method, known as Neural Point-based Graphics (NPBG), as our baseline, and propose Robust Point-based Graphics (RPBG). We in-depth analyze the factors that prevent NPBG from achieving satisfactory renderings on generic datasets, and accordingly reform the pipeline to make it more robust to varying datasets in-the-wild. Inspired by the practices in image restoration, we greatly enhance the neural renderer to enable the attention-based correction of point visibility and the inpainting of incomplete rasterization, with only acceptable overheads. We also seek for a simple and lightweight alternative for environment modeling and an iterative method to alleviate the problem of poor geometry. By thorough evaluation on a wide range of datasets with different shooting conditions and camera trajectories, RPBG stably outperforms the baseline by a large margin, and exhibits its great robustness over state-of-the-art NeRF-based variants. Code available at https://github.com/QT-Zhu/RPBG.  
+  </ol>  
+</details>  
+  
+### [Benchmarking Neural Radiance Fields for Autonomous Robots: An Overview](http://arxiv.org/abs/2405.05526)  
+Yuhang Ming, Xingrui Yang, Weihan Wang, Zheng Chen, Jinglun Feng, Yifan Xing, Guofeng Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have emerged as a powerful paradigm for 3D scene representation, offering high-fidelity renderings and reconstructions from a set of sparse and unstructured sensor data. In the context of autonomous robotics, where perception and understanding of the environment are pivotal, NeRF holds immense promise for improving performance. In this paper, we present a comprehensive survey and analysis of the state-of-the-art techniques for utilizing NeRF to enhance the capabilities of autonomous robots. We especially focus on the perception, localization and navigation, and decision-making modules of autonomous robots and delve into tasks crucial for autonomous operation, including 3D reconstruction, segmentation, pose estimation, simultaneous localization and mapping (SLAM), navigation and planning, and interaction. Our survey meticulously benchmarks existing NeRF-based methods, providing insights into their strengths and limitations. Moreover, we explore promising avenues for future research and development in this domain. Notably, we discuss the integration of advanced techniques such as 3D Gaussian splatting (3DGS), large language models (LLM), and generative AIs, envisioning enhanced reconstruction efficiency, scene understanding, decision-making capabilities. This survey serves as a roadmap for researchers seeking to leverage NeRFs to empower autonomous robots, paving the way for innovative solutions that can navigate and interact seamlessly in complex environments.  
+  </ol>  
+</details>  
+**comments**: 32 pages, 5 figures, 8 tables  
   
   
 
