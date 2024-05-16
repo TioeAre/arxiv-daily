@@ -3,24 +3,8 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#TP3M:-Transformer-based-Pseudo-3D-Image-Matching-with-Reference>TP3M: Transformer-based Pseudo 3D Image Matching with Reference</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#TP3M:-Transformer-based-Pseudo-3D-Image-Matching-with-Reference>TP3M: Transformer-based Pseudo 3D Image Matching with Reference</a></li>
-        <li><a href=#Vector-Symbolic-Architecture-for-Event-Based-Optical-Flow>Vector-Symbolic Architecture for Event-Based Optical Flow</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Shape-aware-synthesis-of-pathological-lung-CT-scans-using-CycleGAN-for-enhanced-semi-supervised-lung-segmentation>Shape-aware synthesis of pathological lung CT scans using CycleGAN for enhanced semi-supervised lung segmentation</a></li>
-        <li><a href=#TP3M:-Transformer-based-Pseudo-3D-Image-Matching-with-Reference>TP3M: Transformer-based Pseudo 3D Image Matching with Reference</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#Dynamic-NeRF:-A-Review>Dynamic NeRF: A Review</a></li>
+        <li><a href=#Content-Based-Image-Retrieval-for-Multi-Class-Volumetric-Radiology-Images:-A-Benchmark-Study>Content-Based Image Retrieval for Multi-Class Volumetric Radiology Images: A Benchmark Study</a></li>
+        <li><a href=#BEVRender:-Vision-based-Cross-view-Vehicle-Registration-in-Off-road-GNSS-denied-Environment>BEVRender: Vision-based Cross-view Vehicle Registration in Off-road GNSS-denied Environment</a></li>
       </ul>
     </li>
   </ol>
@@ -28,83 +12,25 @@
 
 ## Visual Localization  
 
-### [TP3M: Transformer-based Pseudo 3D Image Matching with Reference](http://arxiv.org/abs/2405.08434)  
-Liming Han, Zhaoxiang Liu, Shiguo Lian  
+### [Content-Based Image Retrieval for Multi-Class Volumetric Radiology Images: A Benchmark Study](http://arxiv.org/abs/2405.09334)  
+Farnaz Khun Jush, Steffen Vogler, Tuan Truong, Matthias Lenga  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image matching is still challenging in such scenes with large viewpoints or illumination changes or with low textures. In this paper, we propose a Transformer-based pseudo 3D image matching method. It upgrades the 2D features extracted from the source image to 3D features with the help of a reference image and matches to the 2D features extracted from the destination image by the coarse-to-fine 3D matching. Our key discovery is that by introducing the reference image, the source image's fine points are screened and furtherly their feature descriptors are enriched from 2D to 3D, which improves the match performance with the destination image. Experimental results on multiple datasets show that the proposed method achieves the state-of-the-art on the tasks of homography estimation, pose estimation and visual localization especially in challenging scenes.  
+    While content-based image retrieval (CBIR) has been extensively studied in natural image retrieval, its application to medical images presents ongoing challenges, primarily due to the 3D nature of medical images. Recent studies have shown the potential use of pre-trained vision embeddings for CBIR in the context of radiology image retrieval. However, a benchmark for the retrieval of 3D volumetric medical images is still lacking, hindering the ability to objectively evaluate and compare the efficiency of proposed CBIR approaches in medical imaging. In this study, we extend previous work and establish a benchmark for region-based and multi-organ retrieval using the TotalSegmentator dataset (TS) with detailed multi-organ annotations. We benchmark embeddings derived from pre-trained supervised models on medical images against embeddings derived from pre-trained unsupervised models on non-medical images for 29 coarse and 104 detailed anatomical structures in volume and region levels. We adopt a late interaction re-ranking method inspired by text matching for image retrieval, comparing it against the original method proposed for volume and region retrieval achieving retrieval recall of 1.0 for diverse anatomical regions with a wide size range. The findings and methodologies presented in this paper provide essential insights and benchmarks for the development and evaluation of CBIR approaches in the context of medical imaging.  
   </ol>  
 </details>  
-**comments**: Accepted by ICRA 2024  
+**comments**: 23 pages, 9 Figures, 13 Tables  
   
-  
-
-
-
-## Keypoint Detection  
-
-### [TP3M: Transformer-based Pseudo 3D Image Matching with Reference](http://arxiv.org/abs/2405.08434)  
-Liming Han, Zhaoxiang Liu, Shiguo Lian  
+### [BEVRender: Vision-based Cross-view Vehicle Registration in Off-road GNSS-denied Environment](http://arxiv.org/abs/2405.09001)  
+Lihong Jin, Wei Dong, Michael Kaess  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image matching is still challenging in such scenes with large viewpoints or illumination changes or with low textures. In this paper, we propose a Transformer-based pseudo 3D image matching method. It upgrades the 2D features extracted from the source image to 3D features with the help of a reference image and matches to the 2D features extracted from the destination image by the coarse-to-fine 3D matching. Our key discovery is that by introducing the reference image, the source image's fine points are screened and furtherly their feature descriptors are enriched from 2D to 3D, which improves the match performance with the destination image. Experimental results on multiple datasets show that the proposed method achieves the state-of-the-art on the tasks of homography estimation, pose estimation and visual localization especially in challenging scenes.  
+    We introduce BEVRender, a novel learning-based approach for the localization of ground vehicles in Global Navigation Satellite System (GNSS)-denied off-road scenarios. These environments are typically challenging for conventional vision-based state estimation due to the lack of distinct visual landmarks and the instability of vehicle poses. To address this, BEVRender generates high-quality local bird's eye view (BEV) images of the local terrain. Subsequently, these images are aligned with a geo-referenced aerial map via template-matching to achieve accurate cross-view registration. Our approach overcomes the inherent limitations of visual inertial odometry systems and the substantial storage requirements of image-retrieval localization strategies, which are susceptible to drift and scalability issues, respectively. Extensive experimentation validates BEVRender's advancement over existing GNSS-denied visual localization methods, demonstrating notable enhancements in both localization accuracy and update frequency. The code for BEVRender will be made available soon.  
   </ol>  
 </details>  
-**comments**: Accepted by ICRA 2024  
-  
-### [Vector-Symbolic Architecture for Event-Based Optical Flow](http://arxiv.org/abs/2405.08300)  
-Hongzhi You, Yijun Cao, Wei Yuan, Fanjun Wang, Ning Qiao, Yongjie Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    From a perspective of feature matching, optical flow estimation for event cameras involves identifying event correspondences by comparing feature similarity across accompanying event frames. In this work, we introduces an effective and robust high-dimensional (HD) feature descriptor for event frames, utilizing Vector Symbolic Architectures (VSA). The topological similarity among neighboring variables within VSA contributes to the enhanced representation similarity of feature descriptors for flow-matching points, while its structured symbolic representation capacity facilitates feature fusion from both event polarities and multiple spatial scales. Based on this HD feature descriptor, we propose a novel feature matching framework for event-based optical flow, encompassing both model-based (VSA-Flow) and self-supervised learning (VSA-SM) methods. In VSA-Flow, accurate optical flow estimation validates the effectiveness of HD feature descriptors. In VSA-SM, a novel similarity maximization method based on the HD feature descriptor is proposed to learn optical flow in a self-supervised way from events alone, eliminating the need for auxiliary grayscale images. Evaluation results demonstrate that our VSA-based method achieves superior accuracy in comparison to both model-based and self-supervised learning methods on the DSEC benchmark, while remains competitive among both methods on the MVSEC benchmark. This contribution marks a significant advancement in event-based optical flow within the feature matching methodology.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Image Matching  
-
-### [Shape-aware synthesis of pathological lung CT scans using CycleGAN for enhanced semi-supervised lung segmentation](http://arxiv.org/abs/2405.08556)  
-[[code](https://github.com/noureddinekhiati/semi-supervised-lung-segmentation)]  
-Rezkellah Noureddine Khiati, Pierre-Yves Brillet, Aurélien Justet, Radu Ispa, Catalin Fetita  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper addresses the problem of pathological lung segmentation, a significant challenge in medical image analysis, particularly pronounced in cases of peripheral opacities (severe fibrosis and consolidation) because of the textural similarity between lung tissue and surrounding areas. To overcome these challenges, this paper emphasizes the use of CycleGAN for unpaired image-to-image translation, in order to provide an augmentation method able to generate fake pathological images matching an existing ground truth. Although previous studies have employed CycleGAN, they often neglect the challenge of shape deformation, which is crucial for accurate medical image segmentation. Our work introduces an innovative strategy that incorporates additional loss functions. Specifically, it proposes an L1 loss based on the lung surrounding which shape is constrained to remain unchanged at the transition from the healthy to pathological domains. The lung surrounding is derived based on ground truth lung masks available in the healthy domain. Furthermore, preprocessing steps, such as cropping based on ribs/vertebra locations, are applied to refine the input for the CycleGAN, ensuring that the network focus on the lung region. This is essential to avoid extraneous biases, such as the zoom effect bias, which can divert attention from the main task. The method is applied to enhance in semi-supervised manner the lung segmentation process by employing a U-Net model trained with on-the-fly data augmentation incorporating synthetic pathological tissues generated by the CycleGAN model. Preliminary results from this research demonstrate significant qualitative and quantitative improvements, setting a new benchmark in the field of pathological lung segmentation. Our code is available at https://github.com/noureddinekhiati/Semi-supervised-lung-segmentation  
-  </ol>  
-</details>  
-**comments**: 14 pages, 7 figures  
-  
-### [TP3M: Transformer-based Pseudo 3D Image Matching with Reference](http://arxiv.org/abs/2405.08434)  
-Liming Han, Zhaoxiang Liu, Shiguo Lian  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image matching is still challenging in such scenes with large viewpoints or illumination changes or with low textures. In this paper, we propose a Transformer-based pseudo 3D image matching method. It upgrades the 2D features extracted from the source image to 3D features with the help of a reference image and matches to the 2D features extracted from the destination image by the coarse-to-fine 3D matching. Our key discovery is that by introducing the reference image, the source image's fine points are screened and furtherly their feature descriptors are enriched from 2D to 3D, which improves the match performance with the destination image. Experimental results on multiple datasets show that the proposed method achieves the state-of-the-art on the tasks of homography estimation, pose estimation and visual localization especially in challenging scenes.  
-  </ol>  
-</details>  
-**comments**: Accepted by ICRA 2024  
-  
-  
-
-
-
-## NeRF  
-
-### [Dynamic NeRF: A Review](http://arxiv.org/abs/2405.08609)  
-Jinwei Lin  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Field(NeRF) is an novel implicit method to achieve the 3D reconstruction and representation with a high resolution. After the first research of NeRF is proposed, NeRF has gained a robust developing power and is booming in the 3D modeling, representation and reconstruction areas. However the first and most of the followed research projects based on NeRF is static, which are weak in the practical applications. Therefore, more researcher are interested and focused on the study of dynamic NeRF that is more feasible and useful in practical applications or situations. Compared with the static NeRF, implementing the Dynamic NeRF is more difficult and complex. But Dynamic is more potential in the future even is the basic of Editable NeRF. In this review, we made a detailed and abundant statement for the development and important implementation principles of Dynamci NeRF. The analysis of main principle and development of Dynamic NeRF is from 2021 to 2023, including the most of the Dynamic NeRF projects. What is more, with colorful and novel special designed figures and table, We also made a detailed comparison and analysis of different features of various of Dynamic. Besides, we analyzed and discussed the key methods to implement a Dynamic NeRF. The volume of the reference papers is large. The statements and comparisons are multidimensional. With a reading of this review, the whole development history and most of the main design method or principles of Dynamic NeRF can be easy understood and gained.  
-  </ol>  
-</details>  
-**comments**: 25 pages  
+**comments**: 8 pages, 6 figures  
   
   
 
