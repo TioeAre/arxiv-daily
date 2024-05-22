@@ -1,64 +1,53 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#EdgeLoc:-A-Communication-Adaptive-Parallel-System-for-Real-Time-Localization-in-Infrastructure-Assisted-Autonomous-Driving>EdgeLoc: A Communication-Adaptive Parallel System for Real-Time Localization in Infrastructure-Assisted Autonomous Driving</a></li>
+        <li><a href=#Benchmarking-Fish-Dataset-and-Evaluation-Metric-in-Keypoint-Detection---Towards-Precise-Fish-Morphological-Assessment-in-Aquaculture-Breeding>Benchmarking Fish Dataset and Evaluation Metric in Keypoint Detection - Towards Precise Fish Morphological Assessment in Aquaculture Breeding</a></li>
       </ul>
     </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#UAV-VisLoc:-A-Large-scale-Dataset-for-UAV-Visual-Localization>UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization</a></li>
-        <li><a href=#Register-assisted-aggregation-for-Visual-Place-Recognition>Register assisted aggregation for Visual Place Recognition</a></li>
+        <li><a href=#OmniGlue:-Generalizable-Feature-Matching-with-Foundation-Model-Guidance>OmniGlue: Generalizable Feature Matching with Foundation Model Guidance</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Fast-Generalizable-Gaussian-Splatting-Reconstruction-from-Multi-View-Stereo>Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo</a></li>
-        <li><a href=#Embracing-Radiance-Field-Rendering-in-6G:-Over-the-Air-Training-and-Inference-with-3D-Contents>Embracing Radiance Field Rendering in 6G: Over-the-Air Training and Inference with 3D Contents</a></li>
-        <li><a href=#NPLMV-PS:-Neural-Point-Light-Multi-View-Photometric-Stereo>NPLMV-PS: Neural Point-Light Multi-View Photometric Stereo</a></li>
-        <li><a href=#Searching-Realistic-Looking-Adversarial-Objects-For-Autonomous-Driving-Systems>Searching Realistic-Looking Adversarial Objects For Autonomous Driving Systems</a></li>
-        <li><a href=#R-NeRF:-Neural-Radiance-Fields-for-Modeling-RIS-enabled-Wireless-Environments>R-NeRF: Neural Radiance Fields for Modeling RIS-enabled Wireless Environments</a></li>
-        <li><a href=#MotionGS-:-Compact-Gaussian-Splatting-SLAM-by-Motion-Filter>MotionGS : Compact Gaussian Splatting SLAM by Motion Filter</a></li>
+        <li><a href=#MOSS:-Motion-based-3D-Clothed-Human-Synthesis-from-Monocular-Video>MOSS: Motion-based 3D Clothed Human Synthesis from Monocular Video</a></li>
+        <li><a href=#Leveraging-Neural-Radiance-Fields-for-Pose-Estimation-of-an-Unknown-Space-Object-during-Proximity-Operations>Leveraging Neural Radiance Fields for Pose Estimation of an Unknown Space Object during Proximity Operations</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## Keypoint Detection  
 
-### [EdgeLoc: A Communication-Adaptive Parallel System for Real-Time Localization in Infrastructure-Assisted Autonomous Driving](http://arxiv.org/abs/2405.12120)  
-Boyi Liu, Jingwen Tong, Yufan Zhuang, Jiawei Shao, Jun Zhang  
+### [Benchmarking Fish Dataset and Evaluation Metric in Keypoint Detection - Towards Precise Fish Morphological Assessment in Aquaculture Breeding](http://arxiv.org/abs/2405.12476)  
+Weizhen Liu, Jiayu Tan, Guangyu Lan, Ao Li, Dongye Li, Le Zhao, Xiaohui Yuan, Nanqing Dong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper presents EdgeLoc, an infrastructure-assisted, real-time localization system for autonomous driving that addresses the incompatibility between traditional localization methods and deep learning approaches. The system is built on top of the Robot Operating System (ROS) and combines the real-time performance of traditional methods with the high accuracy of deep learning approaches. The system leverages edge computing capabilities of roadside units (RSUs) for precise localization to enhance on-vehicle localization that is based on the real-time visual odometry. EdgeLoc is a parallel processing system, utilizing a proposed uncertainty-aware pose fusion solution. It achieves communication adaptivity through online learning and addresses fluctuations via window-based detection. Moreover, it achieves optimal latency and maximum improvement by utilizing auto-splitting vehicle-infrastructure collaborative inference, as well as online distribution learning for decision-making. Even with the most basic end-to-end deep neural network for localization estimation, EdgeLoc realizes a 67.75\% reduction in the localization error for real-time local visual odometry, a 29.95\% reduction for non-real-time collaborative inference, and a 30.26\% reduction compared to Kalman filtering. Finally, accuracy-to-latency conversion was experimentally validated, and an overall experiment was conducted on a practical cellular network. The system is open sourced at https://github.com/LoganCome/EdgeAssistedLocalization.  
+    Accurate phenotypic analysis in aquaculture breeding necessitates the quantification of subtle morphological phenotypes. Existing datasets suffer from limitations such as small scale, limited species coverage, and inadequate annotation of keypoints for measuring refined and complex morphological phenotypes of fish body parts. To address this gap, we introduce FishPhenoKey, a comprehensive dataset comprising 23,331 high-resolution images spanning six fish species. Notably, FishPhenoKey includes 22 phenotype-oriented annotations, enabling the capture of intricate morphological phenotypes. Motivated by the nuanced evaluation of these subtle morphologies, we also propose a new evaluation metric, Percentage of Measured Phenotype (PMP). It is designed to assess the accuracy of individual keypoint positions and is highly sensitive to the phenotypes measured using the corresponding keypoints. To enhance keypoint detection accuracy, we further propose a novel loss, Anatomically-Calibrated Regularization (ACR), that can be integrated into keypoint detection models, leveraging biological insights to refine keypoint localization. Our contributions set a new benchmark in fish phenotype analysis, addressing the challenges of precise morphological quantification and opening new avenues for research in sustainable aquaculture and genetic studies. Our dataset and code are available at https://github.com/WeizhenLiuBioinform/Fish-Phenotype-Detect.  
   </ol>  
 </details>  
+**comments**: Accepted by IJCAI2024, Code:
+  https://github.com/WeizhenLiuBioinform/Fish-Phenotype-Detect  
   
   
 
 
 
-## Visual Localization  
+## Image Matching  
 
-### [UAV-VisLoc: A Large-scale Dataset for UAV Visual Localization](http://arxiv.org/abs/2405.11936)  
-Wenjia Xu, Yaxuan Yao, Jiaqi Cao, Zhiwei Wei, Chunbo Liu, Jiuniu Wang, Mugen Peng  
+### [OmniGlue: Generalizable Feature Matching with Foundation Model Guidance](http://arxiv.org/abs/2405.12979)  
+Hanwen Jiang, Arjun Karpur, Bingyi Cao, Qixing Huang, Andre Araujo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The application of unmanned aerial vehicles (UAV) has been widely extended recently. It is crucial to ensure accurate latitude and longitude coordinates for UAVs, especially when the global navigation satellite systems (GNSS) are disrupted and unreliable. Existing visual localization methods achieve autonomous visual localization without error accumulation by matching the ground-down view image of UAV with the ortho satellite maps. However, collecting UAV ground-down view images across diverse locations is costly, leading to a scarcity of large-scale datasets for real-world scenarios. Existing datasets for UAV visual localization are often limited to small geographic areas or are focused only on urban regions with distinct textures. To address this, we define the UAV visual localization task by determining the UAV's real position coordinates on a large-scale satellite map based on the captured ground-down view. In this paper, we present a large-scale dataset, UAV-VisLoc, to facilitate the UAV visual localization task. This dataset comprises images from diverse drones across 11 locations in China, capturing a range of topographical features. The dataset features images from fixed-wing drones and multi-terrain drones, captured at different altitudes and orientations. Our dataset includes 6,742 drone images and 11 satellite maps, with metadata such as latitude, longitude, altitude, and capture date. Our dataset is tailored to support both the training and testing of models by providing a diverse and extensive data.  
+    The image matching field has been witnessing a continuous emergence of novel learnable feature matching techniques, with ever-improving performance on conventional benchmarks. However, our investigation shows that despite these gains, their potential for real-world applications is restricted by their limited generalization capabilities to novel image domains. In this paper, we introduce OmniGlue, the first learnable image matcher that is designed with generalization as a core principle. OmniGlue leverages broad knowledge from a vision foundation model to guide the feature matching process, boosting generalization to domains not seen at training time. Additionally, we propose a novel keypoint position-guided attention mechanism which disentangles spatial and appearance information, leading to enhanced matching descriptors. We perform comprehensive experiments on a suite of $7$ datasets with varied image domains, including scene-level, object-centric and aerial images. OmniGlue's novel components lead to relative gains on unseen domains of $20.9\%$ with respect to a directly comparable reference model, while also outperforming the recent LightGlue method by $9.5\%$ relatively.Code and model can be found at https://hwjiang1510.github.io/OmniGlue  
   </ol>  
 </details>  
-  
-### [Register assisted aggregation for Visual Place Recognition](http://arxiv.org/abs/2405.11526)  
-Xuan Yu, Zhenyong Fu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual Place Recognition (VPR) refers to the process of using computer vision to recognize the position of the current query image. Due to the significant changes in appearance caused by season, lighting, and time spans between query images and database images for retrieval, these differences increase the difficulty of place recognition. Previous methods often discarded useless features (such as sky, road, vehicles) while uncontrolled discarding features that help improve recognition accuracy (such as buildings, trees). To preserve these useful features, we propose a new feature aggregation method to address this issue. Specifically, in order to obtain global and local features that contain discriminative place information, we added some registers on top of the original image tokens to assist in model training. After reallocating attention weights, these registers were discarded. The experimental results show that these registers surprisingly separate unstable features from the original image representation and outperform state-of-the-art methods.  
-  </ol>  
-</details>  
+**comments**: CVPR 2024  
   
   
 
@@ -66,60 +55,21 @@ Xuan Yu, Zhenyong Fu
 
 ## NeRF  
 
-### [Fast Generalizable Gaussian Splatting Reconstruction from Multi-View Stereo](http://arxiv.org/abs/2405.12218)  
-Tianqi Liu, Guangcong Wang, Shoukang Hu, Liao Shen, Xinyi Ye, Yuhang Zang, Zhiguo Cao, Wei Li, Ziwei Liu  
+### [MOSS: Motion-based 3D Clothed Human Synthesis from Monocular Video](http://arxiv.org/abs/2405.12806)  
+Hongsheng Wang, Xiang Cai, Xi Sun, Jinhong Yue, Shengyu Zhang, Feng Lin, Fei Wu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present MVSGaussian, a new generalizable 3D Gaussian representation approach derived from Multi-View Stereo (MVS) that can efficiently reconstruct unseen scenes. Specifically, 1) we leverage MVS to encode geometry-aware Gaussian representations and decode them into Gaussian parameters. 2) To further enhance performance, we propose a hybrid Gaussian rendering that integrates an efficient volume rendering design for novel view synthesis. 3) To support fast fine-tuning for specific scenes, we introduce a multi-view geometric consistent aggregation strategy to effectively aggregate the point clouds generated by the generalizable model, serving as the initialization for per-scene optimization. Compared with previous generalizable NeRF-based methods, which typically require minutes of fine-tuning and seconds of rendering per image, MVSGaussian achieves real-time rendering with better synthesis quality for each scene. Compared with the vanilla 3D-GS, MVSGaussian achieves better view synthesis with less training computational cost. Extensive experiments on DTU, Real Forward-facing, NeRF Synthetic, and Tanks and Temples datasets validate that MVSGaussian attains state-of-the-art performance with convincing generalizability, real-time rendering speed, and fast per-scene optimization.  
-  </ol>  
-</details>  
-**comments**: Project page: https://mvsgaussian.github.io/  
-  
-### [Embracing Radiance Field Rendering in 6G: Over-the-Air Training and Inference with 3D Contents](http://arxiv.org/abs/2405.12155)  
-Guanlin Wu, Zhonghao Lyu, Juyong Zhang, Jie Xu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The efficient representation, transmission, and reconstruction of three-dimensional (3D) contents are becoming increasingly important for sixth-generation (6G) networks that aim to merge virtual and physical worlds for offering immersive communication experiences. Neural radiance field (NeRF) and 3D Gaussian splatting (3D-GS) have recently emerged as two promising 3D representation techniques based on radiance field rendering, which are able to provide photorealistic rendering results for complex scenes. Therefore, embracing NeRF and 3D-GS in 6G networks is envisioned to be a prominent solution to support emerging 3D applications with enhanced quality of experience. This paper provides a comprehensive overview on the integration of NeRF and 3D-GS in 6G. First, we review the basics of the radiance field rendering techniques, and highlight their applications and implementation challenges over wireless networks. Next, we consider the over-the-air training of NeRF and 3D-GS models over wireless networks by presenting various learning techniques. We particularly focus on the federated learning design over a hierarchical device-edge-cloud architecture. Then, we discuss three practical rendering architectures of NeRF and 3D-GS models at wireless network edge. We provide model compression approaches to facilitate the transmission of radiance field models, and present rendering acceleration approaches and joint computation and communication designs to enhance the rendering efficiency. In particular, we propose a new semantic communication enabled 3D content transmission design, in which the radiance field models are exploited as the semantic knowledge base to reduce the communication overhead for distributed inference. Furthermore, we present the utilization of radiance field rendering in wireless applications like radio mapping and radio imaging.  
-  </ol>  
-</details>  
-**comments**: 15 pages,7 figures  
-  
-### [NPLMV-PS: Neural Point-Light Multi-View Photometric Stereo](http://arxiv.org/abs/2405.12057)  
-Fotios Logothetis, Ignas Budvytis, Roberto Cipolla  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this work we present a novel multi-view photometric stereo (PS) method. Like many works in 3D reconstruction we are leveraging neural shape representations and learnt renderers. However, our work differs from the state-of-the-art multi-view PS methods such as PS-NeRF or SuperNormal we explicity leverage per-pixel intensity renderings rather than relying mainly on estimated normals.   We model point light attenuation and explicitly raytrace cast shadows in order to best approximate each points incoming radiance. This is used as input to a fully neural material renderer that uses minimal prior assumptions and it is jointly optimised with the surface. Finally, estimated normal and segmentation maps can also incorporated in order to maximise the surface accuracy.   Our method is among the first to outperform the classical approach of DiLiGenT-MV and achieves average 0.2mm Chamfer distance for objects imaged at approx 1.5m distance away with approximate 400x400 resolution. Moreover, we show robustness to poor normals in low light count scenario, achieving 0.27mm Chamfer distance when pixel rendering is used instead of estimated normals.  
+    Single-view clothed human reconstruction holds a central position in virtual reality applications, especially in contexts involving intricate human motions. It presents notable challenges in achieving realistic clothing deformation. Current methodologies often overlook the influence of motion on surface deformation, resulting in surfaces lacking the constraints imposed by global motion. To overcome these limitations, we introduce an innovative framework, Motion-Based 3D Clothed Humans Synthesis (MOSS), which employs kinematic information to achieve motion-aware Gaussian split on the human surface. Our framework consists of two modules: Kinematic Gaussian Locating Splatting (KGAS) and Surface Deformation Detector (UID). KGAS incorporates matrix-Fisher distribution to propagate global motion across the body surface. The density and rotation factors of this distribution explicitly control the Gaussians, thereby enhancing the realism of the reconstructed surface. Additionally, to address local occlusions in single-view, based on KGAS, UID identifies significant surfaces, and geometric reconstruction is performed to compensate for these deformations. Experimental results demonstrate that MOSS achieves state-of-the-art visual quality in 3D clothed human synthesis from monocular videos. Notably, we improve the Human NeRF and the Gaussian Splatting by 33.94% and 16.75% in LPIPS* respectively. Codes are available at https://wanghongsheng01.github.io/MOSS/.  
   </ol>  
 </details>  
   
-### [Searching Realistic-Looking Adversarial Objects For Autonomous Driving Systems](http://arxiv.org/abs/2405.11629)  
-Shengxiang Sun, Shenzhe Zhu  
+### [Leveraging Neural Radiance Fields for Pose Estimation of an Unknown Space Object during Proximity Operations](http://arxiv.org/abs/2405.12728)  
+Antoine Legrand, Renaud Detry, Christophe De Vleeschouwer  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Numerous studies on adversarial attacks targeting self-driving policies fail to incorporate realistic-looking adversarial objects, limiting real-world applicability. Building upon prior research that facilitated the transition of adversarial objects from simulations to practical applications, this paper discusses a modified gradient-based texture optimization method to discover realistic-looking adversarial objects. While retaining the core architecture and techniques of the prior research, the proposed addition involves an entity termed the 'Judge'. This agent assesses the texture of a rendered object, assigning a probability score reflecting its realism. This score is integrated into the loss function to encourage the NeRF object renderer to concurrently learn realistic and adversarial textures. The paper analyzes four strategies for developing a robust 'Judge': 1) Leveraging cutting-edge vision-language models. 2) Fine-tuning open-sourced vision-language models. 3) Pretraining neurosymbolic systems. 4) Utilizing traditional image processing techniques. Our findings indicate that strategies 1) and 4) yield less reliable outcomes, pointing towards strategies 2) or 3) as more promising directions for future research.  
-  </ol>  
-</details>  
-  
-### [R-NeRF: Neural Radiance Fields for Modeling RIS-enabled Wireless Environments](http://arxiv.org/abs/2405.11541)  
-Huiying Yang, Zihan Jin, Chenhao Wu, Rujing Xiong, Robert Caiming Qiu, Zenan Ling  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recently, ray tracing has gained renewed interest with the advent of Reflective Intelligent Surfaces (RIS) technology, a key enabler of 6G wireless communications due to its capability of intelligent manipulation of electromagnetic waves. However, accurately modeling RIS-enabled wireless environments poses significant challenges due to the complex variations caused by various environmental factors and the mobility of RISs. In this paper, we propose a novel modeling approach using Neural Radiance Fields (NeRF) to characterize the dynamics of electromagnetic fields in such environments. Our method utilizes NeRF-based ray tracing to intuitively capture and visualize the complex dynamics of signal propagation, effectively modeling the complete signal pathways from the transmitter to the RIS, and from the RIS to the receiver. This two-stage process accurately characterizes multiple complex transmission paths, enhancing our understanding of signal behavior in real-world scenarios. Our approach predicts the signal field for any specified RIS placement and receiver location, facilitating efficient RIS deployment. Experimental evaluations using both simulated and real-world data validate the significant benefits of our methodology.  
-  </ol>  
-</details>  
-  
-### [MotionGS : Compact Gaussian Splatting SLAM by Motion Filter](http://arxiv.org/abs/2405.11129)  
-[[code](https://github.com/antonio521/motiongs)]  
-Xinli Guo, Peng Han, Weidong Zhang, Hongtian Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    With their high-fidelity scene representation capability, the attention of SLAM field is deeply attracted by the Neural Radiation Field (NeRF) and 3D Gaussian Splatting (3DGS). Recently, there has been a Surge in NeRF-based SLAM, while 3DGS-based SLAM is sparse. A novel 3DGS-based SLAM approach with a fusion of deep visual feature, dual keyframe selection and 3DGS is presented in this paper. Compared with the existing methods, the proposed selectively tracking is achieved by feature extraction and motion filter on each frame. The joint optimization of pose and 3D Gaussian runs through the entire mapping process. Additionally, the coarse-to-fine pose estimation and compact Gaussian scene representation are implemented by dual keyfeature selection and novel loss functions. Experimental results demonstrate that the proposed algorithm not only outperforms the existing methods in tracking and mapping, but also has less memory usage.  
+    We address the estimation of the 6D pose of an unknown target spacecraft relative to a monocular camera, a key step towards the autonomous rendezvous and proximity operations required by future Active Debris Removal missions. We present a novel method that enables an "off-the-shelf" spacecraft pose estimator, which is supposed to known the target CAD model, to be applied on an unknown target. Our method relies on an in-the wild NeRF, i.e., a Neural Radiance Field that employs learnable appearance embeddings to represent varying illumination conditions found in natural scenes. We train the NeRF model using a sparse collection of images that depict the target, and in turn generate a large dataset that is diverse both in terms of viewpoint and illumination. This dataset is then used to train the pose estimation network. We validate our method on the Hardware-In-the-Loop images of SPEED+ that emulate lighting conditions close to those encountered on orbit. We demonstrate that our method successfully enables the training of an off-the-shelf spacecraft pose estimation network from a sparse set of images. Furthermore, we show that a network trained using our method performs similarly to a model trained on synthetic images generated using the CAD model of the target.  
   </ol>  
 </details>  
   
