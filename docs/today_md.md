@@ -1,36 +1,62 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Affine-based-Deformable-Attention-and-Selective-Fusion-for-Semi-dense-Matching>Affine-based Deformable Attention and Selective Fusion for Semi-dense Matching</a></li>
+        <li><a href=#ETA-INIT:-Enhancing-the-Translation-Accuracy-for-Stereo-Visual-Inertial-SLAM-Initialization>ETA-INIT: Enhancing the Translation Accuracy for Stereo Visual-Inertial SLAM Initialization</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#Composed-Image-Retrieval-for-Remote-Sensing>Composed Image Retrieval for Remote Sensing</a></li>
+        <li><a href=#Self-distilled-Dynamic-Fusion-Network-for-Language-based-Fashion-Retrieval>Self-distilled Dynamic Fusion Network for Language-based Fashion Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#NeRF-Casting:-Improved-View-Dependent-Appearance-with-Consistent-Reflections>NeRF-Casting: Improved View-Dependent Appearance with Consistent Reflections</a></li>
-        <li><a href=#Neural-Directional-Encoding-for-Efficient-and-Accurate-View-Dependent-Appearance-Modeling>Neural Directional Encoding for Efficient and Accurate View-Dependent Appearance Modeling</a></li>
-        <li><a href=#Camera-Relocalization-in-Shadow-free-Neural-Radiance-Fields>Camera Relocalization in Shadow-free Neural Radiance Fields</a></li>
-        <li><a href=#LDM:-Large-Tensorial-SDF-Model-for-Textured-Mesh-Generation>LDM: Large Tensorial SDF Model for Textured Mesh Generation</a></li>
-        <li><a href=#JointRF:-End-to-End-Joint-Optimization-for-Dynamic-Neural-Radiance-Field-Representation-and-Compression>JointRF: End-to-End Joint Optimization for Dynamic Neural Radiance Field Representation and Compression</a></li>
-        <li><a href=#DoGaussian:-Distributed-Oriented-Gaussian-Splatting-for-Large-Scale-3D-Reconstruction-Via-Gaussian-Consensus>DoGaussian: Distributed-Oriented Gaussian Splatting for Large-Scale 3D Reconstruction Via Gaussian Consensus</a></li>
-        <li><a href=#Gaussian-Time-Machine:-A-Real-Time-Rendering-Methodology-for-Time-Variant-Appearances>Gaussian Time Machine: A Real-Time Rendering Methodology for Time-Variant Appearances</a></li>
+        <li><a href=#Neural-Elevation-Models-for-Terrain-Mapping-and-Path-Planning>Neural Elevation Models for Terrain Mapping and Path Planning</a></li>
+        <li><a href=#HDR-GS:-Efficient-High-Dynamic-Range-Novel-View-Synthesis-at-1000x-Speed-via-Gaussian-Splatting>HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting</a></li>
+        <li><a href=#GS-Hider:-Hiding-Messages-into-3D-Gaussian-Splatting>GS-Hider: Hiding Messages into 3D Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Image Matching  
+## SLAM  
 
-### [Affine-based Deformable Attention and Selective Fusion for Semi-dense Matching](http://arxiv.org/abs/2405.13874)  
-Hongkai Chen, Zixin Luo, Yurun Tian, Xuyang Bai, Ziyu Wang, Lei Zhou, Mingmin Zhen, Tian Fang, David McKinnon, Yanghai Tsin, Long Quan  
+### [ETA-INIT: Enhancing the Translation Accuracy for Stereo Visual-Inertial SLAM Initialization](http://arxiv.org/abs/2405.15082)  
+Han Song, Zhongche Qu, Zhi Zhang, Zihan Ye, Cong Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Identifying robust and accurate correspondences across images is a fundamental problem in computer vision that enables various downstream tasks. Recent semi-dense matching methods emphasize the effectiveness of fusing relevant cross-view information through Transformer. In this paper, we propose several improvements upon this paradigm. Firstly, we introduce affine-based local attention to model cross-view deformations. Secondly, we present selective fusion to merge local and global messages from cross attention. Apart from network structure, we also identify the importance of enforcing spatial smoothness in loss design, which has been omitted by previous works. Based on these augmentations, our network demonstrate strong matching capacity under different settings. The full version of our network achieves state-of-the-art performance among semi-dense matching methods at a similar cost to LoFTR, while the slim version reaches LoFTR baseline's performance with only 15% computation cost and 18% parameters.  
+    As the current initialization method in the state-of-the-art Stereo Visual-Inertial SLAM framework, ORB-SLAM3 has limitations. Its success depends on the performance of the pure stereo SLAM system and is based on the underlying assumption that pure visual SLAM can accurately estimate the camera trajectory, which is essential for inertial parameter estimation. Meanwhile, the further improved initialization method for ORB-SLAM3, known as Stereo-NEC, is time-consuming due to applying keypoint tracking to estimate gyroscope bias with normal epipolar constraints. To address the limitations of previous methods, this paper proposes a method aimed at enhancing translation accuracy during the initialization stage. The fundamental concept of our method is to improve the translation estimate with a 3 Degree-of-Freedom (DoF) Bundle Adjustment (BA), independently, while the rotation estimate is fixed, instead of using ORB-SLAM3's 6-DoF BA. Additionally, the rotation estimate will be updated by considering IMU measurements and gyroscope bias, unlike ORB-SLAM3's rotation, which is directly obtained from stereo visual odometry and may yield inferior results when operating in challenging scenarios. We also conduct extensive evaluations on the public benchmark, the EuRoC dataset, demonstrating that our method excels in accuracy.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR2024 Image Matching Workshop  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Composed Image Retrieval for Remote Sensing](http://arxiv.org/abs/2405.15587)  
+Bill Psomas, Ioannis Kakogeorgiou, Nikos Efthymiadis, Giorgos Tolias, Ondrej Chum, Yannis Avrithis, Konstantinos Karantzalos  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This work introduces composed image retrieval to remote sensing. It allows to query a large image archive by image examples alternated by a textual description, enriching the descriptive power over unimodal queries, either visual or textual. Various attributes can be modified by the textual part, such as shape, color, or context. A novel method fusing image-to-image and text-to-image similarity is introduced. We demonstrate that a vision-language model possesses sufficient descriptive power and no further learning step or training data are necessary. We present a new evaluation benchmark focused on color, context, density, existence, quantity, and shape modifications. Our work not only sets the state-of-the-art for this task, but also serves as a foundational step in addressing a gap in the field of remote sensing image retrieval. Code at: https://github.com/billpsomas/rscir  
+  </ol>  
+</details>  
+  
+### [Self-distilled Dynamic Fusion Network for Language-based Fashion Retrieval](http://arxiv.org/abs/2405.15451)  
+Yiming Wu, Hangfei Li, Fangfang Wang, Yilong Zhang, Ronghua Liang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In the domain of language-based fashion image retrieval, pinpointing the desired fashion item using both a reference image and its accompanying textual description is an intriguing challenge. Existing approaches lean heavily on static fusion techniques, intertwining image and text. Despite their commendable advancements, these approaches are still limited by a deficiency in flexibility. In response, we propose a Self-distilled Dynamic Fusion Network to compose the multi-granularity features dynamically by considering the consistency of routing path and modality-specific information simultaneously. Two new modules are included in our proposed method: (1) Dynamic Fusion Network with Modality Specific Routers. The dynamic network enables a flexible determination of the routing for each reference image and modification text, taking into account their distinct semantics and distributions. (2) Self Path Distillation Loss. A stable path decision for queries benefits the optimization of feature extraction as well as routing, and we approach this by progressively refine the path decision with previous path information. Extensive experiments demonstrate the effectiveness of our proposed model compared to existing methods.  
+  </ol>  
+</details>  
+**comments**: ICASSP 2024  
   
   
 
@@ -38,74 +64,34 @@ Hongkai Chen, Zixin Luo, Yurun Tian, Xuyang Bai, Ziyu Wang, Lei Zhou, Mingmin Zh
 
 ## NeRF  
 
-### [NeRF-Casting: Improved View-Dependent Appearance with Consistent Reflections](http://arxiv.org/abs/2405.14871)  
-Dor Verbin, Pratul P. Srinivasan, Peter Hedman, Ben Mildenhall, Benjamin Attal, Richard Szeliski, Jonathan T. Barron  
+### [Neural Elevation Models for Terrain Mapping and Path Planning](http://arxiv.org/abs/2405.15227)  
+Adam Dai, Shubh Gupta, Grace Gao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRFs) typically struggle to reconstruct and render highly specular objects, whose appearance varies quickly with changes in viewpoint. Recent works have improved NeRF's ability to render detailed specular appearance of distant environment illumination, but are unable to synthesize consistent reflections of closer content. Moreover, these techniques rely on large computationally-expensive neural networks to model outgoing radiance, which severely limits optimization and rendering speed. We address these issues with an approach based on ray tracing: instead of querying an expensive neural network for the outgoing view-dependent radiance at points along each camera ray, our model casts reflection rays from these points and traces them through the NeRF representation to render feature vectors which are decoded into color using a small inexpensive network. We demonstrate that our model outperforms prior methods for view synthesis of scenes containing shiny objects, and that it is the only existing NeRF method that can synthesize photorealistic specular appearance and reflections in real-world scenes, while requiring comparable optimization time to current state-of-the-art view synthesis models.  
-  </ol>  
-</details>  
-**comments**: Project page: http://nerf-casting.github.io  
-  
-### [Neural Directional Encoding for Efficient and Accurate View-Dependent Appearance Modeling](http://arxiv.org/abs/2405.14847)  
-Liwen Wu, Sai Bi, Zexiang Xu, Fujun Luan, Kai Zhang, Iliyan Georgiev, Kalyan Sunkavalli, Ravi Ramamoorthi  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel-view synthesis of specular objects like shiny metals or glossy paints remains a significant challenge. Not only the glossy appearance but also global illumination effects, including reflections of other objects in the environment, are critical components to faithfully reproduce a scene. In this paper, we present Neural Directional Encoding (NDE), a view-dependent appearance encoding of neural radiance fields (NeRF) for rendering specular objects. NDE transfers the concept of feature-grid-based spatial encoding to the angular domain, significantly improving the ability to model high-frequency angular signals. In contrast to previous methods that use encoding functions with only angular input, we additionally cone-trace spatial features to obtain a spatially varying directional encoding, which addresses the challenging interreflection effects. Extensive experiments on both synthetic and real datasets show that a NeRF model with NDE (1) outperforms the state of the art on view synthesis of specular objects, and (2) works with small networks to allow fast (real-time) inference. The project webpage and source code are available at: \url{https://lwwu2.github.io/nde/}.  
-  </ol>  
-</details>  
-**comments**: Accepted to CVPR 2024  
-  
-### [Camera Relocalization in Shadow-free Neural Radiance Fields](http://arxiv.org/abs/2405.14824)  
-Shiyao Xu, Caiyun Liu, Yuantao Chen, Zhenxin Zhu, Zike Yan, Yongliang Shi, Hao Zhao, Guyue Zhou  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Camera relocalization is a crucial problem in computer vision and robotics. Recent advancements in neural radiance fields (NeRFs) have shown promise in synthesizing photo-realistic images. Several works have utilized NeRFs for refining camera poses, but they do not account for lighting changes that can affect scene appearance and shadow regions, causing a degraded pose optimization process. In this paper, we propose a two-staged pipeline that normalizes images with varying lighting and shadow conditions to improve camera relocalization. We implement our scene representation upon a hash-encoded NeRF which significantly boosts up the pose optimization process. To account for the noisy image gradient computing problem in grid-based NeRFs, we further propose a re-devised truncated dynamic low-pass filter (TDLF) and a numerical gradient averaging technique to smoothen the process. Experimental results on several datasets with varying lighting conditions demonstrate that our method achieves state-of-the-art results in camera relocalization under varying lighting conditions. Code and data will be made publicly available.  
-  </ol>  
-</details>  
-**comments**: Accepted by ICRA 2024. 8 pages, 5 figures, 3 tables. Codes and
-  dataset: https://github.com/hnrna/ShadowfreeNeRF-CameraReloc  
-  
-### [LDM: Large Tensorial SDF Model for Textured Mesh Generation](http://arxiv.org/abs/2405.14580)  
-Rengan Xie, Wenting Zheng, Kai Huang, Yizheng Chen, Qi Wang, Qi Ye, Wei Chen, Yuchi Huo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Previous efforts have managed to generate production-ready 3D assets from text or images. However, these methods primarily employ NeRF or 3D Gaussian representations, which are not adept at producing smooth, high-quality geometries required by modern rendering pipelines. In this paper, we propose LDM, a novel feed-forward framework capable of generating high-fidelity, illumination-decoupled textured mesh from a single image or text prompts. We firstly utilize a multi-view diffusion model to generate sparse multi-view inputs from single images or text prompts, and then a transformer-based model is trained to predict a tensorial SDF field from these sparse multi-view image inputs. Finally, we employ a gradient-based mesh optimization layer to refine this model, enabling it to produce an SDF field from which high-quality textured meshes can be extracted. Extensive experiments demonstrate that our method can generate diverse, high-quality 3D mesh assets with corresponding decomposed RGB textures within seconds.  
+    This work introduces Neural Elevations Models (NEMos), which adapt Neural Radiance Fields to a 2.5D continuous and differentiable terrain model. In contrast to traditional terrain representations such as digital elevation models, NEMos can be readily generated from imagery, a low-cost data source, and provide a lightweight representation of terrain through an implicit continuous and differentiable height field. We propose a novel method for jointly training a height field and radiance field within a NeRF framework, leveraging quantile regression. Additionally, we introduce a path planning algorithm that performs gradient-based optimization of a continuous cost function for minimizing distance, slope changes, and control effort, enabled by differentiability of the height field. We perform experiments on simulated and real-world terrain imagery, demonstrating NEMos ability to generate high-quality reconstructions and produce smoother paths compared to discrete path planning methods. Future work will explore the incorporation of features and semantics into the height field, creating a generalized terrain model.  
   </ol>  
 </details>  
   
-### [JointRF: End-to-End Joint Optimization for Dynamic Neural Radiance Field Representation and Compression](http://arxiv.org/abs/2405.14452)  
-Zihan Zheng, Houqiang Zhong, Qiang Hu, Xiaoyun Zhang, Li Song, Ya Zhang, Yanfeng Wang  
+### [HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting](http://arxiv.org/abs/2405.15125)  
+Yuanhao Cai, Zihao Xiao, Yixun Liang, Yulun Zhang, Xiaokang Yang, Yaoyao Liu, Alan Yuille  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Field (NeRF) excels in photo-realistically static scenes, inspiring numerous efforts to facilitate volumetric videos. However, rendering dynamic and long-sequence radiance fields remains challenging due to the significant data required to represent volumetric videos. In this paper, we propose a novel end-to-end joint optimization scheme of dynamic NeRF representation and compression, called JointRF, thus achieving significantly improved quality and compression efficiency against the previous methods. Specifically, JointRF employs a compact residual feature grid and a coefficient feature grid to represent the dynamic NeRF. This representation handles large motions without compromising quality while concurrently diminishing temporal redundancy. We also introduce a sequential feature compression subnetwork to further reduce spatial-temporal redundancy. Finally, the representation and compression subnetworks are end-to-end trained combined within the JointRF. Extensive experiments demonstrate that JointRF can achieve superior compression performance across various datasets.  
+    High dynamic range (HDR) novel view synthesis (NVS) aims to create photorealistic images from novel viewpoints using HDR imaging techniques. The rendered HDR images capture a wider range of brightness levels containing more details of the scene than normal low dynamic range (LDR) images. Existing HDR NVS methods are mainly based on NeRF. They suffer from long training time and slow inference speed. In this paper, we propose a new framework, High Dynamic Range Gaussian Splatting (HDR-GS), which can efficiently render novel HDR views and reconstruct LDR images with a user input exposure time. Specifically, we design a Dual Dynamic Range (DDR) Gaussian point cloud model that uses spherical harmonics to fit HDR color and employs an MLP-based tone-mapper to render LDR color. The HDR and LDR colors are then fed into two Parallel Differentiable Rasterization (PDR) processes to reconstruct HDR and LDR views. To establish the data foundation for the research of 3D Gaussian splatting-based methods in HDR NVS, we recalibrate the camera parameters and compute the initial positions for Gaussian point clouds. Experiments demonstrate that our HDR-GS surpasses the state-of-the-art NeRF-based method by 3.84 and 1.91 dB on LDR and HDR NVS while enjoying 1000x inference speed and only requiring 6.3% training time.  
   </ol>  
 </details>  
-**comments**: 8 pages, 5 figures  
+**comments**: The first 3D Gaussian Splatting-based method for HDR imaging  
   
-### [DoGaussian: Distributed-Oriented Gaussian Splatting for Large-Scale 3D Reconstruction Via Gaussian Consensus](http://arxiv.org/abs/2405.13943)  
-Yu Chen, Gim Hee Lee  
+### [GS-Hider: Hiding Messages into 3D Gaussian Splatting](http://arxiv.org/abs/2405.15118)  
+Xuanyu Zhang, Jiarui Meng, Runyi Li, Zhipei Xu, Yongbing Zhang, Jian Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The recent advances in 3D Gaussian Splatting (3DGS) show promising results on the novel view synthesis (NVS) task. With its superior rendering performance and high-fidelity rendering quality, 3DGS is excelling at its previous NeRF counterparts. The most recent 3DGS method focuses either on improving the instability of rendering efficiency or reducing the model size. On the other hand, the training efficiency of 3DGS on large-scale scenes has not gained much attention. In this work, we propose DoGaussian, a method that trains 3DGS distributedly. Our method first decomposes a scene into K blocks and then introduces the Alternating Direction Method of Multipliers (ADMM) into the training procedure of 3DGS. During training, our DoGaussian maintains one global 3DGS model on the master node and K local 3DGS models on the slave nodes. The K local 3DGS models are dropped after training and we only query the global 3DGS model during inference. The training time is reduced by scene decomposition, and the training convergence and stability are guaranteed through the consensus on the shared 3D Gaussians. Our method accelerates the training of 3DGS by 6+ times when evaluated on large-scale scenes while concurrently achieving state-of-the-art rendering quality. Our project page is available at https://aibluefisher.github.io/DoGaussian.  
+    3D Gaussian Splatting (3DGS) has already become the emerging research focus in the fields of 3D scene reconstruction and novel view synthesis. Given that training a 3DGS requires a significant amount of time and computational cost, it is crucial to protect the copyright, integrity, and privacy of such 3D assets. Steganography, as a crucial technique for encrypted transmission and copyright protection, has been extensively studied. However, it still lacks profound exploration targeted at 3DGS. Unlike its predecessor NeRF, 3DGS possesses two distinct features: 1) explicit 3D representation; and 2) real-time rendering speeds. These characteristics result in the 3DGS point cloud files being public and transparent, with each Gaussian point having a clear physical significance. Therefore, ensuring the security and fidelity of the original 3D scene while embedding information into the 3DGS point cloud files is an extremely challenging task. To solve the above-mentioned issue, we first propose a steganography framework for 3DGS, dubbed GS-Hider, which can embed 3D scenes and images into original GS point clouds in an invisible manner and accurately extract the hidden messages. Specifically, we design a coupled secured feature attribute to replace the original 3DGS's spherical harmonics coefficients and then use a scene decoder and a message decoder to disentangle the original RGB scene and the hidden message. Extensive experiments demonstrated that the proposed GS-Hider can effectively conceal multimodal messages without compromising rendering quality and possesses exceptional security, robustness, capacity, and flexibility. Our project is available at: https://xuanyuzhang21.github.io/project/gshider.  
   </ol>  
 </details>  
-  
-### [Gaussian Time Machine: A Real-Time Rendering Methodology for Time-Variant Appearances](http://arxiv.org/abs/2405.13694)  
-Licheng Shen, Ho Ngai Chow, Lingyun Wang, Tong Zhang, Mengqiu Wang, Yuxing Han  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advancements in neural rendering techniques have significantly enhanced the fidelity of 3D reconstruction. Notably, the emergence of 3D Gaussian Splatting (3DGS) has marked a significant milestone by adopting a discrete scene representation, facilitating efficient training and real-time rendering. Several studies have successfully extended the real-time rendering capability of 3DGS to dynamic scenes. However, a challenge arises when training images are captured under vastly differing weather and lighting conditions. This scenario poses a challenge for 3DGS and its variants in achieving accurate reconstructions. Although NeRF-based methods (NeRF-W, CLNeRF) have shown promise in handling such challenging conditions, their computational demands hinder real-time rendering capabilities. In this paper, we present Gaussian Time Machine (GTM) which models the time-dependent attributes of Gaussian primitives with discrete time embedding vectors decoded by a lightweight Multi-Layer-Perceptron(MLP). By adjusting the opacity of Gaussian primitives, we can reconstruct visibility changes of objects. We further propose a decomposed color model for improved geometric consistency. GTM achieved state-of-the-art rendering fidelity on 3 datasets and is 100 times faster than NeRF-based counterparts in rendering. Moreover, GTM successfully disentangles the appearance changes and renders smooth appearance interpolation.  
-  </ol>  
-</details>  
-**comments**: 14 pages, 6 figures  
+**comments**: 3DGS steganography  
   
   
 
