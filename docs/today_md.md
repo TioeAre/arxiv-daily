@@ -1,37 +1,54 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#ETA-INIT:-Enhancing-the-Translation-Accuracy-for-Stereo-Visual-Inertial-SLAM-Initialization>ETA-INIT: Enhancing the Translation Accuracy for Stereo Visual-Inertial SLAM Initialization</a></li>
+        <li><a href=#3D-Reconstruction-with-Fast-Dipole-Sums>3D Reconstruction with Fast Dipole Sums</a></li>
+        <li><a href=#MCGMapper:-Light-Weight-Incremental-Structure-from-Motion-and-Visual-Localization-With-Planar-Markers-and-Camera-Groups>MCGMapper: Light-Weight Incremental Structure from Motion and Visual Localization With Planar Markers and Camera Groups</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Composed-Image-Retrieval-for-Remote-Sensing>Composed Image Retrieval for Remote Sensing</a></li>
-        <li><a href=#Self-distilled-Dynamic-Fusion-Network-for-Language-based-Fashion-Retrieval>Self-distilled Dynamic Fusion Network for Language-based Fashion Retrieval</a></li>
+        <li><a href=#MCGMapper:-Light-Weight-Incremental-Structure-from-Motion-and-Visual-Localization-With-Planar-Markers-and-Camera-Groups>MCGMapper: Light-Weight Incremental Structure from Motion and Visual Localization With Planar Markers and Camera Groups</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Deep-PE:-A-Learning-Based-Pose-Evaluator-for-Point-Cloud-Registration>Deep-PE: A Learning-Based Pose Evaluator for Point Cloud Registration</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Neural-Elevation-Models-for-Terrain-Mapping-and-Path-Planning>Neural Elevation Models for Terrain Mapping and Path Planning</a></li>
-        <li><a href=#HDR-GS:-Efficient-High-Dynamic-Range-Novel-View-Synthesis-at-1000x-Speed-via-Gaussian-Splatting>HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting</a></li>
-        <li><a href=#GS-Hider:-Hiding-Messages-into-3D-Gaussian-Splatting>GS-Hider: Hiding Messages into 3D Gaussian Splatting</a></li>
+        <li><a href=#F-3DGS:-Factorized-Coordinates-and-Representations-for-3D-Gaussian-Splatting>F-3DGS: Factorized Coordinates and Representations for 3D Gaussian Splatting</a></li>
+        <li><a href=#PyGS:-Large-scale-Scene-Representation-with-Pyramidal-3D-Gaussian-Splatting>PyGS: Large-scale Scene Representation with Pyramidal 3D Gaussian Splatting</a></li>
+        <li><a href=#Sp2360:-Sparse-view-360-Scene-Reconstruction-using-Cascaded-2D-Diffusion-Priors>Sp2360: Sparse-view 360 Scene Reconstruction using Cascaded 2D Diffusion Priors</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [ETA-INIT: Enhancing the Translation Accuracy for Stereo Visual-Inertial SLAM Initialization](http://arxiv.org/abs/2405.15082)  
-Han Song, Zhongche Qu, Zhi Zhang, Zihan Ye, Cong Liu  
+### [3D Reconstruction with Fast Dipole Sums](http://arxiv.org/abs/2405.16788)  
+Hanyu Chen, Bailey Miller, Ioannis Gkioulekas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    As the current initialization method in the state-of-the-art Stereo Visual-Inertial SLAM framework, ORB-SLAM3 has limitations. Its success depends on the performance of the pure stereo SLAM system and is based on the underlying assumption that pure visual SLAM can accurately estimate the camera trajectory, which is essential for inertial parameter estimation. Meanwhile, the further improved initialization method for ORB-SLAM3, known as Stereo-NEC, is time-consuming due to applying keypoint tracking to estimate gyroscope bias with normal epipolar constraints. To address the limitations of previous methods, this paper proposes a method aimed at enhancing translation accuracy during the initialization stage. The fundamental concept of our method is to improve the translation estimate with a 3 Degree-of-Freedom (DoF) Bundle Adjustment (BA), independently, while the rotation estimate is fixed, instead of using ORB-SLAM3's 6-DoF BA. Additionally, the rotation estimate will be updated by considering IMU measurements and gyroscope bias, unlike ORB-SLAM3's rotation, which is directly obtained from stereo visual odometry and may yield inferior results when operating in challenging scenarios. We also conduct extensive evaluations on the public benchmark, the EuRoC dataset, demonstrating that our method excels in accuracy.  
+    We introduce a technique for the reconstruction of high-fidelity surfaces from multi-view images. Our technique uses a new point-based representation, the dipole sum, which generalizes the winding number to allow for interpolation of arbitrary per-point attributes in point clouds with noisy or outlier points. Using dipole sums allows us to represent implicit geometry and radiance fields as per-point attributes of a point cloud, which we initialize directly from structure from motion. We additionally derive Barnes-Hut fast summation schemes for accelerated forward and reverse-mode dipole sum queries. These queries facilitate the use of ray tracing to efficiently and differentiably render images with our point-based representations, and thus update their point attributes to optimize scene geometry and appearance. We evaluate this inverse rendering framework against state-of-the-art alternatives, based on ray tracing of neural representations or rasterization of Gaussian point-based representations. Our technique significantly improves reconstruction quality at equal runtimes, while also supporting more general rendering techniques such as shadow rays for direct illumination. In the supplement, we provide interactive visualizations of our results.  
   </ol>  
 </details>  
+**comments**: HTML supplement with interactive visualizations of all experiments
+  included, download under ancillary files  
+  
+### [MCGMapper: Light-Weight Incremental Structure from Motion and Visual Localization With Planar Markers and Camera Groups](http://arxiv.org/abs/2405.16599)  
+Yusen Xie, Zhenmin Huang, Kai Chen, Lei Zhu, Jun Ma  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Structure from Motion (SfM) and visual localization in indoor texture-less scenes and industrial scenarios present prevalent yet challenging research topics. Existing SfM methods designed for natural scenes typically yield low accuracy or map-building failures due to insufficient robust feature extraction in such settings. Visual markers, with their artificially designed features, can effectively address these issues. Nonetheless, existing marker-assisted SfM methods encounter problems like slow running speed and difficulties in convergence; and also, they are governed by the strong assumption of unique marker size. In this paper, we propose a novel SfM framework that utilizes planar markers and multiple cameras with known extrinsics to capture the surrounding environment and reconstruct the marker map. In our algorithm, the initial poses of markers and cameras are calculated with Perspective-n-Points (PnP) in the front-end, while bundle adjustment methods customized for markers and camera groups are designed in the back-end to optimize the 6-DOF pose directly. Our algorithm facilitates the reconstruction of large scenes with different marker sizes, and its accuracy and speed of map building are shown to surpass existing methods. Our approach is suitable for a wide range of scenarios, including laboratories, basements, warehouses, and other industrial settings. Furthermore, we incorporate representative scenarios into simulations and also supply our datasets with pose labels to address the scarcity of quantitative ground-truth datasets in this research field. The datasets and source code are available on GitHub.  
+  </ol>  
+</details>  
+**comments**: 8 pages,8 figures  
   
   
 
@@ -39,24 +56,31 @@ Han Song, Zhongche Qu, Zhi Zhang, Zihan Ye, Cong Liu
 
 ## Visual Localization  
 
-### [Composed Image Retrieval for Remote Sensing](http://arxiv.org/abs/2405.15587)  
-Bill Psomas, Ioannis Kakogeorgiou, Nikos Efthymiadis, Giorgos Tolias, Ondrej Chum, Yannis Avrithis, Konstantinos Karantzalos  
+### [MCGMapper: Light-Weight Incremental Structure from Motion and Visual Localization With Planar Markers and Camera Groups](http://arxiv.org/abs/2405.16599)  
+Yusen Xie, Zhenmin Huang, Kai Chen, Lei Zhu, Jun Ma  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work introduces composed image retrieval to remote sensing. It allows to query a large image archive by image examples alternated by a textual description, enriching the descriptive power over unimodal queries, either visual or textual. Various attributes can be modified by the textual part, such as shape, color, or context. A novel method fusing image-to-image and text-to-image similarity is introduced. We demonstrate that a vision-language model possesses sufficient descriptive power and no further learning step or training data are necessary. We present a new evaluation benchmark focused on color, context, density, existence, quantity, and shape modifications. Our work not only sets the state-of-the-art for this task, but also serves as a foundational step in addressing a gap in the field of remote sensing image retrieval. Code at: https://github.com/billpsomas/rscir  
+    Structure from Motion (SfM) and visual localization in indoor texture-less scenes and industrial scenarios present prevalent yet challenging research topics. Existing SfM methods designed for natural scenes typically yield low accuracy or map-building failures due to insufficient robust feature extraction in such settings. Visual markers, with their artificially designed features, can effectively address these issues. Nonetheless, existing marker-assisted SfM methods encounter problems like slow running speed and difficulties in convergence; and also, they are governed by the strong assumption of unique marker size. In this paper, we propose a novel SfM framework that utilizes planar markers and multiple cameras with known extrinsics to capture the surrounding environment and reconstruct the marker map. In our algorithm, the initial poses of markers and cameras are calculated with Perspective-n-Points (PnP) in the front-end, while bundle adjustment methods customized for markers and camera groups are designed in the back-end to optimize the 6-DOF pose directly. Our algorithm facilitates the reconstruction of large scenes with different marker sizes, and its accuracy and speed of map building are shown to surpass existing methods. Our approach is suitable for a wide range of scenarios, including laboratories, basements, warehouses, and other industrial settings. Furthermore, we incorporate representative scenarios into simulations and also supply our datasets with pose labels to address the scarcity of quantitative ground-truth datasets in this research field. The datasets and source code are available on GitHub.  
   </ol>  
 </details>  
+**comments**: 8 pages,8 figures  
   
-### [Self-distilled Dynamic Fusion Network for Language-based Fashion Retrieval](http://arxiv.org/abs/2405.15451)  
-Yiming Wu, Hangfei Li, Fangfang Wang, Yilong Zhang, Ronghua Liang  
+  
+
+
+
+## Keypoint Detection  
+
+### [Deep-PE: A Learning-Based Pose Evaluator for Point Cloud Registration](http://arxiv.org/abs/2405.16085)  
+Junjie Gao, Chongjian Wang, Zhongjun Ding, Shuangmin Chen, Shiqing Xin, Changhe Tu, Wenping Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In the domain of language-based fashion image retrieval, pinpointing the desired fashion item using both a reference image and its accompanying textual description is an intriguing challenge. Existing approaches lean heavily on static fusion techniques, intertwining image and text. Despite their commendable advancements, these approaches are still limited by a deficiency in flexibility. In response, we propose a Self-distilled Dynamic Fusion Network to compose the multi-granularity features dynamically by considering the consistency of routing path and modality-specific information simultaneously. Two new modules are included in our proposed method: (1) Dynamic Fusion Network with Modality Specific Routers. The dynamic network enables a flexible determination of the routing for each reference image and modification text, taking into account their distinct semantics and distributions. (2) Self Path Distillation Loss. A stable path decision for queries benefits the optimization of feature extraction as well as routing, and we approach this by progressively refine the path decision with previous path information. Extensive experiments demonstrate the effectiveness of our proposed model compared to existing methods.  
+    In the realm of point cloud registration, the most prevalent pose evaluation approaches are statistics-based, identifying the optimal transformation by maximizing the number of consistent correspondences. However, registration recall decreases significantly when point clouds exhibit a low overlap rate, despite efforts in designing feature descriptors and establishing correspondences. In this paper, we introduce Deep-PE, a lightweight, learning-based pose evaluator designed to enhance the accuracy of pose selection, especially in challenging point cloud scenarios with low overlap. Our network incorporates a Pose-Aware Attention (PAA) module to simulate and learn the alignment status of point clouds under various candidate poses, alongside a Pose Confidence Prediction (PCP) module that predicts the likelihood of successful registration. These two modules facilitate the learning of both local and global alignment priors. Extensive tests across multiple benchmarks confirm the effectiveness of Deep-PE. Notably, on 3DLoMatch with a low overlap rate, Deep-PE significantly outperforms state-of-the-art methods by at least 8% and 11% in registration recall under handcrafted FPFH and learning-based FCGF descriptors, respectively. To the best of our knowledge, this is the first study to utilize deep learning to select the optimal pose without the explicit need for input correspondences.  
   </ol>  
 </details>  
-**comments**: ICASSP 2024  
+**comments**: 22 pages, 16 figures  
   
   
 
@@ -64,34 +88,33 @@ Yiming Wu, Hangfei Li, Fangfang Wang, Yilong Zhang, Ronghua Liang
 
 ## NeRF  
 
-### [Neural Elevation Models for Terrain Mapping and Path Planning](http://arxiv.org/abs/2405.15227)  
-Adam Dai, Shubh Gupta, Grace Gao  
+### [F-3DGS: Factorized Coordinates and Representations for 3D Gaussian Splatting](http://arxiv.org/abs/2405.17083)  
+Xiangyu Sun, Joo Chan Lee, Daniel Rho, Jong Hwan Ko, Usman Ali, Eunbyung Park  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work introduces Neural Elevations Models (NEMos), which adapt Neural Radiance Fields to a 2.5D continuous and differentiable terrain model. In contrast to traditional terrain representations such as digital elevation models, NEMos can be readily generated from imagery, a low-cost data source, and provide a lightweight representation of terrain through an implicit continuous and differentiable height field. We propose a novel method for jointly training a height field and radiance field within a NeRF framework, leveraging quantile regression. Additionally, we introduce a path planning algorithm that performs gradient-based optimization of a continuous cost function for minimizing distance, slope changes, and control effort, enabled by differentiability of the height field. We perform experiments on simulated and real-world terrain imagery, demonstrating NEMos ability to generate high-quality reconstructions and produce smoother paths compared to discrete path planning methods. Future work will explore the incorporation of features and semantics into the height field, creating a generalized terrain model.  
+    The neural radiance field (NeRF) has made significant strides in representing 3D scenes and synthesizing novel views. Despite its advancements, the high computational costs of NeRF have posed challenges for its deployment in resource-constrained environments and real-time applications. As an alternative to NeRF-like neural rendering methods, 3D Gaussian Splatting (3DGS) offers rapid rendering speeds while maintaining excellent image quality. However, as it represents objects and scenes using a myriad of Gaussians, it requires substantial storage to achieve high-quality representation. To mitigate the storage overhead, we propose Factorized 3D Gaussian Splatting (F-3DGS), a novel approach that drastically reduces storage requirements while preserving image quality. Inspired by classical matrix and tensor factorization techniques, our method represents and approximates dense clusters of Gaussians with significantly fewer Gaussians through efficient factorization. We aim to efficiently represent dense 3D Gaussians by approximating them with a limited amount of information for each axis and their combinations. This method allows us to encode a substantially large number of Gaussians along with their essential attributes -- such as color, scale, and rotation -- necessary for rendering using a relatively small number of elements. Extensive experimental results demonstrate that F-3DGS achieves a significant reduction in storage costs while maintaining comparable quality in rendered images.  
   </ol>  
 </details>  
   
-### [HDR-GS: Efficient High Dynamic Range Novel View Synthesis at 1000x Speed via Gaussian Splatting](http://arxiv.org/abs/2405.15125)  
-Yuanhao Cai, Zihao Xiao, Yixun Liang, Yulun Zhang, Xiaokang Yang, Yaoyao Liu, Alan Yuille  
+### [PyGS: Large-scale Scene Representation with Pyramidal 3D Gaussian Splatting](http://arxiv.org/abs/2405.16829)  
+Zipeng Wang, Dan Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    High dynamic range (HDR) novel view synthesis (NVS) aims to create photorealistic images from novel viewpoints using HDR imaging techniques. The rendered HDR images capture a wider range of brightness levels containing more details of the scene than normal low dynamic range (LDR) images. Existing HDR NVS methods are mainly based on NeRF. They suffer from long training time and slow inference speed. In this paper, we propose a new framework, High Dynamic Range Gaussian Splatting (HDR-GS), which can efficiently render novel HDR views and reconstruct LDR images with a user input exposure time. Specifically, we design a Dual Dynamic Range (DDR) Gaussian point cloud model that uses spherical harmonics to fit HDR color and employs an MLP-based tone-mapper to render LDR color. The HDR and LDR colors are then fed into two Parallel Differentiable Rasterization (PDR) processes to reconstruct HDR and LDR views. To establish the data foundation for the research of 3D Gaussian splatting-based methods in HDR NVS, we recalibrate the camera parameters and compute the initial positions for Gaussian point clouds. Experiments demonstrate that our HDR-GS surpasses the state-of-the-art NeRF-based method by 3.84 and 1.91 dB on LDR and HDR NVS while enjoying 1000x inference speed and only requiring 6.3% training time.  
+    Neural Radiance Fields (NeRFs) have demonstrated remarkable proficiency in synthesizing photorealistic images of large-scale scenes. However, they are often plagued by a loss of fine details and long rendering durations. 3D Gaussian Splatting has recently been introduced as a potent alternative, achieving both high-fidelity visual results and accelerated rendering performance. Nonetheless, scaling 3D Gaussian Splatting is fraught with challenges. Specifically, large-scale scenes grapples with the integration of objects across multiple scales and disparate viewpoints, which often leads to compromised efficacy as the Gaussians need to balance between detail levels. Furthermore, the generation of initialization points via COLMAP from large-scale dataset is both computationally demanding and prone to incomplete reconstructions. To address these challenges, we present Pyramidal 3D Gaussian Splatting (PyGS) with NeRF Initialization. Our approach represent the scene with a hierarchical assembly of Gaussians arranged in a pyramidal fashion. The top level of the pyramid is composed of a few large Gaussians, while each subsequent layer accommodates a denser collection of smaller Gaussians. We effectively initialize these pyramidal Gaussians through sampling a rapidly trained grid-based NeRF at various frequencies. We group these pyramidal Gaussians into clusters and use a compact weighting network to dynamically determine the influence of each pyramid level of each cluster considering camera viewpoint during rendering. Our method achieves a significant performance leap across multiple large-scale datasets and attains a rendering time that is over 400 times faster than current state-of-the-art approaches.  
   </ol>  
 </details>  
-**comments**: The first 3D Gaussian Splatting-based method for HDR imaging  
   
-### [GS-Hider: Hiding Messages into 3D Gaussian Splatting](http://arxiv.org/abs/2405.15118)  
-Xuanyu Zhang, Jiarui Meng, Runyi Li, Zhipei Xu, Yongbing Zhang, Jian Zhang  
+### [Sp2360: Sparse-view 360 Scene Reconstruction using Cascaded 2D Diffusion Priors](http://arxiv.org/abs/2405.16517)  
+Soumava Paul, Christopher Wewer, Bernt Schiele, Jan Eric Lenssen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) has already become the emerging research focus in the fields of 3D scene reconstruction and novel view synthesis. Given that training a 3DGS requires a significant amount of time and computational cost, it is crucial to protect the copyright, integrity, and privacy of such 3D assets. Steganography, as a crucial technique for encrypted transmission and copyright protection, has been extensively studied. However, it still lacks profound exploration targeted at 3DGS. Unlike its predecessor NeRF, 3DGS possesses two distinct features: 1) explicit 3D representation; and 2) real-time rendering speeds. These characteristics result in the 3DGS point cloud files being public and transparent, with each Gaussian point having a clear physical significance. Therefore, ensuring the security and fidelity of the original 3D scene while embedding information into the 3DGS point cloud files is an extremely challenging task. To solve the above-mentioned issue, we first propose a steganography framework for 3DGS, dubbed GS-Hider, which can embed 3D scenes and images into original GS point clouds in an invisible manner and accurately extract the hidden messages. Specifically, we design a coupled secured feature attribute to replace the original 3DGS's spherical harmonics coefficients and then use a scene decoder and a message decoder to disentangle the original RGB scene and the hidden message. Extensive experiments demonstrated that the proposed GS-Hider can effectively conceal multimodal messages without compromising rendering quality and possesses exceptional security, robustness, capacity, and flexibility. Our project is available at: https://xuanyuzhang21.github.io/project/gshider.  
+    We aim to tackle sparse-view reconstruction of a 360 3D scene using priors from latent diffusion models (LDM). The sparse-view setting is ill-posed and underconstrained, especially for scenes where the camera rotates 360 degrees around a point, as no visual information is available beyond some frontal views focused on the central object(s) of interest. In this work, we show that pretrained 2D diffusion models can strongly improve the reconstruction of a scene with low-cost fine-tuning. Specifically, we present SparseSplat360 (Sp2360), a method that employs a cascade of in-painting and artifact removal models to fill in missing details and clean novel views. Due to superior training and rendering speeds, we use an explicit scene representation in the form of 3D Gaussians over NeRF-based implicit representations. We propose an iterative update strategy to fuse generated pseudo novel views with existing 3D Gaussians fitted to the initial sparse inputs. As a result, we obtain a multi-view consistent scene representation with details coherent with the observed inputs. Our evaluation on the challenging Mip-NeRF360 dataset shows that our proposed 2D to 3D distillation algorithm considerably improves the performance of a regularized version of 3DGS adapted to a sparse-view setting and outperforms existing sparse-view reconstruction methods in 360 scene reconstruction. Qualitatively, our method generates entire 360 scenes from as few as 9 input views, with a high degree of foreground and background detail.  
   </ol>  
 </details>  
-**comments**: 3DGS steganography  
+**comments**: 18 pages, 10 figures, 4 tables  
   
   
 
