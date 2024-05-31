@@ -1,91 +1,32 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Neural-Radiance-Fields-for-Novel-View-Synthesis-in-Monocular-Gastroscopy>Neural Radiance Fields for Novel View Synthesis in Monocular Gastroscopy</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Multi-Modal-Generative-Embedding-Model>Multi-Modal Generative Embedding Model</a></li>
-        <li><a href=#ContextBLIP:-Doubly-Contextual-Alignment-for-Contrastive-Image-Retrieval-from-Linguistically-Complex-Descriptions>ContextBLIP: Doubly Contextual Alignment for Contrastive Image Retrieval from Linguistically Complex Descriptions</a></li>
-        <li><a href=#CaLa:-Complementary-Association-Learning-for-Augmenting-Composed-Image-Retrieval>CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval</a></li>
-        <li><a href=#SketchTriplet:-Self-Supervised-Scenarized-Sketch-Text-Image-Triplet-Generation>SketchTriplet: Self-Supervised Scenarized Sketch-Text-Image Triplet Generation</a></li>
-        <li><a href=#Reverse-Image-Retrieval-Cues-Parametric-Memory-in-Multimodal-LLMs>Reverse Image Retrieval Cues Parametric Memory in Multimodal LLMs</a></li>
+        <li><a href=#TAMBRIDGE:-Bridging-Frame-Centered-Tracking-and-3D-Gaussian-Splatting-for-Enhanced-SLAM>TAMBRIDGE: Bridging Frame-Centered Tracking and 3D Gaussian Splatting for Enhanced SLAM</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Neural-Radiance-Fields-for-Novel-View-Synthesis-in-Monocular-Gastroscopy>Neural Radiance Fields for Novel View Synthesis in Monocular Gastroscopy</a></li>
-        <li><a href=#NeRF-On-the-go:-Exploiting-Uncertainty-for-Distractor-free-NeRFs-in-the-Wild>NeRF On-the-go: Exploiting Uncertainty for Distractor-free NeRFs in the Wild</a></li>
+        <li><a href=#$\textit{S}^3$Gaussian:-Self-Supervised-Street-Gaussians-for-Autonomous-Driving>$\textit{S}^3$Gaussian: Self-Supervised Street Gaussians for Autonomous Driving</a></li>
+        <li><a href=#TetSphere-Splatting:-Representing-High-Quality-Geometry-with-Lagrangian-Volumetric-Meshes>TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes</a></li>
+        <li><a href=#NeRF-View-Synthesis:-Subjective-Quality-Assessment-and-Objective-Metrics-Evaluation>NeRF View Synthesis: Subjective Quality Assessment and Objective Metrics Evaluation</a></li>
+        <li><a href=#IReNe:-Instant-Recoloring-in-Neural-Radiance-Fields>IReNe: Instant Recoloring in Neural Radiance Fields</a></li>
+        <li><a href=#HINT:-Learning-Complete-Human-Neural-Representations-from-Limited-Viewpoints>HINT: Learning Complete Human Neural Representations from Limited Viewpoints</a></li>
+        <li><a href=#View-Consistent-Hierarchical-3D-SegmentationUsing-Ultrametric-Feature-Fields>View-Consistent Hierarchical 3D SegmentationUsing Ultrametric Feature Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [Neural Radiance Fields for Novel View Synthesis in Monocular Gastroscopy](http://arxiv.org/abs/2405.18863)  
-Zijie Jiang, Yusuke Monno, Masatoshi Okutomi, Sho Suzuki, Kenji Miki  
+### [TAMBRIDGE: Bridging Frame-Centered Tracking and 3D Gaussian Splatting for Enhanced SLAM](http://arxiv.org/abs/2405.19614)  
+Peifeng Jiang, Hong Liu, Xia Li, Ti Wang, Fabian Zhang, Joachim M. Buhmann  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Enabling the synthesis of arbitrarily novel viewpoint images within a patient's stomach from pre-captured monocular gastroscopic images is a promising topic in stomach diagnosis. Typical methods to achieve this objective integrate traditional 3D reconstruction techniques, including structure-from-motion (SfM) and Poisson surface reconstruction. These methods produce explicit 3D representations, such as point clouds and meshes, thereby enabling the rendering of the images from novel viewpoints. However, the existence of low-texture and non-Lambertian regions within the stomach often results in noisy and incomplete reconstructions of point clouds and meshes, hindering the attainment of high-quality image rendering. In this paper, we apply the emerging technique of neural radiance fields (NeRF) to monocular gastroscopic data for synthesizing photo-realistic images for novel viewpoints. To address the performance degradation due to view sparsity in local regions of monocular gastroscopy, we incorporate geometry priors from a pre-reconstructed point cloud into the training of NeRF, which introduces a novel geometry-based loss to both pre-captured observed views and generated unobserved views. Compared to other recent NeRF methods, our approach showcases high-fidelity image renderings from novel viewpoints within the stomach both qualitatively and quantitatively.  
-  </ol>  
-</details>  
-**comments**: Accepted for EMBC 2024  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Multi-Modal Generative Embedding Model](http://arxiv.org/abs/2405.19333)  
-Feipeng Ma, Hongwei Xue, Guangting Wang, Yizhou Zhou, Fengyun Rao, Shilin Yan, Yueyi Zhang, Siying Wu, Mike Zheng Shou, Xiaoyan Sun  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Most multi-modal tasks can be formulated into problems of either generation or embedding. Existing models usually tackle these two types of problems by decoupling language modules into a text decoder for generation, and a text encoder for embedding. To explore the minimalism of multi-modal paradigms, we attempt to achieve only one model per modality in this work. We propose a Multi-Modal Generative Embedding Model (MM-GEM), whereby the generative and embedding objectives are encapsulated in one Large Language Model. We also propose a PoolAggregator to boost efficiency and enable the ability of fine-grained embedding and generation. A surprising finding is that these two objectives do not significantly conflict with each other. For example, MM-GEM instantiated from ViT-Large and TinyLlama shows competitive performance on benchmarks for multimodal embedding models such as cross-modal retrieval and zero-shot classification, while has good ability of image captioning. Additionally, MM-GEM can seamlessly execute region-level image caption generation and retrieval tasks. Besides, the advanced text model in MM-GEM brings over 5% improvement in Recall@1 for long text and image retrieval.  
-  </ol>  
-</details>  
-  
-### [ContextBLIP: Doubly Contextual Alignment for Contrastive Image Retrieval from Linguistically Complex Descriptions](http://arxiv.org/abs/2405.19226)  
-Honglin Lin, Siyu Li, Guoshun Nan, Chaoyue Tang, Xueting Wang, Jingxin Xu, Rong Yankai, Zhili Zhou, Yutong Gao, Qimei Cui, Xiaofeng Tao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image retrieval from contextual descriptions (IRCD) aims to identify an image within a set of minimally contrastive candidates based on linguistically complex text. Despite the success of VLMs, they still significantly lag behind human performance in IRCD. The main challenges lie in aligning key contextual cues in two modalities, where these subtle cues are concealed in tiny areas of multiple contrastive images and within the complex linguistics of textual descriptions. This motivates us to propose ContextBLIP, a simple yet effective method that relies on a doubly contextual alignment scheme for challenging IRCD. Specifically, 1) our model comprises a multi-scale adapter, a matching loss, and a text-guided masking loss. The adapter learns to capture fine-grained visual cues. The two losses enable iterative supervision for the adapter, gradually highlighting the focal patches of a single image to the key textual cues. We term such a way as intra-contextual alignment. 2) Then, ContextBLIP further employs an inter-context encoder to learn dependencies among candidates, facilitating alignment between the text to multiple images. We term this step as inter-contextual alignment. Consequently, the nuanced cues concealed in each modality can be effectively aligned. Experiments on two benchmarks show the superiority of our method. We observe that ContextBLIP can yield comparable results with GPT-4V, despite involving about 7,500 times fewer parameters.  
-  </ol>  
-</details>  
-**comments**: Accepted in ACL 2024 Findings  
-  
-### [CaLa: Complementary Association Learning for Augmenting Composed Image Retrieval](http://arxiv.org/abs/2405.19149)  
-Xintong Jiang, Yaxiong Wang, Mengjian Li, Yujiao Wu, Bingwen Hu, Xueming Qian  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) involves searching for target images based on an image-text pair query. While current methods treat this as a query-target matching problem, we argue that CIR triplets contain additional associations beyond this primary relation. In our paper, we identify two new relations within triplets, treating each triplet as a graph node. Firstly, we introduce the concept of text-bridged image alignment, where the query text serves as a bridge between the query image and the target image. We propose a hinge-based cross-attention mechanism to incorporate this relation into network learning. Secondly, we explore complementary text reasoning, considering CIR as a form of cross-modal retrieval where two images compose to reason about complementary text. To integrate these perspectives effectively, we design a twin attention-based compositor. By combining these complementary associations with the explicit query pair-target image relation, we establish a comprehensive set of constraints for CIR. Our framework, CaLa (Complementary Association Learning for Augmenting Composed Image Retrieval), leverages these insights. We evaluate CaLa on CIRR and FashionIQ benchmarks with multiple backbones, demonstrating its superiority in composed image retrieval.  
-  </ol>  
-</details>  
-**comments**: arXiv admin note: text overlap with arXiv:2309.02169  
-  
-### [SketchTriplet: Self-Supervised Scenarized Sketch-Text-Image Triplet Generation](http://arxiv.org/abs/2405.18801)  
-Zhenbei Wu, Qiang Wang, Jie Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The scarcity of free-hand sketch presents a challenging problem. Despite the emergence of some large-scale sketch datasets, these datasets primarily consist of sketches at the single-object level. There continues to be a lack of large-scale paired datasets for scene sketches. In this paper, we propose a self-supervised method for scene sketch generation that does not rely on any existing scene sketch, enabling the transformation of single-object sketches into scene sketches. To accomplish this, we introduce a method for vector sketch captioning and sketch semantic expansion. Additionally, we design a sketch generation network that incorporates a fusion of multi-modal perceptual constraints, suitable for application in zero-shot image-to-sketch downstream task, demonstrating state-of-the-art performance through experimental validation. Finally, leveraging our proposed sketch-to-sketch generation method, we contribute a large-scale dataset centered around scene sketches, comprising highly semantically consistent "text-sketch-image" triplets. Our research confirms that this dataset can significantly enhance the capabilities of existing models in sketch-based image retrieval and sketch-controlled image synthesis tasks. We will make our dataset and code publicly available.  
-  </ol>  
-</details>  
-  
-### [Reverse Image Retrieval Cues Parametric Memory in Multimodal LLMs](http://arxiv.org/abs/2405.18740)  
-Jialiang Xu, Michael Moor, Jure Leskovec  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Despite impressive advances in recent multimodal large language models (MLLMs), state-of-the-art models such as from the GPT-4 suite still struggle with knowledge-intensive tasks. To address this, we consider Reverse Image Retrieval (RIR) augmented generation, a simple yet effective strategy to augment MLLMs with web-scale reverse image search results. RIR robustly improves knowledge-intensive visual question answering (VQA) of GPT-4V by 37-43%, GPT-4 Turbo by 25-27%, and GPT-4o by 18-20% in terms of open-ended VQA evaluation metrics. To our surprise, we discover that RIR helps the model to better access its own world knowledge. Concretely, our experiments suggest that RIR augmentation helps by providing further visual and textual cues without necessarily containing the direct answer to a query. In addition, we elucidate cases in which RIR can hurt performance and conduct a human evaluation. Finally, we find that the overall advantage of using RIR makes it difficult for an agent that can choose to use RIR to perform better than an approach where RIR is the default setting.  
+    The limited robustness of 3D Gaussian Splatting (3DGS) to motion blur and camera noise, along with its poor real-time performance, restricts its application in robotic SLAM tasks. Upon analysis, the primary causes of these issues are the density of views with motion blur and the cumulative errors in dense pose estimation from calculating losses based on noisy original images and rendering results, which increase the difficulty of 3DGS rendering convergence. Thus, a cutting-edge 3DGS-based SLAM system is introduced, leveraging the efficiency and flexibility of 3DGS to achieve real-time performance while remaining robust against sensor noise, motion blur, and the challenges posed by long-session SLAM. Central to this approach is the Fusion Bridge module, which seamlessly integrates tracking-centered ORB Visual Odometry with mapping-centered online 3DGS. Precise pose initialization is enabled by this module through joint optimization of re-projection and rendering loss, as well as strategic view selection, enhancing rendering convergence in large-scale scenes. Extensive experiments demonstrate state-of-the-art rendering quality and localization accuracy, positioning this system as a promising solution for real-world robotics applications that require stable, near-real-time performance. Our project is available at https://ZeldaFromHeaven.github.io/TAMBRIDGE/  
   </ol>  
 </details>  
   
@@ -95,26 +36,61 @@ Jialiang Xu, Michael Moor, Jure Leskovec
 
 ## NeRF  
 
-### [Neural Radiance Fields for Novel View Synthesis in Monocular Gastroscopy](http://arxiv.org/abs/2405.18863)  
-Zijie Jiang, Yusuke Monno, Masatoshi Okutomi, Sho Suzuki, Kenji Miki  
+### [ $\textit{S}^3$ Gaussian: Self-Supervised Street Gaussians for Autonomous Driving](http://arxiv.org/abs/2405.20323)  
+[[code](https://github.com/nnanhuang/s3gaussian)]  
+Nan Huang, Xiaobao Wei, Wenzhao Zheng, Pengju An, Ming Lu, Wei Zhan, Masayoshi Tomizuka, Kurt Keutzer, Shanghang Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Enabling the synthesis of arbitrarily novel viewpoint images within a patient's stomach from pre-captured monocular gastroscopic images is a promising topic in stomach diagnosis. Typical methods to achieve this objective integrate traditional 3D reconstruction techniques, including structure-from-motion (SfM) and Poisson surface reconstruction. These methods produce explicit 3D representations, such as point clouds and meshes, thereby enabling the rendering of the images from novel viewpoints. However, the existence of low-texture and non-Lambertian regions within the stomach often results in noisy and incomplete reconstructions of point clouds and meshes, hindering the attainment of high-quality image rendering. In this paper, we apply the emerging technique of neural radiance fields (NeRF) to monocular gastroscopic data for synthesizing photo-realistic images for novel viewpoints. To address the performance degradation due to view sparsity in local regions of monocular gastroscopy, we incorporate geometry priors from a pre-reconstructed point cloud into the training of NeRF, which introduces a novel geometry-based loss to both pre-captured observed views and generated unobserved views. Compared to other recent NeRF methods, our approach showcases high-fidelity image renderings from novel viewpoints within the stomach both qualitatively and quantitatively.  
+    Photorealistic 3D reconstruction of street scenes is a critical technique for developing real-world simulators for autonomous driving. Despite the efficacy of Neural Radiance Fields (NeRF) for driving scenes, 3D Gaussian Splatting (3DGS) emerges as a promising direction due to its faster speed and more explicit representation. However, most existing street 3DGS methods require tracked 3D vehicle bounding boxes to decompose the static and dynamic elements for effective reconstruction, limiting their applications for in-the-wild scenarios. To facilitate efficient 3D scene reconstruction without costly annotations, we propose a self-supervised street Gaussian ($\textit{S}^3$Gaussian) method to decompose dynamic and static elements from 4D consistency. We represent each scene with 3D Gaussians to preserve the explicitness and further accompany them with a spatial-temporal field network to compactly model the 4D dynamics. We conduct extensive experiments on the challenging Waymo-Open dataset to evaluate the effectiveness of our method. Our $\textit{S}^3$Gaussian demonstrates the ability to decompose static and dynamic scenes and achieves the best performance without using 3D annotations. Code is available at: https://github.com/nnanhuang/S3Gaussian/.  
   </ol>  
 </details>  
-**comments**: Accepted for EMBC 2024  
+**comments**: Code is available at: https://github.com/nnanhuang/S3Gaussian/  
   
-### [NeRF On-the-go: Exploiting Uncertainty for Distractor-free NeRFs in the Wild](http://arxiv.org/abs/2405.18715)  
-Weining Ren, Zihan Zhu, Boyang Sun, Jiaqi Chen, Marc Pollefeys, Songyou Peng  
+### [TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes](http://arxiv.org/abs/2405.20283)  
+Minghao Guo, Bohan Wang, Kaiming He, Wojciech Matusik  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRFs) have shown remarkable success in synthesizing photorealistic views from multi-view images of static scenes, but face challenges in dynamic, real-world environments with distractors like moving objects, shadows, and lighting changes. Existing methods manage controlled environments and low occlusion ratios but fall short in render quality, especially under high occlusion scenarios. In this paper, we introduce NeRF On-the-go, a simple yet effective approach that enables the robust synthesis of novel views in complex, in-the-wild scenes from only casually captured image sequences. Delving into uncertainty, our method not only efficiently eliminates distractors, even when they are predominant in captures, but also achieves a notably faster convergence speed. Through comprehensive experiments on various scenes, our method demonstrates a significant improvement over state-of-the-art techniques. This advancement opens new avenues for NeRF in diverse and dynamic real-world applications.  
+    We present TetSphere splatting, an explicit, Lagrangian representation for reconstructing 3D shapes with high-quality geometry. In contrast to conventional object reconstruction methods which predominantly use Eulerian representations, including both neural implicit (e.g., NeRF, NeuS) and explicit representations (e.g., DMTet), and often struggle with high computational demands and suboptimal mesh quality, TetSphere splatting utilizes an underused but highly effective geometric primitive -- tetrahedral meshes. This approach directly yields superior mesh quality without relying on neural networks or post-processing. It deforms multiple initial tetrahedral spheres to accurately reconstruct the 3D shape through a combination of differentiable rendering and geometric energy optimization, resulting in significant computational efficiency. Serving as a robust and versatile geometry representation, Tet-Sphere splatting seamlessly integrates into diverse applications, including single-view 3D reconstruction, image-/text-to-3D content generation. Experimental results demonstrate that TetSphere splatting outperforms existing representations, delivering faster optimization speed, enhanced mesh quality, and reliable preservation of thin structures.  
   </ol>  
 </details>  
-**comments**: CVPR 2024, first two authors contributed equally. Project Page:
-  https://nerf-on-the-go.github.io  
+  
+### [NeRF View Synthesis: Subjective Quality Assessment and Objective Metrics Evaluation](http://arxiv.org/abs/2405.20078)  
+Pedro Martin, Antonio Rodrigues, Joao Ascenso, Maria Paula Queluz  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural radiance fields (NeRF) are a groundbreaking computer vision technology that enables the generation of high-quality, immersive visual content from multiple viewpoints. This capability holds significant advantages for applications such as virtual/augmented reality, 3D modelling and content creation for the film and entertainment industry. However, the evaluation of NeRF methods poses several challenges, including a lack of comprehensive datasets, reliable assessment methodologies, and objective quality metrics. This paper addresses the problem of NeRF quality assessment thoroughly, by conducting a rigorous subjective quality assessment test that considers several scene classes and recently proposed NeRF view synthesis methods. Additionally, the performance of a wide range of state-of-the-art conventional and learning-based full-reference 2D image and video quality assessment metrics is evaluated against the subjective scores of the subjective study. The experimental results are analyzed in depth, providing a comparative evaluation of several NeRF methods and objective quality metrics, across different classes of visual scenes, including real and synthetic content for front-face and 360-degree camera trajectories.  
+  </ol>  
+</details>  
+  
+### [IReNe: Instant Recoloring in Neural Radiance Fields](http://arxiv.org/abs/2405.19876)  
+Alessio Mazzucchelli, Adrian Garcia-Garcia, Elena Garces, Fernando Rivas-Manzaneque, Francesc Moreno-Noguer, Adrian Penate-Sanchez  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Advances in NERFs have allowed for 3D scene reconstructions and novel view synthesis. Yet, efficiently editing these representations while retaining photorealism is an emerging challenge. Recent methods face three primary limitations: they're slow for interactive use, lack precision at object boundaries, and struggle to ensure multi-view consistency. We introduce IReNe to address these limitations, enabling swift, near real-time color editing in NeRF. Leveraging a pre-trained NeRF model and a single training image with user-applied color edits, IReNe swiftly adjusts network parameters in seconds. This adjustment allows the model to generate new scene views, accurately representing the color changes from the training image while also controlling object boundaries and view-specific effects. Object boundary control is achieved by integrating a trainable segmentation module into the model. The process gains efficiency by retraining only the weights of the last network layer. We observed that neurons in this layer can be classified into those responsible for view-dependent appearance and those contributing to diffuse appearance. We introduce an automated classification approach to identify these neuron types and exclusively fine-tune the weights of the diffuse neurons. This further accelerates training and ensures consistent color edits across different views. A thorough validation on a new dataset, with edited object colors, shows significant quantitative and qualitative advancements over competitors, accelerating speeds by 5x to 500x.  
+  </ol>  
+</details>  
+  
+### [HINT: Learning Complete Human Neural Representations from Limited Viewpoints](http://arxiv.org/abs/2405.19712)  
+Alessandro Sanvito, Andrea Ramazzina, Stefanie Walz, Mario Bijelic, Felix Heide  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    No augmented application is possible without animated humanoid avatars. At the same time, generating human replicas from real-world monocular hand-held or robotic sensor setups is challenging due to the limited availability of views. Previous work showed the feasibility of virtual avatars but required the presence of 360 degree views of the targeted subject. To address this issue, we propose HINT, a NeRF-based algorithm able to learn a detailed and complete human model from limited viewing angles. We achieve this by introducing a symmetry prior, regularization constraints, and training cues from large human datasets. In particular, we introduce a sagittal plane symmetry prior to the appearance of the human, directly supervise the density function of the human model using explicit 3D body modeling, and leverage a co-learned human digitization network as additional supervision for the unseen angles. As a result, our method can reconstruct complete humans even from a few viewing angles, increasing performance by more than 15% PSNR compared to previous state-of-the-art algorithms.  
+  </ol>  
+</details>  
+  
+### [View-Consistent Hierarchical 3D SegmentationUsing Ultrametric Feature Fields](http://arxiv.org/abs/2405.19678)  
+Haodi He, Colton Stearns, Adam W. Harley, Leonidas J. Guibas  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Large-scale vision foundation models such as Segment Anything (SAM) demonstrate impressive performance in zero-shot image segmentation at multiple levels of granularity. However, these zero-shot predictions are rarely 3D-consistent. As the camera viewpoint changes in a scene, so do the segmentation predictions, as well as the characterizations of ``coarse" or ``fine" granularity. In this work, we address the challenging task of lifting multi-granular and view-inconsistent image segmentations into a hierarchical and 3D-consistent representation. We learn a novel feature field within a Neural Radiance Field (NeRF) representing a 3D scene, whose segmentation structure can be revealed at different scales by simply using different thresholds on feature distance. Our key idea is to learn an ultrametric feature space, which unlike a Euclidean space, exhibits transitivity in distance-based grouping, naturally leading to a hierarchical clustering. Put together, our method takes view-inconsistent multi-granularity 2D segmentations as input and produces a hierarchy of 3D-consistent segmentations as output. We evaluate our method and several baselines on synthetic datasets with multi-view images and multi-granular segmentation, showcasing improved accuracy and viewpoint-consistency. We additionally provide qualitative examples of our model's 3D hierarchical segmentations in real world scenes.\footnote{The code and dataset are available at:  
+  </ol>  
+</details>  
   
   
 
