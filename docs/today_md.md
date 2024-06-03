@@ -1,32 +1,28 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#TAMBRIDGE:-Bridging-Frame-Centered-Tracking-and-3D-Gaussian-Splatting-for-Enhanced-SLAM>TAMBRIDGE: Bridging Frame-Centered Tracking and 3D Gaussian Splatting for Enhanced SLAM</a></li>
+        <li><a href=#DeCo:-Decoupling-Token-Compression-from-Semantic-Abstraction-in-Multimodal-Large-Language-Models>DeCo: Decoupling Token Compression from Semantic Abstraction in Multimodal Large Language Models</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#$\textit{S}^3$Gaussian:-Self-Supervised-Street-Gaussians-for-Autonomous-Driving>$\textit{S}^3$Gaussian: Self-Supervised Street Gaussians for Autonomous Driving</a></li>
-        <li><a href=#TetSphere-Splatting:-Representing-High-Quality-Geometry-with-Lagrangian-Volumetric-Meshes>TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes</a></li>
-        <li><a href=#NeRF-View-Synthesis:-Subjective-Quality-Assessment-and-Objective-Metrics-Evaluation>NeRF View Synthesis: Subjective Quality Assessment and Objective Metrics Evaluation</a></li>
-        <li><a href=#IReNe:-Instant-Recoloring-in-Neural-Radiance-Fields>IReNe: Instant Recoloring in Neural Radiance Fields</a></li>
-        <li><a href=#HINT:-Learning-Complete-Human-Neural-Representations-from-Limited-Viewpoints>HINT: Learning Complete Human Neural Representations from Limited Viewpoints</a></li>
-        <li><a href=#View-Consistent-Hierarchical-3D-SegmentationUsing-Ultrametric-Feature-Fields>View-Consistent Hierarchical 3D SegmentationUsing Ultrametric Feature Fields</a></li>
+        <li><a href=#R$^2$-Gaussian:-Rectifying-Radiative-Gaussian-Splatting-for-Tomographic-Reconstruction>R$^2$-Gaussian: Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction</a></li>
+        <li><a href=#4Diffusion:-Multi-view-Video-Diffusion-Model-for-4D-Generation>4Diffusion: Multi-view Video Diffusion Model for 4D Generation</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## Visual Localization  
 
-### [TAMBRIDGE: Bridging Frame-Centered Tracking and 3D Gaussian Splatting for Enhanced SLAM](http://arxiv.org/abs/2405.19614)  
-Peifeng Jiang, Hong Liu, Xia Li, Ti Wang, Fabian Zhang, Joachim M. Buhmann  
+### [DeCo: Decoupling Token Compression from Semantic Abstraction in Multimodal Large Language Models](http://arxiv.org/abs/2405.20985)  
+Linli Yao, Lei Li, Shuhuai Ren, Lean Wang, Yuanxin Liu, Xu Sun, Lu Hou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The limited robustness of 3D Gaussian Splatting (3DGS) to motion blur and camera noise, along with its poor real-time performance, restricts its application in robotic SLAM tasks. Upon analysis, the primary causes of these issues are the density of views with motion blur and the cumulative errors in dense pose estimation from calculating losses based on noisy original images and rendering results, which increase the difficulty of 3DGS rendering convergence. Thus, a cutting-edge 3DGS-based SLAM system is introduced, leveraging the efficiency and flexibility of 3DGS to achieve real-time performance while remaining robust against sensor noise, motion blur, and the challenges posed by long-session SLAM. Central to this approach is the Fusion Bridge module, which seamlessly integrates tracking-centered ORB Visual Odometry with mapping-centered online 3DGS. Precise pose initialization is enabled by this module through joint optimization of re-projection and rendering loss, as well as strategic view selection, enhancing rendering convergence in large-scale scenes. Extensive experiments demonstrate state-of-the-art rendering quality and localization accuracy, positioning this system as a promising solution for real-world robotics applications that require stable, near-real-time performance. Our project is available at https://ZeldaFromHeaven.github.io/TAMBRIDGE/  
+    The visual projector, which bridges the vision and language modalities and facilitates cross-modal alignment, serves as a crucial component in MLLMs. However, measuring the effectiveness of projectors in vision-language alignment remains under-explored, which currently can only be inferred from the performance of MLLMs on downstream tasks. Motivated by the problem, this study examines the projector module by interpreting the vision-language semantic flow within MLLMs. Specifically, we trace back the semantic relevance flow from generated language tokens to raw visual encoder patches and the intermediate outputs produced by projectors. Our findings reveal that compressive projectors (e.g., QFormer), abstract visual patches into a limited set of semantic concepts, such as objects or attributes, resulting in a 'double abstraction' phenomenon. This involves a first visual semantic abstraction by the projector referring to pre-defined query tokens, and a second extraction by the LLM based on text instructions. The double abstraction is inefficient in training and will result in cumulative vision semantics deficiency. To mitigate this issue, we propose the key insight of 'Decouple Compression from Abstraction (DeCo), that is compressing the visual token number at the patch level by projectors and allowing the LLM to handle visual semantic abstraction entirely. Consequently, we adopt a simple compressor, i.e., 2D Adaptive Pooling, to downsample visual patches in a parameter-free manner. Empirical evaluation demonstrates that DeCo surpasses traditional compressive projectors regarding both performance and efficiency. It achieves performance gains of 0.9%, 7.1%, and 2.9% across the MLLM Benchmarks, Visual Localization, and Open-ended VQA tasks with fewer trainable parameters and faster convergence speed.  
   </ol>  
 </details>  
   
@@ -36,61 +32,24 @@ Peifeng Jiang, Hong Liu, Xia Li, Ti Wang, Fabian Zhang, Joachim M. Buhmann
 
 ## NeRF  
 
-### [ $\textit{S}^3$ Gaussian: Self-Supervised Street Gaussians for Autonomous Driving](http://arxiv.org/abs/2405.20323)  
-[[code](https://github.com/nnanhuang/s3gaussian)]  
-Nan Huang, Xiaobao Wei, Wenzhao Zheng, Pengju An, Ming Lu, Wei Zhan, Masayoshi Tomizuka, Kurt Keutzer, Shanghang Zhang  
+### [R $^2$ -Gaussian: Rectifying Radiative Gaussian Splatting for Tomographic Reconstruction](http://arxiv.org/abs/2405.20693)  
+Ruyi Zha, Tao Jun Lin, Yuanhao Cai, Jiwen Cao, Yanhao Zhang, Hongdong Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Photorealistic 3D reconstruction of street scenes is a critical technique for developing real-world simulators for autonomous driving. Despite the efficacy of Neural Radiance Fields (NeRF) for driving scenes, 3D Gaussian Splatting (3DGS) emerges as a promising direction due to its faster speed and more explicit representation. However, most existing street 3DGS methods require tracked 3D vehicle bounding boxes to decompose the static and dynamic elements for effective reconstruction, limiting their applications for in-the-wild scenarios. To facilitate efficient 3D scene reconstruction without costly annotations, we propose a self-supervised street Gaussian ($\textit{S}^3$Gaussian) method to decompose dynamic and static elements from 4D consistency. We represent each scene with 3D Gaussians to preserve the explicitness and further accompany them with a spatial-temporal field network to compactly model the 4D dynamics. We conduct extensive experiments on the challenging Waymo-Open dataset to evaluate the effectiveness of our method. Our $\textit{S}^3$Gaussian demonstrates the ability to decompose static and dynamic scenes and achieves the best performance without using 3D annotations. Code is available at: https://github.com/nnanhuang/S3Gaussian/.  
-  </ol>  
-</details>  
-**comments**: Code is available at: https://github.com/nnanhuang/S3Gaussian/  
-  
-### [TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes](http://arxiv.org/abs/2405.20283)  
-Minghao Guo, Bohan Wang, Kaiming He, Wojciech Matusik  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present TetSphere splatting, an explicit, Lagrangian representation for reconstructing 3D shapes with high-quality geometry. In contrast to conventional object reconstruction methods which predominantly use Eulerian representations, including both neural implicit (e.g., NeRF, NeuS) and explicit representations (e.g., DMTet), and often struggle with high computational demands and suboptimal mesh quality, TetSphere splatting utilizes an underused but highly effective geometric primitive -- tetrahedral meshes. This approach directly yields superior mesh quality without relying on neural networks or post-processing. It deforms multiple initial tetrahedral spheres to accurately reconstruct the 3D shape through a combination of differentiable rendering and geometric energy optimization, resulting in significant computational efficiency. Serving as a robust and versatile geometry representation, Tet-Sphere splatting seamlessly integrates into diverse applications, including single-view 3D reconstruction, image-/text-to-3D content generation. Experimental results demonstrate that TetSphere splatting outperforms existing representations, delivering faster optimization speed, enhanced mesh quality, and reliable preservation of thin structures.  
+    3D Gaussian splatting (3DGS) has shown promising results in image rendering and surface reconstruction. However, its potential in volumetric reconstruction tasks, such as X-ray computed tomography, remains under-explored. This paper introduces R2-Gaussian, the first 3DGS-based framework for sparse-view tomographic reconstruction. By carefully deriving X-ray rasterization functions, we discover a previously unknown integration bias in the standard 3DGS formulation, which hampers accurate volume retrieval. To address this issue, we propose a novel rectification technique via refactoring the projection from 3D to 2D Gaussians. Our new method presents three key innovations: (1) introducing tailored Gaussian kernels, (2) extending rasterization to X-ray imaging, and (3) developing a CUDA-based differentiable voxelizer. Extensive experiments demonstrate that our method outperforms state-of-the-art approaches by 0.93 dB in PSNR and 0.014 in SSIM. Crucially, it delivers high-quality results in 3 minutes, which is 12x faster than NeRF-based methods and on par with traditional algorithms. The superior performance and rapid convergence of our method highlight its practical value.  
   </ol>  
 </details>  
   
-### [NeRF View Synthesis: Subjective Quality Assessment and Objective Metrics Evaluation](http://arxiv.org/abs/2405.20078)  
-Pedro Martin, Antonio Rodrigues, Joao Ascenso, Maria Paula Queluz  
+### [4Diffusion: Multi-view Video Diffusion Model for 4D Generation](http://arxiv.org/abs/2405.20674)  
+Haiyu Zhang, Xinyuan Chen, Yaohui Wang, Xihui Liu, Yunhong Wang, Yu Qiao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural radiance fields (NeRF) are a groundbreaking computer vision technology that enables the generation of high-quality, immersive visual content from multiple viewpoints. This capability holds significant advantages for applications such as virtual/augmented reality, 3D modelling and content creation for the film and entertainment industry. However, the evaluation of NeRF methods poses several challenges, including a lack of comprehensive datasets, reliable assessment methodologies, and objective quality metrics. This paper addresses the problem of NeRF quality assessment thoroughly, by conducting a rigorous subjective quality assessment test that considers several scene classes and recently proposed NeRF view synthesis methods. Additionally, the performance of a wide range of state-of-the-art conventional and learning-based full-reference 2D image and video quality assessment metrics is evaluated against the subjective scores of the subjective study. The experimental results are analyzed in depth, providing a comparative evaluation of several NeRF methods and objective quality metrics, across different classes of visual scenes, including real and synthetic content for front-face and 360-degree camera trajectories.  
+    Current 4D generation methods have achieved noteworthy efficacy with the aid of advanced diffusion generative models. However, these methods lack multi-view spatial-temporal modeling and encounter challenges in integrating diverse prior knowledge from multiple diffusion models, resulting in inconsistent temporal appearance and flickers. In this paper, we propose a novel 4D generation pipeline, namely 4Diffusion aimed at generating spatial-temporally consistent 4D content from a monocular video. We first design a unified diffusion model tailored for multi-view video generation by incorporating a learnable motion module into a frozen 3D-aware diffusion model to capture multi-view spatial-temporal correlations. After training on a curated dataset, our diffusion model acquires reasonable temporal consistency and inherently preserves the generalizability and spatial consistency of the 3D-aware diffusion model. Subsequently, we propose 4D-aware Score Distillation Sampling loss, which is based on our multi-view video diffusion model, to optimize 4D representation parameterized by dynamic NeRF. This aims to eliminate discrepancies arising from multiple diffusion models, allowing for generating spatial-temporally consistent 4D content. Moreover, we devise an anchor loss to enhance the appearance details and facilitate the learning of dynamic NeRF. Extensive qualitative and quantitative experiments demonstrate that our method achieves superior performance compared to previous methods.  
   </ol>  
 </details>  
-  
-### [IReNe: Instant Recoloring in Neural Radiance Fields](http://arxiv.org/abs/2405.19876)  
-Alessio Mazzucchelli, Adrian Garcia-Garcia, Elena Garces, Fernando Rivas-Manzaneque, Francesc Moreno-Noguer, Adrian Penate-Sanchez  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Advances in NERFs have allowed for 3D scene reconstructions and novel view synthesis. Yet, efficiently editing these representations while retaining photorealism is an emerging challenge. Recent methods face three primary limitations: they're slow for interactive use, lack precision at object boundaries, and struggle to ensure multi-view consistency. We introduce IReNe to address these limitations, enabling swift, near real-time color editing in NeRF. Leveraging a pre-trained NeRF model and a single training image with user-applied color edits, IReNe swiftly adjusts network parameters in seconds. This adjustment allows the model to generate new scene views, accurately representing the color changes from the training image while also controlling object boundaries and view-specific effects. Object boundary control is achieved by integrating a trainable segmentation module into the model. The process gains efficiency by retraining only the weights of the last network layer. We observed that neurons in this layer can be classified into those responsible for view-dependent appearance and those contributing to diffuse appearance. We introduce an automated classification approach to identify these neuron types and exclusively fine-tune the weights of the diffuse neurons. This further accelerates training and ensures consistent color edits across different views. A thorough validation on a new dataset, with edited object colors, shows significant quantitative and qualitative advancements over competitors, accelerating speeds by 5x to 500x.  
-  </ol>  
-</details>  
-  
-### [HINT: Learning Complete Human Neural Representations from Limited Viewpoints](http://arxiv.org/abs/2405.19712)  
-Alessandro Sanvito, Andrea Ramazzina, Stefanie Walz, Mario Bijelic, Felix Heide  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    No augmented application is possible without animated humanoid avatars. At the same time, generating human replicas from real-world monocular hand-held or robotic sensor setups is challenging due to the limited availability of views. Previous work showed the feasibility of virtual avatars but required the presence of 360 degree views of the targeted subject. To address this issue, we propose HINT, a NeRF-based algorithm able to learn a detailed and complete human model from limited viewing angles. We achieve this by introducing a symmetry prior, regularization constraints, and training cues from large human datasets. In particular, we introduce a sagittal plane symmetry prior to the appearance of the human, directly supervise the density function of the human model using explicit 3D body modeling, and leverage a co-learned human digitization network as additional supervision for the unseen angles. As a result, our method can reconstruct complete humans even from a few viewing angles, increasing performance by more than 15% PSNR compared to previous state-of-the-art algorithms.  
-  </ol>  
-</details>  
-  
-### [View-Consistent Hierarchical 3D SegmentationUsing Ultrametric Feature Fields](http://arxiv.org/abs/2405.19678)  
-Haodi He, Colton Stearns, Adam W. Harley, Leonidas J. Guibas  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Large-scale vision foundation models such as Segment Anything (SAM) demonstrate impressive performance in zero-shot image segmentation at multiple levels of granularity. However, these zero-shot predictions are rarely 3D-consistent. As the camera viewpoint changes in a scene, so do the segmentation predictions, as well as the characterizations of ``coarse" or ``fine" granularity. In this work, we address the challenging task of lifting multi-granular and view-inconsistent image segmentations into a hierarchical and 3D-consistent representation. We learn a novel feature field within a Neural Radiance Field (NeRF) representing a 3D scene, whose segmentation structure can be revealed at different scales by simply using different thresholds on feature distance. Our key idea is to learn an ultrametric feature space, which unlike a Euclidean space, exhibits transitivity in distance-based grouping, naturally leading to a hierarchical clustering. Put together, our method takes view-inconsistent multi-granularity 2D segmentations as input and produces a hierarchy of 3D-consistent segmentations as output. We evaluate our method and several baselines on synthetic datasets with multi-view images and multi-granular segmentation, showcasing improved accuracy and viewpoint-consistency. We additionally provide qualitative examples of our model's 3D hierarchical segmentations in real world scenes.\footnote{The code and dataset are available at:  
-  </ol>  
-</details>  
+**comments**: Project Page: https://aejion.github.io/4diffusion/  
   
   
 
