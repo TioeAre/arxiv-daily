@@ -1,31 +1,78 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Lighting-Every-Darkness-with-3DGS:-Fast-Training-and-Real-Time-Rendering-for-HDR-View-Synthesis>Lighting Every Darkness with 3DGS: Fast Training and Real-Time Rendering for HDR View Synthesis</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#PQPP:-A-Joint-Benchmark-for-Text-to-Image-Prompt-and-Query-Performance-Prediction>PQPP: A Joint Benchmark for Text-to-Image Prompt and Query Performance Prediction</a></li>
+        <li><a href=#Multicam-SLAM:-Non-overlapping-Multi-camera-SLAM-for-Indirect-Visual-Localization-and-Navigation>Multicam-SLAM: Non-overlapping Multi-camera SLAM for Indirect Visual Localization and Navigation</a></li>
+        <li><a href=#Unified-Text-to-Image-Generation-and-Retrieval>Unified Text-to-Image Generation and Retrieval</a></li>
+        <li><a href=#The-Unmet-Promise-of-Synthetic-Training-Images:-Using-Retrieved-Real-Images-Performs-Better>The Unmet Promise of Synthetic Training Images: Using Retrieved Real Images Performs Better</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Multiplane-Prior-Guided-Few-Shot-Aerial-Scene-Rendering>Multiplane Prior Guided Few-Shot Aerial Scene Rendering</a></li>
-        <li><a href=#Multi-style-Neural-Radiance-Field-with-AdaIN>Multi-style Neural Radiance Field with AdaIN</a></li>
+        <li><a href=#IllumiNeRF:-3D-Relighting-without-Inverse-Rendering>IllumiNeRF: 3D Relighting without Inverse Rendering</a></li>
+        <li><a href=#GaussianCity:-Generative-Gaussian-Splatting-for-Unbounded-3D-City-Generation>GaussianCity: Generative Gaussian Splatting for Unbounded 3D City Generation</a></li>
+        <li><a href=#PGSR:-Planar-based-Gaussian-Splatting-for-Efficient-and-High-Fidelity-Surface-Reconstruction>PGSR: Planar-based Gaussian Splatting for Efficient and High-Fidelity Surface Reconstruction</a></li>
+        <li><a href=#Lighting-Every-Darkness-with-3DGS:-Fast-Training-and-Real-Time-Rendering-for-HDR-View-Synthesis>Lighting Every Darkness with 3DGS: Fast Training and Real-Time Rendering for HDR View Synthesis</a></li>
+        <li><a href=#ExtraNeRF:-Visibility-Aware-View-Extrapolation-of-Neural-Radiance-Fields-with-Diffusion-Models>ExtraNeRF: Visibility-Aware View Extrapolation of Neural Radiance Fields with Diffusion Models</a></li>
+        <li><a href=#GTR:-Improving-Large-3D-Reconstruction-Models-through-Geometry-and-Texture-Refinement>GTR: Improving Large 3D Reconstruction Models through Geometry and Texture Refinement</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [PQPP: A Joint Benchmark for Text-to-Image Prompt and Query Performance Prediction](http://arxiv.org/abs/2406.04746)  
-[[code](https://github.com/eduard6421/pqpp)]  
-Eduard Poesina, Adriana Valentina Costache, Adrian-Gabriel Chifu, Josiane Mothe, Radu Tudor Ionescu  
+### [Lighting Every Darkness with 3DGS: Fast Training and Real-Time Rendering for HDR View Synthesis](http://arxiv.org/abs/2406.06216)  
+Xin Jin, Pengyi Jiao, Zheng-Peng Duan, Xingchao Yang, Chun-Le Guo, Bo Ren, Chongyi Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Text-to-image generation has recently emerged as a viable alternative to text-to-image retrieval, due to the visually impressive results of generative diffusion models. Although query performance prediction is an active research topic in information retrieval, to the best of our knowledge, there is no prior study that analyzes the difficulty of queries (prompts) in text-to-image generation, based on human judgments. To this end, we introduce the first dataset of prompts which are manually annotated in terms of image generation performance. In order to determine the difficulty of the same prompts in image retrieval, we also collect manual annotations that represent retrieval performance. We thus propose the first benchmark for joint text-to-image prompt and query performance prediction, comprising 10K queries. Our benchmark enables: (i) the comparative assessment of the difficulty of prompts/queries in image generation and image retrieval, and (ii) the evaluation of prompt/query performance predictors addressing both generation and retrieval. We present results with several pre-generation/retrieval and post-generation/retrieval performance predictors, thus providing competitive baselines for future research. Our benchmark and code is publicly available under the CC BY 4.0 license at https://github.com/Eduard6421/PQPP.  
+    Volumetric rendering based methods, like NeRF, excel in HDR view synthesis from RAWimages, especially for nighttime scenes. While, they suffer from long training times and cannot perform real-time rendering due to dense sampling requirements. The advent of 3D Gaussian Splatting (3DGS) enables real-time rendering and faster training. However, implementing RAW image-based view synthesis directly using 3DGS is challenging due to its inherent drawbacks: 1) in nighttime scenes, extremely low SNR leads to poor structure-from-motion (SfM) estimation in distant views; 2) the limited representation capacity of spherical harmonics (SH) function is unsuitable for RAW linear color space; and 3) inaccurate scene structure hampers downstream tasks such as refocusing. To address these issues, we propose LE3D (Lighting Every darkness with 3DGS). Our method proposes Cone Scatter Initialization to enrich the estimation of SfM, and replaces SH with a Color MLP to represent the RAW linear color space. Additionally, we introduce depth distortion and near-far regularizations to improve the accuracy of scene structure for downstream tasks. These designs enable LE3D to perform real-time novel view synthesis, HDR rendering, refocusing, and tone-mapping changes. Compared to previous volumetric rendering based methods, LE3D reduces training time to 1% and improves rendering speed by up to 4,000 times for 2K resolution images in terms of FPS. Code and viewer can be found in https://github.com/Srameo/LE3D .  
   </ol>  
 </details>  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Multicam-SLAM: Non-overlapping Multi-camera SLAM for Indirect Visual Localization and Navigation](http://arxiv.org/abs/2406.06374)  
+[[code](https://github.com/alterpang/multi_orb_slam)]  
+Shenghao Li, Luchao Pang, Xianglong Hu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper presents a novel approach to visual simultaneous localization and mapping (SLAM) using multiple RGB-D cameras. The proposed method, Multicam-SLAM, significantly enhances the robustness and accuracy of SLAM systems by capturing more comprehensive spatial information from various perspectives. This method enables the accurate determination of pose relationships among multiple cameras without the need for overlapping fields of view. The proposed Muticam-SLAM includes a unique multi-camera model, a multi-keyframes structure, and several parallel SLAM threads. The multi-camera model allows for the integration of data from multiple cameras, while the multi-keyframes and parallel SLAM threads ensure efficient and accurate pose estimation and mapping. Extensive experiments in various environments demonstrate the superior accuracy and robustness of the proposed method compared to conventional single-camera SLAM systems. The results highlight the potential of the proposed Multicam-SLAM for more complex and challenging applications. Code is available at \url{https://github.com/AlterPang/Multi_ORB_SLAM}.  
+  </ol>  
+</details>  
+  
+### [Unified Text-to-Image Generation and Retrieval](http://arxiv.org/abs/2406.05814)  
+Leigang Qu, Haochuan Li, Tan Wang, Wenjie Wang, Yongqi Li, Liqiang Nie, Tat-Seng Chua  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    How humans can efficiently and effectively acquire images has always been a perennial question. A typical solution is text-to-image retrieval from an existing database given the text query; however, the limited database typically lacks creativity. By contrast, recent breakthroughs in text-to-image generation have made it possible to produce fancy and diverse visual content, but it faces challenges in synthesizing knowledge-intensive images. In this work, we rethink the relationship between text-to-image generation and retrieval and propose a unified framework in the context of Multimodal Large Language Models (MLLMs). Specifically, we first explore the intrinsic discriminative abilities of MLLMs and introduce a generative retrieval method to perform retrieval in a training-free manner. Subsequently, we unify generation and retrieval in an autoregressive generation way and propose an autonomous decision module to choose the best-matched one between generated and retrieved images as the response to the text query. Additionally, we construct a benchmark called TIGeR-Bench, including creative and knowledge-intensive domains, to standardize the evaluation of unified text-to-image generation and retrieval. Extensive experimental results on TIGeR-Bench and two retrieval benchmarks, i.e., Flickr30K and MS-COCO, demonstrate the superiority and effectiveness of our proposed method.  
+  </ol>  
+</details>  
+  
+### [The Unmet Promise of Synthetic Training Images: Using Retrieved Real Images Performs Better](http://arxiv.org/abs/2406.05184)  
+[[code](https://github.com/scottgeng00/unmet-promise)]  
+Scott Geng, Cheng-Yu Hsieh, Vivek Ramanujan, Matthew Wallingford, Chun-Liang Li, Pang Wei Koh, Ranjay Krishna  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Generative text-to-image models enable us to synthesize unlimited amounts of images in a controllable manner, spurring many recent efforts to train vision models with synthetic data. However, every synthetic image ultimately originates from the upstream data used to train the generator. What additional value does the intermediate generator provide over directly training on relevant parts of the upstream data? Grounding this question in the setting of image classification, we compare finetuning on task-relevant, targeted synthetic data generated by Stable Diffusion -- a generative model trained on the LAION-2B dataset -- against finetuning on targeted real images retrieved directly from LAION-2B. We show that while synthetic data can benefit some downstream tasks, it is universally matched or outperformed by real data from our simple retrieval baseline. Our analysis suggests that this underperformance is partially due to generator artifacts and inaccurate task-relevant visual details in the synthetic images. Overall, we argue that retrieval is a critical baseline to consider when training with synthetic data -- a baseline that current methods do not yet surpass. We release code, data, and models at https://github.com/scottgeng00/unmet-promise.  
+  </ol>  
+</details>  
+**comments**: Correspondence to sgeng@cs.washington.edu. RK and PWK equally advised
+  the project  
   
   
 
@@ -33,24 +80,63 @@ Eduard Poesina, Adriana Valentina Costache, Adrian-Gabriel Chifu, Josiane Mothe,
 
 ## NeRF  
 
-### [Multiplane Prior Guided Few-Shot Aerial Scene Rendering](http://arxiv.org/abs/2406.04961)  
-Zihan Gao, Licheng Jiao, Lingling Li, Xu Liu, Fang Liu, Puhua Chen, Yuwei Guo  
+### [IllumiNeRF: 3D Relighting without Inverse Rendering](http://arxiv.org/abs/2406.06527)  
+Xiaoming Zhao, Pratul P. Srinivasan, Dor Verbin, Keunhong Park, Ricardo Martin Brualla, Philipp Henzler  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have been successfully applied in various aerial scenes, yet they face challenges with sparse views due to limited supervision. The acquisition of dense aerial views is often prohibitive, as unmanned aerial vehicles (UAVs) may encounter constraints in perspective range and energy constraints. In this work, we introduce Multiplane Prior guided NeRF (MPNeRF), a novel approach tailored for few-shot aerial scene rendering-marking a pioneering effort in this domain. Our key insight is that the intrinsic geometric regularities specific to aerial imagery could be leveraged to enhance NeRF in sparse aerial scenes. By investigating NeRF's and Multiplane Image (MPI)'s behavior, we propose to guide the training process of NeRF with a Multiplane Prior. The proposed Multiplane Prior draws upon MPI's benefits and incorporates advanced image comprehension through a SwinV2 Transformer, pre-trained via SimMIM. Our extensive experiments demonstrate that MPNeRF outperforms existing state-of-the-art methods applied in non-aerial contexts, by tripling the performance in SSIM and LPIPS even with three views available. We hope our work offers insights into the development of NeRF-based applications in aerial scenes with limited data.  
+    Existing methods for relightable view synthesis -- using a set of images of an object under unknown lighting to recover a 3D representation that can be rendered from novel viewpoints under a target illumination -- are based on inverse rendering, and attempt to disentangle the object geometry, materials, and lighting that explain the input images. Furthermore, this typically involves optimization through differentiable Monte Carlo rendering, which is brittle and computationally-expensive. In this work, we propose a simpler approach: we first relight each input image using an image diffusion model conditioned on lighting and then reconstruct a Neural Radiance Field (NeRF) with these relit images, from which we render novel views under the target lighting. We demonstrate that this strategy is surprisingly competitive and achieves state-of-the-art results on multiple relighting benchmarks. Please see our project page at https://illuminerf.github.io/.  
   </ol>  
 </details>  
-**comments**: 17 pages, 8 figures, accepted at CVPR 2024  
+**comments**: Project page: https://illuminerf.github.io/  
   
-### [Multi-style Neural Radiance Field with AdaIN](http://arxiv.org/abs/2406.04960)  
-Yu-Wen Pao, An-Jie Li  
+### [GaussianCity: Generative Gaussian Splatting for Unbounded 3D City Generation](http://arxiv.org/abs/2406.06526)  
+Haozhe Xie, Zhaoxi Chen, Fangzhou Hong, Ziwei Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this work, we propose a novel pipeline that combines AdaIN and NeRF for the task of stylized Novel View Synthesis. Compared to previous works, we make the following contributions: 1) We simplify the pipeline. 2) We extend the capabilities of model to handle the multi-style task. 3) We modify the model architecture to perform well on styles with strong brush strokes. 4) We implement style interpolation on the multi-style model, allowing us to control the style between any two styles and the style intensity between the stylized output and the original scene, providing better control over the stylization strength.  
+    3D city generation with NeRF-based methods shows promising generation results but is computationally inefficient. Recently 3D Gaussian Splatting (3D-GS) has emerged as a highly efficient alternative for object-level 3D generation. However, adapting 3D-GS from finite-scale 3D objects and humans to infinite-scale 3D cities is non-trivial. Unbounded 3D city generation entails significant storage overhead (out-of-memory issues), arising from the need to expand points to billions, often demanding hundreds of Gigabytes of VRAM for a city scene spanning 10km^2. In this paper, we propose GaussianCity, a generative Gaussian Splatting framework dedicated to efficiently synthesizing unbounded 3D cities with a single feed-forward pass. Our key insights are two-fold: 1) Compact 3D Scene Representation: We introduce BEV-Point as a highly compact intermediate representation, ensuring that the growth in VRAM usage for unbounded scenes remains constant, thus enabling unbounded city generation. 2) Spatial-aware Gaussian Attribute Decoder: We present spatial-aware BEV-Point decoder to produce 3D Gaussian attributes, which leverages Point Serializer to integrate the structural and contextual characteristics of BEV points. Extensive experiments demonstrate that GaussianCity achieves state-of-the-art results in both drone-view and street-view 3D city generation. Notably, compared to CityDreamer, GaussianCity exhibits superior performance with a speedup of 60 times (10.72 FPS v.s. 0.18 FPS).  
   </ol>  
 </details>  
+  
+### [PGSR: Planar-based Gaussian Splatting for Efficient and High-Fidelity Surface Reconstruction](http://arxiv.org/abs/2406.06521)  
+Danpeng Chen, Hai Li, Weicai Ye, Yifan Wang, Weijian Xie, Shangjin Zhai, Nan Wang, Haomin Liu, Hujun Bao, Guofeng Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recently, 3D Gaussian Splatting (3DGS) has attracted widespread attention due to its high-quality rendering, and ultra-fast training and rendering speed. However, due to the unstructured and irregular nature of Gaussian point clouds, it is difficult to guarantee geometric reconstruction accuracy and multi-view consistency simply by relying on image reconstruction loss. Although many studies on surface reconstruction based on 3DGS have emerged recently, the quality of their meshes is generally unsatisfactory. To address this problem, we propose a fast planar-based Gaussian splatting reconstruction representation (PGSR) to achieve high-fidelity surface reconstruction while ensuring high-quality rendering. Specifically, we first introduce an unbiased depth rendering method, which directly renders the distance from the camera origin to the Gaussian plane and the corresponding normal map based on the Gaussian distribution of the point cloud, and divides the two to obtain the unbiased depth. We then introduce single-view geometric, multi-view photometric, and geometric regularization to preserve global geometric accuracy. We also propose a camera exposure compensation model to cope with scenes with large illumination variations. Experiments on indoor and outdoor scenes show that our method achieves fast training and rendering while maintaining high-fidelity rendering and geometric reconstruction, outperforming 3DGS-based and NeRF-based methods.  
+  </ol>  
+</details>  
+**comments**: project page: https://zju3dv.github.io/pgsr/  
+  
+### [Lighting Every Darkness with 3DGS: Fast Training and Real-Time Rendering for HDR View Synthesis](http://arxiv.org/abs/2406.06216)  
+Xin Jin, Pengyi Jiao, Zheng-Peng Duan, Xingchao Yang, Chun-Le Guo, Bo Ren, Chongyi Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Volumetric rendering based methods, like NeRF, excel in HDR view synthesis from RAWimages, especially for nighttime scenes. While, they suffer from long training times and cannot perform real-time rendering due to dense sampling requirements. The advent of 3D Gaussian Splatting (3DGS) enables real-time rendering and faster training. However, implementing RAW image-based view synthesis directly using 3DGS is challenging due to its inherent drawbacks: 1) in nighttime scenes, extremely low SNR leads to poor structure-from-motion (SfM) estimation in distant views; 2) the limited representation capacity of spherical harmonics (SH) function is unsuitable for RAW linear color space; and 3) inaccurate scene structure hampers downstream tasks such as refocusing. To address these issues, we propose LE3D (Lighting Every darkness with 3DGS). Our method proposes Cone Scatter Initialization to enrich the estimation of SfM, and replaces SH with a Color MLP to represent the RAW linear color space. Additionally, we introduce depth distortion and near-far regularizations to improve the accuracy of scene structure for downstream tasks. These designs enable LE3D to perform real-time novel view synthesis, HDR rendering, refocusing, and tone-mapping changes. Compared to previous volumetric rendering based methods, LE3D reduces training time to 1% and improves rendering speed by up to 4,000 times for 2K resolution images in terms of FPS. Code and viewer can be found in https://github.com/Srameo/LE3D .  
+  </ol>  
+</details>  
+  
+### [ExtraNeRF: Visibility-Aware View Extrapolation of Neural Radiance Fields with Diffusion Models](http://arxiv.org/abs/2406.06133)  
+Meng-Li Shih, Wei-Chiu Ma, Aleksander Holynski, Forrester Cole, Brian L. Curless, Janne Kontkanen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We propose ExtraNeRF, a novel method for extrapolating the range of views handled by a Neural Radiance Field (NeRF). Our main idea is to leverage NeRFs to model scene-specific, fine-grained details, while capitalizing on diffusion models to extrapolate beyond our observed data. A key ingredient is to track visibility to determine what portions of the scene have not been observed, and focus on reconstructing those regions consistently with diffusion models. Our primary contributions include a visibility-aware diffusion-based inpainting module that is fine-tuned on the input imagery, yielding an initial NeRF with moderate quality (often blurry) inpainted regions, followed by a second diffusion model trained on the input imagery to consistently enhance, notably sharpen, the inpainted imagery from the first pass. We demonstrate high-quality results, extrapolating beyond a small number of (typically six or fewer) input views, effectively outpainting the NeRF as well as inpainting newly disoccluded regions inside the original viewing volume. We compare with related work both quantitatively and qualitatively and show significant gains over prior art.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 8 figures, CVPR2024  
+  
+### [GTR: Improving Large 3D Reconstruction Models through Geometry and Texture Refinement](http://arxiv.org/abs/2406.05649)  
+Peiye Zhuang, Songfang Han, Chaoyang Wang, Aliaksandr Siarohin, Jiaxu Zou, Michael Vasilkovsky, Vladislav Shakhrai, Sergey Korolev, Sergey Tulyakov, Hsin-Ying Lee  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We propose a novel approach for 3D mesh reconstruction from multi-view images. Our method takes inspiration from large reconstruction models like LRM that use a transformer-based triplane generator and a Neural Radiance Field (NeRF) model trained on multi-view images. However, in our method, we introduce several important modifications that allow us to significantly enhance 3D reconstruction quality. First of all, we examine the original LRM architecture and find several shortcomings. Subsequently, we introduce respective modifications to the LRM architecture, which lead to improved multi-view image representation and more computationally efficient training. Second, in order to improve geometry reconstruction and enable supervision at full image resolution, we extract meshes from the NeRF field in a differentiable manner and fine-tune the NeRF model through mesh rendering. These modifications allow us to achieve state-of-the-art performance on both 2D and 3D evaluation metrics, such as a PSNR of 28.67 on Google Scanned Objects (GSO) dataset. Despite these superior results, our feed-forward model still struggles to reconstruct complex textures, such as text and portraits on assets. To address this, we introduce a lightweight per-instance texture refinement procedure. This procedure fine-tunes the triplane representation and the NeRF color estimation model on the mesh surface using the input multi-view images in just 4 seconds. This refinement improves the PSNR to 29.79 and achieves faithful reconstruction of complex textures, such as text. Additionally, our approach enables various downstream applications, including text- or image-to-3D generation.  
+  </ol>  
+</details>  
+**comments**: 19 pages, 17 figures. Project page: https://payeah.net/projects/GTR/  
   
   
 
