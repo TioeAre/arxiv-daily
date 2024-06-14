@@ -1,67 +1,54 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#From-Variance-to-Veracity:-Unbundling-and-Mitigating-Gradient-Variance-in-Differentiable-Bundle-Adjustment-Layers>From Variance to Veracity: Unbundling and Mitigating Gradient Variance in Differentiable Bundle Adjustment Layers</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Self-supervised-Learning-of-Neural-Implicit-Feature-Fields-for-Camera-Pose-Refinement>Self-supervised Learning of Neural Implicit Feature Fields for Camera Pose Refinement</a></li>
-        <li><a href=#ConceptHash:-Interpretable-Fine-Grained-Hashing-via-Concept-Discovery>ConceptHash: Interpretable Fine-Grained Hashing via Concept Discovery</a></li>
+        <li><a href=#Common-and-Rare-Fundus-Diseases-Identification-Using-Vision-Language-Foundation-Model-with-Knowledge-of-Over-400-Diseases>Common and Rare Fundus Diseases Identification Using Vision-Language Foundation Model with Knowledge of Over 400 Diseases</a></li>
+        <li><a href=#Reducing-Task-Discrepancy-of-Text-Encoders-for-Zero-Shot-Composed-Image-Retrieval>Reducing Task Discrepancy of Text Encoders for Zero-Shot Composed Image Retrieval</a></li>
+        <li><a href=#DenoiseReID:-Denoising-Model-for-Representation-Learning-of-Person-Re-Identification>DenoiseReID: Denoising Model for Representation Learning of Person Re-Identification</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#ICE-G:-Image-Conditional-Editing-of-3D-Gaussian-Splats>ICE-G: Image Conditional Editing of 3D Gaussian Splats</a></li>
-        <li><a href=#OpenObj:-Open-Vocabulary-Object-Level-Neural-Radiance-Fields-with-Fine-Grained-Understanding>OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding</a></li>
-        <li><a href=#Spatial-Annealing-Smoothing-for-Efficient-Few-shot-Neural-Rendering>Spatial Annealing Smoothing for Efficient Few-shot Neural Rendering</a></li>
-        <li><a href=#C3DAG:-Controlled-3D-Animal-Generation-using-3D-pose-guidance>C3DAG: Controlled 3D Animal Generation using 3D pose guidance</a></li>
-        <li><a href=#M-LRM:-Multi-view-Large-Reconstruction-Model>M-LRM: Multi-view Large Reconstruction Model</a></li>
+        <li><a href=#Rethinking-Score-Distillation-as-a-Bridge-Between-Image-Distributions>Rethinking Score Distillation as a Bridge Between Image Distributions</a></li>
+        <li><a href=#Preserving-Identity-with-Variational-Score-for-General-purpose-3D-Editing>Preserving Identity with Variational Score for General-purpose 3D Editing</a></li>
+        <li><a href=#Neural-NeRF-Compression>Neural NeRF Compression</a></li>
+        <li><a href=#AV-GS:-Learning-Material-and-Geometry-Aware-Priors-for-Novel-View-Acoustic-Synthesis>AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis</a></li>
+        <li><a href=#NeRF-Director:-Revisiting-View-Selection-in-Neural-Volume-Rendering>NeRF Director: Revisiting View Selection in Neural Volume Rendering</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [From Variance to Veracity: Unbundling and Mitigating Gradient Variance in Differentiable Bundle Adjustment Layers](http://arxiv.org/abs/2406.07785)  
-Swaminathan Gurumurthy, Karnik Ram, Bingqing Chen, Zachary Manchester, Zico Kolter  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Various pose estimation and tracking problems in robotics can be decomposed into a correspondence estimation problem (often computed using a deep network) followed by a weighted least squares optimization problem to solve for the poses. Recent work has shown that coupling the two problems by iteratively refining one conditioned on the other's output yields SOTA results across domains. However, training these models has proved challenging, requiring a litany of tricks to stabilize and speed up training. In this work, we take the visual odometry problem as an example and identify three plausible causes: (1) flow loss interference, (2) linearization errors in the bundle adjustment (BA) layer, and (3) dependence of weight gradients on the BA residual. We show how these issues result in noisy and higher variance gradients, potentially leading to a slow down in training and instabilities. We then propose a simple, yet effective solution to reduce the gradient variance by using the weights predicted by the network in the inner optimization loop to weight the correspondence objective in the training problem. This helps the training objective `focus' on the more important points, thereby reducing the variance and mitigating the influence of outliers. We show that the resulting method leads to faster training and can be more flexibly trained in varying training setups without sacrificing performance. In particular we show $2$--$2.5\times$ training speedups over a baseline visual odometry model we modify.  
-  </ol>  
-</details>  
-**comments**: Accepted at CVPR 2024  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Self-supervised Learning of Neural Implicit Feature Fields for Camera Pose Refinement](http://arxiv.org/abs/2406.08463)  
-Maxime Pietrantoni, Gabriela Csurka, Martin Humenberger, Torsten Sattler  
+### [Common and Rare Fundus Diseases Identification Using Vision-Language Foundation Model with Knowledge of Over 400 Diseases](http://arxiv.org/abs/2406.09317)  
+Meng Wang, Tian Lin, Kai Yu, Aidi Lin, Yuanyuan Peng, Lianyu Wang, Cheng Chen, Ke Zou, Huiyu Liang, Man Chen, Xue Yao, Meiqin Zhang, Binwei Huang, Chaoxin Zheng, Wei Chen, Yilong Luo, Yifan Chen, Jingcheng Wang, Yih Chung Tham, Dianbo Liu, Wendy Wong, Sahil Thakur, Beau Fenner, Yanda Meng, Yukun Zhou, Zehua Jiang, Minghui Qiu, Changqing Zhang, Xinjian Chen, Sophia Y. Wang, Cecilia S. Lee, Lucia Sobrin, Pearse A. Keane, Ching-Yu Cheng, Haoyu Chen, Huazhu Fu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual localization techniques rely upon some underlying scene representation to localize against. These representations can be explicit such as 3D SFM map or implicit, such as a neural network that learns to encode the scene. The former requires sparse feature extractors and matchers to build the scene representation. The latter might lack geometric grounding not capturing the 3D structure of the scene well enough. This paper proposes to jointly learn the scene representation along with a 3D dense feature field and a 2D feature extractor whose outputs are embedded in the same metric space. Through a contrastive framework we align this volumetric field with the image-based extractor and regularize the latter with a ranking loss from learned surface information. We learn the underlying geometry of the scene with an implicit field through volumetric rendering and design our feature field to leverage intermediate geometric information encoded in the implicit field. The resulting features are discriminative and robust to viewpoint change while maintaining rich encoded information. Visual localization is then achieved by aligning the image-based features and the rendered volumetric features. We show the effectiveness of our approach on real-world scenes, demonstrating that our approach outperforms prior and concurrent work on leveraging implicit scene representations for localization.  
+    The current retinal artificial intelligence models were trained using data with a limited category of diseases and limited knowledge. In this paper, we present a retinal vision-language foundation model (RetiZero) with knowledge of over 400 fundus diseases. Specifically, we collected 341,896 fundus images paired with text descriptions from 29 publicly available datasets, 180 ophthalmic books, and online resources, encompassing over 400 fundus diseases across multiple countries and ethnicities. RetiZero achieved outstanding performance across various downstream tasks, including zero-shot retinal disease recognition, image-to-image retrieval, internal domain and cross-domain retinal disease classification, and few-shot fine-tuning. Specially, in the zero-shot scenario, RetiZero achieved a Top5 score of 0.8430 and 0.7561 on 15 and 52 fundus diseases respectively. In the image-retrieval task, RetiZero achieved a Top5 score of 0.9500 and 0.8860 on 15 and 52 retinal diseases respectively. Furthermore, clinical evaluations by ophthalmology experts from different countries demonstrate that RetiZero can achieve performance comparable to experienced ophthalmologists using zero-shot and image retrieval methods without requiring model retraining. These capabilities of retinal disease identification strengthen our RetiZero foundation model in clinical implementation.  
   </ol>  
 </details>  
-**comments**: Published in 3DV24 (highlight)  
   
-### [ConceptHash: Interpretable Fine-Grained Hashing via Concept Discovery](http://arxiv.org/abs/2406.08457)  
-[[code](https://github.com/kamwoh/concepthash)]  
-Kam Woh Ng, Xiatian Zhu, Yi-Zhe Song, Tao Xiang  
+### [Reducing Task Discrepancy of Text Encoders for Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2406.09188)  
+Jaeseok Byun, Seokhyeon Jeong, Wonjae Kim, Sanghyuk Chun, Taesup Moon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Existing fine-grained hashing methods typically lack code interpretability as they compute hash code bits holistically using both global and local features. To address this limitation, we propose ConceptHash, a novel method that achieves sub-code level interpretability. In ConceptHash, each sub-code corresponds to a human-understandable concept, such as an object part, and these concepts are automatically discovered without human annotations. Specifically, we leverage a Vision Transformer architecture and introduce concept tokens as visual prompts, along with image patch tokens as model inputs. Each concept is then mapped to a specific sub-code at the model output, providing natural sub-code interpretability. To capture subtle visual differences among highly similar sub-categories (e.g., bird species), we incorporate language guidance to ensure that the learned hash codes are distinguishable within fine-grained object classes while maintaining semantic alignment. This approach allows us to develop hash codes that exhibit similarity within families of species while remaining distinct from species in other families. Extensive experiments on four fine-grained image retrieval benchmarks demonstrate that ConceptHash outperforms previous methods by a significant margin, offering unique sub-code interpretability as an additional benefit. Code at: https://github.com/kamwoh/concepthash.  
+    Composed Image Retrieval (CIR) aims to retrieve a target image based on a reference image and conditioning text, enabling controllable searches. Due to the expensive dataset construction cost for CIR triplets, a zero-shot (ZS) CIR setting has been actively studied to eliminate the need for human-collected triplet datasets. The mainstream of ZS-CIR employs an efficient projection module that projects a CLIP image embedding to the CLIP text token embedding space, while fixing the CLIP encoders. Using the projected image embedding, these methods generate image-text composed features by using the pre-trained text encoder. However, their CLIP image and text encoders suffer from the task discrepancy between the pre-training task (text $\leftrightarrow$ image) and the target CIR task (image + text $\leftrightarrow$ image). Conceptually, we need expensive triplet samples to reduce the discrepancy, but we use cheap text triplets instead and update the text encoder. To that end, we introduce the Reducing Task Discrepancy of text encoders for Composed Image Retrieval (RTD), a plug-and-play training scheme for the text encoder that enhances its capability using a novel target-anchored text contrastive learning. We also propose two additional techniques to improve the proposed learning scheme: a hard negatives-based refined batch sampling strategy and a sophisticated concatenation scheme. Integrating RTD into the state-of-the-art projection-based ZS-CIR methods significantly improves performance across various datasets and backbones, demonstrating its efficiency and generalizability.  
   </ol>  
 </details>  
-**comments**: CVPRW 2024 - FGVC11 best paper award  
+**comments**: 17 pages  
+  
+### [DenoiseReID: Denoising Model for Representation Learning of Person Re-Identification](http://arxiv.org/abs/2406.08773)  
+Zhengrui Xu, Guan'an Wang, Xiaowen Huang, Jitao Sang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper, we propose a novel Denoising Model for Representation Learning and take Person Re-Identification (ReID) as a benchmark task, named DenoiseReID, to improve feature discriminative with joint feature extraction and denoising. In the deep learning epoch, backbones which consists of cascaded embedding layers (e.g. convolutions or transformers) to progressively extract useful features, becomes popular. We first view each embedding layer in a backbone as a denoising layer, processing the cascaded embedding layers as if we are recursively denoise features step-by-step. This unifies the frameworks of feature extraction and feature denoising, where the former progressively embeds features from low-level to high-level, and the latter recursively denoises features step-by-step. Then we design a novel Feature Extraction and Feature Denoising Fusion Algorithm (FEFDFA) and \textit{theoretically demonstrate} its equivalence before and after fusion. FEFDFA merges parameters of the denoising layers into existing embedding layers, thus making feature denoising computation-free. This is a label-free algorithm to incrementally improve feature also complementary to the label if available. Besides, it enjoys two advantages: 1) it's a computation-free and label-free plugin for incrementally improving ReID features. 2) it is complementary to the label if the label is available. Experimental results on various tasks (large-scale image classification, fine-grained image classification, image retrieval) and backbones (transformers and convolutions) show the scalability and stability of our method. Experimental results on 4 ReID datasets and various of backbones show the stability and impressive improvements. We also extend the proposed method to large-scale (ImageNet) and fine-grained (e.g. CUB200) classification tasks, similar improvements are proven.  
+  </ol>  
+</details>  
   
   
 
@@ -69,54 +56,54 @@ Kam Woh Ng, Xiatian Zhu, Yi-Zhe Song, Tao Xiang
 
 ## NeRF  
 
-### [ICE-G: Image Conditional Editing of 3D Gaussian Splats](http://arxiv.org/abs/2406.08488)  
-Vishnu Jaganathan, Hannah Hanyun Huang, Muhammad Zubair Irshad, Varun Jampani, Amit Raj, Zsolt Kira  
+### [Rethinking Score Distillation as a Bridge Between Image Distributions](http://arxiv.org/abs/2406.09417)  
+David McAllister, Songwei Ge, Jia-Bin Huang, David W. Jacobs, Alexei A. Efros, Aleksander Holynski, Angjoo Kanazawa  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recently many techniques have emerged to create high quality 3D assets and scenes. When it comes to editing of these objects, however, existing approaches are either slow, compromise on quality, or do not provide enough customization. We introduce a novel approach to quickly edit a 3D model from a single reference view. Our technique first segments the edit image, and then matches semantically corresponding regions across chosen segmented dataset views using DINO features. A color or texture change from a particular region of the edit image can then be applied to other views automatically in a semantically sensible manner. These edited views act as an updated dataset to further train and re-style the 3D scene. The end-result is therefore an edited 3D model. Our framework enables a wide variety of editing tasks such as manual local edits, correspondence based style transfer from any example image, and a combination of different styles from multiple example images. We use Gaussian Splats as our primary 3D representation due to their speed and ease of local editing, but our technique works for other methods such as NeRFs as well. We show through multiple examples that our method produces higher quality results while offering fine-grained control of editing. Project page: ice-gaussian.github.io  
+    Score distillation sampling (SDS) has proven to be an important tool, enabling the use of large-scale diffusion priors for tasks operating in data-poor domains. Unfortunately, SDS has a number of characteristic artifacts that limit its usefulness in general-purpose applications. In this paper, we make progress toward understanding the behavior of SDS and its variants by viewing them as solving an optimal-cost transport path from a source distribution to a target distribution. Under this new interpretation, these methods seek to transport corrupted images (source) to the natural image distribution (target). We argue that current methods' characteristic artifacts are caused by (1) linear approximation of the optimal path and (2) poor estimates of the source distribution. We show that calibrating the text conditioning of the source distribution can produce high-quality generation and translation results with little extra overhead. Our method can be easily applied across many domains, matching or beating the performance of specialized methods. We demonstrate its utility in text-to-2D, text-based NeRF optimization, translating paintings to real images, optical illusion generation, and 3D sketch-to-real. We compare our method to existing approaches for score distillation sampling and show that it can produce high-frequency details with realistic colors.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR AI4CC Workshop 2024. Project page:
-  https://ice-gaussian.github.io  
+**comments**: Project webpage: https://sds-bridge.github.io/  
   
-### [OpenObj: Open-Vocabulary Object-Level Neural Radiance Fields with Fine-Grained Understanding](http://arxiv.org/abs/2406.08009)  
-[[code](https://github.com/BIT-DYN/OpenObj)]  
-Yinan Deng, Jiahui Wang, Jingyu Zhao, Jianyu Dou, Yi Yang, Yufeng Yue  
+### [Preserving Identity with Variational Score for General-purpose 3D Editing](http://arxiv.org/abs/2406.08953)  
+Duong H. Le, Tuan Pham, Aniruddha Kembhavi, Stephan Mandt, Wei-Chiu Ma, Jiasen Lu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In recent years, there has been a surge of interest in open-vocabulary 3D scene reconstruction facilitated by visual language models (VLMs), which showcase remarkable capabilities in open-set retrieval. However, existing methods face some limitations: they either focus on learning point-wise features, resulting in blurry semantic understanding, or solely tackle object-level reconstruction, thereby overlooking the intricate details of the object's interior. To address these challenges, we introduce OpenObj, an innovative approach to build open-vocabulary object-level Neural Radiance Fields (NeRF) with fine-grained understanding. In essence, OpenObj establishes a robust framework for efficient and watertight scene modeling and comprehension at the object-level. Moreover, we incorporate part-level features into the neural fields, enabling a nuanced representation of object interiors. This approach captures object-level instances while maintaining a fine-grained understanding. The results on multiple datasets demonstrate that OpenObj achieves superior performance in zero-shot semantic segmentation and retrieval tasks. Additionally, OpenObj supports real-world robotics tasks at multiple scales, including global movement and local manipulation.  
+    We present Piva (Preserving Identity with Variational Score Distillation), a novel optimization-based method for editing images and 3D models based on diffusion models. Specifically, our approach is inspired by the recently proposed method for 2D image editing - Delta Denoising Score (DDS). We pinpoint the limitations in DDS for 2D and 3D editing, which causes detail loss and over-saturation. To address this, we propose an additional score distillation term that enforces identity preservation. This results in a more stable editing process, gradually optimizing NeRF models to match target prompts while retaining crucial input characteristics. We demonstrate the effectiveness of our approach in zero-shot image and neural field editing. Our method successfully alters visual attributes, adds both subtle and substantial structural elements, translates shapes, and achieves competitive results on standard 2D and 3D editing benchmarks. Additionally, our method imposes no constraints like masking or pre-training, making it compatible with a wide range of pre-trained diffusion models. This allows for versatile editing without needing neural field-to-mesh conversion, offering a more user-friendly experience.  
   </ol>  
 </details>  
-**comments**: 8 pages, 7figures. Project Url: https://openobj.github.io/  
+**comments**: 22 pages, 14 figures  
   
-### [Spatial Annealing Smoothing for Efficient Few-shot Neural Rendering](http://arxiv.org/abs/2406.07828)  
-Yuru Xiao, Xianming Liu, Deming Zhai, Kui Jiang, Junjun Jiang, Xiangyang Ji  
+### [Neural NeRF Compression](http://arxiv.org/abs/2406.08943)  
+Tuan Pham, Stephan Mandt  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) with hybrid representations have shown impressive capabilities in reconstructing scenes for view synthesis, delivering high efficiency. Nonetheless, their performance significantly drops with sparse view inputs, due to the issue of overfitting. While various regularization strategies have been devised to address these challenges, they often depend on inefficient assumptions or are not compatible with hybrid models. There is a clear need for a method that maintains efficiency and improves resilience to sparse views within a hybrid framework. In this paper, we introduce an accurate and efficient few-shot neural rendering method named Spatial Annealing smoothing regularized NeRF (SANeRF), which is specifically designed for a pre-filtering-driven hybrid representation architecture. We implement an exponential reduction of the sample space size from an initially large value. This methodology is crucial for stabilizing the early stages of the training phase and significantly contributes to the enhancement of the subsequent process of detail refinement. Our extensive experiments reveal that, by adding merely one line of code, SANeRF delivers superior rendering quality and much faster reconstruction speed compared to current few-shot NeRF methods. Notably, SANeRF outperforms FreeNeRF by 0.3 dB in PSNR on the Blender dataset, while achieving 700x faster reconstruction speed.  
+    Neural Radiance Fields (NeRFs) have emerged as powerful tools for capturing detailed 3D scenes through continuous volumetric representations. Recent NeRFs utilize feature grids to improve rendering quality and speed; however, these representations introduce significant storage overhead. This paper presents a novel method for efficiently compressing a grid-based NeRF model, addressing the storage overhead concern. Our approach is based on the non-linear transform coding paradigm, employing neural compression for compressing the model's feature grids. Due to the lack of training data involving many i.i.d scenes, we design an encoder-free, end-to-end optimized approach for individual scenes, using lightweight decoders. To leverage the spatial inhomogeneity of the latent feature grids, we introduce an importance-weighted rate-distortion objective and a sparse entropy model employing a masking mechanism. Our experimental results validate that our proposed method surpasses existing works in terms of grid-based NeRF compression efficacy and reconstruction quality.  
+  </ol>  
+</details>  
+**comments**: Accepted to ICML 2024  
+  
+### [AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis](http://arxiv.org/abs/2406.08920)  
+Swapnil Bhosale, Haosen Yang, Diptesh Kanojia, Jiankang Deng, Xiatian Zhu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Novel view acoustic synthesis (NVAS) aims to render binaural audio at any target viewpoint, given a mono audio emitted by a sound source at a 3D scene. Existing methods have proposed NeRF-based implicit models to exploit visual cues as a condition for synthesizing binaural audio. However, in addition to low efficiency originating from heavy NeRF rendering, these methods all have a limited ability of characterizing the entire scene environment such as room geometry, material properties, and the spatial relation between the listener and sound source. To address these issues, we propose a novel Audio-Visual Gaussian Splatting (AV-GS) model. To obtain a material-aware and geometry-aware condition for audio synthesis, we learn an explicit point-based scene representation with an audio-guidance parameter on locally initialized Gaussian points, taking into account the space relation from the listener and sound source. To make the visual scene model audio adaptive, we propose a point densification and pruning strategy to optimally distribute the Gaussian points, with the per-point contribution in sound propagation (e.g., more points needed for texture-less wall surfaces as they affect sound path diversion). Extensive experiments validate the superiority of our AV-GS over existing alternatives on the real-world RWAS and simulation-based SoundSpaces datasets.  
   </ol>  
 </details>  
   
-### [C3DAG: Controlled 3D Animal Generation using 3D pose guidance](http://arxiv.org/abs/2406.07742)  
-Sandeep Mishra, Oindrila Saha, Alan C. Bovik  
+### [NeRF Director: Revisiting View Selection in Neural Volume Rendering](http://arxiv.org/abs/2406.08839)  
+Wenhui Xiao, Rodrigo Santa Cruz, David Ahmedt-Aristizabal, Olivier Salvado, Clinton Fookes, Leo Lebrat  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in text-to-3D generation have demonstrated the ability to generate high quality 3D assets. However while generating animals these methods underperform, often portraying inaccurate anatomy and geometry. Towards ameliorating this defect, we present C3DAG, a novel pose-Controlled text-to-3D Animal Generation framework which generates a high quality 3D animal consistent with a given pose. We also introduce an automatic 3D shape creator tool, that allows dynamic pose generation and modification via a web-based tool, and that generates a 3D balloon animal using simple geometries. A NeRF is then initialized using this 3D shape using depth-controlled SDS. In the next stage, the pre-trained NeRF is fine-tuned using quadruped-pose-controlled SDS. The pipeline that we have developed not only produces geometrically and anatomically consistent results, but also renders highly controlled 3D animals, unlike prior methods which do not allow fine-grained pose control.  
+    Neural Rendering representations have significantly contributed to the field of 3D computer vision. Given their potential, considerable efforts have been invested to improve their performance. Nonetheless, the essential question of selecting training views is yet to be thoroughly investigated. This key aspect plays a vital role in achieving high-quality results and aligns with the well-known tenet of deep learning: "garbage in, garbage out". In this paper, we first illustrate the importance of view selection by demonstrating how a simple rotation of the test views within the most pervasive NeRF dataset can lead to consequential shifts in the performance rankings of state-of-the-art techniques. To address this challenge, we introduce a unified framework for view selection methods and devise a thorough benchmark to assess its impact. Significant improvements can be achieved without leveraging error or uncertainty estimation but focusing on uniform view coverage of the reconstructed object, resulting in a training-free approach. Using this technique, we show that high-quality renderings can be achieved faster by using fewer views. We conduct extensive experiments on both synthetic datasets and realistic data to demonstrate the effectiveness of our proposed method compared with random, conventional error-based, and uncertainty-guided view selection.  
   </ol>  
 </details>  
-  
-### [M-LRM: Multi-view Large Reconstruction Model](http://arxiv.org/abs/2406.07648)  
-Mengfei Li, Xiaoxiao Long, Yixun Liang, Weiyu Li, Yuan Liu, Peng Li, Xiaowei Chi, Xingqun Qi, Wei Xue, Wenhan Luo, Qifeng Liu, Yike Guo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Despite recent advancements in the Large Reconstruction Model (LRM) demonstrating impressive results, when extending its input from single image to multiple images, it exhibits inefficiencies, subpar geometric and texture quality, as well as slower convergence speed than expected.   It is attributed to that, LRM formulates 3D reconstruction as a naive images-to-3D translation problem, ignoring the strong 3D coherence among the input images. In this paper, we propose a Multi-view Large Reconstruction Model (M-LRM) designed to efficiently reconstruct high-quality 3D shapes from multi-views in a 3D-aware manner. Specifically, we introduce a multi-view consistent cross-attention scheme to enable M-LRM to accurately query information from the input images. Moreover, we employ the 3D priors of the input multi-view images to initialize the tri-plane tokens. Compared to LRM, the proposed M-LRM can produce a tri-plane NeRF with $128 \times 128$ resolution and generate 3D shapes of high fidelity. Experimental studies demonstrate that our model achieves a significant performance gain and faster training convergence than LRM. Project page: https://murphylmf.github.io/M-LRM/  
-  </ol>  
-</details>  
+**comments**: CVPR2024  
   
   
 
