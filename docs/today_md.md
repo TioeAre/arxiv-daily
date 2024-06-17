@@ -3,18 +3,22 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Common-and-Rare-Fundus-Diseases-Identification-Using-Vision-Language-Foundation-Model-with-Knowledge-of-Over-400-Diseases>Common and Rare Fundus Diseases Identification Using Vision-Language Foundation Model with Knowledge of Over 400 Diseases</a></li>
-        <li><a href=#Reducing-Task-Discrepancy-of-Text-Encoders-for-Zero-Shot-Composed-Image-Retrieval>Reducing Task Discrepancy of Text Encoders for Zero-Shot Composed Image Retrieval</a></li>
-        <li><a href=#DenoiseReID:-Denoising-Model-for-Representation-Learning-of-Person-Re-Identification>DenoiseReID: Denoising Model for Representation Learning of Person Re-Identification</a></li>
+        <li><a href=#Annotation-Cost-Efficient-Active-Learning-for-Deep-Metric-Learning-Driven-Remote-Sensing-Image-Retrieval>Annotation Cost-Efficient Active Learning for Deep Metric Learning Driven Remote Sensing Image Retrieval</a></li>
+        <li><a href=#BiVLC:-Extending-Vision-Language-Compositionality-Evaluation-with-Text-to-Image-Retrieval>BiVLC: Extending Vision-Language Compositionality Evaluation with Text-to-Image Retrieval</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Grounding-Image-Matching-in-3D-with-MASt3R>Grounding Image Matching in 3D with MASt3R</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Rethinking-Score-Distillation-as-a-Bridge-Between-Image-Distributions>Rethinking Score Distillation as a Bridge Between Image Distributions</a></li>
-        <li><a href=#Preserving-Identity-with-Variational-Score-for-General-purpose-3D-Editing>Preserving Identity with Variational Score for General-purpose 3D Editing</a></li>
-        <li><a href=#Neural-NeRF-Compression>Neural NeRF Compression</a></li>
-        <li><a href=#AV-GS:-Learning-Material-and-Geometry-Aware-Priors-for-Novel-View-Acoustic-Synthesis>AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis</a></li>
-        <li><a href=#NeRF-Director:-Revisiting-View-Selection-in-Neural-Volume-Rendering>NeRF Director: Revisiting View Selection in Neural Volume Rendering</a></li>
+        <li><a href=#PUP-3D-GS:-Principled-Uncertainty-Pruning-for-3D-Gaussian-Splatting>PUP 3D-GS: Principled Uncertainty Pruning for 3D Gaussian Splatting</a></li>
+        <li><a href=#GaussianSR:-3D-Gaussian-Super-Resolution-with-2D-Diffusion-Priors>GaussianSR: 3D Gaussian Super-Resolution with 2D Diffusion Priors</a></li>
+        <li><a href=#OrientDream:-Streamlining-Text-to-3D-Generation-with-Explicit-Orientation-Control>OrientDream: Streamlining Text-to-3D Generation with Explicit Orientation Control</a></li>
+        <li><a href=#dGrasp:-NeRF-Informed-Implicit-Grasp-Policies-with-Supervised-Optimization-Slopes>dGrasp: NeRF-Informed Implicit Grasp Policies with Supervised Optimization Slopes</a></li>
+        <li><a href=#RaNeuS:-Ray-adaptive-Neural-Surface-Reconstruction>RaNeuS: Ray-adaptive Neural Surface Reconstruction</a></li>
       </ul>
     </li>
   </ol>
@@ -22,31 +26,38 @@
 
 ## Visual Localization  
 
-### [Common and Rare Fundus Diseases Identification Using Vision-Language Foundation Model with Knowledge of Over 400 Diseases](http://arxiv.org/abs/2406.09317)  
-Meng Wang, Tian Lin, Kai Yu, Aidi Lin, Yuanyuan Peng, Lianyu Wang, Cheng Chen, Ke Zou, Huiyu Liang, Man Chen, Xue Yao, Meiqin Zhang, Binwei Huang, Chaoxin Zheng, Wei Chen, Yilong Luo, Yifan Chen, Jingcheng Wang, Yih Chung Tham, Dianbo Liu, Wendy Wong, Sahil Thakur, Beau Fenner, Yanda Meng, Yukun Zhou, Zehua Jiang, Minghui Qiu, Changqing Zhang, Xinjian Chen, Sophia Y. Wang, Cecilia S. Lee, Lucia Sobrin, Pearse A. Keane, Ching-Yu Cheng, Haoyu Chen, Huazhu Fu  
+### [Annotation Cost-Efficient Active Learning for Deep Metric Learning Driven Remote Sensing Image Retrieval](http://arxiv.org/abs/2406.10107)  
+Genc Hoxha, Gencer Sumbul, Julia Henkel, Lars Möllenbrok, Begüm Demir  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The current retinal artificial intelligence models were trained using data with a limited category of diseases and limited knowledge. In this paper, we present a retinal vision-language foundation model (RetiZero) with knowledge of over 400 fundus diseases. Specifically, we collected 341,896 fundus images paired with text descriptions from 29 publicly available datasets, 180 ophthalmic books, and online resources, encompassing over 400 fundus diseases across multiple countries and ethnicities. RetiZero achieved outstanding performance across various downstream tasks, including zero-shot retinal disease recognition, image-to-image retrieval, internal domain and cross-domain retinal disease classification, and few-shot fine-tuning. Specially, in the zero-shot scenario, RetiZero achieved a Top5 score of 0.8430 and 0.7561 on 15 and 52 fundus diseases respectively. In the image-retrieval task, RetiZero achieved a Top5 score of 0.9500 and 0.8860 on 15 and 52 retinal diseases respectively. Furthermore, clinical evaluations by ophthalmology experts from different countries demonstrate that RetiZero can achieve performance comparable to experienced ophthalmologists using zero-shot and image retrieval methods without requiring model retraining. These capabilities of retinal disease identification strengthen our RetiZero foundation model in clinical implementation.  
+    Deep metric learning (DML) has shown to be very effective for content-based image retrieval (CBIR) in remote sensing (RS). Most of DML methods for CBIR rely on many annotated images to accurately learn model parameters of deep neural networks. However, gathering many image annotations is time consuming and costly. To address this, we propose an annotation cost-efficient active learning (ANNEAL) method specifically designed for DML driven CBIR in RS. ANNEAL aims to create a small but informative training set made up of similar and dissimilar image pairs to be utilized for learning a deep metric space. The informativeness of the image pairs is assessed combining uncertainty and diversity criteria. To assess the uncertainty of image pairs, we introduce two algorithms: 1) metric-guided uncertainty estimation (MGUE); and 2) binary classifier guided uncertainty estimation (BCGUE). MGUE automatically estimates a threshold value that acts as a "boundary" between similar and dissimilar image pairs based on the distances in the metric space. The closer the similarity between image pairs to the estimated threshold value the higher their uncertainty. BCGUE estimates the uncertainty of the image pairs based on the confidence of the classifier in assigning the correct similarity label. The diversity criterion is assessed through a clustering-based strategy. ANNEAL selects the most informative image pairs by combining either MGUE or BCGUE with clustering-based strategy. The selected image pairs are sent to expert annotators to be labeled as similar or dissimilar. This way of annotating images significantly reduces the annotation cost compared to the cost of annotating images with LULC labels. Experimental results carried out on two RS benchmark datasets demonstrate the effectiveness of our method. The code of the proposed method will be publicly available upon the acceptance of the paper.  
+  </ol>  
+</details>  
+**comments**: Submitted to IEEE Transactions on Geoscience and Remote Sensing  
+  
+### [BiVLC: Extending Vision-Language Compositionality Evaluation with Text-to-Image Retrieval](http://arxiv.org/abs/2406.09952)  
+[[code](https://github.com/imirandam/bivlc)]  
+Imanol Miranda, Ander Salaberria, Eneko Agirre, Gorka Azkune  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Existing Vision-Language Compositionality (VLC) benchmarks like SugarCrepe are formulated as image-to-text retrieval problems, where, given an image, the models need to select between the correct textual description and a synthetic hard negative text. In this work we present the Bidirectional Vision-Language Compositionality (BiVLC) dataset. The novelty of BiVLC is to add a synthetic hard negative image generated from the synthetic text, resulting in two image-to-text retrieval examples (one for each image) and, more importantly, two text-to-image retrieval examples (one for each text). Human annotators filter out ill-formed examples ensuring the validity of the benchmark. The experiments on BiVLC uncover a weakness of current multimodal models, as they perform poorly in the text-to-image direction. In fact, when considering both retrieval directions, the conclusions obtained in previous works change significantly. In addition to the benchmark, we show that a contrastive model trained using synthetic images and texts improves the state of the art in SugarCrepe and in BiVLC for both retrieval directions. The gap to human performance in BiVLC confirms that Vision-Language Compositionality is still a challenging problem. BiVLC and code are available at https://imirandam.github.io/BiVLC_project_page.  
   </ol>  
 </details>  
   
-### [Reducing Task Discrepancy of Text Encoders for Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2406.09188)  
-Jaeseok Byun, Seokhyeon Jeong, Wonjae Kim, Sanghyuk Chun, Taesup Moon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) aims to retrieve a target image based on a reference image and conditioning text, enabling controllable searches. Due to the expensive dataset construction cost for CIR triplets, a zero-shot (ZS) CIR setting has been actively studied to eliminate the need for human-collected triplet datasets. The mainstream of ZS-CIR employs an efficient projection module that projects a CLIP image embedding to the CLIP text token embedding space, while fixing the CLIP encoders. Using the projected image embedding, these methods generate image-text composed features by using the pre-trained text encoder. However, their CLIP image and text encoders suffer from the task discrepancy between the pre-training task (text $\leftrightarrow$ image) and the target CIR task (image + text $\leftrightarrow$ image). Conceptually, we need expensive triplet samples to reduce the discrepancy, but we use cheap text triplets instead and update the text encoder. To that end, we introduce the Reducing Task Discrepancy of text encoders for Composed Image Retrieval (RTD), a plug-and-play training scheme for the text encoder that enhances its capability using a novel target-anchored text contrastive learning. We also propose two additional techniques to improve the proposed learning scheme: a hard negatives-based refined batch sampling strategy and a sophisticated concatenation scheme. Integrating RTD into the state-of-the-art projection-based ZS-CIR methods significantly improves performance across various datasets and backbones, demonstrating its efficiency and generalizability.  
-  </ol>  
-</details>  
-**comments**: 17 pages  
   
-### [DenoiseReID: Denoising Model for Representation Learning of Person Re-Identification](http://arxiv.org/abs/2406.08773)  
-Zhengrui Xu, Guan'an Wang, Xiaowen Huang, Jitao Sang  
+
+
+
+## Image Matching  
+
+### [Grounding Image Matching in 3D with MASt3R](http://arxiv.org/abs/2406.09756)  
+Vincent Leroy, Yohann Cabon, Jérôme Revaud  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we propose a novel Denoising Model for Representation Learning and take Person Re-Identification (ReID) as a benchmark task, named DenoiseReID, to improve feature discriminative with joint feature extraction and denoising. In the deep learning epoch, backbones which consists of cascaded embedding layers (e.g. convolutions or transformers) to progressively extract useful features, becomes popular. We first view each embedding layer in a backbone as a denoising layer, processing the cascaded embedding layers as if we are recursively denoise features step-by-step. This unifies the frameworks of feature extraction and feature denoising, where the former progressively embeds features from low-level to high-level, and the latter recursively denoises features step-by-step. Then we design a novel Feature Extraction and Feature Denoising Fusion Algorithm (FEFDFA) and \textit{theoretically demonstrate} its equivalence before and after fusion. FEFDFA merges parameters of the denoising layers into existing embedding layers, thus making feature denoising computation-free. This is a label-free algorithm to incrementally improve feature also complementary to the label if available. Besides, it enjoys two advantages: 1) it's a computation-free and label-free plugin for incrementally improving ReID features. 2) it is complementary to the label if the label is available. Experimental results on various tasks (large-scale image classification, fine-grained image classification, image retrieval) and backbones (transformers and convolutions) show the scalability and stability of our method. Experimental results on 4 ReID datasets and various of backbones show the stability and impressive improvements. We also extend the proposed method to large-scale (ImageNet) and fine-grained (e.g. CUB200) classification tasks, similar improvements are proven.  
+    Image Matching is a core component of all best-performing algorithms and pipelines in 3D vision. Yet despite matching being fundamentally a 3D problem, intrinsically linked to camera pose and scene geometry, it is typically treated as a 2D problem. This makes sense as the goal of matching is to establish correspondences between 2D pixel fields, but also seems like a potentially hazardous choice. In this work, we take a different stance and propose to cast matching as a 3D task with DUSt3R, a recent and powerful 3D reconstruction framework based on Transformers. Based on pointmaps regression, this method displayed impressive robustness in matching views with extreme viewpoint changes, yet with limited accuracy. We aim here to improve the matching capabilities of such an approach while preserving its robustness. We thus propose to augment the DUSt3R network with a new head that outputs dense local features, trained with an additional matching loss. We further address the issue of quadratic complexity of dense matching, which becomes prohibitively slow for downstream applications if not carefully treated. We introduce a fast reciprocal matching scheme that not only accelerates matching by orders of magnitude, but also comes with theoretical guarantees and, lastly, yields improved results. Extensive experiments show that our approach, coined MASt3R, significantly outperforms the state of the art on multiple matching tasks. In particular, it beats the best published methods by 30% (absolute improvement) in VCRE AUC on the extremely challenging Map-free localization dataset.  
   </ol>  
 </details>  
   
@@ -56,54 +67,53 @@ Zhengrui Xu, Guan'an Wang, Xiaowen Huang, Jitao Sang
 
 ## NeRF  
 
-### [Rethinking Score Distillation as a Bridge Between Image Distributions](http://arxiv.org/abs/2406.09417)  
-David McAllister, Songwei Ge, Jia-Bin Huang, David W. Jacobs, Alexei A. Efros, Aleksander Holynski, Angjoo Kanazawa  
+### [PUP 3D-GS: Principled Uncertainty Pruning for 3D Gaussian Splatting](http://arxiv.org/abs/2406.10219)  
+Alex Hanson, Allen Tu, Vasu Singla, Mayuka Jayawardhana, Matthias Zwicker, Tom Goldstein  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Score distillation sampling (SDS) has proven to be an important tool, enabling the use of large-scale diffusion priors for tasks operating in data-poor domains. Unfortunately, SDS has a number of characteristic artifacts that limit its usefulness in general-purpose applications. In this paper, we make progress toward understanding the behavior of SDS and its variants by viewing them as solving an optimal-cost transport path from a source distribution to a target distribution. Under this new interpretation, these methods seek to transport corrupted images (source) to the natural image distribution (target). We argue that current methods' characteristic artifacts are caused by (1) linear approximation of the optimal path and (2) poor estimates of the source distribution. We show that calibrating the text conditioning of the source distribution can produce high-quality generation and translation results with little extra overhead. Our method can be easily applied across many domains, matching or beating the performance of specialized methods. We demonstrate its utility in text-to-2D, text-based NeRF optimization, translating paintings to real images, optical illusion generation, and 3D sketch-to-real. We compare our method to existing approaches for score distillation sampling and show that it can produce high-frequency details with realistic colors.  
-  </ol>  
-</details>  
-**comments**: Project webpage: https://sds-bridge.github.io/  
-  
-### [Preserving Identity with Variational Score for General-purpose 3D Editing](http://arxiv.org/abs/2406.08953)  
-Duong H. Le, Tuan Pham, Aniruddha Kembhavi, Stephan Mandt, Wei-Chiu Ma, Jiasen Lu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present Piva (Preserving Identity with Variational Score Distillation), a novel optimization-based method for editing images and 3D models based on diffusion models. Specifically, our approach is inspired by the recently proposed method for 2D image editing - Delta Denoising Score (DDS). We pinpoint the limitations in DDS for 2D and 3D editing, which causes detail loss and over-saturation. To address this, we propose an additional score distillation term that enforces identity preservation. This results in a more stable editing process, gradually optimizing NeRF models to match target prompts while retaining crucial input characteristics. We demonstrate the effectiveness of our approach in zero-shot image and neural field editing. Our method successfully alters visual attributes, adds both subtle and substantial structural elements, translates shapes, and achieves competitive results on standard 2D and 3D editing benchmarks. Additionally, our method imposes no constraints like masking or pre-training, making it compatible with a wide range of pre-trained diffusion models. This allows for versatile editing without needing neural field-to-mesh conversion, offering a more user-friendly experience.  
-  </ol>  
-</details>  
-**comments**: 22 pages, 14 figures  
-  
-### [Neural NeRF Compression](http://arxiv.org/abs/2406.08943)  
-Tuan Pham, Stephan Mandt  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRFs) have emerged as powerful tools for capturing detailed 3D scenes through continuous volumetric representations. Recent NeRFs utilize feature grids to improve rendering quality and speed; however, these representations introduce significant storage overhead. This paper presents a novel method for efficiently compressing a grid-based NeRF model, addressing the storage overhead concern. Our approach is based on the non-linear transform coding paradigm, employing neural compression for compressing the model's feature grids. Due to the lack of training data involving many i.i.d scenes, we design an encoder-free, end-to-end optimized approach for individual scenes, using lightweight decoders. To leverage the spatial inhomogeneity of the latent feature grids, we introduce an importance-weighted rate-distortion objective and a sparse entropy model employing a masking mechanism. Our experimental results validate that our proposed method surpasses existing works in terms of grid-based NeRF compression efficacy and reconstruction quality.  
-  </ol>  
-</details>  
-**comments**: Accepted to ICML 2024  
-  
-### [AV-GS: Learning Material and Geometry Aware Priors for Novel View Acoustic Synthesis](http://arxiv.org/abs/2406.08920)  
-Swapnil Bhosale, Haosen Yang, Diptesh Kanojia, Jiankang Deng, Xiatian Zhu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel view acoustic synthesis (NVAS) aims to render binaural audio at any target viewpoint, given a mono audio emitted by a sound source at a 3D scene. Existing methods have proposed NeRF-based implicit models to exploit visual cues as a condition for synthesizing binaural audio. However, in addition to low efficiency originating from heavy NeRF rendering, these methods all have a limited ability of characterizing the entire scene environment such as room geometry, material properties, and the spatial relation between the listener and sound source. To address these issues, we propose a novel Audio-Visual Gaussian Splatting (AV-GS) model. To obtain a material-aware and geometry-aware condition for audio synthesis, we learn an explicit point-based scene representation with an audio-guidance parameter on locally initialized Gaussian points, taking into account the space relation from the listener and sound source. To make the visual scene model audio adaptive, we propose a point densification and pruning strategy to optimally distribute the Gaussian points, with the per-point contribution in sound propagation (e.g., more points needed for texture-less wall surfaces as they affect sound path diversion). Extensive experiments validate the superiority of our AV-GS over existing alternatives on the real-world RWAS and simulation-based SoundSpaces datasets.  
+    Recent advancements in novel view synthesis have enabled real-time rendering speeds and high reconstruction accuracy. 3D Gaussian Splatting (3D-GS), a foundational point-based parametric 3D scene representation, models scenes as large sets of 3D Gaussians. Complex scenes can comprise of millions of Gaussians, amounting to large storage and memory requirements that limit the viability of 3D-GS on devices with limited resources. Current techniques for compressing these pretrained models by pruning Gaussians rely on combining heuristics to determine which ones to remove. In this paper, we propose a principled spatial sensitivity pruning score that outperforms these approaches. It is computed as a second-order approximation of the reconstruction error on the training views with respect to the spatial parameters of each Gaussian. Additionally, we propose a multi-round prune-refine pipeline that can be applied to any pretrained 3D-GS model without changing the training pipeline. After pruning 88.44% of the Gaussians, we observe that our PUP 3D-GS pipeline increases the average rendering speed of 3D-GS by 2.65 $\times$ while retaining more salient foreground information and achieving higher image quality metrics than previous pruning techniques on scenes from the Mip-NeRF 360, Tanks & Temples, and Deep Blending datasets.  
   </ol>  
 </details>  
   
-### [NeRF Director: Revisiting View Selection in Neural Volume Rendering](http://arxiv.org/abs/2406.08839)  
-Wenhui Xiao, Rodrigo Santa Cruz, David Ahmedt-Aristizabal, Olivier Salvado, Clinton Fookes, Leo Lebrat  
+### [GaussianSR: 3D Gaussian Super-Resolution with 2D Diffusion Priors](http://arxiv.org/abs/2406.10111)  
+Xiqian Yu, Hanxin Zhu, Tianyu He, Zhibo Chen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Rendering representations have significantly contributed to the field of 3D computer vision. Given their potential, considerable efforts have been invested to improve their performance. Nonetheless, the essential question of selecting training views is yet to be thoroughly investigated. This key aspect plays a vital role in achieving high-quality results and aligns with the well-known tenet of deep learning: "garbage in, garbage out". In this paper, we first illustrate the importance of view selection by demonstrating how a simple rotation of the test views within the most pervasive NeRF dataset can lead to consequential shifts in the performance rankings of state-of-the-art techniques. To address this challenge, we introduce a unified framework for view selection methods and devise a thorough benchmark to assess its impact. Significant improvements can be achieved without leveraging error or uncertainty estimation but focusing on uniform view coverage of the reconstructed object, resulting in a training-free approach. Using this technique, we show that high-quality renderings can be achieved faster by using fewer views. We conduct extensive experiments on both synthetic datasets and realistic data to demonstrate the effectiveness of our proposed method compared with random, conventional error-based, and uncertainty-guided view selection.  
+    Achieving high-resolution novel view synthesis (HRNVS) from low-resolution input views is a challenging task due to the lack of high-resolution data. Previous methods optimize high-resolution Neural Radiance Field (NeRF) from low-resolution input views but suffer from slow rendering speed. In this work, we base our method on 3D Gaussian Splatting (3DGS) due to its capability of producing high-quality images at a faster rendering speed. To alleviate the shortage of data for higher-resolution synthesis, we propose to leverage off-the-shelf 2D diffusion priors by distilling the 2D knowledge into 3D with Score Distillation Sampling (SDS). Nevertheless, applying SDS directly to Gaussian-based 3D super-resolution leads to undesirable and redundant 3D Gaussian primitives, due to the randomness brought by generative priors. To mitigate this issue, we introduce two simple yet effective techniques to reduce stochastic disturbances introduced by SDS. Specifically, we 1) shrink the range of diffusion timestep in SDS with an annealing strategy; 2) randomly discard redundant Gaussian primitives during densification. Extensive experiments have demonstrated that our proposed GaussainSR can attain high-quality results for HRNVS with only low-resolution inputs on both synthetic and real-world datasets. Project page: https://chchnii.github.io/GaussianSR/  
   </ol>  
 </details>  
-**comments**: CVPR2024  
+  
+### [OrientDream: Streamlining Text-to-3D Generation with Explicit Orientation Control](http://arxiv.org/abs/2406.10000)  
+Yuzhong Huang, Zhong Li, Zhang Chen, Zhiyuan Ren, Guosheng Lin, Fred Morstatter, Yi Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In the evolving landscape of text-to-3D technology, Dreamfusion has showcased its proficiency by utilizing Score Distillation Sampling (SDS) to optimize implicit representations such as NeRF. This process is achieved through the distillation of pretrained large-scale text-to-image diffusion models. However, Dreamfusion encounters fidelity and efficiency constraints: it faces the multi-head Janus issue and exhibits a relatively slow optimization process. To circumvent these challenges, we introduce OrientDream, a camera orientation conditioned framework designed for efficient and multi-view consistent 3D generation from textual prompts. Our strategy emphasizes the implementation of an explicit camera orientation conditioned feature in the pre-training of a 2D text-to-image diffusion module. This feature effectively utilizes data from MVImgNet, an extensive external multi-view dataset, to refine and bolster its functionality. Subsequently, we utilize the pre-conditioned 2D images as a basis for optimizing a randomly initialized implicit representation (NeRF). This process is significantly expedited by a decoupled back-propagation technique, allowing for multiple updates of implicit parameters per optimization cycle. Our experiments reveal that our method not only produces high-quality NeRF models with consistent multi-view properties but also achieves an optimization speed significantly greater than existing methods, as quantified by comparative metrics.  
+  </ol>  
+</details>  
+  
+### [dGrasp: NeRF-Informed Implicit Grasp Policies with Supervised Optimization Slopes](http://arxiv.org/abs/2406.09939)  
+Gergely Sóti, Xi Huang, Christian Wurll, Gergely Sóti  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We present dGrasp, an implicit grasp policy with an enhanced optimization landscape. This landscape is defined by a NeRF-informed grasp value function. The neural network representing this function is trained on grasp demonstrations. During training, we use an auxiliary loss to guide not only the weight updates of this network but also the update how the slope of the optimization landscape changes. This loss is computed on the demonstrated grasp trajectory and the gradients of the landscape. With second order optimization, we incorporate valuable information from the trajectory as well as facilitate the optimization process of the implicit policy. Experiments demonstrate that employing this auxiliary loss improves policies' performance in simulation as well as their zero-shot transfer to the real-world.  
+  </ol>  
+</details>  
+  
+### [RaNeuS: Ray-adaptive Neural Surface Reconstruction](http://arxiv.org/abs/2406.09801)  
+[[code](https://github.com/wangyida/ra-neus)]  
+Yida Wang, David Joseph Tan, Nassir Navab, Federico Tombari  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Our objective is to leverage a differentiable radiance field \eg NeRF to reconstruct detailed 3D surfaces in addition to producing the standard novel view renderings. There have been related methods that perform such tasks, usually by utilizing a signed distance field (SDF). However, the state-of-the-art approaches still fail to correctly reconstruct the small-scale details, such as the leaves, ropes, and textile surfaces. Considering that different methods formulate and optimize the projection from SDF to radiance field with a globally constant Eikonal regularization, we improve with a ray-wise weighting factor to prioritize the rendering and zero-crossing surface fitting on top of establishing a perfect SDF. We propose to adaptively adjust the regularization on the signed distance field so that unsatisfying rendering rays won't enforce strong Eikonal regularization which is ineffective, and allow the gradients from regions with well-learned radiance to effectively back-propagated to the SDF. Consequently, balancing the two objectives in order to generate accurate and detailed surfaces. Additionally, concerning whether there is a geometric bias between the zero-crossing surface in SDF and rendering points in the radiance field, the projection becomes adjustable as well depending on different 3D locations during optimization. Our proposed \textit{RaNeuS} are extensively evaluated on both synthetic and real datasets, achieving state-of-the-art results on both novel view synthesis and geometric reconstruction.  
+  </ol>  
+</details>  
+**comments**: 3DV 2024, oral. In: Proceedings of the IEEE/CVF International
+  Conference on 3D Vision (2023)  
   
   
 
