@@ -1,62 +1,34 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#Imperative-Learning:-A-Self-supervised-Neural-Symbolic-Learning-Framework-for-Robot-Autonomy>Imperative Learning: A Self-supervised Neural-Symbolic Learning Framework for Robot Autonomy</a></li>
-      </ul>
-    </li>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Crowd-Sourced-NeRF:-Collecting-Data-from-Production-Vehicles-for-3D-Street-View-Reconstruction>Crowd-Sourced NeRF: Collecting Data from Production Vehicles for 3D Street View Reconstruction</a></li>
+        <li><a href=#Consensus-Learning-with-Deep-Sets-for-Essential-Matrix-Estimation>Consensus Learning with Deep Sets for Essential Matrix Estimation</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Breaking-the-Frame:-Image-Retrieval-by-Visual-Overlap-Prediction>Breaking the Frame: Image Retrieval by Visual Overlap Prediction</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#A-Certifiable-Algorithm-for-Simultaneous-Shape-Estimation-and-Object-Tracking>A Certifiable Algorithm for Simultaneous Shape Estimation and Object Tracking</a></li>
+        <li><a href=#Tell-Me-Where-You-Are:-Multimodal-LLMs-Meet-Place-Recognition>Tell Me Where You Are: Multimodal LLMs Meet Place Recognition</a></li>
+        <li><a href=#SlideSLAM:-Sparse,-Lightweight,-Decentralized-Metric-Semantic-SLAM-for-Multi-Robot-Navigation>SlideSLAM: Sparse, Lightweight, Decentralized Metric-Semantic SLAM for Multi-Robot Navigation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#From-Perfect-to-Noisy-World-Simulation:-Customizable-Embodied-Multi-modal-Perturbations-for-SLAM-Robustness-Benchmarking>From Perfect to Noisy World Simulation: Customizable Embodied Multi-modal Perturbations for SLAM Robustness Benchmarking</a></li>
-        <li><a href=#Articulate-your-NeRF:-Unsupervised-articulated-object-modeling-via-conditional-view-synthesis>Articulate your NeRF: Unsupervised articulated object modeling via conditional view synthesis</a></li>
-        <li><a href=#Crowd-Sourced-NeRF:-Collecting-Data-from-Production-Vehicles-for-3D-Street-View-Reconstruction>Crowd-Sourced NeRF: Collecting Data from Production Vehicles for 3D Street View Reconstruction</a></li>
-        <li><a href=#Towards-Real-Time-Neural-Volumetric-Rendering-on-Mobile-Devices:-A-Measurement-Study>Towards Real-Time Neural Volumetric Rendering on Mobile Devices: A Measurement Study</a></li>
-        <li><a href=#Learning-with-Noisy-Ground-Truth:-From-2D-Classification-to-3D-Reconstruction>Learning with Noisy Ground Truth: From 2D Classification to 3D Reconstruction</a></li>
-        <li><a href=#psPRF:Pansharpening-Planar-Neural-Radiance-Field-for-Generalized-3D-Reconstruction-Satellite-Imagery>psPRF:Pansharpening Planar Neural Radiance Field for Generalized 3D Reconstruction Satellite Imagery</a></li>
+        <li><a href=#Implicit-Zoo:-A-Large-Scale-Dataset-of-Neural-Implicit-Functions-for-2D-Images-and-3D-Scenes>Implicit-Zoo: A Large-Scale Dataset of Neural Implicit Functions for 2D Images and 3D Scenes</a></li>
+        <li><a href=#NerfBaselines:-Consistent-and-Reproducible-Evaluation-of-Novel-View-Synthesis-Methods>NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [Imperative Learning: A Self-supervised Neural-Symbolic Learning Framework for Robot Autonomy](http://arxiv.org/abs/2406.16087)  
-Chen Wang, Kaiyi Ji, Junyi Geng, Zhongqiang Ren, Taimeng Fu, Fan Yang, Yifan Guo, Haonan He, Xiangyu Chen, Zitong Zhan, Qiwei Du, Shaoshu Su, Bowen Li, Yuheng Qiu, Yi Du, Qihang Li, Yifan Yang, Xiao Lin, Zhipeng Zhao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Data-driven methods such as reinforcement and imitation learning have achieved remarkable success in robot autonomy. However, their data-centric nature still hinders them from generalizing well to ever-changing environments. Moreover, collecting large datasets for robotic tasks is often impractical and expensive. To overcome these challenges, we introduce a new self-supervised neural-symbolic (NeSy) computational framework, imperative learning (IL), for robot autonomy, leveraging the generalization abilities of symbolic reasoning. The framework of IL consists of three primary components: a neural module, a reasoning engine, and a memory system. We formulate IL as a special bilevel optimization (BLO), which enables reciprocal learning over the three modules. This overcomes the label-intensive obstacles associated with data-driven approaches and takes advantage of symbolic reasoning concerning logical reasoning, physical principles, geometric analysis, etc. We discuss several optimization techniques for IL and verify their effectiveness in five distinct robot autonomy tasks including path planning, rule induction, optimal control, visual odometry, and multi-robot routing. Through various experiments, we show that IL can significantly enhance robot autonomy capabilities and we anticipate that it will catalyze further research across diverse domains.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## SFM  
 
-### [Crowd-Sourced NeRF: Collecting Data from Production Vehicles for 3D Street View Reconstruction](http://arxiv.org/abs/2406.16289)  
-Tong Qin, Changze Li, Haoyang Ye, Shaowei Wan, Minzhen Li, Hongwei Liu, Ming Yang  
+### [Consensus Learning with Deep Sets for Essential Matrix Estimation](http://arxiv.org/abs/2406.17414)  
+Dror Moran, Yuval Margalit, Guy Trostianetsky, Fadi Khatib, Meirav Galun, Ronen Basri  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recently, Neural Radiance Fields (NeRF) achieved impressive results in novel view synthesis. Block-NeRF showed the capability of leveraging NeRF to build large city-scale models. For large-scale modeling, a mass of image data is necessary. Collecting images from specially designed data-collection vehicles can not support large-scale applications. How to acquire massive high-quality data remains an opening problem. Noting that the automotive industry has a huge amount of image data, crowd-sourcing is a convenient way for large-scale data collection. In this paper, we present a crowd-sourced framework, which utilizes substantial data captured by production vehicles to reconstruct the scene with the NeRF model. This approach solves the key problem of large-scale reconstruction, that is where the data comes from and how to use them. Firstly, the crowd-sourced massive data is filtered to remove redundancy and keep a balanced distribution in terms of time and space. Then a structure-from-motion module is performed to refine camera poses. Finally, images, as well as poses, are used to train the NeRF model in a certain block. We highlight that we present a comprehensive framework that integrates multiple modules, including data selection, sparse 3D reconstruction, sequence appearance embedding, depth supervision of ground surface, and occlusion completion. The complete system is capable of effectively processing and reconstructing high-quality 3D scenes from crowd-sourced data. Extensive quantitative and qualitative experiments were conducted to validate the performance of our system. Moreover, we proposed an application, named first-view navigation, which leveraged the NeRF model to generate 3D street view and guide the driver with a synthesized video.  
+    Robust estimation of the essential matrix, which encodes the relative position and orientation of two cameras, is a fundamental step in structure from motion pipelines. Recent deep-based methods achieved accurate estimation by using complex network architectures that involve graphs, attention layers, and hard pruning steps. Here, we propose a simpler network architecture based on Deep Sets. Given a collection of point matches extracted from two images, our method identifies outlier point matches and models the displacement noise in inlier matches. A weighted DLT module uses these predictions to regress the essential matrix. Our network achieves accurate recovery that is superior to existing networks with significantly more complex architectures.  
   </ol>  
 </details>  
   
@@ -66,32 +38,24 @@ Tong Qin, Changze Li, Haoyang Ye, Shaowei Wan, Minzhen Li, Hongwei Liu, Ming Yan
 
 ## Visual Localization  
 
-### [Breaking the Frame: Image Retrieval by Visual Overlap Prediction](http://arxiv.org/abs/2406.16204)  
-Tong Wei, Philipp Lindenberger, Jiri Matas, Daniel Barath  
+### [Tell Me Where You Are: Multimodal LLMs Meet Place Recognition](http://arxiv.org/abs/2406.17520)  
+Zonglin Lyu, Juexiao Zhang, Mingxuan Lu, Yiming Li, Chen Feng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose a novel visual place recognition approach, VOP, that efficiently addresses occlusions and complex scenes by shifting from traditional reliance on global image similarities and local features to image overlap prediction. The proposed method enables the identification of visible image sections without requiring expensive feature detection and matching. By focusing on obtaining patch-level embeddings by a Vision Transformer backbone and establishing patch-to-patch correspondences, our approach uses a voting mechanism to assess overlap scores for potential database images, thereby providing a nuanced image retrieval metric in challenging scenarios. VOP leads to more accurate relative pose estimation and localization results on the retrieved image pairs than state-of-the-art baselines on a number of large-scale, real-world datasets. The code is available at https://github.com/weitong8591/vop.  
+    Large language models (LLMs) exhibit a variety of promising capabilities in robotics, including long-horizon planning and commonsense reasoning. However, their performance in place recognition is still underexplored. In this work, we introduce multimodal LLMs (MLLMs) to visual place recognition (VPR), where a robot must localize itself using visual observations. Our key design is to use vision-based retrieval to propose several candidates and then leverage language-based reasoning to carefully inspect each candidate for a final decision. Specifically, we leverage the robust visual features produced by off-the-shelf vision foundation models (VFMs) to obtain several candidate locations. We then prompt an MLLM to describe the differences between the current observation and each candidate in a pairwise manner, and reason about the best candidate based on these descriptions. Our results on three datasets demonstrate that integrating the general-purpose visual features from VFMs with the reasoning capabilities of MLLMs already provides an effective place recognition solution, without any VPR-specific supervised training. We believe our work can inspire new possibilities for applying and designing foundation models, i.e., VFMs, LLMs, and MLLMs, to enhance the localization and navigation of mobile robots.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Keypoint Detection  
-
-### [A Certifiable Algorithm for Simultaneous Shape Estimation and Object Tracking](http://arxiv.org/abs/2406.16837)  
-Lorenzo Shaikewitz, Samuel Ubellacker, Luca Carlone  
+### [SlideSLAM: Sparse, Lightweight, Decentralized Metric-Semantic SLAM for Multi-Robot Navigation](http://arxiv.org/abs/2406.17249)  
+Xu Liu, Jiuzhou Lei, Ankit Prabhu, Yuezhan Tao, Igor Spasojevic, Pratik Chaudhari, Nikolay Atanasov, Vijay Kumar  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Applications from manipulation to autonomous vehicles rely on robust and general object tracking to safely perform tasks in dynamic environments. We propose the first certifiably optimal category-level approach for simultaneous shape estimation and pose tracking of an object of known category (e.g. a car). Our approach uses 3D semantic keypoint measurements extracted from an RGB-D image sequence, and phrases the estimation as a fixed-lag smoothing problem. Temporal constraints enforce the object's rigidity (fixed shape) and smooth motion according to a constant-twist motion model. The solutions to this problem are the estimates of the object's state (poses, velocities) and shape (paramaterized according to the active shape model) over the smoothing horizon. Our key contribution is to show that despite the non-convexity of the fixed-lag smoothing problem, we can solve it to certifiable optimality using a small-size semidefinite relaxation. We also present a fast outlier rejection scheme that filters out incorrect keypoint detections with shape and time compatibility tests, and wrap our certifiable solver in a graduated non-convexity scheme. We evaluate the proposed approach on synthetic and real data, showcasing its performance in a table-top manipulation scenario and a drone-based vehicle tracking application.  
+    This paper develops a real-time decentralized metric-semantic Simultaneous Localization and Mapping (SLAM) approach that leverages a sparse and lightweight object-based representation to enable a heterogeneous robot team to autonomously explore 3D environments featuring indoor, urban, and forested areas without relying on GPS. We use a hierarchical metric-semantic representation of the environment, including high-level sparse semantic maps of object models and low-level voxel maps. We leverage the informativeness and viewpoint invariance of the high-level semantic map to obtain an effective semantics-driven place-recognition algorithm for inter-robot loop closure detection across aerial and ground robots with different sensing modalities. A communication module is designed to track each robot's observations and those of other robots within the communication range. Such observations are then used to construct a merged map. Our framework enables real-time decentralized operations onboard robots, allowing them to opportunistically leverage communication. We integrate and deploy our proposed framework on three types of aerial and ground robots. Extensive experimental results show an average localization error of 0.22 meters in position and -0.16 degrees in orientation, an object mapping F1 score of 0.92, and a communication packet size of merely 2-3 megabytes per kilometer trajectory with 1,000 landmarks. The project website can be found at https://xurobotics.github.io/slideslam/.  
   </ol>  
 </details>  
-**comments**: 11 pages, 6 figures (with appendix). Code released at
-  https://github.com/MIT-SPARK/certifiable_tracking. Video available at
-  https://youtu.be/eTIlVD9pDtc  
+**comments**: Preliminary release  
   
   
 
@@ -99,67 +63,24 @@ Lorenzo Shaikewitz, Samuel Ubellacker, Luca Carlone
 
 ## NeRF  
 
-### [From Perfect to Noisy World Simulation: Customizable Embodied Multi-modal Perturbations for SLAM Robustness Benchmarking](http://arxiv.org/abs/2406.16850)  
-[[code](https://github.com/xiaohao-xu/slam-under-perturbation)]  
-Xiaohao Xu, Tianyi Zhang, Sibo Wang, Xiang Li, Yongqi Chen, Ye Li, Bhiksha Raj, Matthew Johnson-Roberson, Xiaonan Huang  
+### [Implicit-Zoo: A Large-Scale Dataset of Neural Implicit Functions for 2D Images and 3D Scenes](http://arxiv.org/abs/2406.17438)  
+Qi Ma, Danda Pani Paudel, Ender Konukoglu, Luc Van Gool  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Embodied agents require robust navigation systems to operate in unstructured environments, making the robustness of Simultaneous Localization and Mapping (SLAM) models critical to embodied agent autonomy. While real-world datasets are invaluable, simulation-based benchmarks offer a scalable approach for robustness evaluations. However, the creation of a challenging and controllable noisy world with diverse perturbations remains under-explored. To this end, we propose a novel, customizable pipeline for noisy data synthesis, aimed at assessing the resilience of multi-modal SLAM models against various perturbations. The pipeline comprises a comprehensive taxonomy of sensor and motion perturbations for embodied multi-modal (specifically RGB-D) sensing, categorized by their sources and propagation order, allowing for procedural composition. We also provide a toolbox for synthesizing these perturbations, enabling the transformation of clean environments into challenging noisy simulations. Utilizing the pipeline, we instantiate the large-scale Noisy-Replica benchmark, which includes diverse perturbation types, to evaluate the risk tolerance of existing advanced RGB-D SLAM models. Our extensive analysis uncovers the susceptibilities of both neural (NeRF and Gaussian Splatting -based) and non-neural SLAM models to disturbances, despite their demonstrated accuracy in standard benchmarks. Our code is publicly available at https://github.com/Xiaohao-Xu/SLAM-under-Perturbation.  
-  </ol>  
-</details>  
-**comments**: 50 pages. arXiv admin note: substantial text overlap with
-  arXiv:2402.08125  
-  
-### [Articulate your NeRF: Unsupervised articulated object modeling via conditional view synthesis](http://arxiv.org/abs/2406.16623)  
-Jianning Deng, Kartic Subr, Hakan Bilen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We propose a novel unsupervised method to learn the pose and part-segmentation of articulated objects with rigid parts. Given two observations of an object in different articulation states, our method learns the geometry and appearance of object parts by using an implicit model from the first observation, distils the part segmentation and articulation from the second observation while rendering the latter observation. Additionally, to tackle the complexities in the joint optimization of part segmentation and articulation, we propose a voxel grid-based initialization strategy and a decoupled optimization procedure. Compared to the prior unsupervised work, our model obtains significantly better performance, and generalizes to objects with multiple parts while it can be efficiently from few views for the latter observation.  
-  </ol>  
-</details>  
-**comments**: 9 pages for the maincontent, excluding references and supplementaries  
-  
-### [Crowd-Sourced NeRF: Collecting Data from Production Vehicles for 3D Street View Reconstruction](http://arxiv.org/abs/2406.16289)  
-Tong Qin, Changze Li, Haoyang Ye, Shaowei Wan, Minzhen Li, Hongwei Liu, Ming Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recently, Neural Radiance Fields (NeRF) achieved impressive results in novel view synthesis. Block-NeRF showed the capability of leveraging NeRF to build large city-scale models. For large-scale modeling, a mass of image data is necessary. Collecting images from specially designed data-collection vehicles can not support large-scale applications. How to acquire massive high-quality data remains an opening problem. Noting that the automotive industry has a huge amount of image data, crowd-sourcing is a convenient way for large-scale data collection. In this paper, we present a crowd-sourced framework, which utilizes substantial data captured by production vehicles to reconstruct the scene with the NeRF model. This approach solves the key problem of large-scale reconstruction, that is where the data comes from and how to use them. Firstly, the crowd-sourced massive data is filtered to remove redundancy and keep a balanced distribution in terms of time and space. Then a structure-from-motion module is performed to refine camera poses. Finally, images, as well as poses, are used to train the NeRF model in a certain block. We highlight that we present a comprehensive framework that integrates multiple modules, including data selection, sparse 3D reconstruction, sequence appearance embedding, depth supervision of ground surface, and occlusion completion. The complete system is capable of effectively processing and reconstructing high-quality 3D scenes from crowd-sourced data. Extensive quantitative and qualitative experiments were conducted to validate the performance of our system. Moreover, we proposed an application, named first-view navigation, which leveraged the NeRF model to generate 3D street view and guide the driver with a synthesized video.  
+    Neural implicit functions have demonstrated significant importance in various areas such as computer vision, graphics. Their advantages include the ability to represent complex shapes and scenes with high fidelity, smooth interpolation capabilities, and continuous representations. Despite these benefits, the development and analysis of implicit functions have been limited by the lack of comprehensive datasets and the substantial computational resources required for their implementation and evaluation. To address these challenges, we introduce "Implicit-Zoo": a large-scale dataset requiring thousands of GPU training days designed to facilitate research and development in this field. Our dataset includes diverse 2D and 3D scenes, such as CIFAR-10, ImageNet-1K, and Cityscapes for 2D image tasks, and the OmniObject3D dataset for 3D vision tasks. We ensure high quality through strict checks, refining or filtering out low-quality data. Using Implicit-Zoo, we showcase two immediate benefits as it enables to: (1) learn token locations for transformer models; (2) directly regress 3D cameras poses of 2D images with respect to NeRF models. This in turn leads to an improved performance in all three task of image classification, semantic segmentation, and 3D pose regression, thereby unlocking new avenues for research.  
   </ol>  
 </details>  
   
-### [Towards Real-Time Neural Volumetric Rendering on Mobile Devices: A Measurement Study](http://arxiv.org/abs/2406.16068)  
-Zhe Wang, Yifei Zhu  
+### [NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](http://arxiv.org/abs/2406.17345)  
+Jonas Kulhanek, Torsten Sattler  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) is an emerging technique to synthesize 3D objects from 2D images with a wide range of potential applications. However, rendering existing NeRF models is extremely computation intensive, making it challenging to support real-time interaction on mobile devices. In this paper, we take the first initiative to examine the state-of-the-art real-time NeRF rendering technique from a system perspective. We first define the entire working pipeline of the NeRF serving system. We then identify possible control knobs that are critical to the system from the communication, computation, and visual performance perspective. Furthermore, an extensive measurement study is conducted to reveal the effects of these control knobs on system performance. Our measurement results reveal that different control knobs contribute differently towards improving the system performance, with the mesh granularity being the most effective knob and the quantization being the least effective knob. In addition, diverse hardware device settings and network conditions have to be considered to fully unleash the benefit of operating under the appropriate knobs  
+    Novel view synthesis is an important problem with many applications, including AR/VR, gaming, and simulations for robotics. With the recent rapid development of Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) methods, it is becoming difficult to keep track of the current state of the art (SoTA) due to methods using different evaluation protocols, codebases being difficult to install and use, and methods not generalizing well to novel 3D scenes. Our experiments support this claim by showing that tiny differences in evaluation protocols of various methods can lead to inconsistent reported metrics. To address these issues, we propose a framework called NerfBaselines, which simplifies the installation of various methods, provides consistent benchmarking tools, and ensures reproducibility. We validate our implementation experimentally by reproducing numbers reported in the original papers. To further improve the accessibility, we release a web platform where commonly used methods are compared on standard benchmarks. Web: https://jkulhanek.com/nerfbaselines  
   </ol>  
 </details>  
-**comments**: This paper is accepted by ACM SIGCOMM Workshop on Emerging Multimedia
-  Systems 2024  
-  
-### [Learning with Noisy Ground Truth: From 2D Classification to 3D Reconstruction](http://arxiv.org/abs/2406.15982)  
-Yangdi Lu, Wenbo He  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Deep neural networks has been highly successful in data-intense computer vision applications, while such success relies heavily on the massive and clean data. In real-world scenarios, clean data sometimes is difficult to obtain. For example, in image classification and segmentation tasks, precise annotations of millions samples are generally very expensive and time-consuming. In 3D static scene reconstruction task, most NeRF related methods require the foundational assumption of the static scene (e.g. consistent lighting condition and persistent object positions), which is often violated in real-world scenarios. To address these problem, learning with noisy ground truth (LNGT) has emerged as an effective learning method and shows great potential. In this short survey, we propose a formal definition unify the analysis of LNGT LNGT in the context of different machine learning tasks (classification and regression). Based on this definition, we propose a novel taxonomy to classify the existing work according to the error decomposition with the fundamental definition of machine learning. Further, we provide in-depth analysis on memorization effect and insightful discussion about potential future research opportunities from 2D classification to 3D reconstruction, in the hope of providing guidance to follow-up research.  
-  </ol>  
-</details>  
-**comments**: Computer vision, Noisy Labels, 3D reconstruction, 3D Gaussian Splats,
-  (Work still in progress)  
-  
-### [psPRF:Pansharpening Planar Neural Radiance Field for Generalized 3D Reconstruction Satellite Imagery](http://arxiv.org/abs/2406.15707)  
-Tongtong Zhang, Yuanxiang Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Most current NeRF variants for satellites are designed for one specific scene and fall short of generalization to new geometry. Additionally, the RGB images require pan-sharpening as an independent preprocessing step. This paper introduces psPRF, a Planar Neural Radiance Field designed for paired low-resolution RGB (LR-RGB) and high-resolution panchromatic (HR-PAN) images from satellite sensors with Rational Polynomial Cameras (RPC). To capture the cross-modal prior from both of the LR-RGB and HR-PAN images, for the Unet-shaped architecture, we adapt the encoder with explicit spectral-to-spatial convolution (SSConv) to enhance the multimodal representation ability. To support the generalization ability of psRPF across scenes, we adopt projection loss to ensure strong geometry self-supervision. The proposed method is evaluated with the multi-scene WorldView-3 LR-RGB and HR-PAN pairs, and achieves state-of-the-art performance.  
-  </ol>  
-</details>  
+**comments**: Web: https://jkulhanek.com/nerfbaselines  
   
   
 
