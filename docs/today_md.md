@@ -3,19 +3,12 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Consensus-Learning-with-Deep-Sets-for-Essential-Matrix-Estimation>Consensus Learning with Deep Sets for Essential Matrix Estimation</a></li>
+        <li><a href=#VDG:-Vision-Only-Dynamic-Gaussian-for-Driving-Simulation>VDG: Vision-Only Dynamic Gaussian for Driving Simulation</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Tell-Me-Where-You-Are:-Multimodal-LLMs-Meet-Place-Recognition>Tell Me Where You Are: Multimodal LLMs Meet Place Recognition</a></li>
-        <li><a href=#SlideSLAM:-Sparse,-Lightweight,-Decentralized-Metric-Semantic-SLAM-for-Multi-Robot-Navigation>SlideSLAM: Sparse, Lightweight, Decentralized Metric-Semantic SLAM for Multi-Robot Navigation</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#Implicit-Zoo:-A-Large-Scale-Dataset-of-Neural-Implicit-Functions-for-2D-Images-and-3D-Scenes>Implicit-Zoo: A Large-Scale Dataset of Neural Implicit Functions for 2D Images and 3D Scenes</a></li>
-        <li><a href=#NerfBaselines:-Consistent-and-Reproducible-Evaluation-of-Novel-View-Synthesis-Methods>NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods</a></li>
+        <li><a href=#View-Invariant-Pixelwise-Anomaly-Detection-in-Multi-object-Scenes-with-Adaptive-View-Synthesis>View-Invariant Pixelwise Anomaly Detection in Multi-object Scenes with Adaptive View Synthesis</a></li>
       </ul>
     </li>
   </ol>
@@ -23,12 +16,12 @@
 
 ## SFM  
 
-### [Consensus Learning with Deep Sets for Essential Matrix Estimation](http://arxiv.org/abs/2406.17414)  
-Dror Moran, Yuval Margalit, Guy Trostianetsky, Fadi Khatib, Meirav Galun, Ronen Basri  
+### [VDG: Vision-Only Dynamic Gaussian for Driving Simulation](http://arxiv.org/abs/2406.18198)  
+Hao Li, Jingfeng Li, Dingwen Zhang, Chenming Wu, Jieqi Shi, Chen Zhao, Haocheng Feng, Errui Ding, Jingdong Wang, Junwei Han  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Robust estimation of the essential matrix, which encodes the relative position and orientation of two cameras, is a fundamental step in structure from motion pipelines. Recent deep-based methods achieved accurate estimation by using complex network architectures that involve graphs, attention layers, and hard pruning steps. Here, we propose a simpler network architecture based on Deep Sets. Given a collection of point matches extracted from two images, our method identifies outlier point matches and models the displacement noise in inlier matches. A weighted DLT module uses these predictions to regress the essential matrix. Our network achieves accurate recovery that is superior to existing networks with significantly more complex architectures.  
+    Dynamic Gaussian splatting has led to impressive scene reconstruction and image synthesis advances in novel views. Existing methods, however, heavily rely on pre-computed poses and Gaussian initialization by Structure from Motion (SfM) algorithms or expensive sensors. For the first time, this paper addresses this issue by integrating self-supervised VO into our pose-free dynamic Gaussian method (VDG) to boost pose and depth initialization and static-dynamic decomposition. Moreover, VDG can work with only RGB image input and construct dynamic scenes at a faster speed and larger scenes compared with the pose-free dynamic view-synthesis method. We demonstrate the robustness of our approach via extensive quantitative and qualitative experiments. Our results show favorable performance over the state-of-the-art dynamic view synthesis methods. Additional video and source code will be posted on our project page at https://3d-aigc.github.io/VDG.  
   </ol>  
 </details>  
   
@@ -38,49 +31,14 @@ Dror Moran, Yuval Margalit, Guy Trostianetsky, Fadi Khatib, Meirav Galun, Ronen 
 
 ## Visual Localization  
 
-### [Tell Me Where You Are: Multimodal LLMs Meet Place Recognition](http://arxiv.org/abs/2406.17520)  
-Zonglin Lyu, Juexiao Zhang, Mingxuan Lu, Yiming Li, Chen Feng  
+### [View-Invariant Pixelwise Anomaly Detection in Multi-object Scenes with Adaptive View Synthesis](http://arxiv.org/abs/2406.18012)  
+Subin Varghese, Vedhus Hoskere  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large language models (LLMs) exhibit a variety of promising capabilities in robotics, including long-horizon planning and commonsense reasoning. However, their performance in place recognition is still underexplored. In this work, we introduce multimodal LLMs (MLLMs) to visual place recognition (VPR), where a robot must localize itself using visual observations. Our key design is to use vision-based retrieval to propose several candidates and then leverage language-based reasoning to carefully inspect each candidate for a final decision. Specifically, we leverage the robust visual features produced by off-the-shelf vision foundation models (VFMs) to obtain several candidate locations. We then prompt an MLLM to describe the differences between the current observation and each candidate in a pairwise manner, and reason about the best candidate based on these descriptions. Our results on three datasets demonstrate that integrating the general-purpose visual features from VFMs with the reasoning capabilities of MLLMs already provides an effective place recognition solution, without any VPR-specific supervised training. We believe our work can inspire new possibilities for applying and designing foundation models, i.e., VFMs, LLMs, and MLLMs, to enhance the localization and navigation of mobile robots.  
+    The inspection and monitoring of infrastructure assets typically requires identifying visual anomalies in scenes periodically photographed over time. Images collected manually or with robots such as unmanned aerial vehicles from the same scene at different instances in time are typically not perfectly aligned. Supervised segmentation methods can be applied to identify known problems, but unsupervised anomaly detection approaches are required when unknown anomalies occur. Current unsupervised pixel-level anomaly detection methods have mainly been developed for industrial settings where the camera position is known and constant. However, we find that these methods fail to generalize to the case when images are not perfectly aligned. We term the problem of unsupervised anomaly detection between two such imperfectly aligned sets of images as Scene Anomaly Detection (Scene AD). We present a novel network termed OmniAD to address the Scene AD problem posed. Specifically, we refine the anomaly detection method reverse distillation to achieve a 40% increase in pixel-level anomaly detection performance. The network's performance is further demonstrated to improve with two new data augmentation strategies proposed that leverage novel view synthesis and camera localization to improve generalization. We validate our approach with qualitative and quantitative results on a new dataset, ToyCity, the first Scene AD dataset with multiple objects, as well as on the established single object-centric dataset, MAD. https://drags99.github.io/OmniAD/  
   </ol>  
 </details>  
-  
-### [SlideSLAM: Sparse, Lightweight, Decentralized Metric-Semantic SLAM for Multi-Robot Navigation](http://arxiv.org/abs/2406.17249)  
-Xu Liu, Jiuzhou Lei, Ankit Prabhu, Yuezhan Tao, Igor Spasojevic, Pratik Chaudhari, Nikolay Atanasov, Vijay Kumar  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper develops a real-time decentralized metric-semantic Simultaneous Localization and Mapping (SLAM) approach that leverages a sparse and lightweight object-based representation to enable a heterogeneous robot team to autonomously explore 3D environments featuring indoor, urban, and forested areas without relying on GPS. We use a hierarchical metric-semantic representation of the environment, including high-level sparse semantic maps of object models and low-level voxel maps. We leverage the informativeness and viewpoint invariance of the high-level semantic map to obtain an effective semantics-driven place-recognition algorithm for inter-robot loop closure detection across aerial and ground robots with different sensing modalities. A communication module is designed to track each robot's observations and those of other robots within the communication range. Such observations are then used to construct a merged map. Our framework enables real-time decentralized operations onboard robots, allowing them to opportunistically leverage communication. We integrate and deploy our proposed framework on three types of aerial and ground robots. Extensive experimental results show an average localization error of 0.22 meters in position and -0.16 degrees in orientation, an object mapping F1 score of 0.92, and a communication packet size of merely 2-3 megabytes per kilometer trajectory with 1,000 landmarks. The project website can be found at https://xurobotics.github.io/slideslam/.  
-  </ol>  
-</details>  
-**comments**: Preliminary release  
-  
-  
-
-
-
-## NeRF  
-
-### [Implicit-Zoo: A Large-Scale Dataset of Neural Implicit Functions for 2D Images and 3D Scenes](http://arxiv.org/abs/2406.17438)  
-Qi Ma, Danda Pani Paudel, Ender Konukoglu, Luc Van Gool  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural implicit functions have demonstrated significant importance in various areas such as computer vision, graphics. Their advantages include the ability to represent complex shapes and scenes with high fidelity, smooth interpolation capabilities, and continuous representations. Despite these benefits, the development and analysis of implicit functions have been limited by the lack of comprehensive datasets and the substantial computational resources required for their implementation and evaluation. To address these challenges, we introduce "Implicit-Zoo": a large-scale dataset requiring thousands of GPU training days designed to facilitate research and development in this field. Our dataset includes diverse 2D and 3D scenes, such as CIFAR-10, ImageNet-1K, and Cityscapes for 2D image tasks, and the OmniObject3D dataset for 3D vision tasks. We ensure high quality through strict checks, refining or filtering out low-quality data. Using Implicit-Zoo, we showcase two immediate benefits as it enables to: (1) learn token locations for transformer models; (2) directly regress 3D cameras poses of 2D images with respect to NeRF models. This in turn leads to an improved performance in all three task of image classification, semantic segmentation, and 3D pose regression, thereby unlocking new avenues for research.  
-  </ol>  
-</details>  
-  
-### [NerfBaselines: Consistent and Reproducible Evaluation of Novel View Synthesis Methods](http://arxiv.org/abs/2406.17345)  
-Jonas Kulhanek, Torsten Sattler  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel view synthesis is an important problem with many applications, including AR/VR, gaming, and simulations for robotics. With the recent rapid development of Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS) methods, it is becoming difficult to keep track of the current state of the art (SoTA) due to methods using different evaluation protocols, codebases being difficult to install and use, and methods not generalizing well to novel 3D scenes. Our experiments support this claim by showing that tiny differences in evaluation protocols of various methods can lead to inconsistent reported metrics. To address these issues, we propose a framework called NerfBaselines, which simplifies the installation of various methods, provides consistent benchmarking tools, and ensures reproducibility. We validate our implementation experimentally by reproducing numbers reported in the original papers. To further improve the accessibility, we release a web platform where commonly used methods are compared on standard benchmarks. Web: https://jkulhanek.com/nerfbaselines  
-  </ol>  
-</details>  
-**comments**: Web: https://jkulhanek.com/nerfbaselines  
   
   
 
