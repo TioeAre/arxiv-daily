@@ -1,72 +1,52 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Rotation-Averaging:-A-Primal-Dual-Method-and-Closed-Forms-in-Cycle-Graphs>Rotation Averaging: A Primal-Dual Method and Closed-Forms in Cycle Graphs</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#360-in-the-Wild:-Dataset-for-Depth-Prediction-and-View-Synthesis>360 in the Wild: Dataset for Depth Prediction and View Synthesis</a></li>
-        <li><a href=#Zero-shot-Composed-Image-Retrieval-Considering-Query-target-Relationship-Leveraging-Masked-Image-text-Pairs>Zero-shot Composed Image Retrieval Considering Query-target Relationship Leveraging Masked Image-text Pairs</a></li>
-        <li><a href=#WV-Net:-A-foundation-model-for-SAR-WV-mode-satellite-imagery-trained-using-contrastive-self-supervised-learning-on-10-million-images>WV-Net: A foundation model for SAR WV-mode satellite imagery trained using contrastive self-supervised learning on 10 million images</a></li>
+        <li><a href=#PathAlign:-A-vision-language-model-for-whole-slide-images-in-histopathology>PathAlign: A vision-language model for whole slide images in histopathology</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Beyond-First-Order:-A-Multi-Scale-Approach-to-Finger-Knuckle-Print-Biometrics>Beyond First-Order: A Multi-Scale Approach to Finger Knuckle Print Biometrics</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Shorter-SPECT-Scans-Using-Self-supervised-Coordinate-Learning-to-Synthesize-Skipped-Projection-Views>Shorter SPECT Scans Using Self-supervised Coordinate Learning to Synthesize Skipped Projection Views</a></li>
+        <li><a href=#ASSR-NeRF:-Arbitrary-Scale-Super-Resolution-on-Voxel-Grid-for-High-Quality-Radiance-Fields-Reconstruction>ASSR-NeRF: Arbitrary-Scale Super-Resolution on Voxel Grid for High-Quality Radiance Fields Reconstruction</a></li>
+        <li><a href=#EgoGaussian:-Dynamic-Scene-Understanding-from-Egocentric-Video-with-3D-Gaussian-Splatting>EgoGaussian: Dynamic Scene Understanding from Egocentric Video with 3D Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Rotation Averaging: A Primal-Dual Method and Closed-Forms in Cycle Graphs](http://arxiv.org/abs/2406.18564)  
-Gabriel Moreira, Manuel Marques, João Paulo Costeira  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    A cornerstone of geometric reconstruction, rotation averaging seeks the set of absolute rotations that optimally explains a set of measured relative orientations between them. In addition to being an integral part of bundle adjustment and structure-from-motion, the problem of synchronizing rotations also finds applications in visual simultaneous localization and mapping, where it is used as an initialization for iterative solvers, and camera network calibration. Nevertheless, this optimization problem is both non-convex and high-dimensional. In this paper, we address it from a maximum likelihood estimation standpoint and make a twofold contribution. Firstly, we set forth a novel primal-dual method, motivated by the widely accepted spectral initialization. Further, we characterize stationary points of rotation averaging in cycle graphs topologies and contextualize this result within spectral graph theory. We benchmark the proposed method in multiple settings and certify our solution via duality theory, achieving a significant gain in precision and performance.  
-  </ol>  
-</details>  
-**comments**: arXiv admin note: text overlap with arXiv:2109.08046  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [360 in the Wild: Dataset for Depth Prediction and View Synthesis](http://arxiv.org/abs/2406.18898)  
-Kibaek Park, Francois Rameau, Jaesik Park, In So Kweon  
+### [PathAlign: A vision-language model for whole slide images in histopathology](http://arxiv.org/abs/2406.19578)  
+Faruk Ahmed, Andrew Sellergren, Lin Yang, Shawn Xu, Boris Babenko, Abbi Ward, Niels Olson, Arash Mohtashamian, Yossi Matias, Greg S. Corrado, Quang Duong, Dale R. Webster, Shravya Shetty, Daniel Golden, Yun Liu, David F. Steiner, Ellery Wulczyn  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The large abundance of perspective camera datasets facilitated the emergence of novel learning-based strategies for various tasks, such as camera localization, single image depth estimation, or view synthesis. However, panoramic or omnidirectional image datasets, including essential information, such as pose and depth, are mostly made with synthetic scenes. In this work, we introduce a large scale 360 $^{\circ}$ videos dataset in the wild. This dataset has been carefully scraped from the Internet and has been captured from various locations worldwide. Hence, this dataset exhibits very diversified environments (e.g., indoor and outdoor) and contexts (e.g., with and without moving objects). Each of the 25K images constituting our dataset is provided with its respective camera's pose and depth map. We illustrate the relevance of our dataset for two main tasks, namely, single image depth estimation and view synthesis.  
+    Microscopic interpretation of histopathology images underlies many important diagnostic and treatment decisions. While advances in vision-language modeling raise new opportunities for analysis of such images, the gigapixel-scale size of whole slide images (WSIs) introduces unique challenges. Additionally, pathology reports simultaneously highlight key findings from small regions while also aggregating interpretation across multiple slides, often making it difficult to create robust image-text pairs. As such, pathology reports remain a largely untapped source of supervision in computational pathology, with most efforts relying on region-of-interest annotations or self-supervision at the patch-level. In this work, we develop a vision-language model based on the BLIP-2 framework using WSIs paired with curated text from pathology reports. This enables applications utilizing a shared image-text embedding space, such as text or image retrieval for finding cases of interest, as well as integration of the WSI encoder with a frozen large language model (LLM) for WSI-based generative text capabilities such as report generation or AI-in-the-loop interactions. We utilize a de-identified dataset of over 350,000 WSIs and diagnostic text pairs, spanning a wide range of diagnoses, procedure types, and tissue types. We present pathologist evaluation of text generation and text retrieval using WSI embeddings, as well as results for WSI classification and workflow prioritization (slide-level triaging). Model-generated text for WSIs was rated by pathologists as accurate, without clinically significant error or omission, for 78% of WSIs on average. This work demonstrates exciting potential capabilities for language-aligned WSI embeddings.  
   </ol>  
 </details>  
+**comments**: 9 main pages and 19 pages of supplemental material; 3 main tables, 3
+  main figures and 11 supplemental tables, 7 supplemental figures  
   
-### [Zero-shot Composed Image Retrieval Considering Query-target Relationship Leveraging Masked Image-text Pairs](http://arxiv.org/abs/2406.18836)  
-Huaying Zhang, Rintaro Yanagi, Ren Togo, Takahiro Ogawa, Miki Haseyama  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper proposes a novel zero-shot composed image retrieval (CIR) method considering the query-target relationship by masked image-text pairs. The objective of CIR is to retrieve the target image using a query image and a query text. Existing methods use a textual inversion network to convert the query image into a pseudo word to compose the image and text and use a pre-trained visual-language model to realize the retrieval. However, they do not consider the query-target relationship to train the textual inversion network to acquire information for retrieval. In this paper, we propose a novel zero-shot CIR method that is trained end-to-end using masked image-text pairs. By exploiting the abundant image-text pairs that are convenient to obtain with a masking strategy for learning the query-target relationship, it is expected that accurate zero-shot CIR using a retrieval-focused textual inversion network can be realized. Experimental results show the effectiveness of the proposed method.  
-  </ol>  
-</details>  
-**comments**: Accepted as a conference paper in IEEE ICIP 2024  
   
-### [WV-Net: A foundation model for SAR WV-mode satellite imagery trained using contrastive self-supervised learning on 10 million images](http://arxiv.org/abs/2406.18765)  
-Yannik Glaser, Justin E. Stopa, Linnea M. Wolniewicz, Ralph Foster, Doug Vandemark, Alexis Mouche, Bertrand Chapron, Peter Sadowski  
+
+
+
+## Keypoint Detection  
+
+### [Beyond First-Order: A Multi-Scale Approach to Finger Knuckle Print Biometrics](http://arxiv.org/abs/2406.19672)  
+Chengrui Gao, Ziyuan Yang, Andrew Beng Jin Teoh, Min Zhu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The European Space Agency's Copernicus Sentinel-1 (S-1) mission is a constellation of C-band synthetic aperture radar (SAR) satellites that provide unprecedented monitoring of the world's oceans. S-1's wave mode (WV) captures 20x20 km image patches at 5 m pixel resolution and is unaffected by cloud cover or time-of-day. The mission's open data policy has made SAR data easily accessible for a range of applications, but the need for manual image annotations is a bottleneck that hinders the use of machine learning methods. This study uses nearly 10 million WV-mode images and contrastive self-supervised learning to train a semantic embedding model called WV-Net. In multiple downstream tasks, WV-Net outperforms a comparable model that was pre-trained on natural images (ImageNet) with supervised learning. Experiments show improvements for estimating wave height (0.50 vs 0.60 RMSE using linear probing), estimating near-surface air temperature (0.90 vs 0.97 RMSE), and performing multilabel-classification of geophysical and atmospheric phenomena (0.96 vs 0.95 micro-averaged AUROC). WV-Net embeddings are also superior in an unsupervised image-retrieval task and scale better in data-sparse settings. Together, these results demonstrate that WV-Net embeddings can support geophysical research by providing a convenient foundation model for a variety of data analysis and exploration tasks.  
+    Recently, finger knuckle prints (FKPs) have gained attention due to their rich textural patterns, positioning them as a promising biometric for identity recognition. Prior FKP recognition methods predominantly leverage first-order feature descriptors, which capture intricate texture details but fail to account for structural information. Emerging research, however, indicates that second-order textures, which describe the curves and arcs of the textures, encompass this overlooked structural information. This paper introduces a novel FKP recognition approach, the Dual-Order Texture Competition Network (DOTCNet), designed to capture texture information in FKP images comprehensively. DOTCNet incorporates three dual-order texture competitive modules (DTCMs), each targeting textures at different scales. Each DTCM employs a learnable texture descriptor, specifically a learnable Gabor filter (LGF), to extract texture features. By leveraging LGFs, the network extracts first and second order textures to describe fine textures and structural features thoroughly. Furthermore, an attention mechanism enhances relevant features in the first-order features, thereby highlighting significant texture details. For second-order features, a competitive mechanism emphasizes structural information while reducing noise from higher-order features. Extensive experimental results reveal that DOTCNet significantly outperforms several standard algorithms on the publicly available PolyU-FKP dataset.  
   </ol>  
 </details>  
-**comments**: 20 pages, 9 figures, submitted to NeurIPS 2024  
   
   
 
@@ -74,15 +54,23 @@ Yannik Glaser, Justin E. Stopa, Linnea M. Wolniewicz, Ralph Foster, Doug Vandema
 
 ## NeRF  
 
-### [Shorter SPECT Scans Using Self-supervised Coordinate Learning to Synthesize Skipped Projection Views](http://arxiv.org/abs/2406.18840)  
-Zongyu Li, Yixuan Jia, Xiaojian Xu, Jason Hu, Jeffrey A. Fessler, Yuni K. Dewaraja  
+### [ASSR-NeRF: Arbitrary-Scale Super-Resolution on Voxel Grid for High-Quality Radiance Fields Reconstruction](http://arxiv.org/abs/2406.20066)  
+Ding-Jiun Huang, Zi-Ting Chou, Yu-Chiang Frank Wang, Cheng Sun  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Purpose: This study addresses the challenge of extended SPECT imaging duration under low-count conditions, as encountered in Lu-177 SPECT imaging, by developing a self-supervised learning approach to synthesize skipped SPECT projection views, thus shortening scan times in clinical settings. Methods: We employed a self-supervised coordinate-based learning technique, adapting the neural radiance field (NeRF) concept in computer vision to synthesize under-sampled SPECT projection views. For each single scan, we used self-supervised coordinate learning to estimate skipped SPECT projection views. The method was tested with various down-sampling factors (DFs=2, 4, 8) on both Lu-177 phantom SPECT/CT measurements and clinical SPECT/CT datasets, from 11 patients undergoing Lu-177 DOTATATE and 6 patients undergoing Lu-177 PSMA-617 radiopharmaceutical therapy. Results: For SPECT reconstructions, our method outperformed the use of linearly interpolated projections and partial projection views in relative contrast-to-noise-ratios (RCNR) averaged across different downsampling factors: 1) DOTATATE: 83% vs. 65% vs. 67% for lesions and 86% vs. 70% vs. 67% for kidney, 2) PSMA: 76% vs. 69% vs. 68% for lesions and 75% vs. 55% vs. 66% for organs, including kidneys, lacrimal glands, parotid glands, and submandibular glands. Conclusion: The proposed method enables reduction in acquisition time (by factors of 2, 4, or 8) while maintaining quantitative accuracy in clinical SPECT protocols by allowing for the collection of fewer projections. Importantly, the self-supervised nature of this NeRF-based approach eliminates the need for extensive training data, instead learning from each patient's projection data alone. The reduction in acquisition time is particularly relevant for imaging under low-count conditions and for protocols that require multiple-bed positions such as whole-body imaging.  
+    NeRF-based methods reconstruct 3D scenes by building a radiance field with implicit or explicit representations. While NeRF-based methods can perform novel view synthesis (NVS) at arbitrary scale, the performance in high-resolution novel view synthesis (HRNVS) with low-resolution (LR) optimization often results in oversmoothing. On the other hand, single-image super-resolution (SR) aims to enhance LR images to HR counterparts but lacks multi-view consistency. To address these challenges, we propose Arbitrary-Scale Super-Resolution NeRF (ASSR-NeRF), a novel framework for super-resolution novel view synthesis (SRNVS). We propose an attention-based VoxelGridSR model to directly perform 3D super-resolution (SR) on the optimized volume. Our model is trained on diverse scenes to ensure generalizability. For unseen scenes trained with LR views, we then can directly apply our VoxelGridSR to further refine the volume and achieve multi-view consistent SR. We demonstrate quantitative and qualitatively that the proposed method achieves significant performance in SRNVS.  
   </ol>  
 </details>  
-**comments**: 25 pages, 5568 words  
+  
+### [EgoGaussian: Dynamic Scene Understanding from Egocentric Video with 3D Gaussian Splatting](http://arxiv.org/abs/2406.19811)  
+Daiwei Zhang, Gengyan Li, Jiajie Li, Mickaël Bressieux, Otmar Hilliges, Marc Pollefeys, Luc Van Gool, Xi Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Human activities are inherently complex, and even simple household tasks involve numerous object interactions. To better understand these activities and behaviors, it is crucial to model their dynamic interactions with the environment. The recent availability of affordable head-mounted cameras and egocentric data offers a more accessible and efficient means to understand dynamic human-object interactions in 3D environments. However, most existing methods for human activity modeling either focus on reconstructing 3D models of hand-object or human-scene interactions or on mapping 3D scenes, neglecting dynamic interactions with objects. The few existing solutions often require inputs from multiple sources, including multi-camera setups, depth-sensing cameras, or kinesthetic sensors. To this end, we introduce EgoGaussian, the first method capable of simultaneously reconstructing 3D scenes and dynamically tracking 3D object motion from RGB egocentric input alone. We leverage the uniquely discrete nature of Gaussian Splatting and segment dynamic interactions from the background. Our approach employs a clip-level online learning pipeline that leverages the dynamic nature of human activities, allowing us to reconstruct the temporal evolution of the scene in chronological order and track rigid object motion. Additionally, our method automatically segments object and background Gaussians, providing 3D representations for both static scenes and dynamic objects. EgoGaussian outperforms previous NeRF and Dynamic Gaussian methods in challenging in-the-wild videos and we also qualitatively demonstrate the high quality of the reconstructed models.  
+  </ol>  
+</details>  
   
   
 
