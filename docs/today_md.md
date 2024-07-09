@@ -3,30 +3,23 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Efficient-Detection-of-Long-Consistent-Cycles-and-its-Application-to-Distributed-Synchronization>Efficient Detection of Long Consistent Cycles and its Application to Distributed Synchronization</a></li>
-        <li><a href=#SfM-on-the-fly:-Get-better-3D-from-What-You-Capture>SfM on-the-fly: Get better 3D from What You Capture</a></li>
+        <li><a href=#Enhancing-Neural-Radiance-Fields-with-Depth-and-Normal-Completion-Priors-from-Sparse-Views>Enhancing Neural Radiance Fields with Depth and Normal Completion Priors from Sparse Views</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Elevating-All-Zero-Shot-Sketch-Based-Image-Retrieval-Through-Multimodal-Prompt-Learning>Elevating All Zero-Shot Sketch-Based Image Retrieval Through Multimodal Prompt Learning</a></li>
-        <li><a href=#Visualizing-Dialogues:-Enhancing-Image-Selection-through-Dialogue-Understanding-with-Large-Language-Models>Visualizing Dialogues: Enhancing Image Selection through Dialogue Understanding with Large Language Models</a></li>
-        <li><a href=#Celeb-FBI:-A-Benchmark-Dataset-on-Human-Full-Body-Images-and-Age,-Gender,-Height-and-Weight-Estimation-using-Deep-Learning-Approach>Celeb-FBI: A Benchmark Dataset on Human Full Body Images and Age, Gender, Height and Weight Estimation using Deep Learning Approach</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#PFGS:-High-Fidelity-Point-Cloud-Rendering-via-Feature-Splatting>PFGS: High Fidelity Point Cloud Rendering via Feature Splatting</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#SfM-on-the-fly:-Get-better-3D-from-What-You-Capture>SfM on-the-fly: Get better 3D from What You Capture</a></li>
+        <li><a href=#Pseudo-triplet-Guided-Few-shot-Composed-Image-Retrieval>Pseudo-triplet Guided Few-shot Composed Image Retrieval</a></li>
+        <li><a href=#HyCIR:-Boosting-Zero-Shot-Composed-Image-Retrieval-with-Synthetic-Labels>HyCIR: Boosting Zero-Shot Composed Image Retrieval with Synthetic Labels</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#CRiM-GS:-Continuous-Rigid-Motion-Aware-Gaussian-Splatting-from-Motion-Blur-Images>CRiM-GS: Continuous Rigid Motion-Aware Gaussian Splatting from Motion Blur Images</a></li>
+        <li><a href=#PanDORA:-Casual-HDR-Radiance-Acquisition-for-Indoor-Scenes>PanDORA: Casual HDR Radiance Acquisition for Indoor Scenes</a></li>
+        <li><a href=#Enhancing-Neural-Radiance-Fields-with-Depth-and-Normal-Completion-Priors-from-Sparse-Views>Enhancing Neural Radiance Fields with Depth and Normal Completion Priors from Sparse Views</a></li>
+        <li><a href=#GeoNLF:-Geometry-guided-Pose-Free-Neural-LiDAR-Fields>GeoNLF: Geometry guided Pose-Free Neural LiDAR Fields</a></li>
+        <li><a href=#Dynamic-Neural-Radiance-Field-From-Defocused-Monocular-Video>Dynamic Neural Radiance Field From Defocused Monocular Video</a></li>
+        <li><a href=#GaussReg:-Fast-3D-Registration-with-Gaussian-Splatting>GaussReg: Fast 3D Registration with Gaussian Splatting</a></li>
+        <li><a href=#SurgicalGaussian:-Deformable-3D-Gaussians-for-High-Fidelity-Surgical-Scene-Reconstruction>SurgicalGaussian: Deformable 3D Gaussians for High-Fidelity Surgical Scene Reconstruction</a></li>
       </ul>
     </li>
   </ol>
@@ -34,21 +27,12 @@
 
 ## SFM  
 
-### [Efficient Detection of Long Consistent Cycles and its Application to Distributed Synchronization](http://arxiv.org/abs/2407.04260)  
-Shaohan Li, Yunpeng Shi, Gilad Lerman  
+### [Enhancing Neural Radiance Fields with Depth and Normal Completion Priors from Sparse Views](http://arxiv.org/abs/2407.05666)  
+Jiawei Guo, HungChyun Chou, Ning Ding  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Group synchronization plays a crucial role in global pipelines for Structure from Motion (SfM). Its formulation is nonconvex and it is faced with highly corrupted measurements. Cycle consistency has been effective in addressing these challenges. However, computationally efficient solutions are needed for cycles longer than three, especially in practical scenarios where 3-cycles are unavailable. To overcome this computational bottleneck, we propose an algorithm for group synchronization that leverages information from cycles of lengths ranging from three to six with a time complexity of order $O(n^3)$ (or $O(n^{2.373})$ when using a faster matrix multiplication algorithm). We establish non-trivial theory for this and related methods that achieves competitive sample complexity, assuming the uniform corruption model. To advocate the practical need for our method, we consider distributed group synchronization, which requires at least 4-cycles, and we illustrate state-of-the-art performance by our method in this context.  
-  </ol>  
-</details>  
-  
-### [SfM on-the-fly: Get better 3D from What You Capture](http://arxiv.org/abs/2407.03939)  
-Zhan Zongqian, Yu Yifei, Xia Rui, Gan Wentian, Xie Hong, Perda Giulio, Morelli Luca, Remondino Fabio, Wang Xin  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In the last twenty years, Structure from Motion (SfM) has been a constant research hotspot in the fields of photogrammetry, computer vision, robotics etc., whereas real-time performance is just a recent topic of growing interest. This work builds upon the original on-the-fly SfM (Zhan et al., 2024) and presents an updated version with three new advancements to get better 3D from what you capture: (i) real-time image matching is further boosted by employing the Hierarchical Navigable Small World (HNSW) graphs, thus more true positive overlapping image candidates are faster identified; (ii) a self-adaptive weighting strategy is proposed for robust hierarchical local bundle adjustment to improve the SfM results; (iii) multiple agents are included for supporting collaborative SfM and seamlessly merge multiple 3D reconstructions into a complete 3D scene when commonly registered images appear. Various comprehensive experiments demonstrate that the proposed SfM method (named on-the-fly SfMv2) can generate more complete and robust 3D reconstructions in a high time-efficient way. Code is available at http://yifeiyu225.github.io/on-the-flySfMv2.github.io/.  
+    Neural Radiance Fields (NeRF) are an advanced technology that creates highly realistic images by learning about scenes through a neural network model. However, NeRF often encounters issues when there are not enough images to work with, leading to problems in accurately rendering views. The main issue is that NeRF lacks sufficient structural details to guide the rendering process accurately. To address this, we proposed a Depth and Normal Dense Completion Priors for NeRF (CP\_NeRF) framework. This framework enhances view rendering by adding depth and normal dense completion priors to the NeRF optimization process. Before optimizing NeRF, we obtain sparse depth maps using the Structure from Motion (SfM) technique used to get camera poses. Based on the sparse depth maps and a normal estimator, we generate sparse normal maps for training a normal completion prior with precise standard deviations. During optimization, we apply depth and normal completion priors to transform sparse data into dense depth and normal maps with their standard deviations. We use these dense maps to guide ray sampling, assist distance sampling and construct a normal loss function for better training accuracy. To improve the rendering of NeRF's normal outputs, we incorporate an optical centre position embedder that helps synthesize more accurate normals through volume rendering. Additionally, we employ a normal patch matching technique to choose accurate rendered normal maps, ensuring more precise supervision for the model. Our method is superior to leading techniques in rendering detailed indoor scenes, even with limited input views.  
   </ol>  
 </details>  
   
@@ -58,65 +42,25 @@ Zhan Zongqian, Yu Yifei, Xia Rui, Gan Wentian, Xie Hong, Perda Giulio, Morelli L
 
 ## Visual Localization  
 
-### [Elevating All Zero-Shot Sketch-Based Image Retrieval Through Multimodal Prompt Learning](http://arxiv.org/abs/2407.04207)  
-Mainak Singha, Ankit Jha, Divyam Gupta, Pranav Singla, Biplab Banerjee  
+### [Pseudo-triplet Guided Few-shot Composed Image Retrieval](http://arxiv.org/abs/2407.06001)  
+Bohan Hou, Haoqiang Lin, Haokun Wen, Meng Liu, Xuemeng Song  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We address the challenges inherent in sketch-based image retrieval (SBIR) across various settings, including zero-shot SBIR, generalized zero-shot SBIR, and fine-grained zero-shot SBIR, by leveraging the vision-language foundation model, CLIP. While recent endeavors have employed CLIP to enhance SBIR, these approaches predominantly follow uni-modal prompt processing and overlook to fully exploit CLIP's integrated visual and textual capabilities. To bridge this gap, we introduce SpLIP, a novel multi-modal prompt learning scheme designed to operate effectively with frozen CLIP backbones. We diverge from existing multi-modal prompting methods that either treat visual and textual prompts independently or integrate them in a limited fashion, leading to suboptimal generalization. SpLIP implements a bi-directional prompt-sharing strategy that enables mutual knowledge exchange between CLIP's visual and textual encoders, fostering a more cohesive and synergistic prompt processing mechanism that significantly reduces the semantic gap between the sketch and photo embeddings. In addition to pioneering multi-modal prompt learning, we propose two innovative strategies for further refining the embedding space. The first is an adaptive margin generation for the sketch-photo triplet loss, regulated by CLIP's class textual embeddings. The second introduces a novel task, termed conditional cross-modal jigsaw, aimed at enhancing fine-grained sketch-photo alignment, by focusing on implicitly modelling the viable patch arrangement of sketches using knowledge of unshuffled photos. Our comprehensive experimental evaluations across multiple benchmarks demonstrate the superior performance of SpLIP in all three SBIR scenarios. Code is available at https://github.com/mainaksingha01/SpLIP.  
+    Composed Image Retrieval (CIR) is a challenging task that aims to retrieve the target image based on a multimodal query, i.e., a reference image and its corresponding modification text. While previous supervised or zero-shot learning paradigms all fail to strike a good trade-off between time-consuming annotation cost and retrieval performance, recent researchers introduced the task of few-shot CIR (FS-CIR) and proposed a textual inversion-based network based on pretrained CLIP model to realize it. Despite its promising performance, the approach suffers from two key limitations: insufficient multimodal query composition training and indiscriminative training triplet selection. To address these two limitations, in this work, we propose a novel two-stage pseudo triplet guided few-shot CIR scheme, dubbed PTG-FSCIR. In the first stage, we employ a masked training strategy and advanced image caption generator to construct pseudo triplets from pure image data to enable the model to acquire primary knowledge related to multimodal query composition. In the second stage, based on active learning, we design a pseudo modification text-based query-target distance metric to evaluate the challenging score for each unlabeled sample. Meanwhile, we propose a robust top range-based random sampling strategy according to the 3- $\sigma$ rule in statistics, to sample the challenging samples for fine-tuning the pretrained model. Notably, our scheme is plug-and-play and compatible with any existing supervised CIR models. We tested our scheme across three backbones on three public datasets (i.e., FashionIQ, CIRR, and Birds-to-Words), achieving maximum improvements of 26.4%, 25.5% and 21.6% respectively, demonstrating our scheme's effectiveness.  
   </ol>  
 </details>  
-**comments**: Accepted in ECCV 2024  
+**comments**: 15 pages, 5 figures,  
   
-### [Visualizing Dialogues: Enhancing Image Selection through Dialogue Understanding with Large Language Models](http://arxiv.org/abs/2407.03615)  
-Chang-Sheng Kao, Yun-Nung Chen  
+### [HyCIR: Boosting Zero-Shot Composed Image Retrieval with Synthetic Labels](http://arxiv.org/abs/2407.05795)  
+Yingying Jiang, Hanchao Jia, Xiaobing Wang, Peng Hao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in dialogue systems have highlighted the significance of integrating multimodal responses, which enable conveying ideas through diverse modalities rather than solely relying on text-based interactions. This enrichment not only improves overall communicative efficacy but also enhances the quality of conversational experiences. However, existing methods for dialogue-to-image retrieval face limitations due to the constraints of pre-trained vision language models (VLMs) in comprehending complex dialogues accurately. To address this, we present a novel approach leveraging the robust reasoning capabilities of large language models (LLMs) to generate precise dialogue-associated visual descriptors, facilitating seamless connection with images. Extensive experiments conducted on benchmark data validate the effectiveness of our proposed approach in deriving concise and accurate visual descriptors, leading to significant enhancements in dialogue-to-image retrieval performance. Furthermore, our findings demonstrate the method's generalizability across diverse visual cues, various LLMs, and different datasets, underscoring its practicality and potential impact in real-world applications.  
+    Composed Image Retrieval (CIR) aims to retrieve images based on a query image with text. Current Zero-Shot CIR (ZS-CIR) methods try to solve CIR tasks without using expensive triplet-labeled training datasets. However, the gap between ZS-CIR and triplet-supervised CIR is still large. In this work, we propose Hybrid CIR (HyCIR), which uses synthetic labels to boost the performance of ZS-CIR. A new label Synthesis pipeline for CIR (SynCir) is proposed, in which only unlabeled images are required. First, image pairs are extracted based on visual similarity. Second, query text is generated for each image pair based on vision-language model and LLM. Third, the data is further filtered in language space based on semantic similarity. To improve ZS-CIR performance, we propose a hybrid training strategy to work with both ZS-CIR supervision and synthetic CIR triplets. Two kinds of contrastive learning are adopted. One is to use large-scale unlabeled image dataset to learn an image-to-text mapping with good generalization. The other is to use synthetic CIR triplets to learn a better mapping for CIR tasks. Our approach achieves SOTA zero-shot performance on the common CIR benchmarks: CIRR and CIRCO.  
   </ol>  
 </details>  
-  
-### [Celeb-FBI: A Benchmark Dataset on Human Full Body Images and Age, Gender, Height and Weight Estimation using Deep Learning Approach](http://arxiv.org/abs/2407.03486)  
-Pronay Debnath, Usafa Akther Rifa, Busra Kamal Rafa, Ali Haider Talukder Akib, Md. Aminur Rahman  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The scarcity of comprehensive datasets in surveillance, identification, image retrieval systems, and healthcare poses a significant challenge for researchers in exploring new methodologies and advancing knowledge in these respective fields. Furthermore, the need for full-body image datasets with detailed attributes like height, weight, age, and gender is particularly significant in areas such as fashion industry analytics, ergonomic design assessment, virtual reality avatar creation, and sports performance analysis. To address this gap, we have created the 'Celeb-FBI' dataset which contains 7,211 full-body images of individuals accompanied by detailed information on their height, age, weight, and gender. Following the dataset creation, we proceed with the preprocessing stages, including image cleaning, scaling, and the application of Synthetic Minority Oversampling Technique (SMOTE). Subsequently, utilizing this prepared dataset, we employed three deep learning approaches: Convolutional Neural Network (CNN), 50-layer ResNet, and 16-layer VGG, which are used for estimating height, weight, age, and gender from human full-body images. From the results obtained, ResNet-50 performed best for the system with an accuracy rate of 79.18% for age, 95.43% for gender, 85.60% for height and 81.91% for weight.  
-  </ol>  
-</details>  
-**comments**: Accepted for publication in 3rd International Conference on Advanced
-  Communication and Intelligent Systems  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [PFGS: High Fidelity Point Cloud Rendering via Feature Splatting](http://arxiv.org/abs/2407.03857)  
-Jiaxu Wang, Ziyi Zhang, Junhao He, Renjing Xu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Rendering high-fidelity images from sparse point clouds is still challenging. Existing learning-based approaches suffer from either hole artifacts, missing details, or expensive computations. In this paper, we propose a novel framework to render high-quality images from sparse points. This method first attempts to bridge the 3D Gaussian Splatting and point cloud rendering, which includes several cascaded modules. We first use a regressor to estimate Gaussian properties in a point-wise manner, the estimated properties are used to rasterize neural feature descriptors into 2D planes which are extracted from a multiscale extractor. The projected feature volume is gradually decoded toward the final prediction via a multiscale and progressive decoder. The whole pipeline experiences a two-stage training and is driven by our well-designed progressive and multiscale reconstruction loss. Experiments on different benchmarks show the superiority of our method in terms of rendering qualities and the necessities of our main components.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Image Matching  
-
-### [SfM on-the-fly: Get better 3D from What You Capture](http://arxiv.org/abs/2407.03939)  
-Zhan Zongqian, Yu Yifei, Xia Rui, Gan Wentian, Xie Hong, Perda Giulio, Morelli Luca, Remondino Fabio, Wang Xin  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In the last twenty years, Structure from Motion (SfM) has been a constant research hotspot in the fields of photogrammetry, computer vision, robotics etc., whereas real-time performance is just a recent topic of growing interest. This work builds upon the original on-the-fly SfM (Zhan et al., 2024) and presents an updated version with three new advancements to get better 3D from what you capture: (i) real-time image matching is further boosted by employing the Hierarchical Navigable Small World (HNSW) graphs, thus more true positive overlapping image candidates are faster identified; (ii) a self-adaptive weighting strategy is proposed for robust hierarchical local bundle adjustment to improve the SfM results; (iii) multiple agents are included for supporting collaborative SfM and seamlessly merge multiple 3D reconstructions into a complete 3D scene when commonly registered images appear. Various comprehensive experiments demonstrate that the proposed SfM method (named on-the-fly SfMv2) can generate more complete and robust 3D reconstructions in a high time-efficient way. Code is available at http://yifeiyu225.github.io/on-the-flySfMv2.github.io/.  
-  </ol>  
-</details>  
+**comments**: 8 pages, 5 figures  
   
   
 
@@ -124,15 +68,62 @@ Zhan Zongqian, Yu Yifei, Xia Rui, Gan Wentian, Xie Hong, Perda Giulio, Morelli L
 
 ## NeRF  
 
-### [CRiM-GS: Continuous Rigid Motion-Aware Gaussian Splatting from Motion Blur Images](http://arxiv.org/abs/2407.03923)  
-Junghe Lee, Donghyeong Kim, Dogyoon Lee, Suhwan Cho, Sangyoun Lee  
+### [PanDORA: Casual HDR Radiance Acquisition for Indoor Scenes](http://arxiv.org/abs/2407.06150)  
+Mohammad Reza Karimi Dastjerdi, Frédéric Fortier-Chouinard, Yannick Hold-Geoffroy, Marc Hébert, Claude Demers, Nima Kalantari, Jean-François Lalonde  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural radiance fields (NeRFs) have received significant attention due to their high-quality novel view rendering ability, prompting research to address various real-world cases. One critical challenge is the camera motion blur caused by camera movement during exposure time, which prevents accurate 3D scene reconstruction. In this study, we propose continuous rigid motion-aware gaussian splatting (CRiM-GS) to reconstruct accurate 3D scene from blurry images with real-time rendering speed. Considering the actual camera motion blurring process, which consists of complex motion patterns, we predict the continuous movement of the camera based on neural ordinary differential equations (ODEs). Specifically, we leverage rigid body transformations to model the camera motion with proper regularization, preserving the shape and size of the object. Furthermore, we introduce a continuous deformable 3D transformation in the \textit{SE(3)} field to adapt the rigid body transformation to real-world problems by ensuring a higher degree of freedom. By revisiting fundamental camera theory and employing advanced neural network training techniques, we achieve accurate modeling of continuous camera trajectories. We conduct extensive experiments, demonstrating state-of-the-art performance both quantitatively and qualitatively on benchmark datasets.  
+    Most novel view synthesis methods such as NeRF are unable to capture the true high dynamic range (HDR) radiance of scenes since they are typically trained on photos captured with standard low dynamic range (LDR) cameras. While the traditional exposure bracketing approach which captures several images at different exposures has recently been adapted to the multi-view case, we find such methods to fall short of capturing the full dynamic range of indoor scenes, which includes very bright light sources. In this paper, we present PanDORA: a PANoramic Dual-Observer Radiance Acquisition system for the casual capture of indoor scenes in high dynamic range. Our proposed system comprises two 360{\deg} cameras rigidly attached to a portable tripod. The cameras simultaneously acquire two 360{\deg} videos: one at a regular exposure and the other at a very fast exposure, allowing a user to simply wave the apparatus casually around the scene in a matter of minutes. The resulting images are fed to a NeRF-based algorithm that reconstructs the scene's full high dynamic range. Compared to HDR baselines from previous work, our approach reconstructs the full HDR radiance of indoor scenes without sacrificing the visual quality while retaining the ease of capture from recent NeRF-like approaches.  
   </ol>  
 </details>  
-**comments**: Project Page : https://jho-yonsei.github.io/CRiM-Gaussian/  
+**comments**: 10 pages, 8 figures  
+  
+### [Enhancing Neural Radiance Fields with Depth and Normal Completion Priors from Sparse Views](http://arxiv.org/abs/2407.05666)  
+Jiawei Guo, HungChyun Chou, Ning Ding  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) are an advanced technology that creates highly realistic images by learning about scenes through a neural network model. However, NeRF often encounters issues when there are not enough images to work with, leading to problems in accurately rendering views. The main issue is that NeRF lacks sufficient structural details to guide the rendering process accurately. To address this, we proposed a Depth and Normal Dense Completion Priors for NeRF (CP\_NeRF) framework. This framework enhances view rendering by adding depth and normal dense completion priors to the NeRF optimization process. Before optimizing NeRF, we obtain sparse depth maps using the Structure from Motion (SfM) technique used to get camera poses. Based on the sparse depth maps and a normal estimator, we generate sparse normal maps for training a normal completion prior with precise standard deviations. During optimization, we apply depth and normal completion priors to transform sparse data into dense depth and normal maps with their standard deviations. We use these dense maps to guide ray sampling, assist distance sampling and construct a normal loss function for better training accuracy. To improve the rendering of NeRF's normal outputs, we incorporate an optical centre position embedder that helps synthesize more accurate normals through volume rendering. Additionally, we employ a normal patch matching technique to choose accurate rendered normal maps, ensuring more precise supervision for the model. Our method is superior to leading techniques in rendering detailed indoor scenes, even with limited input views.  
+  </ol>  
+</details>  
+  
+### [GeoNLF: Geometry guided Pose-Free Neural LiDAR Fields](http://arxiv.org/abs/2407.05597)  
+Weiyi Xue, Zehan Zheng, Fan Lu, Haiyun Wei, Guang Chen, Changjun Jiang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Although recent efforts have extended Neural Radiance Fields (NeRF) into LiDAR point cloud synthesis, the majority of existing works exhibit a strong dependence on precomputed poses. However, point cloud registration methods struggle to achieve precise global pose estimation, whereas previous pose-free NeRFs overlook geometric consistency in global reconstruction. In light of this, we explore the geometric insights of point clouds, which provide explicit registration priors for reconstruction. Based on this, we propose Geometry guided Neural LiDAR Fields(GeoNLF), a hybrid framework performing alternately global neural reconstruction and pure geometric pose optimization. Furthermore, NeRFs tend to overfit individual frames and easily get stuck in local minima under sparse-view inputs. To tackle this issue, we develop a selective-reweighting strategy and introduce geometric constraints for robust optimization. Extensive experiments on NuScenes and KITTI-360 datasets demonstrate the superiority of GeoNLF in both novel view synthesis and multi-view registration of low-frequency large-scale point clouds.  
+  </ol>  
+</details>  
+  
+### [Dynamic Neural Radiance Field From Defocused Monocular Video](http://arxiv.org/abs/2407.05586)  
+Xianrui Luo, Huiqiang Sun, Juewen Peng, Zhiguo Cao  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Dynamic Neural Radiance Field (NeRF) from monocular videos has recently been explored for space-time novel view synthesis and achieved excellent results. However, defocus blur caused by depth variation often occurs in video capture, compromising the quality of dynamic reconstruction because the lack of sharp details interferes with modeling temporal consistency between input views. To tackle this issue, we propose D2RF, the first dynamic NeRF method designed to restore sharp novel views from defocused monocular videos. We introduce layered Depth-of-Field (DoF) volume rendering to model the defocus blur and reconstruct a sharp NeRF supervised by defocused views. The blur model is inspired by the connection between DoF rendering and volume rendering. The opacity in volume rendering aligns with the layer visibility in DoF rendering.To execute the blurring, we modify the layered blur kernel to the ray-based kernel and employ an optimized sparse kernel to gather the input rays efficiently and render the optimized rays with our layered DoF volume rendering. We synthesize a dataset with defocused dynamic scenes for our task, and extensive experiments on our dataset show that our method outperforms existing approaches in synthesizing all-in-focus novel views from defocus blur while maintaining spatial-temporal consistency in the scene.  
+  </ol>  
+</details>  
+**comments**: Accepted by ECCV 2024  
+  
+### [GaussReg: Fast 3D Registration with Gaussian Splatting](http://arxiv.org/abs/2407.05254)  
+Jiahao Chang, Yinglin Xu, Yihao Li, Yuantao Chen, Xiaoguang Han  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Point cloud registration is a fundamental problem for large-scale 3D scene scanning and reconstruction. With the help of deep learning, registration methods have evolved significantly, reaching a nearly-mature stage. As the introduction of Neural Radiance Fields (NeRF), it has become the most popular 3D scene representation as its powerful view synthesis capabilities. Regarding NeRF representation, its registration is also required for large-scale scene reconstruction. However, this topic extremly lacks exploration. This is due to the inherent challenge to model the geometric relationship among two scenes with implicit representations. The existing methods usually convert the implicit representation to explicit representation for further registration. Most recently, Gaussian Splatting (GS) is introduced, employing explicit 3D Gaussian. This method significantly enhances rendering speed while maintaining high rendering quality. Given two scenes with explicit GS representations, in this work, we explore the 3D registration task between them. To this end, we propose GaussReg, a novel coarse-to-fine framework, both fast and accurate. The coarse stage follows existing point cloud registration methods and estimates a rough alignment for point clouds from GS. We further newly present an image-guided fine registration approach, which renders images from GS to provide more detailed geometric information for precise alignment. To support comprehensive evaluation, we carefully build a scene-level dataset called ScanNet-GSReg with 1379 scenes obtained from the ScanNet dataset and collect an in-the-wild dataset called GSReg. Experimental results demonstrate our method achieves state-of-the-art performance on multiple datasets. Our GaussReg is 44 times faster than HLoc (SuperPoint as the feature extractor and SuperGlue as the matcher) with comparable accuracy.  
+  </ol>  
+</details>  
+**comments**: ECCV 2024  
+  
+### [SurgicalGaussian: Deformable 3D Gaussians for High-Fidelity Surgical Scene Reconstruction](http://arxiv.org/abs/2407.05023)  
+Weixing Xie, Junfeng Yao, Xianpeng Cao, Qiqin Lin, Zerui Tang, Xiao Dong, Xiaohu Guo  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Dynamic reconstruction of deformable tissues in endoscopic video is a key technology for robot-assisted surgery. Recent reconstruction methods based on neural radiance fields (NeRFs) have achieved remarkable results in the reconstruction of surgical scenes. However, based on implicit representation, NeRFs struggle to capture the intricate details of objects in the scene and cannot achieve real-time rendering. In addition, restricted single view perception and occluded instruments also propose special challenges in surgical scene reconstruction. To address these issues, we develop SurgicalGaussian, a deformable 3D Gaussian Splatting method to model dynamic surgical scenes. Our approach models the spatio-temporal features of soft tissues at each time stamp via a forward-mapping deformation MLP and regularization to constrain local 3D Gaussians to comply with consistent movement. With the depth initialization strategy and tool mask-guided training, our method can remove surgical instruments and reconstruct high-fidelity surgical scenes. Through experiments on various surgical videos, our network outperforms existing method on many aspects, including rendering quality, rendering speed and GPU usage. The project page can be found at https://surgicalgaussian.github.io.  
+  </ol>  
+</details>  
   
   
 
