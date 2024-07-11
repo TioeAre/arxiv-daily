@@ -1,81 +1,43 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Computer-vision-tasks-for-intelligent-aerospace-missions:-An-overview>Computer vision tasks for intelligent aerospace missions: An overview</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#LVLM-empowered-Multi-modal-Representation-Learning-for-Visual-Place-Recognition>LVLM-empowered Multi-modal Representation Learning for Visual Place Recognition</a></li>
-        <li><a href=#CEIA:-CLIP-Based-Event-Image-Alignment-for-Open-World-Event-Based-Understanding>CEIA: CLIP-Based Event-Image Alignment for Open-World Event-Based Understanding</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#LVLM-empowered-Multi-modal-Representation-Learning-for-Visual-Place-Recognition>LVLM-empowered Multi-modal Representation Learning for Visual Place Recognition</a></li>
+        <li><a href=#Raising-the-Ceiling:-Conflict-Free-Local-Feature-Matching-with-Dynamic-View-Switching>Raising the Ceiling: Conflict-Free Local Feature Matching with Dynamic View Switching</a></li>
+        <li><a href=#Mutual-Information-calculation-on-different-appearances>Mutual Information calculation on different appearances</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Sparse-DeRF:-Deblurred-Neural-Radiance-Fields-from-Sparse-View>Sparse-DeRF: Deblurred Neural Radiance Fields from Sparse View</a></li>
-        <li><a href=#RRM:-Relightable-assets-using-Radiance-guided-Material-extraction>RRM: Relightable assets using Radiance guided Material extraction</a></li>
+        <li><a href=#Protecting-NeRFs'-Copyright-via-Plug-And-Play-Watermarking-Base-Model>Protecting NeRFs' Copyright via Plug-And-Play Watermarking Base Model</a></li>
+        <li><a href=#Drantal-NeRF:-Diffusion-Based-Restoration-for-Anti-aliasing-Neural-Radiance-Field>Drantal-NeRF: Diffusion-Based Restoration for Anti-aliasing Neural Radiance Field</a></li>
+        <li><a href=#Reference-based-Controllable-Scene-Stylization-with-Gaussian-Splatting>Reference-based Controllable Scene Stylization with Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Image Matching  
 
-### [Computer vision tasks for intelligent aerospace missions: An overview](http://arxiv.org/abs/2407.06513)  
-Huilin Chen, Qiyu Sun, Fangfei Li, Yang Tang  
+### [Raising the Ceiling: Conflict-Free Local Feature Matching with Dynamic View Switching](http://arxiv.org/abs/2407.07789)  
+Xiaoyong Lu, Songlin Du  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Computer vision tasks are crucial for aerospace missions as they help spacecraft to understand and interpret the space environment, such as estimating position and orientation, reconstructing 3D models, and recognizing objects, which have been extensively studied to successfully carry out the missions. However, traditional methods like Kalman Filtering, Structure from Motion, and Multi-View Stereo are not robust enough to handle harsh conditions, leading to unreliable results. In recent years, deep learning (DL)-based perception technologies have shown great potential and outperformed traditional methods, especially in terms of their robustness to changing environments. To further advance DL-based aerospace perception, various frameworks, datasets, and strategies have been proposed, indicating significant potential for future applications. In this survey, we aim to explore the promising techniques used in perception tasks and emphasize the importance of DL-based aerospace perception. We begin by providing an overview of aerospace perception, including classical space programs developed in recent years, commonly used sensors, and traditional perception methods. Subsequently, we delve into three fundamental perception tasks in aerospace missions: pose estimation, 3D reconstruction, and recognition, as they are basic and crucial for subsequent decision-making and control. Finally, we discuss the limitations and possibilities in current research and provide an outlook on future developments, including the challenges of working with limited datasets, the need for improved algorithms, and the potential benefits of multi-source information fusion.  
+    Current feature matching methods prioritize improving modeling capabilities to better align outputs with ground-truth matches, which are the theoretical upper bound on matching results, metaphorically depicted as the "ceiling". However, these enhancements fail to address the underlying issues that directly hinder ground-truth matches, including the scarcity of matchable points in small scale images, matching conflicts in dense methods, and the keypoint-repeatability reliance in sparse methods. We propose a novel feature matching method named RCM, which Raises the Ceiling of Matching from three aspects. 1) RCM introduces a dynamic view switching mechanism to address the scarcity of matchable points in source images by strategically switching image pairs. 2) RCM proposes a conflict-free coarse matching module, addressing matching conflicts in the target image through a many-to-one matching strategy. 3) By integrating the semi-sparse paradigm and the coarse-to-fine architecture, RCM preserves the benefits of both high efficiency and global search, mitigating the reliance on keypoint repeatability. As a result, RCM enables more matchable points in the source image to be matched in an exhaustive and conflict-free manner in the target image, leading to a substantial 260% increase in ground-truth matches. Comprehensive experiments show that RCM exhibits remarkable performance and efficiency in comparison to state-of-the-art methods.  
   </ol>  
 </details>  
-**comments**: 23 pages, 7 figures, journal  
+**comments**: Accepted at ECCV 2024  
   
-  
-
-
-
-## Visual Localization  
-
-### [LVLM-empowered Multi-modal Representation Learning for Visual Place Recognition](http://arxiv.org/abs/2407.06730)  
-Teng Wang, Lingquan Meng, Lei Cheng, Changyin Sun  
+### [Mutual Information calculation on different appearances](http://arxiv.org/abs/2407.07410)  
+Jiecheng Liao, Junhao Lu, Jeff Ji, Jiacheng He  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual place recognition (VPR) remains challenging due to significant viewpoint changes and appearance variations. Mainstream works tackle these challenges by developing various feature aggregation methods to transform deep features into robust and compact global representations. Unfortunately, satisfactory results cannot be achieved under challenging conditions. We start from a new perspective and attempt to build a discriminative global representations by fusing image data and text descriptions of the the visual scene. The motivation is twofold: (1) Current Large Vision-Language Models (LVLMs) demonstrate extraordinary emergent capability in visual instruction following, and thus provide an efficient and flexible manner in generating text descriptions of images; (2) The text descriptions, which provide high-level scene understanding, show strong robustness against environment variations. Although promising, leveraging LVLMs to build multi-modal VPR solutions remains challenging in efficient multi-modal fusion. Furthermore, LVLMs will inevitably produces some inaccurate descriptions, making it even harder. To tackle these challenges, we propose a novel multi-modal VPR solution. It first adapts pre-trained visual and language foundation models to VPR for extracting image and text features, which are then fed into the feature combiner to enhance each other. As the main component, the feature combiner first propose a token-wise attention block to adaptively recalibrate text tokens according to their relevance to the image data, and then develop an efficient cross-attention fusion module to propagate information across different modalities. The enhanced multi-modal features are compressed into the feature descriptor for performing retrieval. Experimental results show that our method outperforms state-of-the-art methods by a large margin with significantly smaller image descriptor dimension.  
+    Mutual information has many applications in image alignment and matching, mainly due to its ability to measure the statistical dependence between two images, even if the two images are from different modalities (e.g., CT and MRI). It considers not only the pixel intensities of the images but also the spatial relationships between the pixels. In this project, we apply the mutual information formula to image matching, where image A is the moving object and image B is the target object and calculate the mutual information between them to evaluate the similarity between the images. For comparison, we also used entropy and information-gain methods to test the dependency of the images. We also investigated the effect of different environments on the mutual information of the same image and used experiments and plots to demonstrate.  
   </ol>  
 </details>  
-  
-### [CEIA: CLIP-Based Event-Image Alignment for Open-World Event-Based Understanding](http://arxiv.org/abs/2407.06611)  
-Wenhao Xu, Wenming Weng, Yueyi Zhang, Zhiwei Xiong  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present CEIA, an effective framework for open-world event-based understanding. Currently training a large event-text model still poses a huge challenge due to the shortage of paired event-text data. In response to this challenge, CEIA learns to align event and image data as an alternative instead of directly aligning event and text data. Specifically, we leverage the rich event-image datasets to learn an event embedding space aligned with the image space of CLIP through contrastive learning. In this way, event and text data are naturally aligned via using image data as a bridge. Particularly, CEIA offers two distinct advantages. First, it allows us to take full advantage of the existing event-image datasets to make up the shortage of large-scale event-text datasets. Second, leveraging more training data, it also exhibits the flexibility to boost performance, ensuring scalable capability. In highlighting the versatility of our framework, we make extensive evaluations through a diverse range of event-based multi-modal applications, such as object recognition, event-image retrieval, event-text retrieval, and domain adaptation. The outcomes demonstrate CEIA's distinct zero-shot superiority over existing methods on these applications.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [LVLM-empowered Multi-modal Representation Learning for Visual Place Recognition](http://arxiv.org/abs/2407.06730)  
-Teng Wang, Lingquan Meng, Lei Cheng, Changyin Sun  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual place recognition (VPR) remains challenging due to significant viewpoint changes and appearance variations. Mainstream works tackle these challenges by developing various feature aggregation methods to transform deep features into robust and compact global representations. Unfortunately, satisfactory results cannot be achieved under challenging conditions. We start from a new perspective and attempt to build a discriminative global representations by fusing image data and text descriptions of the the visual scene. The motivation is twofold: (1) Current Large Vision-Language Models (LVLMs) demonstrate extraordinary emergent capability in visual instruction following, and thus provide an efficient and flexible manner in generating text descriptions of images; (2) The text descriptions, which provide high-level scene understanding, show strong robustness against environment variations. Although promising, leveraging LVLMs to build multi-modal VPR solutions remains challenging in efficient multi-modal fusion. Furthermore, LVLMs will inevitably produces some inaccurate descriptions, making it even harder. To tackle these challenges, we propose a novel multi-modal VPR solution. It first adapts pre-trained visual and language foundation models to VPR for extracting image and text features, which are then fed into the feature combiner to enhance each other. As the main component, the feature combiner first propose a token-wise attention block to adaptively recalibrate text tokens according to their relevance to the image data, and then develop an efficient cross-attention fusion module to propagate information across different modalities. The enhanced multi-modal features are compressed into the feature descriptor for performing retrieval. Experimental results show that our method outperforms state-of-the-art methods by a large margin with significantly smaller image descriptor dimension.  
-  </ol>  
-</details>  
+**comments**: demo for the work: elucidator.cn/demo-mi/  
   
   
 
@@ -83,25 +45,33 @@ Teng Wang, Lingquan Meng, Lei Cheng, Changyin Sun
 
 ## NeRF  
 
-### [Sparse-DeRF: Deblurred Neural Radiance Fields from Sparse View](http://arxiv.org/abs/2407.06613)  
-Dogyoon Lee, Donghyeong Kim, Jungho Lee, Minhyeok Lee, Seunghoon Lee, Sangyoun Lee  
+### [Protecting NeRFs' Copyright via Plug-And-Play Watermarking Base Model](http://arxiv.org/abs/2407.07735)  
+Qi Song, Ziyuan Luo, Ka Chun Cheung, Simon See, Renjie Wan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent studies construct deblurred neural radiance fields (DeRF) using dozens of blurry images, which are not practical scenarios if only a limited number of blurry images are available. This paper focuses on constructing DeRF from sparse-view for more pragmatic real-world scenarios. As observed in our experiments, establishing DeRF from sparse views proves to be a more challenging problem due to the inherent complexity arising from the simultaneous optimization of blur kernels and NeRF from sparse view. Sparse-DeRF successfully regularizes the complicated joint optimization, presenting alleviated overfitting artifacts and enhanced quality on radiance fields. The regularization consists of three key components: Surface smoothness, helps the model accurately predict the scene structure utilizing unseen and additional hidden rays derived from the blur kernel based on statistical tendencies of real-world; Modulated gradient scaling, helps the model adjust the amount of the backpropagated gradient according to the arrangements of scene objects; Perceptual distillation improves the perceptual quality by overcoming the ill-posed multi-view inconsistency of image deblurring and distilling the pre-filtered information, compensating for the lack of clean information in blurry images. We demonstrate the effectiveness of the Sparse-DeRF with extensive quantitative and qualitative experimental results by training DeRF from 2-view, 4-view, and 6-view blurry images.  
+    Neural Radiance Fields (NeRFs) have become a key method for 3D scene representation. With the rising prominence and influence of NeRF, safeguarding its intellectual property has become increasingly important. In this paper, we propose \textbf{NeRFProtector}, which adopts a plug-and-play strategy to protect NeRF's copyright during its creation. NeRFProtector utilizes a pre-trained watermarking base model, enabling NeRF creators to embed binary messages directly while creating their NeRF. Our plug-and-play property ensures NeRF creators can flexibly choose NeRF variants without excessive modifications. Leveraging our newly designed progressive distillation, we demonstrate performance on par with several leading-edge neural rendering methods. Our project is available at: \url{https://qsong2001.github.io/NeRFProtector}.  
   </ol>  
 </details>  
-**comments**: Project page: https://dogyoonlee.github.io/sparsederf/  
+**comments**: Accepted by ECCV2024  
   
-### [RRM: Relightable assets using Radiance guided Material extraction](http://arxiv.org/abs/2407.06397)  
-Diego Gomez, Julien Philip, Adrien Kaiser, Élie Michel  
+### [Drantal-NeRF: Diffusion-Based Restoration for Anti-aliasing Neural Radiance Field](http://arxiv.org/abs/2407.07461)  
+Ganlin Yang, Kaidong Zhang, Jingjing Fu, Dong Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Synthesizing NeRFs under arbitrary lighting has become a seminal problem in the last few years. Recent efforts tackle the problem via the extraction of physically-based parameters that can then be rendered under arbitrary lighting, but they are limited in the range of scenes they can handle, usually mishandling glossy scenes. We propose RRM, a method that can extract the materials, geometry, and environment lighting of a scene even in the presence of highly reflective objects. Our method consists of a physically-aware radiance field representation that informs physically-based parameters, and an expressive environment light structure based on a Laplacian Pyramid. We demonstrate that our contributions outperform the state-of-the-art on parameter retrieval tasks, leading to high-fidelity relighting and novel view synthesis on surfacic scenes.  
+    Aliasing artifacts in renderings produced by Neural Radiance Field (NeRF) is a long-standing but complex issue in the field of 3D implicit representation, which arises from a multitude of intricate causes and was mitigated by designing more advanced but complex scene parameterization methods before. In this paper, we present a Diffusion-based restoration method for anti-aliasing Neural Radiance Field (Drantal-NeRF). We consider the anti-aliasing issue from a low-level restoration perspective by viewing aliasing artifacts as a kind of degradation model added to clean ground truths. By leveraging the powerful prior knowledge encapsulated in diffusion model, we could restore the high-realism anti-aliasing renderings conditioned on aliased low-quality counterparts. We further employ a feature-wrapping operation to ensure multi-view restoration consistency and finetune the VAE decoder to better adapt to the scene-specific data distribution. Our proposed method is easy to implement and agnostic to various NeRF backbones. We conduct extensive experiments on challenging large-scale urban scenes as well as unbounded 360-degree scenes and achieve substantial qualitative and quantitative improvements.  
   </ol>  
 </details>  
-**comments**: Paper accepted and presented at CGI 2024  
+  
+### [Reference-based Controllable Scene Stylization with Gaussian Splatting](http://arxiv.org/abs/2407.07220)  
+Yiqun Mei, Jiacong Xu, Vishal M. Patel  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Referenced-based scene stylization that edits the appearance based on a content-aligned reference image is an emerging research area. Starting with a pretrained neural radiance field (NeRF), existing methods typically learn a novel appearance that matches the given style. Despite their effectiveness, they inherently suffer from time-consuming volume rendering, and thus are impractical for many real-time applications. In this work, we propose ReGS, which adapts 3D Gaussian Splatting (3DGS) for reference-based stylization to enable real-time stylized view synthesis. Editing the appearance of a pretrained 3DGS is challenging as it uses discrete Gaussians as 3D representation, which tightly bind appearance with geometry. Simply optimizing the appearance as prior methods do is often insufficient for modeling continuous textures in the given reference image. To address this challenge, we propose a novel texture-guided control mechanism that adaptively adjusts local responsible Gaussians to a new geometric arrangement, serving for desired texture details. The proposed process is guided by texture clues for effective appearance editing, and regularized by scene depth for preserving original geometric structure. With these novel designs, we show ReGs can produce state-of-the-art stylization results that respect the reference texture while embracing real-time rendering speed for free-view navigation.  
+  </ol>  
+</details>  
   
   
 
