@@ -1,128 +1,88 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#LVCP:-LiDAR-Vision-Tightly-Coupled-Collaborative-Real-time-Relative-Positioning>LVCP: LiDAR-Vision Tightly Coupled Collaborative Real-time Relative Positioning</a></li>
-        <li><a href=#Towards-Scale-Aware-Full-Surround-Monodepth-with-Transformers>Towards Scale-Aware Full Surround Monodepth with Transformers</a></li>
-        <li><a href=#3DEgo:-3D-Editing-on-the-Go!>3DEgo: 3D Editing on the Go!</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#No-Train,-all-Gain:-Self-Supervised-Gradients-Improve-Deep-Frozen-Representations>No Train, all Gain: Self-Supervised Gradients Improve Deep Frozen Representations</a></li>
-        <li><a href=#DINO-Pre-training-for-Vision-based-End-to-end-Autonomous-Driving>DINO Pre-training for Vision-based End-to-end Autonomous Driving</a></li>
-        <li><a href=#Addressing-Image-Hallucination-in-Text-to-Image-Generation-through-Factual-Image-Retrieval>Addressing Image Hallucination in Text-to-Image Generation through Factual Image Retrieval</a></li>
-        <li><a href=#An-evaluation-of-CNN-models-and-data-augmentation-techniques-in-hierarchical-localization-of-mobile-robots>An evaluation of CNN models and data augmentation techniques in hierarchical localization of mobile robots</a></li>
-        <li><a href=#An-experimental-evaluation-of-Siamese-Neural-Networks-for-robot-localization-using-omnidirectional-imaging-in-indoor-environments>An experimental evaluation of Siamese Neural Networks for robot localization using omnidirectional imaging in indoor environments</a></li>
+        <li><a href=#GV-Bench:-Benchmarking-Local-Feature-Matching-for-Geometric-Verification-of-Long-term-Loop-Closure-Detection>GV-Bench: Benchmarking Local Feature Matching for Geometric Verification of Long-term Loop Closure Detection</a></li>
+        <li><a href=#EndoFinder:-Online-Image-Retrieval-for-Explainable-Colorectal-Polyp-Diagnosis>EndoFinder: Online Image Retrieval for Explainable Colorectal Polyp Diagnosis</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#GV-Bench:-Benchmarking-Local-Feature-Matching-for-Geometric-Verification-of-Long-term-Loop-Closure-Detection>GV-Bench: Benchmarking Local Feature Matching for Geometric Verification of Long-term Loop Closure Detection</a></li>
+        <li><a href=#REMM:Rotation-Equivariant-Framework-for-End-to-End-Multimodal-Image-Matching>REMM:Rotation-Equivariant Framework for End-to-End Multimodal Image Matching</a></li>
+        <li><a href=#A-Self-Correcting-Strategy-of-the-Digital-Volume-Correlation-Displacement-Field-Based-on-Image-Matching:-Application-to-Poor-Speckles-Quality-and-Complex-Large-Deformation>A Self-Correcting Strategy of the Digital Volume Correlation Displacement Field Based on Image Matching: Application to Poor Speckles Quality and Complex-Large Deformation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#AirNeRF:-3D-Reconstruction-of-Human-with-Drone-and-NeRF-for-Future-Communication-Systems>AirNeRF: 3D Reconstruction of Human with Drone and NeRF for Future Communication Systems</a></li>
-        <li><a href=#Domain-Generalization-for-6D-Pose-Estimation-Through-NeRF-based-Image-Synthesis>Domain Generalization for 6D Pose Estimation Through NeRF-based Image Synthesis</a></li>
-        <li><a href=#IE-NeRF:-Inpainting-Enhanced-Neural-Radiance-Fields-in-the-Wild>IE-NeRF: Inpainting Enhanced Neural Radiance Fields in the Wild</a></li>
-        <li><a href=#NGP-RT:-Fusing-Multi-Level-Hash-Features-with-Lightweight-Attention-for-Real-Time-Novel-View-Synthesis>NGP-RT: Fusing Multi-Level Hash Features with Lightweight Attention for Real-Time Novel View Synthesis</a></li>
-        <li><a href=#Boost-Your-NeRF:-A-Model-Agnostic-Mixture-of-Experts-Framework-for-High-Quality-and-Efficient-Rendering>Boost Your NeRF: A Model-Agnostic Mixture of Experts Framework for High Quality and Efficient Rendering</a></li>
-        <li><a href=#RS-NeRF:-Neural-Radiance-Fields-from-Rolling-Shutter-Images>RS-NeRF: Neural Radiance Fields from Rolling Shutter Images</a></li>
-        <li><a href=#SpikeGS:-3D-Gaussian-Splatting-from-Spike-Streams-with-High-Speed-Camera-Motion>SpikeGS: 3D Gaussian Splatting from Spike Streams with High-Speed Camera Motion</a></li>
-        <li><a href=#Physics-Informed-Learning-of-Characteristic-Trajectories-for-Smoke-Reconstruction>Physics-Informed Learning of Characteristic Trajectories for Smoke Reconstruction</a></li>
+        <li><a href=#Motion-Oriented-Compositional-Neural-Radiance-Fields-for-Monocular-Dynamic-Human-Modeling>Motion-Oriented Compositional Neural Radiance Fields for Monocular Dynamic Human Modeling</a></li>
+        <li><a href=#IPA-NeRF:-Illusory-Poisoning-Attack-Against-Neural-Radiance-Fields>IPA-NeRF: Illusory Poisoning Attack Against Neural Radiance Fields</a></li>
+        <li><a href=#DreamCatalyst:-Fast-and-High-Quality-3D-Editing-via-Controlling-Editability-and-Identity-Preservation>DreamCatalyst: Fast and High-Quality 3D Editing via Controlling Editability and Identity Preservation</a></li>
+        <li><a href=#Evaluating-geometric-accuracy-of-NeRF-reconstructions-compared-to-SLAM-method>Evaluating geometric accuracy of NeRF reconstructions compared to SLAM method</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [LVCP: LiDAR-Vision Tightly Coupled Collaborative Real-time Relative Positioning](http://arxiv.org/abs/2407.10782)  
-Zhuozhu Jian, Qixuan Li, Shengtao Zheng, Xueqian Wang, Xinlei Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In air-ground collaboration scenarios without GPS and prior maps, the relative positioning of drones and unmanned ground vehicles (UGVs) has always been a challenge. For a drone equipped with monocular camera and an UGV equipped with LiDAR as an external sensor, we propose a robust and real-time relative pose estimation method (LVCP) based on the tight coupling of vision and LiDAR point cloud information, which does not require prior information such as maps or precise initial poses. Given that large-scale point clouds generated by 3D sensors has more accurate spatial geometric information than the feature point cloud generated by image, we utilize LiDAR point clouds to correct the drift in visual-inertial odometry (VIO) when the camera undergoes significant shaking or the IMU has a low signal-to-noise ratio. To achieve this, we propose a novel coarse-to-fine framework for LiDAR-vision collaborative localization. In this framework, we construct point-plane association based on spatial geometric information, and innovatively construct a point-aided Bundle Adjustment (BA) problem as the backend to simultaneously estimate the relative pose of the camera and LiDAR and correct the VIO drift. In this process, we propose a particle swarm optimization (PSO) based sampling algorithm to complete the coarse estimation of the current camera-LiDAR pose. In this process, the initial pose of the camera used for sampling is obtained based on VIO propagation, and the valid feature-plane association number (VFPN) is used to trigger PSO-sampling process. Additionally, we propose a method that combines Structure from Motion (SFM) and multi-level sampling to initialize the algorithm, addressing the challenge of lacking initial values.  
-  </ol>  
-</details>  
-**comments**: See more details in https://sites.google.com/view/lvcp  
-  
-### [Towards Scale-Aware Full Surround Monodepth with Transformers](http://arxiv.org/abs/2407.10406)  
-Yuchen Yang, Xinyi Wang, Dong Li, Lu Tian, Ashish Sirasao, Xun Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Full surround monodepth (FSM) methods can learn from multiple camera views simultaneously in a self-supervised manner to predict the scale-aware depth, which is more practical for real-world applications in contrast to scale-ambiguous depth from a standalone monocular camera. In this work, we focus on enhancing the scale-awareness of FSM methods for depth estimation. To this end, we propose to improve FSM from two perspectives: depth network structure optimization and training pipeline optimization. First, we construct a transformer-based depth network with neighbor-enhanced cross-view attention (NCA). The cross-attention modules can better aggregate the cross-view context in both global and neighboring views. Second, we formulate a transformer-based feature matching scheme with progressive training to improve the structure-from-motion (SfM) pipeline. That allows us to learn scale-awareness with sufficient matches and further facilitate network convergence by removing mismatches based on SfM loss. Experiments demonstrate that the resulting Scale-aware full surround monodepth (SA-FSM) method largely improves the scale-aware depth predictions without median-scaling at the test time, and performs favorably against the state-of-the-art FSM methods, e.g., surpassing SurroundDepth by 3.8% in terms of accuracy at delta<1.25 on the DDAD benchmark.  
-  </ol>  
-</details>  
-  
-### [3DEgo: 3D Editing on the Go!](http://arxiv.org/abs/2407.10102)  
-Umar Khalid, Hasan Iqbal, Azib Farooq, Jing Hua, Chen Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce 3DEgo to address a novel problem of directly synthesizing photorealistic 3D scenes from monocular videos guided by textual prompts. Conventional methods construct a text-conditioned 3D scene through a three-stage process, involving pose estimation using Structure-from-Motion (SfM) libraries like COLMAP, initializing the 3D model with unedited images, and iteratively updating the dataset with edited images to achieve a 3D scene with text fidelity. Our framework streamlines the conventional multi-stage 3D editing process into a single-stage workflow by overcoming the reliance on COLMAP and eliminating the cost of model initialization. We apply a diffusion model to edit video frames prior to 3D scene creation by incorporating our designed noise blender module for enhancing multi-view editing consistency, a step that does not require additional training or fine-tuning of T2I diffusion models. 3DEgo utilizes 3D Gaussian Splatting to create 3D scenes from the multi-view consistent edited frames, capitalizing on the inherent temporal continuity and explicit point cloud data. 3DEgo demonstrates remarkable editing precision, speed, and adaptability across a variety of video sources, as validated by extensive evaluations on six datasets, including our own prepared GS25 dataset. Project Page: https://3dego.github.io/  
-  </ol>  
-</details>  
-**comments**: ECCV 2024 Accepted Paper  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [No Train, all Gain: Self-Supervised Gradients Improve Deep Frozen Representations](http://arxiv.org/abs/2407.10964)  
-[[code](https://github.com/waltersimoncini/fungivision)]  
-Walter Simoncini, Spyros Gidaris, Andrei Bursuc, Yuki M. Asano  
+### [GV-Bench: Benchmarking Local Feature Matching for Geometric Verification of Long-term Loop Closure Detection](http://arxiv.org/abs/2407.11736)  
+[[code](https://github.com/jarvisyjw/gv-bench)]  
+Jingwen Yu, Hanjing Ye, Jianhao Jiao, Ping Tan, Hong Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces FUNGI, Features from UNsupervised GradIents, a method to enhance the features of vision encoders by leveraging self-supervised gradients. Our method is simple: given any pretrained model, we first compute gradients from various self-supervised objectives for each input. These are projected to a lower dimension and then concatenated with the model's embedding. The resulting features are evaluated on k-nearest neighbor classification over 11 datasets from vision, 5 from natural language processing, and 2 from audio. Across backbones spanning various sizes and pretraining strategies, FUNGI features provide consistent performance improvements over the embeddings. We also show that using FUNGI features can benefit linear classification and image retrieval, and that they significantly improve the retrieval-based in-context scene understanding abilities of pretrained models, for example improving upon DINO by +17% for semantic segmentation - without any training.  
+    Visual loop closure detection is an important module in visual simultaneous localization and mapping (SLAM), which associates current camera observation with previously visited places. Loop closures correct drifts in trajectory estimation to build a globally consistent map. However, a false loop closure can be fatal, so verification is required as an additional step to ensure robustness by rejecting the false positive loops. Geometric verification has been a well-acknowledged solution that leverages spatial clues provided by local feature matching to find true positives. Existing feature matching methods focus on homography and pose estimation in long-term visual localization, lacking references for geometric verification. To fill the gap, this paper proposes a unified benchmark targeting geometric verification of loop closure detection under long-term conditional variations. Furthermore, we evaluate six representative local feature matching methods (handcrafted and learning-based) under the benchmark, with in-depth analysis for limitations and future directions.  
   </ol>  
 </details>  
-**comments**: Preprint. Code available at
-  https://github.com/WalterSimoncini/fungivision  
+**comments**: 9 pages, 11 figures, Accepted by IROS(2024)  
   
-### [DINO Pre-training for Vision-based End-to-end Autonomous Driving](http://arxiv.org/abs/2407.10803)  
-Shubham Juneja, Povilas Daniušis, Virginijus Marcinkevičius  
+### [EndoFinder: Online Image Retrieval for Explainable Colorectal Polyp Diagnosis](http://arxiv.org/abs/2407.11401)  
+Ruijie Yang, Yan Zhu, Peiyao Fu, Yizhe Zhang, Zhihua Wang, Quanlin Li, Pinghong Zhou, Xian Yang, Shuo Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this article, we focus on the pre-training of visual autonomous driving agents in the context of imitation learning. Current methods often rely on a classification-based pre-training, which we hypothesise to be holding back from extending capabilities of implicit image understanding. We propose pre-training the visual encoder of a driving agent using the self-distillation with no labels (DINO) method, which relies on a self-supervised learning paradigm.% and is trained on an unrelated task. Our experiments in CARLA environment in accordance with the Leaderboard benchmark reveal that the proposed pre-training is more efficient than classification-based pre-training, and is on par with the recently proposed pre-training based on visual place recognition (VPRPre).  
+    Determining the necessity of resecting malignant polyps during colonoscopy screen is crucial for patient outcomes, yet challenging due to the time-consuming and costly nature of histopathology examination. While deep learning-based classification models have shown promise in achieving optical biopsy with endoscopic images, they often suffer from a lack of explainability. To overcome this limitation, we introduce EndoFinder, a content-based image retrieval framework to find the 'digital twin' polyp in the reference database given a newly detected polyp. The clinical semantics of the new polyp can be inferred referring to the matched ones. EndoFinder pioneers a polyp-aware image encoder that is pre-trained on a large polyp dataset in a self-supervised way, merging masked image modeling with contrastive learning. This results in a generic embedding space ready for different downstream clinical tasks based on image retrieval. We validate the framework on polyp re-identification and optical biopsy tasks, with extensive experiments demonstrating that EndoFinder not only achieves explainable diagnostics but also matches the performance of supervised classification models. EndoFinder's reliance on image retrieval has the potential to support diverse downstream decision-making tasks during real-time colonoscopy procedures.  
   </ol>  
 </details>  
+**comments**: MICCAI 2024  
   
-### [Addressing Image Hallucination in Text-to-Image Generation through Factual Image Retrieval](http://arxiv.org/abs/2407.10683)  
-Youngsun Lim, Hyunjung Shim  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Text-to-image generation has shown remarkable progress with the emergence of diffusion models. However, these models often generate factually inconsistent images, failing to accurately reflect the factual information and common sense conveyed by the input text prompts. We refer to this issue as Image hallucination. Drawing from studies on hallucinations in language models, we classify this problem into three types and propose a methodology that uses factual images retrieved from external sources to generate realistic images. Depending on the nature of the hallucination, we employ off-the-shelf image editing tools, either InstructPix2Pix or IP-Adapter, to leverage factual information from the retrieved image. This approach enables the generation of images that accurately reflect the facts and common sense.  
-  </ol>  
-</details>  
-**comments**: This paper has been accepted for oral presentation at the IJCAI 2024
-  Workshop on Trustworthy Interactive Decision-Making with Foundation Models  
   
-### [An evaluation of CNN models and data augmentation techniques in hierarchical localization of mobile robots](http://arxiv.org/abs/2407.10596)  
-[[code](https://github.com/juanjo-cabrera/indoorlocalizationsinglecnn)]  
-J. J. Cabrera, O. J. Céspedes, S. Cebollada, O. Reinoso, L. Payá  
+
+
+
+## Image Matching  
+
+### [GV-Bench: Benchmarking Local Feature Matching for Geometric Verification of Long-term Loop Closure Detection](http://arxiv.org/abs/2407.11736)  
+[[code](https://github.com/jarvisyjw/gv-bench)]  
+Jingwen Yu, Hanjing Ye, Jianhao Jiao, Ping Tan, Hong Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work presents an evaluation of CNN models and data augmentation to carry out the hierarchical localization of a mobile robot by using omnidireccional images. In this sense, an ablation study of different state-of-the-art CNN models used as backbone is presented and a variety of data augmentation visual effects are proposed for addressing the visual localization of the robot. The proposed method is based on the adaption and re-training of a CNN with a dual purpose: (1) to perform a rough localization step in which the model is used to predict the room from which an image was captured, and (2) to address the fine localization step, which consists in retrieving the most similar image of the visual map among those contained in the previously predicted room by means of a pairwise comparison between descriptors obtained from an intermediate layer of the CNN. In this sense, we evaluate the impact of different state-of-the-art CNN models such as ConvNeXt for addressing the proposed localization. Finally, a variety of data augmentation visual effects are separately employed for training the model and their impact is assessed. The performance of the resulting CNNs is evaluated under real operation conditions, including changes in the lighting conditions. Our code is publicly available on the project website https://github.com/juanjo-cabrera/IndoorLocalizationSingleCNN.git  
+    Visual loop closure detection is an important module in visual simultaneous localization and mapping (SLAM), which associates current camera observation with previously visited places. Loop closures correct drifts in trajectory estimation to build a globally consistent map. However, a false loop closure can be fatal, so verification is required as an additional step to ensure robustness by rejecting the false positive loops. Geometric verification has been a well-acknowledged solution that leverages spatial clues provided by local feature matching to find true positives. Existing feature matching methods focus on homography and pose estimation in long-term visual localization, lacking references for geometric verification. To fill the gap, this paper proposes a unified benchmark targeting geometric verification of loop closure detection under long-term conditional variations. Furthermore, we evaluate six representative local feature matching methods (handcrafted and learning-based) under the benchmark, with in-depth analysis for limitations and future directions.  
   </ol>  
 </details>  
-**comments**: Published Evolving Systems (2024): 08 July 2024 PDF link:
-  https://link.springer.com/content/pdf/10.1007/s12530-024-09604-6.pdf  
+**comments**: 9 pages, 11 figures, Accepted by IROS(2024)  
   
-### [An experimental evaluation of Siamese Neural Networks for robot localization using omnidirectional imaging in indoor environments](http://arxiv.org/abs/2407.10536)  
-J. J. Cabrera, V. Román, A. Gil, O. Reinoso, L. Payá  
+### [REMM:Rotation-Equivariant Framework for End-to-End Multimodal Image Matching](http://arxiv.org/abs/2407.11637)  
+Han Nie, Bin Luo, Jun Liu, Zhitao Fu, Weixing Liu, Xin Su  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The objective of this paper is to address the localization problem using omnidirectional images captured by a catadioptric vision system mounted on the robot. For this purpose, we explore the potential of Siamese Neural Networks for modeling indoor environments using panoramic images as the unique source of information. Siamese Neural Networks are characterized by their ability to generate a similarity function between two input data, in this case, between two panoramic images. In this study, Siamese Neural Networks composed of two Convolutional Neural Networks (CNNs) are used. The output of each CNN is a descriptor which is used to characterize each image. The dissimilarity of the images is computed by measuring the distance between these descriptors. This fact makes Siamese Neural Networks particularly suitable to perform image retrieval tasks. First, we evaluate an initial task strongly related to localization that consists in detecting whether two images have been captured in the same or in different rooms. Next, we assess Siamese Neural Networks in the context of a global localization problem. The results outperform previous techniques for solving the localization task using the COLD-Freiburg dataset, in a variety of lighting conditions, specially when using images captured in cloudy and night conditions.  
+    We present REMM, a rotation-equivariant framework for end-to-end multimodal image matching, which fully encodes rotational differences of descriptors in the whole matching pipeline. Previous learning-based methods mainly focus on extracting modal-invariant descriptors, while consistently ignoring the rotational invariance. In this paper, we demonstrate that our REMM is very useful for multimodal image matching, including multimodal feature learning module and cyclic shift module. We first learn modal-invariant features through the multimodal feature learning module. Then, we design the cyclic shift module to rotationally encode the descriptors, greatly improving the performance of rotation-equivariant matching, which makes them robust to any angle. To validate our method, we establish a comprehensive rotation and scale-matching benchmark for evaluating the anti-rotation performance of multimodal images, which contains a combination of multi-angle and multi-scale transformations from four publicly available datasets. Extensive experiments show that our method outperforms existing methods in benchmarking and generalizes well to independent datasets. Additionally, we conducted an in-depth analysis of the key components of the REMM to validate the improvements brought about by the cyclic shift module. Code and dataset at https://github.com/HanNieWHU/REMM.  
   </ol>  
 </details>  
-**comments**: Published: 08 July 2024 Paper link:
-  https://link.springer.com/content/pdf/10.1007/s10462-024-10840-0.pdf  
+**comments**: 13 pages, 13 figures  
+  
+### [A Self-Correcting Strategy of the Digital Volume Correlation Displacement Field Based on Image Matching: Application to Poor Speckles Quality and Complex-Large Deformation](http://arxiv.org/abs/2407.11287)  
+Chengsheng Li, Zhijun Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Digital Volume Correlation (DVC) is widely used for the analysis of three-dimensional displacement and strain fields based on CT scans. However, the applicability of DVC methods is limited when it comes to geomaterials: CT speckles are directly correlated with the material's microstructure, and the speckle structure cannot be artificially altered, with generally poor speckle quality. Additionally, most geomaterials exhibit elastoplastic properties and will undergo complex-large deformations under external loading, sometimes leading to strain localization phenomena. These factors contribute to inaccuracies in the displacement field obtained through DVC, and at present, there is a shortage of correction methods and accuracy assessment techniques for the displacement field. If the accuracy of the DVC displacement field is sufficiently high, the gray residue of the two volume images before and after deformation should be minimal, utilizing this characteristic to develop a correction method for the displacement field is feasible. The proposed self-correcting strategy of the DVC displacement field based on image matching, which from the experimental measurement error. We demonstrated the effectiveness of the proposed method by CT triaxial tests of granite residual soil. Without adding other parameters or adjusting the original parameters of DVC, the gray residue showed that the proposed method can effectively improve the accuracy of the displacement field. Additionally, the accuracy evaluation method can reasonably estimate the accuracy of the displacement field. The proposed method can effectively improve the accuracy of DVC three-dimensional displacement field for the state of speckles with poor quality and complex-large deformation.  
+  </ol>  
+</details>  
   
   
 
@@ -130,82 +90,43 @@ J. J. Cabrera, V. Román, A. Gil, O. Reinoso, L. Payá
 
 ## NeRF  
 
-### [AirNeRF: 3D Reconstruction of Human with Drone and NeRF for Future Communication Systems](http://arxiv.org/abs/2407.10865)  
-Alexey Kotcov, Maria Dronova, Vladislav Cheremnykh, Sausar Karaf, Dzmitry Tsetserukou  
+### [Motion-Oriented Compositional Neural Radiance Fields for Monocular Dynamic Human Modeling](http://arxiv.org/abs/2407.11962)  
+Jaehyeok Kim, Dongyoon Wee, Dan Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In the rapidly evolving landscape of digital content creation, the demand for fast, convenient, and autonomous methods of crafting detailed 3D reconstructions of humans has grown significantly. Addressing this pressing need, our AirNeRF system presents an innovative pathway to the creation of a realistic 3D human avatar. Our approach leverages Neural Radiance Fields (NeRF) with an automated drone-based video capturing method. The acquired data provides a swift and precise way to create high-quality human body reconstructions following several stages of our system. The rigged mesh derived from our system proves to be an excellent foundation for free-view synthesis of dynamic humans, particularly well-suited for the immersive experiences within gaming and virtual reality.  
+    This paper introduces Motion-oriented Compositional Neural Radiance Fields (MoCo-NeRF), a framework designed to perform free-viewpoint rendering of monocular human videos via novel non-rigid motion modeling approach. In the context of dynamic clothed humans, complex cloth dynamics generate non-rigid motions that are intrinsically distinct from skeletal articulations and critically important for the rendering quality. The conventional approach models non-rigid motions as spatial (3D) deviations in addition to skeletal transformations. However, it is either time-consuming or challenging to achieve optimal quality due to its high learning complexity without a direct supervision. To target this problem, we propose a novel approach of modeling non-rigid motions as radiance residual fields to benefit from more direct color supervision in the rendering and utilize the rigid radiance fields as a prior to reduce the complexity of the learning process. Our approach utilizes a single multiresolution hash encoding (MHE) to concurrently learn the canonical T-pose representation from rigid skeletal motions and the radiance residual field for non-rigid motions. Additionally, to further improve both training efficiency and usability, we extend MoCo-NeRF to support simultaneous training of multiple subjects within a single framework, thanks to our effective design for modeling non-rigid motions. This scalability is achieved through the integration of a global MHE and learnable identity codes in addition to multiple local MHEs. We present extensive results on ZJU-MoCap and MonoCap, clearly demonstrating state-of-the-art performance in both single- and multi-subject settings. The code and model will be made publicly available at the project page: https://stevejaehyeok.github.io/publications/moco-nerf.  
+  </ol>  
+</details>  
+**comments**: Accepted by ECCV2024  
+  
+### [IPA-NeRF: Illusory Poisoning Attack Against Neural Radiance Fields](http://arxiv.org/abs/2407.11921)  
+Wenxiang Jiang, Hanwei Zhang, Shuo Zhao, Zhongwen Guo, Hao Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Field (NeRF) represents a significant advancement in computer vision, offering implicit neural network-based scene representation and novel view synthesis capabilities. Its applications span diverse fields including robotics, urban mapping, autonomous navigation, virtual reality/augmented reality, etc., some of which are considered high-risk AI applications. However, despite its widespread adoption, the robustness and security of NeRF remain largely unexplored. In this study, we contribute to this area by introducing the Illusory Poisoning Attack against Neural Radiance Fields (IPA-NeRF). This attack involves embedding a hidden backdoor view into NeRF, allowing it to produce predetermined outputs, i.e. illusory, when presented with the specified backdoor view while maintaining normal performance with standard inputs. Our attack is specifically designed to deceive users or downstream models at a particular position while ensuring that any abnormalities in NeRF remain undetectable from other viewpoints. Experimental results demonstrate the effectiveness of our Illusory Poisoning Attack, successfully presenting the desired illusory on the specified viewpoint without impacting other views. Notably, we achieve this attack by introducing small perturbations solely to the training set. The code can be found at https://github.com/jiang-wenxiang/IPA-NeRF.  
   </ol>  
 </details>  
   
-### [Domain Generalization for 6D Pose Estimation Through NeRF-based Image Synthesis](http://arxiv.org/abs/2407.10762)  
-Antoine Legrand, Renaud Detry, Christophe De Vleeschouwer  
+### [DreamCatalyst: Fast and High-Quality 3D Editing via Controlling Editability and Identity Preservation](http://arxiv.org/abs/2407.11394)  
+[[code](https://github.com/kaist-cvml-lab/DreamCatalyst)]  
+Jiwook Kim, Seonho Lee, Jaeyo Shin, Jiho Choi, Hyunjung Shim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work introduces a novel augmentation method that increases the diversity of a train set to improve the generalization abilities of a 6D pose estimation network. For this purpose, a Neural Radiance Field is trained from synthetic images and exploited to generate an augmented set. Our method enriches the initial set by enabling the synthesis of images with (i) unseen viewpoints, (ii) rich illumination conditions through appearance extrapolation, and (iii) randomized textures. We validate our augmentation method on the challenging use-case of spacecraft pose estimation and show that it significantly improves the pose estimation generalization capabilities. On the SPEED+ dataset, our method reduces the error on the pose by 50% on both target domains.  
+    Score distillation sampling (SDS) has emerged as an effective framework in text-driven 3D editing tasks due to its inherent 3D consistency. However, existing SDS-based 3D editing methods suffer from extensive training time and lead to low-quality results, primarily because these methods deviate from the sampling dynamics of diffusion models. In this paper, we propose DreamCatalyst, a novel framework that interprets SDS-based editing as a diffusion reverse process. Our objective function considers the sampling dynamics, thereby making the optimization process of DreamCatalyst an approximation of the diffusion reverse process in editing tasks. DreamCatalyst aims to reduce training time and improve editing quality. DreamCatalyst presents two modes: (1) a faster mode, which edits the NeRF scene in only about 25 minutes, and (2) a high-quality mode, which produces superior results in less than 70 minutes. Specifically, our high-quality mode outperforms current state-of-the-art NeRF editing methods both in terms of speed and quality. See more extensive results on our project page: https://dream-catalyst.github.io.  
   </ol>  
 </details>  
   
-### [IE-NeRF: Inpainting Enhanced Neural Radiance Fields in the Wild](http://arxiv.org/abs/2407.10695)  
-Shuaixian Wang, Haoran Xu, Yaokun Li, Jiwei Chen, Guang Tan  
+### [Evaluating geometric accuracy of NeRF reconstructions compared to SLAM method](http://arxiv.org/abs/2407.11238)  
+Adam Korycki, Colleen Josephson, Steve McGuire  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present a novel approach for synthesizing realistic novel views using Neural Radiance Fields (NeRF) with uncontrolled photos in the wild. While NeRF has shown impressive results in controlled settings, it struggles with transient objects commonly found in dynamic and time-varying scenes. Our framework called \textit{Inpainting Enhanced NeRF}, or \ours, enhances the conventional NeRF by drawing inspiration from the technique of image inpainting. Specifically, our approach extends the Multi-Layer Perceptrons (MLP) of NeRF, enabling it to simultaneously generate intrinsic properties (static color, density) and extrinsic transient masks. We introduce an inpainting module that leverages the transient masks to effectively exclude occlusions, resulting in improved volume rendering quality. Additionally, we propose a new training strategy with frequency regularization to address the sparsity issue of low-frequency transient components. We evaluate our approach on internet photo collections of landmarks, demonstrating its ability to generate high-quality novel views and achieve state-of-the-art performance.  
+    As Neural Radiance Field (NeRF) implementations become faster, more efficient and accurate, their applicability to real world mapping tasks becomes more accessible. Traditionally, 3D mapping, or scene reconstruction, has relied on expensive LiDAR sensing. Photogrammetry can perform image-based 3D reconstruction but is computationally expensive and requires extremely dense image representation to recover complex geometry and photorealism. NeRFs perform 3D scene reconstruction by training a neural network on sparse image and pose data, achieving superior results to photogrammetry with less input data. This paper presents an evaluation of two NeRF scene reconstructions for the purpose of estimating the diameter of a vertical PVC cylinder. One of these are trained on commodity iPhone data and the other is trained on robot-sourced imagery and poses. This neural-geometry is compared to state-of-the-art lidar-inertial SLAM in terms of scene noise and metric-accuracy.  
   </ol>  
 </details>  
-  
-### [NGP-RT: Fusing Multi-Level Hash Features with Lightweight Attention for Real-Time Novel View Synthesis](http://arxiv.org/abs/2407.10482)  
-Yubin Hu, Xiaoyang Guo, Yang Xiao, Jingwei Huang, Yong-Jin Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper presents NGP-RT, a novel approach for enhancing the rendering speed of Instant-NGP to achieve real-time novel view synthesis. As a classic NeRF-based method, Instant-NGP stores implicit features in multi-level grids or hash tables and applies a shallow MLP to convert the implicit features into explicit colors and densities. Although it achieves fast training speed, there is still a lot of room for improvement in its rendering speed due to the per-point MLP executions for implicit multi-level feature aggregation, especially for real-time applications. To address this challenge, our proposed NGP-RT explicitly stores colors and densities as hash features, and leverages a lightweight attention mechanism to disambiguate the hash collisions instead of using computationally intensive MLP. At the rendering stage, NGP-RT incorporates a pre-computed occupancy distance grid into the ray marching strategy to inform the distance to the nearest occupied voxel, thereby reducing the number of marching points and global memory access. Experimental results show that on the challenging Mip-NeRF360 dataset, NGP-RT achieves better rendering quality than previous NeRF-based methods, achieving 108 fps at 1080p resolution on a single Nvidia RTX 3090 GPU. Our approach is promising for NeRF-based real-time applications that require efficient and high-quality rendering.  
-  </ol>  
-</details>  
-**comments**: ECCV 2024  
-  
-### [Boost Your NeRF: A Model-Agnostic Mixture of Experts Framework for High Quality and Efficient Rendering](http://arxiv.org/abs/2407.10389)  
-Francesco Di Sario, Riccardo Renzulli, Enzo Tartaglione, Marco Grangetto  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Since the introduction of NeRFs, considerable attention has been focused on improving their training and inference times, leading to the development of Fast-NeRFs models. Despite demonstrating impressive rendering speed and quality, the rapid convergence of such models poses challenges for further improving reconstruction quality. Common strategies to improve rendering quality involves augmenting model parameters or increasing the number of sampled points. However, these computationally intensive approaches encounter limitations in achieving significant quality enhancements. This study introduces a model-agnostic framework inspired by Sparsely-Gated Mixture of Experts to enhance rendering quality without escalating computational complexity. Our approach enables specialization in rendering different scene components by employing a mixture of experts with varying resolutions. We present a novel gate formulation designed to maximize expert capabilities and propose a resolution-based routing technique to effectively induce sparsity and decompose scenes. Our work significantly improves reconstruction quality while maintaining competitive performance.  
-  </ol>  
-</details>  
-  
-### [RS-NeRF: Neural Radiance Fields from Rolling Shutter Images](http://arxiv.org/abs/2407.10267)  
-[[code](https://github.com/myniuuu/rs-nerf)]  
-Muyao Niu, Tong Chen, Yifan Zhan, Zhuoxiao Li, Xiang Ji, Yinqiang Zheng  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRFs) have become increasingly popular because of their impressive ability for novel view synthesis. However, their effectiveness is hindered by the Rolling Shutter (RS) effects commonly found in most camera systems. To solve this, we present RS-NeRF, a method designed to synthesize normal images from novel views using input with RS distortions. This involves a physical model that replicates the image formation process under RS conditions and jointly optimizes NeRF parameters and camera extrinsic for each image row. We further address the inherent shortcomings of the basic RS-NeRF model by delving into the RS characteristics and developing algorithms to enhance its functionality. First, we impose a smoothness regularization to better estimate trajectories and improve the synthesis quality, in line with the camera movement prior. We also identify and address a fundamental flaw in the vanilla RS model by introducing a multi-sampling algorithm. This new approach improves the model's performance by comprehensively exploiting the RGB data across different rows for each intermediate camera pose. Through rigorous experimentation, we demonstrate that RS-NeRF surpasses previous methods in both synthetic and real-world scenarios, proving its ability to correct RS-related distortions effectively. Codes and data available: https://github.com/MyNiuuu/RS-NeRF  
-  </ol>  
-</details>  
-**comments**: ECCV 2024 ; Codes and data: https://github.com/MyNiuuu/RS-NeRF  
-  
-### [SpikeGS: 3D Gaussian Splatting from Spike Streams with High-Speed Camera Motion](http://arxiv.org/abs/2407.10062)  
-Jiyuan Zhang, Kang Chen, Shiyan Chen, Yajing Zheng, Tiejun Huang, Zhaofei Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel View Synthesis plays a crucial role by generating new 2D renderings from multi-view images of 3D scenes. However, capturing high-speed scenes with conventional cameras often leads to motion blur, hindering the effectiveness of 3D reconstruction. To address this challenge, high-frame-rate dense 3D reconstruction emerges as a vital technique, enabling detailed and accurate modeling of real-world objects or scenes in various fields, including Virtual Reality or embodied AI. Spike cameras, a novel type of neuromorphic sensor, continuously record scenes with an ultra-high temporal resolution, showing potential for accurate 3D reconstruction. Despite their promise, existing approaches, such as applying Neural Radiance Fields (NeRF) to spike cameras, encounter challenges due to the time-consuming rendering process. To address this issue, we make the first attempt to introduce the 3D Gaussian Splatting (3DGS) into spike cameras in high-speed capture, providing 3DGS as dense and continuous clues of views, then constructing SpikeGS. Specifically, to train SpikeGS, we establish computational equations between the rendering process of 3DGS and the processes of instantaneous imaging and exposing-like imaging of the continuous spike stream. Besides, we build a very lightweight but effective mapping process from spikes to instant images to support training. Furthermore, we introduced a new spike-based 3D rendering dataset for validation. Extensive experiments have demonstrated our method possesses the high quality of novel view rendering, proving the tremendous potential of spike cameras in modeling 3D scenes.  
-  </ol>  
-</details>  
-  
-### [Physics-Informed Learning of Characteristic Trajectories for Smoke Reconstruction](http://arxiv.org/abs/2407.09679)  
-Yiming Wang, Siyu Tang, Mengyu Chu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We delve into the physics-informed neural reconstruction of smoke and obstacles through sparse-view RGB videos, tackling challenges arising from limited observation of complex dynamics. Existing physics-informed neural networks often emphasize short-term physics constraints, leaving the proper preservation of long-term conservation less explored. We introduce Neural Characteristic Trajectory Fields, a novel representation utilizing Eulerian neural fields to implicitly model Lagrangian fluid trajectories. This topology-free, auto-differentiable representation facilitates efficient flow map calculations between arbitrary frames as well as efficient velocity extraction via auto-differentiation. Consequently, it enables end-to-end supervision covering long-term conservation and short-term physics priors. Building on the representation, we propose physics-informed trajectory learning and integration into NeRF-based scene reconstruction. We enable advanced obstacle handling through self-supervised scene decomposition and seamless integrated boundary constraints. Our results showcase the ability to overcome challenges like occlusion uncertainty, density-color ambiguity, and static-dynamic entanglements. Code and sample tests are at \url{https://github.com/19reborn/PICT_smoke}.  
-  </ol>  
-</details>  
-**comments**: SIGGRAPH 2024 (conference track), Project Website:
-  \url{https://19reborn.github.io/PICT_Smoke.github.io/}  
   
   
 
