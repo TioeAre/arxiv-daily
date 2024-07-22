@@ -1,86 +1,46 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#Attenuation-Aware-Weighted-Optical-Flow-with-Medium-Transmission-Map-for-Learning-based-Visual-Odometry-in-Underwater-terrain>Attenuation-Aware Weighted Optical Flow with Medium Transmission Map for Learning-based Visual Odometry in Underwater terrain</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Visual-Haystacks:-Answering-Harder-Questions-About-Sets-of-Images>Visual Haystacks: Answering Harder Questions About Sets of Images</a></li>
-      </ul>
-    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#EaDeblur-GS:-Event-assisted-3D-Deblur-Reconstruction-with-Gaussian-Splatting>EaDeblur-GS: Event assisted 3D Deblur Reconstruction with Gaussian Splatting</a></li>
-        <li><a href=#GeometrySticker:-Enabling-Ownership-Claim-of-Recolorized-Neural-Radiance-Fields>GeometrySticker: Enabling Ownership Claim of Recolorized Neural Radiance Fields</a></li>
-        <li><a href=#KFD-NeRF:-Rethinking-Dynamic-NeRF-with-Kalman-Filter>KFD-NeRF: Rethinking Dynamic NeRF with Kalman Filter</a></li>
+        <li><a href=#HOTS3D:-Hyper-Spherical-Optimal-Transport-for-Semantic-Alignment-of-Text-to-3D-Generation>HOTS3D: Hyper-Spherical Optimal Transport for Semantic Alignment of Text-to-3D Generation</a></li>
+        <li><a href=#DirectL:-Efficient-Radiance-Fields-Rendering-for-3D-Light-Field-Displays>DirectL: Efficient Radiance Fields Rendering for 3D Light Field Displays</a></li>
+        <li><a href=#Semantic-Communications-for-3D-Human-Face-Transmission-with-Neural-Radiance-Fields>Semantic Communications for 3D Human Face Transmission with Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [Attenuation-Aware Weighted Optical Flow with Medium Transmission Map for Learning-based Visual Odometry in Underwater terrain](http://arxiv.org/abs/2407.13159)  
-Bach Nguyen Gia, Chanh Minh Tran, Kamioka Eiji, Tan Phan Xuan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper addresses the challenge of improving learning-based monocular visual odometry (VO) in underwater environments by integrating principles of underwater optical imaging to manipulate optical flow estimation. Leveraging the inherent properties of underwater imaging, the novel wflow-TartanVO is introduced, enhancing the accuracy of VO systems for autonomous underwater vehicles (AUVs). The proposed method utilizes a normalized medium transmission map as a weight map to adjust the estimated optical flow for emphasizing regions with lower degradation and suppressing uncertain regions affected by underwater light scattering and absorption. wflow-TartanVO does not require fine-tuning of pre-trained VO models, thus promoting its adaptability to different environments and camera models. Evaluation of different real-world underwater datasets demonstrates the outperformance of wflow-TartanVO over baseline VO methods, as evidenced by the considerably reduced Absolute Trajectory Error (ATE). The implementation code is available at: https://github.com/bachzz/wflow-TartanVO  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Visual Haystacks: Answering Harder Questions About Sets of Images](http://arxiv.org/abs/2407.13766)  
-Tsung-Han Wu, Giscard Biamby, Jerome Quenum, Ritwik Gupta, Joseph E. Gonzalez, Trevor Darrell, David M. Chan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advancements in Large Multimodal Models (LMMs) have made significant progress in the field of single-image visual question answering. However, these models face substantial challenges when tasked with queries that span extensive collections of images, similar to real-world scenarios like searching through large photo albums, finding specific information across the internet, or monitoring environmental changes through satellite imagery. This paper explores the task of Multi-Image Visual Question Answering (MIQA): given a large set of images and a natural language query, the task is to generate a relevant and grounded response. We propose a new public benchmark, dubbed "Visual Haystacks (VHs)," specifically designed to evaluate LMMs' capabilities in visual retrieval and reasoning over sets of unrelated images, where we perform comprehensive evaluations demonstrating that even robust closed-source models struggle significantly. Towards addressing these shortcomings, we introduce MIRAGE (Multi-Image Retrieval Augmented Generation), a novel retrieval/QA framework tailored for LMMs that confronts the challenges of MIQA with marked efficiency and accuracy improvements over baseline methods. Our evaluation shows that MIRAGE surpasses closed-source GPT-4o models by up to 11% on the VHs benchmark and offers up to 3.4x improvements in efficiency over text-focused multi-stage approaches.  
-  </ol>  
-</details>  
-**comments**: Project page: https://visual-haystacks.github.io  
-  
-  
-
-
-
 ## NeRF  
 
-### [EaDeblur-GS: Event assisted 3D Deblur Reconstruction with Gaussian Splatting](http://arxiv.org/abs/2407.13520)  
-Yuchen Weng, Zhengwen Shen, Ruofan Chen, Qi Wang, Jun Wang  
+### [HOTS3D: Hyper-Spherical Optimal Transport for Semantic Alignment of Text-to-3D Generation](http://arxiv.org/abs/2407.14419)  
+Zezeng Li, Weimin Wang, WenHai Li, Na Lei, Xianfeng Gu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D deblurring reconstruction techniques have recently seen significant advancements with the development of Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS). Although these techniques can recover relatively clear 3D reconstructions from blurry image inputs, they still face limitations in handling severe blurring and complex camera motion. To address these issues, we propose Event-assisted 3D Deblur Reconstruction with Gaussian Splatting (EaDeblur-GS), which integrates event camera data to enhance the robustness of 3DGS against motion blur. By employing an Adaptive Deviation Estimator (ADE) network to estimate Gaussian center deviations and using novel loss functions, EaDeblur-GS achieves sharp 3D reconstructions in real-time, demonstrating performance comparable to state-of-the-art methods.  
+    Recent CLIP-guided 3D generation methods have achieved promising results but struggle with generating faithful 3D shapes that conform with input text due to the gap between text and image embeddings. To this end, this paper proposes HOTS3D which makes the first attempt to effectively bridge this gap by aligning text features to the image features with spherical optimal transport (SOT). However, in high-dimensional situations, solving the SOT remains a challenge. To obtain the SOT map for high-dimensional features obtained from CLIP encoding of two modalities, we mathematically formulate and derive the solution based on Villani's theorem, which can directly align two hyper-sphere distributions without manifold exponential maps. Furthermore, we implement it by leveraging input convex neural networks (ICNNs) for the optimal Kantorovich potential. With the optimally mapped features, a diffusion-based generator and a Nerf-based decoder are subsequently utilized to transform them into 3D shapes. Extensive qualitative and qualitative comparisons with state-of-the-arts demonstrate the superiority of the proposed HOTS3D for 3D shape generation, especially on the consistency with text semantics.  
   </ol>  
 </details>  
   
-### [GeometrySticker: Enabling Ownership Claim of Recolorized Neural Radiance Fields](http://arxiv.org/abs/2407.13390)  
-Xiufeng Huang, Ka Chun Cheung, Simon See, Renjie Wan  
+### [DirectL: Efficient Radiance Fields Rendering for 3D Light Field Displays](http://arxiv.org/abs/2407.14053)  
+Zongyuan Yang, Baolin Liu, Yingde Song, Yongping Xiong, Lan Yi, Zhaohe Zhang, Xunbo Yu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Remarkable advancements in the recolorization of Neural Radiance Fields (NeRF) have simplified the process of modifying NeRF's color attributes. Yet, with the potential of NeRF to serve as shareable digital assets, there's a concern that malicious users might alter the color of NeRF models and falsely claim the recolorized version as their own. To safeguard against such breaches of ownership, enabling original NeRF creators to establish rights over recolorized NeRF is crucial. While approaches like CopyRNeRF have been introduced to embed binary messages into NeRF models as digital signatures for copyright protection, the process of recolorization can remove these binary messages. In our paper, we present GeometrySticker, a method for seamlessly integrating binary messages into the geometry components of radiance fields, akin to applying a sticker. GeometrySticker can embed binary messages into NeRF models while preserving the effectiveness of these messages against recolorization. Our comprehensive studies demonstrate that GeometrySticker is adaptable to prevalent NeRF architectures and maintains a commendable level of robustness against various distortions. Project page: https://kevinhuangxf.github.io/GeometrySticker/.  
+    Autostereoscopic display, despite decades of development, has not achieved extensive application, primarily due to the daunting challenge of 3D content creation for non-specialists. The emergence of Radiance Field as an innovative 3D representation has markedly revolutionized the domains of 3D reconstruction and generation. This technology greatly simplifies 3D content creation for common users, broadening the applicability of Light Field Displays (LFDs). However, the combination of these two fields remains largely unexplored. The standard paradigm to create optimal content for parallax-based light field displays demands rendering at least 45 slightly shifted views preferably at high resolution per frame, a substantial hurdle for real-time rendering. We introduce DirectL, a novel rendering paradigm for Radiance Fields on 3D displays. We thoroughly analyze the interweaved mapping of spatial rays to screen subpixels, precisely determine the light rays entering the human eye, and propose subpixel repurposing to significantly reduce the pixel count required for rendering. Tailored for the two predominant radiance fields--Neural Radiance Fields (NeRFs) and 3D Gaussian Splatting (3DGS), we propose corresponding optimized rendering pipelines that directly render the light field images instead of multi-view images. Extensive experiments across various displays and user study demonstrate that DirectL accelerates rendering by up to 40 times compared to the standard paradigm without sacrificing visual quality. Its rendering process-only modification allows seamless integration into subsequent radiance field tasks. Finally, we integrate DirectL into diverse applications, showcasing the stunning visual experiences and the synergy between LFDs and Radiance Fields, which unveils tremendous potential for commercialization applications. \href{direct-l.github.io}{\textbf{Project Homepage}  
   </ol>  
 </details>  
   
-### [KFD-NeRF: Rethinking Dynamic NeRF with Kalman Filter](http://arxiv.org/abs/2407.13185)  
-Yifan Zhan, Zhuoxiao Li, Muyao Niu, Zhihang Zhong, Shohei Nobuhara, Ko Nishino, Yinqiang Zheng  
+### [Semantic Communications for 3D Human Face Transmission with Neural Radiance Fields](http://arxiv.org/abs/2407.13992)  
+Guanlin Wu, Zhonghao Lyu, Juyong Zhang, Jie Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce KFD-NeRF, a novel dynamic neural radiance field integrated with an efficient and high-quality motion reconstruction framework based on Kalman filtering. Our key idea is to model the dynamic radiance field as a dynamic system whose temporally varying states are estimated based on two sources of knowledge: observations and predictions. We introduce a novel plug-in Kalman filter guided deformation field that enables accurate deformation estimation from scene observations and predictions. We use a shallow Multi-Layer Perceptron (MLP) for observations and model the motion as locally linear to calculate predictions with motion equations. To further enhance the performance of the observation MLP, we introduce regularization in the canonical space to facilitate the network's ability to learn warping for different frames. Additionally, we employ an efficient tri-plane representation for encoding the canonical space, which has been experimentally demonstrated to converge quickly with high quality. This enables us to use a shallower observation MLP, consisting of just two layers in our implementation. We conduct experiments on synthetic and real data and compare with past dynamic NeRF methods. Our KFD-NeRF demonstrates similar or even superior rendering performance within comparable computational time and achieves state-of-the-art view synthesis performance with thorough training.  
+    This paper investigates the transmission of three-dimensional (3D) human face content for immersive communication over a rate-constrained transmitter-receiver link. We propose a new framework named NeRF-SeCom, which leverages neural radiance fields (NeRF) and semantic communications to improve the quality of 3D visualizations while minimizing the communication overhead. In the NeRF-SeCom framework, we first train a NeRF face model based on the NeRFBlendShape method, which is pre-shared between the transmitter and receiver as the semantic knowledge base to facilitate the real-time transmission. Next, with knowledge base, the transmitter extracts and sends only the essential semantic features for the receiver to reconstruct 3D face in real time. To optimize the transmission efficiency, we classify the expression features into static and dynamic types. Over each video chunk, static features are transmitted once for all frames, whereas dynamic features are transmitted over a portion of frames to adhere to rate constraints. Additionally, we propose a feature prediction mechanism, which allows the receiver to predict the dynamic features for frames that are not transmitted. Experiments show that our proposed NeRF-SeCom framework significantly outperforms benchmark methods in delivering high-quality 3D visualizations of human faces.  
   </ol>  
 </details>  
-**comments**: accepted to eccv2024  
+**comments**: 6 pages, 4 figures. arXiv admin note: text overlap with
+  arXiv:2405.12155  
   
   
 
