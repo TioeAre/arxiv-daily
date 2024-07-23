@@ -7,7 +7,7 @@ layout: default
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-## Updated on 2024.07.22
+## Updated on 2024.07.23
 > Usage instructions: [here](./docs/README.md#usage)
 
 ## SLAM
@@ -703,7 +703,7 @@ layout: default
 
 | Publish Date | Title | Authors | PDF | Code |
 |:---------|:-----------------------|:---------|:------|:------|
-|**2024-07-18**|**Visual Haystacks: Answering Harder Questions About Sets of Images**|Tsung-Han Wu et.al.|[2407.13766](http://arxiv.org/abs/2407.13766)|null|
+|**2024-07-18**|**Visual Haystacks: Answering Harder Questions About Sets of Images**|Tsung-Han Wu et.al.|[2407.13766](http://arxiv.org/abs/2407.13766)|**[link](https://github.com/visual-haystacks/vhs_benchmark)**|
 |**2024-07-17**|**Towards Revisiting Visual Place Recognition for Joining Submaps in Multimap SLAM**|Markus Weißflog et.al.|[2407.12408](http://arxiv.org/abs/2407.12408)|null|
 |**2024-07-17**|**GV-Bench: Benchmarking Local Feature Matching for Geometric Verification of Long-term Loop Closure Detection**|Jingwen Yu et.al.|[2407.11736](http://arxiv.org/abs/2407.11736)|**[link](https://github.com/jarvisyjw/gv-bench)**|
 |**2024-07-16**|**EndoFinder: Online Image Retrieval for Explainable Colorectal Polyp Diagnosis**|Ruijie Yang et.al.|[2407.11401](http://arxiv.org/abs/2407.11401)|null|
