@@ -1,67 +1,47 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Revolutionizing-Text-to-Image-Retrieval-as-Autoregressive-Token-to-Voken-Generation>Revolutionizing Text-to-Image Retrieval as Autoregressive Token-to-Voken Generation</a></li>
-        <li><a href=#Active-Loop-Closure-for-OSM-guided-Robotic-Mapping-in-Large-Scale-Urban-Environments>Active Loop Closure for OSM-guided Robotic Mapping in Large-Scale Urban Environments</a></li>
-        <li><a href=#Pose-Estimation-from-Camera-Images-for-Underwater-Inspection>Pose Estimation from Camera Images for Underwater Inspection</a></li>
+        <li><a href=#CodedVO:-Coded-Visual-Odometry>CodedVO: Coded Visual Odometry</a></li>
       </ul>
     </li>
-    <li><a href=#nerf>NeRF</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#SV4D:-Dynamic-3D-Content-Generation-with-Multi-Frame-and-Multi-View-Consistency>SV4D: Dynamic 3D Content Generation with Multi-Frame and Multi-View Consistency</a></li>
+        <li><a href=#LION:-Linear-Group-RNN-for-3D-Object-Detection-in-Point-Clouds>LION: Linear Group RNN for 3D Object Detection in Point Clouds</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SLAM  
 
-### [Revolutionizing Text-to-Image Retrieval as Autoregressive Token-to-Voken Generation](http://arxiv.org/abs/2407.17274)  
-Yongqi Li, Hongru Cai, Wenjie Wang, Leigang Qu, Yinwei Wei, Wenjie Li, Liqiang Nie, Tat-Seng Chua  
+### [CodedVO: Coded Visual Odometry](http://arxiv.org/abs/2407.18240)  
+Sachin Shah, Naitri Rajyaguru, Chahat Deep Singh, Christopher Metzler, Yiannis Aloimonos  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Text-to-image retrieval is a fundamental task in multimedia processing, aiming to retrieve semantically relevant cross-modal content. Traditional studies have typically approached this task as a discriminative problem, matching the text and image via the cross-attention mechanism (one-tower framework) or in a common embedding space (two-tower framework). Recently, generative cross-modal retrieval has emerged as a new research line, which assigns images with unique string identifiers and generates the target identifier as the retrieval target. Despite its great potential, existing generative approaches are limited due to the following issues: insufficient visual information in identifiers, misalignment with high-level semantics, and learning gap towards the retrieval target. To address the above issues, we propose an autoregressive voken generation method, named AVG. AVG tokenizes images into vokens, i.e., visual tokens, and innovatively formulates the text-to-image retrieval task as a token-to-voken generation problem. AVG discretizes an image into a sequence of vokens as the identifier of the image, while maintaining the alignment with both the visual information and high-level semantics of the image. Additionally, to bridge the learning gap between generative training and the retrieval target, we incorporate discriminative training to modify the learning direction during token-to-voken training. Extensive experiments demonstrate that AVG achieves superior results in both effectiveness and efficiency.  
+    Autonomous robots often rely on monocular cameras for odometry estimation and navigation. However, the scale ambiguity problem presents a critical barrier to effective monocular visual odometry. In this paper, we present CodedVO, a novel monocular visual odometry method that overcomes the scale ambiguity problem by employing custom optics to physically encode metric depth information into imagery. By incorporating this information into our odometry pipeline, we achieve state-of-the-art performance in monocular visual odometry with a known scale. We evaluate our method in diverse indoor environments and demonstrate its robustness and adaptability. We achieve a 0.08m average trajectory error in odometry evaluation on the ICL-NUIM indoor odometry dataset.  
   </ol>  
 </details>  
-**comments**: Work in progress  
-  
-### [Active Loop Closure for OSM-guided Robotic Mapping in Large-Scale Urban Environments](http://arxiv.org/abs/2407.17078)  
-Wei Gao, Zezhou Sun, Mingle Zhao, Cheng-Zhong Xu, Hui Kong  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The autonomous mapping of large-scale urban scenes presents significant challenges for autonomous robots. To mitigate the challenges, global planning, such as utilizing prior GPS trajectories from OpenStreetMap (OSM), is often used to guide the autonomous navigation of robots for mapping. However, due to factors like complex terrain, unexpected body movement, and sensor noise, the uncertainty of the robot's pose estimates inevitably increases over time, ultimately leading to the failure of robotic mapping. To address this issue, we propose a novel active loop closure procedure, enabling the robot to actively re-plan the previously planned GPS trajectory. The method can guide the robot to re-visit the previous places where the loop-closure detection can be performed to trigger the back-end optimization, effectively reducing errors and uncertainties in pose estimation. The proposed active loop closure mechanism is implemented and embedded into a real-time OSM-guided robot mapping framework. Empirical results on several large-scale outdoor scenarios demonstrate its effectiveness and promising performance.  
-  </ol>  
-</details>  
-  
-### [Pose Estimation from Camera Images for Underwater Inspection](http://arxiv.org/abs/2407.16961)  
-Luyuan Peng, Hari Vishnu, Mandar Chitre, Yuen Min Too, Bharath Kalyan, Rajat Mishra, Soo Pieng Tan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    High-precision localization is pivotal in underwater reinspection missions. Traditional localization methods like inertial navigation systems, Doppler velocity loggers, and acoustic positioning face significant challenges and are not cost-effective for some applications. Visual localization is a cost-effective alternative in such cases, leveraging the cameras already equipped on inspection vehicles to estimate poses from images of the surrounding scene. Amongst these, machine learning-based pose estimation from images shows promise in underwater environments, performing efficient relocalization using models trained based on previously mapped scenes. We explore the efficacy of learning-based pose estimators in both clear and turbid water inspection missions, assessing the impact of image formats, model architectures and training data diversity. We innovate by employing novel view synthesis models to generate augmented training data, significantly enhancing pose estimation in unexplored regions. Moreover, we enhance localization accuracy by integrating pose estimator outputs with sensor data via an extended Kalman filter, demonstrating improved trajectory smoothness and accuracy.  
-  </ol>  
-</details>  
-**comments**: Submitted to IEEE Journal of Oceanic Engineering  
+**comments**: 7 pages, 4 figures, IEEE ROBOTICS AND AUTOMATION LETTERS  
   
   
 
 
 
-## NeRF  
+## Keypoint Detection  
 
-### [SV4D: Dynamic 3D Content Generation with Multi-Frame and Multi-View Consistency](http://arxiv.org/abs/2407.17470)  
-Yiming Xie, Chun-Han Yao, Vikram Voleti, Huaizu Jiang, Varun Jampani  
+### [LION: Linear Group RNN for 3D Object Detection in Point Clouds](http://arxiv.org/abs/2407.18232)  
+[[code](https://github.com/happinesslz/LION)]  
+Zhe Liu, Jinghua Hou, Xinyu Wang, Xiaoqing Ye, Jingdong Wang, Hengshuang Zhao, Xiang Bai  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present Stable Video 4D (SV4D), a latent video diffusion model for multi-frame and multi-view consistent dynamic 3D content generation. Unlike previous methods that rely on separately trained generative models for video generation and novel view synthesis, we design a unified diffusion model to generate novel view videos of dynamic 3D objects. Specifically, given a monocular reference video, SV4D generates novel views for each video frame that are temporally consistent. We then use the generated novel view videos to optimize an implicit 4D representation (dynamic NeRF) efficiently, without the need for cumbersome SDS-based optimization used in most prior works. To train our unified novel view video generation model, we curated a dynamic 3D object dataset from the existing Objaverse dataset. Extensive experimental results on multiple datasets and user studies demonstrate SV4D's state-of-the-art performance on novel-view video synthesis as well as 4D generation compared to prior works.  
+    The benefit of transformers in large-scale 3D point cloud perception tasks, such as 3D object detection, is limited by their quadratic computation cost when modeling long-range relationships. In contrast, linear RNNs have low computational complexity and are suitable for long-range modeling. Toward this goal, we propose a simple and effective window-based framework built on LInear grOup RNN (i.e., perform linear RNN for grouped features) for accurate 3D object detection, called LION. The key property is to allow sufficient feature interaction in a much larger group than transformer-based methods. However, effectively applying linear group RNN to 3D object detection in highly sparse point clouds is not trivial due to its limitation in handling spatial modeling. To tackle this problem, we simply introduce a 3D spatial feature descriptor and integrate it into the linear group RNN operators to enhance their spatial features rather than blindly increasing the number of scanning orders for voxel features. To further address the challenge in highly sparse point clouds, we propose a 3D voxel generation strategy to densify foreground features thanks to linear group RNN as a natural property of auto-regressive models. Extensive experiments verify the effectiveness of the proposed components and the generalization of our LION on different linear group RNN operators including Mamba, RWKV, and RetNet. Furthermore, it is worth mentioning that our LION-Mamba achieves state-of-the-art on Waymo, nuScenes, Argoverse V2, and ONCE dataset. Last but not least, our method supports kinds of advanced linear RNN operators (e.g., RetNet, RWKV, Mamba, xLSTM and TTT) on small but popular KITTI dataset for a quick experience with our linear RNN-based framework.  
   </ol>  
 </details>  
-**comments**: Project page: https://sv4d.github.io/  
+**comments**: Project page: https://happinesslz.github.io/projects/LION/  
   
   
 
