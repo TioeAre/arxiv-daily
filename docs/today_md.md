@@ -1,56 +1,48 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#From-2D-to-3D:-AISG-SLA-Visual-Localization-Challenge>From 2D to 3D: AISG-SLA Visual Localization Challenge</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#SHIC:-Shape-Image-Correspondences-with-no-Keypoint-Supervision>SHIC: Shape-Image Correspondences with no Keypoint Supervision</a></li>
+        <li><a href=#Global-Structure-from-Motion-Revisited>Global Structure-from-Motion Revisited</a></li>
+        <li><a href=#Revisit-Self-supervised-Depth-Estimation-with-Local-Structure-from-Motion>Revisit Self-supervised Depth Estimation with Local Structure-from-Motion</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#PIV3CAMS:-a-multi-camera-dataset-for-multiple-computer-vision-problems-and-its-application-to-novel-view-point-synthesis>PIV3CAMS: a multi-camera dataset for multiple computer vision problems and its application to novel view-point synthesis</a></li>
+        <li><a href=#Image-text-matching-for-large-scale-book-collections>Image-text matching for large-scale book collections</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#IOVS4NeRF:Incremental-Optimal-View-Selection-for-Large-Scale-NeRFs>IOVS4NeRF:Incremental Optimal View Selection for Large-Scale NeRFs</a></li>
+        <li><a href=#Radiance-Fields-for-Robotic-Teleoperation>Radiance Fields for Robotic Teleoperation</a></li>
+        <li><a href=#Garment-Animation-NeRF-with-Color-Editing>Garment Animation NeRF with Color Editing</a></li>
+        <li><a href=#Revisit-Self-supervised-Depth-Estimation-with-Local-Structure-from-Motion>Revisit Self-supervised Depth Estimation with Local Structure-from-Motion</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [From 2D to 3D: AISG-SLA Visual Localization Challenge](http://arxiv.org/abs/2407.18590)  
-Jialin Gao, Bill Ong, Darld Lwi, Zhen Hao Ng, Xun Wei Yee, Mun-Thye Mak, Wee Siong Ng, See-Kiong Ng, Hui Ying Teo, Victor Khoo, Georg Bökman, Johan Edstedt, Kirill Brodt, Clémentin Boittiaux, Maxime Ferrera, Stepan Konev  
+### [Global Structure-from-Motion Revisited](http://arxiv.org/abs/2407.20219)  
+[[code](https://github.com/colmap/glomap)]  
+Linfei Pan, Dániel Baráth, Marc Pollefeys, Johannes L. Schönberger  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Research in 3D mapping is crucial for smart city applications, yet the cost of acquiring 3D data often hinders progress. Visual localization, particularly monocular camera position estimation, offers a solution by determining the camera's pose solely through visual cues. However, this task is challenging due to limited data from a single camera. To tackle these challenges, we organized the AISG-SLA Visual Localization Challenge (VLC) at IJCAI 2023 to explore how AI can accurately extract camera pose data from 2D images in 3D space. The challenge attracted over 300 participants worldwide, forming 50+ teams. Winning teams achieved high accuracy in pose estimation using images from a car-mounted camera with low frame rates. The VLC dataset is available for research purposes upon request via vlc-dataset@aisingapore.org.  
+    Recovering 3D structure and camera motion from images has been a long-standing focus of computer vision research and is known as Structure-from-Motion (SfM). Solutions to this problem are categorized into incremental and global approaches. Until now, the most popular systems follow the incremental paradigm due to its superior accuracy and robustness, while global approaches are drastically more scalable and efficient. With this work, we revisit the problem of global SfM and propose GLOMAP as a new general-purpose system that outperforms the state of the art in global SfM. In terms of accuracy and robustness, we achieve results on-par or superior to COLMAP, the most widely used incremental SfM, while being orders of magnitude faster. We share our system as an open-source implementation at {https://github.com/colmap/glomap}.  
   </ol>  
 </details>  
+**comments**: accepted at ECCV2024  
   
-  
-
-
-
-## Keypoint Detection  
-
-### [SHIC: Shape-Image Correspondences with no Keypoint Supervision](http://arxiv.org/abs/2407.18907)  
-Aleksandar Shtedritski, Christian Rupprecht, Andrea Vedaldi  
+### [Revisit Self-supervised Depth Estimation with Local Structure-from-Motion](http://arxiv.org/abs/2407.19166)  
+Shengjie Zhu, Xiaoming Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Canonical surface mapping generalizes keypoint detection by assigning each pixel of an object to a corresponding point in a 3D template. Popularised by DensePose for the analysis of humans, authors have since attempted to apply the concept to more categories, but with limited success due to the high cost of manual supervision. In this work, we introduce SHIC, a method to learn canonical maps without manual supervision which achieves better results than supervised methods for most categories. Our idea is to leverage foundation computer vision models such as DINO and Stable Diffusion that are open-ended and thus possess excellent priors over natural categories. SHIC reduces the problem of estimating image-to-template correspondences to predicting image-to-image correspondences using features from the foundation models. The reduction works by matching images of the object to non-photorealistic renders of the template, which emulates the process of collecting manual annotations for this task. These correspondences are then used to supervise high-quality canonical maps for any object of interest. We also show that image generators can further improve the realism of the template views, which provide an additional source of supervision for the model.  
+    Both self-supervised depth estimation and Structure-from-Motion (SfM) recover scene depth from RGB videos. Despite sharing a similar objective, the two approaches are disconnected. Prior works of self-supervision backpropagate losses defined within immediate neighboring frames. Instead of learning-through-loss, this work proposes an alternative scheme by performing local SfM. First, with calibrated RGB or RGB-D images, we employ a depth and correspondence estimator to infer depthmaps and pair-wise correspondence maps. Then, a novel bundle-RANSAC-adjustment algorithm jointly optimizes camera poses and one depth adjustment for each depthmap. Finally, we fix camera poses and employ a NeRF, however, without a neural network, for dense triangulation and geometric verification. Poses, depth adjustments, and triangulated sparse depths are our outputs. For the first time, we show self-supervision within $5$ frames already benefits SoTA supervised depth and correspondence models.  
   </ol>  
 </details>  
-**comments**: ECCV 2024. Project website
-  https://www.robots.ox.ac.uk/~vgg/research/shic/  
   
   
 
@@ -58,12 +50,13 @@ Aleksandar Shtedritski, Christian Rupprecht, Andrea Vedaldi
 
 ## Image Matching  
 
-### [PIV3CAMS: a multi-camera dataset for multiple computer vision problems and its application to novel view-point synthesis](http://arxiv.org/abs/2407.18695)  
-Sohyeong Kim, Martin Danelljan, Radu Timofte, Luc Van Gool, Jean-Philippe Thiran  
+### [Image-text matching for large-scale book collections](http://arxiv.org/abs/2407.19812)  
+[[code](https://github.com/llabres/library-dataset)]  
+Artemis Llabrés, Arka Ujjal Dey, Dimosthenis Karatzas, Ernest Valveny  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The modern approaches for computer vision tasks significantly rely on machine learning, which requires a large number of quality images. While there is a plethora of image datasets with a single type of images, there is a lack of datasets collected from multiple cameras. In this thesis, we introduce Paired Image and Video data from three CAMeraS, namely PIV3CAMS, aimed at multiple computer vision tasks. The PIV3CAMS dataset consists of 8385 pairs of images and 82 pairs of videos taken from three different cameras: Canon D5 Mark IV, Huawei P20, and ZED stereo camera. The dataset includes various indoor and outdoor scenes from different locations in Zurich (Switzerland) and Cheonan (South Korea). Some of the computer vision applications that can benefit from the PIV3CAMS dataset are image/video enhancement, view interpolation, image matching, and much more. We provide a careful explanation of the data collection process and detailed analysis of the data. The second part of this thesis studies the usage of depth information in the view synthesizing task. In addition to the regeneration of a current state-of-the-art algorithm, we investigate several proposed alternative models that integrate depth information geometrically. Through extensive experiments, we show that the effect of depth is crucial in small view changes. Finally, we apply our model to the introduced PIV3CAMS dataset to synthesize novel target views as an example application of PIV3CAMS.  
+    We address the problem of detecting and mapping all books in a collection of images to entries in a given book catalogue. Instead of performing independent retrieval for each book detected, we treat the image-text mapping problem as a many-to-many matching process, looking for the best overall match between the two sets. We combine a state-of-the-art segmentation method (SAM) to detect book spines and extract book information using a commercial OCR. We then propose a two-stage approach for text-image matching, where CLIP embeddings are used first for fast matching, followed by a second slower stage to refine the matching, employing either the Hungarian Algorithm or a BERT-based model trained to cope with noisy OCR input and partial text matches. To evaluate our approach, we publish a new dataset of annotated bookshelf images that covers the whole book collection of a public library in Spain. In addition, we provide two target lists of book metadata, a closed-set of 15k book titles that corresponds to the known library inventory, and an open-set of 2.3M book titles to simulate an open-world scenario. We report results on two settings, on one hand on a matching-only task, where the book segments and OCR is given and the objective is to perform many-to-many matching against the target lists, and a combined detection and matching task, where books must be first detected and recognised before they are matched to the target list entries. We show that both the Hungarian Matching and the proposed BERT-based model outperform a fuzzy string matching baseline, and we highlight inherent limitations of the matching algorithms as the target increases in size, and when either of the two sets (detected books or target book list) is incomplete. The dataset and code are available at https://github.com/llabres/library-dataset  
   </ol>  
 </details>  
   
@@ -73,12 +66,32 @@ Sohyeong Kim, Martin Danelljan, Radu Timofte, Luc Van Gool, Jean-Philippe Thiran
 
 ## NeRF  
 
-### [IOVS4NeRF:Incremental Optimal View Selection for Large-Scale NeRFs](http://arxiv.org/abs/2407.18611)  
-Jingpeng Xie, Shiyu Tan, Yuanlei Wang, Yizhen Lao  
+### [Radiance Fields for Robotic Teleoperation](http://arxiv.org/abs/2407.20194)  
+Maximum Wilder-Smith, Vaishakh Patil, Marco Hutter  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Urban-level three-dimensional reconstruction for modern applications demands high rendering fidelity while minimizing computational costs. The advent of Neural Radiance Fields (NeRF) has enhanced 3D reconstruction, yet it exhibits artifacts under multiple viewpoints. In this paper, we propose a new NeRF framework method to address these issues. Our method uses image content and pose data to iteratively plan the next best view. A crucial aspect of this method involves uncertainty estimation, guiding the selection of views with maximum information gain from a candidate set. This iterative process enhances rendering quality over time. Simultaneously, we introduce the Vonoroi diagram and threshold sampling together with flight classifier to boost the efficiency, while keep the original NeRF network intact. It can serve as a plug-in tool to assist in better rendering, outperforming baselines and similar prior works.  
+    Radiance field methods such as Neural Radiance Fields (NeRFs) or 3D Gaussian Splatting (3DGS), have revolutionized graphics and novel view synthesis. Their ability to synthesize new viewpoints with photo-realistic quality, as well as capture complex volumetric and specular scenes, makes them an ideal visualization for robotic teleoperation setups. Direct camera teleoperation provides high-fidelity operation at the cost of maneuverability, while reconstruction-based approaches offer controllable scenes with lower fidelity. With this in mind, we propose replacing the traditional reconstruction-visualization components of the robotic teleoperation pipeline with online Radiance Fields, offering highly maneuverable scenes with photorealistic quality. As such, there are three main contributions to state of the art: (1) online training of Radiance Fields using live data from multiple cameras, (2) support for a variety of radiance methods including NeRF and 3DGS, (3) visualization suite for these methods including a virtual reality scene. To enable seamless integration with existing setups, these components were tested with multiple robots in multiple configurations and were displayed using traditional tools as well as the VR headset. The results across methods and robots were compared quantitatively to a baseline of mesh reconstruction, and a user study was conducted to compare the different visualization methods. For videos and code, check out https://leggedrobotics.github.io/rffr.github.io/.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 10 figures, Accepted to IROS 2024  
+  
+### [Garment Animation NeRF with Color Editing](http://arxiv.org/abs/2407.19774)  
+[[code](https://github.com/wrk226/garmentanimationnerf)]  
+Renke Wang, Meng Zhang, Jun Li, Jian Yan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Generating high-fidelity garment animations through traditional workflows, from modeling to rendering, is both tedious and expensive. These workflows often require repetitive steps in response to updates in character motion, rendering viewpoint changes, or appearance edits. Although recent neural rendering offers an efficient solution for computationally intensive processes, it struggles with rendering complex garment animations containing fine wrinkle details and realistic garment-and-body occlusions, while maintaining structural consistency across frames and dense view rendering. In this paper, we propose a novel approach to directly synthesize garment animations from body motion sequences without the need for an explicit garment proxy. Our approach infers garment dynamic features from body motion, providing a preliminary overview of garment structure. Simultaneously, we capture detailed features from synthesized reference images of the garment's front and back, generated by a pre-trained image model. These features are then used to construct a neural radiance field that renders the garment animation video. Additionally, our technique enables garment recoloring by decomposing its visual elements. We demonstrate the generalizability of our method across unseen body motions and camera views, ensuring detailed structural consistency. Furthermore, we showcase its applicability to color editing on both real and synthetic garment data. Compared to existing neural rendering techniques, our method exhibits qualitative and quantitative improvements in garment dynamics and wrinkle detail modeling. Code is available at \url{https://github.com/wrk226/GarmentAnimationNeRF}.  
+  </ol>  
+</details>  
+  
+### [Revisit Self-supervised Depth Estimation with Local Structure-from-Motion](http://arxiv.org/abs/2407.19166)  
+Shengjie Zhu, Xiaoming Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Both self-supervised depth estimation and Structure-from-Motion (SfM) recover scene depth from RGB videos. Despite sharing a similar objective, the two approaches are disconnected. Prior works of self-supervision backpropagate losses defined within immediate neighboring frames. Instead of learning-through-loss, this work proposes an alternative scheme by performing local SfM. First, with calibrated RGB or RGB-D images, we employ a depth and correspondence estimator to infer depthmaps and pair-wise correspondence maps. Then, a novel bundle-RANSAC-adjustment algorithm jointly optimizes camera poses and one depth adjustment for each depthmap. Finally, we fix camera poses and employ a NeRF, however, without a neural network, for dense triangulation and geometric verification. Poses, depth adjustments, and triangulated sparse depths are our outputs. For the first time, we show self-supervision within $5$ frames already benefits SoTA supervised depth and correspondence models.  
   </ol>  
 </details>  
   
