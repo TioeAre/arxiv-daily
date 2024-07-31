@@ -1,64 +1,41 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Global-Structure-from-Motion-Revisited>Global Structure-from-Motion Revisited</a></li>
-        <li><a href=#Revisit-Self-supervised-Depth-Estimation-with-Local-Structure-from-Motion>Revisit Self-supervised Depth Estimation with Local Structure-from-Motion</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Image-text-matching-for-large-scale-book-collections>Image-text matching for large-scale book collections</a></li>
+        <li><a href=#Re-localization-acceleration-with-Medoid-Silhouette-Clustering>Re-localization acceleration with Medoid Silhouette Clustering</a></li>
+        <li><a href=#A-flexible-framework-for-accurate-LiDAR-odometry,-map-manipulation,-and-localization>A flexible framework for accurate LiDAR odometry, map manipulation, and localization</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Radiance-Fields-for-Robotic-Teleoperation>Radiance Fields for Robotic Teleoperation</a></li>
-        <li><a href=#Garment-Animation-NeRF-with-Color-Editing>Garment Animation NeRF with Color Editing</a></li>
-        <li><a href=#Revisit-Self-supervised-Depth-Estimation-with-Local-Structure-from-Motion>Revisit Self-supervised Depth Estimation with Local Structure-from-Motion</a></li>
+        <li><a href=#Dynamic-Scene-Understanding-through-Object-Centric-Voxelization-and-Neural-Rendering>Dynamic Scene Understanding through Object-Centric Voxelization and Neural Rendering</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Visual Localization  
 
-### [Global Structure-from-Motion Revisited](http://arxiv.org/abs/2407.20219)  
-[[code](https://github.com/colmap/glomap)]  
-Linfei Pan, Dániel Baráth, Marc Pollefeys, Johannes L. Schönberger  
+### [Re-localization acceleration with Medoid Silhouette Clustering](http://arxiv.org/abs/2407.20749)  
+Hongyi Zhang, Walterio Mayol-Cuevas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recovering 3D structure and camera motion from images has been a long-standing focus of computer vision research and is known as Structure-from-Motion (SfM). Solutions to this problem are categorized into incremental and global approaches. Until now, the most popular systems follow the incremental paradigm due to its superior accuracy and robustness, while global approaches are drastically more scalable and efficient. With this work, we revisit the problem of global SfM and propose GLOMAP as a new general-purpose system that outperforms the state of the art in global SfM. In terms of accuracy and robustness, we achieve results on-par or superior to COLMAP, the most widely used incremental SfM, while being orders of magnitude faster. We share our system as an open-source implementation at {https://github.com/colmap/glomap}.  
+    Two crucial performance criteria for the deployment of visual localization are speed and accuracy. Current research on visual localization with neural networks is limited to examining methods for enhancing the accuracy of networks across various datasets. How to expedite the re-localization process within deep neural network architectures still needs further investigation. In this paper, we present a novel approach for accelerating visual re-localization in practice. A tree-like search strategy, built on the keyframes extracted by a visual clustering algorithm, is designed for matching acceleration. Our method has been validated on two tasks across three public datasets, allowing for 50 up to 90 percent time saving over the baseline while not reducing location accuracy.  
   </ol>  
 </details>  
-**comments**: accepted at ECCV2024  
+**comments**: 11 pages, 6 figures  
   
-### [Revisit Self-supervised Depth Estimation with Local Structure-from-Motion](http://arxiv.org/abs/2407.19166)  
-Shengjie Zhu, Xiaoming Liu  
+### [A flexible framework for accurate LiDAR odometry, map manipulation, and localization](http://arxiv.org/abs/2407.20465)  
+José Luis Blanco-Claraco  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Both self-supervised depth estimation and Structure-from-Motion (SfM) recover scene depth from RGB videos. Despite sharing a similar objective, the two approaches are disconnected. Prior works of self-supervision backpropagate losses defined within immediate neighboring frames. Instead of learning-through-loss, this work proposes an alternative scheme by performing local SfM. First, with calibrated RGB or RGB-D images, we employ a depth and correspondence estimator to infer depthmaps and pair-wise correspondence maps. Then, a novel bundle-RANSAC-adjustment algorithm jointly optimizes camera poses and one depth adjustment for each depthmap. Finally, we fix camera poses and employ a NeRF, however, without a neural network, for dense triangulation and geometric verification. Poses, depth adjustments, and triangulated sparse depths are our outputs. For the first time, we show self-supervision within $5$ frames already benefits SoTA supervised depth and correspondence models.  
+    LiDAR-based SLAM is a core technology for autonomous vehicles and robots. Despite the intense research activity in this field, each proposed system uses a particular sensor post-processing pipeline and a single map representation format. The present work aims at introducing a revolutionary point of view for 3D LiDAR SLAM and localization: (1) using view-based maps as the fundamental representation of maps ("simple-maps"), which can then be used to generate arbitrary metric maps optimized for particular tasks; and (2) by introducing a new framework in which mapping pipelines can be defined without coding, defining the connections of a network of reusable blocks much like deep-learning networks are designed by connecting layers of standardized elements. Moreover, the idea of including the current linear and angular velocity vectors as variables to be optimized within the ICP loop is also introduced, leading to superior robustness against aggressive motion profiles without an IMU. The presented open-source ecosystem, released to ROS 2, includes tools and prebuilt pipelines covering all the way from data acquisition to map editing and visualization, real-time localization, loop-closure detection, or map georeferencing from consumer-grade GNSS receivers. Extensive experimental validation reveals that the proposal compares well to, or improves, former state-of-the-art (SOTA) LiDAR odometry systems, while also successfully mapping some hard sequences where others diverge. A proposed self-adaptive configuration has been used, without parameter changes, for all 3D LiDAR datasets with sensors between 16 and 128 rings, extensively tested on 83 sequences over more than 250~km of automotive, hand-held, airborne, and quadruped LiDAR datasets, both indoors and outdoors. The open-sourced implementation is available online at https://github.com/MOLAorg/mola  
   </ol>  
 </details>  
-  
-  
-
-
-
-## Image Matching  
-
-### [Image-text matching for large-scale book collections](http://arxiv.org/abs/2407.19812)  
-[[code](https://github.com/llabres/library-dataset)]  
-Artemis Llabrés, Arka Ujjal Dey, Dimosthenis Karatzas, Ernest Valveny  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We address the problem of detecting and mapping all books in a collection of images to entries in a given book catalogue. Instead of performing independent retrieval for each book detected, we treat the image-text mapping problem as a many-to-many matching process, looking for the best overall match between the two sets. We combine a state-of-the-art segmentation method (SAM) to detect book spines and extract book information using a commercial OCR. We then propose a two-stage approach for text-image matching, where CLIP embeddings are used first for fast matching, followed by a second slower stage to refine the matching, employing either the Hungarian Algorithm or a BERT-based model trained to cope with noisy OCR input and partial text matches. To evaluate our approach, we publish a new dataset of annotated bookshelf images that covers the whole book collection of a public library in Spain. In addition, we provide two target lists of book metadata, a closed-set of 15k book titles that corresponds to the known library inventory, and an open-set of 2.3M book titles to simulate an open-world scenario. We report results on two settings, on one hand on a matching-only task, where the book segments and OCR is given and the objective is to perform many-to-many matching against the target lists, and a combined detection and matching task, where books must be first detected and recognised before they are matched to the target list entries. We show that both the Hungarian Matching and the proposed BERT-based model outperform a fuzzy string matching baseline, and we highlight inherent limitations of the matching algorithms as the target increases in size, and when either of the two sets (detected books or target book list) is incomplete. The dataset and code are available at https://github.com/llabres/library-dataset  
-  </ol>  
-</details>  
+**comments**: 41 pages, 30 figures  
   
   
 
@@ -66,32 +43,13 @@ Artemis Llabrés, Arka Ujjal Dey, Dimosthenis Karatzas, Ernest Valveny
 
 ## NeRF  
 
-### [Radiance Fields for Robotic Teleoperation](http://arxiv.org/abs/2407.20194)  
-Maximum Wilder-Smith, Vaishakh Patil, Marco Hutter  
+### [Dynamic Scene Understanding through Object-Centric Voxelization and Neural Rendering](http://arxiv.org/abs/2407.20908)  
+[[code](https://github.com/zyp123494/dynavol)]  
+Yanpeng Zhao, Yiwei Hao, Siyu Gao, Yunbo Wang, Xiaokang Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Radiance field methods such as Neural Radiance Fields (NeRFs) or 3D Gaussian Splatting (3DGS), have revolutionized graphics and novel view synthesis. Their ability to synthesize new viewpoints with photo-realistic quality, as well as capture complex volumetric and specular scenes, makes them an ideal visualization for robotic teleoperation setups. Direct camera teleoperation provides high-fidelity operation at the cost of maneuverability, while reconstruction-based approaches offer controllable scenes with lower fidelity. With this in mind, we propose replacing the traditional reconstruction-visualization components of the robotic teleoperation pipeline with online Radiance Fields, offering highly maneuverable scenes with photorealistic quality. As such, there are three main contributions to state of the art: (1) online training of Radiance Fields using live data from multiple cameras, (2) support for a variety of radiance methods including NeRF and 3DGS, (3) visualization suite for these methods including a virtual reality scene. To enable seamless integration with existing setups, these components were tested with multiple robots in multiple configurations and were displayed using traditional tools as well as the VR headset. The results across methods and robots were compared quantitatively to a baseline of mesh reconstruction, and a user study was conducted to compare the different visualization methods. For videos and code, check out https://leggedrobotics.github.io/rffr.github.io/.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 10 figures, Accepted to IROS 2024  
-  
-### [Garment Animation NeRF with Color Editing](http://arxiv.org/abs/2407.19774)  
-[[code](https://github.com/wrk226/garmentanimationnerf)]  
-Renke Wang, Meng Zhang, Jun Li, Jian Yan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Generating high-fidelity garment animations through traditional workflows, from modeling to rendering, is both tedious and expensive. These workflows often require repetitive steps in response to updates in character motion, rendering viewpoint changes, or appearance edits. Although recent neural rendering offers an efficient solution for computationally intensive processes, it struggles with rendering complex garment animations containing fine wrinkle details and realistic garment-and-body occlusions, while maintaining structural consistency across frames and dense view rendering. In this paper, we propose a novel approach to directly synthesize garment animations from body motion sequences without the need for an explicit garment proxy. Our approach infers garment dynamic features from body motion, providing a preliminary overview of garment structure. Simultaneously, we capture detailed features from synthesized reference images of the garment's front and back, generated by a pre-trained image model. These features are then used to construct a neural radiance field that renders the garment animation video. Additionally, our technique enables garment recoloring by decomposing its visual elements. We demonstrate the generalizability of our method across unseen body motions and camera views, ensuring detailed structural consistency. Furthermore, we showcase its applicability to color editing on both real and synthetic garment data. Compared to existing neural rendering techniques, our method exhibits qualitative and quantitative improvements in garment dynamics and wrinkle detail modeling. Code is available at \url{https://github.com/wrk226/GarmentAnimationNeRF}.  
-  </ol>  
-</details>  
-  
-### [Revisit Self-supervised Depth Estimation with Local Structure-from-Motion](http://arxiv.org/abs/2407.19166)  
-Shengjie Zhu, Xiaoming Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Both self-supervised depth estimation and Structure-from-Motion (SfM) recover scene depth from RGB videos. Despite sharing a similar objective, the two approaches are disconnected. Prior works of self-supervision backpropagate losses defined within immediate neighboring frames. Instead of learning-through-loss, this work proposes an alternative scheme by performing local SfM. First, with calibrated RGB or RGB-D images, we employ a depth and correspondence estimator to infer depthmaps and pair-wise correspondence maps. Then, a novel bundle-RANSAC-adjustment algorithm jointly optimizes camera poses and one depth adjustment for each depthmap. Finally, we fix camera poses and employ a NeRF, however, without a neural network, for dense triangulation and geometric verification. Poses, depth adjustments, and triangulated sparse depths are our outputs. For the first time, we show self-supervision within $5$ frames already benefits SoTA supervised depth and correspondence models.  
+    Learning object-centric representations from unsupervised videos is challenging. Unlike most previous approaches that focus on decomposing 2D images, we present a 3D generative model named DynaVol-S for dynamic scenes that enables object-centric learning within a differentiable volume rendering framework. The key idea is to perform object-centric voxelization to capture the 3D nature of the scene, which infers per-object occupancy probabilities at individual spatial locations. These voxel features evolve through a canonical-space deformation function and are optimized in an inverse rendering pipeline with a compositional NeRF. Additionally, our approach integrates 2D semantic features to create 3D semantic grids, representing the scene through multiple disentangled voxel grids. DynaVol-S significantly outperforms existing models in both novel view synthesis and unsupervised decomposition tasks for dynamic scenes. By jointly considering geometric structures and semantic features, it effectively addresses challenging real-world scenarios involving complex object interactions. Furthermore, once trained, the explicitly meaningful voxel features enable additional capabilities that 2D scene decomposition methods cannot achieve, such as novel scene generation through editing geometric shapes or manipulating the motion trajectories of objects.  
   </ol>  
 </details>  
   
