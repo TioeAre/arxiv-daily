@@ -3,13 +3,13 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Re-localization-acceleration-with-Medoid-Silhouette-Clustering>Re-localization acceleration with Medoid Silhouette Clustering</a></li>
-        <li><a href=#A-flexible-framework-for-accurate-LiDAR-odometry,-map-manipulation,-and-localization>A flexible framework for accurate LiDAR odometry, map manipulation, and localization</a></li>
+        <li><a href=#VIPeR:-Visual-Incremental-Place-Recognition-with-Adaptive-Mining-and-Lifelong-Learning>VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Lifelong Learning</a></li>
+        <li><a href=#SuperVINS:-A-visual-inertial-SLAM-framework-integrated-deep-learning-features>SuperVINS: A visual-inertial SLAM framework integrated deep learning features</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Dynamic-Scene-Understanding-through-Object-Centric-Voxelization-and-Neural-Rendering>Dynamic Scene Understanding through Object-Centric Voxelization and Neural Rendering</a></li>
+        <li><a href=#PAV:-Personalized-Head-Avatar-from-Unstructured-Video-Collection>PAV: Personalized Head Avatar from Unstructured Video Collection</a></li>
       </ul>
     </li>
   </ol>
@@ -17,25 +17,24 @@
 
 ## Visual Localization  
 
-### [Re-localization acceleration with Medoid Silhouette Clustering](http://arxiv.org/abs/2407.20749)  
-Hongyi Zhang, Walterio Mayol-Cuevas  
+### [VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Lifelong Learning](http://arxiv.org/abs/2407.21416)  
+Yuhang Ming, Minyang Xu, Xingrui Yang, Weicai Ye, Weihan Wang, Yong Peng, Weichen Dai, Wanzeng Kong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Two crucial performance criteria for the deployment of visual localization are speed and accuracy. Current research on visual localization with neural networks is limited to examining methods for enhancing the accuracy of networks across various datasets. How to expedite the re-localization process within deep neural network architectures still needs further investigation. In this paper, we present a novel approach for accelerating visual re-localization in practice. A tree-like search strategy, built on the keyframes extracted by a visual clustering algorithm, is designed for matching acceleration. Our method has been validated on two tasks across three public datasets, allowing for 50 up to 90 percent time saving over the baseline while not reducing location accuracy.  
+    Visual place recognition (VPR) is an essential component of many autonomous and augmented/virtual reality systems. It enables the systems to robustly localize themselves in large-scale environments. Existing VPR methods demonstrate attractive performance at the cost of heavy pre-training and limited generalizability. When deployed in unseen environments, these methods exhibit significant performance drops. Targeting this issue, we present VIPeR, a novel approach for visual incremental place recognition with the ability to adapt to new environments while retaining the performance of previous environments. We first introduce an adaptive mining strategy that balances the performance within a single environment and the generalizability across multiple environments. Then, to prevent catastrophic forgetting in lifelong learning, we draw inspiration from human memory systems and design a novel memory bank for our VIPeR. Our memory bank contains a sensory memory, a working memory and a long-term memory, with the first two focusing on the current environment and the last one for all previously visited environments. Additionally, we propose a probabilistic knowledge distillation to explicitly safeguard the previously learned knowledge. We evaluate our proposed VIPeR on three large-scale datasets, namely Oxford Robotcar, Nordland, and TartanAir. For comparison, we first set a baseline performance with naive finetuning. Then, several more recent lifelong learning methods are compared. Our VIPeR achieves better performance in almost all aspects with the biggest improvement of 13.65% in average performance.  
   </ol>  
 </details>  
-**comments**: 11 pages, 6 figures  
+**comments**: 8 pages, 4 figures  
   
-### [A flexible framework for accurate LiDAR odometry, map manipulation, and localization](http://arxiv.org/abs/2407.20465)  
-José Luis Blanco-Claraco  
+### [SuperVINS: A visual-inertial SLAM framework integrated deep learning features](http://arxiv.org/abs/2407.21348)  
+Hongkun Luo, Chi Guo, Yang Liu, Zengke Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    LiDAR-based SLAM is a core technology for autonomous vehicles and robots. Despite the intense research activity in this field, each proposed system uses a particular sensor post-processing pipeline and a single map representation format. The present work aims at introducing a revolutionary point of view for 3D LiDAR SLAM and localization: (1) using view-based maps as the fundamental representation of maps ("simple-maps"), which can then be used to generate arbitrary metric maps optimized for particular tasks; and (2) by introducing a new framework in which mapping pipelines can be defined without coding, defining the connections of a network of reusable blocks much like deep-learning networks are designed by connecting layers of standardized elements. Moreover, the idea of including the current linear and angular velocity vectors as variables to be optimized within the ICP loop is also introduced, leading to superior robustness against aggressive motion profiles without an IMU. The presented open-source ecosystem, released to ROS 2, includes tools and prebuilt pipelines covering all the way from data acquisition to map editing and visualization, real-time localization, loop-closure detection, or map georeferencing from consumer-grade GNSS receivers. Extensive experimental validation reveals that the proposal compares well to, or improves, former state-of-the-art (SOTA) LiDAR odometry systems, while also successfully mapping some hard sequences where others diverge. A proposed self-adaptive configuration has been used, without parameter changes, for all 3D LiDAR datasets with sensors between 16 and 128 rings, extensively tested on 83 sequences over more than 250~km of automotive, hand-held, airborne, and quadruped LiDAR datasets, both indoors and outdoors. The open-sourced implementation is available online at https://github.com/MOLAorg/mola  
+    In this article, we propose enhancements to VINS-Fusion by incorporating deep learning features and deep learning matching methods. We implemented the training of deep learning feature bag of words and utilized these features for loop closure detection. Additionally, we introduce the RANSAC algorithm in the deep learning feature matching module to optimize matching. SuperVINS, an improved version of VINS-Fusion, outperforms it in terms of positioning accuracy, robustness, and more. Particularly in challenging scenarios like low illumination and rapid jitter, traditional geometric features fail to fully exploit image information, whereas deep learning features excel at capturing image features.To validate our proposed improvement scheme, we conducted experiments using open source datasets. We performed a comprehensive analysis of the experimental results from both qualitative and quantitative perspectives. The results demonstrate the feasibility and effectiveness of this deep learning-based approach for SLAM systems.To foster knowledge exchange in this field, we have made the code for this article publicly available. You can find the code at this link: https://github.com/luohongk/SuperVINS.  
   </ol>  
 </details>  
-**comments**: 41 pages, 30 figures  
   
   
 
@@ -43,15 +42,16 @@ José Luis Blanco-Claraco
 
 ## NeRF  
 
-### [Dynamic Scene Understanding through Object-Centric Voxelization and Neural Rendering](http://arxiv.org/abs/2407.20908)  
-[[code](https://github.com/zyp123494/dynavol)]  
-Yanpeng Zhao, Yiwei Hao, Siyu Gao, Yunbo Wang, Xiaokang Yang  
+### [PAV: Personalized Head Avatar from Unstructured Video Collection](http://arxiv.org/abs/2407.21047)  
+Akin Caliskan, Berkay Kicanaoglu, Hyeongwoo Kim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Learning object-centric representations from unsupervised videos is challenging. Unlike most previous approaches that focus on decomposing 2D images, we present a 3D generative model named DynaVol-S for dynamic scenes that enables object-centric learning within a differentiable volume rendering framework. The key idea is to perform object-centric voxelization to capture the 3D nature of the scene, which infers per-object occupancy probabilities at individual spatial locations. These voxel features evolve through a canonical-space deformation function and are optimized in an inverse rendering pipeline with a compositional NeRF. Additionally, our approach integrates 2D semantic features to create 3D semantic grids, representing the scene through multiple disentangled voxel grids. DynaVol-S significantly outperforms existing models in both novel view synthesis and unsupervised decomposition tasks for dynamic scenes. By jointly considering geometric structures and semantic features, it effectively addresses challenging real-world scenarios involving complex object interactions. Furthermore, once trained, the explicitly meaningful voxel features enable additional capabilities that 2D scene decomposition methods cannot achieve, such as novel scene generation through editing geometric shapes or manipulating the motion trajectories of objects.  
+    We propose PAV, Personalized Head Avatar for the synthesis of human faces under arbitrary viewpoints and facial expressions. PAV introduces a method that learns a dynamic deformable neural radiance field (NeRF), in particular from a collection of monocular talking face videos of the same character under various appearance and shape changes. Unlike existing head NeRF methods that are limited to modeling such input videos on a per-appearance basis, our method allows for learning multi-appearance NeRFs, introducing appearance embedding for each input video via learnable latent neural features attached to the underlying geometry. Furthermore, the proposed appearance-conditioned density formulation facilitates the shape variation of the character, such as facial hair and soft tissues, in the radiance field prediction. To the best of our knowledge, our approach is the first dynamic deformable NeRF framework to model appearance and shape variations in a single unified network for multi-appearances of the same subject. We demonstrate experimentally that PAV outperforms the baseline method in terms of visual rendering quality in our quantitative and qualitative studies on various subjects.  
   </ol>  
 </details>  
+**comments**: Accepted to ECCV24. Project page:
+  https://akincaliskan3d.github.io/PAV  
   
   
 
