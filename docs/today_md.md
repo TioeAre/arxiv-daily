@@ -1,40 +1,51 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#VIPeR:-Visual-Incremental-Place-Recognition-with-Adaptive-Mining-and-Lifelong-Learning>VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Lifelong Learning</a></li>
-        <li><a href=#SuperVINS:-A-visual-inertial-SLAM-framework-integrated-deep-learning-features>SuperVINS: A visual-inertial SLAM framework integrated deep learning features</a></li>
+        <li><a href=#LoopSparseGS:-Loop-Based-Sparse-View-Friendly-Gaussian-Splatting>LoopSparseGS: Loop Based Sparse-View Friendly Gaussian Splatting</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Certifying-Robustness-of-Learning-Based-Keypoint-Detection-and-Pose-Estimation-Methods>Certifying Robustness of Learning-Based Keypoint Detection and Pose Estimation Methods</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#PAV:-Personalized-Head-Avatar-from-Unstructured-Video-Collection>PAV: Personalized Head Avatar from Unstructured Video Collection</a></li>
+        <li><a href=#StyleRF-VolVis:-Style-Transfer-of-Neural-Radiance-Fields-for-Expressive-Volume-Visualization>StyleRF-VolVis: Style Transfer of Neural Radiance Fields for Expressive Volume Visualization</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [VIPeR: Visual Incremental Place Recognition with Adaptive Mining and Lifelong Learning](http://arxiv.org/abs/2407.21416)  
-Yuhang Ming, Minyang Xu, Xingrui Yang, Weicai Ye, Weihan Wang, Yong Peng, Weichen Dai, Wanzeng Kong  
+### [LoopSparseGS: Loop Based Sparse-View Friendly Gaussian Splatting](http://arxiv.org/abs/2408.00254)  
+Zhenyu Bao, Guibiao Liao, Kaichen Zhou, Kanglin Liu, Qing Li, Guoping Qiu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual place recognition (VPR) is an essential component of many autonomous and augmented/virtual reality systems. It enables the systems to robustly localize themselves in large-scale environments. Existing VPR methods demonstrate attractive performance at the cost of heavy pre-training and limited generalizability. When deployed in unseen environments, these methods exhibit significant performance drops. Targeting this issue, we present VIPeR, a novel approach for visual incremental place recognition with the ability to adapt to new environments while retaining the performance of previous environments. We first introduce an adaptive mining strategy that balances the performance within a single environment and the generalizability across multiple environments. Then, to prevent catastrophic forgetting in lifelong learning, we draw inspiration from human memory systems and design a novel memory bank for our VIPeR. Our memory bank contains a sensory memory, a working memory and a long-term memory, with the first two focusing on the current environment and the last one for all previously visited environments. Additionally, we propose a probabilistic knowledge distillation to explicitly safeguard the previously learned knowledge. We evaluate our proposed VIPeR on three large-scale datasets, namely Oxford Robotcar, Nordland, and TartanAir. For comparison, we first set a baseline performance with naive finetuning. Then, several more recent lifelong learning methods are compared. Our VIPeR achieves better performance in almost all aspects with the biggest improvement of 13.65% in average performance.  
+    Despite the photorealistic novel view synthesis (NVS) performance achieved by the original 3D Gaussian splatting (3DGS), its rendering quality significantly degrades with sparse input views. This performance drop is mainly caused by the limited number of initial points generated from the sparse input, insufficient supervision during the training process, and inadequate regularization of the oversized Gaussian ellipsoids. To handle these issues, we propose the LoopSparseGS, a loop-based 3DGS framework for the sparse novel view synthesis task. In specific, we propose a loop-based Progressive Gaussian Initialization (PGI) strategy that could iteratively densify the initialized point cloud using the rendered pseudo images during the training process. Then, the sparse and reliable depth from the Structure from Motion, and the window-based dense monocular depth are leveraged to provide precise geometric supervision via the proposed Depth-alignment Regularization (DAR). Additionally, we introduce a novel Sparse-friendly Sampling (SFS) strategy to handle oversized Gaussian ellipsoids leading to large pixel errors. Comprehensive experiments on four datasets demonstrate that LoopSparseGS outperforms existing state-of-the-art methods for sparse-input novel view synthesis, across indoor, outdoor, and object-level scenes with various image resolutions.  
   </ol>  
 </details>  
-**comments**: 8 pages, 4 figures  
+**comments**: 13 pages, 10 figures  
   
-### [SuperVINS: A visual-inertial SLAM framework integrated deep learning features](http://arxiv.org/abs/2407.21348)  
-Hongkun Luo, Chi Guo, Yang Liu, Zengke Li  
+  
+
+
+
+## Keypoint Detection  
+
+### [Certifying Robustness of Learning-Based Keypoint Detection and Pose Estimation Methods](http://arxiv.org/abs/2408.00117)  
+Xusheng Luo, Tianhao Wei, Simin Liu, Ziwei Wang, Luis Mattei-Mendez, Taylor Loper, Joshua Neighbor, Casidhe Hutchison, Changliu Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this article, we propose enhancements to VINS-Fusion by incorporating deep learning features and deep learning matching methods. We implemented the training of deep learning feature bag of words and utilized these features for loop closure detection. Additionally, we introduce the RANSAC algorithm in the deep learning feature matching module to optimize matching. SuperVINS, an improved version of VINS-Fusion, outperforms it in terms of positioning accuracy, robustness, and more. Particularly in challenging scenarios like low illumination and rapid jitter, traditional geometric features fail to fully exploit image information, whereas deep learning features excel at capturing image features.To validate our proposed improvement scheme, we conducted experiments using open source datasets. We performed a comprehensive analysis of the experimental results from both qualitative and quantitative perspectives. The results demonstrate the feasibility and effectiveness of this deep learning-based approach for SLAM systems.To foster knowledge exchange in this field, we have made the code for this article publicly available. You can find the code at this link: https://github.com/luohongk/SuperVINS.  
+    This work addresses the certification of the local robustness of vision-based two-stage 6D object pose estimation. The two-stage method for object pose estimation achieves superior accuracy by first employing deep neural network-driven keypoint regression and then applying a Perspective-n-Point (PnP) technique. Despite advancements, the certification of these methods' robustness remains scarce. This research aims to fill this gap with a focus on their local robustness on the system level--the capacity to maintain robust estimations amidst semantic input perturbations. The core idea is to transform the certification of local robustness into neural network verification for classification tasks. The challenge is to develop model, input, and output specifications that align with off-the-shelf verification tools. To facilitate verification, we modify the keypoint detection model by substituting nonlinear operations with those more amenable to the verification processes. Instead of injecting random noise into images, as is common, we employ a convex hull representation of images as input specifications to more accurately depict semantic perturbations. Furthermore, by conducting a sensitivity analysis, we propagate the robustness criteria from pose to keypoint accuracy, and then formulating an optimal error threshold allocation problem that allows for the setting of a maximally permissible keypoint deviation thresholds. Viewing each pixel as an individual class, these thresholds result in linear, classification-akin output specifications. Under certain conditions, we demonstrate that the main components of our certification framework are both sound and complete, and validate its effects through extensive evaluations on realistic perturbations. To our knowledge, this is the first study to certify the robustness of large-scale, keypoint-based pose estimation given images in real-world scenarios.  
   </ol>  
 </details>  
+**comments**: 25 pages, 10 figures, 5 tables  
   
   
 
@@ -42,16 +53,15 @@ Hongkun Luo, Chi Guo, Yang Liu, Zengke Li
 
 ## NeRF  
 
-### [PAV: Personalized Head Avatar from Unstructured Video Collection](http://arxiv.org/abs/2407.21047)  
-Akin Caliskan, Berkay Kicanaoglu, Hyeongwoo Kim  
+### [StyleRF-VolVis: Style Transfer of Neural Radiance Fields for Expressive Volume Visualization](http://arxiv.org/abs/2408.00150)  
+Kaiyuan Tang, Chaoli Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose PAV, Personalized Head Avatar for the synthesis of human faces under arbitrary viewpoints and facial expressions. PAV introduces a method that learns a dynamic deformable neural radiance field (NeRF), in particular from a collection of monocular talking face videos of the same character under various appearance and shape changes. Unlike existing head NeRF methods that are limited to modeling such input videos on a per-appearance basis, our method allows for learning multi-appearance NeRFs, introducing appearance embedding for each input video via learnable latent neural features attached to the underlying geometry. Furthermore, the proposed appearance-conditioned density formulation facilitates the shape variation of the character, such as facial hair and soft tissues, in the radiance field prediction. To the best of our knowledge, our approach is the first dynamic deformable NeRF framework to model appearance and shape variations in a single unified network for multi-appearances of the same subject. We demonstrate experimentally that PAV outperforms the baseline method in terms of visual rendering quality in our quantitative and qualitative studies on various subjects.  
+    In volume visualization, visualization synthesis has attracted much attention due to its ability to generate novel visualizations without following the conventional rendering pipeline. However, existing solutions based on generative adversarial networks often require many training images and take significant training time. Still, issues such as low quality, consistency, and flexibility persist. This paper introduces StyleRF-VolVis, an innovative style transfer framework for expressive volume visualization (VolVis) via neural radiance field (NeRF). The expressiveness of StyleRF-VolVis is upheld by its ability to accurately separate the underlying scene geometry (i.e., content) and color appearance (i.e., style), conveniently modify color, opacity, and lighting of the original rendering while maintaining visual content consistency across the views, and effectively transfer arbitrary styles from reference images to the reconstructed 3D scene. To achieve these, we design a base NeRF model for scene geometry extraction, a palette color network to classify regions of the radiance field for photorealistic editing, and an unrestricted color network to lift the color palette constraint via knowledge distillation for non-photorealistic editing. We demonstrate the superior quality, consistency, and flexibility of StyleRF-VolVis by experimenting with various volume rendering scenes and reference images and comparing StyleRF-VolVis against other image-based (AdaIN), video-based (ReReVST), and NeRF-based (ARF and SNeRF) style rendering solutions.  
   </ol>  
 </details>  
-**comments**: Accepted to ECCV24. Project page:
-  https://akincaliskan3d.github.io/PAV  
+**comments**: Accepted by IEEE VIS 2024  
   
   
 
