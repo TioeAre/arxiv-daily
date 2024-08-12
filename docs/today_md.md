@@ -1,50 +1,55 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#One-Shot-is-Enough-for-Sequential-Infrared-Small-Target-Segmentation>One Shot is Enough for Sequential Infrared Small Target Segmentation</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#A-Review-of-3D-Reconstruction-Techniques-for-Deformable-Tissues-in-Robotic-Surgery>A Review of 3D Reconstruction Techniques for Deformable Tissues in Robotic Surgery</a></li>
-        <li><a href=#Evaluating-Modern-Approaches-in-3D-Scene-Reconstruction:-NeRF-vs-Gaussian-Based-Methods>Evaluating Modern Approaches in 3D Scene Reconstruction: NeRF vs Gaussian-Based Methods</a></li>
-        <li><a href=#LumiGauss:-High-Fidelity-Outdoor-Relighting-with-2D-Gaussian-Splatting>LumiGauss: High-Fidelity Outdoor Relighting with 2D Gaussian Splatting</a></li>
+        <li><a href=#DreamCouple:-Exploring-High-Quality-Text-to-3D-Generation-Via-Rectified-Flow>DreamCouple: Exploring High Quality Text-to-3D Generation Via Rectified Flow</a></li>
+        <li><a href=#FewShotNeRF:-Meta-Learning-based-Novel-View-Synthesis-for-Rapid-Scene-Specific-Adaptation>FewShotNeRF: Meta-Learning-based Novel View Synthesis for Rapid Scene-Specific Adaptation</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## Image Matching  
+
+### [One Shot is Enough for Sequential Infrared Small Target Segmentation](http://arxiv.org/abs/2408.04823)  
+Bingbing Dan, Meihui Li, Tao Tang, Jing Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Infrared small target sequences exhibit strong similarities between frames and contain rich contextual information, which motivates us to achieve sequential infrared small target segmentation with minimal data. Inspired by the success of large segmentation models led by Segment Anything Model (SAM) across various downstream tasks, we propose a one-shot and training-free method that perfectly adapts SAM's zero-shot generalization capabilities to sequential infrared small target segmentation. Given one annotated frame as a reference, our method can accurately segment small targets in other frames of the sequence. Specifically, we first obtain a confidence map through local feature matching between reference image and test image. Then, the highest point in the confidence map is as a prompt, and we design the Point Prompt-Centric Focusing (PPCF) module to address the over-segmentation of small targets with blurry boundaries. Subsequently, to prevent miss and false detections, we introduce the Triple-Level Ensemble (TLE) module that ensembles the masks obtained at different levels from the first two steps to produce the final mask. Experiments demonstrate that our method requires only one shot to achieve comparable performance to state-of-the-art methods based on traditional many-shot supervision and even superior performance in a few-shot setting. Moreover, ablation studies confirm the robustness of our approach to variations in one-shot samples, changes in scenes, and the presence of multiple targets.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## NeRF  
 
-### [LumiGauss: High-Fidelity Outdoor Relighting with 2D Gaussian Splatting](http://arxiv.org/abs/2408.04474)  
-Joanna Kaleta, Kacper Kania, Tomasz Trzcinski, Marek Kowalski  
+### [DreamCouple: Exploring High Quality Text-to-3D Generation Via Rectified Flow](http://arxiv.org/abs/2408.05008)  
+Hangyu Li, Xiangxiang Chu, Dingyuan Shi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Decoupling lighting from geometry using unconstrained photo collections is notoriously challenging. Solving it would benefit many users, as creating complex 3D assets takes days of manual labor. Many previous works have attempted to address this issue, often at the expense of output fidelity, which questions the practicality of such methods.   We introduce LumiGauss, a technique that tackles 3D reconstruction of scenes and environmental lighting through 2D Gaussian Splatting. Our approach yields high-quality scene reconstructions and enables realistic lighting synthesis under novel environment maps. We also propose a method for enhancing the quality of shadows, common in outdoor scenes, by exploiting spherical harmonics properties. Our approach facilitates seamless integration with game engines and enables the use of fast precomputed radiance transfer.   We validate our method on the NeRF-OSR dataset, demonstrating superior performance over baseline methods. Moreover, LumiGauss can synthesize realistic images when applying novel environment maps.  
+    The Score Distillation Sampling (SDS), which exploits pretrained text-to-image model diffusion models as priors to 3D model training, has achieved significant success. Currently, the flow-based diffusion model has become a new trend for generations. Yet, adapting SDS to flow-based diffusion models in 3D generation remains unexplored. Our work is aimed to bridge this gap. In this paper, we adapt SDS to rectified flow and re-examine the over-smoothing issue under this novel framework. The issue can be explained that the model learns an average of multiple ODE trajectories. Then we propose DreamCouple, which instead of randomly sampling noise, uses a rectified flow model to find the coupled noise. Its Unique Couple Matching (UCM) loss guides the model to learn different trajectories and thus solves the over-smoothing issue. We apply our method to both NeRF and 3D Gaussian splatting and achieve state-of-the-art performances. We also identify some other interesting open questions such as initialization issues for NeRF and faster training convergence. Our code will be released soon.  
   </ol>  
 </details>  
-**comments**: Includes video files in src  
+**comments**: Tech Report  
   
-### [A Review of 3D Reconstruction Techniques for Deformable Tissues in Robotic Surgery](http://arxiv.org/abs/2408.04426)  
-[[code](https://github.com/epsilon404/surgicalnerf)]  
-Mengya Xu, Ziqi Guo, An Wang, Long Bai, Hongliang Ren  
+### [FewShotNeRF: Meta-Learning-based Novel View Synthesis for Rapid Scene-Specific Adaptation](http://arxiv.org/abs/2408.04803)  
+Piraveen Sivakumar, Paul Janson, Jathushan Rajasegaran, Thanuja Ambegoda  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    As a crucial and intricate task in robotic minimally invasive surgery, reconstructing surgical scenes using stereo or monocular endoscopic video holds immense potential for clinical applications. NeRF-based techniques have recently garnered attention for the ability to reconstruct scenes implicitly. On the other hand, Gaussian splatting-based 3D-GS represents scenes explicitly using 3D Gaussians and projects them onto a 2D plane as a replacement for the complex volume rendering in NeRF. However, these methods face challenges regarding surgical scene reconstruction, such as slow inference, dynamic scenes, and surgical tool occlusion. This work explores and reviews state-of-the-art (SOTA) approaches, discussing their innovations and implementation principles. Furthermore, we replicate the models and conduct testing and evaluation on two datasets. The test results demonstrate that with advancements in these techniques, achieving real-time, high-quality reconstructions becomes feasible.  
+    In this paper, we address the challenge of generating novel views of real-world objects with limited multi-view images through our proposed approach, FewShotNeRF. Our method utilizes meta-learning to acquire optimal initialization, facilitating rapid adaptation of a Neural Radiance Field (NeRF) to specific scenes. The focus of our meta-learning process is on capturing shared geometry and textures within a category, embedded in the weight initialization. This approach expedites the learning process of NeRFs and leverages recent advancements in positional encodings to reduce the time required for fitting a NeRF to a scene, thereby accelerating the inner loop optimization of meta-learning. Notably, our method enables meta-learning on a large number of 3D scenes to establish a robust 3D prior for various categories. Through extensive evaluations on the Common Objects in 3D open source dataset, we empirically demonstrate the efficacy and potential of meta-learning in generating high-quality novel views of objects.  
   </ol>  
 </details>  
-**comments**: To appear in MICCAI 2024 EARTH Workshop. Code availability:
-  https://github.com/Epsilon404/surgicalnerf  
-  
-### [Evaluating Modern Approaches in 3D Scene Reconstruction: NeRF vs Gaussian-Based Methods](http://arxiv.org/abs/2408.04268)  
-Yiming Zhou, Zixuan Zeng, Andi Chen, Xiaofan Zhou, Haowei Ni, Shiyao Zhang, Panfeng Li, Liangxi Liu, Mengyao Zheng, Xupeng Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Exploring the capabilities of Neural Radiance Fields (NeRF) and Gaussian-based methods in the context of 3D scene reconstruction, this study contrasts these modern approaches with traditional Simultaneous Localization and Mapping (SLAM) systems. Utilizing datasets such as Replica and ScanNet, we assess performance based on tracking accuracy, mapping fidelity, and view synthesis. Findings reveal that NeRF excels in view synthesis, offering unique capabilities in generating new perspectives from existing data, albeit at slower processing speeds. Conversely, Gaussian-based methods provide rapid processing and significant expressiveness but lack comprehensive scene completion. Enhanced by global optimization and loop closure techniques, newer methods like NICE-SLAM and SplaTAM not only surpass older frameworks such as ORB-SLAM2 in terms of robustness but also demonstrate superior performance in dynamic and complex environments. This comparative analysis bridges theoretical research with practical implications, shedding light on future developments in robust 3D scene reconstruction across various real-world applications.  
-  </ol>  
-</details>  
-**comments**: Accepted by 2024 6th International Conference on Data-driven
-  Optimization of Complex Systems  
   
   
 
