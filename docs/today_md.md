@@ -1,30 +1,44 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#One-Shot-is-Enough-for-Sequential-Infrared-Small-Target-Segmentation>One Shot is Enough for Sequential Infrared Small Target Segmentation</a></li>
+        <li><a href=#Cross-view-image-geo-localization-with-Panorama-BEV-Co-Retrieval-Network>Cross-view image geo-localization with Panorama-BEV Co-Retrieval Network</a></li>
+        <li><a href=#Spherical-World-Locking-for-Audio-Visual-Localization-in-Egocentric-Videos>Spherical World-Locking for Audio-Visual Localization in Egocentric Videos</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#DreamCouple:-Exploring-High-Quality-Text-to-3D-Generation-Via-Rectified-Flow>DreamCouple: Exploring High Quality Text-to-3D Generation Via Rectified Flow</a></li>
-        <li><a href=#FewShotNeRF:-Meta-Learning-based-Novel-View-Synthesis-for-Rapid-Scene-Specific-Adaptation>FewShotNeRF: Meta-Learning-based Novel View Synthesis for Rapid Scene-Specific Adaptation</a></li>
+        <li><a href=#Mipmap-GS:-Let-Gaussians-Deform-with-Scale-specific-Mipmap-for-Anti-aliasing-Rendering>Mipmap-GS: Let Gaussians Deform with Scale-specific Mipmap for Anti-aliasing Rendering</a></li>
+        <li><a href=#3D-Reconstruction-of-Protein-Structures-from-Multi-view-AFM-Images-using-Neural-Radiance-Fields-(NeRFs)>3D Reconstruction of Protein Structures from Multi-view AFM Images using Neural Radiance Fields (NeRFs)</a></li>
+        <li><a href=#Radiance-Field-Learners-As-UAV-First-Person-Viewers>Radiance Field Learners As UAV First-Person Viewers</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Image Matching  
+## Visual Localization  
 
-### [One Shot is Enough for Sequential Infrared Small Target Segmentation](http://arxiv.org/abs/2408.04823)  
-Bingbing Dan, Meihui Li, Tao Tang, Jing Zhang  
+### [Cross-view image geo-localization with Panorama-BEV Co-Retrieval Network](http://arxiv.org/abs/2408.05475)  
+[[code](https://github.com/yejy53/ep-bev)]  
+Junyan Ye, Zhutao Lv, Weijia Li, Jinhua Yu, Haote Yang, Huaping Zhong, Conghui He  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Infrared small target sequences exhibit strong similarities between frames and contain rich contextual information, which motivates us to achieve sequential infrared small target segmentation with minimal data. Inspired by the success of large segmentation models led by Segment Anything Model (SAM) across various downstream tasks, we propose a one-shot and training-free method that perfectly adapts SAM's zero-shot generalization capabilities to sequential infrared small target segmentation. Given one annotated frame as a reference, our method can accurately segment small targets in other frames of the sequence. Specifically, we first obtain a confidence map through local feature matching between reference image and test image. Then, the highest point in the confidence map is as a prompt, and we design the Point Prompt-Centric Focusing (PPCF) module to address the over-segmentation of small targets with blurry boundaries. Subsequently, to prevent miss and false detections, we introduce the Triple-Level Ensemble (TLE) module that ensembles the masks obtained at different levels from the first two steps to produce the final mask. Experiments demonstrate that our method requires only one shot to achieve comparable performance to state-of-the-art methods based on traditional many-shot supervision and even superior performance in a few-shot setting. Moreover, ablation studies confirm the robustness of our approach to variations in one-shot samples, changes in scenes, and the presence of multiple targets.  
+    Cross-view geolocalization identifies the geographic location of street view images by matching them with a georeferenced satellite database. Significant challenges arise due to the drastic appearance and geometry differences between views. In this paper, we propose a new approach for cross-view image geo-localization, i.e., the Panorama-BEV Co-Retrieval Network. Specifically, by utilizing the ground plane assumption and geometric relations, we convert street view panorama images into the BEV view, reducing the gap between street panoramas and satellite imagery. In the existing retrieval of street view panorama images and satellite images, we introduce BEV and satellite image retrieval branches for collaborative retrieval. By retaining the original street view retrieval branch, we overcome the limited perception range issue of BEV representation. Our network enables comprehensive perception of both the global layout and local details around the street view capture locations. Additionally, we introduce CVGlobal, a global cross-view dataset that is closer to real-world scenarios. This dataset adopts a more realistic setup, with street view directions not aligned with satellite images. CVGlobal also includes cross-regional, cross-temporal, and street view to map retrieval tests, enabling a comprehensive evaluation of algorithm performance. Our method excels in multiple tests on common cross-view datasets such as CVUSA, CVACT, VIGOR, and our newly introduced CVGlobal, surpassing the current state-of-the-art approaches. The code and datasets can be found at \url{https://github.com/yejy53/EP-BEV}.  
   </ol>  
 </details>  
+**comments**: Accepted by ECCV 2024  
+  
+### [Spherical World-Locking for Audio-Visual Localization in Egocentric Videos](http://arxiv.org/abs/2408.05364)  
+Heeseung Yun, Ruohan Gao, Ishwarya Ananthabhotla, Anurag Kumar, Jacob Donley, Chao Li, Gunhee Kim, Vamsi Krishna Ithapu, Calvin Murdock  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Egocentric videos provide comprehensive contexts for user and scene understanding, spanning multisensory perception to behavioral interaction. We propose Spherical World-Locking (SWL) as a general framework for egocentric scene representation, which implicitly transforms multisensory streams with respect to measurements of head orientation. Compared to conventional head-locked egocentric representations with a 2D planar field-of-view, SWL effectively offsets challenges posed by self-motion, allowing for improved spatial synchronization between input modalities. Using a set of multisensory embeddings on a worldlocked sphere, we design a unified encoder-decoder transformer architecture that preserves the spherical structure of the scene representation, without requiring expensive projections between image and world coordinate systems. We evaluate the effectiveness of the proposed framework on multiple benchmark tasks for egocentric video understanding, including audio-visual active speaker localization, auditory spherical source localization, and behavior anticipation in everyday activities.  
+  </ol>  
+</details>  
+**comments**: ECCV2024  
   
   
 
@@ -32,24 +46,34 @@ Bingbing Dan, Meihui Li, Tao Tang, Jing Zhang
 
 ## NeRF  
 
-### [DreamCouple: Exploring High Quality Text-to-3D Generation Via Rectified Flow](http://arxiv.org/abs/2408.05008)  
-Hangyu Li, Xiangxiang Chu, Dingyuan Shi  
+### [Mipmap-GS: Let Gaussians Deform with Scale-specific Mipmap for Anti-aliasing Rendering](http://arxiv.org/abs/2408.06286)  
+Jiameng Li, Yue Shi, Jiezhang Cao, Bingbing Ni, Wenjun Zhang, Kai Zhang, Luc Van Gool  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The Score Distillation Sampling (SDS), which exploits pretrained text-to-image model diffusion models as priors to 3D model training, has achieved significant success. Currently, the flow-based diffusion model has become a new trend for generations. Yet, adapting SDS to flow-based diffusion models in 3D generation remains unexplored. Our work is aimed to bridge this gap. In this paper, we adapt SDS to rectified flow and re-examine the over-smoothing issue under this novel framework. The issue can be explained that the model learns an average of multiple ODE trajectories. Then we propose DreamCouple, which instead of randomly sampling noise, uses a rectified flow model to find the coupled noise. Its Unique Couple Matching (UCM) loss guides the model to learn different trajectories and thus solves the over-smoothing issue. We apply our method to both NeRF and 3D Gaussian splatting and achieve state-of-the-art performances. We also identify some other interesting open questions such as initialization issues for NeRF and faster training convergence. Our code will be released soon.  
+    3D Gaussian Splatting (3DGS) has attracted great attention in novel view synthesis because of its superior rendering efficiency and high fidelity. However, the trained Gaussians suffer from severe zooming degradation due to non-adjustable representation derived from single-scale training. Though some methods attempt to tackle this problem via post-processing techniques such as selective rendering or filtering techniques towards primitives, the scale-specific information is not involved in Gaussians. In this paper, we propose a unified optimization method to make Gaussians adaptive for arbitrary scales by self-adjusting the primitive properties (e.g., color, shape and size) and distribution (e.g., position). Inspired by the mipmap technique, we design pseudo ground-truth for the target scale and propose a scale-consistency guidance loss to inject scale information into 3D Gaussians. Our method is a plug-in module, applicable for any 3DGS models to solve the zoom-in and zoom-out aliasing. Extensive experiments demonstrate the effectiveness of our method. Notably, our method outperforms 3DGS in PSNR by an average of 9.25 dB for zoom-in and 10.40 dB for zoom-out on the NeRF Synthetic dataset.  
   </ol>  
 </details>  
-**comments**: Tech Report  
+**comments**: 9 pages  
   
-### [FewShotNeRF: Meta-Learning-based Novel View Synthesis for Rapid Scene-Specific Adaptation](http://arxiv.org/abs/2408.04803)  
-Piraveen Sivakumar, Paul Janson, Jathushan Rajasegaran, Thanuja Ambegoda  
+### [3D Reconstruction of Protein Structures from Multi-view AFM Images using Neural Radiance Fields (NeRFs)](http://arxiv.org/abs/2408.06244)  
+Jaydeep Rade, Ethan Herron, Soumik Sarkar, Anwesha Sarkar, Adarsh Krishnamurthy  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we address the challenge of generating novel views of real-world objects with limited multi-view images through our proposed approach, FewShotNeRF. Our method utilizes meta-learning to acquire optimal initialization, facilitating rapid adaptation of a Neural Radiance Field (NeRF) to specific scenes. The focus of our meta-learning process is on capturing shared geometry and textures within a category, embedded in the weight initialization. This approach expedites the learning process of NeRFs and leverages recent advancements in positional encodings to reduce the time required for fitting a NeRF to a scene, thereby accelerating the inner loop optimization of meta-learning. Notably, our method enables meta-learning on a large number of 3D scenes to establish a robust 3D prior for various categories. Through extensive evaluations on the Common Objects in 3D open source dataset, we empirically demonstrate the efficacy and potential of meta-learning in generating high-quality novel views of objects.  
+    Recent advancements in deep learning for predicting 3D protein structures have shown promise, particularly when leveraging inputs like protein sequences and Cryo-Electron microscopy (Cryo-EM) images. However, these techniques often fall short when predicting the structures of protein complexes (PCs), which involve multiple proteins. In our study, we investigate using atomic force microscopy (AFM) combined with deep learning to predict the 3D structures of PCs. AFM generates height maps that depict the PCs in various random orientations, providing a rich information for training a neural network to predict the 3D structures. We then employ the pre-trained UpFusion model (which utilizes a conditional diffusion model for synthesizing novel views) to train an instance-specific NeRF model for 3D reconstruction. The performance of UpFusion is evaluated through zero-shot predictions of 3D protein structures using AFM images. The challenge, however, lies in the time-intensive and impractical nature of collecting actual AFM images. To address this, we use a virtual AFM imaging process that transforms a `PDB' protein file into multi-view 2D virtual AFM images via volume rendering techniques. We extensively validate the UpFusion architecture using both virtual and actual multi-view AFM images. Our results include a comparison of structures predicted with varying numbers of views and different sets of views. This novel approach holds significant potential for enhancing the accuracy of protein complex structure predictions with further fine-tuning of the UpFusion network.  
   </ol>  
 </details>  
+  
+### [Radiance Field Learners As UAV First-Person Viewers](http://arxiv.org/abs/2408.05533)  
+Liqi Yan, Qifan Wang, Junhan Zhao, Qiang Guan, Zheng Tang, Jianhui Zhang, Dongfang Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    First-Person-View (FPV) holds immense potential for revolutionizing the trajectory of Unmanned Aerial Vehicles (UAVs), offering an exhilarating avenue for navigating complex building structures. Yet, traditional Neural Radiance Field (NeRF) methods face challenges such as sampling single points per iteration and requiring an extensive array of views for supervision. UAV videos exacerbate these issues with limited viewpoints and significant spatial scale variations, resulting in inadequate detail rendering across diverse scales. In response, we introduce FPV-NeRF, addressing these challenges through three key facets: (1) Temporal consistency. Leveraging spatio-temporal continuity ensures seamless coherence between frames; (2) Global structure. Incorporating various global features during point sampling preserves space integrity; (3) Local granularity. Employing a comprehensive framework and multi-resolution supervision for multi-scale scene feature representation tackles the intricacies of UAV video spatial scales. Additionally, due to the scarcity of publicly available FPV videos, we introduce an innovative view synthesis method using NeRF to generate FPV perspectives from UAV footage, enhancing spatial perception for drones. Our novel dataset spans diverse trajectories, from outdoor to indoor environments, in the UAV domain, differing significantly from traditional NeRF scenarios. Through extensive experiments encompassing both interior and exterior building structures, FPV-NeRF demonstrates a superior understanding of the UAV flying space, outperforming state-of-the-art methods in our curated UAV dataset. Explore our project page for further insights: https://fpv-nerf.github.io/.  
+  </ol>  
+</details>  
+**comments**: Accepted to ECCV 2024  
   
   
 
