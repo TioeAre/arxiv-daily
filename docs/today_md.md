@@ -1,44 +1,51 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#A-Miniature-Vision-Based-Localization-System-for-Indoor-Blimps>A Miniature Vision-Based Localization System for Indoor Blimps</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Cross-view-image-geo-localization-with-Panorama-BEV-Co-Retrieval-Network>Cross-view image geo-localization with Panorama-BEV Co-Retrieval Network</a></li>
-        <li><a href=#Spherical-World-Locking-for-Audio-Visual-Localization-in-Egocentric-Videos>Spherical World-Locking for Audio-Visual Localization in Egocentric Videos</a></li>
+        <li><a href=#A-Miniature-Vision-Based-Localization-System-for-Indoor-Blimps>A Miniature Vision-Based Localization System for Indoor Blimps</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Mipmap-GS:-Let-Gaussians-Deform-with-Scale-specific-Mipmap-for-Anti-aliasing-Rendering>Mipmap-GS: Let Gaussians Deform with Scale-specific Mipmap for Anti-aliasing Rendering</a></li>
-        <li><a href=#3D-Reconstruction-of-Protein-Structures-from-Multi-view-AFM-Images-using-Neural-Radiance-Fields-(NeRFs)>3D Reconstruction of Protein Structures from Multi-view AFM Images using Neural Radiance Fields (NeRFs)</a></li>
-        <li><a href=#Radiance-Field-Learners-As-UAV-First-Person-Viewers>Radiance Field Learners As UAV First-Person Viewers</a></li>
+        <li><a href=#Potamoi:-Accelerating-Neural-Rendering-via-a-Unified-Streaming-Architecture>Potamoi: Accelerating Neural Rendering via a Unified Streaming Architecture</a></li>
+        <li><a href=#ActiveNeRF:-Learning-Accurate-3D-Geometry-by-Active-Pattern-Projection>ActiveNeRF: Learning Accurate 3D Geometry by Active Pattern Projection</a></li>
+        <li><a href=#HDRGS:-High-Dynamic-Range-Gaussian-Splatting>HDRGS: High Dynamic Range Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SFM  
+
+### [A Miniature Vision-Based Localization System for Indoor Blimps](http://arxiv.org/abs/2408.06648)  
+Shicong Ma  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    With increasing attention paid to blimp research, I hope to build an indoor blimp to interact with humans. To begin with, I propose developing a visual localization system to enable blimps to localize themselves in an indoor environment autonomously. This system initially reconstructs an indoor environment by employing Structure from Motion with Superpoint visual features. Next, with the previously built sparse point cloud map, the system generates camera poses by continuously employing pose estimation on matched visual features observed from the map. In this project, the blimp only serves as a reference mobile platform that constrains the weight of the perception system. The perception system contains one monocular camera and a WiFi adaptor to capture and transmit visual data to a ground PC station where the algorithms will be executed. The success of this project will transform remote-controlled indoor blimps into autonomous indoor blimps, which can be utilized for applications such as surveillance, advertisement, and indoor mapping.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [Cross-view image geo-localization with Panorama-BEV Co-Retrieval Network](http://arxiv.org/abs/2408.05475)  
-[[code](https://github.com/yejy53/ep-bev)]  
-Junyan Ye, Zhutao Lv, Weijia Li, Jinhua Yu, Haote Yang, Huaping Zhong, Conghui He  
+### [A Miniature Vision-Based Localization System for Indoor Blimps](http://arxiv.org/abs/2408.06648)  
+Shicong Ma  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Cross-view geolocalization identifies the geographic location of street view images by matching them with a georeferenced satellite database. Significant challenges arise due to the drastic appearance and geometry differences between views. In this paper, we propose a new approach for cross-view image geo-localization, i.e., the Panorama-BEV Co-Retrieval Network. Specifically, by utilizing the ground plane assumption and geometric relations, we convert street view panorama images into the BEV view, reducing the gap between street panoramas and satellite imagery. In the existing retrieval of street view panorama images and satellite images, we introduce BEV and satellite image retrieval branches for collaborative retrieval. By retaining the original street view retrieval branch, we overcome the limited perception range issue of BEV representation. Our network enables comprehensive perception of both the global layout and local details around the street view capture locations. Additionally, we introduce CVGlobal, a global cross-view dataset that is closer to real-world scenarios. This dataset adopts a more realistic setup, with street view directions not aligned with satellite images. CVGlobal also includes cross-regional, cross-temporal, and street view to map retrieval tests, enabling a comprehensive evaluation of algorithm performance. Our method excels in multiple tests on common cross-view datasets such as CVUSA, CVACT, VIGOR, and our newly introduced CVGlobal, surpassing the current state-of-the-art approaches. The code and datasets can be found at \url{https://github.com/yejy53/EP-BEV}.  
+    With increasing attention paid to blimp research, I hope to build an indoor blimp to interact with humans. To begin with, I propose developing a visual localization system to enable blimps to localize themselves in an indoor environment autonomously. This system initially reconstructs an indoor environment by employing Structure from Motion with Superpoint visual features. Next, with the previously built sparse point cloud map, the system generates camera poses by continuously employing pose estimation on matched visual features observed from the map. In this project, the blimp only serves as a reference mobile platform that constrains the weight of the perception system. The perception system contains one monocular camera and a WiFi adaptor to capture and transmit visual data to a ground PC station where the algorithms will be executed. The success of this project will transform remote-controlled indoor blimps into autonomous indoor blimps, which can be utilized for applications such as surveillance, advertisement, and indoor mapping.  
   </ol>  
 </details>  
-**comments**: Accepted by ECCV 2024  
-  
-### [Spherical World-Locking for Audio-Visual Localization in Egocentric Videos](http://arxiv.org/abs/2408.05364)  
-Heeseung Yun, Ruohan Gao, Ishwarya Ananthabhotla, Anurag Kumar, Jacob Donley, Chao Li, Gunhee Kim, Vamsi Krishna Ithapu, Calvin Murdock  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Egocentric videos provide comprehensive contexts for user and scene understanding, spanning multisensory perception to behavioral interaction. We propose Spherical World-Locking (SWL) as a general framework for egocentric scene representation, which implicitly transforms multisensory streams with respect to measurements of head orientation. Compared to conventional head-locked egocentric representations with a 2D planar field-of-view, SWL effectively offsets challenges posed by self-motion, allowing for improved spatial synchronization between input modalities. Using a set of multisensory embeddings on a worldlocked sphere, we design a unified encoder-decoder transformer architecture that preserves the spherical structure of the scene representation, without requiring expensive projections between image and world coordinate systems. We evaluate the effectiveness of the proposed framework on multiple benchmark tasks for egocentric video understanding, including audio-visual active speaker localization, auditory spherical source localization, and behavior anticipation in everyday activities.  
-  </ol>  
-</details>  
-**comments**: ECCV2024  
   
   
 
@@ -46,34 +53,36 @@ Heeseung Yun, Ruohan Gao, Ishwarya Ananthabhotla, Anurag Kumar, Jacob Donley, Ch
 
 ## NeRF  
 
-### [Mipmap-GS: Let Gaussians Deform with Scale-specific Mipmap for Anti-aliasing Rendering](http://arxiv.org/abs/2408.06286)  
-Jiameng Li, Yue Shi, Jiezhang Cao, Bingbing Ni, Wenjun Zhang, Kai Zhang, Luc Van Gool  
+### [Potamoi: Accelerating Neural Rendering via a Unified Streaming Architecture](http://arxiv.org/abs/2408.06608)  
+Yu Feng, Weikai Lin, Zihan Liu, Jingwen Leng, Minyi Guo, Han Zhao, Xiaofeng Hou, Jieru Zhao, Yuhao Zhu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) has attracted great attention in novel view synthesis because of its superior rendering efficiency and high fidelity. However, the trained Gaussians suffer from severe zooming degradation due to non-adjustable representation derived from single-scale training. Though some methods attempt to tackle this problem via post-processing techniques such as selective rendering or filtering techniques towards primitives, the scale-specific information is not involved in Gaussians. In this paper, we propose a unified optimization method to make Gaussians adaptive for arbitrary scales by self-adjusting the primitive properties (e.g., color, shape and size) and distribution (e.g., position). Inspired by the mipmap technique, we design pseudo ground-truth for the target scale and propose a scale-consistency guidance loss to inject scale information into 3D Gaussians. Our method is a plug-in module, applicable for any 3DGS models to solve the zoom-in and zoom-out aliasing. Extensive experiments demonstrate the effectiveness of our method. Notably, our method outperforms 3DGS in PSNR by an average of 9.25 dB for zoom-in and 10.40 dB for zoom-out on the NeRF Synthetic dataset.  
+    Neural Radiance Field (NeRF) has emerged as a promising alternative for photorealistic rendering. Despite recent algorithmic advancements, achieving real-time performance on today's resource-constrained devices remains challenging. In this paper, we identify the primary bottlenecks in current NeRF algorithms and introduce a unified algorithm-architecture co-design, Potamoi, designed to accommodate various NeRF algorithms. Specifically, we introduce a runtime system featuring a plug-and-play algorithm, SpaRW, which significantly reduces the per-frame computational workload and alleviates compute inefficiencies. Furthermore, our unified streaming pipeline coupled with customized hardware support effectively tames both SRAM and DRAM inefficiencies by minimizing repetitive DRAM access and completely eliminating SRAM bank conflicts. When evaluated against a baseline utilizing a dedicated DNN accelerator, our framework demonstrates a speed-up and energy reduction of 53.1 $\times$ and 67.7$\times$ , respectively, all while maintaining high visual quality with less than a 1.0 dB reduction in peak signal-to-noise ratio.  
   </ol>  
 </details>  
-**comments**: 9 pages  
+**comments**: arXiv admin note: substantial text overlap with arXiv:2404.11852  
   
-### [3D Reconstruction of Protein Structures from Multi-view AFM Images using Neural Radiance Fields (NeRFs)](http://arxiv.org/abs/2408.06244)  
-Jaydeep Rade, Ethan Herron, Soumik Sarkar, Anwesha Sarkar, Adarsh Krishnamurthy  
+### [ActiveNeRF: Learning Accurate 3D Geometry by Active Pattern Projection](http://arxiv.org/abs/2408.06592)  
+[[code](https://github.com/hcp16/active_nerf)]  
+Jianyu Tao, Changping Hu, Edward Yang, Jing Xu, Rui Chen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in deep learning for predicting 3D protein structures have shown promise, particularly when leveraging inputs like protein sequences and Cryo-Electron microscopy (Cryo-EM) images. However, these techniques often fall short when predicting the structures of protein complexes (PCs), which involve multiple proteins. In our study, we investigate using atomic force microscopy (AFM) combined with deep learning to predict the 3D structures of PCs. AFM generates height maps that depict the PCs in various random orientations, providing a rich information for training a neural network to predict the 3D structures. We then employ the pre-trained UpFusion model (which utilizes a conditional diffusion model for synthesizing novel views) to train an instance-specific NeRF model for 3D reconstruction. The performance of UpFusion is evaluated through zero-shot predictions of 3D protein structures using AFM images. The challenge, however, lies in the time-intensive and impractical nature of collecting actual AFM images. To address this, we use a virtual AFM imaging process that transforms a `PDB' protein file into multi-view 2D virtual AFM images via volume rendering techniques. We extensively validate the UpFusion architecture using both virtual and actual multi-view AFM images. Our results include a comparison of structures predicted with varying numbers of views and different sets of views. This novel approach holds significant potential for enhancing the accuracy of protein complex structure predictions with further fine-tuning of the UpFusion network.  
+    NeRFs have achieved incredible success in novel view synthesis. However, the accuracy of the implicit geometry is unsatisfactory because the passive static environmental illumination has low spatial frequency and cannot provide enough information for accurate geometry reconstruction. In this work, we propose ActiveNeRF, a 3D geometry reconstruction framework, which improves the geometry quality of NeRF by actively projecting patterns of high spatial frequency onto the scene using a projector which has a constant relative pose to the camera. We design a learnable active pattern rendering pipeline which jointly learns the scene geometry and the active pattern. We find that, by adding the active pattern and imposing its consistency across different views, our proposed method outperforms state of the art geometry reconstruction methods qualitatively and quantitatively in both simulation and real experiments. Code is avaliable at https://github.com/hcp16/active_nerf  
   </ol>  
 </details>  
+**comments**: 18 pages, 10 figures  
   
-### [Radiance Field Learners As UAV First-Person Viewers](http://arxiv.org/abs/2408.05533)  
-Liqi Yan, Qifan Wang, Junhan Zhao, Qiang Guan, Zheng Tang, Jianhui Zhang, Dongfang Liu  
+### [HDRGS: High Dynamic Range Gaussian Splatting](http://arxiv.org/abs/2408.06543)  
+[[code](https://github.com/wujh2001/hdrgs)]  
+Jiahao Wu, Lu Xiao, Chao Wang, Rui Peng, Kaiqiang Xiong, Ronggang Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    First-Person-View (FPV) holds immense potential for revolutionizing the trajectory of Unmanned Aerial Vehicles (UAVs), offering an exhilarating avenue for navigating complex building structures. Yet, traditional Neural Radiance Field (NeRF) methods face challenges such as sampling single points per iteration and requiring an extensive array of views for supervision. UAV videos exacerbate these issues with limited viewpoints and significant spatial scale variations, resulting in inadequate detail rendering across diverse scales. In response, we introduce FPV-NeRF, addressing these challenges through three key facets: (1) Temporal consistency. Leveraging spatio-temporal continuity ensures seamless coherence between frames; (2) Global structure. Incorporating various global features during point sampling preserves space integrity; (3) Local granularity. Employing a comprehensive framework and multi-resolution supervision for multi-scale scene feature representation tackles the intricacies of UAV video spatial scales. Additionally, due to the scarcity of publicly available FPV videos, we introduce an innovative view synthesis method using NeRF to generate FPV perspectives from UAV footage, enhancing spatial perception for drones. Our novel dataset spans diverse trajectories, from outdoor to indoor environments, in the UAV domain, differing significantly from traditional NeRF scenarios. Through extensive experiments encompassing both interior and exterior building structures, FPV-NeRF demonstrates a superior understanding of the UAV flying space, outperforming state-of-the-art methods in our curated UAV dataset. Explore our project page for further insights: https://fpv-nerf.github.io/.  
+    Recent years have witnessed substantial advancements in the field of 3D reconstruction from 2D images, particularly following the introduction of the neural radiance field (NeRF) technique. However, reconstructing a 3D high dynamic range (HDR) radiance field, which aligns more closely with real-world conditions, from 2D multi-exposure low dynamic range (LDR) images continues to pose significant challenges. Approaches to this issue fall into two categories: grid-based and implicit-based. Implicit methods, using multi-layer perceptrons (MLP), face inefficiencies, limited solvability, and overfitting risks. Conversely, grid-based methods require significant memory and struggle with image quality and long training times. In this paper, we introduce Gaussian Splatting-a recent, high-quality, real-time 3D reconstruction technique-into this domain. We further develop the High Dynamic Range Gaussian Splatting (HDR-GS) method, designed to address the aforementioned challenges. This method enhances color dimensionality by including luminance and uses an asymmetric grid for tone-mapping, swiftly and precisely converting pixel irradiance to color. Our approach improves HDR scene recovery accuracy and integrates a novel coarse-to-fine strategy to speed up model convergence, enhancing robustness against sparse viewpoints and exposure extremes, and preventing local optima. Extensive testing confirms that our method surpasses current state-of-the-art techniques in both synthetic and real-world scenarios. Code will be released at \url{https://github.com/WuJH2001/HDRGS}  
   </ol>  
 </details>  
-**comments**: Accepted to ECCV 2024  
   
   
 
