@@ -1,71 +1,42 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#TrackNeRF:-Bundle-Adjusting-NeRF-from-Sparse-and-Noisy-Views-via-Feature-Tracks>TrackNeRF: Bundle Adjusting NeRF from Sparse and Noisy Views via Feature Tracks</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#BrewCLIP:-A-Bifurcated-Representation-Learning-Framework-for-Audio-Visual-Retrieval>BrewCLIP: A Bifurcated Representation Learning Framework for Audio-Visual Retrieval</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#BrewCLIP:-A-Bifurcated-Representation-Learning-Framework-for-Audio-Visual-Retrieval>BrewCLIP: A Bifurcated Representation Learning Framework for Audio-Visual Retrieval</a></li>
+        <li><a href=#UniFashion:-A-Unified-Vision-Language-Model-for-Multimodal-Fashion-Retrieval-and-Generation>UniFashion: A Unified Vision-Language Model for Multimodal Fashion Retrieval and Generation</a></li>
+        <li><a href=#GSLoc:-Efficient-Camera-Pose-Refinement-via-3D-Gaussian-Splatting>GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Learning-Part-aware-3D-Representations-by-Fusing-2D-Gaussians-and-Superquadrics>Learning Part-aware 3D Representations by Fusing 2D Gaussians and Superquadrics</a></li>
-        <li><a href=#TrackNeRF:-Bundle-Adjusting-NeRF-from-Sparse-and-Noisy-Views-via-Feature-Tracks>TrackNeRF: Bundle Adjusting NeRF from Sparse and Noisy Views via Feature Tracks</a></li>
+        <li><a href=#Irregularity-Inspection-using-Neural-Radiance-Field>Irregularity Inspection using Neural Radiance Field</a></li>
+        <li><a href=#GSLoc:-Efficient-Camera-Pose-Refinement-via-3D-Gaussian-Splatting>GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [TrackNeRF: Bundle Adjusting NeRF from Sparse and Noisy Views via Feature Tracks](http://arxiv.org/abs/2408.10739)  
-Jinjie Mai, Wenxuan Zhu, Sara Rojas, Jesus Zarzar, Abdullah Hamdi, Guocheng Qian, Bing Li, Silvio Giancola, Bernard Ghanem  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural radiance fields (NeRFs) generally require many images with accurate poses for accurate novel view synthesis, which does not reflect realistic setups where views can be sparse and poses can be noisy. Previous solutions for learning NeRFs with sparse views and noisy poses only consider local geometry consistency with pairs of views. Closely following \textit{bundle adjustment} in Structure-from-Motion (SfM), we introduce TrackNeRF for more globally consistent geometry reconstruction and more accurate pose optimization. TrackNeRF introduces \textit{feature tracks}, \ie connected pixel trajectories across \textit{all} visible views that correspond to the \textit{same} 3D points. By enforcing reprojection consistency among feature tracks, TrackNeRF encourages holistic 3D consistency explicitly. Through extensive experiments, TrackNeRF sets a new benchmark in noisy and sparse view reconstruction. In particular, TrackNeRF shows significant improvements over the state-of-the-art BARF and SPARF by $\sim8$ and $\sim1$ in terms of PSNR on DTU under various sparse and noisy view setups. The code is available at \href{https://tracknerf.github.io/}.  
-  </ol>  
-</details>  
-**comments**: ECCV 2024 (supplemental pages included)  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [BrewCLIP: A Bifurcated Representation Learning Framework for Audio-Visual Retrieval](http://arxiv.org/abs/2408.10383)  
-Zhenyu Lu, Lakshay Sethi  
+### [UniFashion: A Unified Vision-Language Model for Multimodal Fashion Retrieval and Generation](http://arxiv.org/abs/2408.11305)  
+[[code](https://github.com/xiangyu-mm/unifashion)]  
+Xiangyu Zhao, Yuehan Zhang, Wenlong Zhang, Xiao-Ming Wu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Previous methods for audio-image matching generally fall into one of two categories: pipeline models or End-to-End models. Pipeline models first transcribe speech and then encode the resulting text; End-to-End models encode speech directly. Generally, pipeline models outperform end-to-end models, but the intermediate transcription necessarily discards some potentially useful non-textual information. In addition to textual information, speech can convey details such as accent, mood, and and emphasis, which should be effectively captured in the encoded representation. In this paper, we investigate whether non-textual information, which is overlooked by pipeline-based models, can be leveraged to improve speech-image matching performance. We thoroughly analyze and compare End-to-End models, pipeline models, and our proposed dual-channel model for robust audio-image retrieval on a variety of datasets. Our approach achieves a substantial performance gain over the previous state-of-the-art by leveraging strong pretrained models, a prompting mechanism and a bifurcated design.  
+    The fashion domain encompasses a variety of real-world multimodal tasks, including multimodal retrieval and multimodal generation. The rapid advancements in artificial intelligence generated content, particularly in technologies like large language models for text generation and diffusion models for visual generation, have sparked widespread research interest in applying these multimodal models in the fashion domain. However, tasks involving embeddings, such as image-to-text or text-to-image retrieval, have been largely overlooked from this perspective due to the diverse nature of the multimodal fashion domain. And current research on multi-task single models lack focus on image generation. In this work, we present UniFashion, a unified framework that simultaneously tackles the challenges of multimodal generation and retrieval tasks within the fashion domain, integrating image generation with retrieval tasks and text generation tasks. UniFashion unifies embedding and generative tasks by integrating a diffusion model and LLM, enabling controllable and high-fidelity generation. Our model significantly outperforms previous single-task state-of-the-art models across diverse fashion tasks, and can be readily adapted to manage complex vision-language tasks. This work demonstrates the potential learning synergy between multimodal generation and retrieval, offering a promising direction for future research in the fashion domain. The source code is available at https://github.com/xiangyu-mm/UniFashion.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Image Matching  
-
-### [BrewCLIP: A Bifurcated Representation Learning Framework for Audio-Visual Retrieval](http://arxiv.org/abs/2408.10383)  
-Zhenyu Lu, Lakshay Sethi  
+### [GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting](http://arxiv.org/abs/2408.11085)  
+Changkun Liu, Shuai Chen, Yash Bhalgat, Siyan Hu, Zirui Wang, Ming Cheng, Victor Adrian Prisacariu, Tristan Braud  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Previous methods for audio-image matching generally fall into one of two categories: pipeline models or End-to-End models. Pipeline models first transcribe speech and then encode the resulting text; End-to-End models encode speech directly. Generally, pipeline models outperform end-to-end models, but the intermediate transcription necessarily discards some potentially useful non-textual information. In addition to textual information, speech can convey details such as accent, mood, and and emphasis, which should be effectively captured in the encoded representation. In this paper, we investigate whether non-textual information, which is overlooked by pipeline-based models, can be leveraged to improve speech-image matching performance. We thoroughly analyze and compare End-to-End models, pipeline models, and our proposed dual-channel model for robust audio-image retrieval on a variety of datasets. Our approach achieves a substantial performance gain over the previous state-of-the-art by leveraging strong pretrained models, a prompting mechanism and a bifurcated design.  
+    We leverage 3D Gaussian Splatting (3DGS) as a scene representation and propose a novel test-time camera pose refinement framework, GSLoc. This framework enhances the localization accuracy of state-of-the-art absolute pose regression and scene coordinate regression methods. The 3DGS model renders high-quality synthetic images and depth maps to facilitate the establishment of 2D-3D correspondences. GSLoc obviates the need for training feature extractors or descriptors by operating directly on RGB images, utilizing the 3D vision foundation model, MASt3R, for precise 2D matching. To improve the robustness of our model in challenging outdoor environments, we incorporate an exposure-adaptive module within the 3DGS framework. Consequently, GSLoc enables efficient pose refinement given a single RGB query and a coarse initial pose estimation. Our proposed approach surpasses leading NeRF-based optimization methods in both accuracy and runtime across indoor and outdoor visual localization benchmarks, achieving state-of-the-art accuracy on two indoor datasets.  
   </ol>  
 </details>  
+**comments**: The project page is available at https://gsloc.active.vision  
   
   
 
@@ -73,24 +44,24 @@ Zhenyu Lu, Lakshay Sethi
 
 ## NeRF  
 
-### [Learning Part-aware 3D Representations by Fusing 2D Gaussians and Superquadrics](http://arxiv.org/abs/2408.10789)  
-Zhirui Gao, Renjiao Yi, Yuhang Huang, Wei Chen, Chenyang Zhu, Kai Xu  
+### [Irregularity Inspection using Neural Radiance Field](http://arxiv.org/abs/2408.11251)  
+Tianqi Ding, Dawei Xiang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Low-level 3D representations, such as point clouds, meshes, NeRFs, and 3D Gaussians, are commonly used to represent 3D objects or scenes. However, humans usually perceive 3D objects or scenes at a higher level as a composition of parts or structures rather than points or voxels. Representing 3D as semantic parts can benefit further understanding and applications. We aim to solve part-aware 3D reconstruction, which parses objects or scenes into semantic parts. In this paper, we introduce a hybrid representation of superquadrics and 2D Gaussians, trying to dig 3D structural clues from multi-view image inputs. Accurate structured geometry reconstruction and high-quality rendering are achieved at the same time. We incorporate parametric superquadrics in mesh forms into 2D Gaussians by attaching Gaussian centers to faces in meshes. During the training, superquadrics parameters are iteratively optimized, and Gaussians are deformed accordingly, resulting in an efficient hybrid representation. On the one hand, this hybrid representation inherits the advantage of superquadrics to represent different shape primitives, supporting flexible part decomposition of scenes. On the other hand, 2D Gaussians are incorporated to model the complex texture and geometry details, ensuring high-quality rendering and geometry reconstruction. The reconstruction is fully unsupervised. We conduct extensive experiments on data from DTU and ShapeNet datasets, in which the method decomposes scenes into reasonable parts, outperforming existing state-of-the-art approaches.  
+    With the increasing growth of industrialization, more and more industries are relying on machine automation for production. However, defect detection in large-scale production machinery is becoming increasingly important. Due to their large size and height, it is often challenging for professionals to conduct defect inspections on such large machinery. For example, the inspection of aging and misalignment of components on tall machinery like towers requires companies to assign dedicated personnel. Employees need to climb the towers and either visually inspect or take photos to detect safety hazards in these large machines. Direct visual inspection is limited by its low level of automation, lack of precision, and safety concerns associated with personnel climbing the towers. Therefore, in this paper, we propose a system based on neural network modeling (NeRF) of 3D twin models. By comparing two digital models, this system enables defect detection at the 3D interface of an object.  
   </ol>  
 </details>  
   
-### [TrackNeRF: Bundle Adjusting NeRF from Sparse and Noisy Views via Feature Tracks](http://arxiv.org/abs/2408.10739)  
-Jinjie Mai, Wenxuan Zhu, Sara Rojas, Jesus Zarzar, Abdullah Hamdi, Guocheng Qian, Bing Li, Silvio Giancola, Bernard Ghanem  
+### [GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting](http://arxiv.org/abs/2408.11085)  
+Changkun Liu, Shuai Chen, Yash Bhalgat, Siyan Hu, Zirui Wang, Ming Cheng, Victor Adrian Prisacariu, Tristan Braud  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural radiance fields (NeRFs) generally require many images with accurate poses for accurate novel view synthesis, which does not reflect realistic setups where views can be sparse and poses can be noisy. Previous solutions for learning NeRFs with sparse views and noisy poses only consider local geometry consistency with pairs of views. Closely following \textit{bundle adjustment} in Structure-from-Motion (SfM), we introduce TrackNeRF for more globally consistent geometry reconstruction and more accurate pose optimization. TrackNeRF introduces \textit{feature tracks}, \ie connected pixel trajectories across \textit{all} visible views that correspond to the \textit{same} 3D points. By enforcing reprojection consistency among feature tracks, TrackNeRF encourages holistic 3D consistency explicitly. Through extensive experiments, TrackNeRF sets a new benchmark in noisy and sparse view reconstruction. In particular, TrackNeRF shows significant improvements over the state-of-the-art BARF and SPARF by $\sim8$ and $\sim1$ in terms of PSNR on DTU under various sparse and noisy view setups. The code is available at \href{https://tracknerf.github.io/}.  
+    We leverage 3D Gaussian Splatting (3DGS) as a scene representation and propose a novel test-time camera pose refinement framework, GSLoc. This framework enhances the localization accuracy of state-of-the-art absolute pose regression and scene coordinate regression methods. The 3DGS model renders high-quality synthetic images and depth maps to facilitate the establishment of 2D-3D correspondences. GSLoc obviates the need for training feature extractors or descriptors by operating directly on RGB images, utilizing the 3D vision foundation model, MASt3R, for precise 2D matching. To improve the robustness of our model in challenging outdoor environments, we incorporate an exposure-adaptive module within the 3DGS framework. Consequently, GSLoc enables efficient pose refinement given a single RGB query and a coarse initial pose estimation. Our proposed approach surpasses leading NeRF-based optimization methods in both accuracy and runtime across indoor and outdoor visual localization benchmarks, achieving state-of-the-art accuracy on two indoor datasets.  
   </ol>  
 </details>  
-**comments**: ECCV 2024 (supplemental pages included)  
+**comments**: The project page is available at https://gsloc.active.vision  
   
   
 
