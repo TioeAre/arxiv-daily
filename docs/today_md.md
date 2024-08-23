@@ -1,42 +1,59 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#UniFashion:-A-Unified-Vision-Language-Model-for-Multimodal-Fashion-Retrieval-and-Generation>UniFashion: A Unified Vision-Language Model for Multimodal Fashion Retrieval and Generation</a></li>
-        <li><a href=#GSLoc:-Efficient-Camera-Pose-Refinement-via-3D-Gaussian-Splatting>GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting</a></li>
+        <li><a href=#FUSELOC:-Fusing-Global-and-Local-Descriptors-to-Disambiguate-2D-3D-Matching-in-Visual-Localization>FUSELOC: Fusing Global and Local Descriptors to Disambiguate 2D-3D Matching in Visual Localization</a></li>
+        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Irregularity-Inspection-using-Neural-Radiance-Field>Irregularity Inspection using Neural Radiance Field</a></li>
-        <li><a href=#GSLoc:-Efficient-Camera-Pose-Refinement-via-3D-Gaussian-Splatting>GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting</a></li>
+        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [UniFashion: A Unified Vision-Language Model for Multimodal Fashion Retrieval and Generation](http://arxiv.org/abs/2408.11305)  
-[[code](https://github.com/xiangyu-mm/unifashion)]  
-Xiangyu Zhao, Yuehan Zhang, Wenlong Zhang, Xiao-Ming Wu  
+### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
+Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The fashion domain encompasses a variety of real-world multimodal tasks, including multimodal retrieval and multimodal generation. The rapid advancements in artificial intelligence generated content, particularly in technologies like large language models for text generation and diffusion models for visual generation, have sparked widespread research interest in applying these multimodal models in the fashion domain. However, tasks involving embeddings, such as image-to-text or text-to-image retrieval, have been largely overlooked from this perspective due to the diverse nature of the multimodal fashion domain. And current research on multi-task single models lack focus on image generation. In this work, we present UniFashion, a unified framework that simultaneously tackles the challenges of multimodal generation and retrieval tasks within the fashion domain, integrating image generation with retrieval tasks and text generation tasks. UniFashion unifies embedding and generative tasks by integrating a diffusion model and LLM, enabling controllable and high-fidelity generation. Our model significantly outperforms previous single-task state-of-the-art models across diverse fashion tasks, and can be readily adapted to manage complex vision-language tasks. This work demonstrates the potential learning synergy between multimodal generation and retrieval, offering a promising direction for future research in the fashion domain. The source code is available at https://github.com/xiangyu-mm/UniFashion.  
+    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
   </ol>  
 </details>  
   
-### [GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting](http://arxiv.org/abs/2408.11085)  
-Changkun Liu, Shuai Chen, Yash Bhalgat, Siyan Hu, Zirui Wang, Ming Cheng, Victor Adrian Prisacariu, Tristan Braud  
+  
+
+
+
+## Visual Localization  
+
+### [FUSELOC: Fusing Global and Local Descriptors to Disambiguate 2D-3D Matching in Visual Localization](http://arxiv.org/abs/2408.12037)  
+Son Tung Nguyen, Alejandro Fontan, Michael Milford, Tobias Fischer  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We leverage 3D Gaussian Splatting (3DGS) as a scene representation and propose a novel test-time camera pose refinement framework, GSLoc. This framework enhances the localization accuracy of state-of-the-art absolute pose regression and scene coordinate regression methods. The 3DGS model renders high-quality synthetic images and depth maps to facilitate the establishment of 2D-3D correspondences. GSLoc obviates the need for training feature extractors or descriptors by operating directly on RGB images, utilizing the 3D vision foundation model, MASt3R, for precise 2D matching. To improve the robustness of our model in challenging outdoor environments, we incorporate an exposure-adaptive module within the 3DGS framework. Consequently, GSLoc enables efficient pose refinement given a single RGB query and a coarse initial pose estimation. Our proposed approach surpasses leading NeRF-based optimization methods in both accuracy and runtime across indoor and outdoor visual localization benchmarks, achieving state-of-the-art accuracy on two indoor datasets.  
+    Hierarchical methods represent state-of-the-art visual localization, optimizing search efficiency by using global descriptors to focus on relevant map regions. However, this state-of-the-art performance comes at the cost of substantial memory requirements, as all database images must be stored for feature matching. In contrast, direct 2D-3D matching algorithms require significantly less memory but suffer from lower accuracy due to the larger and more ambiguous search space. We address this ambiguity by fusing local and global descriptors using a weighted average operator within a 2D-3D search framework. This fusion rearranges the local descriptor space such that geographically nearby local descriptors are closer in the feature space according to the global descriptors. Therefore, the number of irrelevant competing descriptors decreases, specifically if they are geographically distant, thereby increasing the likelihood of correctly matching a query descriptor. We consistently improve the accuracy over local-only systems and achieve performance close to hierarchical methods while halving memory requirements. Extensive experiments using various state-of-the-art local and global descriptors across four different datasets demonstrate the effectiveness of our approach. For the first time, our approach enables direct matching algorithms to benefit from global descriptors while maintaining memory efficiency. The code for this paper will be published at \href{https://github.com/sontung/descriptor-disambiguation}{github.com/sontung/descriptor-disambiguation}.  
   </ol>  
 </details>  
-**comments**: The project page is available at https://gsloc.active.vision  
+  
+### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
+Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
+  </ol>  
+</details>  
   
   
 
@@ -44,24 +61,14 @@ Changkun Liu, Shuai Chen, Yash Bhalgat, Siyan Hu, Zirui Wang, Ming Cheng, Victor
 
 ## NeRF  
 
-### [Irregularity Inspection using Neural Radiance Field](http://arxiv.org/abs/2408.11251)  
-Tianqi Ding, Dawei Xiang  
+### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
+Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    With the increasing growth of industrialization, more and more industries are relying on machine automation for production. However, defect detection in large-scale production machinery is becoming increasingly important. Due to their large size and height, it is often challenging for professionals to conduct defect inspections on such large machinery. For example, the inspection of aging and misalignment of components on tall machinery like towers requires companies to assign dedicated personnel. Employees need to climb the towers and either visually inspect or take photos to detect safety hazards in these large machines. Direct visual inspection is limited by its low level of automation, lack of precision, and safety concerns associated with personnel climbing the towers. Therefore, in this paper, we propose a system based on neural network modeling (NeRF) of 3D twin models. By comparing two digital models, this system enables defect detection at the 3D interface of an object.  
+    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
   </ol>  
 </details>  
-  
-### [GSLoc: Efficient Camera Pose Refinement via 3D Gaussian Splatting](http://arxiv.org/abs/2408.11085)  
-Changkun Liu, Shuai Chen, Yash Bhalgat, Siyan Hu, Zirui Wang, Ming Cheng, Victor Adrian Prisacariu, Tristan Braud  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We leverage 3D Gaussian Splatting (3DGS) as a scene representation and propose a novel test-time camera pose refinement framework, GSLoc. This framework enhances the localization accuracy of state-of-the-art absolute pose regression and scene coordinate regression methods. The 3DGS model renders high-quality synthetic images and depth maps to facilitate the establishment of 2D-3D correspondences. GSLoc obviates the need for training feature extractors or descriptors by operating directly on RGB images, utilizing the 3D vision foundation model, MASt3R, for precise 2D matching. To improve the robustness of our model in challenging outdoor environments, we incorporate an exposure-adaptive module within the 3DGS framework. Consequently, GSLoc enables efficient pose refinement given a single RGB query and a coarse initial pose estimation. Our proposed approach surpasses leading NeRF-based optimization methods in both accuracy and runtime across indoor and outdoor visual localization benchmarks, achieving state-of-the-art accuracy on two indoor datasets.  
-  </ol>  
-</details>  
-**comments**: The project page is available at https://gsloc.active.vision  
   
   
 
