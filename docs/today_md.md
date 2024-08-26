@@ -1,57 +1,27 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#FUSELOC:-Fusing-Global-and-Local-Descriptors-to-Disambiguate-2D-3D-Matching-in-Visual-Localization>FUSELOC: Fusing Global and Local Descriptors to Disambiguate 2D-3D Matching in Visual Localization</a></li>
-        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
+        <li><a href=#Coarse-to-fine-Alignment-Makes-Better-Speech-image-Retrieval>Coarse-to-fine Alignment Makes Better Speech-image Retrieval</a></li>
       </ul>
     </li>
-    <li><a href=#nerf>NeRF</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Visual-Localization-in-3D-Maps:-Comparing-Point-Cloud,-Mesh,-and-NeRF-Representations>Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations</a></li>
+        <li><a href=#Coarse-to-fine-Alignment-Makes-Better-Speech-image-Retrieval>Coarse-to-fine Alignment Makes Better Speech-image Retrieval</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
-Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [FUSELOC: Fusing Global and Local Descriptors to Disambiguate 2D-3D Matching in Visual Localization](http://arxiv.org/abs/2408.12037)  
-Son Tung Nguyen, Alejandro Fontan, Michael Milford, Tobias Fischer  
+### [Coarse-to-fine Alignment Makes Better Speech-image Retrieval](http://arxiv.org/abs/2408.13119)  
+Lifeng Zhou, Yuke Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Hierarchical methods represent state-of-the-art visual localization, optimizing search efficiency by using global descriptors to focus on relevant map regions. However, this state-of-the-art performance comes at the cost of substantial memory requirements, as all database images must be stored for feature matching. In contrast, direct 2D-3D matching algorithms require significantly less memory but suffer from lower accuracy due to the larger and more ambiguous search space. We address this ambiguity by fusing local and global descriptors using a weighted average operator within a 2D-3D search framework. This fusion rearranges the local descriptor space such that geographically nearby local descriptors are closer in the feature space according to the global descriptors. Therefore, the number of irrelevant competing descriptors decreases, specifically if they are geographically distant, thereby increasing the likelihood of correctly matching a query descriptor. We consistently improve the accuracy over local-only systems and achieve performance close to hierarchical methods while halving memory requirements. Extensive experiments using various state-of-the-art local and global descriptors across four different datasets demonstrate the effectiveness of our approach. For the first time, our approach enables direct matching algorithms to benefit from global descriptors while maintaining memory efficiency. The code for this paper will be published at \href{https://github.com/sontung/descriptor-disambiguation}{github.com/sontung/descriptor-disambiguation}.  
-  </ol>  
-</details>  
-  
-### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
-Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
+    In this paper, we propose a novel framework for speech-image retrieval. We utilize speech-image contrastive (SIC) learning tasks to align speech and image representations at a coarse level and speech-image matching (SIM) learning tasks to further refine the fine-grained cross-modal alignment. SIC and SIM learning tasks are jointly trained in a unified manner. To optimize the learning process, we utilize an embedding queue that facilitates efficient sampling of high-quality and diverse negative representations during SIC learning. Additionally, it enhances the learning of SIM tasks by effectively mining hard negatives based on contrastive similarities calculated in SIC tasks. To further optimize learning under noisy supervision, we incorporate momentum distillation into the training process. Experimental results show that our framework outperforms the state-of-the-art method by more than 4% in R@1 on two benchmark datasets for the speech-image retrieval tasks. Moreover, as observed in zero-shot experiments, our framework demonstrates excellent generalization capabilities.  
   </ol>  
 </details>  
   
@@ -59,14 +29,14 @@ Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon
 
 
 
-## NeRF  
+## Image Matching  
 
-### [Visual Localization in 3D Maps: Comparing Point Cloud, Mesh, and NeRF Representations](http://arxiv.org/abs/2408.11966)  
-Lintong Zhang, Yifu Tao, Jiarong Lin, Fu Zhang, Maurice Fallon  
+### [Coarse-to-fine Alignment Makes Better Speech-image Retrieval](http://arxiv.org/abs/2408.13119)  
+Lifeng Zhou, Yuke Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces and assesses a cross-modal global visual localization system that can localize camera images within a color 3D map representation built using both visual and lidar sensing. We present three different state-of-the-art methods for creating the color 3D maps: point clouds, meshes, and neural radiance fields (NeRF). Our system constructs a database of synthetic RGB and depth image pairs from these representations. This database serves as the basis for global localization. We present an automatic approach that builds this database by synthesizing novel images of the scene and exploiting the 3D structure encoded in the different representations. Next, we present a global localization system that relies on the synthetic image database to accurately estimate the 6 DoF camera poses of monocular query images. Our localization approach relies on different learning-based global descriptors and feature detectors which enable robust image retrieval and matching despite the domain gap between (real) query camera images and the synthetic database images. We assess the system's performance through extensive real-world experiments in both indoor and outdoor settings, in order to evaluate the effectiveness of each map representation and the benefits against traditional structure-from-motion localization approaches. Our results show that all three map representations can achieve consistent localization success rates of 55% and higher across various environments. NeRF synthesized images show superior performance, localizing query images at an average success rate of 72%. Furthermore, we demonstrate that our synthesized database enables global localization even when the map creation data and the localization sequence are captured when travelling in opposite directions. Our system, operating in real-time on a mobile laptop equipped with a GPU, achieves a processing rate of 1Hz.  
+    In this paper, we propose a novel framework for speech-image retrieval. We utilize speech-image contrastive (SIC) learning tasks to align speech and image representations at a coarse level and speech-image matching (SIM) learning tasks to further refine the fine-grained cross-modal alignment. SIC and SIM learning tasks are jointly trained in a unified manner. To optimize the learning process, we utilize an embedding queue that facilitates efficient sampling of high-quality and diverse negative representations during SIC learning. Additionally, it enhances the learning of SIM tasks by effectively mining hard negatives based on contrastive similarities calculated in SIC tasks. To further optimize learning under noisy supervision, we incorporate momentum distillation into the training process. Experimental results show that our framework outperforms the state-of-the-art method by more than 4% in R@1 on two benchmark datasets for the speech-image retrieval tasks. Moreover, as observed in zero-shot experiments, our framework demonstrates excellent generalization capabilities.  
   </ol>  
 </details>  
   
