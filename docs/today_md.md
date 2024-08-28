@@ -1,98 +1,28 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#FAST-LIVO2:-Fast,-Direct-LiDAR-Inertial-Visual-Odometry>FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#LowCLIP:-Adapting-the-CLIP-Model-Architecture-for-Low-Resource-Languages-in-Multimodal-Image-Retrieval-Task>LowCLIP: Adapting the CLIP Model Architecture for Low-Resource Languages in Multimodal Image Retrieval Task</a></li>
-        <li><a href=#Cross-Modal-Denoising:-A-Novel-Training-Paradigm-for-Enhancing-Speech-Image-Retrieval>Cross-Modal Denoising: A Novel Training Paradigm for Enhancing Speech-Image Retrieval</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Affine-steerers-for-structured-keypoint-description>Affine steerers for structured keypoint description</a></li>
-        <li><a href=#TranSplat:-Generalizable-3D-Gaussian-Splatting-from-Sparse-Multi-View-Images-with-Transformers>TranSplat: Generalizable 3D Gaussian Splatting from Sparse Multi-View Images with Transformers</a></li>
+        <li><a href=#Snap-and-Diagnose:-An-Advanced-Multimodal-Retrieval-System-for-Identifying-Plant-Diseases-in-the-Wild>Snap and Diagnose: An Advanced Multimodal Retrieval System for Identifying Plant Diseases in the Wild</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#FAST-LIVO2:-Fast,-Direct-LiDAR-Inertial-Visual-Odometry>FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry</a></li>
-        <li><a href=#TranSplat:-Generalizable-3D-Gaussian-Splatting-from-Sparse-Multi-View-Images-with-Transformers>TranSplat: Generalizable 3D Gaussian Splatting from Sparse Multi-View Images with Transformers</a></li>
-        <li><a href=#G3DST:-Generalizing-3D-Style-Transfer-with-Neural-Radiance-Fields-across-Scenes-and-Styles>G3DST: Generalizing 3D Style Transfer with Neural Radiance Fields across Scenes and Styles</a></li>
-        <li><a href=#SIn-NeRF2NeRF:-Editing-3D-Scenes-with-Instructions-through-Segmentation-and-Inpainting>SIn-NeRF2NeRF: Editing 3D Scenes with Instructions through Segmentation and Inpainting</a></li>
+        <li><a href=#Learning-based-Multi-View-Stereo:-A-Survey>Learning-based Multi-View Stereo: A Survey</a></li>
+        <li><a href=#GeoTransfer-:-Generalizable-Few-Shot-Multi-View-Reconstruction-via-Transfer-Learning>GeoTransfer : Generalizable Few-Shot Multi-View Reconstruction via Transfer Learning</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](http://arxiv.org/abs/2408.14035)  
-[[code](https://github.com/hku-mars/fast-livo2)]  
-Chunran Zheng, Wei Xu, Zuhao Zou, Tong Hua, Chongjian Yuan, Dongjiao He, Bingyang Zhou, Zheng Liu, Jiarong Lin, Fangcheng Zhu, Yunfan Ren, Rong Wang, Fanle Meng, Fu Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper proposes FAST-LIVO2: a fast, direct LiDAR-inertial-visual odometry framework to achieve accurate and robust state estimation in SLAM tasks and provide great potential in real-time, onboard robotic applications. FAST-LIVO2 fuses the IMU, LiDAR and image measurements efficiently through an ESIKF. To address the dimension mismatch between the heterogeneous LiDAR and image measurements, we use a sequential update strategy in the Kalman filter. To enhance the efficiency, we use direct methods for both the visual and LiDAR fusion, where the LiDAR module registers raw points without extracting edge or plane features and the visual module minimizes direct photometric errors without extracting ORB or FAST corner features. The fusion of both visual and LiDAR measurements is based on a single unified voxel map where the LiDAR module constructs the geometric structure for registering new LiDAR scans and the visual module attaches image patches to the LiDAR points. To enhance the accuracy of image alignment, we use plane priors from the LiDAR points in the voxel map (and even refine the plane prior) and update the reference patch dynamically after new images are aligned. Furthermore, to enhance the robustness of image alignment, FAST-LIVO2 employs an on-demanding raycast operation and estimates the image exposure time in real time. Lastly, we detail three applications of FAST-LIVO2: UAV onboard navigation demonstrating the system's computation efficiency for real-time onboard navigation, airborne mapping showcasing the system's mapping accuracy, and 3D model rendering (mesh-based and NeRF-based) underscoring the suitability of our reconstructed dense map for subsequent rendering tasks. We open source our code, dataset and application on GitHub to benefit the robotics community.  
-  </ol>  
-</details>  
-**comments**: 30 pages, 31 figures, due to the limitation that 'The abstract field
-  cannot exceed 1,920 characters', the abstract presented here is shorter than
-  the one in the PDF file  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [LowCLIP: Adapting the CLIP Model Architecture for Low-Resource Languages in Multimodal Image Retrieval Task](http://arxiv.org/abs/2408.13909)  
-[[code](https://github.com/aliasgerovs/azclip)]  
-Ali Asgarov, Samir Rustamov  
+### [Snap and Diagnose: An Advanced Multimodal Retrieval System for Identifying Plant Diseases in the Wild](http://arxiv.org/abs/2408.14723)  
+Tianqi Wei, Zhi Chen, Xin Yu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This research explores the development of multimodal vision-language models for image retrieval in low-resource languages, specifically Azerbaijani. Existing vision-language models primarily support high-resource languages, and fine-tuning them remains computationally demanding. To address challenges in vision-language retrieval for low-resource languages, we integrated the CLIP model architecture and employed several techniques to balance computational efficiency with performance. These techniques include synthetic data generation through machine translation, image augmentation, and further training the attention mechanisms of transformer-based models with domain-specific data. We integrated Multilingual BERT as a text encoder with image encoders like ResNet50, EfficientNet0, Vision Transformer (ViT), and Tiny Swin Transformer. Our study found that models like EfficientNet0 and Tiny Swin Transformer perform best on the datasets they were trained on, such as COCO, Flickr30k, and Flickr8k. Augmentation techniques boosted EfficientNet0 MAP on Flickr30k from 0.84 to 0.87 and ResNet50 MAP on MSCOCO from 0.70 to 0.80, contributing to a new state of the art in vision-language retrieval. We share our configurations and results to support further research. Code and pre-trained models are available at https://github.com/aliasgerovs/azclip.  
-  </ol>  
-</details>  
-  
-### [Cross-Modal Denoising: A Novel Training Paradigm for Enhancing Speech-Image Retrieval](http://arxiv.org/abs/2408.13705)  
-Lifeng Zhou, Yuke Li, Rui Deng, Yuting Yang, Haoqi Zhu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The success of speech-image retrieval relies on establishing an effective alignment between speech and image. Existing methods often model cross-modal interaction through simple cosine similarity of the global feature of each modality, which fall short in capturing fine-grained details within modalities. To address this issue, we introduce an effective framework and a novel learning task named cross-modal denoising (CMD) to enhance cross-modal interaction to achieve finer-level cross-modal alignment. Specifically, CMD is a denoising task designed to reconstruct semantic features from noisy features within one modality by interacting features from another modality. Notably, CMD operates exclusively during model training and can be removed during inference without adding extra inference time. The experimental results demonstrate that our framework outperforms the state-of-the-art method by 2.0% in mean R@1 on the Flickr8k dataset and by 1.7% in mean R@1 on the SpokenCOCO dataset for the speech-image retrieval tasks, respectively. These experimental results validate the efficiency and effectiveness of our framework.  
-  </ol>  
-</details>  
-**comments**: arXiv admin note: substantial text overlap with arXiv:2408.13119  
-  
-  
-
-
-
-## Image Matching  
-
-### [Affine steerers for structured keypoint description](http://arxiv.org/abs/2408.14186)  
-[[code](https://github.com/georg-bn/affine-steerers)]  
-Georg Bökman, Johan Edstedt, Michael Felsberg, Fredrik Kahl  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We propose a way to train deep learning based keypoint descriptors that makes them approximately equivariant for locally affine transformations of the image plane. The main idea is to use the representation theory of GL(2) to generalize the recently introduced concept of steerers from rotations to affine transformations. Affine steerers give high control over how keypoint descriptions transform under image transformations. We demonstrate the potential of using this control for image matching. Finally, we propose a way to finetune keypoint descriptors with a set of steerers on upright images and obtain state-of-the-art results on several standard benchmarks. Code will be published at github.com/georg-bn/affine-steerers.  
-  </ol>  
-</details>  
-**comments**: To be presented at ECCV 2024  
-  
-### [TranSplat: Generalizable 3D Gaussian Splatting from Sparse Multi-View Images with Transformers](http://arxiv.org/abs/2408.13770)  
-Chuanrui Zhang, Yingshuang Zou, Zhuoling Li, Minmin Yi, Haoqian Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Compared with previous 3D reconstruction methods like Nerf, recent Generalizable 3D Gaussian Splatting (G-3DGS) methods demonstrate impressive efficiency even in the sparse-view setting. However, the promising reconstruction performance of existing G-3DGS methods relies heavily on accurate multi-view feature matching, which is quite challenging. Especially for the scenes that have many non-overlapping areas between various views and contain numerous similar regions, the matching performance of existing methods is poor and the reconstruction precision is limited. To address this problem, we develop a strategy that utilizes a predicted depth confidence map to guide accurate local feature matching. In addition, we propose to utilize the knowledge of existing monocular depth estimation models as prior to boost the depth estimation precision in non-overlapping areas between views. Combining the proposed strategies, we present a novel G-3DGS method named TranSplat, which obtains the best performance on both the RealEstate10K and ACID benchmarks while maintaining competitive speed and presenting strong cross-dataset generalization ability. Our code, and demos will be available at: https://xingyoujun.github.io/transplat.  
+    Plant disease recognition is a critical task that ensures crop health and mitigates the damage caused by diseases. A handy tool that enables farmers to receive a diagnosis based on query pictures or the text description of suspicious plants is in high demand for initiating treatment before potential diseases spread further. In this paper, we develop a multimodal plant disease image retrieval system to support disease search based on either image or text prompts. Specifically, we utilize the largest in-the-wild plant disease dataset PlantWild, which includes over 18,000 images across 89 categories, to provide a comprehensive view of potential diseases relating to the query. Furthermore, cross-modal retrieval is achieved in the developed system, facilitated by a novel CLIP-based vision-language model that encodes both disease descriptions and disease images into the same latent space. Built on top of the retriever, our retrieval system allows users to upload either plant disease images or disease descriptions to retrieve the corresponding images with similar characteristics from the disease dataset to suggest candidate diseases for end users' consideration.  
   </ol>  
 </details>  
   
@@ -102,48 +32,23 @@ Chuanrui Zhang, Yingshuang Zou, Zhuoling Li, Minmin Yi, Haoqian Wang
 
 ## NeRF  
 
-### [FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry](http://arxiv.org/abs/2408.14035)  
-[[code](https://github.com/hku-mars/fast-livo2)]  
-Chunran Zheng, Wei Xu, Zuhao Zou, Tong Hua, Chongjian Yuan, Dongjiao He, Bingyang Zhou, Zheng Liu, Jiarong Lin, Fangcheng Zhu, Yunfan Ren, Rong Wang, Fanle Meng, Fu Zhang  
+### [Learning-based Multi-View Stereo: A Survey](http://arxiv.org/abs/2408.15235)  
+Fangjinhua Wang, Qingtian Zhu, Di Chang, Quankai Gao, Junlin Han, Tong Zhang, Richard Hartley, Marc Pollefeys  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper proposes FAST-LIVO2: a fast, direct LiDAR-inertial-visual odometry framework to achieve accurate and robust state estimation in SLAM tasks and provide great potential in real-time, onboard robotic applications. FAST-LIVO2 fuses the IMU, LiDAR and image measurements efficiently through an ESIKF. To address the dimension mismatch between the heterogeneous LiDAR and image measurements, we use a sequential update strategy in the Kalman filter. To enhance the efficiency, we use direct methods for both the visual and LiDAR fusion, where the LiDAR module registers raw points without extracting edge or plane features and the visual module minimizes direct photometric errors without extracting ORB or FAST corner features. The fusion of both visual and LiDAR measurements is based on a single unified voxel map where the LiDAR module constructs the geometric structure for registering new LiDAR scans and the visual module attaches image patches to the LiDAR points. To enhance the accuracy of image alignment, we use plane priors from the LiDAR points in the voxel map (and even refine the plane prior) and update the reference patch dynamically after new images are aligned. Furthermore, to enhance the robustness of image alignment, FAST-LIVO2 employs an on-demanding raycast operation and estimates the image exposure time in real time. Lastly, we detail three applications of FAST-LIVO2: UAV onboard navigation demonstrating the system's computation efficiency for real-time onboard navigation, airborne mapping showcasing the system's mapping accuracy, and 3D model rendering (mesh-based and NeRF-based) underscoring the suitability of our reconstructed dense map for subsequent rendering tasks. We open source our code, dataset and application on GitHub to benefit the robotics community.  
-  </ol>  
-</details>  
-**comments**: 30 pages, 31 figures, due to the limitation that 'The abstract field
-  cannot exceed 1,920 characters', the abstract presented here is shorter than
-  the one in the PDF file  
-  
-### [TranSplat: Generalizable 3D Gaussian Splatting from Sparse Multi-View Images with Transformers](http://arxiv.org/abs/2408.13770)  
-Chuanrui Zhang, Yingshuang Zou, Zhuoling Li, Minmin Yi, Haoqian Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Compared with previous 3D reconstruction methods like Nerf, recent Generalizable 3D Gaussian Splatting (G-3DGS) methods demonstrate impressive efficiency even in the sparse-view setting. However, the promising reconstruction performance of existing G-3DGS methods relies heavily on accurate multi-view feature matching, which is quite challenging. Especially for the scenes that have many non-overlapping areas between various views and contain numerous similar regions, the matching performance of existing methods is poor and the reconstruction precision is limited. To address this problem, we develop a strategy that utilizes a predicted depth confidence map to guide accurate local feature matching. In addition, we propose to utilize the knowledge of existing monocular depth estimation models as prior to boost the depth estimation precision in non-overlapping areas between views. Combining the proposed strategies, we present a novel G-3DGS method named TranSplat, which obtains the best performance on both the RealEstate10K and ACID benchmarks while maintaining competitive speed and presenting strong cross-dataset generalization ability. Our code, and demos will be available at: https://xingyoujun.github.io/transplat.  
+    3D reconstruction aims to recover the dense 3D structure of a scene. It plays an essential role in various applications such as Augmented/Virtual Reality (AR/VR), autonomous driving and robotics. Leveraging multiple views of a scene captured from different viewpoints, Multi-View Stereo (MVS) algorithms synthesize a comprehensive 3D representation, enabling precise reconstruction in complex environments. Due to its efficiency and effectiveness, MVS has become a pivotal method for image-based 3D reconstruction. Recently, with the success of deep learning, many learning-based MVS methods have been proposed, achieving impressive performance against traditional methods. We categorize these learning-based methods as: depth map-based, voxel-based, NeRF-based, 3D Gaussian Splatting-based, and large feed-forward methods. Among these, we focus significantly on depth map-based methods, which are the main family of MVS due to their conciseness, flexibility and scalability. In this survey, we provide a comprehensive review of the literature at the time of this writing. We investigate these learning-based methods, summarize their performances on popular benchmarks, and discuss promising future research directions in this area.  
   </ol>  
 </details>  
   
-### [G3DST: Generalizing 3D Style Transfer with Neural Radiance Fields across Scenes and Styles](http://arxiv.org/abs/2408.13508)  
-Adil Meric, Umut Kocasari, Matthias Nießner, Barbara Roessle  
+### [GeoTransfer : Generalizable Few-Shot Multi-View Reconstruction via Transfer Learning](http://arxiv.org/abs/2408.14724)  
+Shubhendu Jena, Franck Multon, Adnane Boukhayma  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have emerged as a powerful tool for creating highly detailed and photorealistic scenes. Existing methods for NeRF-based 3D style transfer need extensive per-scene optimization for single or multiple styles, limiting the applicability and efficiency of 3D style transfer. In this work, we overcome the limitations of existing methods by rendering stylized novel views from a NeRF without the need for per-scene or per-style optimization. To this end, we take advantage of a generalizable NeRF model to facilitate style transfer in 3D, thereby enabling the use of a single learned model across various scenes. By incorporating a hypernetwork into a generalizable NeRF, our approach enables on-the-fly generation of stylized novel views. Moreover, we introduce a novel flow-based multi-view consistency loss to preserve consistency across multiple views. We evaluate our method across various scenes and artistic styles and show its performance in generating high-quality and multi-view consistent stylized images without the need for a scene-specific implicit model. Our findings demonstrate that this approach not only achieves a good visual quality comparable to that of per-scene methods but also significantly enhances efficiency and applicability, marking a notable advancement in the field of 3D style transfer.  
+    This paper presents a novel approach for sparse 3D reconstruction by leveraging the expressive power of Neural Radiance Fields (NeRFs) and fast transfer of their features to learn accurate occupancy fields. Existing 3D reconstruction methods from sparse inputs still struggle with capturing intricate geometric details and can suffer from limitations in handling occluded regions. On the other hand, NeRFs excel in modeling complex scenes but do not offer means to extract meaningful geometry. Our proposed method offers the best of both worlds by transferring the information encoded in NeRF features to derive an accurate occupancy field representation. We utilize a pre-trained, generalizable state-of-the-art NeRF network to capture detailed scene radiance information, and rapidly transfer this knowledge to train a generalizable implicit occupancy network. This process helps in leveraging the knowledge of the scene geometry encoded in the generalizable NeRF prior and refining it to learn occupancy fields, facilitating a more precise generalizable representation of 3D space. The transfer learning approach leads to a dramatic reduction in training time, by orders of magnitude (i.e. from several days to 3.5 hrs), obviating the need to train generalizable sparse surface reconstruction methods from scratch. Additionally, we introduce a novel loss on volumetric rendering weights that helps in the learning of accurate occupancy fields, along with a normal loss that helps in global smoothing of the occupancy fields. We evaluate our approach on the DTU dataset and demonstrate state-of-the-art performance in terms of reconstruction accuracy, especially in challenging scenarios with sparse input data and occluded regions. We furthermore demonstrate the generalization capabilities of our method by showing qualitative results on the Blended MVS dataset without any retraining.  
   </ol>  
 </details>  
-**comments**: GCPR 2024, Project page: https://mericadil.github.io/G3DST/  
-  
-### [SIn-NeRF2NeRF: Editing 3D Scenes with Instructions through Segmentation and Inpainting](http://arxiv.org/abs/2408.13285)  
-[[code](https://github.com/kaistchangmin/sin-nerf2nerf)]  
-Jiseung Hong, Changmin Lee, Gyusang Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    TL;DR Perform 3D object editing selectively by disentangling it from the background scene. Instruct-NeRF2NeRF (in2n) is a promising method that enables editing of 3D scenes composed of Neural Radiance Field (NeRF) using text prompts. However, it is challenging to perform geometrical modifications such as shrinking, scaling, or moving on both the background and object simultaneously. In this project, we enable geometrical changes of objects within the 3D scene by selectively editing the object after separating it from the scene. We perform object segmentation and background inpainting respectively, and demonstrate various examples of freely resizing or moving disentangled objects within the three-dimensional space.  
-  </ol>  
-</details>  
-**comments**: Code is available at: https://github.com/KAISTChangmin/SIn-NeRF2NeRF  
   
   
 
