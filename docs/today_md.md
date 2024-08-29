@@ -1,30 +1,52 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#ES-PTAM:-Event-based-Stereo-Parallel-Tracking-and-Mapping>ES-PTAM: Event-based Stereo Parallel Tracking and Mapping</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Snap-and-Diagnose:-An-Advanced-Multimodal-Retrieval-System-for-Identifying-Plant-Diseases-in-the-Wild>Snap and Diagnose: An Advanced Multimodal Retrieval System for Identifying Plant Diseases in the Wild</a></li>
+        <li><a href=#Temporal-Attention-for-Cross-View-Sequential-Image-Localization>Temporal Attention for Cross-View Sequential Image Localization</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Learning-based-Multi-View-Stereo:-A-Survey>Learning-based Multi-View Stereo: A Survey</a></li>
-        <li><a href=#GeoTransfer-:-Generalizable-Few-Shot-Multi-View-Reconstruction-via-Transfer-Learning>GeoTransfer : Generalizable Few-Shot Multi-View Reconstruction via Transfer Learning</a></li>
+        <li><a href=#Towards-Realistic-Example-based-Modeling-via-3D-Gaussian-Stitching>Towards Realistic Example-based Modeling via 3D Gaussian Stitching</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SLAM  
 
-### [Snap and Diagnose: An Advanced Multimodal Retrieval System for Identifying Plant Diseases in the Wild](http://arxiv.org/abs/2408.14723)  
-Tianqi Wei, Zhi Chen, Xin Yu  
+### [ES-PTAM: Event-based Stereo Parallel Tracking and Mapping](http://arxiv.org/abs/2408.15605)  
+Suman Ghosh, Valentina Cavinato, Guillermo Gallego  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Plant disease recognition is a critical task that ensures crop health and mitigates the damage caused by diseases. A handy tool that enables farmers to receive a diagnosis based on query pictures or the text description of suspicious plants is in high demand for initiating treatment before potential diseases spread further. In this paper, we develop a multimodal plant disease image retrieval system to support disease search based on either image or text prompts. Specifically, we utilize the largest in-the-wild plant disease dataset PlantWild, which includes over 18,000 images across 89 categories, to provide a comprehensive view of potential diseases relating to the query. Furthermore, cross-modal retrieval is achieved in the developed system, facilitated by a novel CLIP-based vision-language model that encodes both disease descriptions and disease images into the same latent space. Built on top of the retriever, our retrieval system allows users to upload either plant disease images or disease descriptions to retrieve the corresponding images with similar characteristics from the disease dataset to suggest candidate diseases for end users' consideration.  
+    Visual Odometry (VO) and SLAM are fundamental components for spatial perception in mobile robots. Despite enormous progress in the field, current VO/SLAM systems are limited by their sensors' capability. Event cameras are novel visual sensors that offer advantages to overcome the limitations of standard cameras, enabling robots to expand their operating range to challenging scenarios, such as high-speed motion and high dynamic range illumination. We propose a novel event-based stereo VO system by combining two ideas: a correspondence-free mapping module that estimates depth by maximizing ray density fusion and a tracking module that estimates camera poses by maximizing edge-map alignment. We evaluate the system comprehensively on five real-world datasets, spanning a variety of camera types (manufacturers and spatial resolutions) and scenarios (driving, flying drone, hand-held, egocentric, etc). The quantitative and qualitative results demonstrate that our method outperforms the state of the art in majority of the test sequences by a margin, e.g., trajectory error reduction of 45% on RPG dataset, 61% on DSEC dataset, and 21% on TUM-VIE dataset. To benefit the community and foster research on event-based perception systems, we release the source code and results: https://github.com/tub-rip/ES-PTAM  
   </ol>  
 </details>  
+**comments**: 17 pages, 7 figures, 4 tables, https://github.com/tub-rip/ES-PTAM  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Temporal Attention for Cross-View Sequential Image Localization](http://arxiv.org/abs/2408.15569)  
+[[code](https://github.com/UQ-DongYuan/CVSeqLocation)]  
+Dong Yuan, Frederic Maire, Feras Dayoub  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper introduces a novel approach to enhancing cross-view localization, focusing on the fine-grained, sequential localization of street-view images within a single known satellite image patch, a significant departure from traditional one-to-one image retrieval methods. By expanding to sequential image fine-grained localization, our model, equipped with a novel Temporal Attention Module (TAM), leverages contextual information to significantly improve sequential image localization accuracy. Our method shows substantial reductions in both mean and median localization errors on the Cross-View Image Sequence (CVIS) dataset, outperforming current state-of-the-art single-image localization techniques. Additionally, by adapting the KITTI-CVL dataset into sequential image sets, we not only offer a more realistic dataset for future research but also demonstrate our model's robust generalization capabilities across varying times and areas, evidenced by a 75.3% reduction in mean distance error in cross-view sequential image localization.  
+  </ol>  
+</details>  
+**comments**: Accepted to IROS 2024  
   
   
 
@@ -32,21 +54,12 @@ Tianqi Wei, Zhi Chen, Xin Yu
 
 ## NeRF  
 
-### [Learning-based Multi-View Stereo: A Survey](http://arxiv.org/abs/2408.15235)  
-Fangjinhua Wang, Qingtian Zhu, Di Chang, Quankai Gao, Junlin Han, Tong Zhang, Richard Hartley, Marc Pollefeys  
+### [Towards Realistic Example-based Modeling via 3D Gaussian Stitching](http://arxiv.org/abs/2408.15708)  
+Xinyu Gao, Ziyi Yang, Bingchen Gong, Xiaoguang Han, Sipeng Yang, Xiaogang Jin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D reconstruction aims to recover the dense 3D structure of a scene. It plays an essential role in various applications such as Augmented/Virtual Reality (AR/VR), autonomous driving and robotics. Leveraging multiple views of a scene captured from different viewpoints, Multi-View Stereo (MVS) algorithms synthesize a comprehensive 3D representation, enabling precise reconstruction in complex environments. Due to its efficiency and effectiveness, MVS has become a pivotal method for image-based 3D reconstruction. Recently, with the success of deep learning, many learning-based MVS methods have been proposed, achieving impressive performance against traditional methods. We categorize these learning-based methods as: depth map-based, voxel-based, NeRF-based, 3D Gaussian Splatting-based, and large feed-forward methods. Among these, we focus significantly on depth map-based methods, which are the main family of MVS due to their conciseness, flexibility and scalability. In this survey, we provide a comprehensive review of the literature at the time of this writing. We investigate these learning-based methods, summarize their performances on popular benchmarks, and discuss promising future research directions in this area.  
-  </ol>  
-</details>  
-  
-### [GeoTransfer : Generalizable Few-Shot Multi-View Reconstruction via Transfer Learning](http://arxiv.org/abs/2408.14724)  
-Shubhendu Jena, Franck Multon, Adnane Boukhayma  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper presents a novel approach for sparse 3D reconstruction by leveraging the expressive power of Neural Radiance Fields (NeRFs) and fast transfer of their features to learn accurate occupancy fields. Existing 3D reconstruction methods from sparse inputs still struggle with capturing intricate geometric details and can suffer from limitations in handling occluded regions. On the other hand, NeRFs excel in modeling complex scenes but do not offer means to extract meaningful geometry. Our proposed method offers the best of both worlds by transferring the information encoded in NeRF features to derive an accurate occupancy field representation. We utilize a pre-trained, generalizable state-of-the-art NeRF network to capture detailed scene radiance information, and rapidly transfer this knowledge to train a generalizable implicit occupancy network. This process helps in leveraging the knowledge of the scene geometry encoded in the generalizable NeRF prior and refining it to learn occupancy fields, facilitating a more precise generalizable representation of 3D space. The transfer learning approach leads to a dramatic reduction in training time, by orders of magnitude (i.e. from several days to 3.5 hrs), obviating the need to train generalizable sparse surface reconstruction methods from scratch. Additionally, we introduce a novel loss on volumetric rendering weights that helps in the learning of accurate occupancy fields, along with a normal loss that helps in global smoothing of the occupancy fields. We evaluate our approach on the DTU dataset and demonstrate state-of-the-art performance in terms of reconstruction accuracy, especially in challenging scenarios with sparse input data and occluded regions. We furthermore demonstrate the generalization capabilities of our method by showing qualitative results on the Blended MVS dataset without any retraining.  
+    Using parts of existing models to rebuild new models, commonly termed as example-based modeling, is a classical methodology in the realm of computer graphics. Previous works mostly focus on shape composition, making them very hard to use for realistic composition of 3D objects captured from real-world scenes. This leads to combining multiple NeRFs into a single 3D scene to achieve seamless appearance blending. However, the current SeamlessNeRF method struggles to achieve interactive editing and harmonious stitching for real-world scenes due to its gradient-based strategy and grid-based representation. To this end, we present an example-based modeling method that combines multiple Gaussian fields in a point-based representation using sample-guided synthesis. Specifically, as for composition, we create a GUI to segment and transform multiple fields in real time, easily obtaining a semantically meaningful composition of models represented by 3D Gaussian Splatting (3DGS). For texture blending, due to the discrete and irregular nature of 3DGS, straightforwardly applying gradient propagation as SeamlssNeRF is not supported. Thus, a novel sampling-based cloning method is proposed to harmonize the blending while preserving the original rich texture and content. Our workflow consists of three steps: 1) real-time segmentation and transformation of a Gaussian model using a well-tailored GUI, 2) KNN analysis to identify boundary points in the intersecting area between the source and target models, and 3) two-phase optimization of the target model using sampling-based cloning and gradient constraints. Extensive experimental results validate that our approach significantly outperforms previous works in terms of realistic synthesis, demonstrating its practicality. More demos are available at https://ingra14m.github.io/gs_stitching_website.  
   </ol>  
 </details>  
   
