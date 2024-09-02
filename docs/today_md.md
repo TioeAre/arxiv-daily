@@ -3,32 +3,24 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Creating-a-Segmented-Pointcloud-of-Grapevines-by-Combining-Multiple-Viewpoints-Through-Visual-Odometry>Creating a Segmented Pointcloud of Grapevines by Combining Multiple Viewpoints Through Visual Odometry</a></li>
-        <li><a href=#Single-Photon-3D-Imaging-with-Equi-Depth-Photon-Histograms>Single-Photon 3D Imaging with Equi-Depth Photon Histograms</a></li>
+        <li><a href=#Efficient-Camera-Exposure-Control-for-Visual-Odometry-via-Deep-Reinforcement-Learning>Efficient Camera Exposure Control for Visual Odometry via Deep Reinforcement Learning</a></li>
       </ul>
     </li>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Mismatched:-Evaluating-the-Limits-of-Image-Matching-Approaches-and-Benchmarks>Mismatched: Evaluating the Limits of Image Matching Approaches and Benchmarks</a></li>
+        <li><a href=#Augmented-Reality-without-Borders:-Achieving-Precise-Localization-Without-Maps>Augmented Reality without Borders: Achieving Precise Localization Without Maps</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#A-compact-neuromorphic-system-for-ultra-energy-efficient,-on-device-robot-localization>A compact neuromorphic system for ultra energy-efficient, on-device robot localization</a></li>
-        <li><a href=#Rethinking-Sparse-Lexical-Representations-for-Image-Retrieval-in-the-Age-of-Rising-Multi-Modal-Large-Language-Models>Rethinking Sparse Lexical Representations for Image Retrieval in the Age of Rising Multi-Modal Large Language Models</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Super-Resolution-works-for-coastal-simulations>Super-Resolution works for coastal simulations</a></li>
-        <li><a href=#Mismatched:-Evaluating-the-Limits-of-Image-Matching-Approaches-and-Benchmarks>Mismatched: Evaluating the Limits of Image Matching Approaches and Benchmarks</a></li>
+        <li><a href=#Augmented-Reality-without-Borders:-Achieving-Precise-Localization-Without-Maps>Augmented Reality without Borders: Achieving Precise Localization Without Maps</a></li>
+        <li><a href=#RISSOLE:-Parameter-efficient-Diffusion-Models-via-Block-wise-Generation-and-Retrieval-Guidance>RISSOLE: Parameter-efficient Diffusion Models via Block-wise Generation and Retrieval-Guidance</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Generic-Objects-as-Pose-Probes-for-Few-Shot-View-Synthesis>Generic Objects as Pose Probes for Few-Shot View Synthesis</a></li>
-        <li><a href=#Spurfies:-Sparse-Surface-Reconstruction-using-Local-Geometry-Priors>Spurfies: Sparse Surface Reconstruction using Local Geometry Priors</a></li>
-        <li><a href=#NeRF-CA:-Dynamic-Reconstruction-of-X-ray-Coronary-Angiography-with-Extremely-Sparse-views>NeRF-CA: Dynamic Reconstruction of X-ray Coronary Angiography with Extremely Sparse-views</a></li>
+        <li><a href=#ConDense:-Consistent-2D/3D-Pre-training-for-Dense-and-Sparse-Features-from-Multi-View-Images>ConDense: Consistent 2D/3D Pre-training for Dense and Sparse Features from Multi-View Images</a></li>
+        <li><a href=#GameIR:-A-Large-Scale-Synthesized-Ground-Truth-Dataset-for-Image-Restoration-over-Gaming-Content>GameIR: A Large-Scale Synthesized Ground-Truth Dataset for Image Restoration over Gaming Content</a></li>
       </ul>
     </li>
   </ol>
@@ -36,23 +28,16 @@
 
 ## SLAM  
 
-### [Creating a Segmented Pointcloud of Grapevines by Combining Multiple Viewpoints Through Visual Odometry](http://arxiv.org/abs/2408.16472)  
-Michael Adlerstein, Angelo Bratta, João Carlos Virgolino Soares, Giovanni Dessy, Miguel Fernandes, Matteo Gatti, Claudio Semini  
+### [Efficient Camera Exposure Control for Visual Odometry via Deep Reinforcement Learning](http://arxiv.org/abs/2408.17005)  
+[[code](https://github.com/shuyanguni/drl_exposure_ctrl)]  
+Shuyang Zhang, Jinhao He, Yilong Zhu, Jin Wu, Jie Yuan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Grapevine winter pruning is a labor-intensive and repetitive process that significantly influences the quality and quantity of the grape harvest and produced wine of the following season. It requires a careful and expert detection of the point to be cut. Because of its complexity, repetitive nature and time constraint, the task requires skilled labor that needs to be trained. This extended abstract presents the computer vision pipeline employed in project Vinum, using detectron2 as a segmentation network and keypoint visual odometry to merge different observation into a single pointcloud used to make informed pruning decisions.  
+    The stability of visual odometry (VO) systems is undermined by degraded image quality, especially in environments with significant illumination changes. This study employs a deep reinforcement learning (DRL) framework to train agents for exposure control, aiming to enhance imaging performance in challenging conditions. A lightweight image simulator is developed to facilitate the training process, enabling the diversification of image exposure and sequence trajectory. This setup enables completely offline training, eliminating the need for direct interaction with camera hardware and the real environments. Different levels of reward functions are crafted to enhance the VO systems, equipping the DRL agents with varying intelligence. Extensive experiments have shown that our exposure control agents achieve superior efficiency-with an average inference duration of 1.58 ms per frame on a CPU-and respond more quickly than traditional feedback control schemes. By choosing an appropriate reward function, agents acquire an intelligent understanding of motion trends and anticipate future illumination changes. This predictive capability allows VO systems to deliver more stable and precise odometry results. The codes and datasets are available at https://github.com/ShuyangUni/drl_exposure_ctrl.  
   </ol>  
 </details>  
-  
-### [Single-Photon 3D Imaging with Equi-Depth Photon Histograms](http://arxiv.org/abs/2408.16150)  
-Kaustubh Sadekar, David Maier, Atul Ingle  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Single-photon cameras present a promising avenue for high-resolution 3D imaging. They have ultra-high sensitivity -- down to individual photons -- and can record photon arrival times with extremely high (sub-nanosecond) resolution. Single-photon 3D cameras estimate the round-trip time of a laser pulse by forming equi-width (EW) histograms of detected photon timestamps. Acquiring and transferring such EW histograms requires high bandwidth and in-pixel memory, making SPCs less attractive in resource-constrained settings such as mobile devices and AR/VR headsets. In this work we propose a 3D sensing technique based on equi-depth (ED) histograms. ED histograms compress timestamp data more efficiently than EW histograms, reducing the bandwidth requirement. Moreover, to reduce the in-pixel memory requirement, we propose a lightweight algorithm to estimate ED histograms in an online fashion without explicitly storing the photon timestamps. This algorithm is amenable to future in-pixel implementations. We propose algorithms that process ED histograms to perform 3D computer-vision tasks of estimating scene distance maps and performing visual odometry under challenging conditions such as high ambient light. Our work paves the way towards lower bandwidth and reduced in-pixel memory requirements for SPCs, making them attractive for resource-constrained 3D vision applications. Project page: $\href{https://www.computational.camera/pedh}{https://www.computational.camera/pedh}$  
-  </ol>  
-</details>  
+**comments**: 8 pages, 7 figures  
   
   
 
@@ -60,16 +45,17 @@ Kaustubh Sadekar, David Maier, Atul Ingle
 
 ## SFM  
 
-### [Mismatched: Evaluating the Limits of Image Matching Approaches and Benchmarks](http://arxiv.org/abs/2408.16445)  
-[[code](https://github.com/surgical-vision/colmap-match-converter)]  
-Sierra Bonilla, Chiara Di Vece, Rema Daher, Xinwei Ju, Danail Stoyanov, Francisco Vasconcelos, Sophia Bano  
+### [Augmented Reality without Borders: Achieving Precise Localization Without Maps](http://arxiv.org/abs/2408.17373)  
+Albert Gassol Puigjaner, Irvin Aloise, Patrik Schmuck  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Three-dimensional (3D) reconstruction from two-dimensional images is an active research field in computer vision, with applications ranging from navigation and object tracking to segmentation and three-dimensional modeling. Traditionally, parametric techniques have been employed for this task. However, recent advancements have seen a shift towards learning-based methods. Given the rapid pace of research and the frequent introduction of new image matching methods, it is essential to evaluate them. In this paper, we present a comprehensive evaluation of various image matching methods using a structure-from-motion pipeline. We assess the performance of these methods on both in-domain and out-of-domain datasets, identifying key limitations in both the methods and benchmarks. We also investigate the impact of edge detection as a pre-processing step. Our analysis reveals that image matching for 3D reconstruction remains an open challenge, necessitating careful selection and tuning of models for specific scenarios, while also highlighting mismatches in how metrics currently represent method performance.  
+    Visual localization is crucial for Computer Vision and Augmented Reality (AR) applications, where determining the camera or device's position and orientation is essential to accurately interact with the physical environment. Traditional methods rely on detailed 3D maps constructed using Structure from Motion (SfM) or Simultaneous Localization and Mapping (SLAM), which is computationally expensive and impractical for dynamic or large-scale environments. We introduce MARLOC, a novel localization framework for AR applications that uses known relative transformations within image sequences to perform intra-sequence triangulation, generating 3D-2D correspondences for pose estimation and refinement. MARLOC eliminates the need for pre-built SfM maps, providing accurate and efficient localization suitable for dynamic outdoor environments. Evaluation with benchmark datasets and real-world experiments demonstrates MARLOC's state-of-the-art performance and robustness. By integrating MARLOC into an AR device, we highlight its capability to achieve precise localization in real-world outdoor scenarios, showcasing its practical effectiveness and potential to enhance visual localization in AR applications.  
   </ol>  
 </details>  
-**comments**: 19 pages, 5 figures  
+**comments**: This work has been submitted to the IEEE for possible publication.
+  Copyright may be transferred without notice, after which this version may no
+  longer be accessible  
   
   
 
@@ -77,55 +63,26 @@ Sierra Bonilla, Chiara Di Vece, Rema Daher, Xinwei Ju, Danail Stoyanov, Francisc
 
 ## Visual Localization  
 
-### [A compact neuromorphic system for ultra energy-efficient, on-device robot localization](http://arxiv.org/abs/2408.16754)  
-[[code](https://github.com/AdamDHines/LENS)]  
-Adam D. Hines, Michael Milford, Tobias Fischer  
+### [Augmented Reality without Borders: Achieving Precise Localization Without Maps](http://arxiv.org/abs/2408.17373)  
+Albert Gassol Puigjaner, Irvin Aloise, Patrik Schmuck  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neuromorphic computing offers a transformative pathway to overcome the computational and energy challenges faced in deploying robotic localization and navigation systems at the edge. Visual place recognition, a critical component for navigation, is often hampered by the high resource demands of conventional systems, making them unsuitable for small-scale robotic platforms which still require to perform complex, long-range tasks. Although neuromorphic approaches offer potential for greater efficiency, real-time edge deployment remains constrained by the complexity and limited scalability of bio-realistic networks. Here, we demonstrate a neuromorphic localization system that performs accurate place recognition in up to 8km of traversal using models as small as 180 KB with 44k parameters, while consuming less than 1% of the energy required by conventional methods. Our Locational Encoding with Neuromorphic Systems (LENS) integrates spiking neural networks, an event-based dynamic vision sensor, and a neuromorphic processor within a single SPECK(TM) chip, enabling real-time, energy-efficient localization on a hexapod robot. LENS represents the first fully neuromorphic localization system capable of large-scale, on-device deployment, setting a new benchmark for energy efficient robotic place recognition.  
+    Visual localization is crucial for Computer Vision and Augmented Reality (AR) applications, where determining the camera or device's position and orientation is essential to accurately interact with the physical environment. Traditional methods rely on detailed 3D maps constructed using Structure from Motion (SfM) or Simultaneous Localization and Mapping (SLAM), which is computationally expensive and impractical for dynamic or large-scale environments. We introduce MARLOC, a novel localization framework for AR applications that uses known relative transformations within image sequences to perform intra-sequence triangulation, generating 3D-2D correspondences for pose estimation and refinement. MARLOC eliminates the need for pre-built SfM maps, providing accurate and efficient localization suitable for dynamic outdoor environments. Evaluation with benchmark datasets and real-world experiments demonstrates MARLOC's state-of-the-art performance and robustness. By integrating MARLOC into an AR device, we highlight its capability to achieve precise localization in real-world outdoor scenarios, showcasing its practical effectiveness and potential to enhance visual localization in AR applications.  
   </ol>  
 </details>  
-**comments**: 28 pages, 4 main figures, 4 supplementary figures, 1 supplementary
-  table, and 1 movie. Under review  
+**comments**: This work has been submitted to the IEEE for possible publication.
+  Copyright may be transferred without notice, after which this version may no
+  longer be accessible  
   
-### [Rethinking Sparse Lexical Representations for Image Retrieval in the Age of Rising Multi-Modal Large Language Models](http://arxiv.org/abs/2408.16296)  
-Kengo Nakata, Daisuke Miyashita, Youyang Ng, Yasuto Hoshi, Jun Deguchi  
+### [RISSOLE: Parameter-efficient Diffusion Models via Block-wise Generation and Retrieval-Guidance](http://arxiv.org/abs/2408.17095)  
+Avideep Mukherjee, Soumya Banerjee, Vinay P. Namboodiri, Piyush Rai  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we rethink sparse lexical representations for image retrieval. By utilizing multi-modal large language models (M-LLMs) that support visual prompting, we can extract image features and convert them into textual data, enabling us to utilize efficient sparse retrieval algorithms employed in natural language processing for image retrieval tasks. To assist the LLM in extracting image features, we apply data augmentation techniques for key expansion and analyze the impact with a metric for relevance between images and textual data. We empirically show the superior precision and recall performance of our image retrieval method compared to conventional vision-language model-based methods on the MS-COCO, PASCAL VOC, and NUS-WIDE datasets in a keyword-based image retrieval scenario, where keywords serve as search queries. We also demonstrate that the retrieval performance can be improved by iteratively incorporating keywords into search queries.  
+    Diffusion-based models demonstrate impressive generation capabilities. However, they also have a massive number of parameters, resulting in enormous model sizes, thus making them unsuitable for deployment on resource-constraint devices. Block-wise generation can be a promising alternative for designing compact-sized (parameter-efficient) deep generative models since the model can generate one block at a time instead of generating the whole image at once. However, block-wise generation is also considerably challenging because ensuring coherence across generated blocks can be non-trivial. To this end, we design a retrieval-augmented generation (RAG) approach and leverage the corresponding blocks of the images retrieved by the RAG module to condition the training and generation stages of a block-wise denoising diffusion model. Our conditioning schemes ensure coherence across the different blocks during training and, consequently, during generation. While we showcase our approach using the latent diffusion model (LDM) as the base model, it can be used with other variants of denoising diffusion models. We validate the solution of the coherence problem through the proposed approach by reporting substantive experiments to demonstrate our approach's effectiveness in compact model size and excellent generation quality.  
   </ol>  
 </details>  
-**comments**: Accepted to ECCV 2024 Workshops: 2nd Workshop on Traditional Computer
-  Vision in the Age of Deep Learning (TradiCV)  
-  
-  
-
-
-
-## Image Matching  
-
-### [Super-Resolution works for coastal simulations](http://arxiv.org/abs/2408.16553)  
-Zhi-Song Liu, Markus Buttner, Vadym Aizinger, Andreas Rupp  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Learning fine-scale details of a coastal ocean simulation from a coarse representation is a challenging task. For real-world applications, high-resolution simulations are necessary to advance understanding of many coastal processes, specifically, to predict flooding resulting from tsunamis and storm surges. We propose a Deep Network for Coastal Super-Resolution (DNCSR) for spatiotemporal enhancement to efficiently learn the high-resolution numerical solution. Given images of coastal simulations produced on low-resolution computational meshes using low polynomial order discontinuous Galerkin discretizations and a coarse temporal resolution, the proposed DNCSR learns to produce high-resolution free surface elevation and velocity visualizations in both time and space. To efficiently model the dynamic changes over time and space, we propose grid-aware spatiotemporal attention to project the temporal features to the spatial domain for non-local feature matching. The coordinate information is also utilized via positional encoding. For the final reconstruction, we use the spatiotemporal bilinear operation to interpolate the missing frames and then expand the feature maps to the frequency domain for residual mapping. Besides data-driven losses, the proposed physics-informed loss guarantees gradient consistency and momentum changes. Their combination contributes to the overall 24% improvements in RMSE. To train the proposed model, we propose a large-scale coastal simulation dataset and use it for model optimization and evaluation. Our method shows superior super-resolution quality and fast computation compared to the state-of-the-art methods.  
-  </ol>  
-</details>  
-**comments**: 13 pages, 12 figures  
-  
-### [Mismatched: Evaluating the Limits of Image Matching Approaches and Benchmarks](http://arxiv.org/abs/2408.16445)  
-[[code](https://github.com/surgical-vision/colmap-match-converter)]  
-Sierra Bonilla, Chiara Di Vece, Rema Daher, Xinwei Ju, Danail Stoyanov, Francisco Vasconcelos, Sophia Bano  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Three-dimensional (3D) reconstruction from two-dimensional images is an active research field in computer vision, with applications ranging from navigation and object tracking to segmentation and three-dimensional modeling. Traditionally, parametric techniques have been employed for this task. However, recent advancements have seen a shift towards learning-based methods. Given the rapid pace of research and the frequent introduction of new image matching methods, it is essential to evaluate them. In this paper, we present a comprehensive evaluation of various image matching methods using a structure-from-motion pipeline. We assess the performance of these methods on both in-domain and out-of-domain datasets, identifying key limitations in both the methods and benchmarks. We also investigate the impact of edge detection as a pre-processing step. Our analysis reveals that image matching for 3D reconstruction remains an open challenge, necessitating careful selection and tuning of models for specific scenarios, while also highlighting mismatches in how metrics currently represent method performance.  
-  </ol>  
-</details>  
-**comments**: 19 pages, 5 figures  
   
   
 
@@ -133,32 +90,22 @@ Sierra Bonilla, Chiara Di Vece, Rema Daher, Xinwei Ju, Danail Stoyanov, Francisc
 
 ## NeRF  
 
-### [Generic Objects as Pose Probes for Few-Shot View Synthesis](http://arxiv.org/abs/2408.16690)  
-Zhirui Gao, Renjiao Yi, Chenyang Zhu, Ke Zhuang, Wei Chen, Kai Xu  
+### [ConDense: Consistent 2D/3D Pre-training for Dense and Sparse Features from Multi-View Images](http://arxiv.org/abs/2408.17027)  
+Xiaoshuai Zhang, Zhicheng Wang, Howard Zhou, Soham Ghosh, Danushen Gnanapragasam, Varun Jampani, Hao Su, Leonidas Guibas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Radiance fields including NeRFs and 3D Gaussians demonstrate great potential in high-fidelity rendering and scene reconstruction, while they require a substantial number of posed images as inputs. COLMAP is frequently employed for preprocessing to estimate poses, while it necessitates a large number of feature matches to operate effectively, and it struggles with scenes characterized by sparse features, large baselines between images, or a limited number of input images. We aim to tackle few-view NeRF reconstruction using only 3 to 6 unposed scene images. Traditional methods often use calibration boards but they are not common in images. We propose a novel idea of utilizing everyday objects, commonly found in both images and real life, as "pose probes". The probe object is automatically segmented by SAM, whose shape is initialized from a cube. We apply a dual-branch volume rendering optimization (object NeRF and scene NeRF) to constrain the pose optimization and jointly refine the geometry. Specifically, object poses of two views are first estimated by PnP matching in an SDF representation, which serves as initial poses. PnP matching, requiring only a few features, is suitable for feature-sparse scenes. Additional views are incrementally incorporated to refine poses from preceding views. In experiments, PoseProbe achieves state-of-the-art performance in both pose estimation and novel view synthesis across multiple datasets. We demonstrate its effectiveness, particularly in few-view and large-baseline scenes where COLMAP struggles. In ablations, using different objects in a scene yields comparable performance.  
+    To advance the state of the art in the creation of 3D foundation models, this paper introduces the ConDense framework for 3D pre-training utilizing existing pre-trained 2D networks and large-scale multi-view datasets. We propose a novel 2D-3D joint training scheme to extract co-embedded 2D and 3D features in an end-to-end pipeline, where 2D-3D feature consistency is enforced through a volume rendering NeRF-like ray marching process. Using dense per pixel features we are able to 1) directly distill the learned priors from 2D models to 3D models and create useful 3D backbones, 2) extract more consistent and less noisy 2D features, 3) formulate a consistent embedding space where 2D, 3D, and other modalities of data (e.g., natural language prompts) can be jointly queried. Furthermore, besides dense features, ConDense can be trained to extract sparse features (e.g., key points), also with 2D-3D consistency -- condensing 3D NeRF representations into compact sets of decorated key points. We demonstrate that our pre-trained model provides good initialization for various 3D tasks including 3D classification and segmentation, outperforming other 3D pre-training methods by a significant margin. It also enables, by exploiting our sparse features, additional useful downstream tasks, such as matching 2D images to 3D scenes, detecting duplicate 3D scenes, and querying a repository of 3D scenes through natural language -- all quite efficiently and without any per-scene fine-tuning.  
   </ol>  
 </details>  
+**comments**: ECCV 2024  
   
-### [Spurfies: Sparse Surface Reconstruction using Local Geometry Priors](http://arxiv.org/abs/2408.16544)  
-Kevin Raj, Christopher Wewer, Raza Yunus, Eddy Ilg, Jan Eric Lenssen  
+### [GameIR: A Large-Scale Synthesized Ground-Truth Dataset for Image Restoration over Gaming Content](http://arxiv.org/abs/2408.16866)  
+Lebin Zhou, Kun Han, Nam Ling, Wei Wang, Wei Jiang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce Spurfies, a novel method for sparse-view surface reconstruction that disentangles appearance and geometry information to utilize local geometry priors trained on synthetic data. Recent research heavily focuses on 3D reconstruction using dense multi-view setups, typically requiring hundreds of images. However, these methods often struggle with few-view scenarios. Existing sparse-view reconstruction techniques often rely on multi-view stereo networks that need to learn joint priors for geometry and appearance from a large amount of data. In contrast, we introduce a neural point representation that disentangles geometry and appearance to train a local geometry prior using a subset of the synthetic ShapeNet dataset only. During inference, we utilize this surface prior as additional constraint for surface and appearance reconstruction from sparse input views via differentiable volume rendering, restricting the space of possible solutions. We validate the effectiveness of our method on the DTU dataset and demonstrate that it outperforms previous state of the art by 35% in surface quality while achieving competitive novel view synthesis quality. Moreover, in contrast to previous works, our method can be applied to larger, unbounded scenes, such as Mip-NeRF 360.  
-  </ol>  
-</details>  
-**comments**: https://geometric-rl.mpi-inf.mpg.de/spurfies/  
-  
-### [NeRF-CA: Dynamic Reconstruction of X-ray Coronary Angiography with Extremely Sparse-views](http://arxiv.org/abs/2408.16355)  
-[[code](https://github.com/kirstenmaas/nerf-ca)]  
-Kirsten W. H. Maas, Danny Ruijters, Anna Vilanova, Nicola Pezzotti  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Dynamic three-dimensional (4D) reconstruction from two-dimensional X-ray coronary angiography (CA) remains a significant clinical problem. Challenges include sparse-view settings, intra-scan motion, and complex vessel morphology such as structure sparsity and background occlusion. Existing CA reconstruction methods often require extensive user interaction or large training datasets. On the other hand, Neural Radiance Field (NeRF), a promising deep learning technique, has successfully reconstructed high-fidelity static scenes for natural and medical scenes. Recent work, however, identified that sparse-views, background occlusion, and dynamics still pose a challenge when applying NeRF in the X-ray angiography context. Meanwhile, many successful works for natural scenes propose regularization for sparse-view reconstruction or scene decomposition to handle dynamics. However, these techniques do not directly translate to the CA context, where both challenges and background occlusion are significant. This paper introduces NeRF-CA, the first step toward a 4D CA reconstruction method that achieves reconstructions from sparse coronary angiograms with cardiac motion. We leverage the motion of the coronary artery to decouple the scene into a dynamic coronary artery component and static background. We combine this scene decomposition with tailored regularization techniques. These techniques enforce the separation of the coronary artery from the background by enforcing dynamic structure sparsity and scene smoothness. By uniquely combining these approaches, we achieve 4D reconstructions from as few as four angiogram sequences. This setting aligns with clinical workflows while outperforming state-of-the-art X-ray sparse-view NeRF reconstruction techniques. We validate our approach quantitatively and qualitatively using 4D phantom datasets and ablation studies.  
+    Image restoration methods like super-resolution and image synthesis have been successfully used in commercial cloud gaming products like NVIDIA's DLSS. However, restoration over gaming content is not well studied by the general public. The discrepancy is mainly caused by the lack of ground-truth gaming training data that match the test cases. Due to the unique characteristics of gaming content, the common approach of generating pseudo training data by degrading the original HR images results in inferior restoration performance. In this work, we develop GameIR, a large-scale high-quality computer-synthesized ground-truth dataset to fill in the blanks, targeting at two different applications. The first is super-resolution with deferred rendering, to support the gaming solution of rendering and transferring LR images only and restoring HR images on the client side. We provide 19200 LR-HR paired ground-truth frames coming from 640 videos rendered at 720p and 1440p for this task. The second is novel view synthesis (NVS), to support the multiview gaming solution of rendering and transferring part of the multiview frames and generating the remaining frames on the client side. This task has 57,600 HR frames from 960 videos of 160 scenes with 6 camera views. In addition to the RGB frames, the GBuffers during the deferred rendering stage are also provided, which can be used to help restoration. Furthermore, we evaluate several SOTA super-resolution algorithms and NeRF-based NVS algorithms over our dataset, which demonstrates the effectiveness of our ground-truth GameIR data in improving restoration performance for gaming content. Also, we test the method of incorporating the GBuffers as additional input information for helping super-resolution and NVS. We release our dataset and models to the general public to facilitate research on restoration methods over gaming content.  
   </ol>  
 </details>  
   
