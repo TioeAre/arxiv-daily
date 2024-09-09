@@ -3,19 +3,13 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Design-and-Evaluation-of-Camera-Centric-Mobile-Crowdsourcing-Applications>Design and Evaluation of Camera-Centric Mobile Crowdsourcing Applications</a></li>
+        <li><a href=#Reprojection-Errors-as-Prompts-for-Efficient-Scene-Coordinate-Regression>Reprojection Errors as Prompts for Efficient Scene Coordinate Regression</a></li>
+        <li><a href=#Matched-Filtering-based-LiDAR-Place-Recognition-for-Urban-and-Natural-Environments>Matched Filtering based LiDAR Place Recognition for Urban and Natural Environments</a></li>
       </ul>
     </li>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Enabling-Practical-and-Privacy-Preserving-Image-Processing>Enabling Practical and Privacy-Preserving Image Processing</a></li>
-        <li><a href=#A-General-Albedo-Recovery-Approach-for-Aerial-Photogrammetric-Images-through-Inverse-Rendering>A General Albedo Recovery Approach for Aerial Photogrammetric Images through Inverse Rendering</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#Weight-Conditioning-for-Smooth-Optimization-of-Neural-Networks>Weight Conditioning for Smooth Optimization of Neural Networks</a></li>
-        <li><a href=#Optimizing-3D-Gaussian-Splatting-for-Sparse-Viewpoint-Scene-Reconstruction>Optimizing 3D Gaussian Splatting for Sparse Viewpoint Scene Reconstruction</a></li>
+        <li><a href=#D4:-Text-guided-diffusion-model-based-domain-adaptive-data-augmentation-for-vineyard-shoot-detection>D4: Text-guided diffusion model-based domain adaptive data augmentation for vineyard shoot detection</a></li>
       </ul>
     </li>
   </ol>
@@ -23,12 +17,22 @@
 
 ## Visual Localization  
 
-### [Design and Evaluation of Camera-Centric Mobile Crowdsourcing Applications](http://arxiv.org/abs/2409.03012)  
-Abby Stylianou, Michelle Brachman, Albatool Wazzan, Samuel Black, Richard Souvenir  
+### [Reprojection Errors as Prompts for Efficient Scene Coordinate Regression](http://arxiv.org/abs/2409.04178)  
+Ting-Ru Liu, Hsuan-Kung Yang, Jou-Min Liu, Chun-Wei Huang, Tsung-Chih Chiang, Quan Kong, Norimasa Kobori, Chun-Yi Lee  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The data that underlies automated methods in computer vision and machine learning, such as image retrieval and fine-grained recognition, often comes from crowdsourcing. In contexts that rely on the intrinsic motivation of users, we seek to understand how the application design affects a user's willingness to contribute and the quantity and quality of the data they capture. In this project, we designed three versions of a camera-based mobile crowdsourcing application, which varied in the amount of labeling effort requested of the user and conducted a user study to evaluate the trade-off between the level of user-contributed information requested and the quantity and quality of labeled images collected. The results suggest that higher levels of user labeling do not lead to reduced contribution. Users collected and annotated the most images using the application version with the highest requested level of labeling with no decrease in user satisfaction. In preliminary experiments, the additional labeled data supported increased performance on an image retrieval task.  
+    Scene coordinate regression (SCR) methods have emerged as a promising area of research due to their potential for accurate visual localization. However, many existing SCR approaches train on samples from all image regions, including dynamic objects and texture-less areas. Utilizing these areas for optimization during training can potentially hamper the overall performance and efficiency of the model. In this study, we first perform an in-depth analysis to validate the adverse impacts of these areas. Drawing inspiration from our analysis, we then introduce an error-guided feature selection (EGFS) mechanism, in tandem with the use of the Segment Anything Model (SAM). This mechanism seeds low reprojection areas as prompts and expands them into error-guided masks, and then utilizes these masks to sample points and filter out problematic areas in an iterative manner. The experiments demonstrate that our method outperforms existing SCR approaches that do not rely on 3D information on the Cambridge Landmarks and Indoor6 datasets.  
+  </ol>  
+</details>  
+**comments**: ECCV2024  
+  
+### [Matched Filtering based LiDAR Place Recognition for Urban and Natural Environments](http://arxiv.org/abs/2409.03998)  
+Therese Joseph, Tobias Fischer, Michael Milford  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Place recognition is an important task within autonomous navigation, involving the re-identification of previously visited locations from an initial traverse. Unlike visual place recognition (VPR), LiDAR place recognition (LPR) is tolerant to changes in lighting, seasons, and textures, leading to high performance on benchmark datasets from structured urban environments. However, there is a growing need for methods that can operate in diverse environments with high performance and minimal training. In this paper, we propose a handcrafted matching strategy that performs roto-translation invariant place recognition and relative pose estimation for both urban and unstructured natural environments. Our approach constructs Birds Eye View (BEV) global descriptors and employs a two-stage search using matched filtering -- a signal processing technique for detecting known signals amidst noise. Extensive testing on the NCLT, Oxford Radar, and WildPlaces datasets consistently demonstrates state-of-the-art (SoTA) performance across place recognition and relative pose estimation metrics, with up to 15% higher recall than previous SoTA.  
   </ol>  
 </details>  
   
@@ -36,50 +40,14 @@ Abby Stylianou, Michelle Brachman, Albatool Wazzan, Samuel Black, Richard Souven
 
 
 
-## Image Matching  
+## Keypoint Detection  
 
-### [Enabling Practical and Privacy-Preserving Image Processing](http://arxiv.org/abs/2409.03568)  
-Chao Wang, Shubing Yang, Xiaoyan Sun, Jun Dai, Dongfang Zhao  
+### [D4: Text-guided diffusion model-based domain adaptive data augmentation for vineyard shoot detection](http://arxiv.org/abs/2409.04060)  
+Kentaro Hirahara, Chikahito Nakane, Hajime Ebisawa, Tsuyoshi Kuroda, Yohei Iwaki, Tomoyoshi Utsumi, Yuichiro Nomura, Makoto Koike, Hiroshi Mineno  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Fully Homomorphic Encryption (FHE) enables computations on encrypted data, preserving confidentiality without the need for decryption. However, FHE is often hindered by significant performance overhead, particularly for high-precision and complex data like images. Due to serious efficiency issues, traditional FHE methods often encrypt images by monolithic data blocks (such as pixel rows), instead of pixels. However, this strategy compromises the advantages of homomorphic operations and disables pixel-level image processing. In this study, we address these challenges by proposing and implementing a pixel-level homomorphic encryption approach, iCHEETAH, based on the CKKS scheme. To enhance computational efficiency, we introduce three novel caching mechanisms to pre-encrypt radix values or frequently occurring pixel values, substantially reducing redundant encryption operations. Extensive experiments demonstrate that our approach achieves up to a 19-fold improvement in encryption speed compared to the original CKKS, while maintaining high image quality. Additionally, real-world image applications such as mean filtering, brightness enhancement, image matching and watermarking are tested based on FHE, showcasing up to a 91.53% speed improvement. We also proved that our method is IND-CPA (Indistinguishability under Chosen Plaintext Attack) secure, providing strong encryption security. These results underscore the practicality and efficiency of iCHEETAH, marking a significant advancement in privacy-preserving image processing at scale.  
-  </ol>  
-</details>  
-**comments**: 16 pages, 10 figures  
-  
-### [A General Albedo Recovery Approach for Aerial Photogrammetric Images through Inverse Rendering](http://arxiv.org/abs/2409.03032)  
-Shuang Song, Rongjun Qin  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Modeling outdoor scenes for the synthetic 3D environment requires the recovery of reflectance/albedo information from raw images, which is an ill-posed problem due to the complicated unmodeled physics in this process (e.g., indirect lighting, volume scattering, specular reflection). The problem remains unsolved in a practical context. The recovered albedo can facilitate model relighting and shading, which can further enhance the realism of rendered models and the applications of digital twins. Typically, photogrammetric 3D models simply take the source images as texture materials, which inherently embed unwanted lighting artifacts (at the time of capture) into the texture. Therefore, these polluted textures are suboptimal for a synthetic environment to enable realistic rendering. In addition, these embedded environmental lightings further bring challenges to photo-consistencies across different images that cause image-matching uncertainties. This paper presents a general image formation model for albedo recovery from typical aerial photogrammetric images under natural illuminations and derives the inverse model to resolve the albedo information through inverse rendering intrinsic image decomposition. Our approach builds on the fact that both the sun illumination and scene geometry are estimable in aerial photogrammetry, thus they can provide direct inputs for this ill-posed problem. This physics-based approach does not require additional input other than data acquired through the typical drone-based photogrammetric collection and was shown to favorably outperform existing approaches. We also demonstrate that the recovered albedo image can in turn improve typical image processing tasks in photogrammetry such as feature and dense matching, edge, and line extraction.  
-  </ol>  
-</details>  
-**comments**: ISPRS Journal of Photogrammetry and Remote Sensing  
-  
-  
-
-
-
-## NeRF  
-
-### [Weight Conditioning for Smooth Optimization of Neural Networks](http://arxiv.org/abs/2409.03424)  
-Hemanth Saratchandran, Thomas X. Wang, Simon Lucey  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this article, we introduce a novel normalization technique for neural network weight matrices, which we term weight conditioning. This approach aims to narrow the gap between the smallest and largest singular values of the weight matrices, resulting in better-conditioned matrices. The inspiration for this technique partially derives from numerical linear algebra, where well-conditioned matrices are known to facilitate stronger convergence results for iterative solvers. We provide a theoretical foundation demonstrating that our normalization technique smoothens the loss landscape, thereby enhancing convergence of stochastic gradient descent algorithms. Empirically, we validate our normalization across various neural network architectures, including Convolutional Neural Networks (CNNs), Vision Transformers (ViT), Neural Radiance Fields (NeRF), and 3D shape modeling. Our findings indicate that our normalization method is not only competitive but also outperforms existing weight normalization techniques from the literature.  
-  </ol>  
-</details>  
-**comments**: ECCV 2024  
-  
-### [Optimizing 3D Gaussian Splatting for Sparse Viewpoint Scene Reconstruction](http://arxiv.org/abs/2409.03213)  
-Shen Chen, Jiale Zhou, Lei Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    3D Gaussian Splatting (3DGS) has emerged as a promising approach for 3D scene representation, offering a reduction in computational overhead compared to Neural Radiance Fields (NeRF). However, 3DGS is susceptible to high-frequency artifacts and demonstrates suboptimal performance under sparse viewpoint conditions, thereby limiting its applicability in robotics and computer vision. To address these limitations, we introduce SVS-GS, a novel framework for Sparse Viewpoint Scene reconstruction that integrates a 3D Gaussian smoothing filter to suppress artifacts. Furthermore, our approach incorporates a Depth Gradient Profile Prior (DGPP) loss with a dynamic depth mask to sharpen edges and 2D diffusion with Score Distillation Sampling (SDS) loss to enhance geometric consistency in novel view synthesis. Experimental evaluations on the MipNeRF-360 and SeaThru-NeRF datasets demonstrate that SVS-GS markedly improves 3D reconstruction from sparse viewpoints, offering a robust and efficient solution for scene understanding in robotics and computer vision applications.  
+    In an agricultural field, plant phenotyping using object detection models is gaining attention. However, collecting the training data necessary to create generic and high-precision models is extremely challenging due to the difficulty of annotation and the diversity of domains. Furthermore, it is difficult to transfer training data across different crops, and although machine learning models effective for specific environments, conditions, or crops have been developed, they cannot be widely applied in actual fields. In this study, we propose a generative data augmentation method (D4) for vineyard shoot detection. D4 uses a pre-trained text-guided diffusion model based on a large number of original images culled from video data collected by unmanned ground vehicles or other means, and a small number of annotated datasets. The proposed method generates new annotated images with background information adapted to the target domain while retaining annotation information necessary for object detection. In addition, D4 overcomes the lack of training data in agriculture, including the difficulty of annotation and diversity of domains. We confirmed that this generative data augmentation method improved the mean average precision by up to 28.65% for the BBox detection task and the average precision by up to 13.73% for the keypoint detection task for vineyard shoot detection. Our generative data augmentation method D4 is expected to simultaneously solve the cost and domain diversity issues of training data generation in agriculture and improve the generalization performance of detection models.  
   </ol>  
 </details>  
   
