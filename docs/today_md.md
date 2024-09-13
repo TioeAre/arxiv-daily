@@ -1,37 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#Structured-Pruning-for-Efficient-Visual-Place-Recognition>Structured Pruning for Efficient Visual Place Recognition</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#DreamMesh:-Jointly-Manipulating-and-Texturing-Triangle-Meshes-for-Text-to-3D-Generation>DreamMesh: Jointly Manipulating and Texturing Triangle Meshes for Text-to-3D Generation</a></li>
-        <li><a href=#ThermalGaussian:-Thermal-3D-Gaussian-Splatting>ThermalGaussian: Thermal 3D Gaussian Splatting</a></li>
+        <li><a href=#DreamHOI:-Subject-Driven-Generation-of-3D-Human-Object-Interactions-with-Diffusion-Priors>DreamHOI: Subject-Driven Generation of 3D Human-Object Interactions with Diffusion Priors</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## Visual Localization  
+
+### [Structured Pruning for Efficient Visual Place Recognition](http://arxiv.org/abs/2409.07834)  
+Oliver Grainge, Michael Milford, Indu Bodala, Sarvapali D. Ramchurn, Shoaib Ehsan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Visual Place Recognition (VPR) is fundamental for the global re-localization of robots and devices, enabling them to recognize previously visited locations based on visual inputs. This capability is crucial for maintaining accurate mapping and localization over large areas. Given that VPR methods need to operate in real-time on embedded systems, it is critical to optimize these systems for minimal resource consumption. While the most efficient VPR approaches employ standard convolutional backbones with fixed descriptor dimensions, these often lead to redundancy in the embedding space as well as in the network architecture. Our work introduces a novel structured pruning method, to not only streamline common VPR architectures but also to strategically remove redundancies within the feature embedding space. This dual focus significantly enhances the efficiency of the system, reducing both map and model memory requirements and decreasing feature extraction and retrieval latencies. Our approach has reduced memory usage and latency by 21% and 16%, respectively, across models, while minimally impacting recall@1 accuracy by less than 1%. This significant improvement enhances real-time applications on edge devices with negligible accuracy loss.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## NeRF  
 
-### [DreamMesh: Jointly Manipulating and Texturing Triangle Meshes for Text-to-3D Generation](http://arxiv.org/abs/2409.07454)  
-Haibo Yang, Yang Chen, Yingwei Pan, Ting Yao, Zhineng Chen, Zuxuan Wu, Yu-Gang Jiang, Tao Mei  
+### [DreamHOI: Subject-Driven Generation of 3D Human-Object Interactions with Diffusion Priors](http://arxiv.org/abs/2409.08278)  
+Thomas Hanwen Zhu, Ruining Li, Tomas Jakab  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Learning radiance fields (NeRF) with powerful 2D diffusion models has garnered popularity for text-to-3D generation. Nevertheless, the implicit 3D representations of NeRF lack explicit modeling of meshes and textures over surfaces, and such surface-undefined way may suffer from the issues, e.g., noisy surfaces with ambiguous texture details or cross-view inconsistency. To alleviate this, we present DreamMesh, a novel text-to-3D architecture that pivots on well-defined surfaces (triangle meshes) to generate high-fidelity explicit 3D model. Technically, DreamMesh capitalizes on a distinctive coarse-to-fine scheme. In the coarse stage, the mesh is first deformed by text-guided Jacobians and then DreamMesh textures the mesh with an interlaced use of 2D diffusion models in a tuning free manner from multiple viewpoints. In the fine stage, DreamMesh jointly manipulates the mesh and refines the texture map, leading to high-quality triangle meshes with high-fidelity textured materials. Extensive experiments demonstrate that DreamMesh significantly outperforms state-of-the-art text-to-3D methods in faithfully generating 3D content with richer textual details and enhanced geometry. Our project page is available at https://dreammesh.github.io.  
+    We present DreamHOI, a novel method for zero-shot synthesis of human-object interactions (HOIs), enabling a 3D human model to realistically interact with any given object based on a textual description. This task is complicated by the varying categories and geometries of real-world objects and the scarcity of datasets encompassing diverse HOIs. To circumvent the need for extensive data, we leverage text-to-image diffusion models trained on billions of image-caption pairs. We optimize the articulation of a skinned human mesh using Score Distillation Sampling (SDS) gradients obtained from these models, which predict image-space edits. However, directly backpropagating image-space gradients into complex articulation parameters is ineffective due to the local nature of such gradients. To overcome this, we introduce a dual implicit-explicit representation of a skinned mesh, combining (implicit) neural radiance fields (NeRFs) with (explicit) skeleton-driven mesh articulation. During optimization, we transition between implicit and explicit forms, grounding the NeRF generation while refining the mesh articulation. We validate our approach through extensive experiments, demonstrating its effectiveness in generating realistic HOIs.  
   </ol>  
 </details>  
-**comments**: ECCV 2024. Project page is available at
-  \url{https://dreammesh.github.io}  
-  
-### [ThermalGaussian: Thermal 3D Gaussian Splatting](http://arxiv.org/abs/2409.07200)  
-Rongfeng Lu, Hangyu Chen, Zunjie Zhu, Yuhang Qin, Ming Lu, Le Zhang, Chenggang Yan, Anke Xue  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Thermography is especially valuable for the military and other users of surveillance cameras. Some recent methods based on Neural Radiance Fields (NeRF) are proposed to reconstruct the thermal scenes in 3D from a set of thermal and RGB images. However, unlike NeRF, 3D Gaussian splatting (3DGS) prevails due to its rapid training and real-time rendering. In this work, we propose ThermalGaussian, the first thermal 3DGS approach capable of rendering high-quality images in RGB and thermal modalities. We first calibrate the RGB camera and the thermal camera to ensure that both modalities are accurately aligned. Subsequently, we use the registered images to learn the multimodal 3D Gaussians. To prevent the overfitting of any single modality, we introduce several multimodal regularization constraints. We also develop smoothing constraints tailored to the physical characteristics of the thermal modality. Besides, we contribute a real-world dataset named RGBT-Scenes, captured by a hand-hold thermal-infrared camera, facilitating future research on thermal scene reconstruction. We conduct comprehensive experiments to show that ThermalGaussian achieves photorealistic rendering of thermal images and improves the rendering quality of RGB images. With the proposed multimodal regularization constraints, we also reduced the model's storage cost by 90\%. The code and dataset will be released.  
-  </ol>  
-</details>  
-**comments**: 10 pages, 7 figures  
+**comments**: Project page: https://DreamHOI.github.io/  
   
   
 
