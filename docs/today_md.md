@@ -1,34 +1,35 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#GS-Net:-Generalizable-Plug-and-Play-3D-Gaussian-Splatting-Module>GS-Net: Generalizable Plug-and-Play 3D Gaussian Splatting Module</a></li>
+        <li><a href=#ORB-SfMLearner:-ORB-Guided-Self-supervised-Visual-Odometry-with-Selective-Online-Adaptation>ORB-SfMLearner: ORB-Guided Self-supervised Visual Odometry with Selective Online Adaptation</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Improving-the-Efficiency-of-Visually-Augmented-Language-Models>Improving the Efficiency of Visually Augmented Language Models</a></li>
-        <li><a href=#HGSLoc:-3DGS-based-Heuristic-Camera-Pose-Refinement>HGSLoc: 3DGS-based Heuristic Camera Pose Refinement</a></li>
+        <li><a href=#Towards-Global-Localization-using-Multi-Modal-Object-Instance-Re-Identification>Towards Global Localization using Multi-Modal Object-Instance Re-Identification</a></li>
+        <li><a href=#Open-Set-Semantic-Uncertainty-Aware-Metric-Semantic-Graph-Matching>Open-Set Semantic Uncertainty Aware Metric-Semantic Graph Matching</a></li>
+        <li><a href=#Obfuscation-Based-Privacy-Preserving-Representations-are-Recoverable-Using-Neighborhood-Information>Obfuscation Based Privacy Preserving Representations are Recoverable Using Neighborhood Information</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#RenderWorld:-World-Model-with-Self-Supervised-3D-Label>RenderWorld: World Model with Self-Supervised 3D Label</a></li>
-        <li><a href=#HGSLoc:-3DGS-based-Heuristic-Camera-Pose-Refinement>HGSLoc: 3DGS-based Heuristic Camera Pose Refinement</a></li>
+        <li><a href=#JEAN:-Joint-Expression-and-Audio-guided-NeRF-based-Talking-Face-Generation>JEAN: Joint Expression and Audio-guided NeRF-based Talking Face Generation</a></li>
+        <li><a href=#BRDF-NeRF:-Neural-Radiance-Fields-with-Optical-Satellite-Images-and-BRDF-Modelling>BRDF-NeRF: Neural Radiance Fields with Optical Satellite Images and BRDF Modelling</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [GS-Net: Generalizable Plug-and-Play 3D Gaussian Splatting Module](http://arxiv.org/abs/2409.11307)  
-Yichen Zhang, Zihan Wang, Jiali Han, Peilin Li, Jiaxun Zhang, Jianqiang Wang, Lei He, Keqiang Li  
+### [ORB-SfMLearner: ORB-Guided Self-supervised Visual Odometry with Selective Online Adaptation](http://arxiv.org/abs/2409.11692)  
+Yanlin Jin, Rui-Yang Ju, Haojun Liu, Yuzhong Zhong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) integrates the strengths of primitive-based representations and volumetric rendering techniques, enabling real-time, high-quality rendering. However, 3DGS models typically overfit to single-scene training and are highly sensitive to the initialization of Gaussian ellipsoids, heuristically derived from Structure from Motion (SfM) point clouds, which limits both generalization and practicality. To address these limitations, we propose GS-Net, a generalizable, plug-and-play 3DGS module that densifies Gaussian ellipsoids from sparse SfM point clouds, enhancing geometric structure representation. To the best of our knowledge, GS-Net is the first plug-and-play 3DGS module with cross-scene generalization capabilities. Additionally, we introduce the CARLA-NVS dataset, which incorporates additional camera viewpoints to thoroughly evaluate reconstruction and rendering quality. Extensive experiments demonstrate that applying GS-Net to 3DGS yields a PSNR improvement of 2.08 dB for conventional viewpoints and 1.86 dB for novel viewpoints, confirming the method's effectiveness and robustness.  
+    Deep visual odometry, despite extensive research, still faces limitations in accuracy and generalizability that prevent its broader application. To address these challenges, we propose an Oriented FAST and Rotated BRIEF (ORB)-guided visual odometry with selective online adaptation named ORB-SfMLearner. We present a novel use of ORB features for learning-based ego-motion estimation, leading to more robust and accurate results. We also introduce the cross-attention mechanism to enhance the explainability of PoseNet and have revealed that driving direction of the vehicle can be explained through attention weights, marking a novel exploration in this area. To improve generalizability, our selective online adaptation allows the network to rapidly and selectively adjust to the optimal parameters across different domains. Experimental results on KITTI and vKITTI datasets show that our method outperforms previous state-of-the-art deep visual odometry methods in terms of ego-motion accuracy and generalizability.  
   </ol>  
 </details>  
   
@@ -38,21 +39,31 @@ Yichen Zhang, Zihan Wang, Jiali Han, Peilin Li, Jiaxun Zhang, Jianqiang Wang, Le
 
 ## Visual Localization  
 
-### [Improving the Efficiency of Visually Augmented Language Models](http://arxiv.org/abs/2409.11148)  
-Paula Ontalvilla, Aitor Ormazabal, Gorka Azkune  
+### [Towards Global Localization using Multi-Modal Object-Instance Re-Identification](http://arxiv.org/abs/2409.12002)  
+Aneesh Chavan, Vaibhav Agrawal, Vineeth Bhat, Sarthak Chittawar, Siddharth Srivastava, Chetan Arora, K Madhava Krishna  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Despite the impressive performance of autoregressive Language Models (LM) it has been shown that due to reporting bias, LMs lack visual knowledge, i.e. they do not know much about the visual world and its properties. To augment LMs with visual knowledge, existing solutions often rely on explicit images, requiring time-consuming retrieval or image generation systems. This paper shows that explicit images are not necessary to visually augment an LM. Instead, we use visually-grounded text representations obtained from the well-known CLIP multimodal system. For a fair comparison, we modify VALM, a visually-augmented LM which uses image retrieval and representation, to work directly with visually-grounded text representations. We name this new model BLIND-VALM. We show that BLIND-VALM performs on par with VALM for Visual Language Understanding (VLU), Natural Language Understanding (NLU) and Language Modeling tasks, despite being significantly more efficient and simpler. We also show that scaling up our model within the compute budget of VALM, either increasing the model or pre-training corpus size, we outperform VALM for all the evaluation tasks.  
+    Re-identification (ReID) is a critical challenge in computer vision, predominantly studied in the context of pedestrians and vehicles. However, robust object-instance ReID, which has significant implications for tasks such as autonomous exploration, long-term perception, and scene understanding, remains underexplored. In this work, we address this gap by proposing a novel dual-path object-instance re-identification transformer architecture that integrates multimodal RGB and depth information. By leveraging depth data, we demonstrate improvements in ReID across scenes that are cluttered or have varying illumination conditions. Additionally, we develop a ReID-based localization framework that enables accurate camera localization and pose identification across different viewpoints. We validate our methods using two custom-built RGB-D datasets, as well as multiple sequences from the open-source TUM RGB-D datasets. Our approach demonstrates significant improvements in both object instance ReID (mAP of 75.18) and localization accuracy (success rate of 83% on TUM-RGBD), highlighting the essential role of object ReID in advancing robotic perception. Our models, frameworks, and datasets have been made publicly available.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 5 figures, 3 tables. Submitted to ICRA 2025  
+  
+### [Open-Set Semantic Uncertainty Aware Metric-Semantic Graph Matching](http://arxiv.org/abs/2409.11555)  
+Kurran Singh, John J. Leonard  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Underwater object-level mapping requires incorporating visual foundation models to handle the uncommon and often previously unseen object classes encountered in marine scenarios. In this work, a metric of semantic uncertainty for open-set object detections produced by visual foundation models is calculated and then incorporated into an object-level uncertainty tracking framework. Object-level uncertainties and geometric relationships between objects are used to enable robust object-level loop closure detection for unknown object classes. The above loop closure detection problem is formulated as a graph-matching problem. While graph matching, in general, is NP-Complete, a solver for an equivalent formulation of the proposed graph matching problem as a graph editing problem is tested on multiple challenging underwater scenes. Results for this solver as well as three other solvers demonstrate that the proposed methods are feasible for real-time use in marine environments for the robust, open-set, multi-object, semantic-uncertainty-aware loop closure detection. Further experimental results on the KITTI dataset demonstrate that the method generalizes to large-scale terrestrial scenes.  
   </ol>  
 </details>  
   
-### [HGSLoc: 3DGS-based Heuristic Camera Pose Refinement](http://arxiv.org/abs/2409.10925)  
-Zhongyan Niu, Zhen Tan  
+### [Obfuscation Based Privacy Preserving Representations are Recoverable Using Neighborhood Information](http://arxiv.org/abs/2409.11536)  
+Kunal Chelani, Assia Benbihi, Fredrik Kahl, Torsten Sattler, Zuzana Kukelova  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual localization refers to the process of determining camera poses and orientation within a known scene representation. This task is often complicated by factors such as illumination changes and variations in viewing angles. In this paper, we propose HGSLoc, a novel lightweight, plug and-play pose optimization framework, which integrates 3D reconstruction with a heuristic refinement strategy to achieve higher pose estimation accuracy. Specifically, we introduce an explicit geometric map for 3D representation and high-fidelity rendering, allowing the generation of high-quality synthesized views to support accurate visual localization. Our method demonstrates a faster rendering speed and higher localization accuracy compared to NeRF-based neural rendering localization approaches. We introduce a heuristic refinement strategy, its efficient optimization capability can quickly locate the target node, while we set the step-level optimization step to enhance the pose accuracy in the scenarios with small errors. With carefully designed heuristic functions, it offers efficient optimization capabilities, enabling rapid error reduction in rough localization estimations. Our method mitigates the dependence on complex neural network models while demonstrating improved robustness against noise and higher localization accuracy in challenging environments, as compared to neural network joint optimization strategies. The optimization framework proposed in this paper introduces novel approaches to visual localization by integrating the advantages of 3D reconstruction and heuristic refinement strategy, which demonstrates strong performance across multiple benchmark datasets, including 7Scenes and DB dataset.  
+    Rapid growth in the popularity of AR/VR/MR applications and cloud-based visual localization systems has given rise to an increased focus on the privacy of user content in the localization process.   This privacy concern has been further escalated by the ability of deep neural networks to recover detailed images of a scene from a sparse set of 3D or 2D points and their descriptors - the so-called inversion attacks.   Research on privacy-preserving localization has therefore focused on preventing these inversion attacks on both the query image keypoints and the 3D points of the scene map.   To this end, several geometry obfuscation techniques that lift points to higher-dimensional spaces, i.e., lines or planes, or that swap coordinates between points % have been proposed.   In this paper, we point to a common weakness of these obfuscations that allows to recover approximations of the original point positions under the assumption of known neighborhoods.   We further show that these neighborhoods can be computed by learning to identify descriptors that co-occur in neighborhoods.   Extensive experiments show that our approach for point recovery is practically applicable to all existing geometric obfuscation schemes.   Our results show that these schemes should not be considered privacy-preserving, even though they are claimed to be privacy-preserving.   Code will be available at \url{https://github.com/kunalchelani/RecoverPointsNeighborhood}.  
   </ol>  
 </details>  
   
@@ -62,21 +73,23 @@ Zhongyan Niu, Zhen Tan
 
 ## NeRF  
 
-### [RenderWorld: World Model with Self-Supervised 3D Label](http://arxiv.org/abs/2409.11356)  
-Ziyang Yan, Wenzhen Dong, Yihua Shao, Yuhang Lu, Liu Haiyang, Jingwen Liu, Haozhe Wang, Zhe Wang, Yan Wang, Fabio Remondino, Yuexin Ma  
+### [JEAN: Joint Expression and Audio-guided NeRF-based Talking Face Generation](http://arxiv.org/abs/2409.12156)  
+Sai Tanmay Reddy Chakkera, Aggelina Chatziagapi, Dimitris Samaras  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    End-to-end autonomous driving with vision-only is not only more cost-effective compared to LiDAR-vision fusion but also more reliable than traditional methods. To achieve a economical and robust purely visual autonomous driving system, we propose RenderWorld, a vision-only end-to-end autonomous driving framework, which generates 3D occupancy labels using a self-supervised gaussian-based Img2Occ Module, then encodes the labels by AM-VAE, and uses world model for forecasting and planning. RenderWorld employs Gaussian Splatting to represent 3D scenes and render 2D images greatly improves segmentation accuracy and reduces GPU memory consumption compared with NeRF-based methods. By applying AM-VAE to encode air and non-air separately, RenderWorld achieves more fine-grained scene element representation, leading to state-of-the-art performance in both 4D occupancy forecasting and motion planning from autoregressive world model.  
+    We introduce a novel method for joint expression and audio-guided talking face generation. Recent approaches either struggle to preserve the speaker identity or fail to produce faithful facial expressions. To address these challenges, we propose a NeRF-based network. Since we train our network on monocular videos without any ground truth, it is essential to learn disentangled representations for audio and expression. We first learn audio features in a self-supervised manner, given utterances from multiple subjects. By incorporating a contrastive learning technique, we ensure that the learned audio features are aligned to the lip motion and disentangled from the muscle motion of the rest of the face. We then devise a transformer-based architecture that learns expression features, capturing long-range facial expressions and disentangling them from the speech-specific mouth movements. Through quantitative and qualitative evaluation, we demonstrate that our method can synthesize high-fidelity talking face videos, achieving state-of-the-art facial expression transfer along with lip synchronization to unseen audio.  
   </ol>  
 </details>  
+**comments**: Accepted by BMVC 2024. Project Page:
+  https://starc52.github.io/publications/2024-07-19-JEAN  
   
-### [HGSLoc: 3DGS-based Heuristic Camera Pose Refinement](http://arxiv.org/abs/2409.10925)  
-Zhongyan Niu, Zhen Tan  
+### [BRDF-NeRF: Neural Radiance Fields with Optical Satellite Images and BRDF Modelling](http://arxiv.org/abs/2409.12014)  
+Lulin Zhang, Ewelina Rupnik, Tri Dung Nguyen, Stéphane Jacquemoud, Yann Klinger  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual localization refers to the process of determining camera poses and orientation within a known scene representation. This task is often complicated by factors such as illumination changes and variations in viewing angles. In this paper, we propose HGSLoc, a novel lightweight, plug and-play pose optimization framework, which integrates 3D reconstruction with a heuristic refinement strategy to achieve higher pose estimation accuracy. Specifically, we introduce an explicit geometric map for 3D representation and high-fidelity rendering, allowing the generation of high-quality synthesized views to support accurate visual localization. Our method demonstrates a faster rendering speed and higher localization accuracy compared to NeRF-based neural rendering localization approaches. We introduce a heuristic refinement strategy, its efficient optimization capability can quickly locate the target node, while we set the step-level optimization step to enhance the pose accuracy in the scenarios with small errors. With carefully designed heuristic functions, it offers efficient optimization capabilities, enabling rapid error reduction in rough localization estimations. Our method mitigates the dependence on complex neural network models while demonstrating improved robustness against noise and higher localization accuracy in challenging environments, as compared to neural network joint optimization strategies. The optimization framework proposed in this paper introduces novel approaches to visual localization by integrating the advantages of 3D reconstruction and heuristic refinement strategy, which demonstrates strong performance across multiple benchmark datasets, including 7Scenes and DB dataset.  
+    Understanding the anisotropic reflectance of complex Earth surfaces from satellite imagery is crucial for numerous applications. Neural radiance fields (NeRF) have become popular as a machine learning technique capable of deducing the bidirectional reflectance distribution function (BRDF) of a scene from multiple images. However, prior research has largely concentrated on applying NeRF to close-range imagery, estimating basic Microfacet BRDF models, which fall short for many Earth surfaces. Moreover, high-quality NeRFs generally require several images captured simultaneously, a rare occurrence in satellite imaging. To address these limitations, we propose BRDF-NeRF, developed to explicitly estimate the Rahman-Pinty-Verstraete (RPV) model, a semi-empirical BRDF model commonly employed in remote sensing. We assess our approach using two datasets: (1) Djibouti, captured in a single epoch at varying viewing angles with a fixed Sun position, and (2) Lanzhou, captured over multiple epochs with different viewing angles and Sun positions. Our results, based on only three to four satellite images for training, demonstrate that BRDF-NeRF can effectively synthesize novel views from directions far removed from the training data and produce high-quality digital surface models (DSMs).  
   </ol>  
 </details>  
   
