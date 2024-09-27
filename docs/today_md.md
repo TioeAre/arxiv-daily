@@ -1,75 +1,40 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Frequency-based-View-Selection-in-Gaussian-Splatting-Reconstruction>Frequency-based View Selection in Gaussian Splatting Reconstruction</a></li>
-        <li><a href=#Initialization-of-Monocular-Visual-Navigation-for-Autonomous-Agents-Using-Modified-Structure-from-Small-Motion>Initialization of Monocular Visual Navigation for Autonomous Agents Using Modified Structure from Small Motion</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#GSplatLoc:-Grounding-Keypoint-Descriptors-into-3D-Gaussian-Splatting-for-Improved-Visual-Localization>GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization</a></li>
+        <li><a href=#Revisit-Anything:-Visual-Place-Recognition-via-Image-Segment-Retrieval>Revisit Anything: Visual Place Recognition via Image Segment Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#GSplatLoc:-Grounding-Keypoint-Descriptors-into-3D-Gaussian-Splatting-for-Improved-Visual-Localization>GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Game4Loc:-A-UAV-Geo-Localization-Benchmark-from-Game-Data>Game4Loc: A UAV Geo-Localization Benchmark from Game Data</a></li>
+        <li><a href=#SKT:-Integrating-State-Aware-Keypoint-Trajectories-with-Vision-Language-Models-for-Robotic-Garment-Manipulation>SKT: Integrating State-Aware Keypoint Trajectories with Vision-Language Models for Robotic Garment Manipulation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#TalkinNeRF:-Animatable-Neural-Fields-for-Full-Body-Talking-Humans>TalkinNeRF: Animatable Neural Fields for Full-Body Talking Humans</a></li>
+        <li><a href=#LightAvatar:-Efficient-Head-Avatar-as-Dynamic-Neural-Light-Field>LightAvatar: Efficient Head Avatar as Dynamic Neural Light Field</a></li>
+        <li><a href=#Deblur-e-NeRF:-NeRF-from-Motion-Blurred-Events-under-High-speed-or-Low-light-Conditions>Deblur e-NeRF: NeRF from Motion-Blurred Events under High-speed or Low-light Conditions</a></li>
+        <li><a href=#Neural-Implicit-Representation-for-Highly-Dynamic-LiDAR-Mapping-and-Odometry>Neural Implicit Representation for Highly Dynamic LiDAR Mapping and Odometry</a></li>
+        <li><a href=#TFS-NeRF:-Template-Free-NeRF-for-Semantic-3D-Reconstruction-of-Dynamic-Scene>TFS-NeRF: Template-Free NeRF for Semantic 3D Reconstruction of Dynamic Scene</a></li>
+        <li><a href=#SeaSplat:-Representing-Underwater-Scenes-with-3D-Gaussian-Splatting-and-a-Physically-Grounded-Image-Formation-Model>SeaSplat: Representing Underwater Scenes with 3D Gaussian Splatting and a Physically Grounded Image Formation Model</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Frequency-based View Selection in Gaussian Splatting Reconstruction](http://arxiv.org/abs/2409.16470)  
-Monica M. Q. Li, Pierre-Yves Lajoie, Giovanni Beltrame  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Three-dimensional reconstruction is a fundamental problem in robotics perception. We examine the problem of active view selection to perform 3D Gaussian Splatting reconstructions with as few input images as possible. Although 3D Gaussian Splatting has made significant progress in image rendering and 3D reconstruction, the quality of the reconstruction is strongly impacted by the selection of 2D images and the estimation of camera poses through Structure-from-Motion (SfM) algorithms. Current methods to select views that rely on uncertainties from occlusions, depth ambiguities, or neural network predictions directly are insufficient to handle the issue and struggle to generalize to new scenes. By ranking the potential views in the frequency domain, we are able to effectively estimate the potential information gain of new viewpoints without ground truth data. By overcoming current constraints on model architecture and efficacy, our method achieves state-of-the-art results in view selection, demonstrating its potential for efficient image-based 3D reconstruction.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 4 figures  
-  
-### [Initialization of Monocular Visual Navigation for Autonomous Agents Using Modified Structure from Small Motion](http://arxiv.org/abs/2409.16465)  
-Juan-Diego Florez, Mehregan Dor, Panagiotis Tsiotras  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We propose a standalone monocular visual Simultaneous Localization and Mapping (vSLAM) initialization pipeline for autonomous robots in space. Our method, a state-of-the-art factor graph optimization pipeline, enhances classical Structure from Small Motion (SfSM) to robustly initialize a monocular agent in weak-perspective projection scenes. Furthermore, it overcomes visual estimation challenges introduced by spacecraft inspection trajectories, such as: center-pointing motion, which exacerbates the bas-relief ambiguity, and the presence of a dominant plane in the scene, which causes motion estimation degeneracies in classical Structure from Motion (SfM). We validate our method on realistic, simulated satellite inspection images exhibiting weak-perspective projection, and we demonstrate its effectiveness and improved performance compared to other monocular initialization procedures.  
-  </ol>  
-</details>  
-**comments**: 6 pages, 1 page for references, 6 figures, 1 table, IEEEtran format
-  This work has been submitted to the IEEE for possible publication. Copyright
-  may be transferred without notice, after which this version may no longer be
-  accessible  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization](http://arxiv.org/abs/2409.16502)  
-Gennady Sidorov, Malik Mohrat, Ksenia Lebedeva, Ruslan Rakhimov, Sergey Kolyubin  
+### [Revisit Anything: Visual Place Recognition via Image Segment Retrieval](http://arxiv.org/abs/2409.18049)  
+[[code](https://github.com/anyloc/revisit-anything)]  
+Kartik Garg, Sai Shubodh Puligilla, Shishir Kolathaya, Madhava Krishna, Sourav Garg  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Although various visual localization approaches exist, such as scene coordinate and pose regression, these methods often struggle with high memory consumption or extensive optimization requirements. To address these challenges, we utilize recent advancements in novel view synthesis, particularly 3D Gaussian Splatting (3DGS), to enhance localization. 3DGS allows for the compact encoding of both 3D geometry and scene appearance with its spatial features. Our method leverages the dense description maps produced by XFeat's lightweight keypoint detection and description model. We propose distilling these dense keypoint descriptors into 3DGS to improve the model's spatial understanding, leading to more accurate camera pose predictions through 2D-3D correspondences. After estimating an initial pose, we refine it using a photometric warping loss. Benchmarking on popular indoor and outdoor datasets shows that our approach surpasses state-of-the-art Neural Render Pose (NRP) methods, including NeRFMatch and PNeRFLoc.  
+    Accurately recognizing a revisited place is crucial for embodied agents to localize and navigate. This requires visual representations to be distinct, despite strong variations in camera viewpoint and scene appearance. Existing visual place recognition pipelines encode the "whole" image and search for matches. This poses a fundamental challenge in matching two images of the same place captured from different camera viewpoints: "the similarity of what overlaps can be dominated by the dissimilarity of what does not overlap". We address this by encoding and searching for "image segments" instead of the whole images. We propose to use open-set image segmentation to decompose an image into `meaningful' entities (i.e., things and stuff). This enables us to create a novel image representation as a collection of multiple overlapping subgraphs connecting a segment with its neighboring segments, dubbed SuperSegment. Furthermore, to efficiently encode these SuperSegments into compact vector representations, we propose a novel factorized representation of feature aggregation. We show that retrieving these partial representations leads to significantly higher recognition recall than the typical whole image based retrieval. Our segments-based approach, dubbed SegVLAD, sets a new state-of-the-art in place recognition on a diverse selection of benchmark datasets, while being applicable to both generic and task-specialized image encoders. Finally, we demonstrate the potential of our method to ``revisit anything'' by evaluating our method on an object instance retrieval task, which bridges the two disparate areas of research: visual place recognition and object-goal navigation, through their common aim of recognizing goal objects specific to a place. Source code: https://github.com/AnyLoc/Revisit-Anything.  
   </ol>  
 </details>  
-**comments**: Project website at https://gsplatloc.github.io/  
+**comments**: Presented at ECCV 2024; Includes supplementary; 29 pages; 8 figures  
   
   
 
@@ -77,31 +42,14 @@ Gennady Sidorov, Malik Mohrat, Ksenia Lebedeva, Ruslan Rakhimov, Sergey Kolyubin
 
 ## Keypoint Detection  
 
-### [GSplatLoc: Grounding Keypoint Descriptors into 3D Gaussian Splatting for Improved Visual Localization](http://arxiv.org/abs/2409.16502)  
-Gennady Sidorov, Malik Mohrat, Ksenia Lebedeva, Ruslan Rakhimov, Sergey Kolyubin  
+### [SKT: Integrating State-Aware Keypoint Trajectories with Vision-Language Models for Robotic Garment Manipulation](http://arxiv.org/abs/2409.18082)  
+Xin Li, Siyuan Huang, Qiaojun Yu, Zhengkai Jiang, Ce Hao, Yimeng Zhu, Hongsheng Li, Peng Gao, Cewu Lu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Although various visual localization approaches exist, such as scene coordinate and pose regression, these methods often struggle with high memory consumption or extensive optimization requirements. To address these challenges, we utilize recent advancements in novel view synthesis, particularly 3D Gaussian Splatting (3DGS), to enhance localization. 3DGS allows for the compact encoding of both 3D geometry and scene appearance with its spatial features. Our method leverages the dense description maps produced by XFeat's lightweight keypoint detection and description model. We propose distilling these dense keypoint descriptors into 3DGS to improve the model's spatial understanding, leading to more accurate camera pose predictions through 2D-3D correspondences. After estimating an initial pose, we refine it using a photometric warping loss. Benchmarking on popular indoor and outdoor datasets shows that our approach surpasses state-of-the-art Neural Render Pose (NRP) methods, including NeRFMatch and PNeRFLoc.  
+    Automating garment manipulation poses a significant challenge for assistive robotics due to the diverse and deformable nature of garments. Traditional approaches typically require separate models for each garment type, which limits scalability and adaptability. In contrast, this paper presents a unified approach using vision-language models (VLMs) to improve keypoint prediction across various garment categories. By interpreting both visual and semantic information, our model enables robots to manage different garment states with a single model. We created a large-scale synthetic dataset using advanced simulation techniques, allowing scalable training without extensive real-world data. Experimental results indicate that the VLM-based method significantly enhances keypoint detection accuracy and task success rates, providing a more flexible and general solution for robotic garment manipulation. In addition, this research also underscores the potential of VLMs to unify various garment manipulation tasks within a single framework, paving the way for broader applications in home automation and assistive robotics for future.  
   </ol>  
 </details>  
-**comments**: Project website at https://gsplatloc.github.io/  
-  
-  
-
-
-
-## Image Matching  
-
-### [Game4Loc: A UAV Geo-Localization Benchmark from Game Data](http://arxiv.org/abs/2409.16925)  
-Yuxiang Ji, Boyong He, Zhuoyue Tan, Liaoni Wu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The vision-based geo-localization technology for UAV, serving as a secondary source of GPS information in addition to the global navigation satellite systems (GNSS), can still operate independently in the GPS-denied environment. Recent deep learning based methods attribute this as the task of image matching and retrieval. By retrieving drone-view images in geo-tagged satellite image database, approximate localization information can be obtained. However, due to high costs and privacy concerns, it is usually difficult to obtain large quantities of drone-view images from a continuous area. Existing drone-view datasets are mostly composed of small-scale aerial photography with a strong assumption that there exists a perfect one-to-one aligned reference image for any query, leaving a significant gap from the practical localization scenario. In this work, we construct a large-range contiguous area UAV geo-localization dataset named GTA-UAV, featuring multiple flight altitudes, attitudes, scenes, and targets using modern computer games. Based on this dataset, we introduce a more practical UAV geo-localization task including partial matches of cross-view paired data, and expand the image-level retrieval to the actual localization in terms of distance (meters). For the construction of drone-view and satellite-view pairs, we adopt a weight-based contrastive learning approach, which allows for effective learning while avoiding additional post-processing matching steps. Experiments demonstrate the effectiveness of our data and training method for UAV geo-localization, as well as the generalization capabilities to real-world scenarios.  
-  </ol>  
-</details>  
-**comments**: Project page: https://yux1angji.github.io/game4loc/  
   
   
 
@@ -109,16 +57,58 @@ Yuxiang Ji, Boyong He, Zhuoyue Tan, Liaoni Wu
 
 ## NeRF  
 
-### [TalkinNeRF: Animatable Neural Fields for Full-Body Talking Humans](http://arxiv.org/abs/2409.16666)  
-Aggelina Chatziagapi, Bindita Chaudhuri, Amit Kumar, Rakesh Ranjan, Dimitris Samaras, Nikolaos Sarafianos  
+### [LightAvatar: Efficient Head Avatar as Dynamic Neural Light Field](http://arxiv.org/abs/2409.18057)  
+[[code](https://github.com/mingsun-tse/lightavatar-tensorflow)]  
+Huan Wang, Feitong Tan, Ziqian Bai, Yinda Zhang, Shichen Liu, Qiangeng Xu, Menglei Chai, Anish Prabhu, Rohit Pandey, Sean Fanello, Zeng Huang, Yun Fu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce a novel framework that learns a dynamic neural radiance field (NeRF) for full-body talking humans from monocular videos. Prior work represents only the body pose or the face. However, humans communicate with their full body, combining body pose, hand gestures, as well as facial expressions. In this work, we propose TalkinNeRF, a unified NeRF-based network that represents the holistic 4D human motion. Given a monocular video of a subject, we learn corresponding modules for the body, face, and hands, that are combined together to generate the final result. To capture complex finger articulation, we learn an additional deformation field for the hands. Our multi-identity representation enables simultaneous training for multiple subjects, as well as robust animation under completely unseen poses. It can also generalize to novel identities, given only a short video as input. We demonstrate state-of-the-art performance for animating full-body talking humans, with fine-grained hand articulation and facial expressions.  
+    Recent works have shown that neural radiance fields (NeRFs) on top of parametric models have reached SOTA quality to build photorealistic head avatars from a monocular video. However, one major limitation of the NeRF-based avatars is the slow rendering speed due to the dense point sampling of NeRF, preventing them from broader utility on resource-constrained devices. We introduce LightAvatar, the first head avatar model based on neural light fields (NeLFs). LightAvatar renders an image from 3DMM parameters and a camera pose via a single network forward pass, without using mesh or volume rendering. The proposed approach, while being conceptually appealing, poses a significant challenge towards real-time efficiency and training stability. To resolve them, we introduce dedicated network designs to obtain proper representations for the NeLF model and maintain a low FLOPs budget. Meanwhile, we tap into a distillation-based training strategy that uses a pretrained avatar model as teacher to synthesize abundant pseudo data for training. A warping field network is introduced to correct the fitting error in the real data so that the model can learn better. Extensive experiments suggest that our method can achieve new SOTA image quality quantitatively or qualitatively, while being significantly faster than the counterparts, reporting 174.1 FPS (512x512 resolution) on a consumer-grade GPU (RTX3090) with no customized optimization.  
   </ol>  
 </details>  
-**comments**: Accepted by ECCVW 2024. Project page:
-  https://aggelinacha.github.io/TalkinNeRF/  
+**comments**: Appear in ECCV'24 CADL Workshop. Code:
+  https://github.com/MingSun-Tse/LightAvatar-TensorFlow  
+  
+### [Deblur e-NeRF: NeRF from Motion-Blurred Events under High-speed or Low-light Conditions](http://arxiv.org/abs/2409.17988)  
+Weng Fei Low, Gim Hee Lee  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The stark contrast in the design philosophy of an event camera makes it particularly ideal for operating under high-speed, high dynamic range and low-light conditions, where standard cameras underperform. Nonetheless, event cameras still suffer from some amount of motion blur, especially under these challenging conditions, in contrary to what most think. This is attributed to the limited bandwidth of the event sensor pixel, which is mostly proportional to the light intensity. Thus, to ensure that event cameras can truly excel in such conditions where it has an edge over standard cameras, it is crucial to account for event motion blur in downstream applications, especially reconstruction. However, none of the recent works on reconstructing Neural Radiance Fields (NeRFs) from events, nor event simulators, have considered the full effects of event motion blur. To this end, we propose, Deblur e-NeRF, a novel method to directly and effectively reconstruct blur-minimal NeRFs from motion-blurred events generated under high-speed motion or low-light conditions. The core component of this work is a physically-accurate pixel bandwidth model proposed to account for event motion blur under arbitrary speed and lighting conditions. We also introduce a novel threshold-normalized total variation loss to improve the regularization of large textureless patches. Experiments on real and novel realistically simulated sequences verify our effectiveness. Our code, event simulator and synthetic event dataset will be open-sourced.  
+  </ol>  
+</details>  
+**comments**: Accepted to ECCV 2024. Project website is accessible at
+  https://wengflow.github.io/deblur-e-nerf. arXiv admin note: text overlap with
+  arXiv:2006.07722 by other authors  
+  
+### [Neural Implicit Representation for Highly Dynamic LiDAR Mapping and Odometry](http://arxiv.org/abs/2409.17729)  
+Qi Zhang, He Wang, Ru Li, Wenbin Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advancements in Simultaneous Localization and Mapping (SLAM) have increasingly highlighted the robustness of LiDAR-based techniques. At the same time, Neural Radiance Fields (NeRF) have introduced new possibilities for 3D scene reconstruction, exemplified by SLAM systems. Among these, NeRF-LOAM has shown notable performance in NeRF-based SLAM applications. However, despite its strengths, these systems often encounter difficulties in dynamic outdoor environments due to their inherent static assumptions. To address these limitations, this paper proposes a novel method designed to improve reconstruction in highly dynamic outdoor scenes. Based on NeRF-LOAM, the proposed approach consists of two primary components. First, we separate the scene into static background and dynamic foreground. By identifying and excluding dynamic elements from the mapping process, this segmentation enables the creation of a dense 3D map that accurately represents the static background only. The second component extends the octree structure to support multi-resolution representation. This extension not only enhances reconstruction quality but also aids in the removal of dynamic objects identified by the first module. Additionally, Fourier feature encoding is applied to the sampled points, capturing high-frequency information and leading to more complete reconstruction results. Evaluations on various datasets demonstrate that our method achieves more competitive results compared to current state-of-the-art approaches.  
+  </ol>  
+</details>  
+  
+### [TFS-NeRF: Template-Free NeRF for Semantic 3D Reconstruction of Dynamic Scene](http://arxiv.org/abs/2409.17459)  
+Sandika Biswas, Qianyi Wu, Biplab Banerjee, Hamid Rezatofighi  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Despite advancements in Neural Implicit models for 3D surface reconstruction, handling dynamic environments with arbitrary rigid, non-rigid, or deformable entities remains challenging. Many template-based methods are entity-specific, focusing on humans, while generic reconstruction methods adaptable to such dynamic scenes often require additional inputs like depth or optical flow or rely on pre-trained image features for reasonable outcomes. These methods typically use latent codes to capture frame-by-frame deformations. In contrast, some template-free methods bypass these requirements and adopt traditional LBS (Linear Blend Skinning) weights for a detailed representation of deformable object motions, although they involve complex optimizations leading to lengthy training times. To this end, as a remedy, this paper introduces TFS-NeRF, a template-free 3D semantic NeRF for dynamic scenes captured from sparse or single-view RGB videos, featuring interactions among various entities and more time-efficient than other LBS-based approaches. Our framework uses an Invertible Neural Network (INN) for LBS prediction, simplifying the training process. By disentangling the motions of multiple entities and optimizing per-entity skinning weights, our method efficiently generates accurate, semantically separable geometries. Extensive experiments demonstrate that our approach produces high-quality reconstructions of both deformable and non-deformable objects in complex interactions, with improved training efficiency compared to existing methods.  
+  </ol>  
+</details>  
+**comments**: Accepted in NeuRIPS 2024  
+  
+### [SeaSplat: Representing Underwater Scenes with 3D Gaussian Splatting and a Physically Grounded Image Formation Model](http://arxiv.org/abs/2409.17345)  
+Daniel Yang, John J. Leonard, Yogesh Girdhar  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce SeaSplat, a method to enable real-time rendering of underwater scenes leveraging recent advances in 3D radiance fields. Underwater scenes are challenging visual environments, as rendering through a medium such as water introduces both range and color dependent effects on image capture. We constrain 3D Gaussian Splatting (3DGS), a recent advance in radiance fields enabling rapid training and real-time rendering of full 3D scenes, with a physically grounded underwater image formation model. Applying SeaSplat to the real-world scenes from SeaThru-NeRF dataset, a scene collected by an underwater vehicle in the US Virgin Islands, and simulation-degraded real-world scenes, not only do we see increased quantitative performance on rendering novel viewpoints from the scene with the medium present, but are also able to recover the underlying true color of the scene and restore renders to be without the presence of the intervening medium. We show that the underwater image formation helps learn scene structure, with better depth maps, as well as show that our improvements maintain the significant computational improvements afforded by leveraging a 3D Gaussian representation.  
+  </ol>  
+</details>  
+**comments**: Project page here: https://seasplat.github.io  
   
   
 
