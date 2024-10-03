@@ -3,28 +3,29 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Robust-Incremental-Structure-from-Motion-with-Hybrid-Features>Robust Incremental Structure-from-Motion with Hybrid Features</a></li>
-        <li><a href=#MASt3R-SfM:-a-Fully-Integrated-Solution-for-Unconstrained-Structure-from-Motion>MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion</a></li>
+        <li><a href=#Seamless-Augmented-Reality-Integration-in-Arthroscopy:-A-Pipeline-for-Articular-Reconstruction-and-Guidance>Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#CELLmap:-Enhancing-LiDAR-SLAM-through-Elastic-and-Lightweight-Spherical-Map-Representation>CELLmap: Enhancing LiDAR SLAM through Elastic and Lightweight Spherical Map Representation</a></li>
-        <li><a href=#VLAD-BuFF:-Burst-aware-Fast-Feature-Aggregation-for-Visual-Place-Recognition>VLAD-BuFF: Burst-aware Fast Feature Aggregation for Visual Place Recognition</a></li>
-        <li><a href=#MASt3R-SfM:-a-Fully-Integrated-Solution-for-Unconstrained-Structure-from-Motion>MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion</a></li>
+        <li><a href=#Boosting-Weakly-Supervised-Referring-Image-Segmentation-via-Progressive-Comprehension>Boosting Weakly-Supervised Referring Image Segmentation via Progressive Comprehension</a></li>
+        <li><a href=#EUFCC-CIR:-a-Composed-Image-Retrieval-Dataset-for-GLAM-Collections>EUFCC-CIR: a Composed Image Retrieval Dataset for GLAM Collections</a></li>
+        <li><a href=#CSIM:-A-Copula-based-similarity-index-sensitive-to-local-changes-for-Image-quality-assessment>CSIM: A Copula-based similarity index sensitive to local changes for Image quality assessment</a></li>
+        <li><a href=#Class-Agnostic-Visio-Temporal-Scene-Sketch-Semantic-Segmentation>Class-Agnostic Visio-Temporal Scene Sketch Semantic Segmentation</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#OpenKD:-Opening-Prompt-Diversity-for-Zero--and-Few-shot-Keypoint-Detection>OpenKD: Opening Prompt Diversity for Zero- and Few-shot Keypoint Detection</a></li>
+        <li><a href=#Gaussian-Det:-Learning-Closed-Surface-Gaussians-for-3D-Object-Detection>Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Distributed-NeRF-Learning-for-Collaborative-Multi-Robot-Perception>Distributed NeRF Learning for Collaborative Multi-Robot Perception</a></li>
-        <li><a href=#Active-Neural-Mapping-at-Scale>Active Neural Mapping at Scale</a></li>
-        <li><a href=#OPONeRF:-One-Point-One-NeRF-for-Robust-Neural-Rendering>OPONeRF: One-Point-One NeRF for Robust Neural Rendering</a></li>
-        <li><a href=#G3R:-Gradient-Guided-Generalizable-Reconstruction>G3R: Gradient Guided Generalizable Reconstruction</a></li>
+        <li><a href=#EVER:-Exact-Volumetric-Ellipsoid-Rendering-for-Real-time-View-Synthesis>EVER: Exact Volumetric Ellipsoid Rendering for Real-time View Synthesis</a></li>
+        <li><a href=#3DGS-DET:-Empower-3D-Gaussian-Splatting-with-Boundary-Guidance-and-Box-Focused-Sampling-for-3D-Object-Detection>3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection</a></li>
+        <li><a href=#Gaussian-Splatting-in-Mirrors:-Reflection-Aware-Rendering-via-Virtual-Camera-Optimization>Gaussian Splatting in Mirrors: Reflection-Aware Rendering via Virtual Camera Optimization</a></li>
+        <li><a href=#Gaussian-Det:-Learning-Closed-Surface-Gaussians-for-3D-Object-Detection>Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection</a></li>
+        <li><a href=#GMT:-Enhancing-Generalizable-Neural-Rendering-via-Geometry-Driven-Multi-Reference-Texture-Transfer>GMT: Enhancing Generalizable Neural Rendering via Geometry-Driven Multi-Reference Texture Transfer</a></li>
       </ul>
     </li>
   </ol>
@@ -32,24 +33,16 @@
 
 ## SFM  
 
-### [Robust Incremental Structure-from-Motion with Hybrid Features](http://arxiv.org/abs/2409.19811)  
-Shaohui Liu, Yidan Gao, Tianyi Zhang, Rémi Pautrat, Johannes L. Schönberger, Viktor Larsson, Marc Pollefeys  
+### [Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance](http://arxiv.org/abs/2410.00386)  
+Hongchao Shu, Mingxu Liu, Lalithkumar Seenivasan, Suxi Gu, Ping-Cheng Ku, Jonathan Knopf, Russell Taylor, Mathias Unberath  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Structure-from-Motion (SfM) has become a ubiquitous tool for camera calibration and scene reconstruction with many downstream applications in computer vision and beyond. While the state-of-the-art SfM pipelines have reached a high level of maturity in well-textured and well-configured scenes over the last decades, they still fall short of robustly solving the SfM problem in challenging scenarios. In particular, weakly textured scenes and poorly constrained configurations oftentimes cause catastrophic failures or large errors for the primarily keypoint-based pipelines. In these scenarios, line segments are often abundant and can offer complementary geometric constraints. Their large spatial extent and typically structured configurations lead to stronger geometric constraints as compared to traditional keypoint-based methods. In this work, we introduce an incremental SfM system that, in addition to points, leverages lines and their structured geometric relations. Our technical contributions span the entire pipeline (mapping, triangulation, registration) and we integrate these into a comprehensive end-to-end SfM system that we share as an open-source software with the community. We also present the first analytical method to propagate uncertainties for 3D optimized lines via sensitivity analysis. Experiments show that our system is consistently more robust and accurate compared to the widely used point-based state of the art in SfM -- achieving richer maps and more precise camera registrations, especially under challenging conditions. In addition, our uncertainty-aware localization module alone is able to consistently improve over the state of the art under both point-alone and hybrid setups.  
+    Arthroscopy is a minimally invasive surgical procedure used to diagnose and treat joint problems. The clinical workflow of arthroscopy typically involves inserting an arthroscope into the joint through a small incision, during which surgeons navigate and operate largely by relying on their visual assessment through the arthroscope. However, the arthroscope's restricted field of view and lack of depth perception pose challenges in navigating complex articular structures and achieving surgical precision during procedures. Aiming at enhancing intraoperative awareness, we present a robust pipeline that incorporates simultaneous localization and mapping, depth estimation, and 3D Gaussian splatting to realistically reconstruct intra-articular structures solely based on monocular arthroscope video. Extending 3D reconstruction to Augmented Reality (AR) applications, our solution offers AR assistance for articular notch measurement and annotation anchoring in a human-in-the-loop manner. Compared to traditional Structure-from-Motion and Neural Radiance Field-based methods, our pipeline achieves dense 3D reconstruction and competitive rendering fidelity with explicit 3D representation in 7 minutes on average. When evaluated on four phantom datasets, our method achieves RMSE = 2.21mm reconstruction error, PSNR = 32.86 and SSIM = 0.89 on average. Because our pipeline enables AR reconstruction and guidance directly from monocular arthroscopy without any additional data and/or hardware, our solution may hold the potential for enhancing intraoperative awareness and facilitating surgical precision in arthroscopy. Our AR measurement tool achieves accuracy within 1.59 +/- 1.81mm and the AR annotation tool achieves a mIoU of 0.721.  
   </ol>  
 </details>  
-**comments**: 40 pages, 16 figures, 9 tables. To appear in ECCV 2024  
-  
-### [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](http://arxiv.org/abs/2409.19152)  
-Bardienus Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Cabon, Jerome Revaud  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Structure-from-Motion (SfM), a task aiming at jointly recovering camera poses and 3D geometry of a scene given a set of images, remains a hard problem with still many open challenges despite decades of significant progress. The traditional solution for SfM consists of a complex pipeline of minimal solvers which tends to propagate errors and fails when images do not sufficiently overlap, have too little motion, etc. Recent methods have attempted to revisit this paradigm, but we empirically show that they fall short of fixing these core issues. In this paper, we propose instead to build upon a recently released foundation model for 3D vision that can robustly produce local 3D reconstructions and accurate matches. We introduce a low-memory approach to accurately align these local reconstructions in a global coordinate system. We further show that such foundation models can serve as efficient image retrievers without any overhead, reducing the overall complexity from quadratic to linear. Overall, our novel SfM pipeline is simple, scalable, fast and truly unconstrained, i.e. it can handle any collection of images, ordered or not. Extensive experiments on multiple benchmarks show that our method provides steady performance across diverse settings, especially outperforming existing methods in small- and medium-scale settings.  
-  </ol>  
-</details>  
+**comments**: 8 pages, with 2 additional pages as the supplementary. Accepted by
+  AE-CAI 2024  
   
   
 
@@ -57,33 +50,43 @@ Bardienus Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Ca
 
 ## Visual Localization  
 
-### [CELLmap: Enhancing LiDAR SLAM through Elastic and Lightweight Spherical Map Representation](http://arxiv.org/abs/2409.19597)  
-Yifan Duan, Xinran Zhang, Yao Li, Guoliang You, Xiaomeng Chu, Jianmin Ji, Yanyong Zhang  
+### [Boosting Weakly-Supervised Referring Image Segmentation via Progressive Comprehension](http://arxiv.org/abs/2410.01544)  
+Zaiquan Yang, Yuhao Liu, Jiaying Lin, Gerhard Hancke, Rynson W. H. Lau  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    SLAM is a fundamental capability of unmanned systems, with LiDAR-based SLAM gaining widespread adoption due to its high precision. Current SLAM systems can achieve centimeter-level accuracy within a short period. However, there are still several challenges when dealing with largescale mapping tasks including significant storage requirements and difficulty of reusing the constructed maps. To address this, we first design an elastic and lightweight map representation called CELLmap, composed of several CELLs, each representing the local map at the corresponding location. Then, we design a general backend including CELL-based bidirectional registration module and loop closure detection module to improve global map consistency. Our experiments have demonstrated that CELLmap can represent the precise geometric structure of large-scale maps of KITTI dataset using only about 60 MB. Additionally, our general backend achieves up to a 26.88% improvement over various LiDAR odometry methods.  
+    This paper explores the weakly-supervised referring image segmentation (WRIS) problem, and focuses on a challenging setup where target localization is learned directly from image-text pairs. We note that the input text description typically already contains detailed information on how to localize the target object, and we also observe that humans often follow a step-by-step comprehension process (\ie, progressively utilizing target-related attributes and relations as cues) to identify the target object. Hence, we propose a novel Progressive Comprehension Network (PCNet) to leverage target-related textual cues from the input description for progressively localizing the target object. Specifically, we first use a Large Language Model (LLM) to decompose the input text description into short phrases. These short phrases are taken as target-related cues and fed into a Conditional Referring Module (CRM) in multiple stages, to allow updating the referring text embedding and enhance the response map for target localization in a multi-stage manner. Based on the CRM, we then propose a Region-aware Shrinking (RaS) loss to constrain the visual localization to be conducted progressively in a coarse-to-fine manner across different stages. Finally, we introduce an Instance-aware Disambiguation (IaD) loss to suppress instance localization ambiguity by differentiating overlapping response maps generated by different referring texts on the same image. Extensive experiments show that our method outperforms SOTA methods on three common benchmarks.  
   </ol>  
 </details>  
-**comments**: 7 pages, 5 figures  
   
-### [VLAD-BuFF: Burst-aware Fast Feature Aggregation for Visual Place Recognition](http://arxiv.org/abs/2409.19293)  
-[[code](https://github.com/ahmedest61/vlad-buff)]  
-Ahmad Khaliq, Ming Xu, Stephen Hausler, Michael Milford, Sourav Garg  
+### [EUFCC-CIR: a Composed Image Retrieval Dataset for GLAM Collections](http://arxiv.org/abs/2410.01536)  
+Francesc Net, Lluis Gomez  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual Place Recognition (VPR) is a crucial component of many visual localization pipelines for embodied agents. VPR is often formulated as an image retrieval task aimed at jointly learning local features and an aggregation method. The current state-of-the-art VPR methods rely on VLAD aggregation, which can be trained to learn a weighted contribution of features through their soft assignment to cluster centers. However, this process has two key limitations. Firstly, the feature-to-cluster weighting does not account for over-represented repetitive structures within a cluster, e.g., shadows or window panes; this phenomenon is also referred to as the `burstiness' problem, classically solved by discounting repetitive features before aggregation. Secondly, feature to cluster comparisons are compute-intensive for state-of-the-art image encoders with high-dimensional local features. This paper addresses these limitations by introducing VLAD-BuFF with two novel contributions: i) a self-similarity based feature discounting mechanism to learn Burst-aware features within end-to-end VPR training, and ii) Fast Feature aggregation by reducing local feature dimensions specifically through PCA-initialized learnable pre-projection. We benchmark our method on 9 public datasets, where VLAD-BuFF sets a new state of the art. Our method is able to maintain its high recall even for 12x reduced local feature dimensions, thus enabling fast feature aggregation without compromising on recall. Through additional qualitative studies, we show how our proposed weighting method effectively downweights the non-distinctive features. Source code: https://github.com/Ahmedest61/VLAD-BuFF/.  
+    The intersection of Artificial Intelligence and Digital Humanities enables researchers to explore cultural heritage collections with greater depth and scale. In this paper, we present EUFCC-CIR, a dataset designed for Composed Image Retrieval (CIR) within Galleries, Libraries, Archives, and Museums (GLAM) collections. Our dataset is built on top of the EUFCC-340K image labeling dataset and contains over 180K annotated CIR triplets. Each triplet is composed of a multi-modal query (an input image plus a short text describing the desired attribute manipulations) and a set of relevant target images. The EUFCC-CIR dataset fills an existing gap in CIR-specific resources for Digital Humanities. We demonstrate the value of the EUFCC-CIR dataset by highlighting its unique qualities in comparison to other existing CIR datasets and evaluating the performance of several zero-shot CIR baselines.  
   </ol>  
 </details>  
-**comments**: Presented at ECCV 2024; Includes supplementary; 29 pages; 7 figures  
+**comments**: ECCV Workshop (AI4DH2024)  
   
-### [MASt3R-SfM: a Fully-Integrated Solution for Unconstrained Structure-from-Motion](http://arxiv.org/abs/2409.19152)  
-Bardienus Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Cabon, Jerome Revaud  
+### [CSIM: A Copula-based similarity index sensitive to local changes for Image quality assessment](http://arxiv.org/abs/2410.01411)  
+Safouane El Ghazouali, Umberto Michelucci, Yassin El Hillali, Hichem Nouira  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Structure-from-Motion (SfM), a task aiming at jointly recovering camera poses and 3D geometry of a scene given a set of images, remains a hard problem with still many open challenges despite decades of significant progress. The traditional solution for SfM consists of a complex pipeline of minimal solvers which tends to propagate errors and fails when images do not sufficiently overlap, have too little motion, etc. Recent methods have attempted to revisit this paradigm, but we empirically show that they fall short of fixing these core issues. In this paper, we propose instead to build upon a recently released foundation model for 3D vision that can robustly produce local 3D reconstructions and accurate matches. We introduce a low-memory approach to accurately align these local reconstructions in a global coordinate system. We further show that such foundation models can serve as efficient image retrievers without any overhead, reducing the overall complexity from quadratic to linear. Overall, our novel SfM pipeline is simple, scalable, fast and truly unconstrained, i.e. it can handle any collection of images, ordered or not. Extensive experiments on multiple benchmarks show that our method provides steady performance across diverse settings, especially outperforming existing methods in small- and medium-scale settings.  
+    Image similarity metrics play an important role in computer vision applications, as they are used in image processing, computer vision and machine learning. Furthermore, those metrics enable tasks such as image retrieval, object recognition and quality assessment, essential in fields like healthcare, astronomy and surveillance. Existing metrics, such as PSNR, MSE, SSIM, ISSM and FSIM, often face limitations in terms of either speed, complexity or sensitivity to small changes in images. To address these challenges, a novel image similarity metric, namely CSIM, that combines real-time while being sensitive to subtle image variations is investigated in this paper. The novel metric uses Gaussian Copula from probability theory to transform an image into vectors of pixel distribution associated to local image patches. These vectors contain, in addition to intensities and pixel positions, information on the dependencies between pixel values, capturing the structural relationships within the image. By leveraging the properties of Copulas, CSIM effectively models the joint distribution of pixel intensities, enabling a more nuanced comparison of image patches making it more sensitive to local changes compared to other metrics. Experimental results demonstrate that CSIM outperforms existing similarity metrics in various image distortion scenarios, including noise, compression artifacts and blur. The metric's ability to detect subtle differences makes it suitable for applications requiring high precision, such as medical imaging, where the detection of minor anomalies can be of a high importance. The results obtained in this work can be reproduced from this Github repository: https://github.com/safouaneelg/copulasimilarity.  
+  </ol>  
+</details>  
+**comments**: This work has been submitted to the IEEE for possible publication.
+  Copyright may be transferred without notice, after which this version may no
+  longer be accessible  
+  
+### [Class-Agnostic Visio-Temporal Scene Sketch Semantic Segmentation](http://arxiv.org/abs/2410.00266)  
+Aleyna Kütük, Tevfik Metin Sezgin  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Scene sketch semantic segmentation is a crucial task for various applications including sketch-to-image retrieval and scene understanding. Existing sketch segmentation methods treat sketches as bitmap images, leading to the loss of temporal order among strokes due to the shift from vector to image format. Moreover, these methods struggle to segment objects from categories absent in the training data. In this paper, we propose a Class-Agnostic Visio-Temporal Network (CAVT) for scene sketch semantic segmentation. CAVT employs a class-agnostic object detector to detect individual objects in a scene and groups the strokes of instances through its post-processing module. This is the first approach that performs segmentation at both the instance and stroke levels within scene sketches. Furthermore, there is a lack of free-hand scene sketch datasets with both instance and stroke-level class annotations. To fill this gap, we collected the largest Free-hand Instance- and Stroke-level Scene Sketch Dataset (FrISS) that contains 1K scene sketches and covers 403 object classes with dense annotations. Extensive experiments on FrISS and other datasets demonstrate the superior performance of our method over state-of-the-art scene sketch segmentation models. The code and dataset will be made public after acceptance.  
   </ol>  
 </details>  
   
@@ -93,15 +96,14 @@ Bardienus Duisterhof, Lojze Zust, Philippe Weinzaepfel, Vincent Leroy, Yohann Ca
 
 ## Keypoint Detection  
 
-### [OpenKD: Opening Prompt Diversity for Zero- and Few-shot Keypoint Detection](http://arxiv.org/abs/2409.19899)  
-Changsheng Lu, Zheyuan Liu, Piotr Koniusz  
+### [Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection](http://arxiv.org/abs/2410.01404)  
+Hongru Yan, Yu Zheng, Yueqi Duan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Exploiting the foundation models (e.g., CLIP) to build a versatile keypoint detector has gained increasing attention. Most existing models accept either the text prompt (e.g., ``the nose of a cat''), or the visual prompt (e.g., support image with keypoint annotations), to detect the corresponding keypoints in query image, thereby, exhibiting either zero-shot or few-shot detection ability. However, the research on taking multimodal prompt is still underexplored, and the prompt diversity in semantics and language is far from opened. For example, how to handle unseen text prompts for novel keypoint detection and the diverse text prompts like ``Can you detect the nose and ears of a cat?'' In this work, we open the prompt diversity from three aspects: modality, semantics (seen v.s. unseen), and language, to enable a more generalized zero- and few-shot keypoint detection (Z-FSKD). We propose a novel OpenKD model which leverages multimodal prototype set to support both visual and textual prompting. Further, to infer the keypoint location of unseen texts, we add the auxiliary keypoints and texts interpolated from visual and textual domains into training, which improves the spatial reasoning of our model and significantly enhances zero-shot novel keypoint detection. We also found large language model (LLM) is a good parser, which achieves over 96% accuracy to parse keypoints from texts. With LLM, OpenKD can handle diverse text prompts. Experimental results show that our method achieves state-of-the-art performance on Z-FSKD and initiates new ways to deal with unseen text and diverse texts. The source code and data are available at https://github.com/AlanLuSun/OpenKD.  
+    Skins wrapping around our bodies, leathers covering over the sofa, sheet metal coating the car - it suggests that objects are enclosed by a series of continuous surfaces, which provides us with informative geometry prior for objectness deduction. In this paper, we propose Gaussian-Det which leverages Gaussian Splatting as surface representation for multi-view based 3D object detection. Unlike existing monocular or NeRF-based methods which depict the objects via discrete positional data, Gaussian-Det models the objects in a continuous manner by formulating the input Gaussians as feature descriptors on a mass of partial surfaces. Furthermore, to address the numerous outliers inherently introduced by Gaussian splatting, we accordingly devise a Closure Inferring Module (CIM) for the comprehensive surface-based objectness deduction. CIM firstly estimates the probabilistic feature residuals for partial surfaces given the underdetermined nature of Gaussian Splatting, which are then coalesced into a holistic representation on the overall surface closure of the object proposal. In this way, the surface information Gaussian-Det exploits serves as the prior on the quality and reliability of objectness and the information basis of proposal refinement. Experiments on both synthetic and real-world datasets demonstrate that Gaussian-Det outperforms various existing approaches, in terms of both average precision and recall.  
   </ol>  
 </details>  
-**comments**: Accepted by ECCV 2024  
   
   
 
@@ -109,42 +111,57 @@ Changsheng Lu, Zheyuan Liu, Piotr Koniusz
 
 ## NeRF  
 
-### [Distributed NeRF Learning for Collaborative Multi-Robot Perception](http://arxiv.org/abs/2409.20289)  
-Hongrui Zhao, Boris Ivanovic, Negar Mehr  
+### [EVER: Exact Volumetric Ellipsoid Rendering for Real-time View Synthesis](http://arxiv.org/abs/2410.01804)  
+Alexander Mai, Peter Hedman, George Kopanas, Dor Verbin, David Futschik, Qiangeng Xu, Falko Kuester, Jon Barron, Yinda Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Effective environment perception is crucial for enabling downstream robotic applications. Individual robotic agents often face occlusion and limited visibility issues, whereas multi-agent systems can offer a more comprehensive mapping of the environment, quicker coverage, and increased fault tolerance. In this paper, we propose a collaborative multi-agent perception system where agents collectively learn a neural radiance field (NeRF) from posed RGB images to represent a scene. Each agent processes its local sensory data and shares only its learned NeRF model with other agents, reducing communication overhead. Given NeRF's low memory footprint, this approach is well-suited for robotic systems with limited bandwidth, where transmitting all raw data is impractical. Our distributed learning framework ensures consistency across agents' local NeRF models, enabling convergence to a unified scene representation. We show the effectiveness of our method through an extensive set of experiments on datasets containing challenging real-world scenes, achieving performance comparable to centralized mapping of the environment where data is sent to a central server for processing. Additionally, we find that multi-agent learning provides regularization benefits, improving geometric consistency in scenarios with sparse input views. We show that in such scenarios, multi-agent mapping can even outperform centralized training.  
+    We present Exact Volumetric Ellipsoid Rendering (EVER), a method for real-time differentiable emission-only volume rendering. Unlike recent rasterization based approach by 3D Gaussian Splatting (3DGS), our primitive based representation allows for exact volume rendering, rather than alpha compositing 3D Gaussian billboards. As such, unlike 3DGS our formulation does not suffer from popping artifacts and view dependent density, but still achieves frame rates of $\sim\!30$ FPS at 720p on an NVIDIA RTX4090. Since our approach is built upon ray tracing it enables effects such as defocus blur and camera distortion (e.g. such as from fisheye cameras), which are difficult to achieve by rasterization. We show that our method is more accurate with fewer blending issues than 3DGS and follow-up work on view-consistent rendering, especially on the challenging large-scale scenes from the Zip-NeRF dataset where it achieves sharpest results among real-time techniques.  
+  </ol>  
+</details>  
+**comments**: Project page: https://half-potato.gitlab.io/posts/ever  
+  
+### [3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection](http://arxiv.org/abs/2410.01647)  
+[[code](https://github.com/yangcaoai/3dgs-det)]  
+Yang Cao, Yuanliang Jv, Dan Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) are widely used for novel-view synthesis and have been adapted for 3D Object Detection (3DOD), offering a promising approach to 3DOD through view-synthesis representation. However, NeRF faces inherent limitations: (i) limited representational capacity for 3DOD due to its implicit nature, and (ii) slow rendering speeds. Recently, 3D Gaussian Splatting (3DGS) has emerged as an explicit 3D representation that addresses these limitations. Inspired by these advantages, this paper introduces 3DGS into 3DOD for the first time, identifying two main challenges: (i) Ambiguous spatial distribution of Gaussian blobs: 3DGS primarily relies on 2D pixel-level supervision, resulting in unclear 3D spatial distribution of Gaussian blobs and poor differentiation between objects and background, which hinders 3DOD; (ii) Excessive background blobs: 2D images often include numerous background pixels, leading to densely reconstructed 3DGS with many noisy Gaussian blobs representing the background, negatively affecting detection. To tackle the challenge (i), we leverage the fact that 3DGS reconstruction is derived from 2D images, and propose an elegant and efficient solution by incorporating 2D Boundary Guidance to significantly enhance the spatial distribution of Gaussian blobs, resulting in clearer differentiation between objects and their background. To address the challenge (ii), we propose a Box-Focused Sampling strategy using 2D boxes to generate object probability distribution in 3D spaces, allowing effective probabilistic sampling in 3D to retain more object blobs and reduce noisy background blobs. Benefiting from our designs, our 3DGS-DET significantly outperforms the SOTA NeRF-based method, NeRF-Det, achieving improvements of +6.6 on mAP@0.25 and +8.1 on mAP@0.5 for the ScanNet dataset, and impressive +31.5 on mAP@0.25 for the ARKITScenes dataset.  
+  </ol>  
+</details>  
+**comments**: Code Page: https://github.com/yangcaoai/3DGS-DET  
+  
+### [Gaussian Splatting in Mirrors: Reflection-Aware Rendering via Virtual Camera Optimization](http://arxiv.org/abs/2410.01614)  
+Zihan Wang, Shuzhe Wang, Matias Turkulainen, Junyuan Fang, Juho Kannala  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advancements in 3D Gaussian Splatting (3D-GS) have revolutionized novel view synthesis, facilitating real-time, high-quality image rendering. However, in scenarios involving reflective surfaces, particularly mirrors, 3D-GS often misinterprets reflections as virtual spaces, resulting in blurred and inconsistent multi-view rendering within mirrors. Our paper presents a novel method aimed at obtaining high-quality multi-view consistent reflection rendering by modelling reflections as physically-based virtual cameras. We estimate mirror planes with depth and normal estimates from 3D-GS and define virtual cameras that are placed symmetrically about the mirror plane. These virtual cameras are then used to explain mirror reflections in the scene. To address imperfections in mirror plane estimates, we propose a straightforward yet effective virtual camera optimization method to enhance reflection quality. We collect a new mirror dataset including three real-world scenarios for more diverse evaluation. Experimental validation on both Mirror-Nerf and our real-world dataset demonstrate the efficacy of our approach. We achieve comparable or superior results while significantly reducing training time compared to previous state-of-the-art.  
+  </ol>  
+</details>  
+**comments**: To be published on 2024 British Machine Vision Conference  
+  
+### [Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection](http://arxiv.org/abs/2410.01404)  
+Hongru Yan, Yu Zheng, Yueqi Duan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Skins wrapping around our bodies, leathers covering over the sofa, sheet metal coating the car - it suggests that objects are enclosed by a series of continuous surfaces, which provides us with informative geometry prior for objectness deduction. In this paper, we propose Gaussian-Det which leverages Gaussian Splatting as surface representation for multi-view based 3D object detection. Unlike existing monocular or NeRF-based methods which depict the objects via discrete positional data, Gaussian-Det models the objects in a continuous manner by formulating the input Gaussians as feature descriptors on a mass of partial surfaces. Furthermore, to address the numerous outliers inherently introduced by Gaussian splatting, we accordingly devise a Closure Inferring Module (CIM) for the comprehensive surface-based objectness deduction. CIM firstly estimates the probabilistic feature residuals for partial surfaces given the underdetermined nature of Gaussian Splatting, which are then coalesced into a holistic representation on the overall surface closure of the object proposal. In this way, the surface information Gaussian-Det exploits serves as the prior on the quality and reliability of objectness and the information basis of proposal refinement. Experiments on both synthetic and real-world datasets demonstrate that Gaussian-Det outperforms various existing approaches, in terms of both average precision and recall.  
   </ol>  
 </details>  
   
-### [Active Neural Mapping at Scale](http://arxiv.org/abs/2409.20276)  
-Zijia Kuang, Zike Yan, Hao Zhao, Guyue Zhou, Hongbin Zha  
+### [GMT: Enhancing Generalizable Neural Rendering via Geometry-Driven Multi-Reference Texture Transfer](http://arxiv.org/abs/2410.00672)  
+[[code](https://github.com/yh-yoon/gmt)]  
+Youngho Yoon, Hyun-Kurl Jang, Kuk-Jin Yoon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce a NeRF-based active mapping system that enables efficient and robust exploration of large-scale indoor environments. The key to our approach is the extraction of a generalized Voronoi graph (GVG) from the continually updated neural map, leading to the synergistic integration of scene geometry, appearance, topology, and uncertainty. Anchoring uncertain areas induced by the neural map to the vertices of GVG allows the exploration to undergo adaptive granularity along a safe path that traverses unknown areas efficiently. Harnessing a modern hybrid NeRF representation, the proposed system achieves competitive results in terms of reconstruction accuracy, coverage completeness, and exploration efficiency even when scaling up to large indoor environments. Extensive results at different scales validate the efficacy of the proposed system.  
+    Novel view synthesis (NVS) aims to generate images at arbitrary viewpoints using multi-view images, and recent insights from neural radiance fields (NeRF) have contributed to remarkable improvements. Recently, studies on generalizable NeRF (G-NeRF) have addressed the challenge of per-scene optimization in NeRFs. The construction of radiance fields on-the-fly in G-NeRF simplifies the NVS process, making it well-suited for real-world applications. Meanwhile, G-NeRF still struggles in representing fine details for a specific scene due to the absence of per-scene optimization, even with texture-rich multi-view source inputs. As a remedy, we propose a Geometry-driven Multi-reference Texture transfer network (GMT) available as a plug-and-play module designed for G-NeRF. Specifically, we propose ray-imposed deformable convolution (RayDCN), which aligns input and reference features reflecting scene geometry. Additionally, the proposed texture preserving transformer (TP-Former) aggregates multi-view source features while preserving texture information. Consequently, our module enables direct interaction between adjacent pixels during the image enhancement process, which is deficient in G-NeRF models with an independent rendering process per pixel. This addresses constraints that hinder the ability to capture high-frequency details. Experiments show that our plug-and-play module consistently improves G-NeRF models on various benchmark datasets.  
   </ol>  
 </details>  
-  
-### [OPONeRF: One-Point-One NeRF for Robust Neural Rendering](http://arxiv.org/abs/2409.20043)  
-Yu Zheng, Yueqi Duan, Kangfu Zheng, Hongru Yan, Jiwen Lu, Jie Zhou  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we propose a One-Point-One NeRF (OPONeRF) framework for robust scene rendering. Existing NeRFs are designed based on a key assumption that the target scene remains unchanged between the training and test time. However, small but unpredictable perturbations such as object movements, light changes and data contaminations broadly exist in real-life 3D scenes, which lead to significantly defective or failed rendering results even for the recent state-of-the-art generalizable methods. To address this, we propose a divide-and-conquer framework in OPONeRF that adaptively responds to local scene variations via personalizing appropriate point-wise parameters, instead of fitting a single set of NeRF parameters that are inactive to test-time unseen changes. Moreover, to explicitly capture the local uncertainty, we decompose the point representation into deterministic mapping and probabilistic inference. In this way, OPONeRF learns the sharable invariance and unsupervisedly models the unexpected scene variations between the training and testing scenes. To validate the effectiveness of the proposed method, we construct benchmarks from both realistic and synthetic data with diverse test-time perturbations including foreground motions, illumination variations and multi-modality noises, which are more challenging than conventional generalization and temporal reconstruction benchmarks. Experimental results show that our OPONeRF outperforms state-of-the-art NeRFs on various evaluation metrics through benchmark experiments and cross-scene evaluations. We further show the efficacy of the proposed method via experimenting on other existing generalization-based benchmarks and incorporating the idea of One-Point-One NeRF into other advanced baseline methods.  
-  </ol>  
-</details>  
-  
-### [G3R: Gradient Guided Generalizable Reconstruction](http://arxiv.org/abs/2409.19405)  
-Yun Chen, Jingkang Wang, Ze Yang, Sivabalan Manivasagam, Raquel Urtasun  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Large scale 3D scene reconstruction is important for applications such as virtual reality and simulation. Existing neural rendering approaches (e.g., NeRF, 3DGS) have achieved realistic reconstructions on large scenes, but optimize per scene, which is expensive and slow, and exhibit noticeable artifacts under large view changes due to overfitting. Generalizable approaches or large reconstruction models are fast, but primarily work for small scenes/objects and often produce lower quality rendering results. In this work, we introduce G3R, a generalizable reconstruction approach that can efficiently predict high-quality 3D scene representations for large scenes. We propose to learn a reconstruction network that takes the gradient feedback signals from differentiable rendering to iteratively update a 3D scene representation, combining the benefits of high photorealism from per-scene optimization with data-driven priors from fast feed-forward prediction methods. Experiments on urban-driving and drone datasets show that G3R generalizes across diverse large scenes and accelerates the reconstruction process by at least 10x while achieving comparable or better realism compared to 3DGS, and also being more robust to large view changes.  
-  </ol>  
-</details>  
-**comments**: ECCV 2024. Project page: https://waabi.ai/g3r  
+**comments**: Accepted at ECCV 2024. Code available at
+  https://github.com/yh-yoon/GMT  
   
   
 
