@@ -1,107 +1,27 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Seamless-Augmented-Reality-Integration-in-Arthroscopy:-A-Pipeline-for-Articular-Reconstruction-and-Guidance>Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Boosting-Weakly-Supervised-Referring-Image-Segmentation-via-Progressive-Comprehension>Boosting Weakly-Supervised Referring Image Segmentation via Progressive Comprehension</a></li>
-        <li><a href=#EUFCC-CIR:-a-Composed-Image-Retrieval-Dataset-for-GLAM-Collections>EUFCC-CIR: a Composed Image Retrieval Dataset for GLAM Collections</a></li>
-        <li><a href=#CSIM:-A-Copula-based-similarity-index-sensitive-to-local-changes-for-Image-quality-assessment>CSIM: A Copula-based similarity index sensitive to local changes for Image quality assessment</a></li>
-        <li><a href=#Class-Agnostic-Visio-Temporal-Scene-Sketch-Semantic-Segmentation>Class-Agnostic Visio-Temporal Scene Sketch Semantic Segmentation</a></li>
-      </ul>
-    </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Gaussian-Det:-Learning-Closed-Surface-Gaussians-for-3D-Object-Detection>Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection</a></li>
+        <li><a href=#Key-Grid:-Unsupervised-3D-Keypoints-Detection-using-Grid-Heatmap-Features>Key-Grid: Unsupervised 3D Keypoints Detection using Grid Heatmap Features</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#EVER:-Exact-Volumetric-Ellipsoid-Rendering-for-Real-time-View-Synthesis>EVER: Exact Volumetric Ellipsoid Rendering for Real-time View Synthesis</a></li>
-        <li><a href=#3DGS-DET:-Empower-3D-Gaussian-Splatting-with-Boundary-Guidance-and-Box-Focused-Sampling-for-3D-Object-Detection>3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection</a></li>
-        <li><a href=#Gaussian-Splatting-in-Mirrors:-Reflection-Aware-Rendering-via-Virtual-Camera-Optimization>Gaussian Splatting in Mirrors: Reflection-Aware Rendering via Virtual Camera Optimization</a></li>
-        <li><a href=#Gaussian-Det:-Learning-Closed-Surface-Gaussians-for-3D-Object-Detection>Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection</a></li>
-        <li><a href=#GMT:-Enhancing-Generalizable-Neural-Rendering-via-Geometry-Driven-Multi-Reference-Texture-Transfer>GMT: Enhancing Generalizable Neural Rendering via Geometry-Driven Multi-Reference Texture Transfer</a></li>
+        <li><a href=#MVGS:-Multi-view-regulated-Gaussian-Splatting-for-Novel-View-Synthesis>MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Seamless Augmented Reality Integration in Arthroscopy: A Pipeline for Articular Reconstruction and Guidance](http://arxiv.org/abs/2410.00386)  
-Hongchao Shu, Mingxu Liu, Lalithkumar Seenivasan, Suxi Gu, Ping-Cheng Ku, Jonathan Knopf, Russell Taylor, Mathias Unberath  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Arthroscopy is a minimally invasive surgical procedure used to diagnose and treat joint problems. The clinical workflow of arthroscopy typically involves inserting an arthroscope into the joint through a small incision, during which surgeons navigate and operate largely by relying on their visual assessment through the arthroscope. However, the arthroscope's restricted field of view and lack of depth perception pose challenges in navigating complex articular structures and achieving surgical precision during procedures. Aiming at enhancing intraoperative awareness, we present a robust pipeline that incorporates simultaneous localization and mapping, depth estimation, and 3D Gaussian splatting to realistically reconstruct intra-articular structures solely based on monocular arthroscope video. Extending 3D reconstruction to Augmented Reality (AR) applications, our solution offers AR assistance for articular notch measurement and annotation anchoring in a human-in-the-loop manner. Compared to traditional Structure-from-Motion and Neural Radiance Field-based methods, our pipeline achieves dense 3D reconstruction and competitive rendering fidelity with explicit 3D representation in 7 minutes on average. When evaluated on four phantom datasets, our method achieves RMSE = 2.21mm reconstruction error, PSNR = 32.86 and SSIM = 0.89 on average. Because our pipeline enables AR reconstruction and guidance directly from monocular arthroscopy without any additional data and/or hardware, our solution may hold the potential for enhancing intraoperative awareness and facilitating surgical precision in arthroscopy. Our AR measurement tool achieves accuracy within 1.59 +/- 1.81mm and the AR annotation tool achieves a mIoU of 0.721.  
-  </ol>  
-</details>  
-**comments**: 8 pages, with 2 additional pages as the supplementary. Accepted by
-  AE-CAI 2024  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Boosting Weakly-Supervised Referring Image Segmentation via Progressive Comprehension](http://arxiv.org/abs/2410.01544)  
-Zaiquan Yang, Yuhao Liu, Jiaying Lin, Gerhard Hancke, Rynson W. H. Lau  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper explores the weakly-supervised referring image segmentation (WRIS) problem, and focuses on a challenging setup where target localization is learned directly from image-text pairs. We note that the input text description typically already contains detailed information on how to localize the target object, and we also observe that humans often follow a step-by-step comprehension process (\ie, progressively utilizing target-related attributes and relations as cues) to identify the target object. Hence, we propose a novel Progressive Comprehension Network (PCNet) to leverage target-related textual cues from the input description for progressively localizing the target object. Specifically, we first use a Large Language Model (LLM) to decompose the input text description into short phrases. These short phrases are taken as target-related cues and fed into a Conditional Referring Module (CRM) in multiple stages, to allow updating the referring text embedding and enhance the response map for target localization in a multi-stage manner. Based on the CRM, we then propose a Region-aware Shrinking (RaS) loss to constrain the visual localization to be conducted progressively in a coarse-to-fine manner across different stages. Finally, we introduce an Instance-aware Disambiguation (IaD) loss to suppress instance localization ambiguity by differentiating overlapping response maps generated by different referring texts on the same image. Extensive experiments show that our method outperforms SOTA methods on three common benchmarks.  
-  </ol>  
-</details>  
-  
-### [EUFCC-CIR: a Composed Image Retrieval Dataset for GLAM Collections](http://arxiv.org/abs/2410.01536)  
-Francesc Net, Lluis Gomez  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The intersection of Artificial Intelligence and Digital Humanities enables researchers to explore cultural heritage collections with greater depth and scale. In this paper, we present EUFCC-CIR, a dataset designed for Composed Image Retrieval (CIR) within Galleries, Libraries, Archives, and Museums (GLAM) collections. Our dataset is built on top of the EUFCC-340K image labeling dataset and contains over 180K annotated CIR triplets. Each triplet is composed of a multi-modal query (an input image plus a short text describing the desired attribute manipulations) and a set of relevant target images. The EUFCC-CIR dataset fills an existing gap in CIR-specific resources for Digital Humanities. We demonstrate the value of the EUFCC-CIR dataset by highlighting its unique qualities in comparison to other existing CIR datasets and evaluating the performance of several zero-shot CIR baselines.  
-  </ol>  
-</details>  
-**comments**: ECCV Workshop (AI4DH2024)  
-  
-### [CSIM: A Copula-based similarity index sensitive to local changes for Image quality assessment](http://arxiv.org/abs/2410.01411)  
-Safouane El Ghazouali, Umberto Michelucci, Yassin El Hillali, Hichem Nouira  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image similarity metrics play an important role in computer vision applications, as they are used in image processing, computer vision and machine learning. Furthermore, those metrics enable tasks such as image retrieval, object recognition and quality assessment, essential in fields like healthcare, astronomy and surveillance. Existing metrics, such as PSNR, MSE, SSIM, ISSM and FSIM, often face limitations in terms of either speed, complexity or sensitivity to small changes in images. To address these challenges, a novel image similarity metric, namely CSIM, that combines real-time while being sensitive to subtle image variations is investigated in this paper. The novel metric uses Gaussian Copula from probability theory to transform an image into vectors of pixel distribution associated to local image patches. These vectors contain, in addition to intensities and pixel positions, information on the dependencies between pixel values, capturing the structural relationships within the image. By leveraging the properties of Copulas, CSIM effectively models the joint distribution of pixel intensities, enabling a more nuanced comparison of image patches making it more sensitive to local changes compared to other metrics. Experimental results demonstrate that CSIM outperforms existing similarity metrics in various image distortion scenarios, including noise, compression artifacts and blur. The metric's ability to detect subtle differences makes it suitable for applications requiring high precision, such as medical imaging, where the detection of minor anomalies can be of a high importance. The results obtained in this work can be reproduced from this Github repository: https://github.com/safouaneelg/copulasimilarity.  
-  </ol>  
-</details>  
-**comments**: This work has been submitted to the IEEE for possible publication.
-  Copyright may be transferred without notice, after which this version may no
-  longer be accessible  
-  
-### [Class-Agnostic Visio-Temporal Scene Sketch Semantic Segmentation](http://arxiv.org/abs/2410.00266)  
-Aleyna Kütük, Tevfik Metin Sezgin  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Scene sketch semantic segmentation is a crucial task for various applications including sketch-to-image retrieval and scene understanding. Existing sketch segmentation methods treat sketches as bitmap images, leading to the loss of temporal order among strokes due to the shift from vector to image format. Moreover, these methods struggle to segment objects from categories absent in the training data. In this paper, we propose a Class-Agnostic Visio-Temporal Network (CAVT) for scene sketch semantic segmentation. CAVT employs a class-agnostic object detector to detect individual objects in a scene and groups the strokes of instances through its post-processing module. This is the first approach that performs segmentation at both the instance and stroke levels within scene sketches. Furthermore, there is a lack of free-hand scene sketch datasets with both instance and stroke-level class annotations. To fill this gap, we collected the largest Free-hand Instance- and Stroke-level Scene Sketch Dataset (FrISS) that contains 1K scene sketches and covers 403 object classes with dense annotations. Extensive experiments on FrISS and other datasets demonstrate the superior performance of our method over state-of-the-art scene sketch segmentation models. The code and dataset will be made public after acceptance.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Keypoint Detection  
 
-### [Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection](http://arxiv.org/abs/2410.01404)  
-Hongru Yan, Yu Zheng, Yueqi Duan  
+### [Key-Grid: Unsupervised 3D Keypoints Detection using Grid Heatmap Features](http://arxiv.org/abs/2410.02237)  
+Chengkai Hou, Zhengrong Xue, Bingyang Zhou, Jinghan Ke, Lin Shao, Huazhe Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Skins wrapping around our bodies, leathers covering over the sofa, sheet metal coating the car - it suggests that objects are enclosed by a series of continuous surfaces, which provides us with informative geometry prior for objectness deduction. In this paper, we propose Gaussian-Det which leverages Gaussian Splatting as surface representation for multi-view based 3D object detection. Unlike existing monocular or NeRF-based methods which depict the objects via discrete positional data, Gaussian-Det models the objects in a continuous manner by formulating the input Gaussians as feature descriptors on a mass of partial surfaces. Furthermore, to address the numerous outliers inherently introduced by Gaussian splatting, we accordingly devise a Closure Inferring Module (CIM) for the comprehensive surface-based objectness deduction. CIM firstly estimates the probabilistic feature residuals for partial surfaces given the underdetermined nature of Gaussian Splatting, which are then coalesced into a holistic representation on the overall surface closure of the object proposal. In this way, the surface information Gaussian-Det exploits serves as the prior on the quality and reliability of objectness and the information basis of proposal refinement. Experiments on both synthetic and real-world datasets demonstrate that Gaussian-Det outperforms various existing approaches, in terms of both average precision and recall.  
+    Detecting 3D keypoints with semantic consistency is widely used in many scenarios such as pose estimation, shape registration and robotics. Currently, most unsupervised 3D keypoint detection methods focus on the rigid-body objects. However, when faced with deformable objects, the keypoints they identify do not preserve semantic consistency well. In this paper, we introduce an innovative unsupervised keypoint detector Key-Grid for both the rigid-body and deformable objects, which is an autoencoder framework. The encoder predicts keypoints and the decoder utilizes the generated keypoints to reconstruct the objects. Unlike previous work, we leverage the identified keypoint in formation to form a 3D grid feature heatmap called grid heatmap, which is used in the decoder section. Grid heatmap is a novel concept that represents the latent variables for grid points sampled uniformly in the 3D cubic space, where these variables are the shortest distance between the grid points and the skeleton connected by keypoint pairs. Meanwhile, we incorporate the information from each layer of the encoder into the decoder section. We conduct an extensive evaluation of Key-Grid on a list of benchmark datasets. Key-Grid achieves the state-of-the-art performance on the semantic consistency and position accuracy of keypoints. Moreover, we demonstrate the robustness of Key-Grid to noise and downsampling. In addition, we achieve SE-(3) invariance of keypoints though generalizing Key-Grid to a SE(3)-invariant backbone.  
   </ol>  
 </details>  
   
@@ -111,57 +31,15 @@ Hongru Yan, Yu Zheng, Yueqi Duan
 
 ## NeRF  
 
-### [EVER: Exact Volumetric Ellipsoid Rendering for Real-time View Synthesis](http://arxiv.org/abs/2410.01804)  
-Alexander Mai, Peter Hedman, George Kopanas, Dor Verbin, David Futschik, Qiangeng Xu, Falko Kuester, Jon Barron, Yinda Zhang  
+### [MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis](http://arxiv.org/abs/2410.02103)  
+Xiaobiao Du, Yida Wang, Xin Yu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present Exact Volumetric Ellipsoid Rendering (EVER), a method for real-time differentiable emission-only volume rendering. Unlike recent rasterization based approach by 3D Gaussian Splatting (3DGS), our primitive based representation allows for exact volume rendering, rather than alpha compositing 3D Gaussian billboards. As such, unlike 3DGS our formulation does not suffer from popping artifacts and view dependent density, but still achieves frame rates of $\sim\!30$ FPS at 720p on an NVIDIA RTX4090. Since our approach is built upon ray tracing it enables effects such as defocus blur and camera distortion (e.g. such as from fisheye cameras), which are difficult to achieve by rasterization. We show that our method is more accurate with fewer blending issues than 3DGS and follow-up work on view-consistent rendering, especially on the challenging large-scale scenes from the Zip-NeRF dataset where it achieves sharpest results among real-time techniques.  
+    Recent works in volume rendering, \textit{e.g.} NeRF and 3D Gaussian Splatting (3DGS), significantly advance the rendering quality and efficiency with the help of the learned implicit neural radiance field or 3D Gaussians. Rendering on top of an explicit representation, the vanilla 3DGS and its variants deliver real-time efficiency by optimizing the parametric model with single-view supervision per iteration during training which is adopted from NeRF. Consequently, certain views are overfitted, leading to unsatisfying appearance in novel-view synthesis and imprecise 3D geometries. To solve aforementioned problems, we propose a new 3DGS optimization method embodying four key novel contributions: 1) We transform the conventional single-view training paradigm into a multi-view training strategy. With our proposed multi-view regulation, 3D Gaussian attributes are further optimized without overfitting certain training views. As a general solution, we improve the overall accuracy in a variety of scenarios and different Gaussian variants. 2) Inspired by the benefit introduced by additional views, we further propose a cross-intrinsic guidance scheme, leading to a coarse-to-fine training procedure concerning different resolutions. 3) Built on top of our multi-view regulated training, we further propose a cross-ray densification strategy, densifying more Gaussian kernels in the ray-intersect regions from a selection of views. 4) By further investigating the densification strategy, we found that the effect of densification should be enhanced when certain views are distinct dramatically. As a solution, we propose a novel multi-view augmented densification strategy, where 3D Gaussians are encouraged to get densified to a sufficient number accordingly, resulting in improved reconstruction accuracy.  
   </ol>  
 </details>  
-**comments**: Project page: https://half-potato.gitlab.io/posts/ever  
-  
-### [3DGS-DET: Empower 3D Gaussian Splatting with Boundary Guidance and Box-Focused Sampling for 3D Object Detection](http://arxiv.org/abs/2410.01647)  
-[[code](https://github.com/yangcaoai/3dgs-det)]  
-Yang Cao, Yuanliang Jv, Dan Xu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRF) are widely used for novel-view synthesis and have been adapted for 3D Object Detection (3DOD), offering a promising approach to 3DOD through view-synthesis representation. However, NeRF faces inherent limitations: (i) limited representational capacity for 3DOD due to its implicit nature, and (ii) slow rendering speeds. Recently, 3D Gaussian Splatting (3DGS) has emerged as an explicit 3D representation that addresses these limitations. Inspired by these advantages, this paper introduces 3DGS into 3DOD for the first time, identifying two main challenges: (i) Ambiguous spatial distribution of Gaussian blobs: 3DGS primarily relies on 2D pixel-level supervision, resulting in unclear 3D spatial distribution of Gaussian blobs and poor differentiation between objects and background, which hinders 3DOD; (ii) Excessive background blobs: 2D images often include numerous background pixels, leading to densely reconstructed 3DGS with many noisy Gaussian blobs representing the background, negatively affecting detection. To tackle the challenge (i), we leverage the fact that 3DGS reconstruction is derived from 2D images, and propose an elegant and efficient solution by incorporating 2D Boundary Guidance to significantly enhance the spatial distribution of Gaussian blobs, resulting in clearer differentiation between objects and their background. To address the challenge (ii), we propose a Box-Focused Sampling strategy using 2D boxes to generate object probability distribution in 3D spaces, allowing effective probabilistic sampling in 3D to retain more object blobs and reduce noisy background blobs. Benefiting from our designs, our 3DGS-DET significantly outperforms the SOTA NeRF-based method, NeRF-Det, achieving improvements of +6.6 on mAP@0.25 and +8.1 on mAP@0.5 for the ScanNet dataset, and impressive +31.5 on mAP@0.25 for the ARKITScenes dataset.  
-  </ol>  
-</details>  
-**comments**: Code Page: https://github.com/yangcaoai/3DGS-DET  
-  
-### [Gaussian Splatting in Mirrors: Reflection-Aware Rendering via Virtual Camera Optimization](http://arxiv.org/abs/2410.01614)  
-Zihan Wang, Shuzhe Wang, Matias Turkulainen, Junyuan Fang, Juho Kannala  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent advancements in 3D Gaussian Splatting (3D-GS) have revolutionized novel view synthesis, facilitating real-time, high-quality image rendering. However, in scenarios involving reflective surfaces, particularly mirrors, 3D-GS often misinterprets reflections as virtual spaces, resulting in blurred and inconsistent multi-view rendering within mirrors. Our paper presents a novel method aimed at obtaining high-quality multi-view consistent reflection rendering by modelling reflections as physically-based virtual cameras. We estimate mirror planes with depth and normal estimates from 3D-GS and define virtual cameras that are placed symmetrically about the mirror plane. These virtual cameras are then used to explain mirror reflections in the scene. To address imperfections in mirror plane estimates, we propose a straightforward yet effective virtual camera optimization method to enhance reflection quality. We collect a new mirror dataset including three real-world scenarios for more diverse evaluation. Experimental validation on both Mirror-Nerf and our real-world dataset demonstrate the efficacy of our approach. We achieve comparable or superior results while significantly reducing training time compared to previous state-of-the-art.  
-  </ol>  
-</details>  
-**comments**: To be published on 2024 British Machine Vision Conference  
-  
-### [Gaussian-Det: Learning Closed-Surface Gaussians for 3D Object Detection](http://arxiv.org/abs/2410.01404)  
-Hongru Yan, Yu Zheng, Yueqi Duan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Skins wrapping around our bodies, leathers covering over the sofa, sheet metal coating the car - it suggests that objects are enclosed by a series of continuous surfaces, which provides us with informative geometry prior for objectness deduction. In this paper, we propose Gaussian-Det which leverages Gaussian Splatting as surface representation for multi-view based 3D object detection. Unlike existing monocular or NeRF-based methods which depict the objects via discrete positional data, Gaussian-Det models the objects in a continuous manner by formulating the input Gaussians as feature descriptors on a mass of partial surfaces. Furthermore, to address the numerous outliers inherently introduced by Gaussian splatting, we accordingly devise a Closure Inferring Module (CIM) for the comprehensive surface-based objectness deduction. CIM firstly estimates the probabilistic feature residuals for partial surfaces given the underdetermined nature of Gaussian Splatting, which are then coalesced into a holistic representation on the overall surface closure of the object proposal. In this way, the surface information Gaussian-Det exploits serves as the prior on the quality and reliability of objectness and the information basis of proposal refinement. Experiments on both synthetic and real-world datasets demonstrate that Gaussian-Det outperforms various existing approaches, in terms of both average precision and recall.  
-  </ol>  
-</details>  
-  
-### [GMT: Enhancing Generalizable Neural Rendering via Geometry-Driven Multi-Reference Texture Transfer](http://arxiv.org/abs/2410.00672)  
-[[code](https://github.com/yh-yoon/gmt)]  
-Youngho Yoon, Hyun-Kurl Jang, Kuk-Jin Yoon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel view synthesis (NVS) aims to generate images at arbitrary viewpoints using multi-view images, and recent insights from neural radiance fields (NeRF) have contributed to remarkable improvements. Recently, studies on generalizable NeRF (G-NeRF) have addressed the challenge of per-scene optimization in NeRFs. The construction of radiance fields on-the-fly in G-NeRF simplifies the NVS process, making it well-suited for real-world applications. Meanwhile, G-NeRF still struggles in representing fine details for a specific scene due to the absence of per-scene optimization, even with texture-rich multi-view source inputs. As a remedy, we propose a Geometry-driven Multi-reference Texture transfer network (GMT) available as a plug-and-play module designed for G-NeRF. Specifically, we propose ray-imposed deformable convolution (RayDCN), which aligns input and reference features reflecting scene geometry. Additionally, the proposed texture preserving transformer (TP-Former) aggregates multi-view source features while preserving texture information. Consequently, our module enables direct interaction between adjacent pixels during the image enhancement process, which is deficient in G-NeRF models with an independent rendering process per pixel. This addresses constraints that hinder the ability to capture high-frequency details. Experiments show that our plug-and-play module consistently improves G-NeRF models on various benchmark datasets.  
-  </ol>  
-</details>  
-**comments**: Accepted at ECCV 2024. Code available at
-  https://github.com/yh-yoon/GMT  
+**comments**: Project Page:https://xiaobiaodu.github.io/mvgs-project/  
   
   
 
