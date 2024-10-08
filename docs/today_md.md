@@ -1,29 +1,65 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Key-Grid:-Unsupervised-3D-Keypoints-Detection-using-Grid-Heatmap-Features>Key-Grid: Unsupervised 3D Keypoints Detection using Grid Heatmap Features</a></li>
+        <li><a href=#Refinement-of-Monocular-Depth-Maps-via-Multi-View-Differentiable-Rendering>Refinement of Monocular Depth Maps via Multi-View Differentiable Rendering</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#LoTLIP:-Improving-Language-Image-Pre-training-for-Long-Text-Understanding>LoTLIP: Improving Language-Image Pre-training for Long Text Understanding</a></li>
+        <li><a href=#LiteVLoc:-Map-Lite-Visual-Localization-for-Image-Goal-Navigation>LiteVLoc: Map-Lite Visual Localization for Image Goal Navigation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MVGS:-Multi-view-regulated-Gaussian-Splatting-for-Novel-View-Synthesis>MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis</a></li>
+        <li><a href=#LiDAR-GS:Real-time-LiDAR-Re-Simulation-using-Gaussian-Splatting>LiDAR-GS:Real-time LiDAR Re-Simulation using Gaussian Splatting</a></li>
+        <li><a href=#6DGS:-Enhanced-Direction-Aware-Gaussian-Splatting-for-Volumetric-Rendering>6DGS: Enhanced Direction-Aware Gaussian Splatting for Volumetric Rendering</a></li>
+        <li><a href=#TeX-NeRF:-Neural-Radiance-Fields-from-Pseudo-TeX-Vision>TeX-NeRF: Neural Radiance Fields from Pseudo-TeX Vision</a></li>
+        <li><a href=#Deformable-NeRF-using-Recursively-Subdivided-Tetrahedra>Deformable NeRF using Recursively Subdivided Tetrahedra</a></li>
+        <li><a href=#Hybrid-NeRF-Stereo-Vision:-Pioneering-Depth-Estimation-and-3D-Reconstruction-in-Endoscopy>Hybrid NeRF-Stereo Vision: Pioneering Depth Estimation and 3D Reconstruction in Endoscopy</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Keypoint Detection  
+## SFM  
 
-### [Key-Grid: Unsupervised 3D Keypoints Detection using Grid Heatmap Features](http://arxiv.org/abs/2410.02237)  
-Chengkai Hou, Zhengrong Xue, Bingyang Zhou, Jinghan Ke, Lin Shao, Huazhe Xu  
+### [Refinement of Monocular Depth Maps via Multi-View Differentiable Rendering](http://arxiv.org/abs/2410.03861)  
+Laura Fink, Linus Franke, Joachim Keinert, Marc Stamminger  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Detecting 3D keypoints with semantic consistency is widely used in many scenarios such as pose estimation, shape registration and robotics. Currently, most unsupervised 3D keypoint detection methods focus on the rigid-body objects. However, when faced with deformable objects, the keypoints they identify do not preserve semantic consistency well. In this paper, we introduce an innovative unsupervised keypoint detector Key-Grid for both the rigid-body and deformable objects, which is an autoencoder framework. The encoder predicts keypoints and the decoder utilizes the generated keypoints to reconstruct the objects. Unlike previous work, we leverage the identified keypoint in formation to form a 3D grid feature heatmap called grid heatmap, which is used in the decoder section. Grid heatmap is a novel concept that represents the latent variables for grid points sampled uniformly in the 3D cubic space, where these variables are the shortest distance between the grid points and the skeleton connected by keypoint pairs. Meanwhile, we incorporate the information from each layer of the encoder into the decoder section. We conduct an extensive evaluation of Key-Grid on a list of benchmark datasets. Key-Grid achieves the state-of-the-art performance on the semantic consistency and position accuracy of keypoints. Moreover, we demonstrate the robustness of Key-Grid to noise and downsampling. In addition, we achieve SE-(3) invariance of keypoints though generalizing Key-Grid to a SE(3)-invariant backbone.  
+    The accurate reconstruction of per-pixel depth for an image is vital for many tasks in computer graphics, computer vision, and robotics. In this paper, we present a novel approach to generate view consistent and detailed depth maps from a number of posed images. We leverage advances in monocular depth estimation, which generate topologically complete, but metrically inaccurate depth maps and refine them in a two-stage optimization process based on a differentiable renderer. Taking the monocular depth map as input, we first scale this map to absolute distances based on structure-from-motion and transform the depths to a triangle surface mesh. We then refine this depth mesh in a local optimization, enforcing photometric and geometric consistency.   Our evaluation shows that our method is able to generate dense, detailed, high-quality depth maps, also in challenging indoor scenarios, and outperforms state-of-the-art depth reconstruction approaches. Overview and supplemental material of this project can be found at https://lorafib.github.io/ref_depth/.  
   </ol>  
 </details>  
+**comments**: 9.5 pages main paper + 3 pages of references + 1.5 pages appendix  
+  
+  
+
+
+
+## Visual Localization  
+
+### [LoTLIP: Improving Language-Image Pre-training for Long Text Understanding](http://arxiv.org/abs/2410.05249)  
+Wei Wu, Kecheng Zheng, Shuailei Ma, Fan Lu, Yuxin Guo, Yifei Zhang, Wei Chen, Qingpei Guo, Yujun Shen, Zheng-Jun Zha  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Understanding long text is of great demands in practice but beyond the reach of most language-image pre-training (LIP) models. In this work, we empirically confirm that the key reason causing such an issue is that the training images are usually paired with short captions, leaving certain tokens easily overshadowed by salient tokens. Towards this problem, our initial attempt is to relabel the data with long captions, however, directly learning with which may lead to performance degradation in understanding short text (e.g., in the image classification task). Then, after incorporating corner tokens to aggregate diverse textual information, we manage to help the model catch up to its original level of short text understanding yet greatly enhance its capability of long text understanding. We further look into whether the model can continuously benefit from longer captions and notice a clear trade-off between the performance and the efficiency. Finally, we validate the effectiveness of our approach using a self-constructed large-scale dataset, which consists of 100M long caption oriented text-image pairs. It is noteworthy that, on the task of long-text image retrieval, we beat the competitor using long captions with 11.1% improvement (i.e., from 72.62% to 83.72%). We will release the code, the model, and the new dataset to facilitate the reproducibility and further research. The project page is available at https://wuw2019.github.io/lotlip.  
+  </ol>  
+</details>  
+  
+### [LiteVLoc: Map-Lite Visual Localization for Image Goal Navigation](http://arxiv.org/abs/2410.04419)  
+Jianhao Jiao, Jinhao He, Changkun Liu, Sebastian Aegidius, Xiangcheng Hu, Tristan Braud, Dimitrios Kanoulas  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper presents LiteVLoc, a hierarchical visual localization framework that uses a lightweight topo-metric map to represent the environment. The method consists of three sequential modules that estimate camera poses in a coarse-to-fine manner. Unlike mainstream approaches relying on detailed 3D representations, LiteVLoc reduces storage overhead by leveraging learning-based feature matching and geometric solvers for metric pose estimation. A novel dataset for the map-free relocalization task is also introduced. Extensive experiments including localization and navigation in both simulated and real-world scenarios have validate the system's performance and demonstrated its precision and efficiency for large-scale deployment. Code and data will be made publicly available.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 4 figures  
   
   
 
@@ -31,15 +67,53 @@ Chengkai Hou, Zhengrong Xue, Bingyang Zhou, Jinghan Ke, Lin Shao, Huazhe Xu
 
 ## NeRF  
 
-### [MVGS: Multi-view-regulated Gaussian Splatting for Novel View Synthesis](http://arxiv.org/abs/2410.02103)  
-Xiaobiao Du, Yida Wang, Xin Yu  
+### [LiDAR-GS:Real-time LiDAR Re-Simulation using Gaussian Splatting](http://arxiv.org/abs/2410.05111)  
+Qifeng Chen, Sheng Yang, Sicong Du, Tao Tang, Peng Chen, Yuchi Huo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent works in volume rendering, \textit{e.g.} NeRF and 3D Gaussian Splatting (3DGS), significantly advance the rendering quality and efficiency with the help of the learned implicit neural radiance field or 3D Gaussians. Rendering on top of an explicit representation, the vanilla 3DGS and its variants deliver real-time efficiency by optimizing the parametric model with single-view supervision per iteration during training which is adopted from NeRF. Consequently, certain views are overfitted, leading to unsatisfying appearance in novel-view synthesis and imprecise 3D geometries. To solve aforementioned problems, we propose a new 3DGS optimization method embodying four key novel contributions: 1) We transform the conventional single-view training paradigm into a multi-view training strategy. With our proposed multi-view regulation, 3D Gaussian attributes are further optimized without overfitting certain training views. As a general solution, we improve the overall accuracy in a variety of scenarios and different Gaussian variants. 2) Inspired by the benefit introduced by additional views, we further propose a cross-intrinsic guidance scheme, leading to a coarse-to-fine training procedure concerning different resolutions. 3) Built on top of our multi-view regulated training, we further propose a cross-ray densification strategy, densifying more Gaussian kernels in the ray-intersect regions from a selection of views. 4) By further investigating the densification strategy, we found that the effect of densification should be enhanced when certain views are distinct dramatically. As a solution, we propose a novel multi-view augmented densification strategy, where 3D Gaussians are encouraged to get densified to a sufficient number accordingly, resulting in improved reconstruction accuracy.  
+    LiDAR simulation plays a crucial role in closed-loop simulation for autonomous driving. Although recent advancements, such as the use of reconstructed mesh and Neural Radiance Fields (NeRF), have made progress in simulating the physical properties of LiDAR, these methods have struggled to achieve satisfactory frame rates and rendering quality. To address these limitations, we present LiDAR-GS, the first LiDAR Gaussian Splatting method, for real-time high-fidelity re-simulation of LiDAR sensor scans in public urban road scenes. The vanilla Gaussian Splatting, designed for camera models, cannot be directly applied to LiDAR re-simulation. To bridge the gap between passive camera and active LiDAR, our LiDAR-GS designs a differentiable laser beam splatting, grounded in the LiDAR range view model. This innovation allows for precise surface splatting by projecting lasers onto micro cross-sections, effectively eliminating artifacts associated with local affine approximations. Additionally, LiDAR-GS leverages Neural Gaussian Fields, which further integrate view-dependent clues, to represent key LiDAR properties that are influenced by the incident angle and external factors. Combining these practices with some essential adaptations, e.g., dynamic instances decomposition, our approach succeeds in simultaneously re-simulating depth, intensity, and ray-drop channels, achieving state-of-the-art results in both rendering frame rate and quality on publically available large scene datasets. Our source code will be made publicly available.  
   </ol>  
 </details>  
-**comments**: Project Page:https://xiaobiaodu.github.io/mvgs-project/  
+  
+### [6DGS: Enhanced Direction-Aware Gaussian Splatting for Volumetric Rendering](http://arxiv.org/abs/2410.04974)  
+Zhongpai Gao, Benjamin Planche, Meng Zheng, Anwesa Choudhuri, Terrence Chen, Ziyan Wu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Novel view synthesis has advanced significantly with the development of neural radiance fields (NeRF) and 3D Gaussian splatting (3DGS). However, achieving high quality without compromising real-time rendering remains challenging, particularly for physically-based ray tracing with view-dependent effects. Recently, N-dimensional Gaussians (N-DG) introduced a 6D spatial-angular representation to better incorporate view-dependent effects, but the Gaussian representation and control scheme are sub-optimal. In this paper, we revisit 6D Gaussians and introduce 6D Gaussian Splatting (6DGS), which enhances color and opacity representations and leverages the additional directional information in the 6D space for optimized Gaussian control. Our approach is fully compatible with the 3DGS framework and significantly improves real-time radiance field rendering by better modeling view-dependent effects and fine details. Experiments demonstrate that 6DGS significantly outperforms 3DGS and N-DG, achieving up to a 15.73 dB improvement in PSNR with a reduction of 66.5% Gaussian points compared to 3DGS.  
+  </ol>  
+</details>  
+**comments**: Demo Video: https://www.youtube.com/watch?v=77wN-K6Q9aM  
+  
+### [TeX-NeRF: Neural Radiance Fields from Pseudo-TeX Vision](http://arxiv.org/abs/2410.04873)  
+Chonghao Zhong, Chao Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural radiance fields (NeRF) has gained significant attention for its exceptional visual effects. However, most existing NeRF methods reconstruct 3D scenes from RGB images captured by visible light cameras. In practical scenarios like darkness, low light, or bad weather, visible light cameras become ineffective. Therefore, we propose TeX-NeRF, a 3D reconstruction method using only infrared images, which introduces the object material emissivity as a priori, preprocesses the infrared images using Pseudo-TeX vision, and maps the temperatures (T), emissivities (e), and textures (X) of the scene into the saturation (S), hue (H), and value (V) channels of the HSV color space, respectively. Novel view synthesis using the processed images has yielded excellent results. Additionally, we introduce 3D-TeX Datasets, the first dataset comprising infrared images and their corresponding Pseudo-TeX vision images. Experiments demonstrate that our method not only matches the quality of scene reconstruction achieved with high-quality RGB images but also provides accurate temperature estimations for objects in the scene.  
+  </ol>  
+</details>  
+  
+### [Deformable NeRF using Recursively Subdivided Tetrahedra](http://arxiv.org/abs/2410.04402)  
+Zherui Qiu, Chenqu Ren, Kaiwen Song, Xiaoyi Zeng, Leyuan Yang, Juyong Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    While neural radiance fields (NeRF) have shown promise in novel view synthesis, their implicit representation limits explicit control over object manipulation. Existing research has proposed the integration of explicit geometric proxies to enable deformation. However, these methods face two primary challenges: firstly, the time-consuming and computationally demanding tetrahedralization process; and secondly, handling complex or thin structures often leads to either excessive, storage-intensive tetrahedral meshes or poor-quality ones that impair deformation capabilities. To address these challenges, we propose DeformRF, a method that seamlessly integrates the manipulability of tetrahedral meshes with the high-quality rendering capabilities of feature grid representations. To avoid ill-shaped tetrahedra and tetrahedralization for each object, we propose a two-stage training strategy. Starting with an almost-regular tetrahedral grid, our model initially retains key tetrahedra surrounding the object and subsequently refines object details using finer-granularity mesh in the second stage. We also present the concept of recursively subdivided tetrahedra to create higher-resolution meshes implicitly. This enables multi-resolution encoding while only necessitating the storage of the coarse tetrahedral mesh generated in the first training stage. We conduct a comprehensive evaluation of our DeformRF on both synthetic and real-captured datasets. Both quantitative and qualitative results demonstrate the effectiveness of our method for novel view synthesis and deformation tasks. Project page: https://ustc3dv.github.io/DeformRF/  
+  </ol>  
+</details>  
+**comments**: Accepted by ACM Multimedia 2024. Project Page:
+  https://ustc3dv.github.io/DeformRF/  
+  
+### [Hybrid NeRF-Stereo Vision: Pioneering Depth Estimation and 3D Reconstruction in Endoscopy](http://arxiv.org/abs/2410.04041)  
+Pengcheng Chen, Wenhao Li, Nicole Gunderson, Jeremy Ruthberg, Randall Bly, Waleed M. Abuzeid, Zhenglong Sun, Eric J. Seibel  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The 3D reconstruction of the surgical field in minimally invasive endoscopic surgery has posed a formidable challenge when using conventional monocular endoscopes. Existing 3D reconstruction methodologies are frequently encumbered by suboptimal accuracy and limited generalization capabilities. In this study, we introduce an innovative pipeline using Neural Radiance Fields (NeRF) for 3D reconstruction. Our approach utilizes a preliminary NeRF reconstruction that yields a coarse model, then creates a binocular scene within the reconstructed environment, which derives an initial depth map via stereo vision. This initial depth map serves as depth supervision for subsequent NeRF iterations, progressively refining the 3D reconstruction with enhanced accuracy. The binocular depth is iteratively recalculated, with the refinement process continuing until the depth map converges, and exhibits negligible variations. Through this recursive process, high-fidelity depth maps are generated from monocular endoscopic video of a realistic cranial phantom. By repeated measures of the final 3D reconstruction compared to X-ray computed tomography, all differences of relevant clinical distances result in sub-millimeter accuracy.  
+  </ol>  
+</details>  
   
   
 
