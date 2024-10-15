@@ -1,53 +1,116 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#ESVO2:-Direct-Visual-Inertial-Odometry-with-Stereo-Event-Cameras>ESVO2: Direct Visual-Inertial Odometry with Stereo Event Cameras</a></li>
+      </ul>
+    </li>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Leveraging-Semantic-Cues-from-Foundation-Vision-Models-for-Enhanced-Local-Feature-Correspondence>Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Voxel-SLAM:-A-Complete,-Accurate,-and-Versatile-LiDAR-Inertial-SLAM-System>Voxel-SLAM: A Complete, Accurate, and Versatile LiDAR-Inertial SLAM System</a></li>
-        <li><a href=#Semantic-Token-Reweighting-for-Interpretable-and-Controllable-Text-Embeddings-in-CLIP>Semantic Token Reweighting for Interpretable and Controllable Text Embeddings in CLIP</a></li>
-        <li><a href=#A-Unified-Deep-Semantic-Expansion-Framework-for-Domain-Generalized-Person-Re-identification>A Unified Deep Semantic Expansion Framework for Domain-Generalized Person Re-identification</a></li>
+        <li><a href=#Leveraging-Semantic-Cues-from-Foundation-Vision-Models-for-Enhanced-Local-Feature-Correspondence>Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Facial-Chick-Sexing:-An-Automated-Chick-Sexing-System-From-Chick-Facial-Image>Facial Chick Sexing: An Automated Chick Sexing System From Chick Facial Image</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Leveraging-Semantic-Cues-from-Foundation-Vision-Models-for-Enhanced-Local-Feature-Correspondence>Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#SceneCraft:-Layout-Guided-3D-Scene-Generation>SceneCraft: Layout-Guided 3D Scene Generation</a></li>
-        <li><a href=#MeshGS:-Adaptive-Mesh-Aligned-Gaussian-Splatting-for-High-Quality-Rendering>MeshGS: Adaptive Mesh-Aligned Gaussian Splatting for High-Quality Rendering</a></li>
-        <li><a href=#Optimizing-NeRF-based-SLAM-with-Trajectory-Smoothness-Constraints>Optimizing NeRF-based SLAM with Trajectory Smoothness Constraints</a></li>
+        <li><a href=#3DArticCyclists:-Generating-Simulated-Dynamic-3D-Cyclists-for-Human-Object-Interaction-(HOI)-and-Autonomous-Driving-Applications>3DArticCyclists: Generating Simulated Dynamic 3D Cyclists for Human-Object Interaction (HOI) and Autonomous Driving Applications</a></li>
+        <li><a href=#NeRF-enabled-Analysis-Through-Synthesis-for-ISAR-Imaging-of-Small-Everyday-Objects-with-Sparse-and-Noisy-UWB-Radar-Data>NeRF-enabled Analysis-Through-Synthesis for ISAR Imaging of Small Everyday Objects with Sparse and Noisy UWB Radar Data</a></li>
+        <li><a href=#Magnituder-Layers-for-Implicit-Neural-Representations-in-3D>Magnituder Layers for Implicit Neural Representations in 3D</a></li>
+        <li><a href=#Improving-3D-Finger-Traits-Recognition-via-Generalizable-Neural-Rendering>Improving 3D Finger Traits Recognition via Generalizable Neural Rendering</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [ESVO2: Direct Visual-Inertial Odometry with Stereo Event Cameras](http://arxiv.org/abs/2410.09374)  
+[[code](https://github.com/nail-hnu/esvo2)]  
+Junkai Niu, Sheng Zhong, Xiuyuan Lu, Shaojie Shen, Guillermo Gallego, Yi Zhou  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Event-based visual odometry is a specific branch of visual Simultaneous Localization and Mapping (SLAM) techniques, which aims at solving tracking and mapping sub-problems in parallel by exploiting the special working principles of neuromorphic (ie, event-based) cameras. Due to the motion-dependent nature of event data, explicit data association ie, feature matching under large-baseline view-point changes is hardly established, making direct methods a more rational choice. However, state-of-the-art direct methods are limited by the high computational complexity of the mapping sub-problem and the degeneracy of camera pose tracking in certain degrees of freedom (DoF) in rotation. In this paper, we resolve these issues by building an event-based stereo visual-inertial odometry system on top of our previous direct pipeline Event-based Stereo Visual Odometry. Specifically, to speed up the mapping operation, we propose an efficient strategy for sampling contour points according to the local dynamics of events. The mapping performance is also improved in terms of structure completeness and local smoothness by merging the temporal stereo and static stereo results. To circumvent the degeneracy of camera pose tracking in recovering the pitch and yaw components of general six-DoF motion, we introduce IMU measurements as motion priors via pre-integration. To this end, a compact back-end is proposed for continuously updating the IMU bias and predicting the linear velocity, enabling an accurate motion prediction for camera pose tracking. The resulting system scales well with modern high-resolution event cameras and leads to better global positioning accuracy in large-scale outdoor environments. Extensive evaluations on five publicly available datasets featuring different resolutions and scenarios justify the superior performance of the proposed system against five state-of-the-art methods.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## SFM  
+
+### [Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence](http://arxiv.org/abs/2410.09533)  
+Felipe Cadar, Guilherme Potje, Renato Martins, Cédric Demonceaux, Erickson R. Nascimento  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Visual correspondence is a crucial step in key computer vision tasks, including camera localization, image registration, and structure from motion. The most effective techniques for matching keypoints currently involve using learned sparse or dense matchers, which need pairs of images. These neural networks have a good general understanding of features from both images, but they often struggle to match points from different semantic areas. This paper presents a new method that uses semantic cues from foundation vision model features (like DINOv2) to enhance local feature matching by incorporating semantic reasoning into existing descriptors. Therefore, the learned descriptors do not require image pairs at inference time, allowing feature caching and fast matching using similarity search, unlike learned matchers. We present adapted versions of six existing descriptors, with an average increase in performance of 29% in camera localization, with comparable accuracy to existing matchers as LightGlue and LoFTR in two existing benchmarks. Both code and trained models are available at https://www.verlab.dcc.ufmg.br/descriptors/reasoning_accv24  
+  </ol>  
+</details>  
+**comments**: Accepted in ACCV 2024  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [Voxel-SLAM: A Complete, Accurate, and Versatile LiDAR-Inertial SLAM System](http://arxiv.org/abs/2410.08935)  
-Zheng Liu, Haotian Li, Chongjian Yuan, Xiyuan Liu, Jiarong Lin, Rundong Li, Chunran Zheng, Bingyang Zhou, Wenyi Liu, Fu Zhang  
+### [Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence](http://arxiv.org/abs/2410.09533)  
+Felipe Cadar, Guilherme Potje, Renato Martins, Cédric Demonceaux, Erickson R. Nascimento  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this work, we present Voxel-SLAM: a complete, accurate, and versatile LiDAR-inertial SLAM system that fully utilizes short-term, mid-term, long-term, and multi-map data associations to achieve real-time estimation and high precision mapping. The system consists of five modules: initialization, odometry, local mapping, loop closure, and global mapping, all employing the same map representation, an adaptive voxel map. The initialization provides an accurate initial state estimation and a consistent local map for subsequent modules, enabling the system to start with a highly dynamic initial state. The odometry, exploiting the short-term data association, rapidly estimates current states and detects potential system divergence. The local mapping, exploiting the mid-term data association, employs a local LiDAR-inertial bundle adjustment (BA) to refine the states (and the local map) within a sliding window of recent LiDAR scans. The loop closure detects previously visited places in the current and all previous sessions. The global mapping refines the global map with an efficient hierarchical global BA. The loop closure and global mapping both exploit long-term and multi-map data associations. We conducted a comprehensive benchmark comparison with other state-of-the-art methods across 30 sequences from three representative scenes, including narrow indoor environments using hand-held equipment, large-scale wilderness environments with aerial robots, and urban environments on vehicle platforms. Other experiments demonstrate the robustness and efficiency of the initialization, the capacity to work in multiple sessions, and relocalization in degenerated environments.  
+    Visual correspondence is a crucial step in key computer vision tasks, including camera localization, image registration, and structure from motion. The most effective techniques for matching keypoints currently involve using learned sparse or dense matchers, which need pairs of images. These neural networks have a good general understanding of features from both images, but they often struggle to match points from different semantic areas. This paper presents a new method that uses semantic cues from foundation vision model features (like DINOv2) to enhance local feature matching by incorporating semantic reasoning into existing descriptors. Therefore, the learned descriptors do not require image pairs at inference time, allowing feature caching and fast matching using similarity search, unlike learned matchers. We present adapted versions of six existing descriptors, with an average increase in performance of 29% in camera localization, with comparable accuracy to existing matchers as LightGlue and LoFTR in two existing benchmarks. Both code and trained models are available at https://www.verlab.dcc.ufmg.br/descriptors/reasoning_accv24  
+  </ol>  
+</details>  
+**comments**: Accepted in ACCV 2024  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Facial Chick Sexing: An Automated Chick Sexing System From Chick Facial Image](http://arxiv.org/abs/2410.09155)  
+Marta Veganzones Rodriguez, Thinh Phan, Arthur F. A. Fernandes, Vivian Breen, Jesus Arango, Michael T. Kidd, Ngan Le  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Chick sexing, the process of determining the gender of day-old chicks, is a critical task in the poultry industry due to the distinct roles that each gender plays in production. While effective traditional methods achieve high accuracy, color, and wing feather sexing is exclusive to specific breeds, and vent sexing is invasive and requires trained experts. To address these challenges, we propose a novel approach inspired by facial gender classification techniques in humans: facial chick sexing. This new method does not require expert knowledge and aims to reduce training time while enhancing animal welfare by minimizing chick manipulation. We develop a comprehensive system for training and inference that includes data collection, facial and keypoint detection, facial alignment, and classification. We evaluate our model on two sets of images: Cropped Full Face and Cropped Middle Face, both of which maintain essential facial features of the chick for further analysis. Our experiment demonstrates the promising viability, with a final accuracy of 81.89%, of this approach for future practices in chick sexing by making them more universally applicable.  
   </ol>  
 </details>  
   
-### [Semantic Token Reweighting for Interpretable and Controllable Text Embeddings in CLIP](http://arxiv.org/abs/2410.08469)  
-Eunji Kim, Kyuhong Shim, Simyung Chang, Sungroh Yoon  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    A text encoder within Vision-Language Models (VLMs) like CLIP plays a crucial role in translating textual input into an embedding space shared with images, thereby facilitating the interpretative analysis of vision tasks through natural language. Despite the varying significance of different textual elements within a sentence depending on the context, efforts to account for variation of importance in constructing text embeddings have been lacking. We propose a framework of Semantic Token Reweighting to build Interpretable text embeddings (SToRI), which incorporates controllability as well. SToRI refines the text encoding process in CLIP by differentially weighting semantic elements based on contextual importance, enabling finer control over emphasis responsive to data-driven insights and user preferences. The efficacy of SToRI is demonstrated through comprehensive experiments on few-shot image classification and image retrieval tailored to user preferences.  
-  </ol>  
-</details>  
-**comments**: Accepted at EMNLP 2024 Findings  
   
-### [A Unified Deep Semantic Expansion Framework for Domain-Generalized Person Re-identification](http://arxiv.org/abs/2410.08456)  
-Eugene P. W. Ang, Shan Lin, Alex C. Kot  
+
+
+
+## Image Matching  
+
+### [Leveraging Semantic Cues from Foundation Vision Models for Enhanced Local Feature Correspondence](http://arxiv.org/abs/2410.09533)  
+Felipe Cadar, Guilherme Potje, Renato Martins, Cédric Demonceaux, Erickson R. Nascimento  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Supervised Person Re-identification (Person ReID) methods have achieved excellent performance when training and testing within one camera network. However, they usually suffer from considerable performance degradation when applied to different camera systems. In recent years, many Domain Adaptation Person ReID methods have been proposed, achieving impressive performance without requiring labeled data from the target domain. However, these approaches still need the unlabeled data of the target domain during the training process, making them impractical in many real-world scenarios. Our work focuses on the more practical Domain Generalized Person Re-identification (DG-ReID) problem. Given one or more source domains, it aims to learn a generalized model that can be applied to unseen target domains. One promising research direction in DG-ReID is the use of implicit deep semantic feature expansion, and our previous method, Domain Embedding Expansion (DEX), is one such example that achieves powerful results in DG-ReID. However, in this work we show that DEX and other similar implicit deep semantic feature expansion methods, due to limitations in their proposed loss function, fail to reach their full potential on large evaluation benchmarks as they have a tendency to saturate too early. Leveraging on this analysis, we propose Unified Deep Semantic Expansion, our novel framework that unifies implicit and explicit semantic feature expansion techniques in a single framework to mitigate this early over-fitting and achieve a new state-of-the-art (SOTA) in all DG-ReID benchmarks. Further, we apply our method on more general image retrieval tasks, also surpassing the current SOTA in all of these benchmarks by wide margins.  
+    Visual correspondence is a crucial step in key computer vision tasks, including camera localization, image registration, and structure from motion. The most effective techniques for matching keypoints currently involve using learned sparse or dense matchers, which need pairs of images. These neural networks have a good general understanding of features from both images, but they often struggle to match points from different semantic areas. This paper presents a new method that uses semantic cues from foundation vision model features (like DINOv2) to enhance local feature matching by incorporating semantic reasoning into existing descriptors. Therefore, the learned descriptors do not require image pairs at inference time, allowing feature caching and fast matching using similarity search, unlike learned matchers. We present adapted versions of six existing descriptors, with an average increase in performance of 29% in camera localization, with comparable accuracy to existing matchers as LightGlue and LoFTR in two existing benchmarks. Both code and trained models are available at https://www.verlab.dcc.ufmg.br/descriptors/reasoning_accv24  
   </ol>  
 </details>  
-**comments**: Neurocomputing Volume 600, 1 October 2024, 128120. 15 pages  
+**comments**: Accepted in ACCV 2024  
   
   
 
@@ -55,36 +118,44 @@ Eugene P. W. Ang, Shan Lin, Alex C. Kot
 
 ## NeRF  
 
-### [SceneCraft: Layout-Guided 3D Scene Generation](http://arxiv.org/abs/2410.09049)  
-[[code](https://github.com/orangesodahub/scenecraft)]  
-Xiuyu Yang, Yunze Man, Jun-Kun Chen, Yu-Xiong Wang  
+### [3DArticCyclists: Generating Simulated Dynamic 3D Cyclists for Human-Object Interaction (HOI) and Autonomous Driving Applications](http://arxiv.org/abs/2410.10782)  
+Eduardo R. Corral-Soto, Yang Liu, Tongtong Cao, Yuan Ren, Liu Bingbing  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The creation of complex 3D scenes tailored to user specifications has been a tedious and challenging task with traditional 3D modeling tools. Although some pioneering methods have achieved automatic text-to-3D generation, they are generally limited to small-scale scenes with restricted control over the shape and texture. We introduce SceneCraft, a novel method for generating detailed indoor scenes that adhere to textual descriptions and spatial layout preferences provided by users. Central to our method is a rendering-based technique, which converts 3D semantic layouts into multi-view 2D proxy maps. Furthermore, we design a semantic and depth conditioned diffusion model to generate multi-view images, which are used to learn a neural radiance field (NeRF) as the final scene representation. Without the constraints of panorama image generation, we surpass previous methods in supporting complicated indoor space generation beyond a single room, even as complicated as a whole multi-bedroom apartment with irregular shapes and layouts. Through experimental analysis, we demonstrate that our method significantly outperforms existing approaches in complex indoor scene generation with diverse textures, consistent geometry, and realistic visual quality. Code and more results are available at: https://orangesodahub.github.io/SceneCraft  
+    Human-object interaction (HOI) and human-scene interaction (HSI) are crucial for human-centric scene understanding applications in Embodied Artificial Intelligence (EAI), robotics, and augmented reality (AR). A common limitation faced in these research areas is the data scarcity problem: insufficient labeled human-scene object pairs on the input images, and limited interaction complexity and granularity between them. Recent HOI and HSI methods have addressed this issue by generating dynamic interactions with rigid objects. But more complex dynamic interactions such as a human rider pedaling an articulated bicycle have been unexplored. To address this limitation, and to enable research on complex dynamic human-articulated object interactions, in this paper we propose a method to generate simulated 3D dynamic cyclist assets and interactions. We designed a methodology for creating a new part-based multi-view articulated synthetic 3D bicycle dataset that we call 3DArticBikes that can be used to train NeRF and 3DGS-based 3D reconstruction methods. We then propose a 3DGS-based parametric bicycle composition model to assemble 8-DoF pose-controllable 3D bicycles. Finally, using dynamic information from cyclist videos, we build a complete synthetic dynamic 3D cyclist (rider pedaling a bicycle) by re-posing a selectable synthetic 3D person while automatically placing the rider onto one of our new articulated 3D bicycles using a proposed 3D Keypoint optimization-based Inverse Kinematics pose refinement. We present both, qualitative and quantitative results where we compare our generated cyclists against those from a recent stable diffusion-based method.  
   </ol>  
 </details>  
-**comments**: NeurIPS 2024. Code: https://github.com/OrangeSodahub/SceneCraft
-  Project Page: https://orangesodahub.github.io/SceneCraft  
   
-### [MeshGS: Adaptive Mesh-Aligned Gaussian Splatting for High-Quality Rendering](http://arxiv.org/abs/2410.08941)  
-Jaehoon Choi, Yonghan Lee, Hyungtae Lee, Heesung Kwon, Dinesh Manocha  
+### [NeRF-enabled Analysis-Through-Synthesis for ISAR Imaging of Small Everyday Objects with Sparse and Noisy UWB Radar Data](http://arxiv.org/abs/2410.10085)  
+Md Farhan Tasnim Oshim, Albert Reed, Suren Jayasuriya, Tauhidur Rahman  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recently, 3D Gaussian splatting has gained attention for its capability to generate high-fidelity rendering results. At the same time, most applications such as games, animation, and AR/VR use mesh-based representations to represent and render 3D scenes. We propose a novel approach that integrates mesh representation with 3D Gaussian splats to perform high-quality rendering of reconstructed real-world scenes. In particular, we introduce a distance-based Gaussian splatting technique to align the Gaussian splats with the mesh surface and remove redundant Gaussian splats that do not contribute to the rendering. We consider the distance between each Gaussian splat and the mesh surface to distinguish between tightly-bound and loosely-bound Gaussian splats. The tightly-bound splats are flattened and aligned well with the mesh geometry. The loosely-bound Gaussian splats are used to account for the artifacts in reconstructed 3D meshes in terms of rendering. We present a training strategy of binding Gaussian splats to the mesh geometry, and take into account both types of splats. In this context, we introduce several regularization techniques aimed at precisely aligning tightly-bound Gaussian splats with the mesh surface during the training process. We validate the effectiveness of our method on large and unbounded scene from mip-NeRF 360 and Deep Blending datasets. Our method surpasses recent mesh-based neural rendering techniques by achieving a 2dB higher PSNR, and outperforms mesh-based Gaussian splatting methods by 1.3 dB PSNR, particularly on the outdoor mip-NeRF 360 dataset, demonstrating better rendering quality. We provide analyses for each type of Gaussian splat and achieve a reduction in the number of Gaussian splats by 30% compared to the original 3D Gaussian splatting.  
+    Inverse Synthetic Aperture Radar (ISAR) imaging presents a formidable challenge when it comes to small everyday objects due to their limited Radar Cross-Section (RCS) and the inherent resolution constraints of radar systems. Existing ISAR reconstruction methods including backprojection (BP) often require complex setups and controlled environments, rendering them impractical for many real-world noisy scenarios. In this paper, we propose a novel Analysis-through-Synthesis (ATS) framework enabled by Neural Radiance Fields (NeRF) for high-resolution coherent ISAR imaging of small objects using sparse and noisy Ultra-Wideband (UWB) radar data with an inexpensive and portable setup. Our end-to-end framework integrates ultra-wideband radar wave propagation, reflection characteristics, and scene priors, enabling efficient 2D scene reconstruction without the need for costly anechoic chambers or complex measurement test beds. With qualitative and quantitative comparisons, we demonstrate that the proposed method outperforms traditional techniques and generates ISAR images of complex scenes with multiple targets and complex structures in Non-Line-of-Sight (NLOS) and noisy scenarios, particularly with limited number of views and sparse UWB radar scans. This work represents a significant step towards practical, cost-effective ISAR imaging of small everyday objects, with broad implications for robotics and mobile sensing applications.  
   </ol>  
 </details>  
-**comments**: ACCV (Asian Conference on Computer Vision) 2024  
   
-### [Optimizing NeRF-based SLAM with Trajectory Smoothness Constraints](http://arxiv.org/abs/2410.08780)  
-Yicheng He, Guangcheng Chen, Hong Zhang  
+### [Magnituder Layers for Implicit Neural Representations in 3D](http://arxiv.org/abs/2410.09771)  
+Sang Min Kim, Byeongchan Kim, Arijit Sehanobish, Krzysztof Choromanski, Dongseok Shim, Avinava Dubey, Min-hwan Oh  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The joint optimization of Neural Radiance Fields (NeRF) and camera trajectories has been widely applied in SLAM tasks due to its superior dense mapping quality and consistency. NeRF-based SLAM learns camera poses using constraints by implicit map representation. A widely observed phenomenon that results from the constraints of this form is jerky and physically unrealistic estimated camera motion, which in turn affects the map quality. To address this deficiency of current NeRF-based SLAM, we propose in this paper TS-SLAM (TS for Trajectory Smoothness). It introduces smoothness constraints on camera trajectories by representing them with uniform cubic B-splines with continuous acceleration that guarantees smooth camera motion. Benefiting from the differentiability and local control properties of B-splines, TS-SLAM can incrementally learn the control points end-to-end using a sliding window paradigm. Additionally, we regularize camera trajectories by exploiting the dynamics prior to further smooth trajectories. Experimental results demonstrate that TS-SLAM achieves superior trajectory accuracy and improves mapping quality versus NeRF-based SLAM that does not employ the above smoothness constraints.  
+    Improving the efficiency and performance of implicit neural representations in 3D, particularly Neural Radiance Fields (NeRF) and Signed Distance Fields (SDF) is crucial for enabling their use in real-time applications. These models, while capable of generating photo-realistic novel views and detailed 3D reconstructions, often suffer from high computational costs and slow inference times. To address this, we introduce a novel neural network layer called the "magnituder", designed to reduce the number of training parameters in these models without sacrificing their expressive power. By integrating magnituders into standard feed-forward layer stacks, we achieve improved inference speed and adaptability. Furthermore, our approach enables a zero-shot performance boost in trained implicit neural representation models through layer-wise knowledge transfer without backpropagation, leading to more efficient scene reconstruction in dynamic environments.  
   </ol>  
 </details>  
+  
+### [Improving 3D Finger Traits Recognition via Generalizable Neural Rendering](http://arxiv.org/abs/2410.09582)  
+Hongbin Xu, Junduan Huang, Yuer Ma, Zifeng Li, Wenxiong Kang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    3D biometric techniques on finger traits have become a new trend and have demonstrated a powerful ability for recognition and anti-counterfeiting. Existing methods follow an explicit 3D pipeline that reconstructs the models first and then extracts features from 3D models. However, these explicit 3D methods suffer from the following problems: 1) Inevitable information dropping during 3D reconstruction; 2) Tight coupling between specific hardware and algorithm for 3D reconstruction. It leads us to a question: Is it indispensable to reconstruct 3D information explicitly in recognition tasks? Hence, we consider this problem in an implicit manner, leaving the nerve-wracking 3D reconstruction problem for learnable neural networks with the help of neural radiance fields (NeRFs). We propose FingerNeRF, a novel generalizable NeRF for 3D finger biometrics. To handle the shape-radiance ambiguity problem that may result in incorrect 3D geometry, we aim to involve extra geometric priors based on the correspondence of binary finger traits like fingerprints or finger veins. First, we propose a novel Trait Guided Transformer (TGT) module to enhance the feature correspondence with the guidance of finger traits. Second, we involve extra geometric constraints on the volume rendering loss with the proposed Depth Distillation Loss and Trait Guided Rendering Loss. To evaluate the performance of the proposed method on different modalities, we collect two new datasets: SCUT-Finger-3D with finger images and SCUT-FingerVein-3D with finger vein images. Moreover, we also utilize the UNSW-3D dataset with fingerprint images for evaluation. In experiments, our FingerNeRF can achieve 4.37% EER on SCUT-Finger-3D dataset, 8.12% EER on SCUT-FingerVein-3D dataset, and 2.90% EER on UNSW-3D dataset, showing the superiority of the proposed implicit method in 3D finger biometrics.  
+  </ol>  
+</details>  
+**comments**: This paper is accepted in IJCV. For further information and access to
+  the code, please visit our project page:
+  https://scut-bip-lab.github.io/fingernerf/  
   
   
 
