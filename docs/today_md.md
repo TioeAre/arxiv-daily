@@ -1,171 +1,56 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Gravity-aligned-Rotation-Averaging-with-Circular-Regression>Gravity-aligned Rotation Averaging with Circular Regression</a></li>
-        <li><a href=#SplatPose+:-Real-time-Image-Based-Pose-Agnostic-3D-Anomaly-Detection>SplatPose+: Real-time Image-Based Pose-Agnostic 3D Anomaly Detection</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Development-of-Image-Collection-Method-Using-YOLO-and-Siamese-Network>Development of Image Collection Method Using YOLO and Siamese Network</a></li>
-        <li><a href=#LoD-Loc:-Aerial-Visual-Localization-using-LoD-3D-Map-with-Neural-Wireframe-Alignment>LoD-Loc: Aerial Visual Localization using LoD 3D Map with Neural Wireframe Alignment</a></li>
-        <li><a href=#Leveraging-Spatial-Attention-and-Edge-Context-for-Optimized-Feature-Selection-in-Visual-Localization>Leveraging Spatial Attention and Edge Context for Optimized Feature Selection in Visual Localization</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#PND-Net:-Plant-Nutrition-Deficiency-and-Disease-Classification-using-Graph-Convolutional-Network>PND-Net: Plant Nutrition Deficiency and Disease Classification using Graph Convolutional Network</a></li>
-        <li><a href=#RAFA-Net:-Region-Attention-Network-For-Food-Items-And-Agricultural-Stress-Recognition>RAFA-Net: Region Attention Network For Food Items And Agricultural Stress Recognition</a></li>
-        <li><a href=#A-Robust-Multisource-Remote-Sensing-Image-Matching-Method-Utilizing-Attention-and-Feature-Enhancement-Against-Noise-Interference>A Robust Multisource Remote Sensing Image Matching Method Utilizing Attention and Feature Enhancement Against Noise Interference</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#A-Robust-Multisource-Remote-Sensing-Image-Matching-Method-Utilizing-Attention-and-Feature-Enhancement-Against-Noise-Interference>A Robust Multisource Remote Sensing Image Matching Method Utilizing Attention and Feature Enhancement Against Noise Interference</a></li>
-      </ul>
-    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#3D-Gaussian-Splatting-in-Robotics:-A-Survey>3D Gaussian Splatting in Robotics: A Survey</a></li>
-        <li><a href=#EG-HumanNeRF:-Efficient-Generalizable-Human-NeRF-Utilizing-Human-Prior-for-Sparse-View>EG-HumanNeRF: Efficient Generalizable Human NeRF Utilizing Human Prior for Sparse View</a></li>
+        <li><a href=#DN-4DGS:-Denoised-Deformable-Network-with-Temporal-Spatial-Aggregation-for-Dynamic-Scene-Rendering>DN-4DGS: Denoised Deformable Network with Temporal-Spatial Aggregation for Dynamic Scene Rendering</a></li>
+        <li><a href=#DriveDreamer4D:-World-Models-Are-Effective-Data-Machines-for-4D-Driving-Scene-Representation>DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation</a></li>
+        <li><a href=#Object-Pose-Estimation-Using-Implicit-Representation-For-Transparent-Objects>Object Pose Estimation Using Implicit Representation For Transparent Objects</a></li>
+        <li><a href=#GlossyGS:-Inverse-Rendering-of-Glossy-Objects-with-3D-Gaussian-Splatting>GlossyGS: Inverse Rendering of Glossy Objects with 3D Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Gravity-aligned Rotation Averaging with Circular Regression](http://arxiv.org/abs/2410.12763)  
-Linfei Pan, Marc Pollefeys, Dániel Baráth  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Reconstructing a 3D scene from unordered images is pivotal in computer vision and robotics, with applications spanning crowd-sourced mapping and beyond. While global Structure-from-Motion (SfM) techniques are scalable and fast, they often compromise on accuracy. To address this, we introduce a principled approach that integrates gravity direction into the rotation averaging phase of global pipelines, enhancing camera orientation accuracy and reducing the degrees of freedom. This additional information is commonly available in recent consumer devices, such as smartphones, mixed-reality devices and drones, making the proposed method readily accessible. Rooted in circular regression, our algorithm has similar convergence guarantees as linear regression. It also supports scenarios where only a subset of cameras have known gravity. Additionally, we propose a mechanism to refine error-prone gravity. We achieve state-of-the-art accuracy on four large-scale datasets. Particularly, the proposed method improves upon the SfM baseline by 13 AUC@ $1^\circ$ points, on average, while running eight times faster. It also outperforms the standard planar pose graph optimization technique by 23 AUC@$1^\circ$ points. The code is at https://github.com/colmap/glomap.  
-  </ol>  
-</details>  
-**comments**: accepted at ECCV2024  
-  
-### [SplatPose+: Real-time Image-Based Pose-Agnostic 3D Anomaly Detection](http://arxiv.org/abs/2410.12080)  
-Yizhe Liu, Yan Song Hu, Yuhao Chen, John Zelek  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image-based Pose-Agnostic 3D Anomaly Detection is an important task that has emerged in industrial quality control. This task seeks to find anomalies from query images of a tested object given a set of reference images of an anomaly-free object. The challenge is that the query views (a.k.a poses) are unknown and can be different from the reference views. Currently, new methods such as OmniposeAD and SplatPose have emerged to bridge the gap by synthesizing pseudo reference images at the query views for pixel-to-pixel comparison. However, none of these methods can infer in real-time, which is critical in industrial quality control for massive production. For this reason, we propose SplatPose+, which employs a hybrid representation consisting of a Structure from Motion (SfM) model for localization and a 3D Gaussian Splatting (3DGS) model for Novel View Synthesis. Although our proposed pipeline requires the computation of an additional SfM model, it offers real-time inference speeds and faster training compared to SplatPose. Quality-wise, we achieved a new SOTA on the Pose-agnostic Anomaly Detection benchmark with the Multi-Pose Anomaly Detection (MAD-SIM) dataset.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Development of Image Collection Method Using YOLO and Siamese Network](http://arxiv.org/abs/2410.12561)  
-Chan Young Shin, Ah Hyun Lee, Jun Young Lee, Ji Min Lee, Soo Jin Park  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    As we enter the era of big data, collecting high-quality data is very important. However, collecting data by humans is not only very time-consuming but also expensive. Therefore, many scientists have devised various methods to collect data using computers. Among them, there is a method called web crawling, but the authors found that the crawling method has a problem in that unintended data is collected along with the user. The authors found that this can be filtered using the object recognition model YOLOv10. However, there are cases where data that is not properly filtered remains. Here, image reclassification was performed by additionally utilizing the distance output from the Siamese network, and higher performance was recorded than other classification models. (average \_f1 score YOLO+MobileNet 0.678->YOLO+SiameseNet 0.772)) The user can specify a distance threshold to adjust the balance between data deficiency and noise-robustness. The authors also found that the Siamese network can achieve higher performance with fewer resources because the cropped images are used for object recognition when processing images in the Siamese network. (Class 20 mean-based f1 score, non-crop+Siamese(MobileNetV3-Small) 80.94 -> crop preprocessing+Siamese(MobileNetV3-Small) 82.31) In this way, the image retrieval system that utilizes two consecutive models to reduce errors can save users' time and effort, and build better quality data faster and with fewer resources than before.  
-  </ol>  
-</details>  
-**comments**: 15 pages, 13 figures, 2 tables  
-  
-### [LoD-Loc: Aerial Visual Localization using LoD 3D Map with Neural Wireframe Alignment](http://arxiv.org/abs/2410.12269)  
-Juelin Zhu, Shen Yan, Long Wang, Shengyue Zhang, Yu Liu, Maojun Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We propose a new method named LoD-Loc for visual localization in the air. Unlike existing localization algorithms, LoD-Loc does not rely on complex 3D representations and can estimate the pose of an Unmanned Aerial Vehicle (UAV) using a Level-of-Detail (LoD) 3D map. LoD-Loc mainly achieves this goal by aligning the wireframe derived from the LoD projected model with that predicted by the neural network. Specifically, given a coarse pose provided by the UAV sensor, LoD-Loc hierarchically builds a cost volume for uniformly sampled pose hypotheses to describe pose probability distribution and select a pose with maximum probability. Each cost within this volume measures the degree of line alignment between projected and predicted wireframes. LoD-Loc also devises a 6-DoF pose optimization algorithm to refine the previous result with a differentiable Gaussian-Newton method. As no public dataset exists for the studied problem, we collect two datasets with map levels of LoD3.0 and LoD2.0, along with real RGB queries and ground-truth pose annotations. We benchmark our method and demonstrate that LoD-Loc achieves excellent performance, even surpassing current state-of-the-art methods that use textured 3D models for localization. The code and dataset are available at https://victorzoo.github.io/LoD-Loc.github.io/.  
-  </ol>  
-</details>  
-**comments**: Accepted by NeurIPS 2024; for Project page, see
-  https://victorzoo.github.io/LoD-Loc.github.io/  
-  
-### [Leveraging Spatial Attention and Edge Context for Optimized Feature Selection in Visual Localization](http://arxiv.org/abs/2410.12240)  
-Nanda Febri Istighfarin, HyungGi Jo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual localization determines an agent's precise position and orientation within an environment using visual data. It has become a critical task in the field of robotics, particularly in applications such as autonomous navigation. This is due to the ability to determine an agent's pose using cost-effective sensors such as RGB cameras. Recent methods in visual localization employ scene coordinate regression to determine the agent's pose. However, these methods face challenges as they attempt to regress 2D-3D correspondences across the entire image region, despite not all regions providing useful information. To address this issue, we introduce an attention network that selectively targets informative regions of the image. Using this network, we identify the highest-scoring features to improve the feature selection process and combine the result with edge detection. This integration ensures that the features chosen for the training buffer are located within robust regions, thereby improving 2D-3D correspondence and overall localization performance. Our approach was tested on the outdoor benchmark dataset, demonstrating superior results compared to previous methods.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [PND-Net: Plant Nutrition Deficiency and Disease Classification using Graph Convolutional Network](http://arxiv.org/abs/2410.12742)  
-Asish Bera, Debotosh Bhattacharjee, Ondrej Krejcar  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Crop yield production could be enhanced for agricultural growth if various plant nutrition deficiencies, and diseases are identified and detected at early stages. The deep learning methods have proven its superior performances in the automated detection of plant diseases and nutrition deficiencies from visual symptoms in leaves. This article proposes a new deep learning method for plant nutrition deficiencies and disease classification using a graph convolutional network (GNN), added upon a base convolutional neural network (CNN). Sometimes, a global feature descriptor might fail to capture the vital region of a diseased leaf, which causes inaccurate classification of disease. To address this issue, regional feature learning is crucial for a holistic feature aggregation. In this work, region-based feature summarization at multi-scales is explored using spatial pyramidal pooling for discriminative feature representation. A GCN is developed to capacitate learning of finer details for classifying plant diseases and insufficiency of nutrients. The proposed method, called Plant Nutrition Deficiency and Disease Network (PND-Net), is evaluated on two public datasets for nutrition deficiency, and two for disease classification using four CNNs. The best classification performances are: (a) 90.00% Banana and 90.54% Coffee nutrition deficiency; and (b) 96.18% Potato diseases and 84.30% on PlantDoc datasets using Xception backbone. Furthermore, additional experiments have been carried out for generalization, and the proposed method has achieved state-of-the-art performances on two public datasets, namely the Breast Cancer Histopathology Image Classification (BreakHis 40X: 95.50%, and BreakHis 100X: 96.79% accuracy) and Single cells in Pap smear images for cervical cancer classification (SIPaKMeD: 99.18% accuracy). Also, PND-Net achieves improved performances using five-fold cross validation.  
-  </ol>  
-</details>  
-  
-### [RAFA-Net: Region Attention Network For Food Items And Agricultural Stress Recognition](http://arxiv.org/abs/2410.12718)  
-Asish Bera, Ondrej Krejcar, Debotosh Bhattacharjee  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Deep Convolutional Neural Networks (CNNs) have facilitated remarkable success in recognizing various food items and agricultural stress. A decent performance boost has been witnessed in solving the agro-food challenges by mining and analyzing of region-based partial feature descriptors. Also, computationally expensive ensemble learning schemes using multiple CNNs have been studied in earlier works. This work proposes a region attention scheme for modelling long-range dependencies by building a correlation among different regions within an input image. The attention method enhances feature representation by learning the usefulness of context information from complementary regions. Spatial pyramidal pooling and average pooling pair aggregate partial descriptors into a holistic representation. Both pooling methods establish spatial and channel-wise relationships without incurring extra parameters. A context gating scheme is applied to refine the descriptiveness of weighted attentional features, which is relevant for classification. The proposed Region Attention network for Food items and Agricultural stress recognition method, dubbed RAFA-Net, has been experimented on three public food datasets, and has achieved state-of-the-art performances with distinct margins. The highest top-1 accuracies of RAFA-Net are 91.69%, 91.56%, and 96.97% on the UECFood-100, UECFood-256, and MAFood-121 datasets, respectively. In addition, better accuracies have been achieved on two benchmark agricultural stress datasets. The best top-1 accuracies on the Insect Pest (IP-102) and PlantDoc-27 plant disease datasets are 92.36%, and 85.54%, respectively; implying RAFA-Net's generalization capability.  
-  </ol>  
-</details>  
-  
-### [A Robust Multisource Remote Sensing Image Matching Method Utilizing Attention and Feature Enhancement Against Noise Interference](http://arxiv.org/abs/2410.11848)  
-Yuan Li, Dapeng Wu, Yaping Cui, Peng He, Yuan Zhang, Ruyan Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image matching is a fundamental and critical task of multisource remote sensing image applications. However, remote sensing images are susceptible to various noises. Accordingly, how to effectively achieve accurate matching in noise images is a challenging problem. To solve this issue, we propose a robust multisource remote sensing image matching method utilizing attention and feature enhancement against noise interference. In the first stage, we combine deep convolution with the attention mechanism of transformer to perform dense feature extraction, constructing feature descriptors with higher discriminability and robustness. Subsequently, we employ a coarse-to-fine matching strategy to achieve dense matches. In the second stage, we introduce an outlier removal network based on a binary classification mechanism, which can establish effective and geometrically consistent correspondences between images; through weighting for each correspondence, inliers vs. outliers classification are performed, as well as removing outliers from dense matches. Ultimately, we can accomplish more efficient and accurate matches. To validate the performance of the proposed method, we conduct experiments using multisource remote sensing image datasets for comparison with other state-of-the-art methods under different scenarios, including noise-free, additive random noise, and periodic stripe noise. Comparative results indicate that the proposed method has a more well-balanced performance and robustness. The proposed method contributes a valuable reference for solving the difficult problem of noise image matching.  
-  </ol>  
-</details>  
-**comments**: 21 pages, 13 figures  
-  
-  
-
-
-
-## Image Matching  
-
-### [A Robust Multisource Remote Sensing Image Matching Method Utilizing Attention and Feature Enhancement Against Noise Interference](http://arxiv.org/abs/2410.11848)  
-Yuan Li, Dapeng Wu, Yaping Cui, Peng He, Yuan Zhang, Ruyan Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Image matching is a fundamental and critical task of multisource remote sensing image applications. However, remote sensing images are susceptible to various noises. Accordingly, how to effectively achieve accurate matching in noise images is a challenging problem. To solve this issue, we propose a robust multisource remote sensing image matching method utilizing attention and feature enhancement against noise interference. In the first stage, we combine deep convolution with the attention mechanism of transformer to perform dense feature extraction, constructing feature descriptors with higher discriminability and robustness. Subsequently, we employ a coarse-to-fine matching strategy to achieve dense matches. In the second stage, we introduce an outlier removal network based on a binary classification mechanism, which can establish effective and geometrically consistent correspondences between images; through weighting for each correspondence, inliers vs. outliers classification are performed, as well as removing outliers from dense matches. Ultimately, we can accomplish more efficient and accurate matches. To validate the performance of the proposed method, we conduct experiments using multisource remote sensing image datasets for comparison with other state-of-the-art methods under different scenarios, including noise-free, additive random noise, and periodic stripe noise. Comparative results indicate that the proposed method has a more well-balanced performance and robustness. The proposed method contributes a valuable reference for solving the difficult problem of noise image matching.  
-  </ol>  
-</details>  
-**comments**: 21 pages, 13 figures  
-  
-  
-
-
-
 ## NeRF  
 
-### [3D Gaussian Splatting in Robotics: A Survey](http://arxiv.org/abs/2410.12262)  
-Siting Zhu, Guangming Wang, Dezhi Kong, Hesheng Wang  
+### [DN-4DGS: Denoised Deformable Network with Temporal-Spatial Aggregation for Dynamic Scene Rendering](http://arxiv.org/abs/2410.13607)  
+Jiahao Lu, Jiacheng Deng, Ruijie Zhu, Yanzhe Liang, Wenfei Yang, Tianzhu Zhang, Xu Zhou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Dense 3D representations of the environment have been a long-term goal in the robotics field. While previous Neural Radiance Fields (NeRF) representation have been prevalent for its implicit, coordinate-based model, the recent emergence of 3D Gaussian Splatting (3DGS) has demonstrated remarkable potential in its explicit radiance field representation. By leveraging 3D Gaussian primitives for explicit scene representation and enabling differentiable rendering, 3DGS has shown significant advantages over other radiance fields in real-time rendering and photo-realistic performance, which is beneficial for robotic applications. In this survey, we provide a comprehensive understanding of 3DGS in the field of robotics. We divide our discussion of the related works into two main categories: the application of 3DGS and the advancements in 3DGS techniques. In the application section, we explore how 3DGS has been utilized in various robotics tasks from scene understanding and interaction perspectives. The advance of 3DGS section focuses on the improvements of 3DGS own properties in its adaptability and efficiency, aiming to enhance its performance in robotics. We then summarize the most commonly used datasets and evaluation metrics in robotics. Finally, we identify the challenges and limitations of current 3DGS methods and discuss the future development of 3DGS in robotics.  
+    Dynamic scenes rendering is an intriguing yet challenging problem. Although current methods based on NeRF have achieved satisfactory performance, they still can not reach real-time levels. Recently, 3D Gaussian Splatting (3DGS) has gar?nered researchers attention due to their outstanding rendering quality and real?time speed. Therefore, a new paradigm has been proposed: defining a canonical 3D gaussians and deforming it to individual frames in deformable fields. How?ever, since the coordinates of canonical 3D gaussians are filled with noise, which can transfer noise into the deformable fields, and there is currently no method that adequately considers the aggregation of 4D information. Therefore, we pro?pose Denoised Deformable Network with Temporal-Spatial Aggregation for Dy?namic Scene Rendering (DN-4DGS). Specifically, a Noise Suppression Strategy is introduced to change the distribution of the coordinates of the canonical 3D gaussians and suppress noise. Additionally, a Decoupled Temporal-Spatial Ag?gregation Module is designed to aggregate information from adjacent points and frames. Extensive experiments on various real-world datasets demonstrate that our method achieves state-of-the-art rendering quality under a real-time level.  
+  </ol>  
+</details>  
+**comments**: Accepted by NeurIPS 2024  
+  
+### [DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation](http://arxiv.org/abs/2410.13571)  
+Guosheng Zhao, Chaojun Ni, Xiaofeng Wang, Zheng Zhu, Guan Huang, Xinze Chen, Boyuan Wang, Youyi Zhang, Wenjun Mei, Xingang Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Closed-loop simulation is essential for advancing end-to-end autonomous driving systems. Contemporary sensor simulation methods, such as NeRF and 3DGS, rely predominantly on conditions closely aligned with training data distributions, which are largely confined to forward-driving scenarios. Consequently, these methods face limitations when rendering complex maneuvers (e.g., lane change, acceleration, deceleration). Recent advancements in autonomous-driving world models have demonstrated the potential to generate diverse driving videos. However, these approaches remain constrained to 2D video generation, inherently lacking the spatiotemporal coherence required to capture intricacies of dynamic driving environments. In this paper, we introduce \textit{DriveDreamer4D}, which enhances 4D driving scene representation leveraging world model priors. Specifically, we utilize the world model as a data machine to synthesize novel trajectory videos based on real-world driving data. Notably, we explicitly leverage structured conditions to control the spatial-temporal consistency of foreground and background elements, thus the generated data adheres closely to traffic constraints. To our knowledge, \textit{DriveDreamer4D} is the first to utilize video generation models for improving 4D reconstruction in driving scenarios. Experimental results reveal that \textit{DriveDreamer4D} significantly enhances generation quality under novel trajectory views, achieving a relative improvement in FID by 24.5\%, 39.0\%, and 10.5\% compared to PVG, $\text{S}^3$ Gaussian, and Deformable-GS. Moreover, \textit{DriveDreamer4D} markedly enhances the spatiotemporal coherence of driving agents, which is verified by a comprehensive user study and the relative increases of 20.3\%, 42.0\%, and 13.7\% in the NTA-IoU metric.  
+  </ol>  
+</details>  
+**comments**: https://drivedreamer4d.github.io  
+  
+### [Object Pose Estimation Using Implicit Representation For Transparent Objects](http://arxiv.org/abs/2410.13465)  
+Varun Burde, Artem Moroz, Vit Zeman, Pavel Burget  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Object pose estimation is a prominent task in computer vision. The object pose gives the orientation and translation of the object in real-world space, which allows various applications such as manipulation, augmented reality, etc. Various objects exhibit different properties with light, such as reflections, absorption, etc. This makes it challenging to understand the object's structure in RGB and depth channels. Recent research has been moving toward learning-based methods, which provide a more flexible and generalizable approach to object pose estimation utilizing deep learning. One such approach is the render-and-compare method, which renders the object from multiple views and compares it against the given 2D image, which often requires an object representation in the form of a CAD model. We reason that the synthetic texture of the CAD model may not be ideal for rendering and comparing operations. We showed that if the object is represented as an implicit (neural) representation in the form of Neural Radiance Field (NeRF), it exhibits a more realistic rendering of the actual scene and retains the crucial spatial features, which makes the comparison more versatile. We evaluated our NeRF implementation of the render-and-compare method on transparent datasets and found that it surpassed the current state-of-the-art results.  
   </ol>  
 </details>  
   
-### [EG-HumanNeRF: Efficient Generalizable Human NeRF Utilizing Human Prior for Sparse View](http://arxiv.org/abs/2410.12242)  
-Zhaorong Wang, Yoshihiro Kanamori, Yuki Endo  
+### [GlossyGS: Inverse Rendering of Glossy Objects with 3D Gaussian Splatting](http://arxiv.org/abs/2410.13349)  
+Shuichang Lai, Letian Huang, Jie Guo, Kai Cheng, Bowen Pan, Xiaoxiao Long, Jiangjing Lyu, Chengfei Lv, Yanwen Guo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Generalizable neural radiance field (NeRF) enables neural-based digital human rendering without per-scene retraining. When combined with human prior knowledge, high-quality human rendering can be achieved even with sparse input views. However, the inference of these methods is still slow, as a large number of neural network queries on each ray are required to ensure the rendering quality. Moreover, occluded regions often suffer from artifacts, especially when the input views are sparse. To address these issues, we propose a generalizable human NeRF framework that achieves high-quality and real-time rendering with sparse input views by extensively leveraging human prior knowledge. We accelerate the rendering with a two-stage sampling reduction strategy: first constructing boundary meshes around the human geometry to reduce the number of ray samples for sampling guidance regression, and then volume rendering using fewer guided samples. To improve rendering quality, especially in occluded regions, we propose an occlusion-aware attention mechanism to extract occlusion information from the human priors, followed by an image space refinement network to improve rendering quality. Furthermore, for volume rendering, we adopt a signed ray distance function (SRDF) formulation, which allows us to propose an SRDF loss at every sample position to improve the rendering quality further. Our experiments demonstrate that our method outperforms the state-of-the-art methods in rendering quality and has a competitive rendering speed compared with speed-prioritized novel view synthesis methods.  
+    Reconstructing objects from posed images is a crucial and complex task in computer graphics and computer vision. While NeRF-based neural reconstruction methods have exhibited impressive reconstruction ability, they tend to be time-comsuming. Recent strategies have adopted 3D Gaussian Splatting (3D-GS) for inverse rendering, which have led to quick and effective outcomes. However, these techniques generally have difficulty in producing believable geometries and materials for glossy objects, a challenge that stems from the inherent ambiguities of inverse rendering. To address this, we introduce GlossyGS, an innovative 3D-GS-based inverse rendering framework that aims to precisely reconstruct the geometry and materials of glossy objects by integrating material priors. The key idea is the use of micro-facet geometry segmentation prior, which helps to reduce the intrinsic ambiguities and improve the decomposition of geometries and materials. Additionally, we introduce a normal map prefiltering strategy to more accurately simulate the normal distribution of reflective surfaces. These strategies are integrated into a hybrid geometry and material representation that employs both explicit and implicit methods to depict glossy objects. We demonstrate through quantitative analysis and qualitative visualization that the proposed method is effective to reconstruct high-fidelity geometries and materials of glossy objects, and performs favorably against state-of-the-arts.  
   </ol>  
 </details>  
-**comments**: project page: https://github.com/LarsPh/EG-HumanNeRF  
   
   
 
