@@ -1,56 +1,56 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Sim2real-Cattle-Joint-Estimation-in-3D-point-clouds>Sim2real Cattle Joint Estimation in 3D point clouds</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#DN-4DGS:-Denoised-Deformable-Network-with-Temporal-Spatial-Aggregation-for-Dynamic-Scene-Rendering>DN-4DGS: Denoised Deformable Network with Temporal-Spatial Aggregation for Dynamic Scene Rendering</a></li>
-        <li><a href=#DriveDreamer4D:-World-Models-Are-Effective-Data-Machines-for-4D-Driving-Scene-Representation>DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation</a></li>
-        <li><a href=#Object-Pose-Estimation-Using-Implicit-Representation-For-Transparent-Objects>Object Pose Estimation Using Implicit Representation For Transparent Objects</a></li>
-        <li><a href=#GlossyGS:-Inverse-Rendering-of-Glossy-Objects-with-3D-Gaussian-Splatting>GlossyGS: Inverse Rendering of Glossy Objects with 3D Gaussian Splatting</a></li>
+        <li><a href=#Learning-autonomous-driving-from-aerial-imagery>Learning autonomous driving from aerial imagery</a></li>
+        <li><a href=#DaRePlane:-Direction-aware-Representations-for-Dynamic-Scene-Reconstruction>DaRePlane: Direction-aware Representations for Dynamic Scene Reconstruction</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## Keypoint Detection  
+
+### [Sim2real Cattle Joint Estimation in 3D point clouds](http://arxiv.org/abs/2410.14419)  
+Okour Mohammad, Falque Raphael, Alempijevic Alen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Understanding the well-being of cattle is crucial in various agricultural contexts. Cattle's body shape and joint articulation carry significant information about their welfare, yet acquiring comprehensive datasets for 3D body pose estimation presents a formidable challenge. This study delves into the construction of such a dataset specifically tailored for cattle. Leveraging the expertise of digital artists, we use a single animated 3D model to represent diverse cattle postures. To address the disparity between virtual and real-world data, we augment the 3D model's shape to encompass a range of potential body appearances, thereby narrowing the "sim2real" gap. We use these annotated models to train a deep-learning framework capable of estimating internal joints solely based on external surface curvature. Our contribution is specifically the use of geodesic distance over the surface manifold, coupled with multilateration to extract joints in a semantic keypoint detection encoder-decoder architecture. We demonstrate the robustness of joint extraction by comparing the link lengths extracted on real cattle mobbing and walking within a race. Furthermore, inspired by the established allometric relationship between bone length and the overall height of mammals, we utilise the estimated joints to predict hip height within a real cattle dataset, extending the utility of our approach to offer insights into improving cattle monitoring practices.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## NeRF  
 
-### [DN-4DGS: Denoised Deformable Network with Temporal-Spatial Aggregation for Dynamic Scene Rendering](http://arxiv.org/abs/2410.13607)  
-Jiahao Lu, Jiacheng Deng, Ruijie Zhu, Yanzhe Liang, Wenfei Yang, Tianzhu Zhang, Xu Zhou  
+### [Learning autonomous driving from aerial imagery](http://arxiv.org/abs/2410.14177)  
+Varun Murali, Guy Rosman, Sertac Karaman, Daniela Rus  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Dynamic scenes rendering is an intriguing yet challenging problem. Although current methods based on NeRF have achieved satisfactory performance, they still can not reach real-time levels. Recently, 3D Gaussian Splatting (3DGS) has gar?nered researchers attention due to their outstanding rendering quality and real?time speed. Therefore, a new paradigm has been proposed: defining a canonical 3D gaussians and deforming it to individual frames in deformable fields. How?ever, since the coordinates of canonical 3D gaussians are filled with noise, which can transfer noise into the deformable fields, and there is currently no method that adequately considers the aggregation of 4D information. Therefore, we pro?pose Denoised Deformable Network with Temporal-Spatial Aggregation for Dy?namic Scene Rendering (DN-4DGS). Specifically, a Noise Suppression Strategy is introduced to change the distribution of the coordinates of the canonical 3D gaussians and suppress noise. Additionally, a Decoupled Temporal-Spatial Ag?gregation Module is designed to aggregate information from adjacent points and frames. Extensive experiments on various real-world datasets demonstrate that our method achieves state-of-the-art rendering quality under a real-time level.  
+    In this work, we consider the problem of learning end to end perception to control for ground vehicles solely from aerial imagery. Photogrammetric simulators allow the synthesis of novel views through the transformation of pre-generated assets into novel views.However, they have a large setup cost, require careful collection of data and often human effort to create usable simulators. We use a Neural Radiance Field (NeRF) as an intermediate representation to synthesize novel views from the point of view of a ground vehicle. These novel viewpoints can then be used for several downstream autonomous navigation applications. In this work, we demonstrate the utility of novel view synthesis though the application of training a policy for end to end learning from images and depth data. In a traditional real to sim to real framework, the collected data would be transformed into a visual simulator which could then be used to generate novel views. In contrast, using a NeRF allows a compact representation and the ability to optimize over the parameters of the visual simulator as more data is gathered in the environment. We demonstrate the efficacy of our method in a custom built mini-city environment through the deployment of imitation policies on robotic cars. We additionally consider the task of place localization and demonstrate that our method is able to relocalize the car in the real world.  
   </ol>  
 </details>  
-**comments**: Accepted by NeurIPS 2024  
+**comments**: Presented at IROS 2024  
   
-### [DriveDreamer4D: World Models Are Effective Data Machines for 4D Driving Scene Representation](http://arxiv.org/abs/2410.13571)  
-Guosheng Zhao, Chaojun Ni, Xiaofeng Wang, Zheng Zhu, Guan Huang, Xinze Chen, Boyuan Wang, Youyi Zhang, Wenjun Mei, Xingang Wang  
+### [DaRePlane: Direction-aware Representations for Dynamic Scene Reconstruction](http://arxiv.org/abs/2410.14169)  
+Ange Lou, Benjamin Planche, Zhongpai Gao, Yamin Li, Tianyu Luan, Hao Ding, Meng Zheng, Terrence Chen, Ziyan Wu, Jack Noble  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Closed-loop simulation is essential for advancing end-to-end autonomous driving systems. Contemporary sensor simulation methods, such as NeRF and 3DGS, rely predominantly on conditions closely aligned with training data distributions, which are largely confined to forward-driving scenarios. Consequently, these methods face limitations when rendering complex maneuvers (e.g., lane change, acceleration, deceleration). Recent advancements in autonomous-driving world models have demonstrated the potential to generate diverse driving videos. However, these approaches remain constrained to 2D video generation, inherently lacking the spatiotemporal coherence required to capture intricacies of dynamic driving environments. In this paper, we introduce \textit{DriveDreamer4D}, which enhances 4D driving scene representation leveraging world model priors. Specifically, we utilize the world model as a data machine to synthesize novel trajectory videos based on real-world driving data. Notably, we explicitly leverage structured conditions to control the spatial-temporal consistency of foreground and background elements, thus the generated data adheres closely to traffic constraints. To our knowledge, \textit{DriveDreamer4D} is the first to utilize video generation models for improving 4D reconstruction in driving scenarios. Experimental results reveal that \textit{DriveDreamer4D} significantly enhances generation quality under novel trajectory views, achieving a relative improvement in FID by 24.5\%, 39.0\%, and 10.5\% compared to PVG, $\text{S}^3$ Gaussian, and Deformable-GS. Moreover, \textit{DriveDreamer4D} markedly enhances the spatiotemporal coherence of driving agents, which is verified by a comprehensive user study and the relative increases of 20.3\%, 42.0\%, and 13.7\% in the NTA-IoU metric.  
+    Numerous recent approaches to modeling and re-rendering dynamic scenes leverage plane-based explicit representations, addressing slow training times associated with models like neural radiance fields (NeRF) and Gaussian splatting (GS). However, merely decomposing 4D dynamic scenes into multiple 2D plane-based representations is insufficient for high-fidelity re-rendering of scenes with complex motions. In response, we present DaRePlane, a novel direction-aware representation approach that captures scene dynamics from six different directions. This learned representation undergoes an inverse dual-tree complex wavelet transformation (DTCWT) to recover plane-based information. Within NeRF pipelines, DaRePlane computes features for each space-time point by fusing vectors from these recovered planes, then passed to a tiny MLP for color regression. When applied to Gaussian splatting, DaRePlane computes the features of Gaussian points, followed by a tiny multi-head MLP for spatial-time deformation prediction. Notably, to address redundancy introduced by the six real and six imaginary direction-aware wavelet coefficients, we introduce a trainable masking approach, mitigating storage issues without significant performance decline. To demonstrate the generality and efficiency of DaRePlane, we test it on both regular and surgical dynamic scenes, for both NeRF and GS systems. Extensive experiments show that DaRePlane yields state-of-the-art performance in novel view synthesis for various complex dynamic scenes.  
   </ol>  
 </details>  
-**comments**: https://drivedreamer4d.github.io  
-  
-### [Object Pose Estimation Using Implicit Representation For Transparent Objects](http://arxiv.org/abs/2410.13465)  
-Varun Burde, Artem Moroz, Vit Zeman, Pavel Burget  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Object pose estimation is a prominent task in computer vision. The object pose gives the orientation and translation of the object in real-world space, which allows various applications such as manipulation, augmented reality, etc. Various objects exhibit different properties with light, such as reflections, absorption, etc. This makes it challenging to understand the object's structure in RGB and depth channels. Recent research has been moving toward learning-based methods, which provide a more flexible and generalizable approach to object pose estimation utilizing deep learning. One such approach is the render-and-compare method, which renders the object from multiple views and compares it against the given 2D image, which often requires an object representation in the form of a CAD model. We reason that the synthetic texture of the CAD model may not be ideal for rendering and comparing operations. We showed that if the object is represented as an implicit (neural) representation in the form of Neural Radiance Field (NeRF), it exhibits a more realistic rendering of the actual scene and retains the crucial spatial features, which makes the comparison more versatile. We evaluated our NeRF implementation of the render-and-compare method on transparent datasets and found that it surpassed the current state-of-the-art results.  
-  </ol>  
-</details>  
-  
-### [GlossyGS: Inverse Rendering of Glossy Objects with 3D Gaussian Splatting](http://arxiv.org/abs/2410.13349)  
-Shuichang Lai, Letian Huang, Jie Guo, Kai Cheng, Bowen Pan, Xiaoxiao Long, Jiangjing Lyu, Chengfei Lv, Yanwen Guo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Reconstructing objects from posed images is a crucial and complex task in computer graphics and computer vision. While NeRF-based neural reconstruction methods have exhibited impressive reconstruction ability, they tend to be time-comsuming. Recent strategies have adopted 3D Gaussian Splatting (3D-GS) for inverse rendering, which have led to quick and effective outcomes. However, these techniques generally have difficulty in producing believable geometries and materials for glossy objects, a challenge that stems from the inherent ambiguities of inverse rendering. To address this, we introduce GlossyGS, an innovative 3D-GS-based inverse rendering framework that aims to precisely reconstruct the geometry and materials of glossy objects by integrating material priors. The key idea is the use of micro-facet geometry segmentation prior, which helps to reduce the intrinsic ambiguities and improve the decomposition of geometries and materials. Additionally, we introduce a normal map prefiltering strategy to more accurately simulate the normal distribution of reflective surfaces. These strategies are integrated into a hybrid geometry and material representation that employs both explicit and implicit methods to depict glossy objects. We demonstrate through quantitative analysis and qualitative visualization that the proposed method is effective to reconstruct high-fidelity geometries and materials of glossy objects, and performs favorably against state-of-the-arts.  
-  </ol>  
-</details>  
+**comments**: arXiv admin note: substantial text overlap with arXiv:2403.02265  
   
   
 
