@@ -1,28 +1,84 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Neural-Active-Structure-from-Motion-in-Dark-and-Textureless-Environment>Neural Active Structure-from-Motion in Dark and Textureless Environment</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#GSSF:-Generalized-Structural-Sparse-Function-for-Deep-Cross-modal-Metric-Learning>GSSF: Generalized Structural Sparse Function for Deep Cross-modal Metric Learning</a></li>
+        <li><a href=#Visual-Navigation-of-Digital-Libraries:-Retrieval-and-Classification-of-Images-in-the-National-Library-of-Norway's-Digitised-Book-Collection>Visual Navigation of Digital Libraries: Retrieval and Classification of Images in the National Library of Norway's Digitised Book Collection</a></li>
+      </ul>
+    </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Sim2real-Cattle-Joint-Estimation-in-3D-point-clouds>Sim2real Cattle Joint Estimation in 3D point clouds</a></li>
+        <li><a href=#Self-Supervised-Keypoint-Detection-with-Distilled-Depth-Keypoint-Representation>Self-Supervised Keypoint Detection with Distilled Depth Keypoint Representation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Learning-autonomous-driving-from-aerial-imagery>Learning autonomous driving from aerial imagery</a></li>
-        <li><a href=#DaRePlane:-Direction-aware-Representations-for-Dynamic-Scene-Reconstruction>DaRePlane: Direction-aware Representations for Dynamic Scene Reconstruction</a></li>
+        <li><a href=#FrugalNeRF:-Fast-Convergence-for-Few-shot-Novel-View-Synthesis-without-Learned-Priors>FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors</a></li>
+        <li><a href=#EF-3DGS:-Event-Aided-Free-Trajectory-3D-Gaussian-Splatting>EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting</a></li>
+        <li><a href=#Neural-Radiance-Field-Image-Refinement-through-End-to-End-Sampling-Point-Optimization>Neural Radiance Field Image Refinement through End-to-End Sampling Point Optimization</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Keypoint Detection  
+## SFM  
 
-### [Sim2real Cattle Joint Estimation in 3D point clouds](http://arxiv.org/abs/2410.14419)  
-Okour Mohammad, Falque Raphael, Alempijevic Alen  
+### [Neural Active Structure-from-Motion in Dark and Textureless Environment](http://arxiv.org/abs/2410.15378)  
+Kazuto Ichimaru, Diego Thomas, Takafumi Iwaguchi, Hiroshi Kawasaki  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Understanding the well-being of cattle is crucial in various agricultural contexts. Cattle's body shape and joint articulation carry significant information about their welfare, yet acquiring comprehensive datasets for 3D body pose estimation presents a formidable challenge. This study delves into the construction of such a dataset specifically tailored for cattle. Leveraging the expertise of digital artists, we use a single animated 3D model to represent diverse cattle postures. To address the disparity between virtual and real-world data, we augment the 3D model's shape to encompass a range of potential body appearances, thereby narrowing the "sim2real" gap. We use these annotated models to train a deep-learning framework capable of estimating internal joints solely based on external surface curvature. Our contribution is specifically the use of geodesic distance over the surface manifold, coupled with multilateration to extract joints in a semantic keypoint detection encoder-decoder architecture. We demonstrate the robustness of joint extraction by comparing the link lengths extracted on real cattle mobbing and walking within a race. Furthermore, inspired by the established allometric relationship between bone length and the overall height of mammals, we utilise the estimated joints to predict hip height within a real cattle dataset, extending the utility of our approach to offer insights into improving cattle monitoring practices.  
+    Active 3D measurement, especially structured light (SL) has been widely used in various fields for its robustness against textureless or equivalent surfaces by low light illumination. In addition, reconstruction of large scenes by moving the SL system has become popular, however, there have been few practical techniques to obtain the system's precise pose information only from images, since most conventional techniques are based on image features, which cannot be retrieved under textureless environments. In this paper, we propose a simultaneous shape reconstruction and pose estimation technique for SL systems from an image set where sparsely projected patterns onto the scene are observed (i.e. no scene texture information), which we call Active SfM. To achieve this, we propose a full optimization framework of the volumetric shape that employs neural signed distance fields (Neural-SDF) for SL with the goal of not only reconstructing the scene shape but also estimating the poses for each motion of the system. Experimental results show that the proposed method is able to achieve accurate shape reconstruction as well as pose estimation from images where only projected patterns are observed.  
+  </ol>  
+</details>  
+**comments**: Accepted in Asian Conference on Computer Vision 2024  
+  
+  
+
+
+
+## Visual Localization  
+
+### [GSSF: Generalized Structural Sparse Function for Deep Cross-modal Metric Learning](http://arxiv.org/abs/2410.15266)  
+[[code](https://github.com/paranioar/gssf)]  
+Haiwen Diao, Ying Zhang, Shang Gao, Jiawen Zhu, Long Chen, Huchuan Lu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Cross-modal metric learning is a prominent research topic that bridges the semantic heterogeneity between vision and language. Existing methods frequently utilize simple cosine or complex distance metrics to transform the pairwise features into a similarity score, which suffers from an inadequate or inefficient capability for distance measurements. Consequently, we propose a Generalized Structural Sparse Function to dynamically capture thorough and powerful relationships across modalities for pair-wise similarity learning while remaining concise but efficient. Specifically, the distance metric delicately encapsulates two formats of diagonal and block-diagonal terms, automatically distinguishing and highlighting the cross-channel relevancy and dependency inside a structured and organized topology. Hence, it thereby empowers itself to adapt to the optimal matching patterns between the paired features and reaches a sweet spot between model complexity and capability. Extensive experiments on cross-modal and two extra uni-modal retrieval tasks (image-text retrieval, person re-identification, fine-grained image retrieval) have validated its superiority and flexibility over various popular retrieval frameworks. More importantly, we further discover that it can be seamlessly incorporated into multiple application scenarios, and demonstrates promising prospects from Attention Mechanism to Knowledge Distillation in a plug-and-play manner. Our code is publicly available at: https://github.com/Paranioar/GSSF.  
+  </ol>  
+</details>  
+**comments**: 12 pages, 9 figures, Accepted by TIP2024  
+  
+### [Visual Navigation of Digital Libraries: Retrieval and Classification of Images in the National Library of Norway's Digitised Book Collection](http://arxiv.org/abs/2410.14969)  
+Marie Roald, Magnus Breder Birkenes, Lars Gunnarsønn Bagøien Johnsen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Digital tools for text analysis have long been essential for the searchability and accessibility of digitised library collections. Recent computer vision advances have introduced similar capabilities for visual materials, with deep learning-based embeddings showing promise for analysing visual heritage. Given that many books feature visuals in addition to text, taking advantage of these breakthroughs is critical to making library collections open and accessible. In this work, we present a proof-of-concept image search application for exploring images in the National Library of Norway's pre-1900 books, comparing Vision Transformer (ViT), Contrastive Language-Image Pre-training (CLIP), and Sigmoid loss for Language-Image Pre-training (SigLIP) embeddings for image retrieval and classification. Our results show that the application performs well for exact image retrieval, with SigLIP embeddings slightly outperforming CLIP and ViT in both retrieval and classification tasks. Additionally, SigLIP-based image classification can aid in cleaning image datasets from a digitisation pipeline.  
+  </ol>  
+</details>  
+**comments**: 13 pages, 2 figures, 4 tables, Accepted to the 2024 Computational
+  Humanities Research Conference (CHR)  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Self-Supervised Keypoint Detection with Distilled Depth Keypoint Representation](http://arxiv.org/abs/2410.14700)  
+Aman Anand, Elyas Rashno, Amir Eskandari, Farhana Zulkernine  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Existing unsupervised keypoint detection methods apply artificial deformations to images such as masking a significant portion of images and using reconstruction of original image as a learning objective to detect keypoints. However, this approach lacks depth information in the image and often detects keypoints on the background. To address this, we propose Distill-DKP, a novel cross-modal knowledge distillation framework that leverages depth maps and RGB images for keypoint detection in a self-supervised setting. During training, Distill-DKP extracts embedding-level knowledge from a depth-based teacher model to guide an image-based student model with inference restricted to the student. Experiments show that Distill-DKP significantly outperforms previous unsupervised methods by reducing mean L2 error by 47.15% on Human3.6M, mean average error by 5.67% on Taichi, and improving keypoints accuracy by 1.3% on DeepFashion dataset. Detailed ablation studies demonstrate the sensitivity of knowledge distillation across different layers of the network. Project Page: https://23wm13.github.io/distill-dkp/  
   </ol>  
 </details>  
   
@@ -32,25 +88,34 @@ Okour Mohammad, Falque Raphael, Alempijevic Alen
 
 ## NeRF  
 
-### [Learning autonomous driving from aerial imagery](http://arxiv.org/abs/2410.14177)  
-Varun Murali, Guy Rosman, Sertac Karaman, Daniela Rus  
+### [FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors](http://arxiv.org/abs/2410.16271)  
+Chin-Yang Lin, Chung-Ho Wu, Chang-Han Yeh, Shih-Han Yen, Cheng Sun, Yu-Lun Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this work, we consider the problem of learning end to end perception to control for ground vehicles solely from aerial imagery. Photogrammetric simulators allow the synthesis of novel views through the transformation of pre-generated assets into novel views.However, they have a large setup cost, require careful collection of data and often human effort to create usable simulators. We use a Neural Radiance Field (NeRF) as an intermediate representation to synthesize novel views from the point of view of a ground vehicle. These novel viewpoints can then be used for several downstream autonomous navigation applications. In this work, we demonstrate the utility of novel view synthesis though the application of training a policy for end to end learning from images and depth data. In a traditional real to sim to real framework, the collected data would be transformed into a visual simulator which could then be used to generate novel views. In contrast, using a NeRF allows a compact representation and the ability to optimize over the parameters of the visual simulator as more data is gathered in the environment. We demonstrate the efficacy of our method in a custom built mini-city environment through the deployment of imitation policies on robotic cars. We additionally consider the task of place localization and demonstrate that our method is able to relocalize the car in the real world.  
+    Neural Radiance Fields (NeRF) face significant challenges in few-shot scenarios, primarily due to overfitting and long training times for high-fidelity rendering. Existing methods, such as FreeNeRF and SparseNeRF, use frequency regularization or pre-trained priors but struggle with complex scheduling and bias. We introduce FrugalNeRF, a novel few-shot NeRF framework that leverages weight-sharing voxels across multiple scales to efficiently represent scene details. Our key contribution is a cross-scale geometric adaptation scheme that selects pseudo ground truth depth based on reprojection errors across scales. This guides training without relying on externally learned priors, enabling full utilization of the training data. It can also integrate pre-trained priors, enhancing quality without slowing convergence. Experiments on LLFF, DTU, and RealEstate-10K show that FrugalNeRF outperforms other few-shot NeRF methods while significantly reducing training time, making it a practical solution for efficient and accurate 3D scene reconstruction.  
   </ol>  
 </details>  
-**comments**: Presented at IROS 2024  
+**comments**: Project page: https://linjohnss.github.io/frugalnerf/  
   
-### [DaRePlane: Direction-aware Representations for Dynamic Scene Reconstruction](http://arxiv.org/abs/2410.14169)  
-Ange Lou, Benjamin Planche, Zhongpai Gao, Yamin Li, Tianyu Luan, Hao Ding, Meng Zheng, Terrence Chen, Ziyan Wu, Jack Noble  
+### [EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](http://arxiv.org/abs/2410.15392)  
+Bohao Liao, Wei Zhai, Zengyu Wan, Tianzhu Zhang, Yang Cao, Zheng-Jun Zha  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Numerous recent approaches to modeling and re-rendering dynamic scenes leverage plane-based explicit representations, addressing slow training times associated with models like neural radiance fields (NeRF) and Gaussian splatting (GS). However, merely decomposing 4D dynamic scenes into multiple 2D plane-based representations is insufficient for high-fidelity re-rendering of scenes with complex motions. In response, we present DaRePlane, a novel direction-aware representation approach that captures scene dynamics from six different directions. This learned representation undergoes an inverse dual-tree complex wavelet transformation (DTCWT) to recover plane-based information. Within NeRF pipelines, DaRePlane computes features for each space-time point by fusing vectors from these recovered planes, then passed to a tiny MLP for color regression. When applied to Gaussian splatting, DaRePlane computes the features of Gaussian points, followed by a tiny multi-head MLP for spatial-time deformation prediction. Notably, to address redundancy introduced by the six real and six imaginary direction-aware wavelet coefficients, we introduce a trainable masking approach, mitigating storage issues without significant performance decline. To demonstrate the generality and efficiency of DaRePlane, we test it on both regular and surgical dynamic scenes, for both NeRF and GS systems. Extensive experiments show that DaRePlane yields state-of-the-art performance in novel view synthesis for various complex dynamic scenes.  
+    Scene reconstruction from casually captured videos has wide applications in real-world scenarios. With recent advancements in differentiable rendering techniques, several methods have attempted to simultaneously optimize scene representations (NeRF or 3DGS) and camera poses. Despite recent progress, existing methods relying on traditional camera input tend to fail in high-speed (or equivalently low-frame-rate) scenarios. Event cameras, inspired by biological vision, record pixel-wise intensity changes asynchronously with high temporal resolution, providing valuable scene and motion information in blind inter-frame intervals. In this paper, we introduce the event camera to aid scene construction from a casually captured video for the first time, and propose Event-Aided Free-Trajectory 3DGS, called EF-3DGS, which seamlessly integrates the advantages of event cameras into 3DGS through three key components. First, we leverage the Event Generation Model (EGM) to fuse events and frames, supervising the rendered views observed by the event stream. Second, we adopt the Contrast Maximization (CMax) framework in a piece-wise manner to extract motion information by maximizing the contrast of the Image of Warped Events (IWE), thereby calibrating the estimated poses. Besides, based on the Linear Event Generation Model (LEGM), the brightness information encoded in the IWE is also utilized to constrain the 3DGS in the gradient domain. Third, to mitigate the absence of color information of events, we introduce photometric bundle adjustment (PBA) to ensure view consistency across events and frames.We evaluate our method on the public Tanks and Temples benchmark and a newly collected real-world dataset, RealEv-DAVIS. Our project page is https://lbh666.github.io/ef-3dgs/.  
   </ol>  
 </details>  
-**comments**: arXiv admin note: substantial text overlap with arXiv:2403.02265  
+**comments**: Project Page: https://lbh666.github.io/ef-3dgs/  
+  
+### [Neural Radiance Field Image Refinement through End-to-End Sampling Point Optimization](http://arxiv.org/abs/2410.14958)  
+Kazuhiro Ohta, Satoshi Ono  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Field (NeRF), capable of synthesizing high-quality novel viewpoint images, suffers from issues like artifact occurrence due to its fixed sampling points during rendering. This study proposes a method that optimizes sampling points to reduce artifacts and produce more detailed images.  
+  </ol>  
+</details>  
   
   
 
