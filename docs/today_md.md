@@ -1,121 +1,59 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Neural-Active-Structure-from-Motion-in-Dark-and-Textureless-Environment>Neural Active Structure-from-Motion in Dark and Textureless Environment</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#GSSF:-Generalized-Structural-Sparse-Function-for-Deep-Cross-modal-Metric-Learning>GSSF: Generalized Structural Sparse Function for Deep Cross-modal Metric Learning</a></li>
-        <li><a href=#Visual-Navigation-of-Digital-Libraries:-Retrieval-and-Classification-of-Images-in-the-National-Library-of-Norway's-Digitised-Book-Collection>Visual Navigation of Digital Libraries: Retrieval and Classification of Images in the National Library of Norway's Digitised Book Collection</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#Self-Supervised-Keypoint-Detection-with-Distilled-Depth-Keypoint-Representation>Self-Supervised Keypoint Detection with Distilled Depth Keypoint Representation</a></li>
-      </ul>
-    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#FrugalNeRF:-Fast-Convergence-for-Few-shot-Novel-View-Synthesis-without-Learned-Priors>FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors</a></li>
-        <li><a href=#EF-3DGS:-Event-Aided-Free-Trajectory-3D-Gaussian-Splatting>EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting</a></li>
-        <li><a href=#Neural-Radiance-Field-Image-Refinement-through-End-to-End-Sampling-Point-Optimization>Neural Radiance Field Image Refinement through End-to-End Sampling Point Optimization</a></li>
+        <li><a href=#LVSM:-A-Large-View-Synthesis-Model-with-Minimal-3D-Inductive-Bias>LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias</a></li>
+        <li><a href=#E-3DGS:-Gaussian-Splatting-with-Exposure-and-Motion-Events>E-3DGS: Gaussian Splatting with Exposure and Motion Events</a></li>
+        <li><a href=#Joker:-Conditional-3D-Head-Synthesis-with-Extreme-Facial-Expressions>Joker: Conditional 3D Head Synthesis with Extreme Facial Expressions</a></li>
+        <li><a href=#GS-LIVM:-Real-Time-Photo-Realistic-LiDAR-Inertial-Visual-Mapping-with-Gaussian-Splatting>GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Neural Active Structure-from-Motion in Dark and Textureless Environment](http://arxiv.org/abs/2410.15378)  
-Kazuto Ichimaru, Diego Thomas, Takafumi Iwaguchi, Hiroshi Kawasaki  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Active 3D measurement, especially structured light (SL) has been widely used in various fields for its robustness against textureless or equivalent surfaces by low light illumination. In addition, reconstruction of large scenes by moving the SL system has become popular, however, there have been few practical techniques to obtain the system's precise pose information only from images, since most conventional techniques are based on image features, which cannot be retrieved under textureless environments. In this paper, we propose a simultaneous shape reconstruction and pose estimation technique for SL systems from an image set where sparsely projected patterns onto the scene are observed (i.e. no scene texture information), which we call Active SfM. To achieve this, we propose a full optimization framework of the volumetric shape that employs neural signed distance fields (Neural-SDF) for SL with the goal of not only reconstructing the scene shape but also estimating the poses for each motion of the system. Experimental results show that the proposed method is able to achieve accurate shape reconstruction as well as pose estimation from images where only projected patterns are observed.  
-  </ol>  
-</details>  
-**comments**: Accepted in Asian Conference on Computer Vision 2024  
-  
-  
-
-
-
-## Visual Localization  
-
-### [GSSF: Generalized Structural Sparse Function for Deep Cross-modal Metric Learning](http://arxiv.org/abs/2410.15266)  
-[[code](https://github.com/paranioar/gssf)]  
-Haiwen Diao, Ying Zhang, Shang Gao, Jiawen Zhu, Long Chen, Huchuan Lu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Cross-modal metric learning is a prominent research topic that bridges the semantic heterogeneity between vision and language. Existing methods frequently utilize simple cosine or complex distance metrics to transform the pairwise features into a similarity score, which suffers from an inadequate or inefficient capability for distance measurements. Consequently, we propose a Generalized Structural Sparse Function to dynamically capture thorough and powerful relationships across modalities for pair-wise similarity learning while remaining concise but efficient. Specifically, the distance metric delicately encapsulates two formats of diagonal and block-diagonal terms, automatically distinguishing and highlighting the cross-channel relevancy and dependency inside a structured and organized topology. Hence, it thereby empowers itself to adapt to the optimal matching patterns between the paired features and reaches a sweet spot between model complexity and capability. Extensive experiments on cross-modal and two extra uni-modal retrieval tasks (image-text retrieval, person re-identification, fine-grained image retrieval) have validated its superiority and flexibility over various popular retrieval frameworks. More importantly, we further discover that it can be seamlessly incorporated into multiple application scenarios, and demonstrates promising prospects from Attention Mechanism to Knowledge Distillation in a plug-and-play manner. Our code is publicly available at: https://github.com/Paranioar/GSSF.  
-  </ol>  
-</details>  
-**comments**: 12 pages, 9 figures, Accepted by TIP2024  
-  
-### [Visual Navigation of Digital Libraries: Retrieval and Classification of Images in the National Library of Norway's Digitised Book Collection](http://arxiv.org/abs/2410.14969)  
-Marie Roald, Magnus Breder Birkenes, Lars Gunnarsønn Bagøien Johnsen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Digital tools for text analysis have long been essential for the searchability and accessibility of digitised library collections. Recent computer vision advances have introduced similar capabilities for visual materials, with deep learning-based embeddings showing promise for analysing visual heritage. Given that many books feature visuals in addition to text, taking advantage of these breakthroughs is critical to making library collections open and accessible. In this work, we present a proof-of-concept image search application for exploring images in the National Library of Norway's pre-1900 books, comparing Vision Transformer (ViT), Contrastive Language-Image Pre-training (CLIP), and Sigmoid loss for Language-Image Pre-training (SigLIP) embeddings for image retrieval and classification. Our results show that the application performs well for exact image retrieval, with SigLIP embeddings slightly outperforming CLIP and ViT in both retrieval and classification tasks. Additionally, SigLIP-based image classification can aid in cleaning image datasets from a digitisation pipeline.  
-  </ol>  
-</details>  
-**comments**: 13 pages, 2 figures, 4 tables, Accepted to the 2024 Computational
-  Humanities Research Conference (CHR)  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [Self-Supervised Keypoint Detection with Distilled Depth Keypoint Representation](http://arxiv.org/abs/2410.14700)  
-Aman Anand, Elyas Rashno, Amir Eskandari, Farhana Zulkernine  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Existing unsupervised keypoint detection methods apply artificial deformations to images such as masking a significant portion of images and using reconstruction of original image as a learning objective to detect keypoints. However, this approach lacks depth information in the image and often detects keypoints on the background. To address this, we propose Distill-DKP, a novel cross-modal knowledge distillation framework that leverages depth maps and RGB images for keypoint detection in a self-supervised setting. During training, Distill-DKP extracts embedding-level knowledge from a depth-based teacher model to guide an image-based student model with inference restricted to the student. Experiments show that Distill-DKP significantly outperforms previous unsupervised methods by reducing mean L2 error by 47.15% on Human3.6M, mean average error by 5.67% on Taichi, and improving keypoints accuracy by 1.3% on DeepFashion dataset. Detailed ablation studies demonstrate the sensitivity of knowledge distillation across different layers of the network. Project Page: https://23wm13.github.io/distill-dkp/  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## NeRF  
 
-### [FrugalNeRF: Fast Convergence for Few-shot Novel View Synthesis without Learned Priors](http://arxiv.org/abs/2410.16271)  
-Chin-Yang Lin, Chung-Ho Wu, Chang-Han Yeh, Shih-Han Yen, Cheng Sun, Yu-Lun Liu  
+### [LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias](http://arxiv.org/abs/2410.17242)  
+Haian Jin, Hanwen Jiang, Hao Tan, Kai Zhang, Sai Bi, Tianyuan Zhang, Fujun Luan, Noah Snavely, Zexiang Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) face significant challenges in few-shot scenarios, primarily due to overfitting and long training times for high-fidelity rendering. Existing methods, such as FreeNeRF and SparseNeRF, use frequency regularization or pre-trained priors but struggle with complex scheduling and bias. We introduce FrugalNeRF, a novel few-shot NeRF framework that leverages weight-sharing voxels across multiple scales to efficiently represent scene details. Our key contribution is a cross-scale geometric adaptation scheme that selects pseudo ground truth depth based on reprojection errors across scales. This guides training without relying on externally learned priors, enabling full utilization of the training data. It can also integrate pre-trained priors, enhancing quality without slowing convergence. Experiments on LLFF, DTU, and RealEstate-10K show that FrugalNeRF outperforms other few-shot NeRF methods while significantly reducing training time, making it a practical solution for efficient and accurate 3D scene reconstruction.  
+    We propose the Large View Synthesis Model (LVSM), a novel transformer-based approach for scalable and generalizable novel view synthesis from sparse-view inputs. We introduce two architectures: (1) an encoder-decoder LVSM, which encodes input image tokens into a fixed number of 1D latent tokens, functioning as a fully learned scene representation, and decodes novel-view images from them; and (2) a decoder-only LVSM, which directly maps input images to novel-view outputs, completely eliminating intermediate scene representations. Both models bypass the 3D inductive biases used in previous methods -- from 3D representations (e.g., NeRF, 3DGS) to network designs (e.g., epipolar projections, plane sweeps) -- addressing novel view synthesis with a fully data-driven approach. While the encoder-decoder model offers faster inference due to its independent latent representation, the decoder-only LVSM achieves superior quality, scalability, and zero-shot generalization, outperforming previous state-of-the-art methods by 1.5 to 3.5 dB PSNR. Comprehensive evaluations across multiple datasets demonstrate that both LVSM variants achieve state-of-the-art novel view synthesis quality. Notably, our models surpass all previous methods even with reduced computational resources (1-2 GPUs). Please see our website for more details: https://haian-jin.github.io/projects/LVSM/ .  
   </ol>  
 </details>  
-**comments**: Project page: https://linjohnss.github.io/frugalnerf/  
+**comments**: project page: https://haian-jin.github.io/projects/LVSM/  
   
-### [EF-3DGS: Event-Aided Free-Trajectory 3D Gaussian Splatting](http://arxiv.org/abs/2410.15392)  
-Bohao Liao, Wei Zhai, Zengyu Wan, Tianzhu Zhang, Yang Cao, Zheng-Jun Zha  
+### [GS-LIVM: Real-Time Photo-Realistic LiDAR-Inertial-Visual Mapping with Gaussian Splatting](http://arxiv.org/abs/2410.17084)  
+Yusen Xie, Zhenmin Huang, Jin Wu, Jun Ma  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Scene reconstruction from casually captured videos has wide applications in real-world scenarios. With recent advancements in differentiable rendering techniques, several methods have attempted to simultaneously optimize scene representations (NeRF or 3DGS) and camera poses. Despite recent progress, existing methods relying on traditional camera input tend to fail in high-speed (or equivalently low-frame-rate) scenarios. Event cameras, inspired by biological vision, record pixel-wise intensity changes asynchronously with high temporal resolution, providing valuable scene and motion information in blind inter-frame intervals. In this paper, we introduce the event camera to aid scene construction from a casually captured video for the first time, and propose Event-Aided Free-Trajectory 3DGS, called EF-3DGS, which seamlessly integrates the advantages of event cameras into 3DGS through three key components. First, we leverage the Event Generation Model (EGM) to fuse events and frames, supervising the rendered views observed by the event stream. Second, we adopt the Contrast Maximization (CMax) framework in a piece-wise manner to extract motion information by maximizing the contrast of the Image of Warped Events (IWE), thereby calibrating the estimated poses. Besides, based on the Linear Event Generation Model (LEGM), the brightness information encoded in the IWE is also utilized to constrain the 3DGS in the gradient domain. Third, to mitigate the absence of color information of events, we introduce photometric bundle adjustment (PBA) to ensure view consistency across events and frames.We evaluate our method on the public Tanks and Temples benchmark and a newly collected real-world dataset, RealEv-DAVIS. Our project page is https://lbh666.github.io/ef-3dgs/.  
+    In this paper, we introduce GS-LIVM, a real-time photo-realistic LiDAR-Inertial-Visual mapping framework with Gaussian Splatting tailored for outdoor scenes. Compared to existing methods based on Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), our approach enables real-time photo-realistic mapping while ensuring high-quality image rendering in large-scale unbounded outdoor environments. In this work, Gaussian Process Regression (GPR) is employed to mitigate the issues resulting from sparse and unevenly distributed LiDAR observations. The voxel-based 3D Gaussians map representation facilitates real-time dense mapping in large outdoor environments with acceleration governed by custom CUDA kernels. Moreover, the overall framework is designed in a covariance-centered manner, where the estimated covariance is used to initialize the scale and rotation of 3D Gaussians, as well as update the parameters of the GPR. We evaluate our algorithm on several outdoor datasets, and the results demonstrate that our method achieves state-of-the-art performance in terms of mapping efficiency and rendering quality. The source code is available on GitHub.  
   </ol>  
 </details>  
-**comments**: Project Page: https://lbh666.github.io/ef-3dgs/  
+**comments**: 15 pages, 13 figures  
   
-### [Neural Radiance Field Image Refinement through End-to-End Sampling Point Optimization](http://arxiv.org/abs/2410.14958)  
-Kazuhiro Ohta, Satoshi Ono  
+### [E-3DGS: Gaussian Splatting with Exposure and Motion Events](http://arxiv.org/abs/2410.16995)  
+Xiaoting Yin, Hao Shi, Yuhan Bao, Zhenshan Bing, Yiyi Liao, Kailun Yang, Kaiwei Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Field (NeRF), capable of synthesizing high-quality novel viewpoint images, suffers from issues like artifact occurrence due to its fixed sampling points during rendering. This study proposes a method that optimizes sampling points to reduce artifacts and produce more detailed images.  
+    Estimating Neural Radiance Fields (NeRFs) from images captured under optimal conditions has been extensively explored in the vision community. However, robotic applications often face challenges such as motion blur, insufficient illumination, and high computational overhead, which adversely affect downstream tasks like navigation, inspection, and scene visualization. To address these challenges, we propose E-3DGS, a novel event-based approach that partitions events into motion (from camera or object movement) and exposure (from camera exposure), using the former to handle fast-motion scenes and using the latter to reconstruct grayscale images for high-quality training and optimization of event-based 3D Gaussian Splatting (3DGS). We introduce a novel integration of 3DGS with exposure events for high-quality reconstruction of explicit scene representations. Our versatile framework can operate on motion events alone for 3D reconstruction, enhance quality using exposure events, or adopt a hybrid mode that balances quality and effectiveness by optimizing with initial exposure events followed by high-speed motion events. We also introduce EME-3D, a real-world 3D dataset with exposure events, motion events, camera calibration parameters, and sparse point clouds. Our method is faster and delivers better reconstruction quality than event-based NeRF while being more cost-effective than NeRF methods that combine event and RGB data by using a single event sensor. By combining motion and exposure events, E-3DGS sets a new benchmark for event-based 3D reconstruction with robust performance in challenging conditions and lower hardware demands. The source code and dataset will be available at https://github.com/MasterHow/E-3DGS.  
   </ol>  
 </details>  
+**comments**: The source code and dataset will be available at
+  https://github.com/MasterHow/E-3DGS  
+  
+### [Joker: Conditional 3D Head Synthesis with Extreme Facial Expressions](http://arxiv.org/abs/2410.16395)  
+Malte Prinzler, Egor Zakharov, Vanessa Sklyarova, Berna Kabadayi, Justus Thies  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce Joker, a new method for the conditional synthesis of 3D human heads with extreme expressions. Given a single reference image of a person, we synthesize a volumetric human head with the reference identity and a new expression. We offer control over the expression via a 3D morphable model (3DMM) and textual inputs. This multi-modal conditioning signal is essential since 3DMMs alone fail to define subtle emotional changes and extreme expressions, including those involving the mouth cavity and tongue articulation. Our method is built upon a 2D diffusion-based prior that generalizes well to out-of-domain samples, such as sculptures, heavy makeup, and paintings while achieving high levels of expressiveness. To improve view consistency, we propose a new 3D distillation technique that converts predictions of our 2D prior into a neural radiance field (NeRF). Both the 2D prior and our distillation technique produce state-of-the-art results, which are confirmed by our extensive evaluations. Also, to the best of our knowledge, our method is the first to achieve view-consistent extreme tongue articulation.  
+  </ol>  
+</details>  
+**comments**: Project Page: https://malteprinzler.github.io/projects/joker/  
   
   
 
