@@ -1,49 +1,29 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#A-Robust-and-Efficient-Visual-Inertial-Initialization-with-Probabilistic-Normal-Epipolar-Constraint>A Robust and Efficient Visual-Inertial Initialization with Probabilistic Normal Epipolar Constraint</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Context-Based-Visual-Language-Place-Recognition>Context-Based Visual-Language Place Recognition</a></li>
+        <li><a href=#Generative-Adversarial-Patches-for-Physical-Attacks-on-Cross-Modal-Pedestrian-Re-Identification>Generative Adversarial Patches for Physical Attacks on Cross-Modal Pedestrian Re-Identification</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Content-Aware-Radiance-Fields:-Aligning-Model-Complexity-with-Scene-Intricacy-Through-Learned-Bitwidth-Quantization>Content-Aware Radiance Fields: Aligning Model Complexity with Scene Intricacy Through Learned Bitwidth Quantization</a></li>
-        <li><a href=#Evaluation-of-strategies-for-efficient-rate-distortion-NeRF-streaming>Evaluation of strategies for efficient rate-distortion NeRF streaming</a></li>
+        <li><a href=#EEG-Driven-3D-Object-Reconstruction-with-Color-Consistency-and-Diffusion-Prior>EEG-Driven 3D Object Reconstruction with Color Consistency and Diffusion Prior</a></li>
+        <li><a href=#ODGS:-3D-Scene-Reconstruction-from-Omnidirectional-Images-with-3D-Gaussian-Splattings>ODGS: 3D Scene Reconstruction from Omnidirectional Images with 3D Gaussian Splattings</a></li>
+        <li><a href=#GUMBEL-NERF:-Representing-Unseen-Objects-as-Part-Compositional-Neural-Radiance-Fields>GUMBEL-NERF: Representing Unseen Objects as Part-Compositional Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Image Matching  
 
-### [A Robust and Efficient Visual-Inertial Initialization with Probabilistic Normal Epipolar Constraint](http://arxiv.org/abs/2410.19473)  
-Changshi Mu, Daquan Feng, Qi Zheng, Yuan Zhuang  
+### [Generative Adversarial Patches for Physical Attacks on Cross-Modal Pedestrian Re-Identification](http://arxiv.org/abs/2410.20097)  
+Yue Su, Hao Li, Maoguo Gong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Accurate and robust initialization is essential for Visual-Inertial Odometry (VIO), as poor initialization can severely degrade pose accuracy. During initialization, it is crucial to estimate parameters such as accelerometer bias, gyroscope bias, initial velocity, and gravity, etc. The IMU sensor requires precise estimation of gyroscope bias because gyroscope bias affects rotation, velocity and position. Most existing VIO initialization methods adopt Structure from Motion (SfM) to solve for gyroscope bias. However, SfM is not stable and efficient enough in fast motion or degenerate scenes. To overcome these limitations, we extended the rotation-translation-decoupling framework by adding new uncertainty parameters and optimization modules. First, we adopt a gyroscope bias optimizer that incorporates probabilistic normal epipolar constraints. Second, we fuse IMU and visual measurements to solve for velocity, gravity, and scale efficiently. Finally, we design an additional refinement module that effectively diminishes gravity and scale errors. Extensive initialization tests on the EuRoC dataset show that our method reduces the gyroscope bias and rotation estimation error by an average of 16% and 4% respectively. It also significantly reduces the gravity error, with an average reduction of 29%.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Context-Based Visual-Language Place Recognition](http://arxiv.org/abs/2410.19341)  
-[[code](https://github.com/woo-soojin/context-based-vlpr)]  
-Soojin Woo, Seong-Woo Kim  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In vision-based robot localization and SLAM, Visual Place Recognition (VPR) is essential. This paper addresses the problem of VPR, which involves accurately recognizing the location corresponding to a given query image. A popular approach to vision-based place recognition relies on low-level visual features. Despite significant progress in recent years, place recognition based on low-level visual features is challenging when there are changes in scene appearance. To address this, end-to-end training approaches have been proposed to overcome the limitations of hand-crafted features. However, these approaches still fail under drastic changes and require large amounts of labeled data to train models, presenting a significant limitation. Methods that leverage high-level semantic information, such as objects or categories, have been proposed to handle variations in appearance. In this paper, we introduce a novel VPR approach that remains robust to scene changes and does not require additional training. Our method constructs semantic image descriptors by extracting pixel-level embeddings using a zero-shot, language-driven semantic segmentation model. We validate our approach in challenging place recognition scenarios using real-world public dataset. The experiments demonstrate that our method outperforms non-learned image representation techniques and off-the-shelf convolutional neural network (CNN) descriptors. Our code is available at https: //github.com/woo-soojin/context-based-vlpr.  
+    Visible-infrared pedestrian Re-identification (VI-ReID) aims to match pedestrian images captured by infrared cameras and visible cameras. However, VI-ReID, like other traditional cross-modal image matching tasks, poses significant challenges due to its human-centered nature. This is evidenced by the shortcomings of existing methods, which struggle to extract common features across modalities, while losing valuable information when bridging the gap between them in the implicit feature space, potentially compromising security. To address this vulnerability, this paper introduces the first physical adversarial attack against VI-ReID models. Our method, termed Edge-Attack, specifically tests the models' ability to leverage deep-level implicit features by focusing on edge information, the most salient explicit feature differentiating individuals across modalities. Edge-Attack utilizes a novel two-step approach. First, a multi-level edge feature extractor is trained in a self-supervised manner to capture discriminative edge representations for each individual. Second, a generative model based on Vision Transformer Generative Adversarial Networks (ViTGAN) is employed to generate adversarial patches conditioned on the extracted edge features. By applying these patches to pedestrian clothing, we create realistic, physically-realizable adversarial samples. This black-box, self-supervised approach ensures the generalizability of our attack against various VI-ReID models. Extensive experiments on SYSU-MM01 and RegDB datasets, including real-world deployments, demonstrate the effectiveness of Edge- Attack in significantly degrading the performance of state-of-the-art VI-ReID methods.  
   </ol>  
 </details>  
   
@@ -53,25 +33,33 @@ Soojin Woo, Seong-Woo Kim
 
 ## NeRF  
 
-### [Content-Aware Radiance Fields: Aligning Model Complexity with Scene Intricacy Through Learned Bitwidth Quantization](http://arxiv.org/abs/2410.19483)  
-[[code](https://github.com/weihangliu2024/content_aware_nerf)]  
-Weihang Liu, Xue Xian Zheng, Jingyi Yu, Xin Lou  
+### [EEG-Driven 3D Object Reconstruction with Color Consistency and Diffusion Prior](http://arxiv.org/abs/2410.20981)  
+Xin Xiang, Wenhui Zhou, Guojun Dai  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The recent popular radiance field models, exemplified by Neural Radiance Fields (NeRF), Instant-NGP and 3D Gaussian Splat?ting, are designed to represent 3D content by that training models for each individual scene. This unique characteristic of scene representation and per-scene training distinguishes radiance field models from other neural models, because complex scenes necessitate models with higher representational capacity and vice versa. In this paper, we propose content?aware radiance fields, aligning the model complexity with the scene intricacies through Adversarial Content-Aware Quantization (A-CAQ). Specifically, we make the bitwidth of parameters differentiable and train?able, tailored to the unique characteristics of specific scenes and requirements. The proposed framework has been assessed on Instant-NGP, a well-known NeRF variant and evaluated using various datasets. Experimental results demonstrate a notable reduction in computational complexity, while preserving the requisite reconstruction and rendering quality, making it beneficial for practical deployment of radiance fields models. Codes are available at https://github.com/WeihangLiu2024/Content_Aware_NeRF.  
+    EEG-based visual perception reconstruction has become a current research hotspot. Neuroscientific studies have shown that humans can perceive various types of visual information, such as color, shape, and texture, when observing objects. However, existing technical methods often face issues such as inconsistencies in texture, shape, and color between the visual stimulus images and the reconstructed images. In this paper, we propose a method for reconstructing 3D objects with color consistency based on EEG signals. The method adopts a two-stage strategy: in the first stage, we train an implicit neural EEG encoder with the capability of perceiving 3D objects, enabling it to capture regional semantic features; in the second stage, based on the latent EEG codes obtained in the first stage, we integrate a diffusion model, neural style loss, and NeRF to implicitly decode the 3D objects. Finally, through experimental validation, we demonstrate that our method can reconstruct 3D objects with color consistency using EEG.  
   </ol>  
 </details>  
-**comments**: accepted by ECCV2024  
   
-### [Evaluation of strategies for efficient rate-distortion NeRF streaming](http://arxiv.org/abs/2410.19459)  
-Pedro Martin, António Rodrigues, João Ascenso, Maria Paula Queluz  
+### [ODGS: 3D Scene Reconstruction from Omnidirectional Images with 3D Gaussian Splattings](http://arxiv.org/abs/2410.20686)  
+Suyoung Lee, Jaeyoung Chung, Jaeyoo Huh, Kyoung Mu Lee  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have revolutionized the field of 3D visual representation by enabling highly realistic and detailed scene reconstructions from a sparse set of images. NeRF uses a volumetric functional representation that maps 3D points to their corresponding colors and opacities, allowing for photorealistic view synthesis from arbitrary viewpoints. Despite its advancements, the efficient streaming of NeRF content remains a significant challenge due to the large amount of data involved. This paper investigates the rate-distortion performance of two NeRF streaming strategies: pixel-based and neural network (NN) parameter-based streaming. While in the former, images are coded and then transmitted throughout the network, in the latter, the respective NeRF model parameters are coded and transmitted instead. This work also highlights the trade-offs in complexity and performance, demonstrating that the NN parameter-based strategy generally offers superior efficiency, making it suitable for one-to-many streaming scenarios.  
+    Omnidirectional (or 360-degree) images are increasingly being used for 3D applications since they allow the rendering of an entire scene with a single image. Existing works based on neural radiance fields demonstrate successful 3D reconstruction quality on egocentric videos, yet they suffer from long training and rendering times. Recently, 3D Gaussian splatting has gained attention for its fast optimization and real-time rendering. However, directly using a perspective rasterizer to omnidirectional images results in severe distortion due to the different optical properties between two image domains. In this work, we present ODGS, a novel rasterization pipeline for omnidirectional images, with geometric interpretation. For each Gaussian, we define a tangent plane that touches the unit sphere and is perpendicular to the ray headed toward the Gaussian center. We then leverage a perspective camera rasterizer to project the Gaussian onto the corresponding tangent plane. The projected Gaussians are transformed and combined into the omnidirectional image, finalizing the omnidirectional rasterization process. This interpretation reveals the implicit assumptions within the proposed pipeline, which we verify through mathematical proofs. The entire rasterization process is parallelized using CUDA, achieving optimization and rendering speeds 100 times faster than NeRF-based methods. Our comprehensive experiments highlight the superiority of ODGS by delivering the best reconstruction and perceptual quality across various datasets. Additionally, results on roaming datasets demonstrate that ODGS restores fine details effectively, even when reconstructing large 3D scenes. The source code is available on our project page (https://github.com/esw0116/ODGS).  
   </ol>  
 </details>  
+  
+### [GUMBEL-NERF: Representing Unseen Objects as Part-Compositional Neural Radiance Fields](http://arxiv.org/abs/2410.20306)  
+Yusuke Sekikawa, Chingwei Hsu, Satoshi Ikehata, Rei Kawakami, Ikuro Sato  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We propose Gumbel-NeRF, a mixture-of-expert (MoE) neural radiance fields (NeRF) model with a hindsight expert selection mechanism for synthesizing novel views of unseen objects. Previous studies have shown that the MoE structure provides high-quality representations of a given large-scale scene consisting of many objects. However, we observe that such a MoE NeRF model often produces low-quality representations in the vicinity of experts' boundaries when applied to the task of novel view synthesis of an unseen object from one/few-shot input. We find that this deterioration is primarily caused by the foresight expert selection mechanism, which may leave an unnatural discontinuity in the object shape near the experts' boundaries. Gumbel-NeRF adopts a hindsight expert selection mechanism, which guarantees continuity in the density field even near the experts' boundaries. Experiments using the SRN cars dataset demonstrate the superiority of Gumbel-NeRF over the baselines in terms of various image quality metrics.  
+  </ol>  
+</details>  
+**comments**: 7 pages. Presented at ICIP2024  
   
   
 
