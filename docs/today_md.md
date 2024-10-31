@@ -3,23 +3,24 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#LiVisSfM:-Accurate-and-Robust-Structure-from-Motion-with-LiDAR-and-Visual-Cues>LiVisSfM: Accurate and Robust Structure-from-Motion with LiDAR and Visual Cues</a></li>
-      </ul>
-    </li>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#LiVisSfM:-Accurate-and-Robust-Structure-from-Motion-with-LiDAR-and-Visual-Cues>LiVisSfM: Accurate and Robust Structure-from-Motion with LiDAR and Visual Cues</a></li>
+        <li><a href=#LGU-SLAM:-Learnable-Gaussian-Uncertainty-Matching-with-Deformable-Correlation-Sampling-for-Deep-Visual-SLAM>LGU-SLAM: Learnable Gaussian Uncertainty Matching with Deformable Correlation Sampling for Deep Visual SLAM</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Beyond-Text:-Optimizing-RAG-with-Multimodal-Inputs-for-Industrial-Applications>Beyond Text: Optimizing RAG with Multimodal Inputs for Industrial Applications</a></li>
-        <li><a href=#NYC-Event-VPR:-A-Large-Scale-High-Resolution-Event-Based-Visual-Place-Recognition-Dataset-in-Dense-Urban-Environments>NYC-Event-VPR: A Large-Scale High-Resolution Event-Based Visual Place Recognition Dataset in Dense Urban Environments</a></li>
+        <li><a href=#Decoupling-Semantic-Similarity-from-Spatial-Alignment-for-Neural-Networks>Decoupling Semantic Similarity from Spatial Alignment for Neural Networks</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#RelationBooth:-Towards-Relation-Aware-Customized-Object-Generation>RelationBooth: Towards Relation-Aware Customized Object Generation</a></li>
+        <li><a href=#ETO:Efficient-Transformer-based-Local-Feature-Matching-by-Organizing-Multiple-Homography-Hypotheses>ETO:Efficient Transformer-based Local Feature Matching by Organizing Multiple Homography Hypotheses</a></li>
+        <li><a href=#LoFLAT:-Local-Feature-Matching-using-Focused-Linear-Attention-Transformer>LoFLAT: Local Feature Matching using Focused Linear Attention Transformer</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MVSDet:-Multi-View-Indoor-3D-Object-Detection-via-Efficient-Plane-Sweeps>MVSDet: Multi-View Indoor 3D Object Detection via Efficient Plane Sweeps</a></li>
+        <li><a href=#Bringing-NeRFs-to-the-Latent-Space:-Inverse-Graphics-Autoencoder>Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder</a></li>
       </ul>
     </li>
   </ol>
@@ -27,31 +28,15 @@
 
 ## SLAM  
 
-### [LiVisSfM: Accurate and Robust Structure-from-Motion with LiDAR and Visual Cues](http://arxiv.org/abs/2410.22213)  
-Hanqing Jiang, Liyang Zhou, Zhuang Zhang, Yihao Yu, Guofeng Zhang  
+### [LGU-SLAM: Learnable Gaussian Uncertainty Matching with Deformable Correlation Sampling for Deep Visual SLAM](http://arxiv.org/abs/2410.23231)  
+[[code](https://github.com/uestc-nnlab/lgu-slam)]  
+Yucheng Huang, Luping Ji, Hudong Liu, Mao Ye  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper presents an accurate and robust Structure-from-Motion (SfM) pipeline named LiVisSfM, which is an SfM-based reconstruction system that fully combines LiDAR and visual cues. Unlike most existing LiDAR-inertial odometry (LIO) and LiDAR-inertial-visual odometry (LIVO) methods relying heavily on LiDAR registration coupled with Inertial Measurement Unit (IMU), we propose a LiDAR-visual SfM method which innovatively carries out LiDAR frame registration to LiDAR voxel map in a Point-to-Gaussian residual metrics, combined with a LiDAR-visual BA and explicit loop closure in a bundle optimization way to achieve accurate and robust LiDAR pose estimation without dependence on IMU incorporation. Besides, we propose an incremental voxel updating strategy for efficient voxel map updating during the process of LiDAR frame registration and LiDAR-visual BA optimization. Experiments demonstrate the superior effectiveness of our LiVisSfM framework over state-of-the-art LIO and LIVO works on more accurate and robust LiDAR pose recovery and dense point cloud reconstruction of both public KITTI benchmark and a variety of self-captured dataset.  
+    Deep visual Simultaneous Localization and Mapping (SLAM) techniques, e.g., DROID, have made significant advancements by leveraging deep visual odometry on dense flow fields. In general, they heavily rely on global visual similarity matching. However, the ambiguous similarity interference in uncertain regions could often lead to excessive noise in correspondences, ultimately misleading SLAM in geometric modeling. To address this issue, we propose a Learnable Gaussian Uncertainty (LGU) matching. It mainly focuses on precise correspondence construction. In our scheme, a learnable 2D Gaussian uncertainty model is designed to associate matching-frame pairs. It could generate input-dependent Gaussian distributions for each correspondence map. Additionally, a multi-scale deformable correlation sampling strategy is devised to adaptively fine-tune the sampling of each direction by a priori look-up ranges, enabling reliable correlation construction. Furthermore, a KAN-bias GRU component is adopted to improve a temporal iterative enhancement for accomplishing sophisticated spatio-temporal modeling with limited parameters. The extensive experiments on real-world and synthetic datasets are conducted to validate the effectiveness and superiority of our method.  
   </ol>  
 </details>  
-**comments**: 18 pages, 9 figures, 2 tables  
-  
-  
-
-
-
-## SFM  
-
-### [LiVisSfM: Accurate and Robust Structure-from-Motion with LiDAR and Visual Cues](http://arxiv.org/abs/2410.22213)  
-Hanqing Jiang, Liyang Zhou, Zhuang Zhang, Yihao Yu, Guofeng Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper presents an accurate and robust Structure-from-Motion (SfM) pipeline named LiVisSfM, which is an SfM-based reconstruction system that fully combines LiDAR and visual cues. Unlike most existing LiDAR-inertial odometry (LIO) and LiDAR-inertial-visual odometry (LIVO) methods relying heavily on LiDAR registration coupled with Inertial Measurement Unit (IMU), we propose a LiDAR-visual SfM method which innovatively carries out LiDAR frame registration to LiDAR voxel map in a Point-to-Gaussian residual metrics, combined with a LiDAR-visual BA and explicit loop closure in a bundle optimization way to achieve accurate and robust LiDAR pose estimation without dependence on IMU incorporation. Besides, we propose an incremental voxel updating strategy for efficient voxel map updating during the process of LiDAR frame registration and LiDAR-visual BA optimization. Experiments demonstrate the superior effectiveness of our LiVisSfM framework over state-of-the-art LIO and LIVO works on more accurate and robust LiDAR pose recovery and dense point cloud reconstruction of both public KITTI benchmark and a variety of self-captured dataset.  
-  </ol>  
-</details>  
-**comments**: 18 pages, 9 figures, 2 tables  
   
   
 
@@ -59,21 +44,46 @@ Hanqing Jiang, Liyang Zhou, Zhuang Zhang, Yihao Yu, Guofeng Zhang
 
 ## Visual Localization  
 
-### [Beyond Text: Optimizing RAG with Multimodal Inputs for Industrial Applications](http://arxiv.org/abs/2410.21943)  
-Monica Riedler, Stefan Langer  
+### [Decoupling Semantic Similarity from Spatial Alignment for Neural Networks](http://arxiv.org/abs/2410.23107)  
+Tassilo Wald, Constantin Ulrich, Gregor Köhler, David Zimmerer, Stefan Denner, Michael Baumgartner, Fabian Isensee, Priyank Jaini, Klaus H. Maier-Hein  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large Language Models (LLMs) have demonstrated impressive capabilities in answering questions, but they lack domain-specific knowledge and are prone to hallucinations. Retrieval Augmented Generation (RAG) is one approach to address these challenges, while multimodal models are emerging as promising AI assistants for processing both text and images. In this paper we describe a series of experiments aimed at determining how to best integrate multimodal models into RAG systems for the industrial domain. The purpose of the experiments is to determine whether including images alongside text from documents within the industrial domain increases RAG performance and to find the optimal configuration for such a multimodal RAG system. Our experiments include two approaches for image processing and retrieval, as well as two LLMs (GPT4-Vision and LLaVA) for answer synthesis. These image processing strategies involve the use of multimodal embeddings and the generation of textual summaries from images. We evaluate our experiments with an LLM-as-a-Judge approach. Our results reveal that multimodal RAG can outperform single-modality RAG settings, although image retrieval poses a greater challenge than text retrieval. Additionally, leveraging textual summaries from images presents a more promising approach compared to the use of multimodal embeddings, providing more opportunities for future advancements.  
+    What representation do deep neural networks learn? How similar are images to each other for neural networks? Despite the overwhelming success of deep learning methods key questions about their internal workings still remain largely unanswered, due to their internal high dimensionality and complexity. To address this, one approach is to measure the similarity of activation responses to various inputs. Representational Similarity Matrices (RSMs) distill this similarity into scalar values for each input pair. These matrices encapsulate the entire similarity structure of a system, indicating which input leads to similar responses. While the similarity between images is ambiguous, we argue that the spatial location of semantic objects does neither influence human perception nor deep learning classifiers. Thus this should be reflected in the definition of similarity between image responses for computer vision systems. Revisiting the established similarity calculations for RSMs we expose their sensitivity to spatial alignment. In this paper, we propose to solve this through semantic RSMs, which are invariant to spatial permutation. We measure semantic similarity between input responses by formulating it as a set-matching problem. Further, we quantify the superiority of semantic RSMs over spatio-semantic RSMs through image retrieval and by comparing the similarity between representations to the similarity between predicted class probabilities.  
+  </ol>  
+</details>  
+**comments**: Accepted at NeurIPS2024  
+  
+  
+
+
+
+## Image Matching  
+
+### [RelationBooth: Towards Relation-Aware Customized Object Generation](http://arxiv.org/abs/2410.23280)  
+Qingyu Shi, Lu Qi, Jianzong Wu, Jinbin Bai, Jingbo Wang, Yunhai Tong, Xiangtai Li, Ming-Husang Yang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Customized image generation is crucial for delivering personalized content based on user-provided image prompts, aligning large-scale text-to-image diffusion models with individual needs. However, existing models often overlook the relationships between customized objects in generated images. Instead, this work addresses that gap by focusing on relation-aware customized image generation, which aims to preserve the identities from image prompts while maintaining the predicate relations described in text prompts. Specifically, we introduce RelationBooth, a framework that disentangles identity and relation learning through a well-curated dataset. Our training data consists of relation-specific images, independent object images containing identity information, and text prompts to guide relation generation. Then, we propose two key modules to tackle the two main challenges: generating accurate and natural relations, especially when significant pose adjustments are required, and avoiding object confusion in cases of overlap. First, we introduce a keypoint matching loss that effectively guides the model in adjusting object poses closely tied to their relationships. Second, we incorporate local features from the image prompts to better distinguish between objects, preventing confusion in overlapping cases. Extensive results on three benchmarks demonstrate the superiority of RelationBooth in generating precise relations while preserving object identities across a diverse set of objects and relations. The source code and trained models will be made available to the public.  
   </ol>  
 </details>  
   
-### [NYC-Event-VPR: A Large-Scale High-Resolution Event-Based Visual Place Recognition Dataset in Dense Urban Environments](http://arxiv.org/abs/2410.21615)  
-Taiyi Pan, Junyang He, Chao Chen, Yiming Li, Chen Feng  
+### [ETO:Efficient Transformer-based Local Feature Matching by Organizing Multiple Homography Hypotheses](http://arxiv.org/abs/2410.22733)  
+Junjie Ni, Guofeng Zhang, Guanglin Li, Yijin Li, Xinyang Liu, Zhaoyang Huang, Hujun Bao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual place recognition (VPR) enables autonomous robots to identify previously visited locations, which contributes to tasks like simultaneous localization and mapping (SLAM). VPR faces challenges such as accurate image neighbor retrieval and appearance change in scenery. Event cameras, also known as dynamic vision sensors, are a new sensor modality for VPR and offer a promising solution to the challenges with their unique attributes: high temporal resolution (1MHz clock), ultra-low latency (in {\mu}s), and high dynamic range (>120dB). These attributes make event cameras less susceptible to motion blur and more robust in variable lighting conditions, making them suitable for addressing VPR challenges. However, the scarcity of event-based VPR datasets, partly due to the novelty and cost of event cameras, hampers their adoption. To fill this data gap, our paper introduces the NYC-Event-VPR dataset to the robotics and computer vision communities, featuring the Prophesee IMX636 HD event sensor (1280x720 resolution), combined with RGB camera and GPS module. It encompasses over 13 hours of geotagged event data, spanning 260 kilometers across New York City, covering diverse lighting and weather conditions, day/night scenarios, and multiple visits to various locations. Furthermore, our paper employs three frameworks to conduct generalization performance assessments, promoting innovation in event-based VPR and its integration into robotics applications.  
+    We tackle the efficiency problem of learning local feature matching.Recent advancements have given rise to purely CNN-based and transformer-based approaches, each augmented with deep learning techniques. While CNN-based methods often excel in matching speed, transformer-based methods tend to provide more accurate matches. We propose an efficient transformer-based network architecture for local feature matching.This technique is built on constructing multiple homography hypotheses to approximate the continuous correspondence in the real world and uni-directional cross-attention to accelerate the refinement. On the YFCC100M dataset, our matching accuracy is competitive with LoFTR, a state-of-the-art transformer-based architecture, while the inference speed is boosted to 4 times, even outperforming the CNN-based methods.Comprehensive evaluations on other open datasets such as Megadepth, ScanNet, and HPatches demonstrate our method's efficacy, highlighting its potential to significantly enhance a wide array of downstream applications.  
+  </ol>  
+</details>  
+  
+### [LoFLAT: Local Feature Matching using Focused Linear Attention Transformer](http://arxiv.org/abs/2410.22710)  
+Naijian Cao, Renjie He, Yuchao Dai, Mingyi He  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Local feature matching is an essential technique in image matching and plays a critical role in a wide range of vision-based applications. However, existing Transformer-based detector-free local feature matching methods encounter challenges due to the quadratic computational complexity of attention mechanisms, especially at high resolutions. However, while existing Transformer-based detector-free local feature matching methods have reduced computational costs using linear attention mechanisms, they still struggle to capture detailed local interactions, which affects the accuracy and robustness of precise local correspondences. In order to enhance representations of attention mechanisms while preserving low computational complexity, we propose the LoFLAT, a novel Local Feature matching using Focused Linear Attention Transformer in this paper. Our LoFLAT consists of three main modules: the Feature Extraction Module, the Feature Transformer Module, and the Matching Module. Specifically, the Feature Extraction Module firstly uses ResNet and a Feature Pyramid Network to extract hierarchical features. The Feature Transformer Module further employs the Focused Linear Attention to refine attention distribution with a focused mapping function and to enhance feature diversity with a depth-wise convolution. Finally, the Matching Module predicts accurate and robust matches through a coarse-to-fine strategy. Extensive experimental evaluations demonstrate that the proposed LoFLAT outperforms the LoFTR method in terms of both efficiency and accuracy.  
   </ol>  
 </details>  
   
@@ -83,16 +93,14 @@ Taiyi Pan, Junyang He, Chao Chen, Yiming Li, Chen Feng
 
 ## NeRF  
 
-### [MVSDet: Multi-View Indoor 3D Object Detection via Efficient Plane Sweeps](http://arxiv.org/abs/2410.21566)  
-[[code](https://github.com/pixie8888/mvsdet)]  
-Yating Xu, Chen Li, Gim Hee Lee  
+### [Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder](http://arxiv.org/abs/2410.22936)  
+Antoine Schnepf, Karim Kassab, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valerie Gouet-Brunet  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The key challenge of multi-view indoor 3D object detection is to infer accurate geometry information from images for precise 3D detection. Previous method relies on NeRF for geometry reasoning. However, the geometry extracted from NeRF is generally inaccurate, which leads to sub-optimal detection performance. In this paper, we propose MVSDet which utilizes plane sweep for geometry-aware 3D object detection. To circumvent the requirement for a large number of depth planes for accurate depth prediction, we design a probabilistic sampling and soft weighting mechanism to decide the placement of pixel features on the 3D volume. We select multiple locations that score top in the probability volume for each pixel and use their probability score to indicate the confidence. We further apply recent pixel-aligned Gaussian Splatting to regularize depth prediction and improve detection performance with little computation overhead. Extensive experiments on ScanNet and ARKitScenes datasets are conducted to show the superiority of our model. Our code is available at https://github.com/Pixie8888/MVSDet.  
+    While pre-trained image autoencoders are increasingly utilized in computer vision, the application of inverse graphics in 2D latent spaces has been under-explored. Yet, besides reducing the training and rendering complexity, applying inverse graphics in the latent space enables a valuable interoperability with other latent-based 2D methods. The major challenge is that inverse graphics cannot be directly applied to such image latent spaces because they lack an underlying 3D geometry. In this paper, we propose an Inverse Graphics Autoencoder (IG-AE) that specifically addresses this issue. To this end, we regularize an image autoencoder with 3D-geometry by aligning its latent space with jointly trained latent 3D scenes. We utilize the trained IG-AE to bring NeRFs to the latent space with a latent NeRF training pipeline, which we implement in an open-source extension of the Nerfstudio framework, thereby unlocking latent scene learning for its supported methods. We experimentally confirm that Latent NeRFs trained with IG-AE present an improved quality compared to a standard autoencoder, all while exhibiting training and rendering accelerations with respect to NeRFs trained in the image space. Our project page can be found at https://ig-ae.github.io .  
   </ol>  
 </details>  
-**comments**: Accepted by NeurIPS 2024  
   
   
 
