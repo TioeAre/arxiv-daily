@@ -1,58 +1,67 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#LGU-SLAM:-Learnable-Gaussian-Uncertainty-Matching-with-Deformable-Correlation-Sampling-for-Deep-Visual-SLAM>LGU-SLAM: Learnable Gaussian Uncertainty Matching with Deformable Correlation Sampling for Deep Visual SLAM</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Decoupling-Semantic-Similarity-from-Spatial-Alignment-for-Neural-Networks>Decoupling Semantic Similarity from Spatial Alignment for Neural Networks</a></li>
+        <li><a href=#Nearest-Neighbor-Normalization-Improves-Multimodal-Retrieval>Nearest Neighbor Normalization Improves Multimodal Retrieval</a></li>
+        <li><a href=#MoTaDual:-Modality-Task-Dual-Alignment-for-Enhanced-Zero-shot-Composed-Image-Retrieval>MoTaDual: Modality-Task Dual Alignment for Enhanced Zero-shot Composed Image Retrieval</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#From-Web-Data-to-Real-Fields:-Low-Cost-Unsupervised-Domain-Adaptation-for-Agricultural-Robots>From Web Data to Real Fields: Low-Cost Unsupervised Domain Adaptation for Agricultural Robots</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#RelationBooth:-Towards-Relation-Aware-Customized-Object-Generation>RelationBooth: Towards Relation-Aware Customized Object Generation</a></li>
-        <li><a href=#ETO:Efficient-Transformer-based-Local-Feature-Matching-by-Organizing-Multiple-Homography-Hypotheses>ETO:Efficient Transformer-based Local Feature Matching by Organizing Multiple Homography Hypotheses</a></li>
-        <li><a href=#LoFLAT:-Local-Feature-Matching-using-Focused-Linear-Attention-Transformer>LoFLAT: Local Feature Matching using Focused Linear Attention Transformer</a></li>
+        <li><a href=#Variable-Resolution-Sampling-and-Deep-Learning-Image-Recovery-for-Accelerated-Multi-Spectral-MRI-Near-Metal-Implants>Variable Resolution Sampling and Deep Learning Image Recovery for Accelerated Multi-Spectral MRI Near Metal Implants</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Bringing-NeRFs-to-the-Latent-Space:-Inverse-Graphics-Autoencoder>Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder</a></li>
+        <li><a href=#Scaled-Inverse-Graphics:-Efficiently-Learning-Large-Sets-of-3D-Scenes>Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes</a></li>
+        <li><a href=#Get-a-Grip:-Multi-Finger-Grasp-Evaluation-at-Scale-Enables-Robust-Sim-to-Real-Transfer>Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer</a></li>
+        <li><a href=#XRDSLAM:-A-Flexible-and-Modular-Framework-for-Deep-Learning-based-SLAM>XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [LGU-SLAM: Learnable Gaussian Uncertainty Matching with Deformable Correlation Sampling for Deep Visual SLAM](http://arxiv.org/abs/2410.23231)  
-[[code](https://github.com/uestc-nnlab/lgu-slam)]  
-Yucheng Huang, Luping Ji, Hudong Liu, Mao Ye  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Deep visual Simultaneous Localization and Mapping (SLAM) techniques, e.g., DROID, have made significant advancements by leveraging deep visual odometry on dense flow fields. In general, they heavily rely on global visual similarity matching. However, the ambiguous similarity interference in uncertain regions could often lead to excessive noise in correspondences, ultimately misleading SLAM in geometric modeling. To address this issue, we propose a Learnable Gaussian Uncertainty (LGU) matching. It mainly focuses on precise correspondence construction. In our scheme, a learnable 2D Gaussian uncertainty model is designed to associate matching-frame pairs. It could generate input-dependent Gaussian distributions for each correspondence map. Additionally, a multi-scale deformable correlation sampling strategy is devised to adaptively fine-tune the sampling of each direction by a priori look-up ranges, enabling reliable correlation construction. Furthermore, a KAN-bias GRU component is adopted to improve a temporal iterative enhancement for accomplishing sophisticated spatio-temporal modeling with limited parameters. The extensive experiments on real-world and synthetic datasets are conducted to validate the effectiveness and superiority of our method.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Decoupling Semantic Similarity from Spatial Alignment for Neural Networks](http://arxiv.org/abs/2410.23107)  
-Tassilo Wald, Constantin Ulrich, Gregor Köhler, David Zimmerer, Stefan Denner, Michael Baumgartner, Fabian Isensee, Priyank Jaini, Klaus H. Maier-Hein  
+### [Nearest Neighbor Normalization Improves Multimodal Retrieval](http://arxiv.org/abs/2410.24114)  
+Neil Chowdhury, Franklin Wang, Sumedh Shenoy, Douwe Kiela, Sarah Schwettmann, Tristan Thrush  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    What representation do deep neural networks learn? How similar are images to each other for neural networks? Despite the overwhelming success of deep learning methods key questions about their internal workings still remain largely unanswered, due to their internal high dimensionality and complexity. To address this, one approach is to measure the similarity of activation responses to various inputs. Representational Similarity Matrices (RSMs) distill this similarity into scalar values for each input pair. These matrices encapsulate the entire similarity structure of a system, indicating which input leads to similar responses. While the similarity between images is ambiguous, we argue that the spatial location of semantic objects does neither influence human perception nor deep learning classifiers. Thus this should be reflected in the definition of similarity between image responses for computer vision systems. Revisiting the established similarity calculations for RSMs we expose their sensitivity to spatial alignment. In this paper, we propose to solve this through semantic RSMs, which are invariant to spatial permutation. We measure semantic similarity between input responses by formulating it as a set-matching problem. Further, we quantify the superiority of semantic RSMs over spatio-semantic RSMs through image retrieval and by comparing the similarity between representations to the similarity between predicted class probabilities.  
+    Multimodal models leverage large-scale pre-training to achieve strong but still imperfect performance on tasks such as image captioning, visual question answering, and cross-modal retrieval. In this paper, we present a simple and efficient method for correcting errors in trained contrastive image-text retrieval models with no additional training, called Nearest Neighbor Normalization (NNN). We show an improvement on retrieval metrics in both text retrieval and image retrieval for all of the contrastive models that we tested (CLIP, BLIP, ALBEF, SigLIP, BEiT) and for both of the datasets that we used (MS-COCO and Flickr30k). NNN requires a reference database, but does not require any training on this database, and can even increase the retrieval accuracy of a model after finetuning.  
   </ol>  
 </details>  
-**comments**: Accepted at NeurIPS2024  
+  
+### [MoTaDual: Modality-Task Dual Alignment for Enhanced Zero-shot Composed Image Retrieval](http://arxiv.org/abs/2410.23736)  
+Haiwen Li, Fei Su, Zhicheng Zhao  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Composed Image Retrieval (CIR) is a challenging vision-language task, utilizing bi-modal (image+text) queries to retrieve target images. Despite the impressive performance of supervised CIR, the dependence on costly, manually-labeled triplets limits its scalability and zero-shot capability. To address this issue, zero-shot composed image retrieval (ZS-CIR) is presented along with projection-based approaches. However, such methods face two major problems, i.e., task discrepancy between pre-training (image $\leftrightarrow$ text) and inference (image+text $\rightarrow$ image), and modality discrepancy. The latter pertains to approaches based on text-only projection training due to the necessity of feature extraction from the reference image during inference. In this paper, we propose a two-stage framework to tackle both discrepancies. First, to ensure efficiency and scalability, a textual inversion network is pre-trained on large-scale caption datasets. Subsequently, we put forward Modality-Task Dual Alignment (MoTaDual) as the second stage, where large-language models (LLMs) generate triplet data for fine-tuning, and additionally, prompt learning is introduced in a multi-modal context to effectively alleviate both modality and task discrepancies. The experimental results show that our MoTaDual achieves the state-of-the-art performance across four widely used ZS-CIR benchmarks, while maintaining low training time and computational cost. The code will be released soon.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [From Web Data to Real Fields: Low-Cost Unsupervised Domain Adaptation for Agricultural Robots](http://arxiv.org/abs/2410.23906)  
+Vasileios Tzouras, Lazaros Nalpantidis, Ronja Güldenring  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In precision agriculture, vision models often struggle with new, unseen fields where crops and weeds have been influenced by external factors, resulting in compositions and appearances that differ from the learned distribution. This paper aims to adapt to specific fields at low cost using Unsupervised Domain Adaptation (UDA). We explore a novel domain shift from a diverse, large pool of internet-sourced data to a small set of data collected by a robot at specific locations, minimizing the need for extensive on-field data collection. Additionally, we introduce a novel module -- the Multi-level Attention-based Adversarial Discriminator (MAAD) -- which can be integrated at the feature extractor level of any detection model. In this study, we incorporate MAAD with CenterNet to simultaneously detect leaf, stem, and vein instances. Our results show significant performance improvements in the unlabeled target domain compared to baseline models, with a 7.5% increase in object detection accuracy and a 5.1% improvement in keypoint detection.  
+  </ol>  
+</details>  
+**comments**: This work has been submitted to the IEEE for possible publication  
   
   
 
@@ -60,32 +69,15 @@ Tassilo Wald, Constantin Ulrich, Gregor Köhler, David Zimmerer, Stefan Denner, 
 
 ## Image Matching  
 
-### [RelationBooth: Towards Relation-Aware Customized Object Generation](http://arxiv.org/abs/2410.23280)  
-Qingyu Shi, Lu Qi, Jianzong Wu, Jinbin Bai, Jingbo Wang, Yunhai Tong, Xiangtai Li, Ming-Husang Yang  
+### [Variable Resolution Sampling and Deep Learning Image Recovery for Accelerated Multi-Spectral MRI Near Metal Implants](http://arxiv.org/abs/2410.23329)  
+Azadeh Sharafi, Nikolai J. Mickevicius, Mehran Baboli, Andrew S. Nencka, Kevin M. Koch  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Customized image generation is crucial for delivering personalized content based on user-provided image prompts, aligning large-scale text-to-image diffusion models with individual needs. However, existing models often overlook the relationships between customized objects in generated images. Instead, this work addresses that gap by focusing on relation-aware customized image generation, which aims to preserve the identities from image prompts while maintaining the predicate relations described in text prompts. Specifically, we introduce RelationBooth, a framework that disentangles identity and relation learning through a well-curated dataset. Our training data consists of relation-specific images, independent object images containing identity information, and text prompts to guide relation generation. Then, we propose two key modules to tackle the two main challenges: generating accurate and natural relations, especially when significant pose adjustments are required, and avoiding object confusion in cases of overlap. First, we introduce a keypoint matching loss that effectively guides the model in adjusting object poses closely tied to their relationships. Second, we incorporate local features from the image prompts to better distinguish between objects, preventing confusion in overlapping cases. Extensive results on three benchmarks demonstrate the superiority of RelationBooth in generating precise relations while preserving object identities across a diverse set of objects and relations. The source code and trained models will be made available to the public.  
+    Purpose: This study presents a variable resolution (VR) sampling and deep learning reconstruction approach for multi-spectral MRI near metal implants, aiming to reduce scan times while maintaining image quality. Background: The rising use of metal implants has increased MRI scans affected by metal artifacts. Multi-spectral imaging (MSI) reduces these artifacts but sacrifices acquisition efficiency. Methods: This retrospective study on 1.5T MSI knee and hip data from patients with metal hardware used a novel spectral undersampling scheme to improve acquisition efficiency by ~40%. U-Net-based deep learning models were trained for reconstruction. Image quality was evaluated using SSIM, PSNR, and RESI metrics. Results: Deep learning reconstructions of undersampled VR data (DL-VR) showed significantly higher SSIM and PSNR values (p<0.001) compared to conventional reconstruction (CR-VR), with improved edge sharpness. Edge sharpness in DL-reconstructed images matched fully sampled references (p=0.5). Conclusion: This approach can potentially enhance MRI examinations near metal implants by reducing scan times or enabling higher resolution. Further prospective studies are needed to assess clinical value.  
   </ol>  
 </details>  
-  
-### [ETO:Efficient Transformer-based Local Feature Matching by Organizing Multiple Homography Hypotheses](http://arxiv.org/abs/2410.22733)  
-Junjie Ni, Guofeng Zhang, Guanglin Li, Yijin Li, Xinyang Liu, Zhaoyang Huang, Hujun Bao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We tackle the efficiency problem of learning local feature matching.Recent advancements have given rise to purely CNN-based and transformer-based approaches, each augmented with deep learning techniques. While CNN-based methods often excel in matching speed, transformer-based methods tend to provide more accurate matches. We propose an efficient transformer-based network architecture for local feature matching.This technique is built on constructing multiple homography hypotheses to approximate the continuous correspondence in the real world and uni-directional cross-attention to accelerate the refinement. On the YFCC100M dataset, our matching accuracy is competitive with LoFTR, a state-of-the-art transformer-based architecture, while the inference speed is boosted to 4 times, even outperforming the CNN-based methods.Comprehensive evaluations on other open datasets such as Megadepth, ScanNet, and HPatches demonstrate our method's efficacy, highlighting its potential to significantly enhance a wide array of downstream applications.  
-  </ol>  
-</details>  
-  
-### [LoFLAT: Local Feature Matching using Focused Linear Attention Transformer](http://arxiv.org/abs/2410.22710)  
-Naijian Cao, Renjie He, Yuchao Dai, Mingyi He  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Local feature matching is an essential technique in image matching and plays a critical role in a wide range of vision-based applications. However, existing Transformer-based detector-free local feature matching methods encounter challenges due to the quadratic computational complexity of attention mechanisms, especially at high resolutions. However, while existing Transformer-based detector-free local feature matching methods have reduced computational costs using linear attention mechanisms, they still struggle to capture detailed local interactions, which affects the accuracy and robustness of precise local correspondences. In order to enhance representations of attention mechanisms while preserving low computational complexity, we propose the LoFLAT, a novel Local Feature matching using Focused Linear Attention Transformer in this paper. Our LoFLAT consists of three main modules: the Feature Extraction Module, the Feature Transformer Module, and the Matching Module. Specifically, the Feature Extraction Module firstly uses ResNet and a Feature Pyramid Network to extract hierarchical features. The Feature Transformer Module further employs the Focused Linear Attention to refine attention distribution with a focused mapping function and to enhance feature diversity with a depth-wise convolution. Finally, the Matching Module predicts accurate and robust matches through a coarse-to-fine strategy. Extensive experimental evaluations demonstrate that the proposed LoFLAT outperforms the LoFTR method in terms of both efficiency and accuracy.  
-  </ol>  
-</details>  
+**comments**: 10 pages, 5 figures  
   
   
 
@@ -93,12 +85,30 @@ Naijian Cao, Renjie He, Yuchao Dai, Mingyi He
 
 ## NeRF  
 
-### [Bringing NeRFs to the Latent Space: Inverse Graphics Autoencoder](http://arxiv.org/abs/2410.22936)  
-Antoine Schnepf, Karim Kassab, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valerie Gouet-Brunet  
+### [Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes](http://arxiv.org/abs/2410.23742)  
+Karim Kassab, Antoine Schnepf, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    While pre-trained image autoencoders are increasingly utilized in computer vision, the application of inverse graphics in 2D latent spaces has been under-explored. Yet, besides reducing the training and rendering complexity, applying inverse graphics in the latent space enables a valuable interoperability with other latent-based 2D methods. The major challenge is that inverse graphics cannot be directly applied to such image latent spaces because they lack an underlying 3D geometry. In this paper, we propose an Inverse Graphics Autoencoder (IG-AE) that specifically addresses this issue. To this end, we regularize an image autoencoder with 3D-geometry by aligning its latent space with jointly trained latent 3D scenes. We utilize the trained IG-AE to bring NeRFs to the latent space with a latent NeRF training pipeline, which we implement in an open-source extension of the Nerfstudio framework, thereby unlocking latent scene learning for its supported methods. We experimentally confirm that Latent NeRFs trained with IG-AE present an improved quality compared to a standard autoencoder, all while exhibiting training and rendering accelerations with respect to NeRFs trained in the image space. Our project page can be found at https://ig-ae.github.io .  
+    While the field of inverse graphics has been witnessing continuous growth, techniques devised thus far predominantly focus on learning individual scene representations. In contrast, learning large sets of scenes has been a considerable bottleneck in NeRF developments, as repeatedly applying inverse graphics on a sequence of scenes, though essential for various applications, remains largely prohibitive in terms of resource costs. We introduce a framework termed "scaled inverse graphics", aimed at efficiently learning large sets of scene representations, and propose a novel method to this end. It operates in two stages: (i) training a compression model on a subset of scenes, then (ii) training NeRF models on the resulting smaller representations, thereby reducing the optimization space per new scene. In practice, we compact the representation of scenes by learning NeRFs in a latent space to reduce the image resolution, and sharing information across scenes to reduce NeRF representation complexity. We experimentally show that our method presents both the lowest training time and memory footprint in scaled inverse graphics compared to other methods applied independently on each scene. Our codebase is publicly available as open-source. Our project page can be found at https://scaled-ig.github.io .  
+  </ol>  
+</details>  
+  
+### [Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer](http://arxiv.org/abs/2410.23701)  
+Tyler Ga Wei Lum, Albert H. Li, Preston Culbertson, Krishnan Srinivasan, Aaron D. Ames, Mac Schwager, Jeannette Bohg  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This work explores conditions under which multi-finger grasping algorithms can attain robust sim-to-real transfer. While numerous large datasets facilitate learning generative models for multi-finger grasping at scale, reliable real-world dexterous grasping remains challenging, with most methods degrading when deployed on hardware. An alternate strategy is to use discriminative grasp evaluation models for grasp selection and refinement, conditioned on real-world sensor measurements. This paradigm has produced state-of-the-art results for vision-based parallel-jaw grasping, but remains unproven in the multi-finger setting. In this work, we find that existing datasets and methods have been insufficient for training discriminitive models for multi-finger grasping. To train grasp evaluators at scale, datasets must provide on the order of millions of grasps, including both positive and negative examples, with corresponding visual data resembling measurements at inference time. To that end, we release a new, open-source dataset of 3.5M grasps on 4.3K objects annotated with RGB images, point clouds, and trained NeRFs. Leveraging this dataset, we train vision-based grasp evaluators that outperform both analytic and generative modeling-based baselines on extensive simulated and real-world trials across a diverse range of objects. We show via numerous ablations that the key factor for performance is indeed the evaluator, and that its quality degrades as the dataset shrinks, demonstrating the importance of our new dataset. Project website at: https://sites.google.com/view/get-a-grip-dataset.  
+  </ol>  
+</details>  
+  
+### [XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM](http://arxiv.org/abs/2410.23690)  
+Xiaomeng Wang, Nan Wang, Guofeng Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper, we propose a flexible SLAM framework, XRDSLAM. It adopts a modular code design and a multi-process running mechanism, providing highly reusable foundational modules such as unified dataset management, 3d visualization, algorithm configuration, and metrics evaluation. It can help developers quickly build a complete SLAM system, flexibly combine different algorithm modules, and conduct standardized benchmarking for accuracy and efficiency comparison. Within this framework, we integrate several state-of-the-art SLAM algorithms with different types, including NeRF and 3DGS based SLAM, and even odometry or reconstruction algorithms, which demonstrates the flexibility and extensibility. We also conduct a comprehensive comparison and evaluation of these integrated algorithms, analyzing the characteristics of each. Finally, we contribute all the code, configuration and data to the open-source community, which aims to promote the widespread research and development of SLAM technology within the open-source ecosystem.  
   </ol>  
 </details>  
   
