@@ -3,25 +3,29 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Nearest-Neighbor-Normalization-Improves-Multimodal-Retrieval>Nearest Neighbor Normalization Improves Multimodal Retrieval</a></li>
-        <li><a href=#MoTaDual:-Modality-Task-Dual-Alignment-for-Enhanced-Zero-shot-Composed-Image-Retrieval>MoTaDual: Modality-Task Dual Alignment for Enhanced Zero-shot Composed Image Retrieval</a></li>
+        <li><a href=#Exploiting-Contextual-Uncertainty-of-Visual-Data-for-Efficient-Training-of-Deep-Models>Exploiting Contextual Uncertainty of Visual Data for Efficient Training of Deep Models</a></li>
+        <li><a href=#Semantic-Masking-and-Visual-Feature-Matching-for-Robust-Localization>Semantic Masking and Visual Feature Matching for Robust Localization</a></li>
+        <li><a href=#Efficient-Medical-Image-Retrieval-Using-DenseNet-and-FAISS-for-BIRADS-Classification>Efficient Medical Image Retrieval Using DenseNet and FAISS for BIRADS Classification</a></li>
+        <li><a href=#Identifying-Implicit-Social-Biases-in-Vision-Language-Models>Identifying Implicit Social Biases in Vision-Language Models</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#From-Web-Data-to-Real-Fields:-Low-Cost-Unsupervised-Domain-Adaptation-for-Agricultural-Robots>From Web Data to Real Fields: Low-Cost Unsupervised Domain Adaptation for Agricultural Robots</a></li>
+        <li><a href=#Silver-medal-Solution-for-Image-Matching-Challenge-2024>Silver medal Solution for Image Matching Challenge 2024</a></li>
+        <li><a href=#KptLLM:-Unveiling-the-Power-of-Large-Language-Model-for-Keypoint-Comprehension>KptLLM: Unveiling the Power of Large Language Model for Keypoint Comprehension</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Variable-Resolution-Sampling-and-Deep-Learning-Image-Recovery-for-Accelerated-Multi-Spectral-MRI-Near-Metal-Implants>Variable Resolution Sampling and Deep Learning Image Recovery for Accelerated Multi-Spectral MRI Near Metal Implants</a></li>
+        <li><a href=#Silver-medal-Solution-for-Image-Matching-Challenge-2024>Silver medal Solution for Image Matching Challenge 2024</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Scaled-Inverse-Graphics:-Efficiently-Learning-Large-Sets-of-3D-Scenes>Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes</a></li>
-        <li><a href=#Get-a-Grip:-Multi-Finger-Grasp-Evaluation-at-Scale-Enables-Robust-Sim-to-Real-Transfer>Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer</a></li>
-        <li><a href=#XRDSLAM:-A-Flexible-and-Modular-Framework-for-Deep-Learning-based-SLAM>XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM</a></li>
+        <li><a href=#FewViewGS:-Gaussian-Splatting-with-Few-View-Matching-and-Multi-stage-Training>FewViewGS: Gaussian Splatting with Few View Matching and Multi-stage Training</a></li>
+        <li><a href=#GVKF:-Gaussian-Voxel-Kernel-Functions-for-Highly-Efficient-Surface-Reconstruction-in-Open-Scenes>GVKF: Gaussian Voxel Kernel Functions for Highly Efficient Surface Reconstruction in Open Scenes</a></li>
+        <li><a href=#A-Probabilistic-Formulation-of-LiDAR-Mapping-with-Neural-Radiance-Fields>A Probabilistic Formulation of LiDAR Mapping with Neural Radiance Fields</a></li>
+        <li><a href=#ZIM:-Zero-Shot-Image-Matting-for-Anything>ZIM: Zero-Shot Image Matting for Anything</a></li>
       </ul>
     </li>
   </ol>
@@ -29,21 +33,42 @@
 
 ## Visual Localization  
 
-### [Nearest Neighbor Normalization Improves Multimodal Retrieval](http://arxiv.org/abs/2410.24114)  
-Neil Chowdhury, Franklin Wang, Sumedh Shenoy, Douwe Kiela, Sarah Schwettmann, Tristan Thrush  
+### [Exploiting Contextual Uncertainty of Visual Data for Efficient Training of Deep Models](http://arxiv.org/abs/2411.01925)  
+Sharat Agarwal  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Multimodal models leverage large-scale pre-training to achieve strong but still imperfect performance on tasks such as image captioning, visual question answering, and cross-modal retrieval. In this paper, we present a simple and efficient method for correcting errors in trained contrastive image-text retrieval models with no additional training, called Nearest Neighbor Normalization (NNN). We show an improvement on retrieval metrics in both text retrieval and image retrieval for all of the contrastive models that we tested (CLIP, BLIP, ALBEF, SigLIP, BEiT) and for both of the datasets that we used (MS-COCO and Flickr30k). NNN requires a reference database, but does not require any training on this database, and can even increase the retrieval accuracy of a model after finetuning.  
+    Objects, in the real world, rarely occur in isolation and exhibit typical arrangements governed by their independent utility, and their expected interaction with humans and other objects in the context. For example, a chair is expected near a table, and a computer is expected on top. Humans use this spatial context and relative placement as an important cue for visual recognition in case of ambiguities. Similar to human's, DNN's exploit contextual information from data to learn representations. Our research focuses on harnessing the contextual aspects of visual data to optimize data annotation and enhance the training of deep networks. Our contributions can be summarized as follows: (1) We introduce the notion of contextual diversity for active learning CDAL and show its applicability in three different visual tasks semantic segmentation, object detection and image classification, (2) We propose a data repair algorithm to curate contextually fair data to reduce model bias, enabling the model to detect objects out of their obvious context, (3) We propose Class-based annotation, where contextually relevant classes are selected that are complementary for model training under domain shift. Understanding the importance of well-curated data, we also emphasize the necessity of involving humans in the loop to achieve accurate annotations and to develop novel interaction strategies that allow humans to serve as fact-checkers. In line with this we are working on developing image retrieval system for wildlife camera trap images and reliable warning system for poor quality rural roads. For large-scale annotation, we are employing a strategic combination of human expertise and zero-shot models, while also integrating human input at various stages for continuous feedback.  
   </ol>  
 </details>  
+**comments**: ICVGIP, Young Researchers Symposium  
   
-### [MoTaDual: Modality-Task Dual Alignment for Enhanced Zero-shot Composed Image Retrieval](http://arxiv.org/abs/2410.23736)  
-Haiwen Li, Fei Su, Zhicheng Zhao  
+### [Semantic Masking and Visual Feature Matching for Robust Localization](http://arxiv.org/abs/2411.01804)  
+Luisa Mao, Ryan Soussan, Brian Coltin, Trey Smith, Joydeep Biswas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) is a challenging vision-language task, utilizing bi-modal (image+text) queries to retrieve target images. Despite the impressive performance of supervised CIR, the dependence on costly, manually-labeled triplets limits its scalability and zero-shot capability. To address this issue, zero-shot composed image retrieval (ZS-CIR) is presented along with projection-based approaches. However, such methods face two major problems, i.e., task discrepancy between pre-training (image $\leftrightarrow$ text) and inference (image+text $\rightarrow$ image), and modality discrepancy. The latter pertains to approaches based on text-only projection training due to the necessity of feature extraction from the reference image during inference. In this paper, we propose a two-stage framework to tackle both discrepancies. First, to ensure efficiency and scalability, a textual inversion network is pre-trained on large-scale caption datasets. Subsequently, we put forward Modality-Task Dual Alignment (MoTaDual) as the second stage, where large-language models (LLMs) generate triplet data for fine-tuning, and additionally, prompt learning is introduced in a multi-modal context to effectively alleviate both modality and task discrepancies. The experimental results show that our MoTaDual achieves the state-of-the-art performance across four widely used ZS-CIR benchmarks, while maintaining low training time and computational cost. The code will be released soon.  
+    We are interested in long-term deployments of autonomous robots to aid astronauts with maintenance and monitoring operations in settings such as the International Space Station. Unfortunately, such environments tend to be highly dynamic and unstructured, and their frequent reconfiguration poses a challenge for robust long-term localization of robots. Many state-of-the-art visual feature-based localization algorithms are not robust towards spatial scene changes, and SLAM algorithms, while promising, cannot run within the low-compute budget available to space robots. To address this gap, we present a computationally efficient semantic masking approach for visual feature matching that improves the accuracy and robustness of visual localization systems during long-term deployment in changing environments. Our method introduces a lightweight check that enforces matches to be within long-term static objects and have consistent semantic classes. We evaluate this approach using both map-based relocalization and relative pose estimation and show that it improves Absolute Trajectory Error (ATE) and correct match ratios on the publicly available Astrobee dataset. While this approach was originally developed for microgravity robotic freeflyers, it can be applied to any visual feature matching pipeline to improve robustness.  
+  </ol>  
+</details>  
+**comments**: 7 pages  
+  
+### [Efficient Medical Image Retrieval Using DenseNet and FAISS for BIRADS Classification](http://arxiv.org/abs/2411.01473)  
+MD Shaikh Rahman, Feiroz Humayara, Syed Maudud E Rabbi, Muhammad Mahbubur Rashid  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    That datasets that are used in todays research are especially vast in the medical field. Different types of medical images such as X-rays, MRI, CT scan etc. take up large amounts of space. This volume of data introduces challenges like accessing and retrieving specific images due to the size of the database. An efficient image retrieval system is essential as the database continues to grow to save time and resources. In this paper, we propose an approach to medical image retrieval using DenseNet for feature extraction and use FAISS for similarity search. DenseNet is well-suited for feature extraction in complex medical images and FAISS enables efficient handling of high-dimensional data in large-scale datasets. Unlike existing methods focused solely on classification accuracy, our method prioritizes both retrieval speed and diagnostic relevance, addressing a critical gap in real-time case comparison for radiologists. We applied the classification of breast cancer images using the BIRADS system. We utilized DenseNet's powerful feature representation and FAISSs efficient indexing capabilities to achieve high precision and recall in retrieving relevant images for diagnosis. We experimented on a dataset of 2006 images from the Categorized Digital Database for Low Energy and Subtracted Contrast Enhanced Spectral Mammography (CDD-CESM) images available on The Cancer Imaging Archive (TCIA). Our method outperforms conventional retrieval techniques, achieving a precision of 80% at k=5 for BIRADS classification. The dataset includes annotated CESM images and medical reports, providing a comprehensive foundation for our research.  
+  </ol>  
+</details>  
+**comments**: 34 pages, 5 figures  
+  
+### [Identifying Implicit Social Biases in Vision-Language Models](http://arxiv.org/abs/2411.00997)  
+Kimia Hamidieh, Haoran Zhang, Walter Gerych, Thomas Hartvigsen, Marzyeh Ghassemi  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Vision-language models, like CLIP (Contrastive Language Image Pretraining), are becoming increasingly popular for a wide range of multimodal retrieval tasks. However, prior work has shown that large language and deep vision models can learn historical biases contained in their training sets, leading to perpetuation of stereotypes and potential downstream harm. In this work, we conduct a systematic analysis of the social biases that are present in CLIP, with a focus on the interaction between image and text modalities. We first propose a taxonomy of social biases called So-B-IT, which contains 374 words categorized across ten types of bias. Each type can lead to societal harm if associated with a particular demographic group. Using this taxonomy, we examine images retrieved by CLIP from a facial image dataset using each word as part of a prompt. We find that CLIP frequently displays undesirable associations between harmful words and specific demographic groups, such as retrieving mostly pictures of Middle Eastern men when asked to retrieve images of a "terrorist". Finally, we conduct an analysis of the source of such biases, by showing that the same harmful stereotypes are also present in a large image-text dataset used to train CLIP models for examples of biases that we find. Our findings highlight the importance of evaluating and addressing bias in vision-language models, and suggest the need for transparency and fairness-aware curation of large pre-training datasets.  
   </ol>  
 </details>  
   
@@ -53,15 +78,24 @@ Haiwen Li, Fei Su, Zhicheng Zhao
 
 ## Keypoint Detection  
 
-### [From Web Data to Real Fields: Low-Cost Unsupervised Domain Adaptation for Agricultural Robots](http://arxiv.org/abs/2410.23906)  
-Vasileios Tzouras, Lazaros Nalpantidis, Ronja Güldenring  
+### [Silver medal Solution for Image Matching Challenge 2024](http://arxiv.org/abs/2411.01851)  
+Yian Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In precision agriculture, vision models often struggle with new, unseen fields where crops and weeds have been influenced by external factors, resulting in compositions and appearances that differ from the learned distribution. This paper aims to adapt to specific fields at low cost using Unsupervised Domain Adaptation (UDA). We explore a novel domain shift from a diverse, large pool of internet-sourced data to a small set of data collected by a robot at specific locations, minimizing the need for extensive on-field data collection. Additionally, we introduce a novel module -- the Multi-level Attention-based Adversarial Discriminator (MAAD) -- which can be integrated at the feature extractor level of any detection model. In this study, we incorporate MAAD with CenterNet to simultaneously detect leaf, stem, and vein instances. Our results show significant performance improvements in the unlabeled target domain compared to baseline models, with a 7.5% increase in object detection accuracy and a 5.1% improvement in keypoint detection.  
+    Image Matching Challenge 2024 is a competition focused on building 3D maps from diverse image sets, requiring participants to solve fundamental computer vision challenges in image matching across varying angles, lighting, and seasonal changes. This project develops a Pipeline method that combines multiple advanced techniques: using pre-trained EfficientNet-B7 for initial feature extraction and cosine distance-based image pair filtering, employing both KeyNetAffNetHardNet and SuperPoint for keypoint feature extraction, utilizing AdaLAM and SuperGlue for keypoint matching, and finally applying Pycolmap for 3D spatial analysis. The methodology achieved an excellent score of 0.167 on the private leaderboard, with experimental results demonstrating that the combination of KeyNetAffNetHardNet and SuperPoint provides significant advantages in keypoint detection and matching, particularly when dealing with challenging variations in surface texture and environmental conditions that typically degrade traditional algorithm performance.  
   </ol>  
 </details>  
-**comments**: This work has been submitted to the IEEE for possible publication  
+  
+### [KptLLM: Unveiling the Power of Large Language Model for Keypoint Comprehension](http://arxiv.org/abs/2411.01846)  
+Jie Yang, Wang Zeng, Sheng Jin, Lumin Xu, Wentao Liu, Chen Qian, Ruimao Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advancements in Multimodal Large Language Models (MLLMs) have greatly improved their abilities in image understanding. However, these models often struggle with grasping pixel-level semantic details, e.g., the keypoints of an object. To bridge this gap, we introduce the novel challenge of Semantic Keypoint Comprehension, which aims to comprehend keypoints across different task scenarios, including keypoint semantic understanding, visual prompt-based keypoint detection, and textual prompt-based keypoint detection. Moreover, we introduce KptLLM, a unified multimodal model that utilizes an identify-then-detect strategy to effectively address these challenges. KptLLM underscores the initial discernment of semantics in keypoints, followed by the precise determination of their positions through a chain-of-thought process. With several carefully designed modules, KptLLM adeptly handles various modality inputs, facilitating the interpretation of both semantic contents and keypoint locations. Our extensive experiments demonstrate KptLLM's superiority in various keypoint detection benchmarks and its unique semantic capabilities in interpreting keypoints.  
+  </ol>  
+</details>  
+**comments**: NeurIPS 2024  
   
   
 
@@ -69,15 +103,14 @@ Vasileios Tzouras, Lazaros Nalpantidis, Ronja Güldenring
 
 ## Image Matching  
 
-### [Variable Resolution Sampling and Deep Learning Image Recovery for Accelerated Multi-Spectral MRI Near Metal Implants](http://arxiv.org/abs/2410.23329)  
-Azadeh Sharafi, Nikolai J. Mickevicius, Mehran Baboli, Andrew S. Nencka, Kevin M. Koch  
+### [Silver medal Solution for Image Matching Challenge 2024](http://arxiv.org/abs/2411.01851)  
+Yian Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Purpose: This study presents a variable resolution (VR) sampling and deep learning reconstruction approach for multi-spectral MRI near metal implants, aiming to reduce scan times while maintaining image quality. Background: The rising use of metal implants has increased MRI scans affected by metal artifacts. Multi-spectral imaging (MSI) reduces these artifacts but sacrifices acquisition efficiency. Methods: This retrospective study on 1.5T MSI knee and hip data from patients with metal hardware used a novel spectral undersampling scheme to improve acquisition efficiency by ~40%. U-Net-based deep learning models were trained for reconstruction. Image quality was evaluated using SSIM, PSNR, and RESI metrics. Results: Deep learning reconstructions of undersampled VR data (DL-VR) showed significantly higher SSIM and PSNR values (p<0.001) compared to conventional reconstruction (CR-VR), with improved edge sharpness. Edge sharpness in DL-reconstructed images matched fully sampled references (p=0.5). Conclusion: This approach can potentially enhance MRI examinations near metal implants by reducing scan times or enabling higher resolution. Further prospective studies are needed to assess clinical value.  
+    Image Matching Challenge 2024 is a competition focused on building 3D maps from diverse image sets, requiring participants to solve fundamental computer vision challenges in image matching across varying angles, lighting, and seasonal changes. This project develops a Pipeline method that combines multiple advanced techniques: using pre-trained EfficientNet-B7 for initial feature extraction and cosine distance-based image pair filtering, employing both KeyNetAffNetHardNet and SuperPoint for keypoint feature extraction, utilizing AdaLAM and SuperGlue for keypoint matching, and finally applying Pycolmap for 3D spatial analysis. The methodology achieved an excellent score of 0.167 on the private leaderboard, with experimental results demonstrating that the combination of KeyNetAffNetHardNet and SuperPoint provides significant advantages in keypoint detection and matching, particularly when dealing with challenging variations in surface texture and environmental conditions that typically degrade traditional algorithm performance.  
   </ol>  
 </details>  
-**comments**: 10 pages, 5 figures  
   
   
 
@@ -85,32 +118,46 @@ Azadeh Sharafi, Nikolai J. Mickevicius, Mehran Baboli, Andrew S. Nencka, Kevin M
 
 ## NeRF  
 
-### [Scaled Inverse Graphics: Efficiently Learning Large Sets of 3D Scenes](http://arxiv.org/abs/2410.23742)  
-Karim Kassab, Antoine Schnepf, Jean-Yves Franceschi, Laurent Caraffa, Flavian Vasile, Jeremie Mary, Andrew Comport, Valérie Gouet-Brunet  
+### [FewViewGS: Gaussian Splatting with Few View Matching and Multi-stage Training](http://arxiv.org/abs/2411.02229)  
+Ruihong Yin, Vladimir Yugay, Yue Li, Sezer Karaoglu, Theo Gevers  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    While the field of inverse graphics has been witnessing continuous growth, techniques devised thus far predominantly focus on learning individual scene representations. In contrast, learning large sets of scenes has been a considerable bottleneck in NeRF developments, as repeatedly applying inverse graphics on a sequence of scenes, though essential for various applications, remains largely prohibitive in terms of resource costs. We introduce a framework termed "scaled inverse graphics", aimed at efficiently learning large sets of scene representations, and propose a novel method to this end. It operates in two stages: (i) training a compression model on a subset of scenes, then (ii) training NeRF models on the resulting smaller representations, thereby reducing the optimization space per new scene. In practice, we compact the representation of scenes by learning NeRFs in a latent space to reduce the image resolution, and sharing information across scenes to reduce NeRF representation complexity. We experimentally show that our method presents both the lowest training time and memory footprint in scaled inverse graphics compared to other methods applied independently on each scene. Our codebase is publicly available as open-source. Our project page can be found at https://scaled-ig.github.io .  
+    The field of novel view synthesis from images has seen rapid advancements with the introduction of Neural Radiance Fields (NeRF) and more recently with 3D Gaussian Splatting. Gaussian Splatting became widely adopted due to its efficiency and ability to render novel views accurately. While Gaussian Splatting performs well when a sufficient amount of training images are available, its unstructured explicit representation tends to overfit in scenarios with sparse input images, resulting in poor rendering performance. To address this, we present a 3D Gaussian-based novel view synthesis method using sparse input images that can accurately render the scene from the viewpoints not covered by the training images. We propose a multi-stage training scheme with matching-based consistency constraints imposed on the novel views without relying on pre-trained depth estimation or diffusion models. This is achieved by using the matches of the available training images to supervise the generation of the novel views sampled between the training frames with color, geometry, and semantic losses. In addition, we introduce a locality preserving regularization for 3D Gaussians which removes rendering artifacts by preserving the local color structure of the scene. Evaluation on synthetic and real-world datasets demonstrates competitive or superior performance of our method in few-shot novel view synthesis compared to existing state-of-the-art methods.  
+  </ol>  
+</details>  
+**comments**: Accepted by NeurIPS2024  
+  
+### [GVKF: Gaussian Voxel Kernel Functions for Highly Efficient Surface Reconstruction in Open Scenes](http://arxiv.org/abs/2411.01853)  
+Gaochao Song, Chong Cheng, Hao Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper we present a novel method for efficient and effective 3D surface reconstruction in open scenes. Existing Neural Radiance Fields (NeRF) based works typically require extensive training and rendering time due to the adopted implicit representations. In contrast, 3D Gaussian splatting (3DGS) uses an explicit and discrete representation, hence the reconstructed surface is built by the huge number of Gaussian primitives, which leads to excessive memory consumption and rough surface details in sparse Gaussian areas. To address these issues, we propose Gaussian Voxel Kernel Functions (GVKF), which establish a continuous scene representation based on discrete 3DGS through kernel regression. The GVKF integrates fast 3DGS rasterization and highly effective scene implicit representations, achieving high-fidelity open scene surface reconstruction. Experiments on challenging scene datasets demonstrate the efficiency and effectiveness of our proposed GVKF, featuring with high reconstruction quality, real-time rendering speed, significant savings in storage and training memory consumption.  
+  </ol>  
+</details>  
+**comments**: NeurIPS 2024  
+  
+### [A Probabilistic Formulation of LiDAR Mapping with Neural Radiance Fields](http://arxiv.org/abs/2411.01725)  
+[[code](https://github.com/mcdermatt/plink)]  
+Matthew McDermott, Jason Rife  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper we reexamine the process through which a Neural Radiance Field (NeRF) can be trained to produce novel LiDAR views of a scene. Unlike image applications where camera pixels integrate light over time, LiDAR pulses arrive at specific times. As such, multiple LiDAR returns are possible for any given detector and the classification of these returns is inherently probabilistic. Applying a traditional NeRF training routine can result in the network learning phantom surfaces in free space between conflicting range measurements, similar to how floater aberrations may be produced by an image model. We show that by formulating loss as an integral of probability (rather than as an integral of optical density) the network can learn multiple peaks for a given ray, allowing the sampling of first, nth, or strongest returns from a single output channel. Code is available at https://github.com/mcdermatt/PLINK  
   </ol>  
 </details>  
   
-### [Get a Grip: Multi-Finger Grasp Evaluation at Scale Enables Robust Sim-to-Real Transfer](http://arxiv.org/abs/2410.23701)  
-Tyler Ga Wei Lum, Albert H. Li, Preston Culbertson, Krishnan Srinivasan, Aaron D. Ames, Mac Schwager, Jeannette Bohg  
+### [ZIM: Zero-Shot Image Matting for Anything](http://arxiv.org/abs/2411.00626)  
+[[code](https://github.com/naver-ai/zim)]  
+Beomyoung Kim, Chanyong Shin, Joonhyun Jeong, Hyungsik Jung, Se-Yun Lee, Sewhan Chun, Dong-Hyun Hwang, Joonsang Yu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work explores conditions under which multi-finger grasping algorithms can attain robust sim-to-real transfer. While numerous large datasets facilitate learning generative models for multi-finger grasping at scale, reliable real-world dexterous grasping remains challenging, with most methods degrading when deployed on hardware. An alternate strategy is to use discriminative grasp evaluation models for grasp selection and refinement, conditioned on real-world sensor measurements. This paradigm has produced state-of-the-art results for vision-based parallel-jaw grasping, but remains unproven in the multi-finger setting. In this work, we find that existing datasets and methods have been insufficient for training discriminitive models for multi-finger grasping. To train grasp evaluators at scale, datasets must provide on the order of millions of grasps, including both positive and negative examples, with corresponding visual data resembling measurements at inference time. To that end, we release a new, open-source dataset of 3.5M grasps on 4.3K objects annotated with RGB images, point clouds, and trained NeRFs. Leveraging this dataset, we train vision-based grasp evaluators that outperform both analytic and generative modeling-based baselines on extensive simulated and real-world trials across a diverse range of objects. We show via numerous ablations that the key factor for performance is indeed the evaluator, and that its quality degrades as the dataset shrinks, demonstrating the importance of our new dataset. Project website at: https://sites.google.com/view/get-a-grip-dataset.  
+    The recent segmentation foundation model, Segment Anything Model (SAM), exhibits strong zero-shot segmentation capabilities, but it falls short in generating fine-grained precise masks. To address this limitation, we propose a novel zero-shot image matting model, called ZIM, with two key contributions: First, we develop a label converter that transforms segmentation labels into detailed matte labels, constructing the new SA1B-Matte dataset without costly manual annotations. Training SAM with this dataset enables it to generate precise matte masks while maintaining its zero-shot capability. Second, we design the zero-shot matting model equipped with a hierarchical pixel decoder to enhance mask representation, along with a prompt-aware masked attention mechanism to improve performance by enabling the model to focus on regions specified by visual prompts. We evaluate ZIM using the newly introduced MicroMat-3K test set, which contains high-quality micro-level matte labels. Experimental results show that ZIM outperforms existing methods in fine-grained mask generation and zero-shot generalization. Furthermore, we demonstrate the versatility of ZIM in various downstream tasks requiring precise masks, such as image inpainting and 3D NeRF. Our contributions provide a robust foundation for advancing zero-shot matting and its downstream applications across a wide range of computer vision tasks. The code is available at \url{https://github.com/naver-ai/ZIM}.  
   </ol>  
 </details>  
-  
-### [XRDSLAM: A Flexible and Modular Framework for Deep Learning based SLAM](http://arxiv.org/abs/2410.23690)  
-Xiaomeng Wang, Nan Wang, Guofeng Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we propose a flexible SLAM framework, XRDSLAM. It adopts a modular code design and a multi-process running mechanism, providing highly reusable foundational modules such as unified dataset management, 3d visualization, algorithm configuration, and metrics evaluation. It can help developers quickly build a complete SLAM system, flexibly combine different algorithm modules, and conduct standardized benchmarking for accuracy and efficiency comparison. Within this framework, we integrate several state-of-the-art SLAM algorithms with different types, including NeRF and 3DGS based SLAM, and even odometry or reconstruction algorithms, which demonstrates the flexibility and extensibility. We also conduct a comprehensive comparison and evaluation of these integrated algorithms, analyzing the characteristics of each. Finally, we contribute all the code, configuration and data to the open-source community, which aims to promote the widespread research and development of SLAM technology within the open-source ecosystem.  
-  </ol>  
-</details>  
+**comments**: preprint (21 pages, 16 figures, and 8 tables)  
   
   
 
