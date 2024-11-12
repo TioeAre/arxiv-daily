@@ -1,30 +1,32 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#From-Transparent-to-Opaque:-Rethinking-Neural-Implicit-Surfaces-with-$α$-NeuS>From Transparent to Opaque: Rethinking Neural Implicit Surfaces with $α$-NeuS</a></li>
+        <li><a href=#From-Pixels-to-Prose:-Advancing-Multi-Modal-Language-Models-for-Remote-Sensing>From Pixels to Prose: Advancing Multi-Modal Language Models for Remote Sensing</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#A-Nerf-Based-Color-Consistency-Method-for-Remote-Sensing-Images>A Nerf-Based Color Consistency Method for Remote Sensing Images</a></li>
-        <li><a href=#Rate-aware-Compression-for-NeRF-based-Volumetric-Video>Rate-aware Compression for NeRF-based Volumetric Video</a></li>
+        <li><a href=#LuSh-NeRF:-Lighting-up-and-Sharpening-NeRFs-for-Low-light-Scenes>LuSh-NeRF: Lighting up and Sharpening NeRFs for Low-light Scenes</a></li>
+        <li><a href=#Through-the-Curved-Cover:-Synthesizing-Cover-Aberrated-Scenes-with-Refractive-Field>Through the Curved Cover: Synthesizing Cover Aberrated Scenes with Refractive Field</a></li>
+        <li><a href=#AI-Driven-Stylization-of-3D-Environments>AI-Driven Stylization of 3D Environments</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Visual Localization  
 
-### [From Transparent to Opaque: Rethinking Neural Implicit Surfaces with $α$ -NeuS](http://arxiv.org/abs/2411.05362)  
-Haoran Zhang, Junkai Deng, Xuhui Chen, Fei Hou, Wencheng Wang, Hong Qin, Chen Qian, Ying He  
+### [From Pixels to Prose: Advancing Multi-Modal Language Models for Remote Sensing](http://arxiv.org/abs/2411.05826)  
+Xintian Sun, Benji Peng, Charles Zhang, Fei Jin, Qian Niu, Junyu Liu, Keyu Chen, Ming Li, Pohsun Feng, Ziqian Bi, Ming Liu, Yichao Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Traditional 3D shape reconstruction techniques from multi-view images, such as structure from motion and multi-view stereo, primarily focus on opaque surfaces. Similarly, recent advances in neural radiance fields and its variants also primarily address opaque objects, encountering difficulties with the complex lighting effects caused by transparent materials. This paper introduces $\alpha$-NeuS, a new method for simultaneously reconstructing thin transparent objects and opaque objects based on neural implicit surfaces (NeuS). Our method leverages the observation that transparent surfaces induce local extreme values in the learned distance fields during neural volumetric rendering, contrasting with opaque surfaces that align with zero level sets. Traditional iso-surfacing algorithms such as marching cubes, which rely on fixed iso-values, are ill-suited for this data. We address this by taking the absolute value of the distance field and developing an optimization method that extracts level sets corresponding to both non-negative local minima and zero iso-values. We prove that the reconstructed surfaces are unbiased for both transparent and opaque objects. To validate our approach, we construct a benchmark that includes both real-world and synthetic scenes, demonstrating its practical utility and effectiveness. Our data and code are publicly available at https://github.com/728388808/alpha-NeuS.  
+    Remote sensing has evolved from simple image acquisition to complex systems capable of integrating and processing visual and textual data. This review examines the development and application of multi-modal language models (MLLMs) in remote sensing, focusing on their ability to interpret and describe satellite imagery using natural language. We cover the technical underpinnings of MLLMs, including dual-encoder architectures, Transformer models, self-supervised and contrastive learning, and cross-modal integration. The unique challenges of remote sensing data--varying spatial resolutions, spectral richness, and temporal changes--are analyzed for their impact on MLLM performance. Key applications such as scene description, object detection, change detection, text-to-image retrieval, image-to-text generation, and visual question answering are discussed to demonstrate their relevance in environmental monitoring, urban planning, and disaster response. We review significant datasets and resources supporting the training and evaluation of these models. Challenges related to computational demands, scalability, data quality, and domain adaptation are highlighted. We conclude by proposing future research directions and technological advancements to further enhance MLLM utility in remote sensing.  
   </ol>  
 </details>  
+**comments**: 10 pages, 1 figure  
   
   
 
@@ -32,26 +34,34 @@ Haoran Zhang, Junkai Deng, Xuhui Chen, Fei Hou, Wencheng Wang, Hong Qin, Chen Qi
 
 ## NeRF  
 
-### [A Nerf-Based Color Consistency Method for Remote Sensing Images](http://arxiv.org/abs/2411.05557)  
-Zongcheng Zuo, Yuanxiang Li, Tongtong Zhang  
+### [LuSh-NeRF: Lighting up and Sharpening NeRFs for Low-light Scenes](http://arxiv.org/abs/2411.06757)  
+Zefan Qu, Ke Xu, Gerhard Petrus Hancke, Rynson W. H. Lau  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Due to different seasons, illumination, and atmospheric conditions, the photometric of the acquired image varies greatly, which leads to obvious stitching seams at the edges of the mosaic image. Traditional methods can be divided into two categories, one is absolute radiation correction and the other is relative radiation normalization. We propose a NeRF-based method of color consistency correction for multi-view images, which weaves image features together using implicit expressions, and then re-illuminates feature space to generate a fusion image with a new perspective. We chose Superview-1 satellite images and UAV images with large range and time difference for the experiment. Experimental results show that the synthesize image generated by our method has excellent visual effect and smooth color transition at the edges.  
+    Neural Radiance Fields (NeRFs) have shown remarkable performances in producing novel-view images from high-quality scene images. However, hand-held low-light photography challenges NeRFs as the captured images may simultaneously suffer from low visibility, noise, and camera shakes. While existing NeRF methods may handle either low light or motion, directly combining them or incorporating additional image-based enhancement methods does not work as these degradation factors are highly coupled. We observe that noise in low-light images is always sharp regardless of camera shakes, which implies an implicit order of these degradation factors within the image formation process. To this end, we propose in this paper a novel model, named LuSh-NeRF, which can reconstruct a clean and sharp NeRF from a group of hand-held low-light images. The key idea of LuSh-NeRF is to sequentially model noise and blur in the images via multi-view feature consistency and frequency information of NeRF, respectively. Specifically, LuSh-NeRF includes a novel Scene-Noise Decomposition (SND) module for decoupling the noise from the scene representation and a novel Camera Trajectory Prediction (CTP) module for the estimation of camera motions based on low-frequency scene information. To facilitate training and evaluations, we construct a new dataset containing both synthetic and real images. Experiments show that LuSh-NeRF outperforms existing approaches. Our code and dataset can be found here: https://github.com/quzefan/LuSh-NeRF.  
   </ol>  
 </details>  
-**comments**: 4 pages, 4 figures, The International Geoscience and Remote Sensing
-  Symposium (IGARSS2023)  
+**comments**: Accepted by NeurIPS 2024  
   
-### [Rate-aware Compression for NeRF-based Volumetric Video](http://arxiv.org/abs/2411.05322)  
-Zhiyu Zhang, Guo Lu, Huanxiong Liang, Zhengxue Cheng, Anni Tang, Li Song  
+### [Through the Curved Cover: Synthesizing Cover Aberrated Scenes with Refractive Field](http://arxiv.org/abs/2411.06365)  
+Liuyue Xie, Jiancong Guo, Laszlo A. Jeni, Zhiheng Jia, Mingyang Li, Yunwen Zhou, Chao Guo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The neural radiance fields (NeRF) have advanced the development of 3D volumetric video technology, but the large data volumes they involve pose significant challenges for storage and transmission. To address these problems, the existing solutions typically compress these NeRF representations after the training stage, leading to a separation between representation training and compression. In this paper, we try to directly learn a compact NeRF representation for volumetric video in the training stage based on the proposed rate-aware compression framework. Specifically, for volumetric video, we use a simple yet effective modeling strategy to reduce temporal redundancy for the NeRF representation. Then, during the training phase, an implicit entropy model is utilized to estimate the bitrate of the NeRF representation. This entropy model is then encoded into the bitstream to assist in the decoding of the NeRF representation. This approach enables precise bitrate estimation, thereby leading to a compact NeRF representation. Furthermore, we propose an adaptive quantization strategy and learn the optimal quantization step for the NeRF representations. Finally, the NeRF representation can be optimized by using the rate-distortion trade-off. Our proposed compression framework can be used for different representations and experimental results demonstrate that our approach significantly reduces the storage size with marginal distortion and achieves state-of-the-art rate-distortion performance for volumetric video on the HumanRF and ReRF datasets. Compared to the previous state-of-the-art method TeTriRF, we achieved an approximately -80% BD-rate on the HumanRF dataset and -60% BD-rate on the ReRF dataset.  
+    Recent extended reality headsets and field robots have adopted covers to protect the front-facing cameras from environmental hazards and falls. The surface irregularities on the cover can lead to optical aberrations like blurring and non-parametric distortions. Novel view synthesis methods like NeRF and 3D Gaussian Splatting are ill-equipped to synthesize from sequences with optical aberrations. To address this challenge, we introduce SynthCover to enable novel view synthesis through protective covers for downstream extended reality applications. SynthCover employs a Refractive Field that estimates the cover's geometry, enabling precise analytical calculation of refracted rays. Experiments on synthetic and real-world scenes demonstrate our method's ability to accurately model scenes viewed through protective covers, achieving a significant improvement in rendering quality compared to prior methods. We also show that the model can adjust well to various cover geometries with synthetic sequences captured with covers of different surface curvatures. To motivate further studies on this problem, we provide the benchmarked dataset containing real and synthetic walkable scenes captured with protective cover optical aberrations.  
   </ol>  
 </details>  
-**comments**: Accepted by ACM MM 2024 (Oral)  
+**comments**: WACV 2025  
+  
+### [AI-Driven Stylization of 3D Environments](http://arxiv.org/abs/2411.06067)  
+Yuanbo Chen, Yixiao Kang, Yukun Song, Cyrus Vachha, Sining Huang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this system, we discuss methods to stylize a scene of 3D primitive objects into a higher fidelity 3D scene using novel 3D representations like NeRFs and 3D Gaussian Splatting. Our approach leverages existing image stylization systems and image-to-3D generative models to create a pipeline that iteratively stylizes and composites 3D objects into scenes. We show our results on adding generated objects into a scene and discuss limitations.  
+  </ol>  
+</details>  
   
   
 
