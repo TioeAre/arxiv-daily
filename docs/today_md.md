@@ -1,163 +1,26 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Enhanced-Monocular-Visual-Odometry-with-AR-Poses-and-Integrated-INS-GPS-for-Robust-Localization-in-Urban-Environments>Enhanced Monocular Visual Odometry with AR Poses and Integrated INS-GPS for Robust Localization in Urban Environments</a></li>
-      </ul>
-    </li>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#4D-Gaussian-Splatting-in-the-Wild-with-Uncertainty-Aware-Regularization>4D Gaussian Splatting in the Wild with Uncertainty-Aware Regularization</a></li>
-        <li><a href=#Biomass-phenotyping-of-oilseed-rape-through-UAV-multi-view-oblique-imaging-with-3DGS-and-SAM-model>Biomass phenotyping of oilseed rape through UAV multi-view oblique imaging with 3DGS and SAM model</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#OSMLoc:-Single-Image-Based-Visual-Localization-in-OpenStreetMap-with-Geometric-and-Semantic-Guidances>OSMLoc: Single Image-Based Visual Localization in OpenStreetMap with Geometric and Semantic Guidances</a></li>
-        <li><a href=#Hopfield-Fenchel-Young-Networks:-A-Unified-Framework-for-Associative-Memory-Retrieval>Hopfield-Fenchel-Young Networks: A Unified Framework for Associative Memory Retrieval</a></li>
-        <li><a href=#Saliency-Map-based-Image-Retrieval-using-Invariant-Krawtchouk-Moments>Saliency Map-based Image Retrieval using Invariant Krawtchouk Moments</a></li>
-        <li><a href=#MBA-SLAM:-Motion-Blur-Aware-Dense-Visual-SLAM-with-Radiance-Fields-Representation>MBA-SLAM: Motion Blur Aware Dense Visual SLAM with Radiance Fields Representation</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#BillBoard-Splatting-(BBSplat):-Learnable-Textured-Primitives-for-Novel-View-Synthesis>BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis</a></li>
-        <li><a href=#Biomass-phenotyping-of-oilseed-rape-through-UAV-multi-view-oblique-imaging-with-3DGS-and-SAM-model>Biomass phenotyping of oilseed rape through UAV multi-view oblique imaging with 3DGS and SAM model</a></li>
-        <li><a href=#MBA-SLAM:-Motion-Blur-Aware-Dense-Visual-SLAM-with-Radiance-Fields-Representation>MBA-SLAM: Motion Blur Aware Dense Visual SLAM with Radiance Fields Representation</a></li>
-        <li><a href=#TomoGRAF:-A-Robust-and-Generalizable-Reconstruction-Network-for-Single-View-Computed-Tomography>TomoGRAF: A Robust and Generalizable Reconstruction Network for Single-View Computed Tomography</a></li>
+        <li><a href=#Image-Matching-Filtering-and-Refinement-by-Planes-and-Beyond>Image Matching Filtering and Refinement by Planes and Beyond</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## Image Matching  
 
-### [Enhanced Monocular Visual Odometry with AR Poses and Integrated INS-GPS for Robust Localization in Urban Environments](http://arxiv.org/abs/2411.08231)  
-Ankit Shaw  
+### [Image Matching Filtering and Refinement by Planes and Beyond](http://arxiv.org/abs/2411.09484)  
+[[code](https://github.com/fb82/miho)]  
+Fabio Bellavia, Zhenjun Zhao, Luca Morelli, Fabio Remondino  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces a cost effective localization system combining monocular visual odometry , augmented reality (AR) poses, and integrated INS-GPS data. We address monocular VO scale factor issues using AR poses and enhance accuracy with INS and GPS data, filtered through an Extended Kalman Filter . Our approach, tested using manually annotated trajectories from Google Street View, achieves an RMSE of 1.529 meters over a 1 km track. Future work will focus on real-time mobile implementation and further integration of visual-inertial odometry for robust localization. This method offers lane-level accuracy with minimal hardware, making advanced navigation more accessible.  
+    This paper introduces a modular, non-deep learning method for filtering and refining sparse correspondences in image matching. Assuming that motion flow within the scene can be approximated by local homography transformations, matches are aggregated into overlapping clusters corresponding to virtual planes using an iterative RANSAC-based approach, with non-conforming correspondences discarded. Moreover, the underlying planar structural design provides an explicit map between local patches associated with the matches, enabling optional refinement of keypoint positions through cross-correlation template matching after patch reprojection. Finally, to enhance robustness and fault-tolerance against violations of the piece-wise planar approximation assumption, a further strategy is designed for minimizing relative patch distortion in the plane reprojection by introducing an intermediate homography that projects both patches into a common plane. The proposed method is extensively evaluated on standard datasets and image matching pipelines, and compared with state-of-the-art approaches. Unlike other current comparisons, the proposed benchmark also takes into account the more general, real, and practical cases where camera intrinsics are unavailable. Experimental results demonstrate that our proposed non-deep learning, geometry-based approach achieves performances that are either superior to or on par with recent state-of-the-art deep learning methods. Finally, this study suggests that there are still development potential in actual image matching solutions in the considered research direction, which could be in the future incorporated in novel deep image matching architectures.  
   </ol>  
 </details>  
-**comments**: The copyright of this paper would be given to IEEE after "acceptance
-  of paper by IEEE"  
-  
-  
-
-
-
-## SFM  
-
-### [4D Gaussian Splatting in the Wild with Uncertainty-Aware Regularization](http://arxiv.org/abs/2411.08879)  
-Mijeong Kim, Jongwoo Lim, Bohyung Han  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Novel view synthesis of dynamic scenes is becoming important in various applications, including augmented and virtual reality. We propose a novel 4D Gaussian Splatting (4DGS) algorithm for dynamic scenes from casually recorded monocular videos. To overcome the overfitting problem of existing work for these real-world videos, we introduce an uncertainty-aware regularization that identifies uncertain regions with few observations and selectively imposes additional priors based on diffusion models and depth smoothness on such regions. This approach improves both the performance of novel view synthesis and the quality of training image reconstruction. We also identify the initialization problem of 4DGS in fast-moving dynamic regions, where the Structure from Motion (SfM) algorithm fails to provide reliable 3D landmarks. To initialize Gaussian primitives in such regions, we present a dynamic region densification method using the estimated depth maps and scene flow. Our experiments show that the proposed method improves the performance of 4DGS reconstruction from a video captured by a handheld monocular camera and also exhibits promising results in few-shot static scene reconstruction.  
-  </ol>  
-</details>  
-**comments**: NeurIPS 2024  
-  
-### [Biomass phenotyping of oilseed rape through UAV multi-view oblique imaging with 3DGS and SAM model](http://arxiv.org/abs/2411.08453)  
-Yutao Shen, Hongyu Zhou, Xin Yang, Xuqi Lu, Ziyue Guo, Lixi Jiang, Yong He, Haiyan Cen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Biomass estimation of oilseed rape is crucial for optimizing crop productivity and breeding strategies. While UAV-based imaging has advanced high-throughput phenotyping, current methods often rely on orthophoto images, which struggle with overlapping leaves and incomplete structural information in complex field environments. This study integrates 3D Gaussian Splatting (3DGS) with the Segment Anything Model (SAM) for precise 3D reconstruction and biomass estimation of oilseed rape. UAV multi-view oblique images from 36 angles were used to perform 3D reconstruction, with the SAM module enhancing point cloud segmentation. The segmented point clouds were then converted into point cloud volumes, which were fitted to ground-measured biomass using linear regression. The results showed that 3DGS (7k and 30k iterations) provided high accuracy, with peak signal-to-noise ratios (PSNR) of 27.43 and 29.53 and training times of 7 and 49 minutes, respectively. This performance exceeded that of structure from motion (SfM) and mipmap Neural Radiance Fields (Mip-NeRF), demonstrating superior efficiency. The SAM module achieved high segmentation accuracy, with a mean intersection over union (mIoU) of 0.961 and an F1-score of 0.980. Additionally, a comparison of biomass extraction models found the point cloud volume model to be the most accurate, with an determination coefficient (R2) of 0.976, root mean square error (RMSE) of 2.92 g/plant, and mean absolute percentage error (MAPE) of 6.81%, outperforming both the plot crop volume and individual crop volume models. This study highlights the potential of combining 3DGS with multi-view UAV imaging for improved biomass phenotyping.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [OSMLoc: Single Image-Based Visual Localization in OpenStreetMap with Geometric and Semantic Guidances](http://arxiv.org/abs/2411.08665)  
-Youqi Liao, Xieyuanli Chen, Shuhao Kang, Jianping Li, Zhen Dong, Hongchao Fan, Bisheng Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    OpenStreetMap (OSM), an online and versatile source of volunteered geographic information (VGI), is widely used for human self-localization by matching nearby visual observations with vectorized map data. However, due to the divergence in modalities and views, image-to-OSM (I2O) matching and localization remain challenging for robots, preventing the full utilization of VGI data in the unmanned ground vehicles and logistic industry. Inspired by the fact that the human brain relies on geometric and semantic understanding of sensory information for spatial localization tasks, we propose the OSMLoc in this paper. OSMLoc is a brain-inspired single-image visual localization method with semantic and geometric guidance to improve accuracy, robustness, and generalization ability. First, we equip the OSMLoc with the visual foundational model to extract powerful image features. Second, a geometry-guided depth distribution adapter is proposed to bridge the monocular depth estimation and camera-to-BEV transform. Thirdly, the semantic embeddings from the OSM data are utilized as auxiliary guidance for image-to-OSM feature matching. To validate the proposed OSMLoc, we collect a worldwide cross-area and cross-condition (CC) benchmark for extensive evaluation. Experiments on the MGL dataset, CC validation benchmark, and KITTI dataset have demonstrated the superiority of our method. Code, pre-trained models, CC validation benchmark, and additional results are available on: https://github.com/WHU-USI3DV/OSMLoc  
-  </ol>  
-</details>  
-**comments**: 15 pages, technical report  
-  
-### [Hopfield-Fenchel-Young Networks: A Unified Framework for Associative Memory Retrieval](http://arxiv.org/abs/2411.08590)  
-[[code](https://github.com/deep-spin/HFYN)]  
-Saul Santos, Vlad Niculae, Daniel McNamee, André F. T. Martins  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Associative memory models, such as Hopfield networks and their modern variants, have garnered renewed interest due to advancements in memory capacity and connections with self-attention in transformers. In this work, we introduce a unified framework-Hopfield-Fenchel-Young networks-which generalizes these models to a broader family of energy functions. Our energies are formulated as the difference between two Fenchel-Young losses: one, parameterized by a generalized entropy, defines the Hopfield scoring mechanism, while the other applies a post-transformation to the Hopfield output. By utilizing Tsallis and norm entropies, we derive end-to-end differentiable update rules that enable sparse transformations, uncovering new connections between loss margins, sparsity, and exact retrieval of single memory patterns. We further extend this framework to structured Hopfield networks using the SparseMAP transformation, allowing the retrieval of pattern associations rather than a single pattern. Our framework unifies and extends traditional and modern Hopfield networks and provides an energy minimization perspective for widely used post-transformations like $\ell_2$ -normalization and layer normalization-all through suitable choices of Fenchel-Young losses and by using convex analysis as a building block. Finally, we validate our Hopfield-Fenchel-Young networks on diverse memory recall tasks, including free and sequential recall. Experiments on simulated data, image retrieval, multiple instance learning, and text rationalization demonstrate the effectiveness of our approach.  
-  </ol>  
-</details>  
-**comments**: 49 pages, 14 figures. arXiv admin note: text overlap with
-  arXiv:2402.13725  
-  
-### [Saliency Map-based Image Retrieval using Invariant Krawtchouk Moments](http://arxiv.org/abs/2411.08567)  
-Ashkan Nejad, Mohammad Reza Faraji, Xiaojun Qi  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    With the widespread adoption of digital devices equipped with cameras and the rapid development of Internet technology, numerous content-based image retrieval systems and novel image feature extraction techniques have emerged in recent years. This paper introduces a saliency map-based image retrieval approach using invariant Krawtchouk moments (SM-IKM) to enhance retrieval speed and accuracy. The proposed method applies a global contrast-based salient region detection algorithm to create a saliency map that effectively isolates the foreground from the background. It then combines multiple orders of invariant Krawtchouk moments (IKM) with local binary patterns (LBPs) and color histograms to comprehensively represent the foreground and background. Additionally, it incorporates LBPs derived from the saliency map to improve discriminative power, facilitating more precise image differentiation. A bag-of-visual-words (BoVW) model is employed to generate a codebook for classification and discrimination. By using compact IKMs in the BoVW framework and integrating a range of region-based feature-including color histograms, LBPs, and saliency map-enhanced LBPs, our proposed SM-IKM achieves efficient and accurate image retrieval. xtensive experiments on publicly available datasets, such as Caltech 101 and Wang, demonstrate that SM-IKM outperforms recent state-of-the-art retrieval methods. The source code for SM-IKM is available at github.com/arnejad/SMIKM.  
-  </ol>  
-</details>  
-  
-### [MBA-SLAM: Motion Blur Aware Dense Visual SLAM with Radiance Fields Representation](http://arxiv.org/abs/2411.08279)  
-[[code](https://github.com/wu-cvgl/mba-slam)]  
-Peng Wang, Lingzhe Zhao, Yin Zhang, Shiyu Zhao, Peidong Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Emerging 3D scene representations, such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), have demonstrated their effectiveness in Simultaneous Localization and Mapping (SLAM) for photo-realistic rendering, particularly when using high-quality video sequences as input. However, existing methods struggle with motion-blurred frames, which are common in real-world scenarios like low-light or long-exposure conditions. This often results in a significant reduction in both camera localization accuracy and map reconstruction quality. To address this challenge, we propose a dense visual SLAM pipeline (i.e. MBA-SLAM) to handle severe motion-blurred inputs. Our approach integrates an efficient motion blur-aware tracker with either neural radiance fields or Gaussian Splatting based mapper. By accurately modeling the physical image formation process of motion-blurred images, our method simultaneously learns 3D scene representation and estimates the cameras' local trajectory during exposure time, enabling proactive compensation for motion blur caused by camera movement. In our experiments, we demonstrate that MBA-SLAM surpasses previous state-of-the-art methods in both camera localization and map reconstruction, showcasing superior performance across a range of datasets, including synthetic and real datasets featuring sharp images as well as those affected by motion blur, highlighting the versatility and robustness of our approach. Code is available at https://github.com/WU-CVGL/MBA-SLAM.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## NeRF  
-
-### [BillBoard Splatting (BBSplat): Learnable Textured Primitives for Novel View Synthesis](http://arxiv.org/abs/2411.08508)  
-David Svitov, Pietro Morerio, Lourdes Agapito, Alessio Del Bue  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present billboard Splatting (BBSplat) - a novel approach for 3D scene representation based on textured geometric primitives. BBSplat represents the scene as a set of optimizable textured planar primitives with learnable RGB textures and alpha-maps to control their shape. BBSplat primitives can be used in any Gaussian Splatting pipeline as drop-in replacements for Gaussians. Our method's qualitative and quantitative improvements over 3D and 2D Gaussians are most noticeable when fewer primitives are used, when BBSplat achieves over 1200 FPS. Our novel regularization term encourages textures to have a sparser structure, unlocking an efficient compression that leads to a reduction in storage space of the model. Our experiments show the efficiency of BBSplat on standard datasets of real indoor and outdoor scenes such as Tanks&Temples, DTU, and Mip-NeRF-360. We demonstrate improvements on PSNR, SSIM, and LPIPS metrics compared to the state-of-the-art, especially for the case when fewer primitives are used, which, on the other hand, leads to up to 2 times inference speed improvement for the same rendering quality.  
-  </ol>  
-</details>  
-  
-### [Biomass phenotyping of oilseed rape through UAV multi-view oblique imaging with 3DGS and SAM model](http://arxiv.org/abs/2411.08453)  
-Yutao Shen, Hongyu Zhou, Xin Yang, Xuqi Lu, Ziyue Guo, Lixi Jiang, Yong He, Haiyan Cen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Biomass estimation of oilseed rape is crucial for optimizing crop productivity and breeding strategies. While UAV-based imaging has advanced high-throughput phenotyping, current methods often rely on orthophoto images, which struggle with overlapping leaves and incomplete structural information in complex field environments. This study integrates 3D Gaussian Splatting (3DGS) with the Segment Anything Model (SAM) for precise 3D reconstruction and biomass estimation of oilseed rape. UAV multi-view oblique images from 36 angles were used to perform 3D reconstruction, with the SAM module enhancing point cloud segmentation. The segmented point clouds were then converted into point cloud volumes, which were fitted to ground-measured biomass using linear regression. The results showed that 3DGS (7k and 30k iterations) provided high accuracy, with peak signal-to-noise ratios (PSNR) of 27.43 and 29.53 and training times of 7 and 49 minutes, respectively. This performance exceeded that of structure from motion (SfM) and mipmap Neural Radiance Fields (Mip-NeRF), demonstrating superior efficiency. The SAM module achieved high segmentation accuracy, with a mean intersection over union (mIoU) of 0.961 and an F1-score of 0.980. Additionally, a comparison of biomass extraction models found the point cloud volume model to be the most accurate, with an determination coefficient (R2) of 0.976, root mean square error (RMSE) of 2.92 g/plant, and mean absolute percentage error (MAPE) of 6.81%, outperforming both the plot crop volume and individual crop volume models. This study highlights the potential of combining 3DGS with multi-view UAV imaging for improved biomass phenotyping.  
-  </ol>  
-</details>  
-  
-### [MBA-SLAM: Motion Blur Aware Dense Visual SLAM with Radiance Fields Representation](http://arxiv.org/abs/2411.08279)  
-[[code](https://github.com/wu-cvgl/mba-slam)]  
-Peng Wang, Lingzhe Zhao, Yin Zhang, Shiyu Zhao, Peidong Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Emerging 3D scene representations, such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), have demonstrated their effectiveness in Simultaneous Localization and Mapping (SLAM) for photo-realistic rendering, particularly when using high-quality video sequences as input. However, existing methods struggle with motion-blurred frames, which are common in real-world scenarios like low-light or long-exposure conditions. This often results in a significant reduction in both camera localization accuracy and map reconstruction quality. To address this challenge, we propose a dense visual SLAM pipeline (i.e. MBA-SLAM) to handle severe motion-blurred inputs. Our approach integrates an efficient motion blur-aware tracker with either neural radiance fields or Gaussian Splatting based mapper. By accurately modeling the physical image formation process of motion-blurred images, our method simultaneously learns 3D scene representation and estimates the cameras' local trajectory during exposure time, enabling proactive compensation for motion blur caused by camera movement. In our experiments, we demonstrate that MBA-SLAM surpasses previous state-of-the-art methods in both camera localization and map reconstruction, showcasing superior performance across a range of datasets, including synthetic and real datasets featuring sharp images as well as those affected by motion blur, highlighting the versatility and robustness of our approach. Code is available at https://github.com/WU-CVGL/MBA-SLAM.  
-  </ol>  
-</details>  
-  
-### [TomoGRAF: A Robust and Generalizable Reconstruction Network for Single-View Computed Tomography](http://arxiv.org/abs/2411.08158)  
-Di Xu, Yang Yang, Hengjie Liu, Qihui Lyu, Martina Descovich, Dan Ruan, Ke Sheng  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Computed tomography (CT) provides high spatial resolution visualization of 3D structures for scientific and clinical applications. Traditional analytical/iterative CT reconstruction algorithms require hundreds of angular data samplings, a condition that may not be met in practice due to physical and mechanical limitations. Sparse view CT reconstruction has been proposed using constrained optimization and machine learning methods with varying success, less so for ultra-sparse view CT reconstruction with one to two views. Neural radiance field (NeRF) is a powerful tool for reconstructing and rendering 3D natural scenes from sparse views, but its direct application to 3D medical image reconstruction has been minimally successful due to the differences between optical and X-ray photon transportation. Here, we develop a novel TomoGRAF framework incorporating the unique X-ray transportation physics to reconstruct high-quality 3D volumes using ultra-sparse projections without prior. TomoGRAF captures the CT imaging geometry, simulates the X-ray casting and tracing process, and penalizes the difference between simulated and ground truth CT sub-volume during training. We evaluated the performance of TomoGRAF on an unseen dataset of distinct imaging characteristics from the training data and demonstrated a vast leap in performance compared with state-of-the-art deep learning and NeRF methods. TomoGRAF provides the first generalizable solution for image-guided radiotherapy and interventional radiology applications, where only one or a few X-ray views are available, but 3D volumetric information is desired.  
-  </ol>  
-</details>  
+**comments**: project page: https://github.com/fb82/MiHo  
   
   
 
