@@ -1,26 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Image-Matching-Filtering-and-Refinement-by-Planes-and-Beyond>Image Matching Filtering and Refinement by Planes and Beyond</a></li>
+        <li><a href=#BEV-ODOM:-Reducing-Scale-Drift-in-Monocular-Visual-Odometry-with-BEV-Representation>BEV-ODOM: Reducing Scale Drift in Monocular Visual Odometry with BEV Representation</a></li>
+      </ul>
+    </li>
+    <li><a href=#nerf>NeRF</a></li>
+      <ul>
+        <li><a href=#GSEditPro:-3D-Gaussian-Splatting-Editing-with-Attention-based-Progressive-Localization>GSEditPro: 3D Gaussian Splatting Editing with Attention-based Progressive Localization</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Image Matching  
+## SLAM  
 
-### [Image Matching Filtering and Refinement by Planes and Beyond](http://arxiv.org/abs/2411.09484)  
-[[code](https://github.com/fb82/miho)]  
-Fabio Bellavia, Zhenjun Zhao, Luca Morelli, Fabio Remondino  
+### [BEV-ODOM: Reducing Scale Drift in Monocular Visual Odometry with BEV Representation](http://arxiv.org/abs/2411.10195)  
+Yufei Wei, Sha Lu, Fuzhang Han, Rong Xiong, Yue Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces a modular, non-deep learning method for filtering and refining sparse correspondences in image matching. Assuming that motion flow within the scene can be approximated by local homography transformations, matches are aggregated into overlapping clusters corresponding to virtual planes using an iterative RANSAC-based approach, with non-conforming correspondences discarded. Moreover, the underlying planar structural design provides an explicit map between local patches associated with the matches, enabling optional refinement of keypoint positions through cross-correlation template matching after patch reprojection. Finally, to enhance robustness and fault-tolerance against violations of the piece-wise planar approximation assumption, a further strategy is designed for minimizing relative patch distortion in the plane reprojection by introducing an intermediate homography that projects both patches into a common plane. The proposed method is extensively evaluated on standard datasets and image matching pipelines, and compared with state-of-the-art approaches. Unlike other current comparisons, the proposed benchmark also takes into account the more general, real, and practical cases where camera intrinsics are unavailable. Experimental results demonstrate that our proposed non-deep learning, geometry-based approach achieves performances that are either superior to or on par with recent state-of-the-art deep learning methods. Finally, this study suggests that there are still development potential in actual image matching solutions in the considered research direction, which could be in the future incorporated in novel deep image matching architectures.  
+    Monocular visual odometry (MVO) is vital in autonomous navigation and robotics, providing a cost-effective and flexible motion tracking solution, but the inherent scale ambiguity in monocular setups often leads to cumulative errors over time. In this paper, we present BEV-ODOM, a novel MVO framework leveraging the Bird's Eye View (BEV) Representation to address scale drift. Unlike existing approaches, BEV-ODOM integrates a depth-based perspective-view (PV) to BEV encoder, a correlation feature extraction neck, and a CNN-MLP-based decoder, enabling it to estimate motion across three degrees of freedom without the need for depth supervision or complex optimization techniques. Our framework reduces scale drift in long-term sequences and achieves accurate motion estimation across various datasets, including NCLT, Oxford, and KITTI. The results indicate that BEV-ODOM outperforms current MVO methods, demonstrating reduced scale drift and higher accuracy.  
   </ol>  
 </details>  
-**comments**: project page: https://github.com/fb82/MiHo  
+  
+  
+
+
+
+## NeRF  
+
+### [GSEditPro: 3D Gaussian Splatting Editing with Attention-based Progressive Localization](http://arxiv.org/abs/2411.10033)  
+Yanhao Sun, RunZe Tian, Xiao Han, XinYao Liu, Yan Zhang, Kai Xu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    With the emergence of large-scale Text-to-Image(T2I) models and implicit 3D representations like Neural Radiance Fields (NeRF), many text-driven generative editing methods based on NeRF have appeared. However, the implicit encoding of geometric and textural information poses challenges in accurately locating and controlling objects during editing. Recently, significant advancements have been made in the editing methods of 3D Gaussian Splatting, a real-time rendering technology that relies on explicit representation. However, these methods still suffer from issues including inaccurate localization and limited manipulation over editing. To tackle these challenges, we propose GSEditPro, a novel 3D scene editing framework which allows users to perform various creative and precise editing using text prompts only. Leveraging the explicit nature of the 3D Gaussian distribution, we introduce an attention-based progressive localization module to add semantic labels to each Gaussian during rendering. This enables precise localization on editing areas by classifying Gaussians based on their relevance to the editing prompts derived from cross-attention layers of the T2I model. Furthermore, we present an innovative editing optimization method based on 3D Gaussian Splatting, obtaining stable and refined editing results through the guidance of Score Distillation Sampling and pseudo ground truth. We prove the efficacy of our method through extensive experiments.  
+  </ol>  
+</details>  
+**comments**: Pacific Graphics 2024  
   
   
 
