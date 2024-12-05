@@ -1,69 +1,55 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#SfM-Free-3D-Gaussian-Splatting-via-Hierarchical-Training>SfM-Free 3D Gaussian Splatting via Hierarchical Training</a></li>
-        <li><a href=#MVImgNet2.0:-A-Larger-scale-Dataset-of-Multi-view-Images>MVImgNet2.0: A Larger-scale Dataset of Multi-view Images</a></li>
-        <li><a href=#Look-Ma,-No-Ground-Truth!-Ground-Truth-Free-Tuning-of-Structure-from-Motion-and-Visual-SLAM>Look Ma, No Ground Truth! Ground-Truth-Free Tuning of Structure from Motion and Visual SLAM</a></li>
+        <li><a href=#MCVO:-A-Generic-Visual-Odometry-for-Arbitrarily-Arranged-Multi-Cameras>MCVO: A Generic Visual Odometry for Arbitrarily Arranged Multi-Cameras</a></li>
+        <li><a href=#An-indoor-DSO-based-ceiling-vision-odometry-system-for-indoor-industrial-environments>An indoor DSO-based ceiling-vision odometry system for indoor industrial environments</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Active-Learning-via-Classifier-Impact-and-Greedy-Selection-for-Interactive-Image-Retrieval>Active Learning via Classifier Impact and Greedy Selection for Interactive Image Retrieval</a></li>
-        <li><a href=#Mutli-View-3D-Reconstruction-using-Knowledge-Distillation>Mutli-View 3D Reconstruction using Knowledge Distillation</a></li>
-        <li><a href=#Optimizing-Domain-Specific-Image-Retrieval:-A-Benchmark-of-FAISS-and-Annoy-with-Fine-Tuned-Features>Optimizing Domain-Specific Image Retrieval: A Benchmark of FAISS and Annoy with Fine-Tuned Features</a></li>
-        <li><a href=#Neuron-Abandoning-Attention-Flow:-Visual-Explanation-of-Dynamics-inside-CNN-Models>Neuron Abandoning Attention Flow: Visual Explanation of Dynamics inside CNN Models</a></li>
-        <li><a href=#EDTformer:-An-Efficient-Decoder-Transformer-for-Visual-Place-Recognition>EDTformer: An Efficient Decoder Transformer for Visual Place Recognition</a></li>
-        <li><a href=#EFSA:-Episodic-Few-Shot-Adaptation-for-Text-to-Image-Retrieval>EFSA: Episodic Few-Shot Adaptation for Text-to-Image Retrieval</a></li>
-        <li><a href=#Unleashing-the-Power-of-Data-Synthesis-in-Visual-Localization>Unleashing the Power of Data Synthesis in Visual Localization</a></li>
-        <li><a href=#Relation-Aware-Meta-Learning-for-Zero-shot-Sketch-Based-Image-Retrieval>Relation-Aware Meta-Learning for Zero-shot Sketch-Based Image Retrieval</a></li>
+        <li><a href=#Distillation-of-Diffusion-Features-for-Semantic-Correspondence>Distillation of Diffusion Features for Semantic Correspondence</a></li>
+        <li><a href=#Composed-Image-Retrieval-for-Training-Free-Domain-Conversion>Composed Image Retrieval for Training-Free Domain Conversion</a></li>
+        <li><a href=#A-Minimalistic-3D-Self-Organized-UAV-Flocking-Approach-for-Desert-Exploration>A Minimalistic 3D Self-Organized UAV Flocking Approach for Desert Exploration</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#MamKPD:-A-Simple-Mamba-Baseline-for-Real-Time-2D-Keypoint-Detection>MamKPD: A Simple Mamba Baseline for Real-Time 2D Keypoint Detection</a></li>
+        <li><a href=#Measure-Anything:-Real-time,-Multi-stage-Vision-based-Dimensional-Measurement-using-Segment-Anything>Measure Anything: Real-time, Multi-stage Vision-based Dimensional Measurement using Segment Anything</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Appearance-Matching-Adapter-for-Exemplar-based-Semantic-Image-Synthesis>Appearance Matching Adapter for Exemplar-based Semantic Image Synthesis</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#SAGA:-Surface-Aligned-Gaussian-Avatar>SAGA: Surface-Aligned Gaussian Avatar</a></li>
-        <li><a href=#CtrlNeRF:-The-Generative-Neural-Radiation-Fields-for-the-Controllable-Synthesis-of-High-fidelity-3D-Aware-Images>CtrlNeRF: The Generative Neural Radiation Fields for the Controllable Synthesis of High-fidelity 3D-Aware Images</a></li>
-        <li><a href=#Speedy-Splat:-Fast-3D-Gaussian-Splatting-with-Sparse-Pixels-and-Sparse-Primitives>Speedy-Splat: Fast 3D Gaussian Splatting with Sparse Pixels and Sparse Primitives</a></li>
-        <li><a href=#Instant3dit:-Multiview-Inpainting-for-Fast-Editing-of-3D-Objects>Instant3dit: Multiview Inpainting for Fast Editing of 3D Objects</a></li>
+        <li><a href=#NeRF-and-Gaussian-Splatting-SLAM-in-the-Wild>NeRF and Gaussian Splatting SLAM in the Wild</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [SfM-Free 3D Gaussian Splatting via Hierarchical Training](http://arxiv.org/abs/2412.01553)  
-[[code](https://github.com/jibo27/3dgs_hierarchical_training)]  
-Bo Ji, Angela Yao  
+### [MCVO: A Generic Visual Odometry for Arbitrarily Arranged Multi-Cameras](http://arxiv.org/abs/2412.03146)  
+Huai Yu, Junhao Wang, Yao He, Wen Yang, Gui-Song Xia  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Standard 3D Gaussian Splatting (3DGS) relies on known or pre-computed camera poses and a sparse point cloud, obtained from structure-from-motion (SfM) preprocessing, to initialize and grow 3D Gaussians. We propose a novel SfM-Free 3DGS (SFGS) method for video input, eliminating the need for known camera poses and SfM preprocessing. Our approach introduces a hierarchical training strategy that trains and merges multiple 3D Gaussian representations -- each optimized for specific scene regions -- into a single, unified 3DGS model representing the entire scene. To compensate for large camera motions, we leverage video frame interpolation models. Additionally, we incorporate multi-source supervision to reduce overfitting and enhance representation. Experimental results reveal that our approach significantly surpasses state-of-the-art SfM-free novel view synthesis methods. On the Tanks and Temples dataset, we improve PSNR by an average of 2.25dB, with a maximum gain of 3.72dB in the best scene. On the CO3D-V2 dataset, we achieve an average PSNR boost of 1.74dB, with a top gain of 3.90dB. The code is available at https://github.com/jibo27/3DGS_Hierarchical_Training.  
+    Making multi-camera visual SLAM systems easier to set up and more robust to the environment is always one of the focuses of vision robots. Existing monocular and binocular vision SLAM systems have narrow FoV and are fragile in textureless environments with degenerated accuracy and limited robustness. Thus multi-camera SLAM systems are gaining attention because they can provide redundancy for texture degeneration with wide FoV. However, current multi-camera SLAM systems face massive data processing pressure and elaborately designed camera configurations, leading to estimation failures for arbitrarily arranged multi-camera systems. To address these problems, we propose a generic visual odometry for arbitrarily arranged multi-cameras, which can achieve metric-scale state estimation with high flexibility in the cameras' arrangement. Specifically, we first design a learning-based feature extraction and tracking framework to shift the pressure of CPU processing of multiple video streams. Then we use the rigid constraints between cameras to estimate the metric scale poses for robust SLAM system initialization. Finally, we fuse the features of the multi-cameras in the SLAM back-end to achieve robust pose estimation and online scale optimization. Additionally, multi-camera features help improve the loop detection for pose graph optimization. Experiments on KITTI-360 and MultiCamData datasets validate the robustness of our method over arbitrarily placed cameras. Compared with other stereo and multi-camera visual SLAM systems, our method obtains higher pose estimation accuracy with better generalization ability. Our codes and online demos are available at \url{https://github.com/JunhaoWang615/MCVO}  
   </ol>  
 </details>  
+**comments**: 8 pages, 8 figures  
   
-### [MVImgNet2.0: A Larger-scale Dataset of Multi-view Images](http://arxiv.org/abs/2412.01430)  
-Xiaoguang Han, Yushuang Wu, Luyue Shi, Haolin Liu, Hongjie Liao, Lingteng Qiu, Weihao Yuan, Xiaodong Gu, Zilong Dong, Shuguang Cui  
+### [An indoor DSO-based ceiling-vision odometry system for indoor industrial environments](http://arxiv.org/abs/2412.02950)  
+Abdelhak Bougouffa, Emmanuel Seignez, Samir Bouaziz, Florian Gardes  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    MVImgNet is a large-scale dataset that contains multi-view images of ~220k real-world objects in 238 classes. As a counterpart of ImageNet, it introduces 3D visual signals via multi-view shooting, making a soft bridge between 2D and 3D vision. This paper constructs the MVImgNet2.0 dataset that expands MVImgNet into a total of ~520k objects and 515 categories, which derives a 3D dataset with a larger scale that is more comparable to ones in the 2D domain. In addition to the expanded dataset scale and category range, MVImgNet2.0 is of a higher quality than MVImgNet owing to four new features: (i) most shoots capture 360-degree views of the objects, which can support the learning of object reconstruction with completeness; (ii) the segmentation manner is advanced to produce foreground object masks of higher accuracy; (iii) a more powerful structure-from-motion method is adopted to derive the camera pose for each frame of a lower estimation error; (iv) higher-quality dense point clouds are reconstructed via advanced methods for objects captured in 360-degree views, which can serve for downstream applications. Extensive experiments confirm the value of the proposed MVImgNet2.0 in boosting the performance of large 3D reconstruction models. MVImgNet2.0 will be public at luyues.github.io/mvimgnet2, including multi-view images of all 520k objects, the reconstructed high-quality point clouds, and data annotation codes, hoping to inspire the broader vision community.  
-  </ol>  
-</details>  
-**comments**: ACM Transactions on Graphics (TOG), SIGGRAPH Asia 2024  
-  
-### [Look Ma, No Ground Truth! Ground-Truth-Free Tuning of Structure from Motion and Visual SLAM](http://arxiv.org/abs/2412.01116)  
-Alejandro Fontan, Javier Civera, Tobias Fischer, Michael Milford  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Evaluation is critical to both developing and tuning Structure from Motion (SfM) and Visual SLAM (VSLAM) systems, but is universally reliant on high-quality geometric ground truth -- a resource that is not only costly and time-intensive but, in many cases, entirely unobtainable. This dependency on ground truth restricts SfM and SLAM applications across diverse environments and limits scalability to real-world scenarios. In this work, we propose a novel ground-truth-free (GTF) evaluation methodology that eliminates the need for geometric ground truth, instead using sensitivity estimation via sampling from both original and noisy versions of input images. Our approach shows strong correlation with traditional ground-truth-based benchmarks and supports GTF hyperparameter tuning. Removing the need for ground truth opens up new opportunities to leverage a much larger number of dataset sources, and for self-supervised and online tuning, with the potential for a data-driven breakthrough analogous to what has occurred in generative AI.  
+    Autonomous Mobile Robots operating in indoor industrial environments require a localization system that is reliable and robust. While Visual Odometry (VO) can offer a reasonable estimation of the robot's state, traditional VO methods encounter challenges when confronted with dynamic objects in the scene. Alternatively, an upward-facing camera can be utilized to track the robot's movement relative to the ceiling, which represents a static and consistent space. We introduce in this paper Ceiling-DSO, a ceiling-vision system based on Direct Sparse Odometry (DSO). Unlike other ceiling-vision systems, Ceiling-DSO takes advantage of the versatile formulation of DSO, avoiding assumptions about observable shapes or landmarks on the ceiling. This approach ensures the method's applicability to various ceiling types. Since no publicly available dataset for ceiling-vision exists, we created a custom dataset in a real-world scenario and employed it to evaluate our approach. By adjusting DSO parameters, we identified the optimal fit for online pose estimation, resulting in acceptable error rates compared to ground truth. We provide in this paper a qualitative and quantitative analysis of the obtained results.  
   </ol>  
 </details>  
   
@@ -73,80 +59,33 @@ Alejandro Fontan, Javier Civera, Tobias Fischer, Michael Milford
 
 ## Visual Localization  
 
-### [Active Learning via Classifier Impact and Greedy Selection for Interactive Image Retrieval](http://arxiv.org/abs/2412.02310)  
-[[code](https://github.com/barleah/greedyal)]  
-Leah Bar, Boaz Lerner, Nir Darshan, Rami Ben-Ari  
+### [Distillation of Diffusion Features for Semantic Correspondence](http://arxiv.org/abs/2412.03512)  
+Frank Fundel, Johannes Schusterbauer, Vincent Tao Hu, Björn Ommer  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Active Learning (AL) is a user-interactive approach aimed at reducing annotation costs by selecting the most crucial examples to label. Although AL has been extensively studied for image classification tasks, the specific scenario of interactive image retrieval has received relatively little attention. This scenario presents unique characteristics, including an open-set and class-imbalanced binary classification, starting with very few labeled samples. We introduce a novel batch-mode Active Learning framework named GAL (Greedy Active Learning) that better copes with this application. It incorporates a new acquisition function for sample selection that measures the impact of each unlabeled sample on the classifier. We further embed this strategy in a greedy selection approach, better exploiting the samples within each batch. We evaluate our framework with both linear (SVM) and non-linear MLP/Gaussian Process classifiers. For the Gaussian Process case, we show a theoretical guarantee on the greedy approximation. Finally, we assess our performance for the interactive content-based image retrieval task on several benchmarks and demonstrate its superiority over existing approaches and common baselines. Code is available at https://github.com/barleah/GreedyAL.  
+    Semantic correspondence, the task of determining relationships between different parts of images, underpins various applications including 3D reconstruction, image-to-image translation, object tracking, and visual place recognition. Recent studies have begun to explore representations learned in large generative image models for semantic correspondence, demonstrating promising results. Building on this progress, current state-of-the-art methods rely on combining multiple large models, resulting in high computational demands and reduced efficiency. In this work, we address this challenge by proposing a more computationally efficient approach. We propose a novel knowledge distillation technique to overcome the problem of reduced efficiency. We show how to use two large vision foundation models and distill the capabilities of these complementary models into one smaller model that maintains high accuracy at reduced computational cost. Furthermore, we demonstrate that by incorporating 3D data, we are able to further improve performance, without the need for human-annotated correspondences. Overall, our empirical results demonstrate that our distilled model with 3D data augmentation achieves performance superior to current state-of-the-art methods while significantly reducing computational load and enhancing practicality for real-world applications, such as semantic video correspondence. Our code and weights are publicly available on our project page.  
   </ol>  
 </details>  
-**comments**: Accepted to Transactions on Machine Learning Research (TMLR)  
+**comments**: WACV 2025, Page: https://compvis.github.io/distilldift  
   
-### [Mutli-View 3D Reconstruction using Knowledge Distillation](http://arxiv.org/abs/2412.02039)  
-Aditya Dutt, Ishikaa Lunawat, Manpreet Kaur  
+### [Composed Image Retrieval for Training-Free Domain Conversion](http://arxiv.org/abs/2412.03297)  
+[[code](https://github.com/nikosefth/freedom)]  
+Nikos Efthymiadis, Bill Psomas, Zakaria Laskar, Konstantinos Karantzalos, Yannis Avrithis, Ondřej Chum, Giorgos Tolias  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large Foundation Models like Dust3r can produce high quality outputs such as pointmaps, camera intrinsics, and depth estimation, given stereo-image pairs as input. However, the application of these outputs on tasks like Visual Localization requires a large amount of inference time and compute resources. To address these limitations, in this paper, we propose the use of a knowledge distillation pipeline, where we aim to build a student-teacher model with Dust3r as the teacher and explore multiple architectures of student models that are trained using the 3D reconstructed points output by Dust3r. Our goal is to build student models that can learn scene-specific representations and output 3D points with replicable performance such as Dust3r. The data set we used to train our models is 12Scenes. We test two main architectures of models: a CNN-based architecture and a Vision Transformer based architecture. For each architecture, we also compare the use of pre-trained models against models built from scratch. We qualitatively compare the reconstructed 3D points output by the student model against Dust3r's and discuss the various features learned by the student model. We also perform ablation studies on the models through hyperparameter tuning. Overall, we observe that the Vision Transformer presents the best performance visually and quantitatively.  
+    This work addresses composed image retrieval in the context of domain conversion, where the content of a query image is retrieved in the domain specified by the query text. We show that a strong vision-language model provides sufficient descriptive power without additional training. The query image is mapped to the text input space using textual inversion. Unlike common practice that invert in the continuous space of text tokens, we use the discrete word space via a nearest-neighbor search in a text vocabulary. With this inversion, the image is softly mapped across the vocabulary and is made more robust using retrieval-based augmentation. Database images are retrieved by a weighted ensemble of text queries combining mapped words with the domain text. Our method outperforms prior art by a large margin on standard and newly introduced benchmarks. Code: https://github.com/NikosEfth/freedom  
   </ol>  
 </details>  
-**comments**: 6 pages, 10 figures  
+**comments**: WACV 2025  
   
-### [Optimizing Domain-Specific Image Retrieval: A Benchmark of FAISS and Annoy with Fine-Tuned Features](http://arxiv.org/abs/2412.01555)  
-MD Shaikh Rahman, Syed Maudud E Rabbi, Muhammad Mahbubur Rashid  
+### [A Minimalistic 3D Self-Organized UAV Flocking Approach for Desert Exploration](http://arxiv.org/abs/2412.02881)  
+Thulio Amorim, Tiago Nascimento, Akash Chaudhary, Eliseo Ferrante, Martin Saska  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Approximate Nearest Neighbor search is one of the keys to high-scale data retrieval performance in many applications. The work is a bridge between feature extraction and ANN indexing through fine-tuning a ResNet50 model with various ANN methods: FAISS and Annoy. We evaluate the systems with respect to indexing time, memory usage, query time, precision, recall, F1-score, and Recall@5 on a custom image dataset. FAISS's Product Quantization can achieve a precision of 98.40% with low memory usage at 0.24 MB index size, and Annoy is the fastest, with average query times of 0.00015 seconds, at a slight cost to accuracy. These results reveal trade-offs among speed, accuracy, and memory efficiency and offer actionable insights into the optimization of feature-based image retrieval systems. This study will serve as a blueprint for constructing actual retrieval pipelines and be built on fine-tuned deep learning networks and associated ANN methods.  
-  </ol>  
-</details>  
-  
-### [Neuron Abandoning Attention Flow: Visual Explanation of Dynamics inside CNN Models](http://arxiv.org/abs/2412.01202)  
-Yi Liao, Yongsheng Gao, Weichuan Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we present a Neuron Abandoning Attention Flow (NAFlow) method to address the open problem of visually explaining the attention evolution dynamics inside CNNs when making their classification decisions. A novel cascading neuron abandoning back-propagation algorithm is designed to trace neurons in all layers of a CNN that involve in making its prediction to address the problem of significant interference from abandoned neurons. Firstly, a Neuron Abandoning Back-Propagation (NA-BP) module is proposed to generate Back-Propagated Feature Maps (BPFM) by using the inverse function of the intermediate layers of CNN models, on which the neurons not used for decision-making are abandoned. Meanwhile, the cascading NA-BP modules calculate the tensors of importance coefficients which are linearly combined with the tensors of BPFMs to form the NAFlow. Secondly, to be able to visualize attention flow for similarity metric-based CNN models, a new channel contribution weights module is proposed to calculate the importance coefficients via Jacobian Matrix. The effectiveness of the proposed NAFlow is validated on nine widely-used CNN models for various tasks of general image classification, contrastive learning classification, few-shot image classification, and image retrieval.  
-  </ol>  
-</details>  
-  
-### [EDTformer: An Efficient Decoder Transformer for Visual Place Recognition](http://arxiv.org/abs/2412.00784)  
-Tong Jin, Feng Lu, Shuyu Hu, Chun Yuan, Yunpeng Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual place recognition (VPR) aims to determine the general geographical location of a query image by retrieving visually similar images from a large geo-tagged database. To obtain a global representation for each place image, most approaches typically focus on the aggregation of deep features extracted from a backbone through using current prominent architectures (e.g., CNNs, MLPs, pooling layer and transformer encoder), giving little attention to the transformer decoder. However, we argue that its strong capability in capturing contextual dependencies and generating accurate features holds considerable potential for the VPR task. To this end, we propose an Efficient Decoder Transformer (EDTformer) for feature aggregation, which consists of several stacked simplified decoder blocks followed by two linear layers to directly generate robust and discriminative global representations for VPR. Specifically, we do this by formulating deep features as the keys and values, as well as a set of independent learnable parameters as the queries. EDTformer can fully utilize the contextual information within deep features, then gradually decode and aggregate the effective features into the learnable queries to form the final global representations. Moreover, to provide powerful deep features for EDTformer and further facilitate the robustness, we use the foundation model DINOv2 as the backbone and propose a Low-Rank Parallel Adaptation (LoPA) method to enhance it, which can refine the intermediate features of the backbone progressively in a memory- and parameter-efficient way. As a result, our method not only outperforms single-stage VPR methods on multiple benchmark datasets, but also outperforms two-stage VPR methods which add a re-ranking with considerable cost. Code will be available at https://github.com/Tong-Jin01/EDTformer.  
-  </ol>  
-</details>  
-**comments**: 14 pages, 6 figures  
-  
-### [EFSA: Episodic Few-Shot Adaptation for Text-to-Image Retrieval](http://arxiv.org/abs/2412.00139)  
-Muhammad Huzaifa, Yova Kementchedjhieva  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Text-to-image retrieval is a critical task for managing diverse visual content, but common benchmarks for the task rely on small, single-domain datasets that fail to capture real-world complexity. Pre-trained vision-language models tend to perform well with easy negatives but struggle with hard negatives--visually similar yet incorrect images--especially in open-domain scenarios. To address this, we introduce Episodic Few-Shot Adaptation (EFSA), a novel test-time framework that adapts pre-trained models dynamically to a query's domain by fine-tuning on top-k retrieved candidates and synthetic captions generated for them. EFSA improves performance across diverse domains while preserving generalization, as shown in evaluations on queries from eight highly distinct visual domains and an open-domain retrieval pool of over one million images. Our work highlights the potential of episodic few-shot adaptation to enhance robustness in the critical and understudied task of open-domain text-to-image retrieval.  
-  </ol>  
-</details>  
-  
-### [Unleashing the Power of Data Synthesis in Visual Localization](http://arxiv.org/abs/2412.00138)  
-Sihang Li, Siqi Tan, Bowen Chang, Jing Zhang, Chen Feng, Yiming Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual localization, which estimates a camera's pose within a known scene, is a long-standing challenge in vision and robotics. Recent end-to-end methods that directly regress camera poses from query images have gained attention for fast inference. However, existing methods often struggle to generalize to unseen views. In this work, we aim to unleash the power of data synthesis to promote the generalizability of pose regression. Specifically, we lift real 2D images into 3D Gaussian Splats with varying appearance and deblurring abilities, which are then used as a data engine to synthesize more posed images. To fully leverage the synthetic data, we build a two-branch joint training pipeline, with an adversarial discriminator to bridge the syn-to-real gap. Experiments on established benchmarks show that our method outperforms state-of-the-art end-to-end approaches, reducing translation and rotation errors by 50% and 21.6% on indoor datasets, and 35.56% and 38.7% on outdoor datasets. We also validate the effectiveness of our method in dynamic driving scenarios under varying weather conditions. Notably, as data synthesis scales up, our method exhibits a growing ability to interpolate and extrapolate training data for localizing unseen views. Project Page: https://ai4ce.github.io/RAP/  
-  </ol>  
-</details>  
-**comments**: 24 pages, 21 figures  
-  
-### [Relation-Aware Meta-Learning for Zero-shot Sketch-Based Image Retrieval](http://arxiv.org/abs/2412.00120)  
-Yang Liu, Jiale Du, Xinbo Gao, Jungong Han  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Sketch-based image retrieval (SBIR) relies on free-hand sketches to retrieve natural photos within the same class. However, its practical application is limited by its inability to retrieve classes absent from the training set. To address this limitation, the task has evolved into Zero-Shot Sketch-Based Image Retrieval (ZS-SBIR), where model performance is evaluated on unseen categories. Traditional SBIR primarily focuses on narrowing the domain gap between photo and sketch modalities. However, in the zero-shot setting, the model not only needs to address this cross-modal discrepancy but also requires a strong generalization capability to transfer knowledge to unseen categories. To this end, we propose a novel framework for ZS-SBIR that employs a pair-based relation-aware quadruplet loss to bridge feature gaps. By incorporating two negative samples from different modalities, the approach prevents positive features from becoming disproportionately distant from one modality while remaining close to another, thus enhancing inter-class separability. We also propose a Relation-Aware Meta-Learning Network (RAMLN) to obtain the margin, a hyper-parameter of cross-modal quadruplet loss, to improve the generalization ability of the model. RAMLN leverages external memory to store feature information, which it utilizes to assign optimal margin values. Experimental results obtained on the extended Sketchy and TU-Berlin datasets show a sharp improvement over existing state-of-the-art methods in ZS-SBIR.  
+    In this work, we propose a minimalistic swarm flocking approach for multirotor unmanned aerial vehicles (UAVs). Our approach allows the swarm to achieve cohesively and aligned flocking (collective motion), in a random direction, without externally provided directional information exchange (alignment control). The method relies on minimalistic sensory requirements as it uses only the relative range and bearing of swarm agents in local proximity obtained through onboard sensors on the UAV. Thus, our method is able to stabilize and control the flock of a general shape above a steep terrain without any explicit communication between swarm members. To implement proximal control in a three-dimensional manner, the Lennard-Jones potential function is used to maintain cohesiveness and avoid collisions between robots. The performance of the proposed approach was tested in real-world conditions by experiments with a team of nine UAVs. Experiments also present the usage of our approach on UAVs that are independent of external positioning systems such as the Global Navigation Satellite System (GNSS). Relying only on a relative visual localization through the ultraviolet direction and ranging (UVDAR) system, previously proposed by our group, the experiments verify that our system can be applied in GNSS-denied environments. The degree achieved of alignment and cohesiveness was evaluated using the metrics of order and steady-state value.  
   </ol>  
 </details>  
   
@@ -156,12 +95,27 @@ Yang Liu, Jiale Du, Xinbo Gao, Jungong Han
 
 ## Keypoint Detection  
 
-### [MamKPD: A Simple Mamba Baseline for Real-Time 2D Keypoint Detection](http://arxiv.org/abs/2412.01422)  
-Yonghao Dang, Liyuan Liu, Hui Kang, Ping Ye, Jianqin Yin  
+### [Measure Anything: Real-time, Multi-stage Vision-based Dimensional Measurement using Segment Anything](http://arxiv.org/abs/2412.03472)  
+Yongkyu Lee, Shivam Kumar Panda, Wei Wang, Mohammad Khalid Jawed  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Real-time 2D keypoint detection plays an essential role in computer vision. Although CNN-based and Transformer-based methods have achieved breakthrough progress, they often fail to deliver superior performance and real-time speed. This paper introduces MamKPD, the first efficient yet effective mamba-based pose estimation framework for 2D keypoint detection. The conventional Mamba module exhibits limited information interaction between patches. To address this, we propose a lightweight contextual modeling module (CMM) that uses depth-wise convolutions to model inter-patch dependencies and linear layers to distill the pose cues within each patch. Subsequently, by combining Mamba for global modeling across all patches, MamKPD effectively extracts instances' pose information. We conduct extensive experiments on human and animal pose estimation datasets to validate the effectiveness of MamKPD. Our MamKPD-L achieves 77.3% AP on the COCO dataset with 1492 FPS on an NVIDIA GTX 4090 GPU. Moreover, MamKPD achieves state-of-the-art results on the MPII dataset and competitive results on the AP-10K dataset while saving 85% of the parameters compared to ViTPose. Our project page is available at https://mamkpd.github.io/.  
+    We present Measure Anything, a comprehensive vision-based framework for dimensional measurement of objects with circular cross-sections, leveraging the Segment Anything Model (SAM). Our approach estimates key geometric features -- including diameter, length, and volume -- for rod-like geometries with varying curvature and general objects with constant skeleton slope. The framework integrates segmentation, mask processing, skeleton construction, and 2D-3D transformation, packaged in a user-friendly interface. We validate our framework by estimating the diameters of Canola stems -- collected from agricultural fields in North Dakota -- which are thin and non-uniform, posing challenges for existing methods. Measuring its diameters is critical, as it is a phenotypic traits that correlates with the health and yield of Canola crops. This application also exemplifies the potential of Measure Anything, where integrating intelligent models -- such as keypoint detection -- extends its scalability to fully automate the measurement process for high-throughput applications. Furthermore, we showcase its versatility in robotic grasping, leveraging extracted geometric features to identify optimal grasp points.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [Appearance Matching Adapter for Exemplar-based Semantic Image Synthesis](http://arxiv.org/abs/2412.03150)  
+Siyoon Jin, Jisu Nam, Jiyoung Kim, Dahyun Chung, Yeong-Seok Kim, Joonhyung Park, Heonjeong Chu, Seungryong Kim  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Exemplar-based semantic image synthesis aims to generate images aligned with given semantic content while preserving the appearance of an exemplar image. Conventional structure-guidance models, such as ControlNet, are limited in that they cannot directly utilize exemplar images as input, relying instead solely on text prompts to control appearance. Recent tuning-free approaches address this limitation by transferring local appearance from the exemplar image to the synthesized image through implicit cross-image matching in the augmented self-attention mechanism of pre-trained diffusion models. However, these methods face challenges when applied to content-rich scenes with significant geometric deformations, such as driving scenes. In this paper, we propose the Appearance Matching Adapter (AM-Adapter), a learnable framework that enhances cross-image matching within augmented self-attention by incorporating semantic information from segmentation maps. To effectively disentangle generation and matching processes, we adopt a stage-wise training approach. Initially, we train the structure-guidance and generation networks, followed by training the AM-Adapter while keeping the other networks frozen. During inference, we introduce an automated exemplar retrieval method to efficiently select exemplar image-segmentation pairs. Despite utilizing a limited number of learnable parameters, our method achieves state-of-the-art performance, excelling in both semantic alignment preservation and local appearance fidelity. Extensive ablation studies further validate our design choices. Code and pre-trained weights will be publicly available.: https://cvlab-kaist.github.io/AM-Adapter/  
   </ol>  
 </details>  
   
@@ -171,44 +125,15 @@ Yonghao Dang, Liyuan Liu, Hui Kang, Ping Ye, Jianqin Yin
 
 ## NeRF  
 
-### [SAGA: Surface-Aligned Gaussian Avatar](http://arxiv.org/abs/2412.00845)  
-Ronghan Chen, Yang Cong, Jiayue Liu  
+### [NeRF and Gaussian Splatting SLAM in the Wild](http://arxiv.org/abs/2412.03263)  
+Fabian Schmidt, Markus Enzweiler, Abhinav Valada  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper presents a Surface-Aligned Gaussian representation for creating animatable human avatars from monocular videos,aiming at improving the novel view and pose synthesis performance while ensuring fast training and real-time rendering. Recently,3DGS has emerged as a more efficient and expressive alternative to NeRF, and has been used for creating dynamic human avatars. However,when applied to the severely ill-posed task of monocular dynamic reconstruction, the Gaussians tend to overfit the constantly changing regions such as clothes wrinkles or shadows since these regions cannot provide consistent supervision, resulting in noisy geometry and abrupt deformation that typically fail to generalize under novel views and poses.To address these limitations, we present SAGA,i.e.,Surface-Aligned Gaussian Avatar,which aligns the Gaussians with a mesh to enforce well-defined geometry and consistent deformation, thereby improving generalization under novel views and poses. Unlike existing strict alignment methods that suffer from limited expressive power and low realism,SAGA employs a two-stage alignment strategy where the Gaussians are first adhered on while then detached from the mesh, thus facilitating both good geometry and high expressivity. In the Adhered Stage, we improve the flexibility of Adhered-on-Mesh Gaussians by allowing them to flow on the mesh, in contrast to existing methods that rigidly bind Gaussians to fixed location. In the second Detached Stage, we introduce a Gaussian-Mesh Alignment regularization, which allows us to unleash the expressivity by detaching the Gaussians but maintain the geometric alignment by minimizing their location and orientation offsets from the bound triangles. Finally, since the Gaussians may drift outside the bound triangles during optimization, an efficient Walking-on-Mesh strategy is proposed to dynamically update the bound triangles.  
+    Navigating outdoor environments with visual Simultaneous Localization and Mapping (SLAM) systems poses significant challenges due to dynamic scenes, lighting variations, and seasonal changes, requiring robust solutions. While traditional SLAM methods struggle with adaptability, deep learning-based approaches and emerging neural radiance fields as well as Gaussian Splatting-based SLAM methods, offer promising alternatives. However, these methods have primarily been evaluated in controlled indoor environments with stable conditions, leaving a gap in understanding their performance in unstructured and variable outdoor settings. This study addresses this gap by evaluating these methods in natural outdoor environments, focusing on camera tracking accuracy, robustness to environmental factors, and computational efficiency, highlighting distinct trade-offs. Extensive evaluations demonstrate that neural SLAM methods achieve superior robustness, particularly under challenging conditions such as low light, but at a high computational cost. At the same time, traditional methods perform the best across seasons but are highly sensitive to variations in lighting conditions. The code of the benchmark is publicly available at https://github.com/iis-esslingen/nerf-3dgs-benchmark.  
   </ol>  
 </details>  
-**comments**: Submitted to TPAMI. Major Revision. Project page:
-  https://gostinshell.github.io/SAGA/  
-  
-### [CtrlNeRF: The Generative Neural Radiation Fields for the Controllable Synthesis of High-fidelity 3D-Aware Images](http://arxiv.org/abs/2412.00754)  
-Jian Liu, Zhen Yu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The neural radiance field (NERF) advocates learning the continuous representation of 3D geometry through a multilayer perceptron (MLP). By integrating this into a generative model, the generative neural radiance field (GRAF) is capable of producing images from random noise z without 3D supervision. In practice, the shape and appearance are modeled by z_s and z_a, respectively, to manipulate them separately during inference. However, it is challenging to represent multiple scenes using a solitary MLP and precisely control the generation of 3D geometry in terms of shape and appearance. In this paper, we introduce a controllable generative model (i.e. \textbf{CtrlNeRF}) that uses a single MLP network to represent multiple scenes with shared weights. Consequently, we manipulated the shape and appearance codes to realize the controllable generation of high-fidelity images with 3D consistency. Moreover, the model enables the synthesis of novel views that do not exist in the training sets via camera pose alteration and feature interpolation. Extensive experiments were conducted to demonstrate its superiority in 3D-aware image generation compared to its counterparts.  
-  </ol>  
-</details>  
-  
-### [Speedy-Splat: Fast 3D Gaussian Splatting with Sparse Pixels and Sparse Primitives](http://arxiv.org/abs/2412.00578)  
-Alex Hanson, Allen Tu, Geng Lin, Vasu Singla, Matthias Zwicker, Tom Goldstein  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    3D Gaussian Splatting (3D-GS) is a recent 3D scene reconstruction technique that enables real-time rendering of novel views by modeling scenes as parametric point clouds of differentiable 3D Gaussians. However, its rendering speed and model size still present bottlenecks, especially in resource-constrained settings. In this paper, we identify and address two key inefficiencies in 3D-GS, achieving substantial improvements in rendering speed, model size, and training time. First, we optimize the rendering pipeline to precisely localize Gaussians in the scene, boosting rendering speed without altering visual fidelity. Second, we introduce a novel pruning technique and integrate it into the training pipeline, significantly reducing model size and training time while further raising rendering speed. Our Speedy-Splat approach combines these techniques to accelerate average rendering speed by a drastic $6.71\times$ across scenes from the Mip-NeRF 360, Tanks & Temples, and Deep Blending datasets with $10.6\times$ fewer primitives than 3D-GS.  
-  </ol>  
-</details>  
-  
-### [Instant3dit: Multiview Inpainting for Fast Editing of 3D Objects](http://arxiv.org/abs/2412.00518)  
-Amir Barda, Matheus Gadelha, Vladimir G. Kim, Noam Aigerman, Amit H. Bermano, Thibault Groueix  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We propose a generative technique to edit 3D shapes, represented as meshes, NeRFs, or Gaussian Splats, in approximately 3 seconds, without the need for running an SDS type of optimization. Our key insight is to cast 3D editing as a multiview image inpainting problem, as this representation is generic and can be mapped back to any 3D representation using the bank of available Large Reconstruction Models. We explore different fine-tuning strategies to obtain both multiview generation and inpainting capabilities within the same diffusion model. In particular, the design of the inpainting mask is an important factor of training an inpainting model, and we propose several masking strategies to mimic the types of edits a user would perform on a 3D shape. Our approach takes 3D generative editing from hours to seconds and produces higher-quality results compared to previous works.  
-  </ol>  
-</details>  
-**comments**: project page: https://amirbarda.github.io/Instant3dit.github.io/  
+**comments**: 5 pages, 2 figures, 4 tables  
   
   
 
