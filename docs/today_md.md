@@ -1,55 +1,62 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#SplineGS:-Robust-Motion-Adaptive-Spline-for-Real-Time-Dynamic-3D-Gaussians-from-Monocular-Video>SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video</a></li>
+        <li><a href=#RoMeO:-Robust-Metric-Visual-Odometry>RoMeO: Robust Metric Visual Odometry</a></li>
       </ul>
     </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Agtech-Framework-for-Cranberry-Ripening-Analysis-Using-Vision-Foundation-Models>Agtech Framework for Cranberry-Ripening Analysis Using Vision Foundation Models</a></li>
+        <li><a href=#Leveraging-Large-Vision-Language-Model-as-User-Intent-aware-Encoder-for-Composed-Image-Retrieval>Leveraging Large Vision-Language Model as User Intent-aware Encoder for Composed Image Retrieval</a></li>
+        <li><a href=#Reason-before-Retrieve:-One-Stage-Reflective-Chain-of-Thoughts-for-Training-Free-Zero-Shot-Composed-Image-Retrieval>Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#NeRF-Texture:-Synthesizing-Neural-Radiance-Field-Textures>NeRF-Texture: Synthesizing Neural Radiance Field Textures</a></li>
-        <li><a href=#Sharpening-Your-Density-Fields:-Spiking-Neuron-Aided-Fast-Geometry-Learning>Sharpening Your Density Fields: Spiking Neuron Aided Fast Geometry Learning</a></li>
-        <li><a href=#PBR-NeRF:-Inverse-Rendering-with-Physics-Based-Neural-Fields>PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields</a></li>
+        <li><a href=#GS-ProCams:-Gaussian-Splatting-based-Projector-Camera-Systems>GS-ProCams: Gaussian Splatting-based Projector-Camera Systems</a></li>
+        <li><a href=#Sequence-Matters:-Harnessing-Video-Models-in-Super-Resolution>Sequence Matters: Harnessing Video Models in Super-Resolution</a></li>
+        <li><a href=#VRVVC:-Variable-Rate-NeRF-Based-Volumetric-Video-Compression>VRVVC: Variable-Rate NeRF-Based Volumetric Video Compression</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [SplineGS: Robust Motion-Adaptive Spline for Real-Time Dynamic 3D Gaussians from Monocular Video](http://arxiv.org/abs/2412.09982)  
-Jongmin Park, Minh-Quan Viet Bui, Juan Luis Gonzalez Bello, Jaeho Moon, Jihyong Oh, Munchurl Kim  
+### [RoMeO: Robust Metric Visual Odometry](http://arxiv.org/abs/2412.11530)  
+Junda Cheng, Zhipeng Cai, Zhaoxing Zhang, Wei Yin, Matthias Muller, Michael Paulitsch, Xin Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Synthesizing novel views from in-the-wild monocular videos is challenging due to scene dynamics and the lack of multi-view cues. To address this, we propose SplineGS, a COLMAP-free dynamic 3D Gaussian Splatting (3DGS) framework for high-quality reconstruction and fast rendering from monocular videos. At its core is a novel Motion-Adaptive Spline (MAS) method, which represents continuous dynamic 3D Gaussian trajectories using cubic Hermite splines with a small number of control points. For MAS, we introduce a Motion-Adaptive Control points Pruning (MACP) method to model the deformation of each dynamic 3D Gaussian across varying motions, progressively pruning control points while maintaining dynamic modeling integrity. Additionally, we present a joint optimization strategy for camera parameter estimation and 3D Gaussian attributes, leveraging photometric and geometric consistency. This eliminates the need for Structure-from-Motion preprocessing and enhances SplineGS's robustness in real-world conditions. Experiments show that SplineGS significantly outperforms state-of-the-art methods in novel view synthesis quality for dynamic scenes from monocular videos, achieving thousands times faster rendering speed.  
+    Visual odometry (VO) aims to estimate camera poses from visual inputs -- a fundamental building block for many applications such as VR/AR and robotics. This work focuses on monocular RGB VO where the input is a monocular RGB video without IMU or 3D sensors. Existing approaches lack robustness under this challenging scenario and fail to generalize to unseen data (especially outdoors); they also cannot recover metric-scale poses. We propose Robust Metric Visual Odometry (RoMeO), a novel method that resolves these issues leveraging priors from pre-trained depth models. RoMeO incorporates both monocular metric depth and multi-view stereo (MVS) models to recover metric-scale, simplify correspondence search, provide better initialization and regularize optimization. Effective strategies are proposed to inject noise during training and adaptively filter noisy depth priors, which ensure the robustness of RoMeO on in-the-wild data. As shown in Fig.1, RoMeO advances the state-of-the-art (SOTA) by a large margin across 6 diverse datasets covering both indoor and outdoor scenes. Compared to the current SOTA DPVO, RoMeO reduces the relative (align the trajectory scale with GT) and absolute trajectory errors both by >50%. The performance gain also transfers to the full SLAM pipeline (with global BA & loop closure). Code will be released upon acceptance.  
   </ol>  
 </details>  
-**comments**: The first two authors contributed equally to this work (equal
-  contribution). The last two authors advised equally to this work. Please
-  visit our project page at this https://kaist-viclab.github.io/splinegs-site/  
   
   
 
 
 
-## Keypoint Detection  
+## Visual Localization  
 
-### [Agtech Framework for Cranberry-Ripening Analysis Using Vision Foundation Models](http://arxiv.org/abs/2412.09739)  
-Faith Johnson, Ryan Meegan, Jack Lowry, Peter Oudemans, Kristin Dana  
+### [Leveraging Large Vision-Language Model as User Intent-aware Encoder for Composed Image Retrieval](http://arxiv.org/abs/2412.11087)  
+Zelong Sun, Dong Jing, Guoxing Yang, Nanyi Fei, Zhiwu Lu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Agricultural domains are being transformed by recent advances in AI and computer vision that support quantitative visual evaluation. Using aerial and ground imaging over a time series, we develop a framework for characterizing the ripening process of cranberry crops, a crucial component for precision agriculture tasks such as comparing crop breeds (high-throughput phenotyping) and detecting disease. Using drone imaging, we capture images from 20 waypoints across multiple bogs, and using ground-based imaging (hand-held camera), we image same bog patch using fixed fiducial markers. Both imaging methods are repeated to gather a multi-week time series spanning the entire growing season. Aerial imaging provides multiple samples to compute a distribution of albedo values. Ground imaging enables tracking of individual berries for a detailed view of berry appearance changes. Using vision transformers (ViT) for feature detection after segmentation, we extract a high dimensional feature descriptor of berry appearance. Interpretability of appearance is critical for plant biologists and cranberry growers to support crop breeding decisions (e.g.\ comparison of berry varieties from breeding programs). For interpretability, we create a 2D manifold of cranberry appearance by using a UMAP dimensionality reduction on ViT features. This projection enables quantification of ripening paths and a useful metric of ripening rate. We demonstrate the comparison of four cranberry varieties based on our ripening assessments. This work is the first of its kind and has future impact for cranberries and for other crops including wine grapes, olives, blueberries, and maize. Aerial and ground datasets are made publicly available.  
+    Composed Image Retrieval (CIR) aims to retrieve target images from candidate set using a hybrid-modality query consisting of a reference image and a relative caption that describes the user intent. Recent studies attempt to utilize Vision-Language Pre-training Models (VLPMs) with various fusion strategies for addressing the task.However, these methods typically fail to simultaneously meet two key requirements of CIR: comprehensively extracting visual information and faithfully following the user intent. In this work, we propose CIR-LVLM, a novel framework that leverages the large vision-language model (LVLM) as the powerful user intent-aware encoder to better meet these requirements. Our motivation is to explore the advanced reasoning and instruction-following capabilities of LVLM for accurately understanding and responding the user intent. Furthermore, we design a novel hybrid intent instruction module to provide explicit intent guidance at two levels: (1) The task prompt clarifies the task requirement and assists the model in discerning user intent at the task level. (2) The instance-specific soft prompt, which is adaptively selected from the learnable prompt pool, enables the model to better comprehend the user intent at the instance level compared to a universal prompt for all instances. CIR-LVLM achieves state-of-the-art performance across three prominent benchmarks with acceptable inference efficiency. We believe this study provides fundamental insights into CIR-related fields.  
   </ol>  
 </details>  
-**comments**: arXiv admin note: substantial text overlap with arXiv:2309.00028  
+**comments**: Accepted by AAAI 2025  
+  
+### [Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2412.11077)  
+Yuanmin Tang, Xiaoting Qin, Jue Zhang, Jing Yu, Gaopeng Gou, Gang Xiong, Qingwei Ling, Saravan Rajmohan, Dongmei Zhang, Qi Wu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Composed Image Retrieval (CIR) aims to retrieve target images that closely resemble a reference image while integrating user-specified textual modifications, thereby capturing user intent more precisely. Existing training-free zero-shot CIR (ZS-CIR) methods often employ a two-stage process: they first generate a caption for the reference image and then use Large Language Models for reasoning to obtain a target description. However, these methods suffer from missing critical visual details and limited reasoning capabilities, leading to suboptimal retrieval performance. To address these challenges, we propose a novel, training-free one-stage method, One-Stage Reflective Chain-of-Thought Reasoning for ZS-CIR (OSrCIR), which employs Multimodal Large Language Models to retain essential visual information in a single-stage reasoning process, eliminating the information loss seen in two-stage methods. Our Reflective Chain-of-Thought framework further improves interpretative accuracy by aligning manipulation intent with contextual cues from reference images. OSrCIR achieves performance gains of 1.80% to 6.44% over existing training-free methods across multiple tasks, setting new state-of-the-art results in ZS-CIR and enhancing its utility in vision-language applications. Our code will be available at https://github.com/Pter61/osrcir2024/.  
+  </ol>  
+</details>  
   
   
 
@@ -57,35 +64,33 @@ Faith Johnson, Ryan Meegan, Jack Lowry, Peter Oudemans, Kristin Dana
 
 ## NeRF  
 
-### [NeRF-Texture: Synthesizing Neural Radiance Field Textures](http://arxiv.org/abs/2412.10004)  
-Yi-Hua Huang, Yan-Pei Cao, Yu-Kun Lai, Ying Shan, Lin Gao  
+### [GS-ProCams: Gaussian Splatting-based Projector-Camera Systems](http://arxiv.org/abs/2412.11762)  
+Qingyue Deng, Jijiang Li, Haibin Ling, Bingyao Huang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Texture synthesis is a fundamental problem in computer graphics that would benefit various applications. Existing methods are effective in handling 2D image textures. In contrast, many real-world textures contain meso-structure in the 3D geometry space, such as grass, leaves, and fabrics, which cannot be effectively modeled using only 2D image textures. We propose a novel texture synthesis method with Neural Radiance Fields (NeRF) to capture and synthesize textures from given multi-view images. In the proposed NeRF texture representation, a scene with fine geometric details is disentangled into the meso-structure textures and the underlying base shape. This allows textures with meso-structure to be effectively learned as latent features situated on the base shape, which are fed into a NeRF decoder trained simultaneously to represent the rich view-dependent appearance. Using this implicit representation, we can synthesize NeRF-based textures through patch matching of latent features. However, inconsistencies between the metrics of the reconstructed content space and the latent feature space may compromise the synthesis quality. To enhance matching performance, we further regularize the distribution of latent features by incorporating a clustering constraint. In addition to generating NeRF textures over a planar domain, our method can also synthesize NeRF textures over curved surfaces, which are practically useful. Experimental results and evaluations demonstrate the effectiveness of our approach.  
+    We present GS-ProCams, the first Gaussian Splatting-based framework for projector-camera systems (ProCams). GS-ProCams significantly enhances the efficiency of projection mapping (PM) that requires establishing geometric and radiometric mappings between the projector and the camera. Previous CNN-based ProCams are constrained to a specific viewpoint, limiting their applicability to novel perspectives. In contrast, NeRF-based ProCams support view-agnostic projection mapping, however, they require an additional colocated light source and demand significant computational and memory resources. To address this issue, we propose GS-ProCams that employs 2D Gaussian for scene representations, and enables efficient view-agnostic ProCams applications. In particular, we explicitly model the complex geometric and photometric mappings of ProCams using projector responses, the target surface's geometry and materials represented by Gaussians, and global illumination component. Then, we employ differentiable physically-based rendering to jointly estimate them from captured multi-view projections. Compared to state-of-the-art NeRF-based methods, our GS-ProCams eliminates the need for additional devices, achieving superior ProCams simulation quality. It is also 600 times faster and uses only 1/10 of the GPU memory.  
   </ol>  
 </details>  
   
-### [Sharpening Your Density Fields: Spiking Neuron Aided Fast Geometry Learning](http://arxiv.org/abs/2412.09881)  
-Yi Gu, Zhaorui Wang, Dongjun Ye, Renjing Xu  
+### [Sequence Matters: Harnessing Video Models in Super-Resolution](http://arxiv.org/abs/2412.11525)  
+Hyun-kyu Ko, Dongheok Park, Youngin Park, Byeonghyeon Lee, Juhee Han, Eunbyung Park  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have achieved remarkable progress in neural rendering. Extracting geometry from NeRF typically relies on the Marching Cubes algorithm, which uses a hand-crafted threshold to define the level set. However, this threshold-based approach requires laborious and scenario-specific tuning, limiting its practicality for real-world applications. In this work, we seek to enhance the efficiency of this method during the training time. To this end, we introduce a spiking neuron mechanism that dynamically adjusts the threshold, eliminating the need for manual selection. Despite its promise, directly training with the spiking neuron often results in model collapse and noisy outputs. To overcome these challenges, we propose a round-robin strategy that stabilizes the training process and enables the geometry network to achieve a sharper and more precise density distribution with minimal computational overhead. We validate our approach through extensive experiments on both synthetic and real-world datasets. The results show that our method significantly improves the performance of threshold-based techniques, offering a more robust and efficient solution for NeRF geometry extraction.  
+    3D super-resolution aims to reconstruct high-fidelity 3D models from low-resolution (LR) multi-view images. Early studies primarily focused on single-image super-resolution (SISR) models to upsample LR images into high-resolution images. However, these methods often lack view consistency because they operate independently on each image. Although various post-processing techniques have been extensively explored to mitigate these inconsistencies, they have yet to fully resolve the issues. In this paper, we perform a comprehensive study of 3D super-resolution by leveraging video super-resolution (VSR) models. By utilizing VSR models, we ensure a higher degree of spatial consistency and can reference surrounding spatial information, leading to more accurate and detailed reconstructions. Our findings reveal that VSR models can perform remarkably well even on sequences that lack precise spatial alignment. Given this observation, we propose a simple yet practical approach to align LR images without involving fine-tuning or generating 'smooth' trajectory from the trained 3D models over LR images. The experimental results show that the surprisingly simple algorithms can achieve the state-of-the-art results of 3D super-resolution tasks on standard benchmark datasets, such as the NeRF-synthetic and MipNeRF-360 datasets. Project page: https://ko-lani.github.io/Sequence-Matters  
   </ol>  
 </details>  
+**comments**: Project page: https://ko-lani.github.io/Sequence-Matters  
   
-### [PBR-NeRF: Inverse Rendering with Physics-Based Neural Fields](http://arxiv.org/abs/2412.09680)  
-[[code](https://github.com/s3anwu/pbrnerf)]  
-Sean Wu, Shamik Basu, Tim Broedermann, Luc Van Gool, Christos Sakaridis  
+### [VRVVC: Variable-Rate NeRF-Based Volumetric Video Compression](http://arxiv.org/abs/2412.11362)  
+Qiang Hu, Houqiang Zhong, Zihan Zheng, Xiaoyun Zhang, Zhengxue Cheng, Li Song, Guangtao Zhai, Yanfeng Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We tackle the ill-posed inverse rendering problem in 3D reconstruction with a Neural Radiance Field (NeRF) approach informed by Physics-Based Rendering (PBR) theory, named PBR-NeRF. Our method addresses a key limitation in most NeRF and 3D Gaussian Splatting approaches: they estimate view-dependent appearance without modeling scene materials and illumination. To address this limitation, we present an inverse rendering (IR) model capable of jointly estimating scene geometry, materials, and illumination. Our model builds upon recent NeRF-based IR approaches, but crucially introduces two novel physics-based priors that better constrain the IR estimation. Our priors are rigorously formulated as intuitive loss terms and achieve state-of-the-art material estimation without compromising novel view synthesis quality. Our method is easily adaptable to other inverse rendering and 3D reconstruction frameworks that require material estimation. We demonstrate the importance of extending current neural rendering approaches to fully model scene properties beyond geometry and view-dependent appearance. Code is publicly available at https://github.com/s3anwu/pbrnerf  
+    Neural Radiance Field (NeRF)-based volumetric video has revolutionized visual media by delivering photorealistic Free-Viewpoint Video (FVV) experiences that provide audiences with unprecedented immersion and interactivity. However, the substantial data volumes pose significant challenges for storage and transmission. Existing solutions typically optimize NeRF representation and compression independently or focus on a single fixed rate-distortion (RD) tradeoff. In this paper, we propose VRVVC, a novel end-to-end joint optimization variable-rate framework for volumetric video compression that achieves variable bitrates using a single model while maintaining superior RD performance. Specifically, VRVVC introduces a compact tri-plane implicit residual representation for inter-frame modeling of long-duration dynamic scenes, effectively reducing temporal redundancy. We further propose a variable-rate residual representation compression scheme that leverages a learnable quantization and a tiny MLP-based entropy model. This approach enables variable bitrates through the utilization of predefined Lagrange multipliers to manage the quantization error of all latent representations. Finally, we present an end-to-end progressive training strategy combined with a multi-rate-distortion loss function to optimize the entire framework. Extensive experiments demonstrate that VRVVC achieves a wide range of variable bitrates within a single model and surpasses the RD performance of existing methods across various datasets.  
   </ol>  
 </details>  
-**comments**: 16 pages, 7 figures. Code is publicly available at
-  https://github.com/s3anwu/pbrnerf  
   
   
 
