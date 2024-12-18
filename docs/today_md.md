@@ -1,60 +1,29 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#RoMeO:-Robust-Metric-Visual-Odometry>RoMeO: Robust Metric Visual Odometry</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Leveraging-Large-Vision-Language-Model-as-User-Intent-aware-Encoder-for-Composed-Image-Retrieval>Leveraging Large Vision-Language Model as User Intent-aware Encoder for Composed Image Retrieval</a></li>
-        <li><a href=#Reason-before-Retrieve:-One-Stage-Reflective-Chain-of-Thoughts-for-Training-Free-Zero-Shot-Composed-Image-Retrieval>Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval</a></li>
+        <li><a href=#Three-Things-to-Know-about-Deep-Metric-Learning>Three Things to Know about Deep Metric Learning</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#GS-ProCams:-Gaussian-Splatting-based-Projector-Camera-Systems>GS-ProCams: Gaussian Splatting-based Projector-Camera Systems</a></li>
-        <li><a href=#Sequence-Matters:-Harnessing-Video-Models-in-Super-Resolution>Sequence Matters: Harnessing Video Models in Super-Resolution</a></li>
-        <li><a href=#VRVVC:-Variable-Rate-NeRF-Based-Volumetric-Video-Compression>VRVVC: Variable-Rate NeRF-Based Volumetric Video Compression</a></li>
+        <li><a href=#EOGS:-Gaussian-Splatting-for-Earth-Observation>EOGS: Gaussian Splatting for Earth Observation</a></li>
+        <li><a href=#Optimize-the-Unseen----Fast-NeRF-Cleanup-with-Free-Space-Prior>Optimize the Unseen -- Fast NeRF Cleanup with Free Space Prior</a></li>
+        <li><a href=#Towards-a-Training-Free-Approach-for-3D-Scene-Editing>Towards a Training Free Approach for 3D Scene Editing</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [RoMeO: Robust Metric Visual Odometry](http://arxiv.org/abs/2412.11530)  
-Junda Cheng, Zhipeng Cai, Zhaoxing Zhang, Wei Yin, Matthias Muller, Michael Paulitsch, Xin Yang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual odometry (VO) aims to estimate camera poses from visual inputs -- a fundamental building block for many applications such as VR/AR and robotics. This work focuses on monocular RGB VO where the input is a monocular RGB video without IMU or 3D sensors. Existing approaches lack robustness under this challenging scenario and fail to generalize to unseen data (especially outdoors); they also cannot recover metric-scale poses. We propose Robust Metric Visual Odometry (RoMeO), a novel method that resolves these issues leveraging priors from pre-trained depth models. RoMeO incorporates both monocular metric depth and multi-view stereo (MVS) models to recover metric-scale, simplify correspondence search, provide better initialization and regularize optimization. Effective strategies are proposed to inject noise during training and adaptively filter noisy depth priors, which ensure the robustness of RoMeO on in-the-wild data. As shown in Fig.1, RoMeO advances the state-of-the-art (SOTA) by a large margin across 6 diverse datasets covering both indoor and outdoor scenes. Compared to the current SOTA DPVO, RoMeO reduces the relative (align the trajectory scale with GT) and absolute trajectory errors both by >50%. The performance gain also transfers to the full SLAM pipeline (with global BA & loop closure). Code will be released upon acceptance.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Leveraging Large Vision-Language Model as User Intent-aware Encoder for Composed Image Retrieval](http://arxiv.org/abs/2412.11087)  
-Zelong Sun, Dong Jing, Guoxing Yang, Nanyi Fei, Zhiwu Lu  
+### [Three Things to Know about Deep Metric Learning](http://arxiv.org/abs/2412.12432)  
+Yash Patel, Giorgos Tolias, Jiri Matas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) aims to retrieve target images from candidate set using a hybrid-modality query consisting of a reference image and a relative caption that describes the user intent. Recent studies attempt to utilize Vision-Language Pre-training Models (VLPMs) with various fusion strategies for addressing the task.However, these methods typically fail to simultaneously meet two key requirements of CIR: comprehensively extracting visual information and faithfully following the user intent. In this work, we propose CIR-LVLM, a novel framework that leverages the large vision-language model (LVLM) as the powerful user intent-aware encoder to better meet these requirements. Our motivation is to explore the advanced reasoning and instruction-following capabilities of LVLM for accurately understanding and responding the user intent. Furthermore, we design a novel hybrid intent instruction module to provide explicit intent guidance at two levels: (1) The task prompt clarifies the task requirement and assists the model in discerning user intent at the task level. (2) The instance-specific soft prompt, which is adaptively selected from the learnable prompt pool, enables the model to better comprehend the user intent at the instance level compared to a universal prompt for all instances. CIR-LVLM achieves state-of-the-art performance across three prominent benchmarks with acceptable inference efficiency. We believe this study provides fundamental insights into CIR-related fields.  
-  </ol>  
-</details>  
-**comments**: Accepted by AAAI 2025  
-  
-### [Reason-before-Retrieve: One-Stage Reflective Chain-of-Thoughts for Training-Free Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2412.11077)  
-Yuanmin Tang, Xiaoting Qin, Jue Zhang, Jing Yu, Gaopeng Gou, Gang Xiong, Qingwei Ling, Saravan Rajmohan, Dongmei Zhang, Qi Wu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) aims to retrieve target images that closely resemble a reference image while integrating user-specified textual modifications, thereby capturing user intent more precisely. Existing training-free zero-shot CIR (ZS-CIR) methods often employ a two-stage process: they first generate a caption for the reference image and then use Large Language Models for reasoning to obtain a target description. However, these methods suffer from missing critical visual details and limited reasoning capabilities, leading to suboptimal retrieval performance. To address these challenges, we propose a novel, training-free one-stage method, One-Stage Reflective Chain-of-Thought Reasoning for ZS-CIR (OSrCIR), which employs Multimodal Large Language Models to retain essential visual information in a single-stage reasoning process, eliminating the information loss seen in two-stage methods. Our Reflective Chain-of-Thought framework further improves interpretative accuracy by aligning manipulation intent with contextual cues from reference images. OSrCIR achieves performance gains of 1.80% to 6.44% over existing training-free methods across multiple tasks, setting new state-of-the-art results in ZS-CIR and enhancing its utility in vision-language applications. Our code will be available at https://github.com/Pter61/osrcir2024/.  
+    This paper addresses supervised deep metric learning for open-set image retrieval, focusing on three key aspects: the loss function, mixup regularization, and model initialization. In deep metric learning, optimizing the retrieval evaluation metric, recall@k, via gradient descent is desirable but challenging due to its non-differentiable nature. To overcome this, we propose a differentiable surrogate loss that is computed on large batches, nearly equivalent to the entire training set. This computationally intensive process is made feasible through an implementation that bypasses the GPU memory limitations. Additionally, we introduce an efficient mixup regularization technique that operates on pairwise scalar similarities, effectively increasing the batch size even further. The training process is further enhanced by initializing the vision encoder using foundational models, which are pre-trained on large-scale datasets. Through a systematic study of these components, we demonstrate that their synergy enables large models to nearly solve popular benchmarks.  
   </ol>  
 </details>  
   
@@ -64,31 +33,30 @@ Yuanmin Tang, Xiaoting Qin, Jue Zhang, Jing Yu, Gaopeng Gou, Gang Xiong, Qingwei
 
 ## NeRF  
 
-### [GS-ProCams: Gaussian Splatting-based Projector-Camera Systems](http://arxiv.org/abs/2412.11762)  
-Qingyue Deng, Jijiang Li, Haibin Ling, Bingyao Huang  
+### [EOGS: Gaussian Splatting for Earth Observation](http://arxiv.org/abs/2412.13047)  
+Luca Savant Aira, Gabriele Facciolo, Thibaud Ehret  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present GS-ProCams, the first Gaussian Splatting-based framework for projector-camera systems (ProCams). GS-ProCams significantly enhances the efficiency of projection mapping (PM) that requires establishing geometric and radiometric mappings between the projector and the camera. Previous CNN-based ProCams are constrained to a specific viewpoint, limiting their applicability to novel perspectives. In contrast, NeRF-based ProCams support view-agnostic projection mapping, however, they require an additional colocated light source and demand significant computational and memory resources. To address this issue, we propose GS-ProCams that employs 2D Gaussian for scene representations, and enables efficient view-agnostic ProCams applications. In particular, we explicitly model the complex geometric and photometric mappings of ProCams using projector responses, the target surface's geometry and materials represented by Gaussians, and global illumination component. Then, we employ differentiable physically-based rendering to jointly estimate them from captured multi-view projections. Compared to state-of-the-art NeRF-based methods, our GS-ProCams eliminates the need for additional devices, achieving superior ProCams simulation quality. It is also 600 times faster and uses only 1/10 of the GPU memory.  
+    Recently, Gaussian splatting has emerged as a strong alternative to NeRF, demonstrating impressive 3D modeling capabilities while requiring only a fraction of the training and rendering time. In this paper, we show how the standard Gaussian splatting framework can be adapted for remote sensing, retaining its high efficiency. This enables us to achieve state-of-the-art performance in just a few minutes, compared to the day-long optimization required by the best-performing NeRF-based Earth observation methods. The proposed framework incorporates remote-sensing improvements from EO-NeRF, such as radiometric correction and shadow modeling, while introducing novel components, including sparsity, view consistency, and opacity regularizations.  
   </ol>  
 </details>  
   
-### [Sequence Matters: Harnessing Video Models in Super-Resolution](http://arxiv.org/abs/2412.11525)  
-Hyun-kyu Ko, Dongheok Park, Youngin Park, Byeonghyeon Lee, Juhee Han, Eunbyung Park  
+### [Optimize the Unseen -- Fast NeRF Cleanup with Free Space Prior](http://arxiv.org/abs/2412.12772)  
+Leo Segre, Shai Avidan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D super-resolution aims to reconstruct high-fidelity 3D models from low-resolution (LR) multi-view images. Early studies primarily focused on single-image super-resolution (SISR) models to upsample LR images into high-resolution images. However, these methods often lack view consistency because they operate independently on each image. Although various post-processing techniques have been extensively explored to mitigate these inconsistencies, they have yet to fully resolve the issues. In this paper, we perform a comprehensive study of 3D super-resolution by leveraging video super-resolution (VSR) models. By utilizing VSR models, we ensure a higher degree of spatial consistency and can reference surrounding spatial information, leading to more accurate and detailed reconstructions. Our findings reveal that VSR models can perform remarkably well even on sequences that lack precise spatial alignment. Given this observation, we propose a simple yet practical approach to align LR images without involving fine-tuning or generating 'smooth' trajectory from the trained 3D models over LR images. The experimental results show that the surprisingly simple algorithms can achieve the state-of-the-art results of 3D super-resolution tasks on standard benchmark datasets, such as the NeRF-synthetic and MipNeRF-360 datasets. Project page: https://ko-lani.github.io/Sequence-Matters  
+    Neural Radiance Fields (NeRF) have advanced photorealistic novel view synthesis, but their reliance on photometric reconstruction introduces artifacts, commonly known as "floaters". These artifacts degrade novel view quality, especially in areas unseen by the training cameras. We present a fast, post-hoc NeRF cleanup method that eliminates such artifacts by enforcing our Free Space Prior, effectively minimizing floaters without disrupting the NeRF's representation of observed regions. Unlike existing approaches that rely on either Maximum Likelihood (ML) estimation to fit the data or a complex, local data-driven prior, our method adopts a Maximum-a-Posteriori (MAP) approach, selecting the optimal model parameters under a simple global prior assumption that unseen regions should remain empty. This enables our method to clean artifacts in both seen and unseen areas, enhancing novel view quality even in challenging scene regions. Our method is comparable with existing NeRF cleanup models while being 2.5x faster in inference time, requires no additional memory beyond the original NeRF, and achieves cleanup training in less than 30 seconds. Our code will be made publically available.  
   </ol>  
 </details>  
-**comments**: Project page: https://ko-lani.github.io/Sequence-Matters  
   
-### [VRVVC: Variable-Rate NeRF-Based Volumetric Video Compression](http://arxiv.org/abs/2412.11362)  
-Qiang Hu, Houqiang Zhong, Zihan Zheng, Xiaoyun Zhang, Zhengxue Cheng, Li Song, Guangtao Zhai, Yanfeng Wang  
+### [Towards a Training Free Approach for 3D Scene Editing](http://arxiv.org/abs/2412.12766)  
+Vivek Madhavaram, Shivangana Rawat, Chaitanya Devaguptapu, Charu Sharma, Manohar Kaul  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Field (NeRF)-based volumetric video has revolutionized visual media by delivering photorealistic Free-Viewpoint Video (FVV) experiences that provide audiences with unprecedented immersion and interactivity. However, the substantial data volumes pose significant challenges for storage and transmission. Existing solutions typically optimize NeRF representation and compression independently or focus on a single fixed rate-distortion (RD) tradeoff. In this paper, we propose VRVVC, a novel end-to-end joint optimization variable-rate framework for volumetric video compression that achieves variable bitrates using a single model while maintaining superior RD performance. Specifically, VRVVC introduces a compact tri-plane implicit residual representation for inter-frame modeling of long-duration dynamic scenes, effectively reducing temporal redundancy. We further propose a variable-rate residual representation compression scheme that leverages a learnable quantization and a tiny MLP-based entropy model. This approach enables variable bitrates through the utilization of predefined Lagrange multipliers to manage the quantization error of all latent representations. Finally, we present an end-to-end progressive training strategy combined with a multi-rate-distortion loss function to optimize the entire framework. Extensive experiments demonstrate that VRVVC achieves a wide range of variable bitrates within a single model and surpasses the RD performance of existing methods across various datasets.  
+    Text driven diffusion models have shown remarkable capabilities in editing images. However, when editing 3D scenes, existing works mostly rely on training a NeRF for 3D editing. Recent NeRF editing methods leverages edit operations by deploying 2D diffusion models and project these edits into 3D space. They require strong positional priors alongside text prompt to identify the edit location. These methods are operational on small 3D scenes and are more generalized to particular scene. They require training for each specific edit and cannot be exploited in real-time edits. To address these limitations, we propose a novel method, FreeEdit, to make edits in training free manner using mesh representations as a substitute for NeRF. Training-free methods are now a possibility because of the advances in foundation model's space. We leverage these models to bring a training-free alternative and introduce solutions for insertion, replacement and deletion. We consider insertion, replacement and deletion as basic blocks for performing intricate edits with certain combinations of these operations. Given a text prompt and a 3D scene, our model is capable of identifying what object should be inserted/replaced or deleted and location where edit should be performed. We also introduce a novel algorithm as part of FreeEdit to find the optimal location on grounding object for placement. We evaluate our model by comparing it with baseline models on a wide range of scenes using quantitative and qualitative metrics and showcase the merits of our method with respect to others.  
   </ol>  
 </details>  
   
