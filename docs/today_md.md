@@ -1,27 +1,123 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#DynoSAM:-Open-Source-Smoothing-and-Mapping-Framework-for-Dynamic-SLAM>DynoSAM: Open-Source Smoothing and Mapping Framework for Dynamic SLAM</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#FLORA:-Formal-Language-Model-Enables-Robust-Training-free-Zero-shot-Object-Referring-Analysis>FLORA: Formal Language Model Enables Robust Training-free Zero-shot Object Referring Analysis</a></li>
+        <li><a href=#Enhancing-Sample-Utilization-in-Noise-Robust-Deep-Metric-Learning-With-Subgroup-Based-Positive-Pair-Selection>Enhancing Sample Utilization in Noise-Robust Deep Metric Learning With Subgroup-Based Positive-Pair Selection</a></li>
+        <li><a href=#A-Resource-Efficient-Training-Framework-for-Remote-Sensing-Text--Image-Retrieval>A Resource-Efficient Training Framework for Remote Sensing Text--Image Retrieval</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Keypoint-Detection-Empowered-Near-Field-User-Localization-and-Channel-Reconstruction>Keypoint Detection Empowered Near-Field User Localization and Channel Reconstruction</a></li>
+        <li><a href=#MIFNet:-Learning-Modality-Invariant-Features-for-Generalizable-Multimodal-Image-Matching>MIFNet: Learning Modality-Invariant Features for Generalizable Multimodal Image Matching</a></li>
+        <li><a href=#Refinement-Module-based-on-Parse-Graph-of-Feature-Map-for-Human-Pose-Estimation>Refinement Module based on Parse Graph of Feature Map for Human Pose Estimation</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#MIFNet:-Learning-Modality-Invariant-Features-for-Generalizable-Multimodal-Image-Matching>MIFNet: Learning Modality-Invariant Features for Generalizable Multimodal Image Matching</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Surface-SOS:-Self-Supervised-Object-Segmentation-via-Neural-Surface-Representation>Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation</a></li>
+        <li><a href=#DNRSelect:-Active-Best-View-Selection-for-Deferred-Neural-Rendering>DNRSelect: Active Best View Selection for Deferred Neural Rendering</a></li>
+        <li><a href=#Fast-Underwater-Scene-Reconstruction-using-Multi-View-Stereo-and-Physical-Imaging>Fast Underwater Scene Reconstruction using Multi-View Stereo and Physical Imaging</a></li>
+        <li><a href=#Poxel:-Voxel-Reconstruction-for-3D-Printing>Poxel: Voxel Reconstruction for 3D Printing</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SLAM  
 
-### [FLORA: Formal Language Model Enables Robust Training-free Zero-shot Object Referring Analysis](http://arxiv.org/abs/2501.09887)  
-Zhe Chen, Zijing Chen  
+### [DynoSAM: Open-Source Smoothing and Mapping Framework for Dynamic SLAM](http://arxiv.org/abs/2501.11893)  
+Jesse Morris, Yiduo Wang, Mikolaj Kliniewski, Viorela Ila  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Object Referring Analysis (ORA), commonly known as referring expression comprehension, requires the identification and localization of specific objects in an image based on natural descriptions. Unlike generic object detection, ORA requires both accurate language understanding and precise visual localization, making it inherently more complex. Although recent pre-trained large visual grounding detectors have achieved significant progress, they heavily rely on extensively labeled data and time-consuming learning. To address these, we introduce a novel, training-free framework for zero-shot ORA, termed FLORA (Formal Language for Object Referring and Analysis). FLORA harnesses the inherent reasoning capabilities of large language models (LLMs) and integrates a formal language model - a logical framework that regulates language within structured, rule-based descriptions - to provide effective zero-shot ORA. More specifically, our formal language model (FLM) enables an effective, logic-driven interpretation of object descriptions without necessitating any training processes. Built upon FLM-regulated LLM outputs, we further devise a Bayesian inference framework and employ appropriate off-the-shelf interpretive models to finalize the reasoning, delivering favorable robustness against LLM hallucinations and compelling ORA performance in a training-free manner. In practice, our FLORA boosts the zero-shot performance of existing pretrained grounding detectors by up to around 45%. Our comprehensive evaluation across different challenging datasets also confirms that FLORA consistently surpasses current state-of-the-art zero-shot methods in both detection and segmentation tasks associated with zero-shot ORA. We believe our probabilistic parsing and reasoning of the LLM outputs elevate the reliability and interpretability of zero-shot ORA. We shall release codes upon publication.  
+    Traditional Visual Simultaneous Localization and Mapping (vSLAM) systems focus solely on static scene structures, overlooking dynamic elements in the environment. Although effective for accurate visual odometry in complex scenarios, these methods discard crucial information about moving objects. By incorporating this information into a Dynamic SLAM framework, the motion of dynamic entities can be estimated, enhancing navigation whilst ensuring accurate localization. However, the fundamental formulation of Dynamic SLAM remains an open challenge, with no consensus on the optimal approach for accurate motion estimation within a SLAM pipeline. Therefore, we developed DynoSAM, an open-source framework for Dynamic SLAM that enables the efficient implementation, testing, and comparison of various Dynamic SLAM optimization formulations. DynoSAM integrates static and dynamic measurements into a unified optimization problem solved using factor graphs, simultaneously estimating camera poses, static scene, object motion or poses, and object structures. We evaluate DynoSAM across diverse simulated and real-world datasets, achieving state-of-the-art motion estimation in indoor and outdoor environments, with substantial improvements over existing systems. Additionally, we demonstrate DynoSAM utility in downstream applications, including 3D reconstruction of dynamic scenes and trajectory prediction, thereby showcasing potential for advancing dynamic object-aware SLAM systems. DynoSAM is open-sourced at https://github.com/ACFR-RPG/DynOSAM.  
+  </ol>  
+</details>  
+**comments**: 20 pages, 10 figures. Submitted to T-RO Visual SLAM SI 2025  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Enhancing Sample Utilization in Noise-Robust Deep Metric Learning With Subgroup-Based Positive-Pair Selection](http://arxiv.org/abs/2501.11063)  
+[[code](https://github.com/smuelpeng/sgps-noisefreedml)]  
+Zhipeng Yu, Qianqian Xu, Yangbangyan Jiang, Yingfei Sun, Qingming Huang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The existence of noisy labels in real-world data negatively impacts the performance of deep learning models. Although much research effort has been devoted to improving the robustness towards noisy labels in classification tasks, the problem of noisy labels in deep metric learning (DML) remains under-explored. Existing noisy label learning methods designed for DML mainly discard suspicious noisy samples, resulting in a waste of the training data. To address this issue, we propose a noise-robust DML framework with SubGroup-based Positive-pair Selection (SGPS), which constructs reliable positive pairs for noisy samples to enhance the sample utilization. Specifically, SGPS first effectively identifies clean and noisy samples by a probability-based clean sample selectionstrategy. To further utilize the remaining noisy samples, we discover their potential similar samples based on the subgroup information given by a subgroup generation module and then aggregate them into informative positive prototypes for each noisy sample via a positive prototype generation module. Afterward, a new contrastive loss is tailored for the noisy samples with their selected positive pairs. SGPS can be easily integrated into the training process of existing pair-wise DML tasks, like image retrieval and face recognition. Extensive experiments on multiple synthetic and real-world large-scale label noise datasets demonstrate the effectiveness of our proposed method. Without any bells and whistles, our SGPS framework outperforms the state-of-the-art noisy label DML methods. Code is available at \url{https://github.com/smuelpeng/SGPS-NoiseFreeDML}.  
+  </ol>  
+</details>  
+**comments**: arXiv admin note: substantial text overlap with arXiv:2108.01431,
+  arXiv:2103.16047 by other authors  
+  
+### [A Resource-Efficient Training Framework for Remote Sensing Text--Image Retrieval](http://arxiv.org/abs/2501.10638)  
+Weihang Zhang, Jihao Li, Shuoke Li, Ziqing Niu, Jialiang Chen, Wenkai Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Remote sensing text--image retrieval (RSTIR) aims to retrieve the matched remote sensing (RS) images from the database according to the descriptive text. Recently, the rapid development of large visual-language pre-training models provides new insights for RSTIR. Nevertheless, as the complexity of models grows in RSTIR, the previous studies suffer from suboptimal resource efficiency during transfer learning. To address this issue, we propose a computation and memory-efficient retrieval (CMER) framework for RSTIR. To reduce the training memory consumption, we propose the Focus-Adapter module, which adopts a side branch structure. Its focus layer suppresses the interference of background pixels for small targets. Simultaneously, to enhance data efficacy, we regard the RS scene category as the metadata and design a concise augmentation technique. The scene label augmentation leverages the prior knowledge from land cover categories and shrinks the search space. We propose the negative sample recycling strategy to make the negative sample pool decoupled from the mini-batch size. It improves the generalization performance without introducing additional encoders. We have conducted quantitative and qualitative experiments on public datasets and expanded the benchmark with some advanced approaches, which demonstrates the competitiveness of the proposed CMER. Compared with the recent advanced methods, the overall retrieval performance of CMER is 2%--5% higher on RSITMD. Moreover, our proposed method reduces memory consumption by 49% and has a 1.4x data throughput during training. The code of the CMER and the dataset will be released at https://github.com/ZhangWeihang99/CMER.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Keypoint Detection Empowered Near-Field User Localization and Channel Reconstruction](http://arxiv.org/abs/2501.11844)  
+Mengyuan Li, Yu Han, Zhizheng Lu, Shi Jin, Yongxu Zhu, Chao-Kai Wen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In the near-field region of an extremely large-scale multiple-input multiple-output (XL MIMO) system, channel reconstruction is typically addressed through sparse parameter estimation based on compressed sensing (CS) algorithms after converting the received pilot signals into the transformed domain. However, the exhaustive search on the codebook in CS algorithms consumes significant computational resources and running time, particularly when a large number of antennas are equipped at the base station (BS). To overcome this challenge, we propose a novel scheme to replace the high-cost exhaustive search procedure. We visualize the sparse channel matrix in the transformed domain as a channel image and design the channel keypoint detection network (CKNet) to locate the user and scatterers in high speed. Subsequently, we use a small-scale newtonized orthogonal matching pursuit (NOMP) based refiner to further enhance the precision. Our method is applicable to both the Cartesian domain and the Polar domain. Additionally, to deal with scenarios with a flexible number of propagation paths, we further design FlexibleCKNet to predict both locations and confidence scores. Our experimental results validate that the CKNet and FlexibleCKNet-empowered channel reconstruction scheme can significantly reduce the computational complexity while maintaining high accuracy in both user and scatterer localization and channel reconstruction tasks.  
+  </ol>  
+</details>  
+  
+### [MIFNet: Learning Modality-Invariant Features for Generalizable Multimodal Image Matching](http://arxiv.org/abs/2501.11299)  
+Yepeng Liu, Zhichao Sun, Baosheng Yu, Yitian Zhao, Bo Du, Yongchao Xu, Jun Cheng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Many keypoint detection and description methods have been proposed for image matching or registration. While these methods demonstrate promising performance for single-modality image matching, they often struggle with multimodal data because the descriptors trained on single-modality data tend to lack robustness against the non-linear variations present in multimodal data. Extending such methods to multimodal image matching often requires well-aligned multimodal data to learn modality-invariant descriptors. However, acquiring such data is often costly and impractical in many real-world scenarios. To address this challenge, we propose a modality-invariant feature learning network (MIFNet) to compute modality-invariant features for keypoint descriptions in multimodal image matching using only single-modality training data. Specifically, we propose a novel latent feature aggregation module and a cumulative hybrid aggregation module to enhance the base keypoint descriptors trained on single-modality data by leveraging pre-trained features from Stable Diffusion models. We validate our method with recent keypoint detection and description methods in three multimodal retinal image datasets (CF-FA, CF-OCT, EMA-OCTA) and two remote sensing datasets (Optical-SAR and Optical-NIR). Extensive experiments demonstrate that the proposed MIFNet is able to learn modality-invariant feature for multimodal image matching without accessing the targeted modality and has good zero-shot generalization ability. The source code will be made publicly available.  
+  </ol>  
+</details>  
+  
+### [Refinement Module based on Parse Graph of Feature Map for Human Pose Estimation](http://arxiv.org/abs/2501.11069)  
+Shibang Liu, Xuemei Xie, Guangming Shi  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Parse graphs of the human body can be obtained in the human brain to help humans complete the human pose estimation (HPE). It contains a hierarchical structure, like a tree structure, and context relations among nodes. Many researchers pre-design the parse graph of body structure, and then design framework for HPE. However, these frameworks are difficulty adapting when encountering situations that differ from the preset human structure. Different from them, we regard the feature map as a whole, similarly to human body, so the feature map can be optimized based on parse graphs and each node feature is learned implicitly instead of explicitly, which means it can flexibly respond to different human body structure. In this paper, we design the Refinement Module based on the Parse Graph of feature map (RMPG), which includes two stages: top-down decomposition and bottom-up combination. In the top-down decomposition stage, the feature map is decomposed into multiple sub-feature maps along the channel and their context relations are calculated to obtain their respective context information. In the bottom-up combination stage, the sub-feature maps and their context information are combined to obtain refined sub-feature maps, and then these refined sub-feature maps are concatenated to obtain the refined feature map. Additionally ,we design a top-down framework by using multiple RMPG modules for HPE, some of which are supervised to obtain context relations among body parts. Our framework achieves excellent results on the COCO keypoint detection, CrowdPose and MPII human pose datasets. More importantly, our experiments also demonstrate the effectiveness of RMPG on different methods, including SimpleBaselines, Hourglass, and ViTPose.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [MIFNet: Learning Modality-Invariant Features for Generalizable Multimodal Image Matching](http://arxiv.org/abs/2501.11299)  
+Yepeng Liu, Zhichao Sun, Baosheng Yu, Yitian Zhao, Bo Du, Yongchao Xu, Jun Cheng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Many keypoint detection and description methods have been proposed for image matching or registration. While these methods demonstrate promising performance for single-modality image matching, they often struggle with multimodal data because the descriptors trained on single-modality data tend to lack robustness against the non-linear variations present in multimodal data. Extending such methods to multimodal image matching often requires well-aligned multimodal data to learn modality-invariant descriptors. However, acquiring such data is often costly and impractical in many real-world scenarios. To address this challenge, we propose a modality-invariant feature learning network (MIFNet) to compute modality-invariant features for keypoint descriptions in multimodal image matching using only single-modality training data. Specifically, we propose a novel latent feature aggregation module and a cumulative hybrid aggregation module to enhance the base keypoint descriptors trained on single-modality data by leveraging pre-trained features from Stable Diffusion models. We validate our method with recent keypoint detection and description methods in three multimodal retinal image datasets (CF-FA, CF-OCT, EMA-OCTA) and two remote sensing datasets (Optical-SAR and Optical-NIR). Extensive experiments demonstrate that the proposed MIFNet is able to learn modality-invariant feature for multimodal image matching without accessing the targeted modality and has good zero-shot generalization ability. The source code will be made publicly available.  
   </ol>  
 </details>  
   
@@ -31,16 +127,33 @@ Zhe Chen, Zijing Chen
 
 ## NeRF  
 
-### [Surface-SOS: Self-Supervised Object Segmentation via Neural Surface Representation](http://arxiv.org/abs/2501.09947)  
-[[code](https://github.com/zhengxyun/surface-sos)]  
-Xiaoyun Zheng, Liwei Liao, Jianbo Jiao, Feng Gao, Ronggang Wang  
+### [DNRSelect: Active Best View Selection for Deferred Neural Rendering](http://arxiv.org/abs/2501.12150)  
+Dongli Wu, Haochen Li, Xiaobao Wei  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Self-supervised Object Segmentation (SOS) aims to segment objects without any annotations. Under conditions of multi-camera inputs, the structural, textural and geometrical consistency among each view can be leveraged to achieve fine-grained object segmentation. To make better use of the above information, we propose Surface representation based Self-supervised Object Segmentation (Surface-SOS), a new framework to segment objects for each view by 3D surface representation from multi-view images of a scene. To model high-quality geometry surfaces for complex scenes, we design a novel scene representation scheme, which decomposes the scene into two complementary neural representation modules respectively with a Signed Distance Function (SDF). Moreover, Surface-SOS is able to refine single-view segmentation with multi-view unlabeled images, by introducing coarse segmentation masks as additional input. To the best of our knowledge, Surface-SOS is the first self-supervised approach that leverages neural surface representation to break the dependence on large amounts of annotated data and strong constraints. These constraints typically involve observing target objects against a static background or relying on temporal supervision in videos. Extensive experiments on standard benchmarks including LLFF, CO3D, BlendedMVS, TUM and several real-world scenes show that Surface-SOS always yields finer object masks than its NeRF-based counterparts and surpasses supervised single-view baselines remarkably. Code is available at: https://github.com/zhengxyun/Surface-SOS.  
+    Deferred neural rendering (DNR) is an emerging computer graphics pipeline designed for high-fidelity rendering and robotic perception. However, DNR heavily relies on datasets composed of numerous ray-traced images and demands substantial computational resources. It remains under-explored how to reduce the reliance on high-quality ray-traced images while maintaining the rendering fidelity. In this paper, we propose DNRSelect, which integrates a reinforcement learning-based view selector and a 3D texture aggregator for deferred neural rendering. We first propose a novel view selector for deferred neural rendering based on reinforcement learning, which is trained on easily obtained rasterized images to identify the optimal views. By acquiring only a few ray-traced images for these selected views, the selector enables DNR to achieve high-quality rendering. To further enhance spatial awareness and geometric consistency in DNR, we introduce a 3D texture aggregator that fuses pyramid features from depth maps and normal maps with UV maps. Given that acquiring ray-traced images is more time-consuming than generating rasterized images, DNRSelect minimizes the need for ray-traced data by using only a few selected views while still achieving high-fidelity rendering results. We conduct detailed experiments and ablation studies on the NeRF-Synthetic dataset to demonstrate the effectiveness of DNRSelect. The code will be released.  
   </ol>  
 </details>  
-**comments**: Accepted by TIP  
+**comments**: 7 pages, 8 figures, submitted to ICRA 2025  
+  
+### [Fast Underwater Scene Reconstruction using Multi-View Stereo and Physical Imaging](http://arxiv.org/abs/2501.11884)  
+Shuyi Hu, Qi Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Underwater scene reconstruction poses a substantial challenge because of the intricate interplay between light and the medium, resulting in scattering and absorption effects that make both depth estimation and rendering more complex. While recent Neural Radiance Fields (NeRF) based methods for underwater scenes achieve high-quality results by modeling and separating the scattering medium, they still suffer from slow training and rendering speeds. To address these limitations, we propose a novel method that integrates Multi-View Stereo (MVS) with a physics-based underwater image formation model. Our approach consists of two branches: one for depth estimation using the traditional cost volume pipeline of MVS, and the other for rendering based on the physics-based image formation model. The depth branch improves scene geometry, while the medium branch determines the scattering parameters to achieve precise scene rendering. Unlike traditional MVSNet methods that rely on ground-truth depth, our method does not necessitate the use of depth truth, thus allowing for expedited training and rendering processes. By leveraging the medium subnet to estimate the medium parameters and combining this with a color MLP for rendering, we restore the true colors of underwater scenes and achieve higher-fidelity geometric representations. Experimental results show that our method enables high-quality synthesis of novel views in scattering media, clear views restoration by removing the medium, and outperforms existing methods in rendering quality and training efficiency.  
+  </ol>  
+</details>  
+  
+### [Poxel: Voxel Reconstruction for 3D Printing](http://arxiv.org/abs/2501.10474)  
+Ruixiang Cao, Satoshi Yagi, Satoshi Yamamori, Jun Morimoto  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recent advancements in 3D reconstruction, especially through neural rendering approaches like Neural Radiance Fields (NeRF) and Plenoxel, have led to high-quality 3D visualizations. However, these methods are optimized for digital environments and employ view-dependent color models (RGB) and 2D splatting techniques, which do not translate well to physical 3D printing. This paper introduces "Poxel", which stands for Printable-Voxel, a voxel-based 3D reconstruction framework optimized for photopolymer jetting 3D printing, which allows for high-resolution, full-color 3D models using a CMYKWCl color model. Our framework directly outputs printable voxel grids by removing view-dependency and converting the digital RGB color space to a physical CMYKWCl color space suitable for multi-material jetting. The proposed system achieves better fidelity and quality in printed models, aligning with the requirements of physical 3D objects.  
+  </ol>  
+</details>  
   
   
 
