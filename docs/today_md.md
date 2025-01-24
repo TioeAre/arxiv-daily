@@ -1,35 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#FAST-LIVO2-on-Resource-Constrained-Platforms:-LiDAR-Inertial-Visual-Odometry-with-Efficient-Memory-and-Computation>FAST-LIVO2 on Resource-Constrained Platforms: LiDAR-Inertial-Visual Odometry with Efficient Memory and Computation</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Neural-Radiance-Fields-for-the-Real-World:-A-Survey>Neural Radiance Fields for the Real World: A Survey</a></li>
-        <li><a href=#DWTNeRF:-Boosting-Few-shot-Neural-Radiance-Fields-via-Discrete-Wavelet-Transform>DWTNeRF: Boosting Few-shot Neural Radiance Fields via Discrete Wavelet Transform</a></li>
+        <li><a href=#VIGS-SLAM:-IMU-based-Large-Scale-3D-Gaussian-Splatting-SLAM>VIGS SLAM: IMU-based Large-Scale 3D Gaussian Splatting SLAM</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## NeRF  
+## SLAM  
 
-### [Neural Radiance Fields for the Real World: A Survey](http://arxiv.org/abs/2501.13104)  
-Wenhui Xiao, Remi Chierchia, Rodrigo Santa Cruz, Xuesong Li, David Ahmedt-Aristizabal, Olivier Salvado, Clinton Fookes, Leo Lebrat  
+### [FAST-LIVO2 on Resource-Constrained Platforms: LiDAR-Inertial-Visual Odometry with Efficient Memory and Computation](http://arxiv.org/abs/2501.13876)  
+Bingyang Zhou, Chunran Zheng, Ziming Wang, Fangcheng Zhu, Yixi Cai, Fu Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRFs) have remodeled 3D scene representation since release. NeRFs can effectively reconstruct complex 3D scenes from 2D images, advancing different fields and applications such as scene understanding, 3D content generation, and robotics. Despite significant research progress, a thorough review of recent innovations, applications, and challenges is lacking. This survey compiles key theoretical advancements and alternative representations and investigates emerging challenges. It further explores applications on reconstruction, highlights NeRFs' impact on computer vision and robotics, and reviews essential datasets and toolkits. By identifying gaps in the literature, this survey discusses open challenges and offers directions for future research.  
+    This paper presents a lightweight LiDAR-inertial-visual odometry system optimized for resource-constrained platforms. It integrates a degeneration-aware adaptive visual frame selector into error-state iterated Kalman filter (ESIKF) with sequential updates, improving computation efficiency significantly while maintaining a similar level of robustness. Additionally, a memory-efficient mapping structure combining a locally unified visual-LiDAR map and a long-term visual map achieves a good trade-off between performance and memory usage. Extensive experiments on x86 and ARM platforms demonstrate the system's robustness and efficiency. On the Hilti dataset, our system achieves a 33% reduction in per-frame runtime and 47% lower memory usage compared to FAST-LIVO2, with only a 3 cm increase in RMSE. Despite this slight accuracy trade-off, our system remains competitive, outperforming state-of-the-art (SOTA) LIO methods such as FAST-LIO2 and most existing LIVO systems. These results validate the system's capability for scalable deployment on resource-constrained edge computing platforms.  
   </ol>  
 </details>  
   
-### [DWTNeRF: Boosting Few-shot Neural Radiance Fields via Discrete Wavelet Transform](http://arxiv.org/abs/2501.12637)  
-Hung Nguyen, Blark Runfa Li, Truong Nguyen  
+  
+
+
+
+## NeRF  
+
+### [VIGS SLAM: IMU-based Large-Scale 3D Gaussian Splatting SLAM](http://arxiv.org/abs/2501.13402)  
+Gyuhyeon Pak, Euntai Kim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) has achieved superior performance in novel view synthesis and 3D scene representation, but its practical applications are hindered by slow convergence and reliance on dense training views. To this end, we present DWTNeRF, a unified framework based on Instant-NGP's fast-training hash encoding. It is coupled with regularization terms designed for few-shot NeRF, which operates on sparse training views. Our DWTNeRF includes a novel Discrete Wavelet loss that allows explicit prioritization of low frequencies directly in the training objective, reducing few-shot NeRF's overfitting on high frequencies in earlier training stages. We additionally introduce a model-based approach, based on multi-head attention, that is compatible with INGP-based models, which are sensitive to architectural changes. On the 3-shot LLFF benchmark, DWTNeRF outperforms Vanilla NeRF by 15.07% in PSNR, 24.45% in SSIM and 36.30% in LPIPS. Our approach encourages a re-thinking of current few-shot approaches for INGP-based models.  
+    Recently, map representations based on radiance fields such as 3D Gaussian Splatting and NeRF, which excellent for realistic depiction, have attracted considerable attention, leading to attempts to combine them with SLAM. While these approaches can build highly realistic maps, large-scale SLAM still remains a challenge because they require a large number of Gaussian images for mapping and adjacent images as keyframes for tracking. We propose a novel 3D Gaussian Splatting SLAM method, VIGS SLAM, that utilizes sensor fusion of RGB-D and IMU sensors for large-scale indoor environments. To reduce the computational load of 3DGS-based tracking, we adopt an ICP-based tracking framework that combines IMU preintegration to provide a good initial guess for accurate pose estimation. Our proposed method is the first to propose that Gaussian Splatting-based SLAM can be effectively performed in large-scale environments by integrating IMU sensor measurements. This proposal not only enhances the performance of Gaussian Splatting SLAM beyond room-scale scenarios but also achieves SLAM performance comparable to state-of-the-art methods in large-scale indoor environments.  
   </ol>  
 </details>  
-**comments**: 10 pages, 6 figures  
+**comments**: 7 pages, 5 figures  
   
   
 
