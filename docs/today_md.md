@@ -3,25 +3,21 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Dense-SfM:-Structure-from-Motion-with-Dense-Consistent-Matching>Dense-SfM: Structure from Motion with Dense Consistent Matching</a></li>
+        <li><a href=#Automatic-Calibration-of-a-Multi-Camera-System-with-Limited-Overlapping-Fields-of-View-for-3D-Surgical-Scene-Reconstruction>Automatic Calibration of a Multi-Camera System with Limited Overlapping Fields of View for 3D Surgical Scene Reconstruction</a></li>
+        <li><a href=#Towards-Better-Robustness:-Progressively-Joint-Pose-3DGS-Learning-for-Arbitrarily-Long-Videos>Towards Better Robustness: Progressively Joint Pose-3DGS Learning for Arbitrarily Long Videos</a></li>
+        <li><a href=#MATCHA:Towards-Matching-Anything>MATCHA:Towards Matching Anything</a></li>
+        <li><a href=#Light3R-SfM:-Towards-Feed-forward-Structure-from-Motion>Light3R-SfM: Towards Feed-forward Structure-from-Motion</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Visual-Localization-via-Semantic-Structures-in-Autonomous-Photovoltaic-Power-Plant-Inspection>Visual Localization via Semantic Structures in Autonomous Photovoltaic Power Plant Inspection</a></li>
-        <li><a href=#Revisiting-CLIP:-Efficient-Alignment-of-3D-MRI-and-Tabular-Data-using-Domain-Specific-Foundation-Models>Revisiting CLIP: Efficient Alignment of 3D MRI and Tabular Data using Domain-Specific Foundation Models</a></li>
-        <li><a href=#Triplet-Synthesis-For-Enhancing-Composed-Image-Retrieval-via-Counterfactual-Image-Generation>Triplet Synthesis For Enhancing Composed Image Retrieval via Counterfactual Image Generation</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Dense-SfM:-Structure-from-Motion-with-Dense-Consistent-Matching>Dense-SfM: Structure from Motion with Dense Consistent Matching</a></li>
+        <li><a href=#Freestyle-Sketch-in-the-Loop-Image-Segmentation>Freestyle Sketch-in-the-Loop Image Segmentation</a></li>
+        <li><a href=#Zero-Shot-Interactive-Text-to-Image-Retrieval-via-Diffusion-Augmented-Representations>Zero-Shot Interactive Text-to-Image Retrieval via Diffusion-Augmented Representations</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#SyncAnimation:-A-Real-Time-End-to-End-Framework-for-Audio-Driven-Human-Pose-and-Talking-Head-Animation>SyncAnimation: A Real-Time End-to-End Framework for Audio-Driven Human Pose and Talking Head Animation</a></li>
-        <li><a href=#GS-LiDAR:-Generating-Realistic-LiDAR-Point-Clouds-with-Panoramic-Gaussian-Splatting>GS-LiDAR: Generating Realistic LiDAR Point Clouds with Panoramic Gaussian Splatting</a></li>
+        <li><a href=#LinPrim:-Linear-Primitives-for-Differentiable-Volumetric-Rendering>LinPrim: Linear Primitives for Differentiable Volumetric Rendering</a></li>
       </ul>
     </li>
   </ol>
@@ -29,12 +25,39 @@
 
 ## SFM  
 
-### [Dense-SfM: Structure from Motion with Dense Consistent Matching](http://arxiv.org/abs/2501.14277)  
-JongMin Lee, Sungjoo Yoo  
+### [Automatic Calibration of a Multi-Camera System with Limited Overlapping Fields of View for 3D Surgical Scene Reconstruction](http://arxiv.org/abs/2501.16221)  
+Tim Flückiger, Jonas Hein, Valery Fischer, Philipp Fürnstahl, Lilian Calvet  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present Dense-SfM, a novel Structure from Motion (SfM) framework designed for dense and accurate 3D reconstruction from multi-view images. Sparse keypoint matching, which traditional SfM methods often rely on, limits both accuracy and point density, especially in texture-less areas. Dense-SfM addresses this limitation by integrating dense matching with a Gaussian Splatting (GS) based track extension which gives more consistent, longer feature tracks. To further improve reconstruction accuracy, Dense-SfM is equipped with a multi-view kernelized matching module leveraging transformer and Gaussian Process architectures, for robust track refinement across multi-views. Evaluations on the ETH3D and Texture-Poor SfM datasets show that Dense-SfM offers significant improvements in accuracy and density over state-of-the-art methods.  
+    Purpose: The purpose of this study is to develop an automated and accurate external camera calibration method for multi-camera systems used in 3D surgical scene reconstruction (3D-SSR), eliminating the need for operator intervention or specialized expertise. The method specifically addresses the problem of limited overlapping fields of view caused by significant variations in optical zoom levels and camera locations.   Methods: We contribute a novel, fast, and fully automatic calibration method based on the projection of multi-scale markers (MSMs) using a ceiling-mounted projector. MSMs consist of 2D patterns projected at varying scales, ensuring accurate extraction of well distributed point correspondences across significantly different viewpoints and zoom levels. Validation is performed using both synthetic and real data captured in a mock-up OR, with comparisons to traditional manual marker-based methods as well as markerless calibration methods.   Results: The method achieves accuracy comparable to manual, operator-dependent calibration methods while exhibiting higher robustness under conditions of significant differences in zoom levels. Additionally, we show that state-of-the-art Structure-from-Motion (SfM) pipelines are ineffective in 3D-SSR settings, even when additional texture is projected onto the OR floor.   Conclusion: The use of a ceiling-mounted entry-level projector proves to be an effective alternative to operator-dependent, traditional marker-based methods, paving the way for fully automated 3D-SSR.  
+  </ol>  
+</details>  
+  
+### [Towards Better Robustness: Progressively Joint Pose-3DGS Learning for Arbitrarily Long Videos](http://arxiv.org/abs/2501.15096)  
+Zhen-Hui Dong, Sheng Ye, Yu-Hui Wen, Nannan Li, Yong-Jin Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    3D Gaussian Splatting (3DGS) has emerged as a powerful representation due to its efficiency and high-fidelity rendering. However, 3DGS training requires a known camera pose for each input view, typically obtained by Structure-from-Motion (SfM) pipelines. Pioneering works have attempted to relax this restriction but still face difficulties when handling long sequences with complex camera trajectories. In this work, we propose Rob-GS, a robust framework to progressively estimate camera poses and optimize 3DGS for arbitrarily long video sequences. Leveraging the inherent continuity of videos, we design an adjacent pose tracking method to ensure stable pose estimation between consecutive frames. To handle arbitrarily long inputs, we adopt a "divide and conquer" scheme that adaptively splits the video sequence into several segments and optimizes them separately. Extensive experiments on the Tanks and Temples dataset and our collected real-world dataset show that our Rob-GS outperforms the state-of-the-arts.  
+  </ol>  
+</details>  
+  
+### [MATCHA:Towards Matching Anything](http://arxiv.org/abs/2501.14945)  
+Fei Xue, Sven Elflein, Laura Leal-Taixé, Qunjie Zhou  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Establishing correspondences across images is a fundamental challenge in computer vision, underpinning tasks like Structure-from-Motion, image editing, and point tracking. Traditional methods are often specialized for specific correspondence types, geometric, semantic, or temporal, whereas humans naturally identify alignments across these domains. Inspired by this flexibility, we propose MATCHA, a unified feature model designed to ``rule them all'', establishing robust correspondences across diverse matching tasks. Building on insights that diffusion model features can encode multiple correspondence types, MATCHA augments this capacity by dynamically fusing high-level semantic and low-level geometric features through an attention-based module, creating expressive, versatile, and robust features. Additionally, MATCHA integrates object-level features from DINOv2 to further boost generalization, enabling a single feature capable of matching anything. Extensive experiments validate that MATCHA consistently surpasses state-of-the-art methods across geometric, semantic, and temporal matching tasks, setting a new foundation for a unified approach for the fundamental correspondence problem in computer vision. To the best of our knowledge, MATCHA is the first approach that is able to effectively tackle diverse matching tasks with a single unified feature.  
+  </ol>  
+</details>  
+  
+### [Light3R-SfM: Towards Feed-forward Structure-from-Motion](http://arxiv.org/abs/2501.14914)  
+Sven Elflein, Qunjie Zhou, Sérgio Agostinho, Laura Leal-Taixé  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We present Light3R-SfM, a feed-forward, end-to-end learnable framework for efficient large-scale Structure-from-Motion (SfM) from unconstrained image collections. Unlike existing SfM solutions that rely on costly matching and global optimization to achieve accurate 3D reconstructions, Light3R-SfM addresses this limitation through a novel latent global alignment module. This module replaces traditional global optimization with a learnable attention mechanism, effectively capturing multi-view constraints across images for robust and precise camera pose estimation. Light3R-SfM constructs a sparse scene graph via retrieval-score-guided shortest path tree to dramatically reduce memory usage and computational overhead compared to the naive approach. Extensive experiments demonstrate that Light3R-SfM achieves competitive accuracy while significantly reducing runtime, making it ideal for 3D reconstruction tasks in real-world applications with a runtime constraint. This work pioneers a data-driven, feed-forward SfM approach, paving the way toward scalable, accurate, and efficient 3D reconstruction in the wild.  
   </ol>  
 </details>  
   
@@ -44,49 +67,21 @@ JongMin Lee, Sungjoo Yoo
 
 ## Visual Localization  
 
-### [Visual Localization via Semantic Structures in Autonomous Photovoltaic Power Plant Inspection](http://arxiv.org/abs/2501.14587)  
-Viktor Kozák, Karel Košnar, Jan Chudoba, Miroslav Kulich, Libor Přeučil  
+### [Freestyle Sketch-in-the-Loop Image Segmentation](http://arxiv.org/abs/2501.16022)  
+Subhadeep Koley, Viswanatha Reddy Gajjala, Aneeshan Sain, Pinaki Nath Chowdhury, Tao Xiang, Ayan Kumar Bhunia, Yi-Zhe Song  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Inspection systems utilizing unmanned aerial vehicles (UAVs) equipped with thermal cameras are increasingly popular for the maintenance of photovoltaic (PV) power plants. However, automation of the inspection task is a challenging problem as it requires precise navigation to capture images from optimal distances and viewing angles.   This paper presents a novel localization pipeline that directly integrates PV module detection with UAV navigation, allowing precise positioning during inspection. Detections are used to identify the power plant structures in the image and associate these with the power plant model. We define visually recognizable anchor points for the initial association and use object tracking to discern global associations. We present three distinct methods for visual segmentation of PV modules based on traditional computer vision, deep learning, and their fusion, and we evaluate their performance in relation to the proposed localization pipeline.   The presented methods were verified and evaluated using custom aerial inspection data sets, demonstrating their robustness and applicability for real-time navigation. Additionally, we evaluate the influence of the power plant model's precision on the localization methods.  
+    In this paper, we expand the domain of sketch research into the field of image segmentation, aiming to establish freehand sketches as a query modality for subjective image segmentation. Our innovative approach introduces a "sketch-in-the-loop" image segmentation framework, enabling the segmentation of visual concepts partially, completely, or in groupings - a truly "freestyle" approach - without the need for a purpose-made dataset (i.e., mask-free). This framework capitalises on the synergy between sketch-based image retrieval (SBIR) models and large-scale pre-trained models (CLIP or DINOv2). The former provides an effective training signal, while fine-tuned versions of the latter execute the subjective segmentation. Additionally, our purpose-made augmentation strategy enhances the versatility of our sketch-guided mask generation, allowing segmentation at multiple granularity levels. Extensive evaluations across diverse benchmark datasets underscore the superior performance of our method in comparison to existing approaches across various evaluation scenarios.  
   </ol>  
 </details>  
-**comments**: 47 pages, 22 figures  
   
-### [Revisiting CLIP: Efficient Alignment of 3D MRI and Tabular Data using Domain-Specific Foundation Models](http://arxiv.org/abs/2501.14051)  
-[[code](https://github.com/jakekrogh/3d-clip-for-brain-mri)]  
-Jakob Krogh Petersen, Valdemar Licht, Mads Nielsen, Asbjørn Munk  
+### [Zero-Shot Interactive Text-to-Image Retrieval via Diffusion-Augmented Representations](http://arxiv.org/abs/2501.15379)  
+Zijun Long, Kangheng Liang, Gerardo Aragon-Camarasa, Richard Mccreadie, Paul Henderson  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Multi-modal models require aligned, shared embedding spaces. However, common CLIP-based approaches need large amounts of samples and do not natively support 3D or tabular data, both of which are crucial in the medical domain. To address these issues, we revisit CLIP-style alignment by training a domain-specific 3D foundation model as an image encoder and demonstrate that modality alignment is feasible with only 62 MRI scans. Our approach is enabled by a simple embedding accumulation strategy required for training in 3D, which scales the amount of negative pairs across batches in order to stabilize training. We perform a thorough evaluation of various design choices, including the choice of backbone and loss functions, and evaluate the proposed methodology on zero-shot classification and image-retrieval tasks. While zero-shot image-retrieval remains challenging, zero-shot classification results demonstrate that the proposed approach can meaningfully align the representations of 3D MRI with tabular data.  
-  </ol>  
-</details>  
-**comments**: 10 pages, 2 figures. To be published in ISBI 2025  
-  
-### [Triplet Synthesis For Enhancing Composed Image Retrieval via Counterfactual Image Generation](http://arxiv.org/abs/2501.13968)  
-Kenta Uesugi, Naoki Saito, Keisuke Maeda, Takahiro Ogawa, Miki Haseyama  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) provides an effective way to manage and access large-scale visual data. Construction of the CIR model utilizes triplets that consist of a reference image, modification text describing desired changes, and a target image that reflects these changes. For effectively training CIR models, extensive manual annotation to construct high-quality training datasets, which can be time-consuming and labor-intensive, is required. To deal with this problem, this paper proposes a novel triplet synthesis method by leveraging counterfactual image generation. By controlling visual feature modifications via counterfactual image generation, our approach automatically generates diverse training triplets without any manual intervention. This approach facilitates the creation of larger and more expressive datasets, leading to the improvement of CIR model's performance.  
-  </ol>  
-</details>  
-**comments**: 4 pages, 4 figures  
-  
-  
-
-
-
-## Image Matching  
-
-### [Dense-SfM: Structure from Motion with Dense Consistent Matching](http://arxiv.org/abs/2501.14277)  
-JongMin Lee, Sungjoo Yoo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present Dense-SfM, a novel Structure from Motion (SfM) framework designed for dense and accurate 3D reconstruction from multi-view images. Sparse keypoint matching, which traditional SfM methods often rely on, limits both accuracy and point density, especially in texture-less areas. Dense-SfM addresses this limitation by integrating dense matching with a Gaussian Splatting (GS) based track extension which gives more consistent, longer feature tracks. To further improve reconstruction accuracy, Dense-SfM is equipped with a multi-view kernelized matching module leveraging transformer and Gaussian Process architectures, for robust track refinement across multi-views. Evaluations on the ETH3D and Texture-Poor SfM datasets show that Dense-SfM offers significant improvements in accuracy and density over state-of-the-art methods.  
+    Interactive Text-to-Image Retrieval (I-TIR) has emerged as a transformative user-interactive tool for applications in domains such as e-commerce and education. Yet, current methodologies predominantly depend on finetuned Multimodal Large Language Models (MLLMs), which face two critical limitations: (1) Finetuning imposes prohibitive computational overhead and long-term maintenance costs. (2) Finetuning narrows the pretrained knowledge distribution of MLLMs, reducing their adaptability to novel scenarios. These issues are exacerbated by the inherently dynamic nature of real-world I-TIR systems, where queries and image databases evolve in complexity and diversity, often deviating from static training distributions. To overcome these constraints, we propose Diffusion Augmented Retrieval (DAR), a paradigm-shifting framework that bypasses MLLM finetuning entirely. DAR synergizes Large Language Model (LLM)-guided query refinement with Diffusion Model (DM)-based visual synthesis to create contextually enriched intermediate representations. This dual-modality approach deciphers nuanced user intent more holistically, enabling precise alignment between textual queries and visually relevant images. Rigorous evaluations across four benchmarks reveal DAR's dual strengths: (1) Matches state-of-the-art finetuned I-TIR models on straightforward queries without task-specific training. (2) Scalable Generalization: Surpasses finetuned baselines by 7.61% in Hits@10 (top-10 accuracy) under multi-turn conversational complexity, demonstrating robustness to intricate, distributionally shifted interactions. By eliminating finetuning dependencies and leveraging generative-augmented representations, DAR establishes a new trajectory for efficient, adaptive, and scalable cross-modal retrieval systems.  
   </ol>  
 </details>  
   
@@ -96,23 +91,12 @@ JongMin Lee, Sungjoo Yoo
 
 ## NeRF  
 
-### [SyncAnimation: A Real-Time End-to-End Framework for Audio-Driven Human Pose and Talking Head Animation](http://arxiv.org/abs/2501.14646)  
-Yujian Liu, Shidang Xu, Jing Guo, Dingbin Wang, Zairan Wang, Xianfeng Tan, Xiaoli Liu  
+### [LinPrim: Linear Primitives for Differentiable Volumetric Rendering](http://arxiv.org/abs/2501.16312)  
+Nicolas von Lützow, Matthias Nießner  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Generating talking avatar driven by audio remains a significant challenge. Existing methods typically require high computational costs and often lack sufficient facial detail and realism, making them unsuitable for applications that demand high real-time performance and visual quality. Additionally, while some methods can synchronize lip movement, they still face issues with consistency between facial expressions and upper body movement, particularly during silent periods. In this paper, we introduce SyncAnimation, the first NeRF-based method that achieves audio-driven, stable, and real-time generation of speaking avatar by combining generalized audio-to-pose matching and audio-to-expression synchronization. By integrating AudioPose Syncer and AudioEmotion Syncer, SyncAnimation achieves high-precision poses and expression generation, progressively producing audio-synchronized upper body, head, and lip shapes. Furthermore, the High-Synchronization Human Renderer ensures seamless integration of the head and upper body, and achieves audio-sync lip. The project page can be found at https://syncanimation.github.io  
-  </ol>  
-</details>  
-**comments**: 11 pages, 7 figures  
-  
-### [GS-LiDAR: Generating Realistic LiDAR Point Clouds with Panoramic Gaussian Splatting](http://arxiv.org/abs/2501.13971)  
-[[code](https://github.com/fudan-zvg/gs-lidar)]  
-Junzhe Jiang, Chun Gu, Yurui Chen, Li Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    LiDAR novel view synthesis (NVS) has emerged as a novel task within LiDAR simulation, offering valuable simulated point cloud data from novel viewpoints to aid in autonomous driving systems. However, existing LiDAR NVS methods typically rely on neural radiance fields (NeRF) as their 3D representation, which incurs significant computational costs in both training and rendering. Moreover, NeRF and its variants are designed for symmetrical scenes, making them ill-suited for driving scenarios. To address these challenges, we propose GS-LiDAR, a novel framework for generating realistic LiDAR point clouds with panoramic Gaussian splatting. Our approach employs 2D Gaussian primitives with periodic vibration properties, allowing for precise geometric reconstruction of both static and dynamic elements in driving scenarios. We further introduce a novel panoramic rendering technique with explicit ray-splat intersection, guided by panoramic LiDAR supervision. By incorporating intensity and ray-drop spherical harmonic (SH) coefficients into the Gaussian primitives, we enhance the realism of the rendered point clouds. Extensive experiments on KITTI-360 and nuScenes demonstrate the superiority of our method in terms of quantitative metrics, visual quality, as well as training and rendering efficiency.  
+    Volumetric rendering has become central to modern novel view synthesis methods, which use differentiable rendering to optimize 3D scene representations directly from observed views. While many recent works build on NeRF or 3D Gaussians, we explore an alternative volumetric scene representation. More specifically, we introduce two new scene representations based on linear primitives-octahedra and tetrahedra-both of which define homogeneous volumes bounded by triangular faces. This formulation aligns naturally with standard mesh-based tools, minimizing overhead for downstream applications. To optimize these primitives, we present a differentiable rasterizer that runs efficiently on GPUs, allowing end-to-end gradient-based optimization while maintaining realtime rendering capabilities. Through experiments on real-world datasets, we demonstrate comparable performance to state-of-the-art volumetric methods while requiring fewer primitives to achieve similar reconstruction fidelity. Our findings provide insights into the geometry of volumetric rendering and suggest that adopting explicit polyhedra can expand the design space of scene representations.  
   </ol>  
 </details>  
   
