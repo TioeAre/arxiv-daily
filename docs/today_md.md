@@ -1,87 +1,48 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Automatic-Calibration-of-a-Multi-Camera-System-with-Limited-Overlapping-Fields-of-View-for-3D-Surgical-Scene-Reconstruction>Automatic Calibration of a Multi-Camera System with Limited Overlapping Fields of View for 3D Surgical Scene Reconstruction</a></li>
-        <li><a href=#Towards-Better-Robustness:-Progressively-Joint-Pose-3DGS-Learning-for-Arbitrarily-Long-Videos>Towards Better Robustness: Progressively Joint Pose-3DGS Learning for Arbitrarily Long Videos</a></li>
-        <li><a href=#MATCHA:Towards-Matching-Anything>MATCHA:Towards Matching Anything</a></li>
-        <li><a href=#Light3R-SfM:-Towards-Feed-forward-Structure-from-Motion>Light3R-SfM: Towards Feed-forward Structure-from-Motion</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Freestyle-Sketch-in-the-Loop-Image-Segmentation>Freestyle Sketch-in-the-Loop Image Segmentation</a></li>
-        <li><a href=#Zero-Shot-Interactive-Text-to-Image-Retrieval-via-Diffusion-Augmented-Representations>Zero-Shot Interactive Text-to-Image Retrieval via Diffusion-Augmented Representations</a></li>
+        <li><a href=#Transfer-Learning-for-Keypoint-Detection-in-Low-Resolution-Thermal-TUG-Test-Images>Transfer Learning for Keypoint Detection in Low-Resolution Thermal TUG Test Images</a></li>
+        <li><a href=#Video-based-Surgical-Tool-tip-and-Keypoint-Tracking-using-Multi-frame-Context-driven-Deep-Learning-Models>Video-based Surgical Tool-tip and Keypoint Tracking using Multi-frame Context-driven Deep Learning Models</a></li>
+        <li><a href=#Lifelong-3D-Mapping-Framework-for-Hand-held-&-Robot-mounted-LiDAR-Mapping-Systems>Lifelong 3D Mapping Framework for Hand-held & Robot-mounted LiDAR Mapping Systems</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#LinPrim:-Linear-Primitives-for-Differentiable-Volumetric-Rendering>LinPrim: Linear Primitives for Differentiable Volumetric Rendering</a></li>
+        <li><a href=#VoD-3DGS:-View-opacity-Dependent-3D-Gaussian-Splatting>VoD-3DGS: View-opacity-Dependent 3D Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Keypoint Detection  
 
-### [Automatic Calibration of a Multi-Camera System with Limited Overlapping Fields of View for 3D Surgical Scene Reconstruction](http://arxiv.org/abs/2501.16221)  
-Tim Flückiger, Jonas Hein, Valery Fischer, Philipp Fürnstahl, Lilian Calvet  
+### [Transfer Learning for Keypoint Detection in Low-Resolution Thermal TUG Test Images](http://arxiv.org/abs/2501.18453)  
+Wei-Lun Chen, Chia-Yeh Hsieh, Yu-Hsiang Kao, Kai-Chun Liu, Sheng-Yu Peng, Yu Tsao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Purpose: The purpose of this study is to develop an automated and accurate external camera calibration method for multi-camera systems used in 3D surgical scene reconstruction (3D-SSR), eliminating the need for operator intervention or specialized expertise. The method specifically addresses the problem of limited overlapping fields of view caused by significant variations in optical zoom levels and camera locations.   Methods: We contribute a novel, fast, and fully automatic calibration method based on the projection of multi-scale markers (MSMs) using a ceiling-mounted projector. MSMs consist of 2D patterns projected at varying scales, ensuring accurate extraction of well distributed point correspondences across significantly different viewpoints and zoom levels. Validation is performed using both synthetic and real data captured in a mock-up OR, with comparisons to traditional manual marker-based methods as well as markerless calibration methods.   Results: The method achieves accuracy comparable to manual, operator-dependent calibration methods while exhibiting higher robustness under conditions of significant differences in zoom levels. Additionally, we show that state-of-the-art Structure-from-Motion (SfM) pipelines are ineffective in 3D-SSR settings, even when additional texture is projected onto the OR floor.   Conclusion: The use of a ceiling-mounted entry-level projector proves to be an effective alternative to operator-dependent, traditional marker-based methods, paving the way for fully automated 3D-SSR.  
+    This study presents a novel approach to human keypoint detection in low-resolution thermal images using transfer learning techniques. We introduce the first application of the Timed Up and Go (TUG) test in thermal image computer vision, establishing a new paradigm for mobility assessment. Our method leverages a MobileNetV3-Small encoder and a ViTPose decoder, trained using a composite loss function that balances latent representation alignment and heatmap accuracy. The model was evaluated using the Object Keypoint Similarity (OKS) metric from the COCO Keypoint Detection Challenge. The proposed model achieves better performance with AP, AP50, and AP75 scores of 0.861, 0.942, and 0.887 respectively, outperforming traditional supervised learning approaches like Mask R-CNN and ViTPose-Base. Moreover, our model demonstrates superior computational efficiency in terms of parameter count and FLOPS. This research lays a solid foundation for future clinical applications of thermal imaging in mobility assessment and rehabilitation monitoring.  
+  </ol>  
+</details>  
+**comments**: Accepted to AICAS 2025. This is the preprint version  
+  
+### [Video-based Surgical Tool-tip and Keypoint Tracking using Multi-frame Context-driven Deep Learning Models](http://arxiv.org/abs/2501.18361)  
+Bhargav Ghanekar, Lianne R. Johnson, Jacob L. Laughlin, Marcia K. O'Malley, Ashok Veeraraghavan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Automated tracking of surgical tool keypoints in robotic surgery videos is an essential task for various downstream use cases such as skill assessment, expertise assessment, and the delineation of safety zones. In recent years, the explosion of deep learning for vision applications has led to many works in surgical instrument segmentation, while lesser focus has been on tracking specific tool keypoints, such as tool tips. In this work, we propose a novel, multi-frame context-driven deep learning framework to localize and track tool keypoints in surgical videos. We train and test our models on the annotated frames from the 2015 EndoVis Challenge dataset, resulting in state-of-the-art performance. By leveraging sophisticated deep learning models and multi-frame context, we achieve 90\% keypoint detection accuracy and a localization RMS error of 5.27 pixels. Results on a self-annotated JIGSAWS dataset with more challenging scenarios also show that the proposed multi-frame models can accurately track tool-tip and tool-base keypoints, with ${<}4.2$ -pixel RMS error overall. Such a framework paves the way for accurately tracking surgical instrument keypoints, enabling further downstream use cases. Project and dataset webpage: https://tinyurl.com/mfc-tracker  
   </ol>  
 </details>  
   
-### [Towards Better Robustness: Progressively Joint Pose-3DGS Learning for Arbitrarily Long Videos](http://arxiv.org/abs/2501.15096)  
-Zhen-Hui Dong, Sheng Ye, Yu-Hui Wen, Nannan Li, Yong-Jin Liu  
+### [Lifelong 3D Mapping Framework for Hand-held & Robot-mounted LiDAR Mapping Systems](http://arxiv.org/abs/2501.18110)  
+Liudi Yang, Sai Manoj Prakhya, Senhua Zhu, Ziyuan Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) has emerged as a powerful representation due to its efficiency and high-fidelity rendering. However, 3DGS training requires a known camera pose for each input view, typically obtained by Structure-from-Motion (SfM) pipelines. Pioneering works have attempted to relax this restriction but still face difficulties when handling long sequences with complex camera trajectories. In this work, we propose Rob-GS, a robust framework to progressively estimate camera poses and optimize 3DGS for arbitrarily long video sequences. Leveraging the inherent continuity of videos, we design an adjacent pose tracking method to ensure stable pose estimation between consecutive frames. To handle arbitrarily long inputs, we adopt a "divide and conquer" scheme that adaptively splits the video sequence into several segments and optimizes them separately. Extensive experiments on the Tanks and Temples dataset and our collected real-world dataset show that our Rob-GS outperforms the state-of-the-arts.  
-  </ol>  
-</details>  
-  
-### [MATCHA:Towards Matching Anything](http://arxiv.org/abs/2501.14945)  
-Fei Xue, Sven Elflein, Laura Leal-Taixé, Qunjie Zhou  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Establishing correspondences across images is a fundamental challenge in computer vision, underpinning tasks like Structure-from-Motion, image editing, and point tracking. Traditional methods are often specialized for specific correspondence types, geometric, semantic, or temporal, whereas humans naturally identify alignments across these domains. Inspired by this flexibility, we propose MATCHA, a unified feature model designed to ``rule them all'', establishing robust correspondences across diverse matching tasks. Building on insights that diffusion model features can encode multiple correspondence types, MATCHA augments this capacity by dynamically fusing high-level semantic and low-level geometric features through an attention-based module, creating expressive, versatile, and robust features. Additionally, MATCHA integrates object-level features from DINOv2 to further boost generalization, enabling a single feature capable of matching anything. Extensive experiments validate that MATCHA consistently surpasses state-of-the-art methods across geometric, semantic, and temporal matching tasks, setting a new foundation for a unified approach for the fundamental correspondence problem in computer vision. To the best of our knowledge, MATCHA is the first approach that is able to effectively tackle diverse matching tasks with a single unified feature.  
-  </ol>  
-</details>  
-  
-### [Light3R-SfM: Towards Feed-forward Structure-from-Motion](http://arxiv.org/abs/2501.14914)  
-Sven Elflein, Qunjie Zhou, Sérgio Agostinho, Laura Leal-Taixé  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present Light3R-SfM, a feed-forward, end-to-end learnable framework for efficient large-scale Structure-from-Motion (SfM) from unconstrained image collections. Unlike existing SfM solutions that rely on costly matching and global optimization to achieve accurate 3D reconstructions, Light3R-SfM addresses this limitation through a novel latent global alignment module. This module replaces traditional global optimization with a learnable attention mechanism, effectively capturing multi-view constraints across images for robust and precise camera pose estimation. Light3R-SfM constructs a sparse scene graph via retrieval-score-guided shortest path tree to dramatically reduce memory usage and computational overhead compared to the naive approach. Extensive experiments demonstrate that Light3R-SfM achieves competitive accuracy while significantly reducing runtime, making it ideal for 3D reconstruction tasks in real-world applications with a runtime constraint. This work pioneers a data-driven, feed-forward SfM approach, paving the way toward scalable, accurate, and efficient 3D reconstruction in the wild.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [Freestyle Sketch-in-the-Loop Image Segmentation](http://arxiv.org/abs/2501.16022)  
-Subhadeep Koley, Viswanatha Reddy Gajjala, Aneeshan Sain, Pinaki Nath Chowdhury, Tao Xiang, Ayan Kumar Bhunia, Yi-Zhe Song  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this paper, we expand the domain of sketch research into the field of image segmentation, aiming to establish freehand sketches as a query modality for subjective image segmentation. Our innovative approach introduces a "sketch-in-the-loop" image segmentation framework, enabling the segmentation of visual concepts partially, completely, or in groupings - a truly "freestyle" approach - without the need for a purpose-made dataset (i.e., mask-free). This framework capitalises on the synergy between sketch-based image retrieval (SBIR) models and large-scale pre-trained models (CLIP or DINOv2). The former provides an effective training signal, while fine-tuned versions of the latter execute the subjective segmentation. Additionally, our purpose-made augmentation strategy enhances the versatility of our sketch-guided mask generation, allowing segmentation at multiple granularity levels. Extensive evaluations across diverse benchmark datasets underscore the superior performance of our method in comparison to existing approaches across various evaluation scenarios.  
-  </ol>  
-</details>  
-  
-### [Zero-Shot Interactive Text-to-Image Retrieval via Diffusion-Augmented Representations](http://arxiv.org/abs/2501.15379)  
-Zijun Long, Kangheng Liang, Gerardo Aragon-Camarasa, Richard Mccreadie, Paul Henderson  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Interactive Text-to-Image Retrieval (I-TIR) has emerged as a transformative user-interactive tool for applications in domains such as e-commerce and education. Yet, current methodologies predominantly depend on finetuned Multimodal Large Language Models (MLLMs), which face two critical limitations: (1) Finetuning imposes prohibitive computational overhead and long-term maintenance costs. (2) Finetuning narrows the pretrained knowledge distribution of MLLMs, reducing their adaptability to novel scenarios. These issues are exacerbated by the inherently dynamic nature of real-world I-TIR systems, where queries and image databases evolve in complexity and diversity, often deviating from static training distributions. To overcome these constraints, we propose Diffusion Augmented Retrieval (DAR), a paradigm-shifting framework that bypasses MLLM finetuning entirely. DAR synergizes Large Language Model (LLM)-guided query refinement with Diffusion Model (DM)-based visual synthesis to create contextually enriched intermediate representations. This dual-modality approach deciphers nuanced user intent more holistically, enabling precise alignment between textual queries and visually relevant images. Rigorous evaluations across four benchmarks reveal DAR's dual strengths: (1) Matches state-of-the-art finetuned I-TIR models on straightforward queries without task-specific training. (2) Scalable Generalization: Surpasses finetuned baselines by 7.61% in Hits@10 (top-10 accuracy) under multi-turn conversational complexity, demonstrating robustness to intricate, distributionally shifted interactions. By eliminating finetuning dependencies and leveraging generative-augmented representations, DAR establishes a new trajectory for efficient, adaptive, and scalable cross-modal retrieval systems.  
+    We propose a lifelong 3D mapping framework that is modular, cloud-native by design and more importantly, works for both hand-held and robot-mounted 3D LiDAR mapping systems. Our proposed framework comprises of dynamic point removal, multi-session map alignment, map change detection and map version control. First, our sensor-setup agnostic dynamic point removal algorithm works seamlessly with both hand-held and robot-mounted setups to produce clean static 3D maps. Second, the multi-session map alignment aligns these clean static maps automatically, without manual parameter fine-tuning, into a single reference frame, using a two stage approach based on feature descriptor matching and fine registration. Third, our novel map change detection identifies positive and negative changes between two aligned maps. Finally, the map version control maintains a single base map that represents the current state of the environment, and stores the detected positive and negative changes, and boundary information. Our unique map version control system can reconstruct any of the previous clean session maps and allows users to query changes between any two random mapping sessions, all without storing any input raw session maps, making it very unique. Extensive experiments are performed using hand-held commercial LiDAR mapping devices and open-source robot-mounted LiDAR SLAM algorithms to evaluate each module and the whole 3D lifelong mapping framework.  
   </ol>  
 </details>  
   
@@ -91,12 +52,12 @@ Zijun Long, Kangheng Liang, Gerardo Aragon-Camarasa, Richard Mccreadie, Paul Hen
 
 ## NeRF  
 
-### [LinPrim: Linear Primitives for Differentiable Volumetric Rendering](http://arxiv.org/abs/2501.16312)  
-Nicolas von Lützow, Matthias Nießner  
+### [VoD-3DGS: View-opacity-Dependent 3D Gaussian Splatting](http://arxiv.org/abs/2501.17978)  
+Nowak Mateusz, Jarosz Wojciech, Chin Peter  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Volumetric rendering has become central to modern novel view synthesis methods, which use differentiable rendering to optimize 3D scene representations directly from observed views. While many recent works build on NeRF or 3D Gaussians, we explore an alternative volumetric scene representation. More specifically, we introduce two new scene representations based on linear primitives-octahedra and tetrahedra-both of which define homogeneous volumes bounded by triangular faces. This formulation aligns naturally with standard mesh-based tools, minimizing overhead for downstream applications. To optimize these primitives, we present a differentiable rasterizer that runs efficiently on GPUs, allowing end-to-end gradient-based optimization while maintaining realtime rendering capabilities. Through experiments on real-world datasets, we demonstrate comparable performance to state-of-the-art volumetric methods while requiring fewer primitives to achieve similar reconstruction fidelity. Our findings provide insights into the geometry of volumetric rendering and suggest that adopting explicit polyhedra can expand the design space of scene representations.  
+    Reconstructing a 3D scene from images is challenging due to the different ways light interacts with surfaces depending on the viewer's position and the surface's material. In classical computer graphics, materials can be classified as diffuse or specular, interacting with light differently. The standard 3D Gaussian Splatting model struggles to represent view-dependent content, since it cannot differentiate an object within the scene from the light interacting with its specular surfaces, which produce highlights or reflections. In this paper, we propose to extend the 3D Gaussian Splatting model by introducing an additional symmetric matrix to enhance the opacity representation of each 3D Gaussian. This improvement allows certain Gaussians to be suppressed based on the viewer's perspective, resulting in a more accurate representation of view-dependent reflections and specular highlights without compromising the scene's integrity. By allowing the opacity to be view dependent, our enhanced model achieves state-of-the-art performance on Mip-Nerf, Tanks\&Temples, Deep Blending, and Nerf-Synthetic datasets without a significant loss in rendering speed, achieving >60FPS, and only incurring a minimal increase in memory used.  
   </ol>  
 </details>  
   
