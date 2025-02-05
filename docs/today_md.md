@@ -1,25 +1,108 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#GP-GS:-Gaussian-Processes-for-Enhanced-Gaussian-Splatting>GP-GS: Gaussian Processes for Enhanced Gaussian Splatting</a></li>
+        <li><a href=#XR-VIO:-High-precision-Visual-Inertial-Odometry-with-Fast-Initialization-for-XR-Applications>XR-VIO: High-precision Visual Inertial Odometry with Fast Initialization for XR Applications</a></li>
+      </ul>
+    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#LiDAR-Loop-Closure-Detection-using-Semantic-Graphs-with-Graph-Attention-Networks>LiDAR Loop Closure Detection using Semantic Graphs with Graph Attention Networks</a></li>
+        <li><a href=#ConceptVAE:-Self-Supervised-Fine-Grained-Concept-Disentanglement-from-2D-Echocardiographies>ConceptVAE: Self-Supervised Fine-Grained Concept Disentanglement from 2D Echocardiographies</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#MambaGlue:-Fast-and-Robust-Local-Feature-Matching-With-Mamba>MambaGlue: Fast and Robust Local Feature Matching With Mamba</a></li>
+      </ul>
+    </li>
+    <li><a href=#nerf>NeRF</a></li>
+      <ul>
+        <li><a href=#MaintaAvatar:-A-Maintainable-Avatar-Based-on-Neural-Radiance-Fields-by-Continual-Learning>MaintaAvatar: A Maintainable Avatar Based on Neural Radiance Fields by Continual Learning</a></li>
+        <li><a href=#FourieRF:-Few-Shot-NeRFs-via-Progressive-Fourier-Frequency-Control>FourieRF: Few-Shot NeRFs via Progressive Fourier Frequency Control</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [LiDAR Loop Closure Detection using Semantic Graphs with Graph Attention Networks](http://arxiv.org/abs/2501.19382)  
-[[code](https://github.com/crepuscularlight/semanticloopclosure)]  
-Liudi Yang, Ruben Mascaro, Ignacio Alzugaray, Sai Manoj Prakhya, Marco Karrer, Ziyuan Liu, Margarita Chli  
+### [GP-GS: Gaussian Processes for Enhanced Gaussian Splatting](http://arxiv.org/abs/2502.02283)  
+Zhihao Guo, Jingxuan Su, Shenglin Wang, Jinlong Fan, Jing Zhang, Liangxiu Han, Peng Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we propose a novel loop closure detection algorithm that uses graph attention neural networks to encode semantic graphs to perform place recognition and then use semantic registration to estimate the 6 DoF relative pose constraint. Our place recognition algorithm has two key modules, namely, a semantic graph encoder module and a graph comparison module. The semantic graph encoder employs graph attention networks to efficiently encode spatial, semantic and geometric information from the semantic graph of the input point cloud. We then use self-attention mechanism in both node-embedding and graph-embedding steps to create distinctive graph vectors. The graph vectors of the current scan and a keyframe scan are then compared in the graph comparison module to identify a possible loop closure. Specifically, employing the difference of the two graph vectors showed a significant improvement in performance, as shown in ablation studies. Lastly, we implemented a semantic registration algorithm that takes in loop closure candidate scans and estimates the relative 6 DoF pose constraint for the LiDAR SLAM system. Extensive evaluation on public datasets shows that our model is more accurate and robust, achieving 13% improvement in maximum F1 score on the SemanticKITTI dataset, when compared to the baseline semantic graph algorithm. For the benefit of the community, we open-source the complete implementation of our proposed algorithm and custom implementation of semantic registration at https://github.com/crepuscularlight/SemanticLoopClosure  
+    3D Gaussian Splatting has emerged as an efficient photorealistic novel view synthesis method. However, its reliance on sparse Structure-from-Motion (SfM) point clouds consistently compromises the scene reconstruction quality. To address these limitations, this paper proposes a novel 3D reconstruction framework Gaussian Processes Gaussian Splatting (GP-GS), where a multi-output Gaussian Process model is developed to achieve adaptive and uncertainty-guided densification of sparse SfM point clouds. Specifically, we propose a dynamic sampling and filtering pipeline that adaptively expands the SfM point clouds by leveraging GP-based predictions to infer new candidate points from the input 2D pixels and depth maps. The pipeline utilizes uncertainty estimates to guide the pruning of high-variance predictions, ensuring geometric consistency and enabling the generation of dense point clouds. The densified point clouds provide high-quality initial 3D Gaussians to enhance reconstruction performance. Extensive experiments conducted on synthetic and real-world datasets across various scales validate the effectiveness and practicality of the proposed framework.  
   </ol>  
 </details>  
+**comments**: 14 pages,11 figures  
+  
+### [XR-VIO: High-precision Visual Inertial Odometry with Fast Initialization for XR Applications](http://arxiv.org/abs/2502.01297)  
+Shangjin Zhai, Nan Wang, Xiaomeng Wang, Danpeng Chen, Weijian Xie, Hujun Bao, Guofeng Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper presents a novel approach to Visual Inertial Odometry (VIO), focusing on the initialization and feature matching modules. Existing methods for initialization often suffer from either poor stability in visual Structure from Motion (SfM) or fragility in solving a huge number of parameters simultaneously. To address these challenges, we propose a new pipeline for visual inertial initialization that robustly handles various complex scenarios. By tightly coupling gyroscope measurements, we enhance the robustness and accuracy of visual SfM. Our method demonstrates stable performance even with only four image frames, yielding competitive results. In terms of feature matching, we introduce a hybrid method that combines optical flow and descriptor-based matching. By leveraging the robustness of continuous optical flow tracking and the accuracy of descriptor matching, our approach achieves efficient, accurate, and robust tracking results. Through evaluation on multiple benchmarks, our method demonstrates state-of-the-art performance in terms of accuracy and success rate. Additionally, a video demonstration on mobile devices showcases the practical applicability of our approach in the field of Augmented Reality/Virtual Reality (AR/VR).  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Visual Localization  
+
+### [ConceptVAE: Self-Supervised Fine-Grained Concept Disentanglement from 2D Echocardiographies](http://arxiv.org/abs/2502.01335)  
+Costin F. Ciusdel, Alex Serban, Tiziano Passerini  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    While traditional self-supervised learning methods improve performance and robustness across various medical tasks, they rely on single-vector embeddings that may not capture fine-grained concepts such as anatomical structures or organs. The ability to identify such concepts and their characteristics without supervision has the potential to improve pre-training methods, and enable novel applications such as fine-grained image retrieval and concept-based outlier detection. In this paper, we introduce ConceptVAE, a novel pre-training framework that detects and disentangles fine-grained concepts from their style characteristics in a self-supervised manner. We present a suite of loss terms and model architecture primitives designed to discretise input data into a preset number of concepts along with their local style. We validate ConceptVAE both qualitatively and quantitatively, demonstrating its ability to detect fine-grained anatomical structures such as blood pools and septum walls from 2D cardiac echocardiographies. Quantitatively, ConceptVAE outperforms traditional self-supervised methods in tasks such as region-based instance retrieval, semantic segmentation, out-of-distribution detection, and object detection. Additionally, we explore the generation of in-distribution synthetic data that maintains the same concepts as the training data but with distinct styles, highlighting its potential for more calibrated data generation. Overall, our study introduces and validates a promising new pre-training technique based on concept-style disentanglement, opening multiple avenues for developing models for medical image analysis that are more interpretable and explainable than black-box approaches.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [MambaGlue: Fast and Robust Local Feature Matching With Mamba](http://arxiv.org/abs/2502.00462)  
+Kihwan Ryoo, Hyungtae Lim, Hyun Myung  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In recent years, robust matching methods using deep learning-based approaches have been actively studied and improved in computer vision tasks. However, there remains a persistent demand for both robust and fast matching techniques. To address this, we propose a novel Mamba-based local feature matching approach, called MambaGlue, where Mamba is an emerging state-of-the-art architecture rapidly gaining recognition for its superior speed in both training and inference, and promising performance compared with Transformer architectures. In particular, we propose two modules: a) MambaAttention mixer to simultaneously and selectively understand the local and global context through the Mamba-based self-attention structure and b) deep confidence score regressor, which is a multi-layer perceptron (MLP)-based architecture that evaluates a score indicating how confidently matching predictions correspond to the ground-truth correspondences. Consequently, our MambaGlue achieves a balance between robustness and efficiency in real-world applications. As verified on various public datasets, we demonstrate that our MambaGlue yields a substantial performance improvement over baseline approaches while maintaining fast inference speed. Our code will be available on https://github.com/url-kaist/MambaGlue  
+  </ol>  
+</details>  
+**comments**: Proc. IEEE Int'l Conf. Robotics and Automation (ICRA) 2025  
+  
+  
+
+
+
+## NeRF  
+
+### [MaintaAvatar: A Maintainable Avatar Based on Neural Radiance Fields by Continual Learning](http://arxiv.org/abs/2502.02372)  
+Shengbo Gu, Yu-Kun Qiu, Yu-Ming Tang, Ancong Wu, Wei-Shi Zheng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The generation of a virtual digital avatar is a crucial research topic in the field of computer vision. Many existing works utilize Neural Radiance Fields (NeRF) to address this issue and have achieved impressive results. However, previous works assume the images of the training person are available and fixed while the appearances and poses of a subject could constantly change and increase in real-world scenarios. How to update the human avatar but also maintain the ability to render the old appearance of the person is a practical challenge. One trivial solution is to combine the existing virtual avatar models based on NeRF with continual learning methods. However, there are some critical issues in this approach: learning new appearances and poses can cause the model to forget past information, which in turn leads to a degradation in the rendering quality of past appearances, especially color bleeding issues, and incorrect human body poses. In this work, we propose a maintainable avatar (MaintaAvatar) based on neural radiance fields by continual learning, which resolves the issues by utilizing a Global-Local Joint Storage Module and a Pose Distillation Module. Overall, our model requires only limited data collection to quickly fine-tune the model while avoiding catastrophic forgetting, thus achieving a maintainable virtual avatar. The experimental results validate the effectiveness of our MaintaAvatar model.  
+  </ol>  
+</details>  
+**comments**: AAAI 2025. 9 pages  
+  
+### [FourieRF: Few-Shot NeRFs via Progressive Fourier Frequency Control](http://arxiv.org/abs/2502.01405)  
+Diego Gomez, Bingchen Gong, Maks Ovsjanikov  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this work, we introduce FourieRF, a novel approach for achieving fast and high-quality reconstruction in the few-shot setting. Our method effectively parameterizes features through an explicit curriculum training procedure, incrementally increasing scene complexity during optimization. Experimental results show that the prior induced by our approach is both robust and adaptable across a wide variety of scenes, establishing FourieRF as a strong and versatile baseline for the few-shot rendering problem. While our approach significantly reduces artifacts, it may still lead to reconstruction errors in severely under-constrained scenarios, particularly where view occlusion leaves parts of the shape uncovered. In the future, our method could be enhanced by integrating foundation models to complete missing parts using large data-driven priors.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 3DV 2025 conference  
   
   
 
