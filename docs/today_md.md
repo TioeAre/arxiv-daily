@@ -3,24 +3,22 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#GP-GS:-Gaussian-Processes-for-Enhanced-Gaussian-Splatting>GP-GS: Gaussian Processes for Enhanced Gaussian Splatting</a></li>
-        <li><a href=#XR-VIO:-High-precision-Visual-Inertial-Odometry-with-Fast-Initialization-for-XR-Applications>XR-VIO: High-precision Visual Inertial Odometry with Fast Initialization for XR Applications</a></li>
+        <li><a href=#SiLVR:-Scalable-Lidar-Visual-Radiance-Field-Reconstruction-with-Uncertainty-Quantification>SiLVR: Scalable Lidar-Visual Radiance Field Reconstruction with Uncertainty Quantification</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#ConceptVAE:-Self-Supervised-Fine-Grained-Concept-Disentanglement-from-2D-Echocardiographies>ConceptVAE: Self-Supervised Fine-Grained Concept Disentanglement from 2D Echocardiographies</a></li>
+        <li><a href=#Human-Aligned-Image-Models-Improve-Visual-Decoding-from-the-Brain>Human-Aligned Image Models Improve Visual Decoding from the Brain</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#MambaGlue:-Fast-and-Robust-Local-Feature-Matching-With-Mamba>MambaGlue: Fast and Robust Local Feature Matching With Mamba</a></li>
+        <li><a href=#Muographic-Image-Upsampling-with-Machine-Learning-for-Built-Infrastructure-Applications>Muographic Image Upsampling with Machine Learning for Built Infrastructure Applications</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MaintaAvatar:-A-Maintainable-Avatar-Based-on-Neural-Radiance-Fields-by-Continual-Learning>MaintaAvatar: A Maintainable Avatar Based on Neural Radiance Fields by Continual Learning</a></li>
-        <li><a href=#FourieRF:-Few-Shot-NeRFs-via-Progressive-Fourier-Frequency-Control>FourieRF: Few-Shot NeRFs via Progressive Fourier Frequency Control</a></li>
+        <li><a href=#SiLVR:-Scalable-Lidar-Visual-Radiance-Field-Reconstruction-with-Uncertainty-Quantification>SiLVR: Scalable Lidar-Visual Radiance Field Reconstruction with Uncertainty Quantification</a></li>
       </ul>
     </li>
   </ol>
@@ -28,24 +26,15 @@
 
 ## SFM  
 
-### [GP-GS: Gaussian Processes for Enhanced Gaussian Splatting](http://arxiv.org/abs/2502.02283)  
-Zhihao Guo, Jingxuan Su, Shenglin Wang, Jinlong Fan, Jing Zhang, Liangxiu Han, Peng Wang  
+### [SiLVR: Scalable Lidar-Visual Radiance Field Reconstruction with Uncertainty Quantification](http://arxiv.org/abs/2502.02657)  
+Yifu Tao, Maurice Fallon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting has emerged as an efficient photorealistic novel view synthesis method. However, its reliance on sparse Structure-from-Motion (SfM) point clouds consistently compromises the scene reconstruction quality. To address these limitations, this paper proposes a novel 3D reconstruction framework Gaussian Processes Gaussian Splatting (GP-GS), where a multi-output Gaussian Process model is developed to achieve adaptive and uncertainty-guided densification of sparse SfM point clouds. Specifically, we propose a dynamic sampling and filtering pipeline that adaptively expands the SfM point clouds by leveraging GP-based predictions to infer new candidate points from the input 2D pixels and depth maps. The pipeline utilizes uncertainty estimates to guide the pruning of high-variance predictions, ensuring geometric consistency and enabling the generation of dense point clouds. The densified point clouds provide high-quality initial 3D Gaussians to enhance reconstruction performance. Extensive experiments conducted on synthetic and real-world datasets across various scales validate the effectiveness and practicality of the proposed framework.  
+    We present a neural radiance field (NeRF) based large-scale reconstruction system that fuses lidar and vision data to generate high-quality reconstructions that are geometrically accurate and capture photorealistic texture. Our system adopts the state-of-the-art NeRF representation to additionally incorporate lidar. Adding lidar data adds strong geometric constraints on the depth and surface normals, which is particularly useful when modelling uniform texture surfaces which contain ambiguous visual reconstruction cues. Furthermore, we estimate the epistemic uncertainty of the reconstruction as the spatial variance of each point location in the radiance field given the sensor observations from camera and lidar. This enables the identification of areas that are reliably reconstructed by each sensor modality, allowing the map to be filtered according to the estimated uncertainty. Our system can also exploit the trajectory produced by a real-time pose-graph lidar SLAM system during online mapping to bootstrap a (post-processed) Structure-from-Motion (SfM) reconstruction procedure reducing SfM training time by up to 70%. It also helps to properly constrain the overall metric scale which is essential for the lidar depth loss. The globally-consistent trajectory can then be divided into submaps using Spectral Clustering to group sets of co-visible images together. This submapping approach is more suitable for visual reconstruction than distance-based partitioning. Each submap is filtered according to point-wise uncertainty estimates and merged to obtain the final large-scale 3D reconstruction. We demonstrate the reconstruction system using a multi-camera, lidar sensor suite in experiments involving both robot-mounted and handheld scanning. Our test datasets cover a total area of more than 20,000 square metres, including multiple university buildings and an aerial survey of a multi-storey.  
   </ol>  
 </details>  
-**comments**: 14 pages,11 figures  
-  
-### [XR-VIO: High-precision Visual Inertial Odometry with Fast Initialization for XR Applications](http://arxiv.org/abs/2502.01297)  
-Shangjin Zhai, Nan Wang, Xiaomeng Wang, Danpeng Chen, Weijian Xie, Hujun Bao, Guofeng Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper presents a novel approach to Visual Inertial Odometry (VIO), focusing on the initialization and feature matching modules. Existing methods for initialization often suffer from either poor stability in visual Structure from Motion (SfM) or fragility in solving a huge number of parameters simultaneously. To address these challenges, we propose a new pipeline for visual inertial initialization that robustly handles various complex scenarios. By tightly coupling gyroscope measurements, we enhance the robustness and accuracy of visual SfM. Our method demonstrates stable performance even with only four image frames, yielding competitive results. In terms of feature matching, we introduce a hybrid method that combines optical flow and descriptor-based matching. By leveraging the robustness of continuous optical flow tracking and the accuracy of descriptor matching, our approach achieves efficient, accurate, and robust tracking results. Through evaluation on multiple benchmarks, our method demonstrates state-of-the-art performance in terms of accuracy and success rate. Additionally, a video demonstration on mobile devices showcases the practical applicability of our approach in the field of Augmented Reality/Virtual Reality (AR/VR).  
-  </ol>  
-</details>  
+**comments**: webpage: https://dynamic.robots.ox.ac.uk/projects/silvr/  
   
   
 
@@ -53,12 +42,12 @@ Shangjin Zhai, Nan Wang, Xiaomeng Wang, Danpeng Chen, Weijian Xie, Hujun Bao, Gu
 
 ## Visual Localization  
 
-### [ConceptVAE: Self-Supervised Fine-Grained Concept Disentanglement from 2D Echocardiographies](http://arxiv.org/abs/2502.01335)  
-Costin F. Ciusdel, Alex Serban, Tiziano Passerini  
+### [Human-Aligned Image Models Improve Visual Decoding from the Brain](http://arxiv.org/abs/2502.03081)  
+Nona Rajabi, Antônio H. Ribeiro, Miguel Vasco, Farzaneh Taleb, Mårten Björkman, Danica Kragic  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    While traditional self-supervised learning methods improve performance and robustness across various medical tasks, they rely on single-vector embeddings that may not capture fine-grained concepts such as anatomical structures or organs. The ability to identify such concepts and their characteristics without supervision has the potential to improve pre-training methods, and enable novel applications such as fine-grained image retrieval and concept-based outlier detection. In this paper, we introduce ConceptVAE, a novel pre-training framework that detects and disentangles fine-grained concepts from their style characteristics in a self-supervised manner. We present a suite of loss terms and model architecture primitives designed to discretise input data into a preset number of concepts along with their local style. We validate ConceptVAE both qualitatively and quantitatively, demonstrating its ability to detect fine-grained anatomical structures such as blood pools and septum walls from 2D cardiac echocardiographies. Quantitatively, ConceptVAE outperforms traditional self-supervised methods in tasks such as region-based instance retrieval, semantic segmentation, out-of-distribution detection, and object detection. Additionally, we explore the generation of in-distribution synthetic data that maintains the same concepts as the training data but with distinct styles, highlighting its potential for more calibrated data generation. Overall, our study introduces and validates a promising new pre-training technique based on concept-style disentanglement, opening multiple avenues for developing models for medical image analysis that are more interpretable and explainable than black-box approaches.  
+    Decoding visual images from brain activity has significant potential for advancing brain-computer interaction and enhancing the understanding of human perception. Recent approaches align the representation spaces of images and brain activity to enable visual decoding. In this paper, we introduce the use of human-aligned image encoders to map brain signals to images. We hypothesize that these models more effectively capture perceptual attributes associated with the rapid visual stimuli presentations commonly used in visual brain data recording experiments. Our empirical results support this hypothesis, demonstrating that this simple modification improves image retrieval accuracy by up to 21% compared to state-of-the-art methods. Comprehensive experiments confirm consistent performance improvements across diverse EEG architectures, image encoders, alignment methods, participants, and brain imaging modalities.  
   </ol>  
 </details>  
   
@@ -68,15 +57,14 @@ Costin F. Ciusdel, Alex Serban, Tiziano Passerini
 
 ## Image Matching  
 
-### [MambaGlue: Fast and Robust Local Feature Matching With Mamba](http://arxiv.org/abs/2502.00462)  
-Kihwan Ryoo, Hyungtae Lim, Hyun Myung  
+### [Muographic Image Upsampling with Machine Learning for Built Infrastructure Applications](http://arxiv.org/abs/2502.02624)  
+William O'Donnell, David Mahon, Guangliang Yang, Simon Gardner  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In recent years, robust matching methods using deep learning-based approaches have been actively studied and improved in computer vision tasks. However, there remains a persistent demand for both robust and fast matching techniques. To address this, we propose a novel Mamba-based local feature matching approach, called MambaGlue, where Mamba is an emerging state-of-the-art architecture rapidly gaining recognition for its superior speed in both training and inference, and promising performance compared with Transformer architectures. In particular, we propose two modules: a) MambaAttention mixer to simultaneously and selectively understand the local and global context through the Mamba-based self-attention structure and b) deep confidence score regressor, which is a multi-layer perceptron (MLP)-based architecture that evaluates a score indicating how confidently matching predictions correspond to the ground-truth correspondences. Consequently, our MambaGlue achieves a balance between robustness and efficiency in real-world applications. As verified on various public datasets, we demonstrate that our MambaGlue yields a substantial performance improvement over baseline approaches while maintaining fast inference speed. Our code will be available on https://github.com/url-kaist/MambaGlue  
+    The civil engineering industry faces a critical need for innovative non-destructive evaluation methods, particularly for ageing critical infrastructure, such as bridges, where current techniques fall short. Muography, a non-invasive imaging technique, constructs three-dimensional density maps by detecting interactions of naturally occurring cosmic-ray muons within the scanned volume. Cosmic-ray muons provide deep penetration and inherent safety due to their high momenta and natural source. However, the technology's reliance on this source results in constrained muon flux, leading to prolonged acquisition times, noisy reconstructions and image interpretation challenges. To address these limitations, we developed a two-model deep learning approach. First, we employed a conditional Wasserstein generative adversarial network with gradient penalty (cWGAN-GP) to perform predictive upsampling of undersampled muography images. Using the structural similarity index measure (SSIM), 1-day sampled images matched the perceptual qualities of a 21-day image, while the peak signal-to-noise ratio (PSNR) indicated noise improvement equivalent to 31 days of sampling. A second cWGAN-GP model, trained for semantic segmentation, quantitatively assessed the upsampling model's impact on concrete sample features. This model achieved segmentation of rebar grids and tendon ducts, with Dice-S{\o}rensen accuracy coefficients of 0.8174 and 0.8663. Notably, it could mitigate or remove z-plane smearing artifacts caused by muography's inverse imaging problem. Both models were trained on a comprehensive Geant4 Monte-Carlo simulation dataset reflecting realistic civil infrastructure scenarios. Our results demonstrate significant improvements in acquisition speed and image quality, marking a substantial step toward making muography more practical for reinforced concrete infrastructure monitoring applications.  
   </ol>  
 </details>  
-**comments**: Proc. IEEE Int'l Conf. Robotics and Automation (ICRA) 2025  
   
   
 
@@ -84,25 +72,15 @@ Kihwan Ryoo, Hyungtae Lim, Hyun Myung
 
 ## NeRF  
 
-### [MaintaAvatar: A Maintainable Avatar Based on Neural Radiance Fields by Continual Learning](http://arxiv.org/abs/2502.02372)  
-Shengbo Gu, Yu-Kun Qiu, Yu-Ming Tang, Ancong Wu, Wei-Shi Zheng  
+### [SiLVR: Scalable Lidar-Visual Radiance Field Reconstruction with Uncertainty Quantification](http://arxiv.org/abs/2502.02657)  
+Yifu Tao, Maurice Fallon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The generation of a virtual digital avatar is a crucial research topic in the field of computer vision. Many existing works utilize Neural Radiance Fields (NeRF) to address this issue and have achieved impressive results. However, previous works assume the images of the training person are available and fixed while the appearances and poses of a subject could constantly change and increase in real-world scenarios. How to update the human avatar but also maintain the ability to render the old appearance of the person is a practical challenge. One trivial solution is to combine the existing virtual avatar models based on NeRF with continual learning methods. However, there are some critical issues in this approach: learning new appearances and poses can cause the model to forget past information, which in turn leads to a degradation in the rendering quality of past appearances, especially color bleeding issues, and incorrect human body poses. In this work, we propose a maintainable avatar (MaintaAvatar) based on neural radiance fields by continual learning, which resolves the issues by utilizing a Global-Local Joint Storage Module and a Pose Distillation Module. Overall, our model requires only limited data collection to quickly fine-tune the model while avoiding catastrophic forgetting, thus achieving a maintainable virtual avatar. The experimental results validate the effectiveness of our MaintaAvatar model.  
+    We present a neural radiance field (NeRF) based large-scale reconstruction system that fuses lidar and vision data to generate high-quality reconstructions that are geometrically accurate and capture photorealistic texture. Our system adopts the state-of-the-art NeRF representation to additionally incorporate lidar. Adding lidar data adds strong geometric constraints on the depth and surface normals, which is particularly useful when modelling uniform texture surfaces which contain ambiguous visual reconstruction cues. Furthermore, we estimate the epistemic uncertainty of the reconstruction as the spatial variance of each point location in the radiance field given the sensor observations from camera and lidar. This enables the identification of areas that are reliably reconstructed by each sensor modality, allowing the map to be filtered according to the estimated uncertainty. Our system can also exploit the trajectory produced by a real-time pose-graph lidar SLAM system during online mapping to bootstrap a (post-processed) Structure-from-Motion (SfM) reconstruction procedure reducing SfM training time by up to 70%. It also helps to properly constrain the overall metric scale which is essential for the lidar depth loss. The globally-consistent trajectory can then be divided into submaps using Spectral Clustering to group sets of co-visible images together. This submapping approach is more suitable for visual reconstruction than distance-based partitioning. Each submap is filtered according to point-wise uncertainty estimates and merged to obtain the final large-scale 3D reconstruction. We demonstrate the reconstruction system using a multi-camera, lidar sensor suite in experiments involving both robot-mounted and handheld scanning. Our test datasets cover a total area of more than 20,000 square metres, including multiple university buildings and an aerial survey of a multi-storey.  
   </ol>  
 </details>  
-**comments**: AAAI 2025. 9 pages  
-  
-### [FourieRF: Few-Shot NeRFs via Progressive Fourier Frequency Control](http://arxiv.org/abs/2502.01405)  
-Diego Gomez, Bingchen Gong, Maks Ovsjanikov  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this work, we introduce FourieRF, a novel approach for achieving fast and high-quality reconstruction in the few-shot setting. Our method effectively parameterizes features through an explicit curriculum training procedure, incrementally increasing scene complexity during optimization. Experimental results show that the prior induced by our approach is both robust and adaptable across a wide variety of scenes, establishing FourieRF as a strong and versatile baseline for the few-shot rendering problem. While our approach significantly reduces artifacts, it may still lead to reconstruction errors in severely under-constrained scenarios, particularly where view occlusion leaves parts of the shape uncovered. In the future, our method could be enhanced by integrating foundation models to complete missing parts using large data-driven priors.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 3DV 2025 conference  
+**comments**: webpage: https://dynamic.robots.ox.ac.uk/projects/silvr/  
   
   
 
