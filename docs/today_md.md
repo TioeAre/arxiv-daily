@@ -3,17 +3,23 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Building-Rome-with-Convex-Optimization>Building Rome with Convex Optimization</a></li>
+        <li><a href=#FOCUS---Multi-View-Foot-Reconstruction-From-Synthetically-Trained-Dense-Correspondences>FOCUS - Multi-View Foot Reconstruction From Synthetically Trained Dense Correspondences</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Learning-Street-View-Representations-with-Spatiotemporal-Contrast>Learning Street View Representations with Spatiotemporal Contrast</a></li>
+        <li><a href=#Uni-Retrieval:-A-Multi-Style-Retrieval-Framework-for-STEM's-Education>Uni-Retrieval: A Multi-Style Retrieval Framework for STEM's Education</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Enhancing-Ground-to-Aerial-Image-Matching-for-Visual-Misinformation-Detection-Using-Semantic-Segmentation>Enhancing Ground-to-Aerial Image Matching for Visual Misinformation Detection Using Semantic Segmentation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#PoI:-Pixel-of-Interest-for-Novel-View-Synthesis-Assisted-Scene-Coordinate-Regression>PoI: Pixel of Interest for Novel View Synthesis Assisted Scene Coordinate Regression</a></li>
+        <li><a href=#GWRF:-A-Generalizable-Wireless-Radiance-Field-for-Wireless-Signal-Propagation-Modeling>GWRF: A Generalizable Wireless Radiance Field for Wireless Signal Propagation Modeling</a></li>
+        <li><a href=#VistaFlow:-Photorealistic-Volumetric-Reconstruction-with-Dynamic-Resolution-Management-via-Q-Learning>VistaFlow: Photorealistic Volumetric Reconstruction with Dynamic Resolution Management via Q-Learning</a></li>
       </ul>
     </li>
   </ol>
@@ -21,14 +27,15 @@
 
 ## SFM  
 
-### [Building Rome with Convex Optimization](http://arxiv.org/abs/2502.04640)  
-Haoyu Han, Heng Yang  
+### [FOCUS - Multi-View Foot Reconstruction From Synthetically Trained Dense Correspondences](http://arxiv.org/abs/2502.06367)  
+Oliver Boyne, Roberto Cipolla  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Global bundle adjustment is made easy by depth prediction and convex optimization. We (i) propose a scaled bundle adjustment (SBA) formulation that lifts 2D keypoint measurements to 3D with learned depth, (ii) design an empirically tight convex semidfinite program (SDP) relaxation that solves SBA to certfiable global optimality, (iii) solve the SDP relaxations at extreme scale with Burer-Monteiro factorization and a CUDA-based trust-region Riemannian optimizer (dubbed XM), (iv) build a structure from motion (SfM) pipeline with XM as the optimization engine and show that XM-SfM dominates or compares favorably with existing SfM pipelines in terms of reconstruction quality while being faster, more scalable, and initialization-free.  
+    Surface reconstruction from multiple, calibrated images is a challenging task - often requiring a large number of collected images with significant overlap. We look at the specific case of human foot reconstruction. As with previous successful foot reconstruction work, we seek to extract rich per-pixel geometry cues from multi-view RGB images, and fuse these into a final 3D object. Our method, FOCUS, tackles this problem with 3 main contributions: (i) SynFoot2, an extension of an existing synthetic foot dataset to include a new data type: dense correspondence with the parameterized foot model FIND; (ii) an uncertainty-aware dense correspondence predictor trained on our synthetic dataset; (iii) two methods for reconstructing a 3D surface from dense correspondence predictions: one inspired by Structure-from-Motion, and one optimization-based using the FIND model. We show that our reconstruction achieves state-of-the-art reconstruction quality in a few-view setting, performing comparably to state-of-the-art when many views are available, and runs substantially faster. We release our synthetic dataset to the research community. Code is available at: https://github.com/OllieBoyne/FOCUS  
   </ol>  
 </details>  
+**comments**: 13 pages, 11 figures  
   
   
 
@@ -36,12 +43,12 @@ Haoyu Han, Heng Yang
 
 ## Visual Localization  
 
-### [Learning Street View Representations with Spatiotemporal Contrast](http://arxiv.org/abs/2502.04638)  
-Yong Li, Yingjing Huang, Gengchen Mai, Fan Zhang  
+### [Uni-Retrieval: A Multi-Style Retrieval Framework for STEM's Education](http://arxiv.org/abs/2502.05863)  
+Yanhao Jia, Xinyi Wu, Hao Li, Qinglin Zhang, Yuxiao Hu, Shuai Zhao, Wenqi Fan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Street view imagery is extensively utilized in representation learning for urban visual environments, supporting various sustainable development tasks such as environmental perception and socio-economic assessment. However, it is challenging for existing image representations to specifically encode the dynamic urban environment (such as pedestrians, vehicles, and vegetation), the built environment (including buildings, roads, and urban infrastructure), and the environmental ambiance (such as the cultural and socioeconomic atmosphere) depicted in street view imagery to address downstream tasks related to the city. In this work, we propose an innovative self-supervised learning framework that leverages temporal and spatial attributes of street view imagery to learn image representations of the dynamic urban environment for diverse downstream tasks. By employing street view images captured at the same location over time and spatially nearby views at the same time, we construct contrastive learning tasks designed to learn the temporal-invariant characteristics of the built environment and the spatial-invariant neighborhood ambiance. Our approach significantly outperforms traditional supervised and unsupervised methods in tasks such as visual place recognition, socioeconomic estimation, and human-environment perception. Moreover, we demonstrate the varying behaviors of image representations learned through different contrastive learning objectives across various downstream tasks. This study systematically discusses representation learning strategies for urban studies based on street view images, providing a benchmark that enhances the applicability of visual data in urban science. The code is available at https://github.com/yonglleee/UrbanSTCL.  
+    In AI-facilitated teaching, leveraging various query styles to interpret abstract text descriptions is crucial for ensuring high-quality teaching. However, current retrieval models primarily focus on natural text-image retrieval, making them insufficiently tailored to educational scenarios due to the ambiguities in the retrieval process. In this paper, we propose a diverse expression retrieval task tailored to educational scenarios, supporting retrieval based on multiple query styles and expressions. We introduce the STEM Education Retrieval Dataset (SER), which contains over 24,000 query pairs of different styles, and the Uni-Retrieval, an efficient and style-diversified retrieval vision-language model based on prompt tuning. Uni-Retrieval extracts query style features as prototypes and builds a continuously updated Prompt Bank containing prompt tokens for diverse queries. This bank can updated during test time to represent domain-specific knowledge for different subject retrieval scenarios. Our framework demonstrates scalability and robustness by dynamically retrieving prompt tokens based on prototype similarity, effectively facilitating learning for unknown queries. Experimental results indicate that Uni-Retrieval outperforms existing retrieval models in most retrieval tasks. This advancement provides a scalable and precise solution for diverse educational needs.  
   </ol>  
 </details>  
   
@@ -49,14 +56,39 @@ Yong Li, Yingjing Huang, Gengchen Mai, Fan Zhang
 
 
 
-## NeRF  
+## Image Matching  
 
-### [PoI: Pixel of Interest for Novel View Synthesis Assisted Scene Coordinate Regression](http://arxiv.org/abs/2502.04843)  
-Feifei Li, Qi Song, Chi Zhang, Hui Shuai, Rui Huang  
+### [Enhancing Ground-to-Aerial Image Matching for Visual Misinformation Detection Using Semantic Segmentation](http://arxiv.org/abs/2502.06288)  
+Matteo Mule, Matteo Pannacci, Ali Ghasemi Goudarzi, Francesco Pro, Lorenzo Papa, Luca Maiano, Irene Amerini  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The task of estimating camera poses can be enhanced through novel view synthesis techniques such as NeRF and Gaussian Splatting to increase the diversity and extension of training data. However, these techniques often produce rendered images with issues like blurring and ghosting, which compromise their reliability. These issues become particularly pronounced for Scene Coordinate Regression (SCR) methods, which estimate 3D coordinates at the pixel level. To mitigate the problems associated with unreliable rendered images, we introduce a novel filtering approach, which selectively extracts well-rendered pixels while discarding the inferior ones. This filter simultaneously measures the SCR model's real-time reprojection loss and gradient during training. Building on this filtering technique, we also develop a new strategy to improve scene coordinate regression using sparse inputs, drawing on successful applications of sparse input techniques in novel view synthesis. Our experimental results validate the effectiveness of our method, demonstrating state-of-the-art performance on indoor and outdoor datasets.  
+    The recent advancements in generative AI techniques, which have significantly increased the online dissemination of altered images and videos, have raised serious concerns about the credibility of digital media available on the Internet and distributed through information channels and social networks. This issue particularly affects domains that rely heavily on trustworthy data, such as journalism, forensic analysis, and Earth observation. To address these concerns, the ability to geolocate a non-geo-tagged ground-view image without external information, such as GPS coordinates, has become increasingly critical. This study tackles the challenge of linking a ground-view image, potentially exhibiting varying fields of view (FoV), to its corresponding satellite image without the aid of GPS data. To achieve this, we propose a novel four-stream Siamese-like architecture, the Quadruple Semantic Align Net (SAN-QUAD), which extends previous state-of-the-art (SOTA) approaches by leveraging semantic segmentation applied to both ground and satellite imagery. Experimental results on a subset of the CVUSA dataset demonstrate significant improvements of up to 9.8\% over prior methods across various FoV settings.  
+  </ol>  
+</details>  
+**comments**: 9 pages, 4 figures  
+  
+  
+
+
+
+## NeRF  
+
+### [GWRF: A Generalizable Wireless Radiance Field for Wireless Signal Propagation Modeling](http://arxiv.org/abs/2502.05708)  
+Kang Yang, Yuning Chen, Wan Du  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We present Generalizable Wireless Radiance Fields (GWRF), a framework for modeling wireless signal propagation at arbitrary 3D transmitter and receiver positions. Unlike previous methods that adapt vanilla Neural Radiance Fields (NeRF) from the optical to the wireless signal domain, requiring extensive per-scene training, GWRF generalizes effectively across scenes. First, a geometry-aware Transformer encoder-based wireless scene representation module incorporates information from geographically proximate transmitters to learn a generalizable wireless radiance field. Second, a neural-driven ray tracing algorithm operates on this field to automatically compute signal reception at the receiver. Experimental results demonstrate that GWRF outperforms existing methods on single scenes and achieves state-of-the-art performance on unseen scenes.  
+  </ol>  
+</details>  
+  
+### [VistaFlow: Photorealistic Volumetric Reconstruction with Dynamic Resolution Management via Q-Learning](http://arxiv.org/abs/2502.05222)  
+Jayram Palamadai, William Yu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce VistaFlow, a scalable three-dimensional imaging technique capable of reconstructing fully interactive 3D volumetric images from a set of 2D photographs. Our model synthesizes novel viewpoints through a differentiable rendering system capable of dynamic resolution management on photorealistic 3D scenes. We achieve this through the introduction of QuiQ, a novel intermediate video controller trained through Q-learning to maintain a consistently high framerate by adjusting render resolution with millisecond precision. Notably, VistaFlow runs natively on integrated CPU graphics, making it viable for mobile and entry-level devices while still delivering high-performance rendering. VistaFlow bypasses Neural Radiance Fields (NeRFs), using the PlenOctree data structure to render complex light interactions such as reflection and subsurface scattering with minimal hardware requirements. Our model is capable of outperforming state-of-the-art methods with novel view synthesis at a resolution of 1080p at over 100 frames per second on consumer hardware. By tailoring render quality to the capabilities of each device, VistaFlow has the potential to improve the efficiency and accessibility of photorealistic 3D scene rendering across a wide spectrum of hardware, from high-end workstations to inexpensive microcontrollers.  
   </ol>  
 </details>  
   
