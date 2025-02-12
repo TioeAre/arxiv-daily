@@ -1,72 +1,61 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#FOCUS---Multi-View-Foot-Reconstruction-From-Synthetically-Trained-Dense-Correspondences>FOCUS - Multi-View Foot Reconstruction From Synthetically Trained Dense Correspondences</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Uni-Retrieval:-A-Multi-Style-Retrieval-Framework-for-STEM's-Education>Uni-Retrieval: A Multi-Style Retrieval Framework for STEM's Education</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Enhancing-Ground-to-Aerial-Image-Matching-for-Visual-Misinformation-Detection-Using-Semantic-Segmentation>Enhancing Ground-to-Aerial Image Matching for Visual Misinformation Detection Using Semantic Segmentation</a></li>
+        <li><a href=#Ultrafast-4D-scanning-transmission-electron-microscopy-for-imaging-of-localized-optical-fields>Ultrafast 4D scanning transmission electron microscopy for imaging of localized optical fields</a></li>
+        <li><a href=#Generative-Ghost:-Investigating-Ranking-Bias-Hidden-in-AI-Generated-Videos>Generative Ghost: Investigating Ranking Bias Hidden in AI-Generated Videos</a></li>
+        <li><a href=#PDV:-Prompt-Directional-Vectors-for-Zero-shot-Composed-Image-Retrieval>PDV: Prompt Directional Vectors for Zero-shot Composed Image Retrieval</a></li>
+        <li><a href=#AstroLoc:-Robust-Space-to-Ground-Image-Localizer>AstroLoc: Robust Space to Ground Image Localizer</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#GWRF:-A-Generalizable-Wireless-Radiance-Field-for-Wireless-Signal-Propagation-Modeling>GWRF: A Generalizable Wireless Radiance Field for Wireless Signal Propagation Modeling</a></li>
-        <li><a href=#VistaFlow:-Photorealistic-Volumetric-Reconstruction-with-Dynamic-Resolution-Management-via-Q-Learning>VistaFlow: Photorealistic Volumetric Reconstruction with Dynamic Resolution Management via Q-Learning</a></li>
+        <li><a href=#PrismAvatar:-Real-time-animated-3D-neural-head-avatars-on-edge-devices>PrismAvatar: Real-time animated 3D neural head avatars on edge devices</a></li>
+        <li><a href=#Grounding-Creativity-in-Physics:-A-Brief-Survey-of-Physical-Priors-in-AIGC>Grounding Creativity in Physics: A Brief Survey of Physical Priors in AIGC</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [FOCUS - Multi-View Foot Reconstruction From Synthetically Trained Dense Correspondences](http://arxiv.org/abs/2502.06367)  
-Oliver Boyne, Roberto Cipolla  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Surface reconstruction from multiple, calibrated images is a challenging task - often requiring a large number of collected images with significant overlap. We look at the specific case of human foot reconstruction. As with previous successful foot reconstruction work, we seek to extract rich per-pixel geometry cues from multi-view RGB images, and fuse these into a final 3D object. Our method, FOCUS, tackles this problem with 3 main contributions: (i) SynFoot2, an extension of an existing synthetic foot dataset to include a new data type: dense correspondence with the parameterized foot model FIND; (ii) an uncertainty-aware dense correspondence predictor trained on our synthetic dataset; (iii) two methods for reconstructing a 3D surface from dense correspondence predictions: one inspired by Structure-from-Motion, and one optimization-based using the FIND model. We show that our reconstruction achieves state-of-the-art reconstruction quality in a few-view setting, performing comparably to state-of-the-art when many views are available, and runs substantially faster. We release our synthetic dataset to the research community. Code is available at: https://github.com/OllieBoyne/FOCUS  
-  </ol>  
-</details>  
-**comments**: 13 pages, 11 figures  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Uni-Retrieval: A Multi-Style Retrieval Framework for STEM's Education](http://arxiv.org/abs/2502.05863)  
-Yanhao Jia, Xinyi Wu, Hao Li, Qinglin Zhang, Yuxiao Hu, Shuai Zhao, Wenqi Fan  
+### [Ultrafast 4D scanning transmission electron microscopy for imaging of localized optical fields](http://arxiv.org/abs/2502.07338)  
+Petr Koutenský, Neli Laštovičková Streshkova, Kamila Moriová, Marius Constantin Chirita Mihaila, Daniel Burda, Alexandr Knápek, Martin Kozák  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In AI-facilitated teaching, leveraging various query styles to interpret abstract text descriptions is crucial for ensuring high-quality teaching. However, current retrieval models primarily focus on natural text-image retrieval, making them insufficiently tailored to educational scenarios due to the ambiguities in the retrieval process. In this paper, we propose a diverse expression retrieval task tailored to educational scenarios, supporting retrieval based on multiple query styles and expressions. We introduce the STEM Education Retrieval Dataset (SER), which contains over 24,000 query pairs of different styles, and the Uni-Retrieval, an efficient and style-diversified retrieval vision-language model based on prompt tuning. Uni-Retrieval extracts query style features as prototypes and builds a continuously updated Prompt Bank containing prompt tokens for diverse queries. This bank can updated during test time to represent domain-specific knowledge for different subject retrieval scenarios. Our framework demonstrates scalability and robustness by dynamically retrieving prompt tokens based on prototype similarity, effectively facilitating learning for unknown queries. Experimental results indicate that Uni-Retrieval outperforms existing retrieval models in most retrieval tasks. This advancement provides a scalable and precise solution for diverse educational needs.  
+    Ultrafast electron microscopy aims for imaging transient phenomena occurring on nanoscale. One of its goals is to visualize localized optical and plasmonic modes generated by coherent excitation in the vicinity of various types of nanostructures. Such imaging capability was enabled by photon-induced near-field optical microscopy, which is based on spectral filtering of electrons inelastically scattered due to the stimulated interaction with the near-field. Here we report on the development of ultrafast 4D scanning transmission electron microscopy, which allows us to image the transverse components of the optical near-field while avoiding the need of electron spectral filtering. We demonstrate that this method is capable of imaging optical near-fields of a tungsten nanotip and ponderomotive potential of an optical standing wave with a spatial resolution of 21 nm.  
   </ol>  
 </details>  
+**comments**: v1: preprint; licence: CC BY 4.0  
   
-  
-
-
-
-## Image Matching  
-
-### [Enhancing Ground-to-Aerial Image Matching for Visual Misinformation Detection Using Semantic Segmentation](http://arxiv.org/abs/2502.06288)  
-Matteo Mule, Matteo Pannacci, Ali Ghasemi Goudarzi, Francesco Pro, Lorenzo Papa, Luca Maiano, Irene Amerini  
+### [Generative Ghost: Investigating Ranking Bias Hidden in AI-Generated Videos](http://arxiv.org/abs/2502.07327)  
+Haowen Gao, Liang Pang, Shicheng Xu, Leigang Qu, Tat-Seng Chua, Huawei Shen, Xueqi Cheng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The recent advancements in generative AI techniques, which have significantly increased the online dissemination of altered images and videos, have raised serious concerns about the credibility of digital media available on the Internet and distributed through information channels and social networks. This issue particularly affects domains that rely heavily on trustworthy data, such as journalism, forensic analysis, and Earth observation. To address these concerns, the ability to geolocate a non-geo-tagged ground-view image without external information, such as GPS coordinates, has become increasingly critical. This study tackles the challenge of linking a ground-view image, potentially exhibiting varying fields of view (FoV), to its corresponding satellite image without the aid of GPS data. To achieve this, we propose a novel four-stream Siamese-like architecture, the Quadruple Semantic Align Net (SAN-QUAD), which extends previous state-of-the-art (SOTA) approaches by leveraging semantic segmentation applied to both ground and satellite imagery. Experimental results on a subset of the CVUSA dataset demonstrate significant improvements of up to 9.8\% over prior methods across various FoV settings.  
+    With the rapid development of AI-generated content (AIGC), the creation of high-quality AI-generated videos has become faster and easier, resulting in the Internet being flooded with all kinds of video content. However, the impact of these videos on the content ecosystem remains largely unexplored. Video information retrieval remains a fundamental approach for accessing video content. Building on the observation that retrieval models often favor AI-generated content in ad-hoc and image retrieval tasks, we investigate whether similar biases emerge in the context of challenging video retrieval, where temporal and visual factors may further influence model behavior. To explore this, we first construct a comprehensive benchmark dataset containing both real and AI-generated videos, along with a set of fair and rigorous metrics to assess bias. This benchmark consists of 13,000 videos generated by two state-of-the-art open-source video generation models. We meticulously design a suite of rigorous metrics to accurately measure this preference, accounting for potential biases arising from the limited frame rate and suboptimal quality of AIGC videos. We then applied three off-the-shelf video retrieval models to perform retrieval tasks on this hybrid dataset. Our findings reveal a clear preference for AI-generated videos in retrieval. Further investigation shows that incorporating AI-generated videos into the training set of retrieval models exacerbates this bias. Unlike the preference observed in image modalities, we find that video retrieval bias arises from both unseen visual and temporal information, making the root causes of video bias a complex interplay of these two factors. To mitigate this bias, we fine-tune the retrieval models using a contrastive learning approach. The results of this study highlight the potential implications of AI-generated videos on retrieval systems.  
   </ol>  
 </details>  
-**comments**: 9 pages, 4 figures  
+  
+### [PDV: Prompt Directional Vectors for Zero-shot Composed Image Retrieval](http://arxiv.org/abs/2502.07215)  
+Osman Tursun, Sinan Kalkan, Simon Denman, Clinton Fookes  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Zero-shot composed image retrieval (ZS-CIR) enables image search using a reference image and text prompt without requiring specialized text-image composition networks trained on large-scale paired data. However, current ZS-CIR approaches face three critical limitations in their reliance on composed text embeddings: static query embedding representations, insufficient utilization of image embeddings, and suboptimal performance when fusing text and image embeddings. To address these challenges, we introduce the Prompt Directional Vector (PDV), a simple yet effective training-free enhancement that captures semantic modifications induced by user prompts. PDV enables three key improvements: (1) dynamic composed text embeddings where prompt adjustments are controllable via a scaling factor, (2) composed image embeddings through semantic transfer from text prompts to image features, and (3) weighted fusion of composed text and image embeddings that enhances retrieval by balancing visual and semantic similarity. Our approach serves as a plug-and-play enhancement for existing ZS-CIR methods with minimal computational overhead. Extensive experiments across multiple benchmarks demonstrate that PDV consistently improves retrieval performance when integrated with state-of-the-art ZS-CIR approaches, particularly for methods that generate accurate compositional embeddings. The code will be publicly available.  
+  </ol>  
+</details>  
+  
+### [AstroLoc: Robust Space to Ground Image Localizer](http://arxiv.org/abs/2502.07003)  
+Gabriele Berton, Alex Stoken, Carlo Masone  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Astronauts take thousands of photos of Earth per day from the International Space Station, which, once localized on Earth's surface, are used for a multitude of tasks, ranging from climate change research to disaster management. The localization process, which has been performed manually for decades, has recently been approached through image retrieval solutions: given an astronaut photo, find its most similar match among a large database of geo-tagged satellite images, in a task called Astronaut Photography Localization (APL). Yet, existing APL approaches are trained only using satellite images, without taking advantage of the millions open-source astronaut photos. In this work we present the first APL pipeline capable of leveraging astronaut photos for training. We first produce full localization information for 300,000 manually weakly labeled astronaut photos through an automated pipeline, and then use these images to train a model, called AstroLoc. AstroLoc learns a robust representation of Earth's surface features through two losses: astronaut photos paired with their matching satellite counterparts in a pairwise loss, and a second loss on clusters of satellite imagery weighted by their relevance to astronaut photography via unsupervised mining. We find that AstroLoc achieves a staggering 35% average improvement in recall@1 over previous SOTA, pushing the limits of existing datasets with a recall@100 consistently over 99%. Finally, we note that AstroLoc, without any fine-tuning, provides excellent results for related tasks like the lost-in-space satellite problem and historical space imagery localization.  
+  </ol>  
+</details>  
   
   
 
@@ -74,21 +63,22 @@ Matteo Mule, Matteo Pannacci, Ali Ghasemi Goudarzi, Francesco Pro, Lorenzo Papa,
 
 ## NeRF  
 
-### [GWRF: A Generalizable Wireless Radiance Field for Wireless Signal Propagation Modeling](http://arxiv.org/abs/2502.05708)  
-Kang Yang, Yuning Chen, Wan Du  
+### [PrismAvatar: Real-time animated 3D neural head avatars on edge devices](http://arxiv.org/abs/2502.07030)  
+Prashant Raina, Felix Taubner, Mathieu Tuli, Eu Wern Teh, Kevin Ferreira  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present Generalizable Wireless Radiance Fields (GWRF), a framework for modeling wireless signal propagation at arbitrary 3D transmitter and receiver positions. Unlike previous methods that adapt vanilla Neural Radiance Fields (NeRF) from the optical to the wireless signal domain, requiring extensive per-scene training, GWRF generalizes effectively across scenes. First, a geometry-aware Transformer encoder-based wireless scene representation module incorporates information from geographically proximate transmitters to learn a generalizable wireless radiance field. Second, a neural-driven ray tracing algorithm operates on this field to automatically compute signal reception at the receiver. Experimental results demonstrate that GWRF outperforms existing methods on single scenes and achieves state-of-the-art performance on unseen scenes.  
+    We present PrismAvatar: a 3D head avatar model which is designed specifically to enable real-time animation and rendering on resource-constrained edge devices, while still enjoying the benefits of neural volumetric rendering at training time. By integrating a rigged prism lattice with a 3D morphable head model, we use a hybrid rendering model to simultaneously reconstruct a mesh-based head and a deformable NeRF model for regions not represented by the 3DMM. We then distill the deformable NeRF into a rigged mesh and neural textures, which can be animated and rendered efficiently within the constraints of the traditional triangle rendering pipeline. In addition to running at 60 fps with low memory usage on mobile devices, we find that our trained models have comparable quality to state-of-the-art 3D avatar models on desktop devices.  
   </ol>  
 </details>  
+**comments**: 8 pages, 5 figures  
   
-### [VistaFlow: Photorealistic Volumetric Reconstruction with Dynamic Resolution Management via Q-Learning](http://arxiv.org/abs/2502.05222)  
-Jayram Palamadai, William Yu  
+### [Grounding Creativity in Physics: A Brief Survey of Physical Priors in AIGC](http://arxiv.org/abs/2502.07007)  
+Siwei Meng, Yawei Luo, Ping Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce VistaFlow, a scalable three-dimensional imaging technique capable of reconstructing fully interactive 3D volumetric images from a set of 2D photographs. Our model synthesizes novel viewpoints through a differentiable rendering system capable of dynamic resolution management on photorealistic 3D scenes. We achieve this through the introduction of QuiQ, a novel intermediate video controller trained through Q-learning to maintain a consistently high framerate by adjusting render resolution with millisecond precision. Notably, VistaFlow runs natively on integrated CPU graphics, making it viable for mobile and entry-level devices while still delivering high-performance rendering. VistaFlow bypasses Neural Radiance Fields (NeRFs), using the PlenOctree data structure to render complex light interactions such as reflection and subsurface scattering with minimal hardware requirements. Our model is capable of outperforming state-of-the-art methods with novel view synthesis at a resolution of 1080p at over 100 frames per second on consumer hardware. By tailoring render quality to the capabilities of each device, VistaFlow has the potential to improve the efficiency and accessibility of photorealistic 3D scene rendering across a wide spectrum of hardware, from high-end workstations to inexpensive microcontrollers.  
+    Recent advancements in AI-generated content have significantly improved the realism of 3D and 4D generation. However, most existing methods prioritize appearance consistency while neglecting underlying physical principles, leading to artifacts such as unrealistic deformations, unstable dynamics, and implausible objects interactions. Incorporating physics priors into generative models has become a crucial research direction to enhance structural integrity and motion realism. This survey provides a review of physics-aware generative methods, systematically analyzing how physical constraints are integrated into 3D and 4D generation. First, we examine recent works in incorporating physical priors into static and dynamic 3D generation, categorizing methods based on representation types, including vision-based, NeRF-based, and Gaussian Splatting-based approaches. Second, we explore emerging techniques in 4D generation, focusing on methods that model temporal dynamics with physical simulations. Finally, we conduct a comparative analysis of major methods, highlighting their strengths, limitations, and suitability for different materials and motion dynamics. By presenting an in-depth analysis of physics-grounded AIGC, this survey aims to bridge the gap between generative models and physical realism, providing insights that inspire future research in physically consistent content generation.  
   </ol>  
 </details>  
   
