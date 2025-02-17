@@ -3,19 +3,12 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#LIR-LIVO:-A-Lightweight,Robust-LiDAR/Vision/Inertial-Odometry-with-Illumination-Resilient-Deep-Features>LIR-LIVO: A Lightweight,Robust LiDAR/Vision/Inertial Odometry with Illumination-Resilient Deep Features</a></li>
+        <li><a href=#Vision-based-Geo-Localization-of-Future-Mars-Rotorcraft-in-Challenging-Illumination-Conditions>Vision-based Geo-Localization of Future Mars Rotorcraft in Challenging Illumination Conditions</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#ImageRAG:-Dynamic-Image-Retrieval-for-Reference-Guided-Image-Generation>ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation</a></li>
-        <li><a href=#SpeechCompass:-Enhancing-Mobile-Captioning-with-Diarization-and-Directional-Guidance-via-Multi-Microphone-Localization>SpeechCompass: Enhancing Mobile Captioning with Diarization and Directional Guidance via Multi-Microphone Localization</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#Embed-Any-NeRF:-Graph-Meta-Networks-for-Neural-Tasks-on-Arbitrary-NeRF-Architectures>Embed Any NeRF: Graph Meta-Networks for Neural Tasks on Arbitrary NeRF Architectures</a></li>
-        <li><a href=#DenseSplat:-Densifying-Gaussian-Splatting-SLAM-with-Neural-Radiance-Prior>DenseSplat: Densifying Gaussian Splatting SLAM with Neural Radiance Prior</a></li>
+        <li><a href=#Imit-Diff:-Semantics-Guided-Diffusion-Transformer-with-Dual-Resolution-Fusion-for-Imitation-Learning>Imit Diff: Semantics Guided Diffusion Transformer with Dual Resolution Fusion for Imitation Learning</a></li>
       </ul>
     </li>
   </ol>
@@ -23,12 +16,12 @@
 
 ## SLAM  
 
-### [LIR-LIVO: A Lightweight,Robust LiDAR/Vision/Inertial Odometry with Illumination-Resilient Deep Features](http://arxiv.org/abs/2502.08676)  
-Shujie Zhou, Zihao Wang, Xinye Dai, Weiwei Song, Shengfeng Gu  
+### [Vision-based Geo-Localization of Future Mars Rotorcraft in Challenging Illumination Conditions](http://arxiv.org/abs/2502.09795)  
+Dario Pisanti, Robert Hewitt, Roland Brockers, Georgios Georgakis  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we propose LIR-LIVO, a lightweight and robust LiDAR-inertial-visual odometry system designed for challenging illumination and degraded environments. The proposed method leverages deep learning-based illumination-resilient features and LiDAR-Inertial-Visual Odometry (LIVO). By incorporating advanced techniques such as uniform depth distribution of features enabled by depth association with LiDAR point clouds and adaptive feature matching utilizing Superpoint and LightGlue, LIR-LIVO achieves state-of-the-art (SOTA) accuracy and robustness with low computational cost. Experiments are conducted on benchmark datasets, including NTU-VIRAL, Hilti'22, and R3LIVE-Dataset. The corresponding results demonstrate that our proposed method outperforms other SOTA methods on both standard and challenging datasets. Particularly, the proposed method demonstrates robust pose estimation under poor ambient lighting conditions in the Hilti'22 dataset. The code of this work is publicly accessible on GitHub to facilitate advancements in the robotics community.  
+    Planetary exploration using aerial assets has the potential for unprecedented scientific discoveries on Mars. While NASA's Mars helicopter Ingenuity proved flight in Martian atmosphere is possible, future Mars rotocrafts will require advanced navigation capabilities for long-range flights. One such critical capability is Map-based Localization (MbL) which registers an onboard image to a reference map during flight in order to mitigate cumulative drift from visual odometry. However, significant illumination differences between rotocraft observations and a reference map prove challenging for traditional MbL systems, restricting the operational window of the vehicle. In this work, we investigate a new MbL system and propose Geo-LoFTR, a geometry-aided deep learning model for image registration that is more robust under large illumination differences than prior models. The system is supported by a custom simulation framework that uses real orbital maps to produce large amounts of realistic images of the Martian terrain. Comprehensive evaluations show that our proposed system outperforms prior MbL efforts in terms of localization accuracy under significant lighting and scale variations. Furthermore, we demonstrate the validity of our approach across a simulated Martian day.  
   </ol>  
 </details>  
   
@@ -38,47 +31,12 @@ Shujie Zhou, Zihao Wang, Xinye Dai, Weiwei Song, Shengfeng Gu
 
 ## Visual Localization  
 
-### [ImageRAG: Dynamic Image Retrieval for Reference-Guided Image Generation](http://arxiv.org/abs/2502.09411)  
-Rotem Shalev-Arkushin, Rinon Gal, Amit H. Bermano, Ohad Fried  
+### [Imit Diff: Semantics Guided Diffusion Transformer with Dual Resolution Fusion for Imitation Learning](http://arxiv.org/abs/2502.09649)  
+Yuhang Dong, Haizhou Ge, Yupei Zeng, Jiangning Zhang, Beiwen Tian, Guanzhong Tian, Hongrui Zhu, Yufei Jia, Ruixiang Wang, Ran Yi, Guyue Zhou, Longhua Ma  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Diffusion models enable high-quality and diverse visual content synthesis. However, they struggle to generate rare or unseen concepts. To address this challenge, we explore the usage of Retrieval-Augmented Generation (RAG) with image generation models. We propose ImageRAG, a method that dynamically retrieves relevant images based on a given text prompt, and uses them as context to guide the generation process. Prior approaches that used retrieved images to improve generation, trained models specifically for retrieval-based generation. In contrast, ImageRAG leverages the capabilities of existing image conditioning models, and does not require RAG-specific training. Our approach is highly adaptable and can be applied across different model types, showing significant improvement in generating rare and fine-grained concepts using different base models.   Our project page is available at: https://rotem-shalev.github.io/ImageRAG  
-  </ol>  
-</details>  
-  
-### [SpeechCompass: Enhancing Mobile Captioning with Diarization and Directional Guidance via Multi-Microphone Localization](http://arxiv.org/abs/2502.08848)  
-Artem Dementyev, Dimitri Kavensky, Samuel J. Yang, Mathieu Parvaix, Chiong Lai, Alex Olwal  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Speech-to-text capabilities on mobile devices have proven helpful for hearing and speech accessibility, language translation, note-taking, and meeting transcripts. However, our foundational large-scale survey (n=263) shows that the inability to distinguish and indicate speaker direction makes them challenging in group conversations. SpeechCompass addresses this limitation through real-time, multi-microphone speech localization, where the direction of speech allows visual separation and guidance (e.g., arrows) in the user interface. We introduce efficient real-time audio localization algorithms and custom sound perception hardware running on a low-power microcontroller and four integrated microphones, which we characterize in technical evaluations. Informed by a large-scale survey (n=494), we conducted an in-person study of group conversations with eight frequent users of mobile speech-to-text, who provided feedback on five visualization styles. The value of diarization and visualizing localization was consistent across participants, with everyone agreeing on the value and potential of directional guidance for group conversations.  
-  </ol>  
-</details>  
-**comments**: Accepted to CHI 2025  
-  
-  
-
-
-
-## NeRF  
-
-### [Embed Any NeRF: Graph Meta-Networks for Neural Tasks on Arbitrary NeRF Architectures](http://arxiv.org/abs/2502.09623)  
-Francesco Ballerini, Pierluigi Zama Ramirez, Samuele Salti, Luigi Di Stefano  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Neural Radiance Fields (NeRFs) have emerged as a groundbreaking paradigm for representing 3D objects and scenes by encoding shape and appearance information into the weights of a neural network. Recent works have shown how such weights can be used as input to frameworks processing them to solve deep learning tasks. Yet, these frameworks can only process NeRFs with a specific, predefined architecture. In this paper, we present the first framework that can ingest NeRFs with multiple architectures and perform inference on architectures unseen at training time. We achieve this goal by training a Graph Meta-Network in a representation learning framework. Moreover, we show how a contrastive objective is conducive to obtaining an architecture-agnostic latent space. In experiments on both MLP-based and tri-planar NeRFs, our approach demonstrates robust performance in classification and retrieval tasks that either matches or exceeds that of existing frameworks constrained to single architectures, thus providing the first architecture-agnostic method to perform tasks on NeRFs by processing their weights.  
-  </ol>  
-</details>  
-**comments**: Under review  
-  
-### [DenseSplat: Densifying Gaussian Splatting SLAM with Neural Radiance Prior](http://arxiv.org/abs/2502.09111)  
-Mingrui Li, Shuhong Liu, Tianchen Deng, Hongyu Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Gaussian SLAM systems excel in real-time rendering and fine-grained reconstruction compared to NeRF-based systems. However, their reliance on extensive keyframes is impractical for deployment in real-world robotic systems, which typically operate under sparse-view conditions that can result in substantial holes in the map. To address these challenges, we introduce DenseSplat, the first SLAM system that effectively combines the advantages of NeRF and 3DGS. DenseSplat utilizes sparse keyframes and NeRF priors for initializing primitives that densely populate maps and seamlessly fill gaps. It also implements geometry-aware primitive sampling and pruning strategies to manage granularity and enhance rendering efficiency. Moreover, DenseSplat integrates loop closure and bundle adjustment, significantly enhancing frame-to-frame tracking accuracy. Extensive experiments on multiple large-scale datasets demonstrate that DenseSplat achieves superior performance in tracking and mapping compared to current state-of-the-art methods.  
+    Visuomotor imitation learning enables embodied agents to effectively acquire manipulation skills from video demonstrations and robot proprioception. However, as scene complexity and visual distractions increase, existing methods that perform well in simple scenes tend to degrade in performance. To address this challenge, we introduce Imit Diff, a semanstic guided diffusion transformer with dual resolution fusion for imitation learning. Our approach leverages prior knowledge from vision language foundation models to translate high-level semantic instruction into pixel-level visual localization. This information is explicitly integrated into a multi-scale visual enhancement framework, constructed with a dual resolution encoder. Additionally, we introduce an implementation of Consistency Policy within the diffusion transformer architecture to improve both real-time performance and motion smoothness in embodied agent control.We evaluate Imit Diff on several challenging real-world tasks. Due to its task-oriented visual localization and fine-grained scene perception, it significantly outperforms state-of-the-art methods, especially in complex scenes with visual distractions, including zero-shot experiments focused on visual distraction and category generalization. The code will be made publicly available.  
   </ol>  
 </details>  
   
