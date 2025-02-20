@@ -1,34 +1,38 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#IM360:-Textured-Mesh-Reconstruction-for-Large-scale-Indoor-Mapping-with-360$^\circ$-Cameras>IM360: Textured Mesh Reconstruction for Large-scale Indoor Mapping with 360$^\circ$ Cameras</a></li>
+        <li><a href=#Active-Illumination-for-Visual-Ego-Motion-Estimation-in-the-Dark>Active Illumination for Visual Ego-Motion Estimation in the Dark</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Re-Align:-Aligning-Vision-Language-Models-via-Retrieval-Augmented-Direct-Preference-Optimization>Re-Align: Aligning Vision Language Models via Retrieval-Augmented Direct Preference Optimization</a></li>
-        <li><a href=#IM360:-Textured-Mesh-Reconstruction-for-Large-scale-Indoor-Mapping-with-360$^\circ$-Cameras>IM360: Textured Mesh Reconstruction for Large-scale Indoor Mapping with 360$^\circ$ Cameras</a></li>
-        <li><a href=#From-Gaming-to-Research:-GTA-V-for-Synthetic-Data-Generation-for-Robotics-and-Navigations>From Gaming to Research: GTA V for Synthetic Data Generation for Robotics and Navigations</a></li>
+        <li><a href=#3D-Gaussian-Splatting-aided-Localization-for-Large-and-Complex-Indoor-Environments>3D Gaussian Splatting aided Localization for Large and Complex Indoor-Environments</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#2.5D-U-Net-with-Depth-Reduction-for-3D-CryoET-Object-Identification>2.5D U-Net with Depth Reduction for 3D CryoET Object Identification</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#ROI-NeRFs:-Hi-Fi-Visualization-of-Objects-of-Interest-within-a-Scene-by-NeRFs-Composition>ROI-NeRFs: Hi-Fi Visualization of Objects of Interest within a Scene by NeRFs Composition</a></li>
+        <li><a href=#Geometry-Aware-Diffusion-Models-for-Multiview-Scene-Inpainting>Geometry-Aware Diffusion Models for Multiview Scene Inpainting</a></li>
+        <li><a href=#GS-QA:-Comprehensive-Quality-Assessment-Benchmark-for-Gaussian-Splatting-View-Synthesis>GS-QA: Comprehensive Quality Assessment Benchmark for Gaussian Splatting View Synthesis</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [IM360: Textured Mesh Reconstruction for Large-scale Indoor Mapping with 360 $^\circ$ Cameras](http://arxiv.org/abs/2502.12545)  
-Dongki Jung, Jaehoon Choi, Yonghan Lee, Dinesh Manocha  
+### [Active Illumination for Visual Ego-Motion Estimation in the Dark](http://arxiv.org/abs/2502.13708)  
+Francesco Crocetti, Alberto Dionigi, Raffaele Brilli, Gabriele Costante, Paolo Valigi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present a novel 3D reconstruction pipeline for 360$^\circ$ cameras for 3D mapping and rendering of indoor environments. Traditional Structure-from-Motion (SfM) methods may not work well in large-scale indoor scenes due to the prevalence of textureless and repetitive regions. To overcome these challenges, our approach (IM360) leverages the wide field of view of omnidirectional images and integrates the spherical camera model into every core component of the SfM pipeline. In order to develop a comprehensive 3D reconstruction solution, we integrate a neural implicit surface reconstruction technique to generate high-quality surfaces from sparse input data. Additionally, we utilize a mesh-based neural rendering approach to refine texture maps and accurately capture view-dependent properties by combining diffuse and specular components. We evaluate our pipeline on large-scale indoor scenes from the Matterport3D and Stanford2D3D datasets. In practice, IM360 demonstrate superior performance in terms of textured mesh reconstruction over SOTA. We observe accuracy improvements in terms of camera localization and registration as well as rendering high frequency details.  
+    Visual Odometry (VO) and Visual SLAM (V-SLAM) systems often struggle in low-light and dark environments due to the lack of robust visual features. In this paper, we propose a novel active illumination framework to enhance the performance of VO and V-SLAM algorithms in these challenging conditions. The developed approach dynamically controls a moving light source to illuminate highly textured areas, thereby improving feature extraction and tracking. Specifically, a detector block, which incorporates a deep learning-based enhancing network, identifies regions with relevant features. Then, a pan-tilt controller is responsible for guiding the light beam toward these areas, so that to provide information-rich images to the ego-motion estimation algorithm. Experimental results on a real robotic platform demonstrate the effectiveness of the proposed method, showing a reduction in the pose estimation error up to 75% with respect to a traditional fixed lighting technique.  
   </ol>  
 </details>  
   
@@ -38,31 +42,27 @@ Dongki Jung, Jaehoon Choi, Yonghan Lee, Dinesh Manocha
 
 ## Visual Localization  
 
-### [Re-Align: Aligning Vision Language Models via Retrieval-Augmented Direct Preference Optimization](http://arxiv.org/abs/2502.13146)  
-Shuo Xing, Yuping Wang, Peiran Li, Ruizheng Bai, Yueqi Wang, Chengxuan Qian, Huaxiu Yao, Zhengzhong Tu  
+### [3D Gaussian Splatting aided Localization for Large and Complex Indoor-Environments](http://arxiv.org/abs/2502.13803)  
+Vincent Ress, Jonas Meyer, Wei Zhang, David Skuddis, Uwe Soergel, Norbert Haala  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The emergence of large Vision Language Models (VLMs) has broadened the scope and capabilities of single-modal Large Language Models (LLMs) by integrating visual modalities, thereby unlocking transformative cross-modal applications in a variety of real-world scenarios. Despite their impressive performance, VLMs are prone to significant hallucinations, particularly in the form of cross-modal inconsistencies. Building on the success of Reinforcement Learning from Human Feedback (RLHF) in aligning LLMs, recent advancements have focused on applying direct preference optimization (DPO) on carefully curated datasets to mitigate these issues. Yet, such approaches typically introduce preference signals in a brute-force manner, neglecting the crucial role of visual information in the alignment process. In this paper, we introduce Re-Align, a novel alignment framework that leverages image retrieval to construct a dual-preference dataset, effectively incorporating both textual and visual preference signals. We further introduce rDPO, an extension of the standard direct preference optimization that incorporates an additional visual preference objective during fine-tuning. Our experimental results demonstrate that Re-Align not only mitigates hallucinations more effectively than previous methods but also yields significant performance gains in general visual question-answering (VQA) tasks. Moreover, we show that Re-Align maintains robustness and scalability across a wide range of VLM sizes and architectures. This work represents a significant step forward in aligning multimodal LLMs, paving the way for more reliable and effective cross-modal applications. We release all the code in https://github.com/taco-group/Re-Align.  
-  </ol>  
-</details>  
-**comments**: 15 pages  
-  
-### [IM360: Textured Mesh Reconstruction for Large-scale Indoor Mapping with 360 $^\circ$ Cameras](http://arxiv.org/abs/2502.12545)  
-Dongki Jung, Jaehoon Choi, Yonghan Lee, Dinesh Manocha  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We present a novel 3D reconstruction pipeline for 360$^\circ$ cameras for 3D mapping and rendering of indoor environments. Traditional Structure-from-Motion (SfM) methods may not work well in large-scale indoor scenes due to the prevalence of textureless and repetitive regions. To overcome these challenges, our approach (IM360) leverages the wide field of view of omnidirectional images and integrates the spherical camera model into every core component of the SfM pipeline. In order to develop a comprehensive 3D reconstruction solution, we integrate a neural implicit surface reconstruction technique to generate high-quality surfaces from sparse input data. Additionally, we utilize a mesh-based neural rendering approach to refine texture maps and accurately capture view-dependent properties by combining diffuse and specular components. We evaluate our pipeline on large-scale indoor scenes from the Matterport3D and Stanford2D3D datasets. In practice, IM360 demonstrate superior performance in terms of textured mesh reconstruction over SOTA. We observe accuracy improvements in terms of camera localization and registration as well as rendering high frequency details.  
+    The field of visual localization has been researched for several decades and has meanwhile found many practical applications. Despite the strong progress in this field, there are still challenging situations in which established methods fail. We present an approach to significantly improve the accuracy and reliability of established visual localization methods by adding rendered images. In detail, we first use a modern visual SLAM approach that provides a 3D Gaussian Splatting (3DGS) based map to create reference data. We demonstrate that enriching reference data with images rendered from 3DGS at randomly sampled poses significantly improves the performance of both geometry-based visual localization and Scene Coordinate Regression (SCR) methods. Through comprehensive evaluation in a large industrial environment, we analyze the performance impact of incorporating these additional rendered views.  
   </ol>  
 </details>  
   
-### [From Gaming to Research: GTA V for Synthetic Data Generation for Robotics and Navigations](http://arxiv.org/abs/2502.12303)  
-Matteo Scucchia, Matteo Ferrara, Davide Maltoni  
+  
+
+
+
+## Keypoint Detection  
+
+### [2.5D U-Net with Depth Reduction for 3D CryoET Object Identification](http://arxiv.org/abs/2502.13484)  
+Yusuke Uchida, Takaaki Fukui  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In computer vision, the development of robust algorithms capable of generalizing effectively in real-world scenarios more and more often requires large-scale datasets collected under diverse environmental conditions. However, acquiring such datasets is time-consuming, costly, and sometimes unfeasible. To address these limitations, the use of synthetic data has gained attention as a viable alternative, allowing researchers to generate vast amounts of data while simulating various environmental contexts in a controlled setting. In this study, we investigate the use of synthetic data in robotics and navigation, specifically focusing on Simultaneous Localization and Mapping (SLAM) and Visual Place Recognition (VPR). In particular, we introduce a synthetic dataset created using the virtual environment of the video game Grand Theft Auto V (GTA V), along with an algorithm designed to generate a VPR dataset, without human supervision. Through a series of experiments centered on SLAM and VPR, we demonstrate that synthetic data derived from GTA V are qualitatively comparable to real-world data. Furthermore, these synthetic data can complement or even substitute real-world data in these applications. This study sets the stage for the creation of large-scale synthetic datasets, offering a cost-effective and scalable solution for future research and development.  
+    Cryo-electron tomography (cryoET) is a crucial technique for unveiling the structure of protein complexes. Automatically analyzing tomograms captured by cryoET is an essential step toward understanding cellular structures. In this paper, we introduce the 4th place solution from the CZII - CryoET Object Identification competition, which was organized to advance the development of automated tomogram analysis techniques. Our solution adopted a heatmap-based keypoint detection approach, utilizing an ensemble of two different types of 2.5D U-Net models with depth reduction. Despite its highly unified and simple architecture, our method achieved 4th place, demonstrating its effectiveness.  
   </ol>  
 </details>  
   
@@ -72,15 +72,24 @@ Matteo Scucchia, Matteo Ferrara, Davide Maltoni
 
 ## NeRF  
 
-### [ROI-NeRFs: Hi-Fi Visualization of Objects of Interest within a Scene by NeRFs Composition](http://arxiv.org/abs/2502.12673)  
-Quoc-Anh Bui, Gilles Rougeron, Géraldine Morin, Simone Gasparini  
+### [Geometry-Aware Diffusion Models for Multiview Scene Inpainting](http://arxiv.org/abs/2502.13335)  
+Ahmad Salimi, Tristan Aumentado-Armstrong, Marcus A. Brubaker, Konstantinos G. Derpanis  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Efficient and accurate 3D reconstruction is essential for applications in cultural heritage. This study addresses the challenge of visualizing objects within large-scale scenes at a high level of detail (LOD) using Neural Radiance Fields (NeRFs). The aim is to improve the visual fidelity of chosen objects while maintaining the efficiency of the computations by focusing on details only for relevant content. The proposed ROI-NeRFs framework divides the scene into a Scene NeRF, which represents the overall scene at moderate detail, and multiple ROI NeRFs that focus on user-defined objects of interest. An object-focused camera selection module automatically groups relevant cameras for each NeRF training during the decomposition phase. In the composition phase, a Ray-level Compositional Rendering technique combines information from the Scene NeRF and ROI NeRFs, allowing simultaneous multi-object rendering composition. Quantitative and qualitative experiments conducted on two real-world datasets, including one on a complex eighteen's century cultural heritage room, demonstrate superior performance compared to baseline methods, improving LOD for object regions, minimizing artifacts, and without significantly increasing inference time.  
+    In this paper, we focus on 3D scene inpainting, where parts of an input image set, captured from different viewpoints, are masked out. The main challenge lies in generating plausible image completions that are geometrically consistent across views. Most recent work addresses this challenge by combining generative models with a 3D radiance field to fuse information across viewpoints. However, a major drawback of these methods is that they often produce blurry images due to the fusion of inconsistent cross-view images. To avoid blurry inpaintings, we eschew the use of an explicit or implicit radiance field altogether and instead fuse cross-view information in a learned space. In particular, we introduce a geometry-aware conditional generative model, capable of inpainting multi-view consistent images based on both geometric and appearance cues from reference images. A key advantage of our approach over existing methods is its unique ability to inpaint masked scenes with a limited number of views (i.e., few-view inpainting), whereas previous methods require relatively large image sets for their 3D model fitting step. Empirically, we evaluate and compare our scene-centric inpainting method on two datasets, SPIn-NeRF and NeRFiller, which contain images captured at narrow and wide baselines, respectively, and achieve state-of-the-art 3D inpainting performance on both. Additionally, we demonstrate the efficacy of our approach in the few-view setting compared to prior methods.  
   </ol>  
 </details>  
-**comments**: 17 pages including appendix, 16 figures, 8 tables  
+**comments**: Our project page is available at https://geomvi.github.io  
+  
+### [GS-QA: Comprehensive Quality Assessment Benchmark for Gaussian Splatting View Synthesis](http://arxiv.org/abs/2502.13196)  
+Pedro Martin, António Rodrigues, João Ascenso, Maria Paula Queluz  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Gaussian Splatting (GS) offers a promising alternative to Neural Radiance Fields (NeRF) for real-time 3D scene rendering. Using a set of 3D Gaussians to represent complex geometry and appearance, GS achieves faster rendering times and reduced memory consumption compared to the neural network approach used in NeRF. However, quality assessment of GS-generated static content is not yet explored in-depth. This paper describes a subjective quality assessment study that aims to evaluate synthesized videos obtained with several static GS state-of-the-art methods. The methods were applied to diverse visual scenes, covering both 360-degree and forward-facing (FF) camera trajectories. Moreover, the performance of 18 objective quality metrics was analyzed using the scores resulting from the subjective study, providing insights into their strengths, limitations, and alignment with human perception. All videos and scores are made available providing a comprehensive database that can be used as benchmark on GS view synthesis and objective quality metrics.  
+  </ol>  
+</details>  
   
   
 
