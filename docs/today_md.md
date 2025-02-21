@@ -1,40 +1,46 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Active-Illumination-for-Visual-Ego-Motion-Estimation-in-the-Dark>Active Illumination for Visual Ego-Motion Estimation in the Dark</a></li>
+        <li><a href=#CDGS:-Confidence-Aware-Depth-Regularization-for-3D-Gaussian-Splatting>CDGS: Confidence-Aware Depth Regularization for 3D Gaussian Splatting</a></li>
+        <li><a href=#Structure-from-Sherds++:-Robust-Incremental-3D-Reassembly-of-Axially-Symmetric-Pots-from-Unordered-and-Mixed-Fragment-Collections>Structure-from-Sherds++: Robust Incremental 3D Reassembly of Axially Symmetric Pots from Unordered and Mixed Fragment Collections</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#3D-Gaussian-Splatting-aided-Localization-for-Large-and-Complex-Indoor-Environments>3D Gaussian Splatting aided Localization for Large and Complex Indoor-Environments</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#2.5D-U-Net-with-Depth-Reduction-for-3D-CryoET-Object-Identification>2.5D U-Net with Depth Reduction for 3D CryoET Object Identification</a></li>
+        <li><a href=#Bridging-Text-and-Vision:-A-Multi-View-Text-Vision-Registration-Approach-for-Cross-Modal-Place-Recognition>Bridging Text and Vision: A Multi-View Text-Vision Registration Approach for Cross-Modal Place Recognition</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Geometry-Aware-Diffusion-Models-for-Multiview-Scene-Inpainting>Geometry-Aware Diffusion Models for Multiview Scene Inpainting</a></li>
-        <li><a href=#GS-QA:-Comprehensive-Quality-Assessment-Benchmark-for-Gaussian-Splatting-View-Synthesis>GS-QA: Comprehensive Quality Assessment Benchmark for Gaussian Splatting View Synthesis</a></li>
+        <li><a href=#NeRF-3DTalker:-Neural-Radiance-Field-with-3D-Prior-Aided-Audio-Disentanglement-for-Talking-Head-Synthesis>NeRF-3DTalker: Neural Radiance Field with 3D Prior Aided Audio Disentanglement for Talking Head Synthesis</a></li>
+        <li><a href=#GlossGau:-Efficient-Inverse-Rendering-for-Glossy-Surface-with-Anisotropic-Spherical-Gaussian>GlossGau: Efficient Inverse Rendering for Glossy Surface with Anisotropic Spherical Gaussian</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [Active Illumination for Visual Ego-Motion Estimation in the Dark](http://arxiv.org/abs/2502.13708)  
-Francesco Crocetti, Alberto Dionigi, Raffaele Brilli, Gabriele Costante, Paolo Valigi  
+### [CDGS: Confidence-Aware Depth Regularization for 3D Gaussian Splatting](http://arxiv.org/abs/2502.14684)  
+Qilin Zhang, Olaf Wysocki, Steffen Urban, Boris Jutzi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual Odometry (VO) and Visual SLAM (V-SLAM) systems often struggle in low-light and dark environments due to the lack of robust visual features. In this paper, we propose a novel active illumination framework to enhance the performance of VO and V-SLAM algorithms in these challenging conditions. The developed approach dynamically controls a moving light source to illuminate highly textured areas, thereby improving feature extraction and tracking. Specifically, a detector block, which incorporates a deep learning-based enhancing network, identifies regions with relevant features. Then, a pan-tilt controller is responsible for guiding the light beam toward these areas, so that to provide information-rich images to the ego-motion estimation algorithm. Experimental results on a real robotic platform demonstrate the effectiveness of the proposed method, showing a reduction in the pose estimation error up to 75% with respect to a traditional fixed lighting technique.  
+    3D Gaussian Splatting (3DGS) has shown significant advantages in novel view synthesis (NVS), particularly in achieving high rendering speeds and high-quality results. However, its geometric accuracy in 3D reconstruction remains limited due to the lack of explicit geometric constraints during optimization. This paper introduces CDGS, a confidence-aware depth regularization approach developed to enhance 3DGS. We leverage multi-cue confidence maps of monocular depth estimation and sparse Structure-from-Motion depth to adaptively adjust depth supervision during the optimization process. Our method demonstrates improved geometric detail preservation in early training stages and achieves competitive performance in both NVS quality and geometric accuracy. Experiments on the publicly available Tanks and Temples benchmark dataset show that our method achieves more stable convergence behavior and more accurate geometric reconstruction results, with improvements of up to 2.31 dB in PSNR for NVS and consistently lower geometric errors in M3C2 distance metrics. Notably, our method reaches comparable F-scores to the original 3DGS with only 50% of the training iterations. We expect this work will facilitate the development of efficient and accurate 3D reconstruction systems for real-world applications such as digital twin creation, heritage preservation, or forestry applications.  
   </ol>  
 </details>  
+  
+### [Structure-from-Sherds++: Robust Incremental 3D Reassembly of Axially Symmetric Pots from Unordered and Mixed Fragment Collections](http://arxiv.org/abs/2502.13986)  
+Seong Jong Yoo, Sisung Liu, Muhammad Zeeshan Arshad, Jinhyeok Kim, Young Min Kim, Yiannis Aloimonos, Cornelia Fermuller, Kyungdon Joo, Jinwook Kim, Je Hyeong Hong  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Reassembling multiple axially symmetric pots from fragmentary sherds is crucial for cultural heritage preservation, yet it poses significant challenges due to thin and sharp fracture surfaces that generate numerous false positive matches and hinder large-scale puzzle solving. Existing global approaches, which optimize all potential fragment pairs simultaneously or data-driven models, are prone to local minima and face scalability issues when multiple pots are intermixed. Motivated by Structure-from-Motion (SfM) for 3D reconstruction from multiple images, we propose an efficient reassembly method for axially symmetric pots based on iterative registration of one sherd at a time, called Structure-from-Sherds++ (SfS++). Our method extends beyond simple replication of incremental SfM and leverages multi-graph beam search to explore multiple registration paths. This allows us to effectively filter out indistinguishable false matches and simultaneously reconstruct multiple pots without requiring prior information such as base or the number of mixed objects. Our approach achieves 87% reassembly accuracy on a dataset of 142 real fragments from 10 different pots, outperforming other methods in handling complex fracture patterns with mixed datasets and achieving state-of-the-art performance. Code and results can be found in our project page https://sj-yoo.info/sfs/.  
+  </ol>  
+</details>  
+**comments**: 24 pages  
   
   
 
@@ -42,29 +48,16 @@ Francesco Crocetti, Alberto Dionigi, Raffaele Brilli, Gabriele Costante, Paolo V
 
 ## Visual Localization  
 
-### [3D Gaussian Splatting aided Localization for Large and Complex Indoor-Environments](http://arxiv.org/abs/2502.13803)  
-Vincent Ress, Jonas Meyer, Wei Zhang, David Skuddis, Uwe Soergel, Norbert Haala  
+### [Bridging Text and Vision: A Multi-View Text-Vision Registration Approach for Cross-Modal Place Recognition](http://arxiv.org/abs/2502.14195)  
+[[code](https://github.com/nuozimiaowu/Text4VPR)]  
+Tianyi Shang, Zhenyu Li, Pengjie Xu, Jinwei Qiao, Gang Chen, Zihan Ruan, Weijun Hu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The field of visual localization has been researched for several decades and has meanwhile found many practical applications. Despite the strong progress in this field, there are still challenging situations in which established methods fail. We present an approach to significantly improve the accuracy and reliability of established visual localization methods by adding rendered images. In detail, we first use a modern visual SLAM approach that provides a 3D Gaussian Splatting (3DGS) based map to create reference data. We demonstrate that enriching reference data with images rendered from 3DGS at randomly sampled poses significantly improves the performance of both geometry-based visual localization and Scene Coordinate Regression (SCR) methods. Through comprehensive evaluation in a large industrial environment, we analyze the performance impact of incorporating these additional rendered views.  
+    Mobile robots necessitate advanced natural language understanding capabilities to accurately identify locations and perform tasks such as package delivery. However, traditional visual place recognition (VPR) methods rely solely on single-view visual information and cannot interpret human language descriptions. To overcome this challenge, we bridge text and vision by proposing a multiview (360{\deg} views of the surroundings) text-vision registration approach called Text4VPR for place recognition task, which is the first method that exclusively utilizes textual descriptions to match a database of images. Text4VPR employs the frozen T5 language model to extract global textual embeddings. Additionally, it utilizes the Sinkhorn algorithm with temperature coefficient to assign local tokens to their respective clusters, thereby aggregating visual descriptors from images. During the training stage, Text4VPR emphasizes the alignment between individual text-image pairs for precise textual description. In the inference stage, Text4VPR uses the Cascaded Cross-Attention Cosine Alignment (CCCA) to address the internal mismatch between text and image groups. Subsequently, Text4VPR performs precisely place match based on the descriptions of text-image groups. On Street360Loc, the first text to image VPR dataset we created, Text4VPR builds a robust baseline, achieving a leading top-1 accuracy of 57% and a leading top-10 accuracy of 92% within a 5-meter radius on the test set, which indicates that localization from textual descriptions to images is not only feasible but also holds significant potential for further advancement, as shown in Figure 1.  
   </ol>  
 </details>  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [2.5D U-Net with Depth Reduction for 3D CryoET Object Identification](http://arxiv.org/abs/2502.13484)  
-Yusuke Uchida, Takaaki Fukui  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Cryo-electron tomography (cryoET) is a crucial technique for unveiling the structure of protein complexes. Automatically analyzing tomograms captured by cryoET is an essential step toward understanding cellular structures. In this paper, we introduce the 4th place solution from the CZII - CryoET Object Identification competition, which was organized to advance the development of automated tomogram analysis techniques. Our solution adopted a heatmap-based keypoint detection approach, utilizing an ensemble of two different types of 2.5D U-Net models with depth reduction. Despite its highly unified and simple architecture, our method achieved 4th place, demonstrating its effectiveness.  
-  </ol>  
-</details>  
+**comments**: 8 pages, 4 figures, conference  
   
   
 
@@ -72,22 +65,22 @@ Yusuke Uchida, Takaaki Fukui
 
 ## NeRF  
 
-### [Geometry-Aware Diffusion Models for Multiview Scene Inpainting](http://arxiv.org/abs/2502.13335)  
-Ahmad Salimi, Tristan Aumentado-Armstrong, Marcus A. Brubaker, Konstantinos G. Derpanis  
+### [NeRF-3DTalker: Neural Radiance Field with 3D Prior Aided Audio Disentanglement for Talking Head Synthesis](http://arxiv.org/abs/2502.14178)  
+Xiaoxing Liu, Zhilei Liu, Chongke Bi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In this paper, we focus on 3D scene inpainting, where parts of an input image set, captured from different viewpoints, are masked out. The main challenge lies in generating plausible image completions that are geometrically consistent across views. Most recent work addresses this challenge by combining generative models with a 3D radiance field to fuse information across viewpoints. However, a major drawback of these methods is that they often produce blurry images due to the fusion of inconsistent cross-view images. To avoid blurry inpaintings, we eschew the use of an explicit or implicit radiance field altogether and instead fuse cross-view information in a learned space. In particular, we introduce a geometry-aware conditional generative model, capable of inpainting multi-view consistent images based on both geometric and appearance cues from reference images. A key advantage of our approach over existing methods is its unique ability to inpaint masked scenes with a limited number of views (i.e., few-view inpainting), whereas previous methods require relatively large image sets for their 3D model fitting step. Empirically, we evaluate and compare our scene-centric inpainting method on two datasets, SPIn-NeRF and NeRFiller, which contain images captured at narrow and wide baselines, respectively, and achieve state-of-the-art 3D inpainting performance on both. Additionally, we demonstrate the efficacy of our approach in the few-view setting compared to prior methods.  
+    Talking head synthesis is to synthesize a lip-synchronized talking head video using audio. Recently, the capability of NeRF to enhance the realism and texture details of synthesized talking heads has attracted the attention of researchers. However, most current NeRF methods based on audio are exclusively concerned with the rendering of frontal faces. These methods are unable to generate clear talking heads in novel views. Another prevalent challenge in current 3D talking head synthesis is the difficulty in aligning acoustic and visual spaces, which often results in suboptimal lip-syncing of the generated talking heads. To address these issues, we propose Neural Radiance Field with 3D Prior Aided Audio Disentanglement for Talking Head Synthesis (NeRF-3DTalker). Specifically, the proposed method employs 3D prior information to synthesize clear talking heads with free views. Additionally, we propose a 3D Prior Aided Audio Disentanglement module, which is designed to disentangle the audio into two distinct categories: features related to 3D awarded speech movements and features related to speaking style. Moreover, to reposition the generated frames that are distant from the speaker's motion space in the real space, we have devised a local-global Standardized Space. This method normalizes the irregular positions in the generated frames from both global and local semantic perspectives. Through comprehensive qualitative and quantitative experiments, it has been demonstrated that our NeRF-3DTalker outperforms state-of-the-art in synthesizing realistic talking head videos, exhibiting superior image quality and lip synchronization. Project page: https://nerf-3dtalker.github.io/NeRF-3Dtalker.  
   </ol>  
 </details>  
-**comments**: Our project page is available at https://geomvi.github.io  
+**comments**: Accepted by ICASSP 2025  
   
-### [GS-QA: Comprehensive Quality Assessment Benchmark for Gaussian Splatting View Synthesis](http://arxiv.org/abs/2502.13196)  
-Pedro Martin, António Rodrigues, João Ascenso, Maria Paula Queluz  
+### [GlossGau: Efficient Inverse Rendering for Glossy Surface with Anisotropic Spherical Gaussian](http://arxiv.org/abs/2502.14129)  
+Bang Du, Runfa Blark Li, Chen Du, Truong Nguyen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Gaussian Splatting (GS) offers a promising alternative to Neural Radiance Fields (NeRF) for real-time 3D scene rendering. Using a set of 3D Gaussians to represent complex geometry and appearance, GS achieves faster rendering times and reduced memory consumption compared to the neural network approach used in NeRF. However, quality assessment of GS-generated static content is not yet explored in-depth. This paper describes a subjective quality assessment study that aims to evaluate synthesized videos obtained with several static GS state-of-the-art methods. The methods were applied to diverse visual scenes, covering both 360-degree and forward-facing (FF) camera trajectories. Moreover, the performance of 18 objective quality metrics was analyzed using the scores resulting from the subjective study, providing insights into their strengths, limitations, and alignment with human perception. All videos and scores are made available providing a comprehensive database that can be used as benchmark on GS view synthesis and objective quality metrics.  
+    The reconstruction of 3D objects from calibrated photographs represents a fundamental yet intricate challenge in the domains of computer graphics and vision. Although neural reconstruction approaches based on Neural Radiance Fields (NeRF) have shown remarkable capabilities, their processing costs remain substantial. Recently, the advent of 3D Gaussian Splatting (3D-GS) largely improves the training efficiency and facilitates to generate realistic rendering in real-time. However, due to the limited ability of Spherical Harmonics (SH) to represent high-frequency information, 3D-GS falls short in reconstructing glossy objects. Researchers have turned to enhance the specular expressiveness of 3D-GS through inverse rendering. Yet these methods often struggle to maintain the training and rendering efficiency, undermining the benefits of Gaussian Splatting techniques. In this paper, we introduce GlossGau, an efficient inverse rendering framework that reconstructs scenes with glossy surfaces while maintaining training and rendering speeds comparable to vanilla 3D-GS. Specifically, we explicitly model the surface normals, Bidirectional Reflectance Distribution Function (BRDF) parameters, as well as incident lights and use Anisotropic Spherical Gaussian (ASG) to approximate the per-Gaussian Normal Distribution Function under the microfacet model. We utilize 2D Gaussian Splatting (2D-GS) as foundational primitives and apply regularization to significantly alleviate the normal estimation challenge encountered in related works. Experiments demonstrate that GlossGau achieves competitive or superior reconstruction on datasets with glossy surfaces. Compared with previous GS-based works that address the specular surface, our optimization time is considerably less.  
   </ol>  
 </details>  
   
