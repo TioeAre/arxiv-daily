@@ -3,31 +3,30 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#SLAM-in-the-Dark:-Self-Supervised-Learning-of-Pose,-Depth-and-Loop-Closure-from-Thermal-Images>SLAM in the Dark: Self-Supervised Learning of Pose, Depth and Loop-Closure from Thermal Images</a></li>
+        <li><a href=#BEV-DWPVO:-BEV-based-Differentiable-Weighted-Procrustes-for-Low-Scale-drift-Monocular-Visual-Odometry-on-Ground>BEV-DWPVO: BEV-based Differentiable Weighted Procrustes for Low Scale-drift Monocular Visual Odometry on Ground</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#On-the-Importance-of-Text-Preprocessing-for-Multimodal-Representation-Learning-and-Pathology-Report-Generation>On the Importance of Text Preprocessing for Multimodal Representation Learning and Pathology Report Generation</a></li>
-        <li><a href=#BEV-LIO(LC):-BEV-Image-Assisted-LiDAR-Inertial-Odometry-with-Loop-Closure>BEV-LIO(LC): BEV Image Assisted LiDAR-Inertial Odometry with Loop Closure</a></li>
-        <li><a href=#SLAM-in-the-Dark:-Self-Supervised-Learning-of-Pose,-Depth-and-Loop-Closure-from-Thermal-Images>SLAM in the Dark: Self-Supervised Learning of Pose, Depth and Loop-Closure from Thermal Images</a></li>
-        <li><a href=#A-Comprehensive-Survey-on-Composed-Image-Retrieval>A Comprehensive Survey on Composed Image Retrieval</a></li>
+        <li><a href=#A2-GNN:-Angle-Annular-GNN-for-Visual-Descriptor-free-Camera-Relocalization>A2-GNN: Angle-Annular GNN for Visual Descriptor-free Camera Relocalization</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Rewards-based-image-analysis-in-microscopy>Rewards-based image analysis in microscopy</a></li>
+        <li><a href=#Automatic-Temporal-Segmentation-for-Post-Stroke-Rehabilitation:-A-Keypoint-Detection-and-Temporal-Segmentation-Approach-for-Small-Datasets>Automatic Temporal Segmentation for Post-Stroke Rehabilitation: A Keypoint Detection and Temporal Segmentation Approach for Small Datasets</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#BEV-LIO(LC):-BEV-Image-Assisted-LiDAR-Inertial-Odometry-with-Loop-Closure>BEV-LIO(LC): BEV Image Assisted LiDAR-Inertial Odometry with Loop Closure</a></li>
+        <li><a href=#A2-GNN:-Angle-Annular-GNN-for-Visual-Descriptor-free-Camera-Relocalization>A2-GNN: Angle-Annular GNN for Visual Descriptor-free Camera Relocalization</a></li>
+        <li><a href=#RUBIK:-A-Structured-Benchmark-for-Image-Matching-across-Geometric-Challenges>RUBIK: A Structured Benchmark for Image Matching across Geometric Challenges</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Does-3D-Gaussian-Splatting-Need-Accurate-Volumetric-Rendering?>Does 3D Gaussian Splatting Need Accurate Volumetric Rendering?</a></li>
-        <li><a href=#The-NeRF-Signature:-Codebook-Aided-Watermarking-for-Neural-Radiance-Fields>The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields</a></li>
+        <li><a href=#Identity-preserving-Distillation-Sampling-by-Fixed-Point-Iterator>Identity-preserving Distillation Sampling by Fixed-Point Iterator</a></li>
+        <li><a href=#NeRFCom:-Feature-Transform-Coding-Meets-Neural-Radiance-Field-for-Free-View-3D-Scene-Semantic-Transmission>NeRFCom: Feature Transform Coding Meets Neural Radiance Field for Free-View 3D Scene Semantic Transmission</a></li>
+        <li><a href=#Compression-in-3D-Gaussian-Splatting:-A-Survey-of-Methods,-Trends,-and-Future-Directions>Compression in 3D Gaussian Splatting: A Survey of Methods, Trends, and Future Directions</a></li>
       </ul>
     </li>
   </ol>
@@ -35,12 +34,12 @@
 
 ## SLAM  
 
-### [SLAM in the Dark: Self-Supervised Learning of Pose, Depth and Loop-Closure from Thermal Images](http://arxiv.org/abs/2502.18932)  
-Yangfan Xu, Qu Hao, Lilian Zhang, Jun Mao, Xiaofeng He, Wenqi Wu, Changhao Chen  
+### [BEV-DWPVO: BEV-based Differentiable Weighted Procrustes for Low Scale-drift Monocular Visual Odometry on Ground](http://arxiv.org/abs/2502.20078)  
+Yufei Wei, Sha Lu, Wangtao Lu, Rong Xiong, Yue Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual SLAM is essential for mobile robots, drone navigation, and VR/AR, but traditional RGB camera systems struggle in low-light conditions, driving interest in thermal SLAM, which excels in such environments. However, thermal imaging faces challenges like low contrast, high noise, and limited large-scale annotated datasets, restricting the use of deep learning in outdoor scenarios. We present DarkSLAM, a noval deep learning-based monocular thermal SLAM system designed for large-scale localization and reconstruction in complex lighting conditions.Our approach incorporates the Efficient Channel Attention (ECA) mechanism in visual odometry and the Selective Kernel Attention (SKA) mechanism in depth estimation to enhance pose accuracy and mitigate thermal depth degradation. Additionally, the system includes thermal depth-based loop closure detection and pose optimization, ensuring robust performance in low-texture thermal scenes. Extensive outdoor experiments demonstrate that DarkSLAM significantly outperforms existing methods like SC-Sfm-Learner and Shin et al., delivering precise localization and 3D dense mapping even in challenging nighttime environments.  
+    Monocular Visual Odometry (MVO) provides a cost-effective, real-time positioning solution for autonomous vehicles. However, MVO systems face the common issue of lacking inherent scale information from monocular cameras. Traditional methods have good interpretability but can only obtain relative scale and suffer from severe scale drift in long-distance tasks. Learning-based methods under perspective view leverage large amounts of training data to acquire prior knowledge and estimate absolute scale by predicting depth values. However, their generalization ability is limited due to the need to accurately estimate the depth of each point. In contrast, we propose a novel MVO system called BEV-DWPVO. Our approach leverages the common assumption of a ground plane, using Bird's-Eye View (BEV) feature maps to represent the environment in a grid-based structure with a unified scale. This enables us to reduce the complexity of pose estimation from 6 Degrees of Freedom (DoF) to 3-DoF. Keypoints are extracted and matched within the BEV space, followed by pose estimation through a differentiable weighted Procrustes solver. The entire system is fully differentiable, supporting end-to-end training with only pose supervision and no auxiliary tasks. We validate BEV-DWPVO on the challenging long-sequence datasets NCLT, Oxford, and KITTI, achieving superior results over existing MVO methods on most evaluation metrics.  
   </ol>  
 </details>  
   
@@ -50,42 +49,15 @@ Yangfan Xu, Qu Hao, Lilian Zhang, Jun Mao, Xiaofeng He, Wenqi Wu, Changhao Chen
 
 ## Visual Localization  
 
-### [On the Importance of Text Preprocessing for Multimodal Representation Learning and Pathology Report Generation](http://arxiv.org/abs/2502.19285)  
-Ruben T. Lucassen, Tijn van de Luijtgaarden, Sander P. J. Moonemans, Gerben E. Breimer, Willeke A. M. Blokx, Mitko Veta  
+### [A2-GNN: Angle-Annular GNN for Visual Descriptor-free Camera Relocalization](http://arxiv.org/abs/2502.20036)  
+Yejun Zhang, Shuzhe Wang, Juho Kannala  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Vision-language models in pathology enable multimodal case retrieval and automated report generation. Many of the models developed so far, however, have been trained on pathology reports that include information which cannot be inferred from paired whole slide images (e.g., patient history), potentially leading to hallucinated sentences in generated reports. To this end, we investigate how the selection of information from pathology reports for vision-language modeling affects the quality of the multimodal representations and generated reports. More concretely, we compare a model trained on full reports against a model trained on preprocessed reports that only include sentences describing the cell and tissue appearances based on the H&E-stained slides. For the experiments, we built upon the BLIP-2 framework and used a cutaneous melanocytic lesion dataset of 42,433 H&E-stained whole slide images and 19,636 corresponding pathology reports. Model performance was assessed using image-to-text and text-to-image retrieval, as well as qualitative evaluation of the generated reports by an expert pathologist. Our results demonstrate that text preprocessing prevents hallucination in report generation. Despite the improvement in the quality of the generated reports, training the vision-language model on full reports showed better cross-modal retrieval performance.  
+    Visual localization involves estimating the 6-degree-of-freedom (6-DoF) camera pose within a known scene. A critical step in this process is identifying pixel-to-point correspondences between 2D query images and 3D models. Most advanced approaches currently rely on extensive visual descriptors to establish these correspondences, facing challenges in storage, privacy issues and model maintenance. Direct 2D-3D keypoint matching without visual descriptors is becoming popular as it can overcome those challenges. However, existing descriptor-free methods suffer from low accuracy or heavy computation. Addressing this gap, this paper introduces the Angle-Annular Graph Neural Network (A2-GNN), a simple approach that efficiently learns robust geometric structural representations with annular feature extraction. Specifically, this approach clusters neighbors and embeds each group's distance information and angle as supplementary information to capture local structures. Evaluation on matching and visual localization datasets demonstrates that our approach achieves state-of-the-art accuracy with low computational overhead among visual description-free methods. Our code will be released on https://github.com/YejunZhang/a2-gnn.  
   </ol>  
 </details>  
-**comments**: 11 pages, 1 figure  
-  
-### [BEV-LIO(LC): BEV Image Assisted LiDAR-Inertial Odometry with Loop Closure](http://arxiv.org/abs/2502.19242)  
-Haoxin Cai, Shenghai Yuan, Xinyi Li, Junfeng Guo, Jianqi Liu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This work introduces BEV-LIO(LC), a novel LiDAR-Inertial Odometry (LIO) framework that combines Bird's Eye View (BEV) image representations of LiDAR data with geometry-based point cloud registration and incorporates loop closure (LC) through BEV image features. By normalizing point density, we project LiDAR point clouds into BEV images, thereby enabling efficient feature extraction and matching. A lightweight convolutional neural network (CNN) based feature extractor is employed to extract distinctive local and global descriptors from the BEV images. Local descriptors are used to match BEV images with FAST keypoints for reprojection error construction, while global descriptors facilitate loop closure detection. Reprojection error minimization is then integrated with point-to-plane registration within an iterated Extended Kalman Filter (iEKF). In the back-end, global descriptors are used to create a KD-tree-indexed keyframe database for accurate loop closure detection. When a loop closure is detected, Random Sample Consensus (RANSAC) computes a coarse transform from BEV image matching, which serves as the initial estimate for Iterative Closest Point (ICP). The refined transform is subsequently incorporated into a factor graph along with odometry factors, improving the global consistency of localization. Extensive experiments conducted in various scenarios with different LiDAR types demonstrate that BEV-LIO(LC) outperforms state-of-the-art methods, achieving competitive localization accuracy. Our code, video and supplementary materials can be found at https://github.com/HxCa1/BEV-LIO-LC.  
-  </ol>  
-</details>  
-  
-### [SLAM in the Dark: Self-Supervised Learning of Pose, Depth and Loop-Closure from Thermal Images](http://arxiv.org/abs/2502.18932)  
-Yangfan Xu, Qu Hao, Lilian Zhang, Jun Mao, Xiaofeng He, Wenqi Wu, Changhao Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual SLAM is essential for mobile robots, drone navigation, and VR/AR, but traditional RGB camera systems struggle in low-light conditions, driving interest in thermal SLAM, which excels in such environments. However, thermal imaging faces challenges like low contrast, high noise, and limited large-scale annotated datasets, restricting the use of deep learning in outdoor scenarios. We present DarkSLAM, a noval deep learning-based monocular thermal SLAM system designed for large-scale localization and reconstruction in complex lighting conditions.Our approach incorporates the Efficient Channel Attention (ECA) mechanism in visual odometry and the Selective Kernel Attention (SKA) mechanism in depth estimation to enhance pose accuracy and mitigate thermal depth degradation. Additionally, the system includes thermal depth-based loop closure detection and pose optimization, ensuring robust performance in low-texture thermal scenes. Extensive outdoor experiments demonstrate that DarkSLAM significantly outperforms existing methods like SC-Sfm-Learner and Shin et al., delivering precise localization and 3D dense mapping even in challenging nighttime environments.  
-  </ol>  
-</details>  
-  
-### [A Comprehensive Survey on Composed Image Retrieval](http://arxiv.org/abs/2502.18495)  
-Xuemeng Song, Haoqiang Lin, Haokun Wen, Bohan Hou, Mingzhu Xu, Liqiang Nie  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) is an emerging yet challenging task that allows users to search for target images using a multimodal query, comprising a reference image and a modification text specifying the user's desired changes to the reference image. Given its significant academic and practical value, CIR has become a rapidly growing area of interest in the computer vision and machine learning communities, particularly with the advances in deep learning. To the best of our knowledge, there is currently no comprehensive review of CIR to provide a timely overview of this field. Therefore, we synthesize insights from over 120 publications in top conferences and journals, including ACM TOIS, SIGIR, and CVPR In particular, we systematically categorize existing supervised CIR and zero-shot CIR models using a fine-grained taxonomy. For a comprehensive review, we also briefly discuss approaches for tasks closely related to CIR, such as attribute-based CIR and dialog-based CIR. Additionally, we summarize benchmark datasets for evaluation and analyze existing supervised and zero-shot CIR methods by comparing experimental results across multiple datasets. Furthermore, we present promising future directions in this field, offering practical insights for researchers interested in further exploration.  
-  </ol>  
-</details>  
+**comments**: To be published in 2025 International Conference on 3D Vision (3DV)  
   
   
 
@@ -93,15 +65,14 @@ Xuemeng Song, Haoqiang Lin, Haokun Wen, Bohan Hou, Mingzhu Xu, Liqiang Nie
 
 ## Keypoint Detection  
 
-### [Rewards-based image analysis in microscopy](http://arxiv.org/abs/2502.18522)  
-Kamyar Barakati, Yu Liu, Utkarsh Pratiush, Boris N. Slautin, Sergei V. Kalinin  
+### [Automatic Temporal Segmentation for Post-Stroke Rehabilitation: A Keypoint Detection and Temporal Segmentation Approach for Small Datasets](http://arxiv.org/abs/2502.19766)  
+Jisoo Lee, Tamim Ahmed, Thanassis Rikakis, Pavan Turaga  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Analyzing imaging and hyperspectral data is crucial across scientific fields, including biology, medicine, chemistry, and physics. The primary goal is to transform high-resolution or high-dimensional data into an interpretable format to generate actionable insights, aiding decision-making and advancing knowledge. Currently, this task relies on complex, human-designed workflows comprising iterative steps such as denoising, spatial sampling, keypoint detection, feature generation, clustering, dimensionality reduction, and physics-based deconvolutions. The introduction of machine learning over the past decade has accelerated tasks like image segmentation and object detection via supervised learning, and dimensionality reduction via unsupervised methods. However, both classical and NN-based approaches still require human input, whether for hyperparameter tuning, data labeling, or both. The growing use of automated imaging tools, from atomically resolved imaging to biological applications, demands unsupervised methods that optimize data representation for human decision-making or autonomous experimentation. Here, we discuss advances in reward-based workflows, which adopt expert decision-making principles and demonstrate strong transfer learning across diverse tasks. We represent image analysis as a decision-making process over possible operations and identify desiderata and their mappings to classical decision-making frameworks. Reward-driven workflows enable a shift from supervised, black-box models sensitive to distribution shifts to explainable, unsupervised, and robust optimization in image analysis. They can function as wrappers over classical and DCNN-based methods, making them applicable to both unsupervised and supervised workflows (e.g., classification, regression for structure-property mapping) across imaging and hyperspectral data.  
+    Rehabilitation is essential and critical for post-stroke patients, addressing both physical and cognitive aspects. Stroke predominantly affects older adults, with 75% of cases occurring in individuals aged 65 and older, underscoring the urgent need for tailored rehabilitation strategies in aging populations. Despite the critical role therapists play in evaluating rehabilitation progress and ensuring the effectiveness of treatment, current assessment methods can often be subjective, inconsistent, and time-consuming, leading to delays in adjusting therapy protocols.   This study aims to address these challenges by providing a solution for consistent and timely analysis. Specifically, we perform temporal segmentation of video recordings to capture detailed activities during stroke patients' rehabilitation. The main application scenario motivating this study is the clinical assessment of daily tabletop object interactions, which are crucial for post-stroke physical rehabilitation.   To achieve this, we present a framework that leverages the biomechanics of movement during therapy sessions. Our solution divides the process into two main tasks: 2D keypoint detection to track patients' physical movements, and 1D time-series temporal segmentation to analyze these movements over time. This dual approach enables automated labeling with only a limited set of real-world data, addressing the challenges of variability in patient movements and limited dataset availability. By tackling these issues, our method shows strong potential for practical deployment in physical therapy settings, enhancing the speed and accuracy of rehabilitation assessments.  
   </ol>  
 </details>  
-**comments**: 38 pages, 11 figures  
   
   
 
@@ -109,12 +80,22 @@ Kamyar Barakati, Yu Liu, Utkarsh Pratiush, Boris N. Slautin, Sergei V. Kalinin
 
 ## Image Matching  
 
-### [BEV-LIO(LC): BEV Image Assisted LiDAR-Inertial Odometry with Loop Closure](http://arxiv.org/abs/2502.19242)  
-Haoxin Cai, Shenghai Yuan, Xinyi Li, Junfeng Guo, Jianqi Liu  
+### [A2-GNN: Angle-Annular GNN for Visual Descriptor-free Camera Relocalization](http://arxiv.org/abs/2502.20036)  
+Yejun Zhang, Shuzhe Wang, Juho Kannala  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work introduces BEV-LIO(LC), a novel LiDAR-Inertial Odometry (LIO) framework that combines Bird's Eye View (BEV) image representations of LiDAR data with geometry-based point cloud registration and incorporates loop closure (LC) through BEV image features. By normalizing point density, we project LiDAR point clouds into BEV images, thereby enabling efficient feature extraction and matching. A lightweight convolutional neural network (CNN) based feature extractor is employed to extract distinctive local and global descriptors from the BEV images. Local descriptors are used to match BEV images with FAST keypoints for reprojection error construction, while global descriptors facilitate loop closure detection. Reprojection error minimization is then integrated with point-to-plane registration within an iterated Extended Kalman Filter (iEKF). In the back-end, global descriptors are used to create a KD-tree-indexed keyframe database for accurate loop closure detection. When a loop closure is detected, Random Sample Consensus (RANSAC) computes a coarse transform from BEV image matching, which serves as the initial estimate for Iterative Closest Point (ICP). The refined transform is subsequently incorporated into a factor graph along with odometry factors, improving the global consistency of localization. Extensive experiments conducted in various scenarios with different LiDAR types demonstrate that BEV-LIO(LC) outperforms state-of-the-art methods, achieving competitive localization accuracy. Our code, video and supplementary materials can be found at https://github.com/HxCa1/BEV-LIO-LC.  
+    Visual localization involves estimating the 6-degree-of-freedom (6-DoF) camera pose within a known scene. A critical step in this process is identifying pixel-to-point correspondences between 2D query images and 3D models. Most advanced approaches currently rely on extensive visual descriptors to establish these correspondences, facing challenges in storage, privacy issues and model maintenance. Direct 2D-3D keypoint matching without visual descriptors is becoming popular as it can overcome those challenges. However, existing descriptor-free methods suffer from low accuracy or heavy computation. Addressing this gap, this paper introduces the Angle-Annular Graph Neural Network (A2-GNN), a simple approach that efficiently learns robust geometric structural representations with annular feature extraction. Specifically, this approach clusters neighbors and embeds each group's distance information and angle as supplementary information to capture local structures. Evaluation on matching and visual localization datasets demonstrates that our approach achieves state-of-the-art accuracy with low computational overhead among visual description-free methods. Our code will be released on https://github.com/YejunZhang/a2-gnn.  
+  </ol>  
+</details>  
+**comments**: To be published in 2025 International Conference on 3D Vision (3DV)  
+  
+### [RUBIK: A Structured Benchmark for Image Matching across Geometric Challenges](http://arxiv.org/abs/2502.19955)  
+Thibaut Loiseau, Guillaume Bourmaud  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Camera pose estimation is crucial for many computer vision applications, yet existing benchmarks offer limited insight into method limitations across different geometric challenges. We introduce RUBIK, a novel benchmark that systematically evaluates image matching methods across well-defined geometric difficulty levels. Using three complementary criteria - overlap, scale ratio, and viewpoint angle - we organize 16.5K image pairs from nuScenes into 33 difficulty levels. Our comprehensive evaluation of 14 methods reveals that while recent detector-free approaches achieve the best performance (>47% success rate), they come with significant computational overhead compared to detector-based methods (150-600ms vs. 40-70ms). Even the best performing method succeeds on only 54.8% of the pairs, highlighting substantial room for improvement, particularly in challenging scenarios combining low overlap, large scale differences, and extreme viewpoint changes. Benchmark will be made publicly available.  
   </ol>  
 </details>  
   
@@ -124,26 +105,32 @@ Haoxin Cai, Shenghai Yuan, Xinyi Li, Junfeng Guo, Jianqi Liu
 
 ## NeRF  
 
-### [Does 3D Gaussian Splatting Need Accurate Volumetric Rendering?](http://arxiv.org/abs/2502.19318)  
-Adam Celarek, George Kopanas, George Drettakis, Michael Wimmer, Bernhard Kerbl  
+### [Identity-preserving Distillation Sampling by Fixed-Point Iterator](http://arxiv.org/abs/2502.19930)  
+SeonHwa Kim, Jiwon Kim, Soobin Park, Donghoon Ahn, Jiwon Kang, Seungryong Kim, Kyong Hwan Jin, Eunju Cha  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Since its introduction, 3D Gaussian Splatting (3DGS) has become an important reference method for learning 3D representations of a captured scene, allowing real-time novel-view synthesis with high visual quality and fast training times. Neural Radiance Fields (NeRFs), which preceded 3DGS, are based on a principled ray-marching approach for volumetric rendering. In contrast, while sharing a similar image formation model with NeRF, 3DGS uses a hybrid rendering solution that builds on the strengths of volume rendering and primitive rasterization. A crucial benefit of 3DGS is its performance, achieved through a set of approximations, in many cases with respect to volumetric rendering theory. A naturally arising question is whether replacing these approximations with more principled volumetric rendering solutions can improve the quality of 3DGS. In this paper, we present an in-depth analysis of the various approximations and assumptions used by the original 3DGS solution. We demonstrate that, while more accurate volumetric rendering can help for low numbers of primitives, the power of efficient optimization and the large number of Gaussians allows 3DGS to outperform volumetric rendering despite its approximations.  
+    Score distillation sampling (SDS) demonstrates a powerful capability for text-conditioned 2D image and 3D object generation by distilling the knowledge from learned score functions. However, SDS often suffers from blurriness caused by noisy gradients. When SDS meets the image editing, such degradations can be reduced by adjusting bias shifts using reference pairs, but the de-biasing techniques are still corrupted by erroneous gradients. To this end, we introduce Identity-preserving Distillation Sampling (IDS), which compensates for the gradient leading to undesired changes in the results. Based on the analysis that these errors come from the text-conditioned scores, a new regularization technique, called fixed-point iterative regularization (FPR), is proposed to modify the score itself, driving the preservation of the identity even including poses and structures. Thanks to a self-correction by FPR, the proposed method provides clear and unambiguous representations corresponding to the given prompts in image-to-image editing and editable neural radiance field (NeRF). The structural consistency between the source and the edited data is obviously maintained compared to other state-of-the-art methods.  
   </ol>  
 </details>  
-**comments**: To be published in Eurogrpahics 2025, code:
-  https://github.com/cg-tuwien/does_3d_gaussian_splatting_need_accurate_volumetric_rendering  
   
-### [The NeRF Signature: Codebook-Aided Watermarking for Neural Radiance Fields](http://arxiv.org/abs/2502.19125)  
-Ziyuan Luo, Anderson Rocha, Boxin Shi, Qing Guo, Haoliang Li, Renjie Wan  
+### [NeRFCom: Feature Transform Coding Meets Neural Radiance Field for Free-View 3D Scene Semantic Transmission](http://arxiv.org/abs/2502.19873)  
+Weijie Yue, Zhongwei Si, Bolin Wu, Sixian Wang, Xiaoqi Qin, Kai Niu, Jincheng Dai, Ping Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have been gaining attention as a significant form of 3D content representation. With the proliferation of NeRF-based creations, the need for copyright protection has emerged as a critical issue. Although some approaches have been proposed to embed digital watermarks into NeRF, they often neglect essential model-level considerations and incur substantial time overheads, resulting in reduced imperceptibility and robustness, along with user inconvenience. In this paper, we extend the previous criteria for image watermarking to the model level and propose NeRF Signature, a novel watermarking method for NeRF. We employ a Codebook-aided Signature Embedding (CSE) that does not alter the model structure, thereby maintaining imperceptibility and enhancing robustness at the model level. Furthermore, after optimization, any desired signatures can be embedded through the CSE, and no fine-tuning is required when NeRF owners want to use new binary signatures. Then, we introduce a joint pose-patch encryption watermarking strategy to hide signatures into patches rendered from a specific viewpoint for higher robustness. In addition, we explore a Complexity-Aware Key Selection (CAKS) scheme to embed signatures in high visual complexity patches to enhance imperceptibility. The experimental results demonstrate that our method outperforms other baseline methods in terms of imperceptibility and robustness. The source code is available at: https://github.com/luo-ziyuan/NeRF_Signature.  
+    We introduce NeRFCom, a novel communication system designed for end-to-end 3D scene transmission. Compared to traditional systems relying on handcrafted NeRF semantic feature decomposition for compression and well-adaptive channel coding for transmission error correction, our NeRFCom employs a nonlinear transform and learned probabilistic models, enabling flexible variable-rate joint source-channel coding and efficient bandwidth allocation aligned with the NeRF semantic feature's different contribution to the 3D scene synthesis fidelity. Experimental results demonstrate that NeRFCom achieves free-view 3D scene efficient transmission while maintaining robustness under adverse channel conditions.  
   </ol>  
 </details>  
-**comments**: 16 pages, accepted by TPAMI  
+  
+### [Compression in 3D Gaussian Splatting: A Survey of Methods, Trends, and Future Directions](http://arxiv.org/abs/2502.19457)  
+Muhammad Salman Ali, Chaoning Zhang, Marco Cagnazzo, Giuseppe Valenzise, Enzo Tartaglione, Sung-Ho Bae  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    3D Gaussian Splatting (3DGS) has recently emerged as a pioneering approach in explicit scene rendering and computer graphics. Unlike traditional neural radiance field (NeRF) methods, which typically rely on implicit, coordinate-based models to map spatial coordinates to pixel values, 3DGS utilizes millions of learnable 3D Gaussians. Its differentiable rendering technique and inherent capability for explicit scene representation and manipulation positions 3DGS as a potential game-changer for the next generation of 3D reconstruction and representation technologies. This enables 3DGS to deliver real-time rendering speeds while offering unparalleled editability levels. However, despite its advantages, 3DGS suffers from substantial memory and storage requirements, posing challenges for deployment on resource-constrained devices. In this survey, we provide a comprehensive overview focusing on the scalability and compression of 3DGS. We begin with a detailed background overview of 3DGS, followed by a structured taxonomy of existing compression methods. Additionally, we analyze and compare current methods from the topological perspective, evaluating their strengths and limitations in terms of fidelity, compression ratios, and computational efficiency. Furthermore, we explore how advancements in efficient NeRF representations can inspire future developments in 3DGS optimization. Finally, we conclude with current research challenges and highlight key directions for future exploration.  
+  </ol>  
+</details>  
   
   
 
