@@ -3,26 +3,20 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#From-Monocular-Vision-to-Autonomous-Action:-Guiding-Tumor-Resection-via-3D-Reconstruction>From Monocular Vision to Autonomous Action: Guiding Tumor Resection via 3D Reconstruction</a></li>
+        <li><a href=#ColabSfM:-Collaborative-Structure-from-Motion-by-Point-Cloud-Registration>ColabSfM: Collaborative Structure-from-Motion by Point Cloud Registration</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#PromptHash:-Affinity-Prompted-Collaborative-Cross-Modal-Learning-for-Adaptive-Hashing-Retrieval>PromptHash: Affinity-Prompted Collaborative Cross-Modal Learning for Adaptive Hashing Retrieval</a></li>
-        <li><a href=#Automating-3D-Dataset-Generation-with-Neural-Radiance-Fields>Automating 3D Dataset Generation with Neural Radiance Fields</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Loop-Closure-from-Two-Views:-Revisiting-PGO-for-Scalable-Trajectory-Estimation-through-Monocular-Priors>Loop Closure from Two Views: Revisiting PGO for Scalable Trajectory Estimation through Monocular Priors</a></li>
-        <li><a href=#MapGlue:-Multimodal-Remote-Sensing-Image-Matching>MapGlue: Multimodal Remote Sensing Image Matching</a></li>
+        <li><a href=#Missing-Target-Relevant-Information-Prediction-with-World-Model-for-Accurate-Zero-Shot-Composed-Image-Retrieval>Missing Target-Relevant Information Prediction with World Model for Accurate Zero-Shot Composed Image Retrieval</a></li>
+        <li><a href=#Autonomous-Exploration-Based-Precise-Mapping-for-Mobile-Robots-through-Stepwise-and-Consistent-Motions>Autonomous Exploration-Based Precise Mapping for Mobile Robots through Stepwise and Consistent Motions</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Enhancing-Close-up-Novel-View-Synthesis-via-Pseudo-labeling>Enhancing Close-up Novel View Synthesis via Pseudo-labeling</a></li>
-        <li><a href=#SPNeRF:-Open-Vocabulary-3D-Neural-Scene-Segmentation-with-Superpoints>SPNeRF: Open Vocabulary 3D Neural Scene Segmentation with Superpoints</a></li>
-        <li><a href=#DiffPortrait360:-Consistent-Portrait-Diffusion-for-360-View-Synthesis>DiffPortrait360: Consistent Portrait Diffusion for 360 View Synthesis</a></li>
+        <li><a href=#FFaceNeRF:-Few-shot-Face-Editing-in-Neural-Radiance-Fields>FFaceNeRF: Few-shot Face Editing in Neural Radiance Fields</a></li>
+        <li><a href=#DroneSplat:-3D-Gaussian-Splatting-for-Robust-3D-Reconstruction-from-In-the-Wild-Drone-Imagery>DroneSplat: 3D Gaussian Splatting for Robust 3D Reconstruction from In-the-Wild Drone Imagery</a></li>
+        <li><a href=#Digitally-Prototype-Your-Eye-Tracker:-Simulating-Hardware-Performance-using-3D-Synthetic-Data>Digitally Prototype Your Eye Tracker: Simulating Hardware Performance using 3D Synthetic Data</a></li>
       </ul>
     </li>
   </ol>
@@ -30,17 +24,15 @@
 
 ## SFM  
 
-### [From Monocular Vision to Autonomous Action: Guiding Tumor Resection via 3D Reconstruction](http://arxiv.org/abs/2503.16263)  
-Ayberk Acar, Mariana Smith, Lidia Al-Zogbi, Tanner Watts, Fangjie Li, Hao Li, Nural Yilmaz, Paul Maria Scheikl, Jesse F. d'Almeida, Susheela Sharma, Lauren Branscombe, Tayfun Efe Ertop, Robert J. Webster III, Ipek Oguz, Alan Kuntz, Axel Krieger, Jie Ying Wu  
+### [ColabSfM: Collaborative Structure-from-Motion by Point Cloud Registration](http://arxiv.org/abs/2503.17093)  
+Johan Edstedt, André Mateus, Alberto Jaenal  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Surgical automation requires precise guidance and understanding of the scene. Current methods in the literature rely on bulky depth cameras to create maps of the anatomy, however this does not translate well to space-limited clinical applications. Monocular cameras are small and allow minimally invasive surgeries in tight spaces but additional processing is required to generate 3D scene understanding. We propose a 3D mapping pipeline that uses only RGB images to create segmented point clouds of the target anatomy. To ensure the most precise reconstruction, we compare different structure from motion algorithms' performance on mapping the central airway obstructions, and test the pipeline on a downstream task of tumor resection. In several metrics, including post-procedure tissue model evaluation, our pipeline performs comparably to RGB-D cameras and, in some cases, even surpasses their performance. These promising results demonstrate that automation guidance can be achieved in minimally invasive procedures with monocular cameras. This study is a step toward the complete autonomy of surgical robots.  
+    Structure-from-Motion (SfM) is the task of estimating 3D structure and camera poses from images. We define Collaborative SfM (ColabSfM) as sharing distributed SfM reconstructions. Sharing maps requires estimating a joint reference frame, which is typically referred to as registration. However, there is a lack of scalable methods and training datasets for registering SfM reconstructions. In this paper, we tackle this challenge by proposing the scalable task of point cloud registration for SfM reconstructions. We find that current registration methods cannot register SfM point clouds when trained on existing datasets. To this end, we propose a SfM registration dataset generation pipeline, leveraging partial reconstructions from synthetically generated camera trajectories for each scene. Finally, we propose a simple but impactful neural refiner on top of the SotA registration method RoITr that yields significant improvements, which we call RefineRoITr. Our extensive experimental evaluation shows that our proposed pipeline and model enables ColabSfM. Code is available at https://github.com/EricssonResearch/ColabSfM  
   </ol>  
 </details>  
-**comments**: 7 Pages, 8 Figures, 1 Table. This work has been submitted IEEE/RSJ
-  International Conference on Intelligent Robots and Systems (IROS) for
-  possible publication  
+**comments**: CVPR 2025  
   
   
 
@@ -48,53 +40,26 @@ Ayberk Acar, Mariana Smith, Lidia Al-Zogbi, Tanner Watts, Fangjie Li, Hao Li, Nu
 
 ## Visual Localization  
 
-### [PromptHash: Affinity-Prompted Collaborative Cross-Modal Learning for Adaptive Hashing Retrieval](http://arxiv.org/abs/2503.16064)  
-[[code](https://github.com/ShiShuMo/PromptHash)]  
-Qiang Zou, Shuli Cheng, Jiayi Chen  
+### [Missing Target-Relevant Information Prediction with World Model for Accurate Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2503.17109)  
+Yuanmin Tang, Jing Yu, Keke Gai, Jiamin Zhuang, Gang Xiong, Gaopeng Gou, Qi Wu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Cross-modal hashing is a promising approach for efficient data retrieval and storage optimization. However, contemporary methods exhibit significant limitations in semantic preservation, contextual integrity, and information redundancy, which constrains retrieval efficacy. We present PromptHash, an innovative framework leveraging affinity prompt-aware collaborative learning for adaptive cross-modal hashing. We propose an end-to-end framework for affinity-prompted collaborative hashing, with the following fundamental technical contributions: (i) a text affinity prompt learning mechanism that preserves contextual information while maintaining parameter efficiency, (ii) an adaptive gated selection fusion architecture that synthesizes State Space Model with Transformer network for precise cross-modal feature integration, and (iii) a prompt affinity alignment strategy that bridges modal heterogeneity through hierarchical contrastive learning. To the best of our knowledge, this study presents the first investigation into affinity prompt awareness within collaborative cross-modal adaptive hash learning, establishing a paradigm for enhanced semantic consistency across modalities. Through comprehensive evaluation on three benchmark multi-label datasets, PromptHash demonstrates substantial performance improvements over existing approaches. Notably, on the NUS-WIDE dataset, our method achieves significant gains of 18.22% and 18.65% in image-to-text and text-to-image retrieval tasks, respectively. The code is publicly available at https://github.com/ShiShuMo/PromptHash.  
+    Zero-Shot Composed Image Retrieval (ZS-CIR) involves diverse tasks with a broad range of visual content manipulation intent across domain, scene, object, and attribute. The key challenge for ZS-CIR tasks is to modify a reference image according to manipulation text to accurately retrieve a target image, especially when the reference image is missing essential target content. In this paper, we propose a novel prediction-based mapping network, named PrediCIR, to adaptively predict the missing target visual content in reference images in the latent space before mapping for accurate ZS-CIR. Specifically, a world view generation module first constructs a source view by omitting certain visual content of a target view, coupled with an action that includes the manipulation intent derived from existing image-caption pairs. Then, a target content prediction module trains a world model as a predictor to adaptively predict the missing visual information guided by user intention in manipulating text at the latent space. The two modules map an image with the predicted relevant information to a pseudo-word token without extra supervision. Our model shows strong generalization ability on six ZS-CIR tasks. It obtains consistent and significant performance boosts ranging from 1.73% to 4.45% over the best methods and achieves new state-of-the-art results on ZS-CIR. Our code is available at https://github.com/Pter61/predicir.  
   </ol>  
 </details>  
-**comments**: Accepted by CVPR2025  
+**comments**: This work has been accepted to CVPR 2025  
   
-### [Automating 3D Dataset Generation with Neural Radiance Fields](http://arxiv.org/abs/2503.15997)  
-P. Schulz, T. Hempel, A. Al-Hamadi  
+### [Autonomous Exploration-Based Precise Mapping for Mobile Robots through Stepwise and Consistent Motions](http://arxiv.org/abs/2503.17005)  
+Muhua Zhang, Lei Ma, Ying Wu, Kai Shen, Yongkui Sun, Henry Leung  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D detection is a critical task to understand spatial characteristics of the environment and is used in a variety of applications including robotics, augmented reality, and image retrieval. Training performant detection models require diverse, precisely annotated, and large scale datasets that involve complex and expensive creation processes. Hence, there are only few public 3D datasets that are additionally limited in their range of classes. In this work, we propose a pipeline for automatic generation of 3D datasets for arbitrary objects. By utilizing the universal 3D representation and rendering capabilities of Radiance Fields, our pipeline generates high quality 3D models for arbitrary objects. These 3D models serve as input for a synthetic dataset generator. Our pipeline is fast, easy to use and has a high degree of automation. Our experiments demonstrate, that 3D pose estimation networks, trained with our generated datasets, archive strong performance in typical application scenarios.  
+    This paper presents an autonomous exploration framework. It is designed for indoor ground mobile robots that utilize laser Simultaneous Localization and Mapping (SLAM), ensuring process completeness and precise mapping results. For frontier search, the local-global sampling architecture based on multiple Rapidly Exploring Random Trees (RRTs) is employed. Traversability checks during RRT expansion and global RRT pruning upon map updates eliminate unreachable frontiers, reducing potential collisions and deadlocks. Adaptive sampling density adjustments, informed by obstacle distribution, enhance exploration coverage potential. For frontier point navigation, a stepwise consistent motion strategy is adopted, wherein the robot strictly drives straight on approximately equidistant line segments in the polyline path and rotates in place at segment junctions. This simplified, decoupled motion pattern improves scan-matching stability and mitigates map drift. For process control, the framework serializes frontier point selection and navigation, avoiding oscillation caused by frequent goal changes in conventional parallelized processes. The waypoint retracing mechanism is introduced to generate repeated observations, triggering loop closure detection and backend optimization in graph-based SLAM, thereby improving map consistency and precision. Experiments in both simulation and real-world scenarios validate the effectiveness of the framework. It achieves improved mapping coverage and precision in more challenging environments compared to baseline 2D exploration algorithms. It also shows robustness in supporting resource-constrained robot platforms and maintaining mapping consistency across various LiDAR field-of-view (FoV) configurations.  
   </ol>  
 </details>  
-**comments**: Accepted and presented at ROBOVIS 2025 (5th International Conference
-  on Robotics, Computer Vision and Intelligent Systems)  
-  
-  
-
-
-
-## Image Matching  
-
-### [Loop Closure from Two Views: Revisiting PGO for Scalable Trajectory Estimation through Monocular Priors](http://arxiv.org/abs/2503.16275)  
-Tian Yi Lim, Boyang Sun, Marc Pollefeys, Hermann Blum  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    (Visual) Simultaneous Localization and Mapping (SLAM) remains a fundamental challenge in enabling autonomous systems to navigate and understand large-scale environments. Traditional SLAM approaches struggle to balance efficiency and accuracy, particularly in large-scale settings where extensive computational resources are required for scene reconstruction and Bundle Adjustment (BA). However, this scene reconstruction, in the form of sparse pointclouds of visual landmarks, is often only used within the SLAM system because navigation and planning methods require different map representations. In this work, we therefore investigate a more scalable Visual SLAM (VSLAM) approach without reconstruction, mainly based on approaches for two-view loop closures. By restricting the map to a sparse keyframed pose graph without dense geometry representations, our '2GO' system achieves efficient optimization with competitive absolute trajectory accuracy. In particular, we find that recent advancements in image matching and monocular depth priors enable very accurate trajectory optimization from two-view edges. We conduct extensive experiments on diverse datasets, including large-scale scenarios, and provide a detailed analysis of the trade-offs between runtime, accuracy, and map size. Our results demonstrate that this streamlined approach supports real-time performance, scales well in map size and trajectory duration, and effectively broadens the capabilities of VSLAM for long-duration deployments to large environments.  
-  </ol>  
-</details>  
-  
-### [MapGlue: Multimodal Remote Sensing Image Matching](http://arxiv.org/abs/2503.16185)  
-Peihao Wu, Yongxiang Yao, Wenfei Zhang, Dong Wei, Yi Wan, Yansheng Li, Yongjun Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Multimodal remote sensing image (MRSI) matching is pivotal for cross-modal fusion, localization, and object detection, but it faces severe challenges due to geometric, radiometric, and viewpoint discrepancies across imaging modalities. Existing unimodal datasets lack scale and diversity, limiting deep learning solutions. This paper proposes MapGlue, a universal MRSI matching framework, and MapData, a large-scale multimodal dataset addressing these gaps. Our contributions are twofold. MapData, a globally diverse dataset spanning 233 sampling points, offers original images (7,000x5,000 to 20,000x15,000 pixels). After rigorous cleaning, it provides 121,781 aligned electronic map-visible image pairs (512x512 pixels) with hybrid manual-automated ground truth, addressing the scarcity of scalable multimodal benchmarks. MapGlue integrates semantic context with a dual graph-guided mechanism to extract cross-modal invariant features. This structure enables global-to-local interaction, enhancing descriptor robustness against modality-specific distortions. Extensive evaluations on MapData and five public datasets demonstrate MapGlue's superiority in matching accuracy under complex conditions, outperforming state-of-the-art methods. Notably, MapGlue generalizes effectively to unseen modalities without retraining, highlighting its adaptability. This work addresses longstanding challenges in MRSI matching by combining scalable dataset construction with a robust, semantics-driven framework. Furthermore, MapGlue shows strong generalization capabilities on other modality matching tasks for which it was not specifically trained. The dataset and code are available at https://github.com/PeihaoWu/MapGlue.  
-  </ol>  
-</details>  
-**comments**: The dataset and code are available at
-  https://github.com/PeihaoWu/MapGlue  
+**comments**: 8 pages, 11 figures. This work has been submitted to the IEEE for
+  possible publication  
   
   
 
@@ -102,37 +67,35 @@ Peihao Wu, Yongxiang Yao, Wenfei Zhang, Dong Wei, Yi Wan, Yansheng Li, Yongjun Z
 
 ## NeRF  
 
-### [Enhancing Close-up Novel View Synthesis via Pseudo-labeling](http://arxiv.org/abs/2503.15908)  
-Jiatong Xia, Libo Sun, Lingqiao Liu  
+### [FFaceNeRF: Few-shot Face Editing in Neural Radiance Fields](http://arxiv.org/abs/2503.17095)  
+[[code](https://github.com/kwanyun/FFaceNeRF)]  
+Kwan Yun, Chaelin Kim, Hangyeul Shin, Junyong Noh  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent methods, such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS), have demonstrated remarkable capabilities in novel view synthesis. However, despite their success in producing high-quality images for viewpoints similar to those seen during training, they struggle when generating detailed images from viewpoints that significantly deviate from the training set, particularly in close-up views. The primary challenge stems from the lack of specific training data for close-up views, leading to the inability of current methods to render these views accurately. To address this issue, we introduce a novel pseudo-label-based learning strategy. This approach leverages pseudo-labels derived from existing training data to provide targeted supervision across a wide range of close-up viewpoints. Recognizing the absence of benchmarks for this specific challenge, we also present a new dataset designed to assess the effectiveness of both current and future methods in this area. Our extensive experiments demonstrate the efficacy of our approach.  
+    Recent 3D face editing methods using masks have produced high-quality edited images by leveraging Neural Radiance Fields (NeRF). Despite their impressive performance, existing methods often provide limited user control due to the use of pre-trained segmentation masks. To utilize masks with a desired layout, an extensive training dataset is required, which is challenging to gather. We present FFaceNeRF, a NeRF-based face editing technique that can overcome the challenge of limited user control due to the use of fixed mask layouts. Our method employs a geometry adapter with feature injection, allowing for effective manipulation of geometry attributes. Additionally, we adopt latent mixing for tri-plane augmentation, which enables training with a few samples. This facilitates rapid model adaptation to desired mask layouts, crucial for applications in fields like personalized medical imaging or creative face editing. Our comparative evaluations demonstrate that FFaceNeRF surpasses existing mask based face editing methods in terms of flexibility, control, and generated image quality, paving the way for future advancements in customized and high-fidelity 3D face editing. The code is available on the {\href{https://kwanyun.github.io/FFaceNeRF_page/}{project-page}}.  
   </ol>  
 </details>  
-**comments**: Accepted by AAAI 2025  
+**comments**: CVPR2025, 11 pages, 14 figures  
   
-### [SPNeRF: Open Vocabulary 3D Neural Scene Segmentation with Superpoints](http://arxiv.org/abs/2503.15712)  
-Weiwen Hu, Niccolò Parodi, Marcus Zepp, Ingo Feldmann, Oliver Schreer, Peter Eisert  
+### [DroneSplat: 3D Gaussian Splatting for Robust 3D Reconstruction from In-the-Wild Drone Imagery](http://arxiv.org/abs/2503.16964)  
+Jiadong Tang, Yu Gao, Dianyi Yang, Liqi Yan, Yufeng Yue, Yi Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Open-vocabulary segmentation, powered by large visual-language models like CLIP, has expanded 2D segmentation capabilities beyond fixed classes predefined by the dataset, enabling zero-shot understanding across diverse scenes. Extending these capabilities to 3D segmentation introduces challenges, as CLIP's image-based embeddings often lack the geometric detail necessary for 3D scene segmentation. Recent methods tend to address this by introducing additional segmentation models or replacing CLIP with variations trained on segmentation data, which lead to redundancy or loss on CLIP's general language capabilities. To overcome this limitation, we introduce SPNeRF, a NeRF based zero-shot 3D segmentation approach that leverages geometric priors. We integrate geometric primitives derived from the 3D scene into NeRF training to produce primitive-wise CLIP features, avoiding the ambiguity of point-wise features. Additionally, we propose a primitive-based merging mechanism enhanced with affinity scores. Without relying on additional segmentation models, our method further explores CLIP's capability for 3D segmentation and achieves notable improvements over original LERF.  
+    Drones have become essential tools for reconstructing wild scenes due to their outstanding maneuverability. Recent advances in radiance field methods have achieved remarkable rendering quality, providing a new avenue for 3D reconstruction from drone imagery. However, dynamic distractors in wild environments challenge the static scene assumption in radiance fields, while limited view constraints hinder the accurate capture of underlying scene geometry. To address these challenges, we introduce DroneSplat, a novel framework designed for robust 3D reconstruction from in-the-wild drone imagery. Our method adaptively adjusts masking thresholds by integrating local-global segmentation heuristics with statistical approaches, enabling precise identification and elimination of dynamic distractors in static scenes. We enhance 3D Gaussian Splatting with multi-view stereo predictions and a voxel-guided optimization strategy, supporting high-quality rendering under limited view constraints. For comprehensive evaluation, we provide a drone-captured 3D reconstruction dataset encompassing both dynamic and static scenes. Extensive experiments demonstrate that DroneSplat outperforms both 3DGS and NeRF baselines in handling in-the-wild drone imagery.  
   </ol>  
 </details>  
-**comments**: In Proceedings of the 20th International Joint Conference on Computer
-  Vision, Imaging and Computer Graphics Theory and Applications (2025)  
   
-### [DiffPortrait360: Consistent Portrait Diffusion for 360 View Synthesis](http://arxiv.org/abs/2503.15667)  
-Yuming Gu, Phong Tran, Yujian Zheng, Hongyi Xu, Heyuan Li, Adilbek Karmanov, Hao Li  
+### [Digitally Prototype Your Eye Tracker: Simulating Hardware Performance using 3D Synthetic Data](http://arxiv.org/abs/2503.16742)  
+Esther Y. H. Lin, Yimin Ding, Jogendra Kundu, Yatong An, Mohamed T. El-Haddad, Alexander Fix  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Generating high-quality 360-degree views of human heads from single-view images is essential for enabling accessible immersive telepresence applications and scalable personalized content creation. While cutting-edge methods for full head generation are limited to modeling realistic human heads, the latest diffusion-based approaches for style-omniscient head synthesis can produce only frontal views and struggle with view consistency, preventing their conversion into true 3D models for rendering from arbitrary angles. We introduce a novel approach that generates fully consistent 360-degree head views, accommodating human, stylized, and anthropomorphic forms, including accessories like glasses and hats. Our method builds on the DiffPortrait3D framework, incorporating a custom ControlNet for back-of-head detail generation and a dual appearance module to ensure global front-back consistency. By training on continuous view sequences and integrating a back reference image, our approach achieves robust, locally continuous view synthesis. Our model can be used to produce high-quality neural radiance fields (NeRFs) for real-time, free-viewpoint rendering, outperforming state-of-the-art methods in object synthesis and 360-degree head generation for very challenging input portraits.  
+    Eye tracking (ET) is a key enabler for Augmented and Virtual Reality (AR/VR). Prototyping new ET hardware requires assessing the impact of hardware choices on eye tracking performance. This task is compounded by the high cost of obtaining data from sufficiently many variations of real hardware, especially for machine learning, which requires large training datasets. We propose a method for end-to-end evaluation of how hardware changes impact machine learning-based ET performance using only synthetic data. We utilize a dataset of real 3D eyes, reconstructed from light dome data using neural radiance fields (NeRF), to synthesize captured eyes from novel viewpoints and camera parameters. Using this framework, we demonstrate that we can predict the relative performance across various hardware configurations, accounting for variations in sensor noise, illumination brightness, and optical blur. We also compare our simulator with the publicly available eye tracking dataset from the Project Aria glasses, demonstrating a strong correlation with real-world performance. Finally, we present a first-of-its-kind analysis in which we vary ET camera positions, evaluating ET performance ranging from on-axis direct views of the eye to peripheral views on the frame. Such an analysis would have previously required manufacturing physical devices to capture evaluation data. In short, our method enables faster prototyping of ET hardware.  
   </ol>  
 </details>  
-**comments**: Page:https://freedomgu.github.io/DiffPortrait360
-  Code:https://github.com/FreedomGu/DiffPortrait360/  
+**comments**: 14 pages, 12 figures  
   
   
 
