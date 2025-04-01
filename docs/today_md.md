@@ -1,45 +1,161 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#Incorporating-GNSS-Information-with-LIDAR-Inertial-Odometry-for-Accurate-Land-Vehicle-Localization>Incorporating GNSS Information with LIDAR-Inertial Odometry for Accurate Land-Vehicle Localization</a></li>
+        <li><a href=#Towards-Mobile-Sensing-with-Event-Cameras-on-High-mobility-Resource-constrained-Devices:-A-Survey>Towards Mobile Sensing with Event Cameras on High-mobility Resource-constrained Devices: A Survey</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#CIBR:-Cross-modal-Information-Bottleneck-Regularization-for-Robust-CLIP-Generalization>CIBR: Cross-modal Information Bottleneck Regularization for Robust CLIP Generalization</a></li>
+        <li><a href=#LiM-Loc:-Visual-Localization-with-Dense-and-Accurate-3D-Reference-Maps-Directly-Corresponding-2D-Keypoints-to-3D-LiDAR-Point-Clouds>LiM-Loc: Visual Localization with Dense and Accurate 3D Reference Maps Directly Corresponding 2D Keypoints to 3D LiDAR Point Clouds</a></li>
+        <li><a href=#Multiview-Image-Based-Localization>Multiview Image-Based Localization</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Deep-Visual-Servoing-of-an-Aerial-Robot-Using-Keypoint-Feature-Extraction>Deep Visual Servoing of an Aerial Robot Using Keypoint Feature Extraction</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#CoMatch:-Dynamic-Covisibility-Aware-Transformer-for-Bilateral-Subpixel-Level-Semi-Dense-Image-Matching>CoMatch: Dynamic Covisibility-Aware Transformer for Bilateral Subpixel-Level Semi-Dense Image Matching</a></li>
+        <li><a href=#Pairwise-Matching-of-Intermediate-Representations-for-Fine-grained-Explainability>Pairwise Matching of Intermediate Representations for Fine-grained Explainability</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#ABC-GS:-Alignment-Based-Controllable-Style-Transfer-for-3D-Gaussian-Splatting>ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting</a></li>
-        <li><a href=#NeRF-based-Point-Cloud-Reconstruction-using-a-Stationary-Camera-for-Agricultural-Applications>NeRF-based Point Cloud Reconstruction using a Stationary Camera for Agricultural Applications</a></li>
-        <li><a href=#Refined-Geometry-guided-Head-Avatar-Reconstruction-from-Monocular-RGB-Video>Refined Geometry-guided Head Avatar Reconstruction from Monocular RGB Video</a></li>
+        <li><a href=#ERUPT:-Efficient-Rendering-with-Unposed-Patch-Transformer>ERUPT: Efficient Rendering with Unposed Patch Transformer</a></li>
+        <li><a href=#NeuralGS:-Bridging-Neural-Fields-and-3D-Gaussian-Splatting-for-Compact-3D-Representations>NeuralGS: Bridging Neural Fields and 3D Gaussian Splatting for Compact 3D Representations</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [Incorporating GNSS Information with LIDAR-Inertial Odometry for Accurate Land-Vehicle Localization](http://arxiv.org/abs/2503.23199)  
+Jintao Cheng, Bohuan Xue, Shiyang Chen, Qiuchi Xiang, Xiaoyu Tang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Currently, visual odometry and LIDAR odometry are performing well in pose estimation in some typical environments, but they still cannot recover the localization state at high speed or reduce accumulated drifts. In order to solve these problems, we propose a novel LIDAR-based localization framework, which achieves high accuracy and provides robust localization in 3D pointcloud maps with information of multi-sensors. The system integrates global information with LIDAR-based odometry to optimize the localization state. To improve robustness and enable fast resumption of localization, this paper uses offline pointcloud maps for prior knowledge and presents a novel registration method to speed up the convergence rate. The algorithm is tested on various maps of different data sets and has higher robustness and accuracy than other localization algorithms.  
+  </ol>  
+</details>  
+  
+### [Towards Mobile Sensing with Event Cameras on High-mobility Resource-constrained Devices: A Survey](http://arxiv.org/abs/2503.22943)  
+Haoyang Wang, Ruishan Guo, Pengtao Ma, Ciyu Ruan, Xinyu Luo, Wenhua Ding, Tianyang Zhong, Jingao Xu, Yunhao Liu, Xinlei Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    With the increasing complexity of mobile device applications, these devices are evolving toward high mobility. This shift imposes new demands on mobile sensing, particularly in terms of achieving high accuracy and low latency. Event-based vision has emerged as a disruptive paradigm, offering high temporal resolution, low latency, and energy efficiency, making it well-suited for high-accuracy and low-latency sensing tasks on high-mobility platforms. However, the presence of substantial noisy events, the lack of inherent semantic information, and the large data volume pose significant challenges for event-based data processing on resource-constrained mobile devices. This paper surveys the literature over the period 2014-2024, provides a comprehensive overview of event-based mobile sensing systems, covering fundamental principles, event abstraction methods, algorithmic advancements, hardware and software acceleration strategies. We also discuss key applications of event cameras in mobile sensing, including visual odometry, object tracking, optical flow estimation, and 3D reconstruction, while highlighting the challenges associated with event data processing, sensor fusion, and real-time deployment. Furthermore, we outline future research directions, such as improving event camera hardware with advanced optics, leveraging neuromorphic computing for efficient processing, and integrating bio-inspired algorithms to enhance perception. To support ongoing research, we provide an open-source \textit{Online Sheet} with curated resources and recent developments. We hope this survey serves as a valuable reference, facilitating the adoption of event-based vision across diverse applications.  
+  </ol>  
+</details>  
+**comments**: 32 pages, 9 figures  
+  
+  
+
+
+
+## Visual Localization  
+
+### [CIBR: Cross-modal Information Bottleneck Regularization for Robust CLIP Generalization](http://arxiv.org/abs/2503.24182)  
+Yingrui Ji, Xi Xiao, Gaofei Chen, Hao Xu, Chenrui Ma, Lijing Zhu, Aokun Liang, Jiansheng Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Contrastive Language-Image Pretraining (CLIP) has achieved remarkable success in cross-modal tasks such as zero-shot image classification and text-image retrieval by effectively aligning visual and textual representations. However, the theoretical foundations underlying CLIP's strong generalization remain unclear. In this work, we address this gap by proposing the Cross-modal Information Bottleneck (CIB) framework. CIB offers a principled interpretation of CLIP's contrastive learning objective as an implicit Information Bottleneck optimization. Under this view, the model maximizes shared cross-modal information while discarding modality-specific redundancies, thereby preserving essential semantic alignment across modalities. Building on this insight, we introduce a Cross-modal Information Bottleneck Regularization (CIBR) method that explicitly enforces these IB principles during training. CIBR introduces a penalty term to discourage modality-specific redundancy, thereby enhancing semantic alignment between image and text features. We validate CIBR on extensive vision-language benchmarks, including zero-shot classification across seven diverse image datasets and text-image retrieval on MSCOCO and Flickr30K. The results show consistent performance gains over standard CLIP. These findings provide the first theoretical understanding of CLIP's generalization through the IB lens. They also demonstrate practical improvements, offering guidance for future cross-modal representation learning.  
+  </ol>  
+</details>  
+  
+### [LiM-Loc: Visual Localization with Dense and Accurate 3D Reference Maps Directly Corresponding 2D Keypoints to 3D LiDAR Point Clouds](http://arxiv.org/abs/2503.23664)  
+Masahiko Tsuji, Hitoshi Niigaki, Ryuichi Tanida  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Visual localization is to estimate the 6-DOF camera pose of a query image in a 3D reference map. We extract keypoints from the reference image and generate a 3D reference map with 3D reconstruction of the keypoints in advance. We emphasize that the more keypoints in the 3D reference map and the smaller the error of the 3D positions of the keypoints, the higher the accuracy of the camera pose estimation. However, previous image-only methods require a huge number of images, and it is difficult to 3D-reconstruct keypoints without error due to inevitable mismatches and failures in feature matching. As a result, the 3D reference map is sparse and inaccurate. In contrast, accurate 3D reference maps can be generated by combining images and 3D sensors. Recently, 3D-LiDAR has been widely used around the world. LiDAR, which measures a large space with high density, has become inexpensive. In addition, accurately calibrated cameras are also widely used, so images that record the external parameters of the camera without errors can be easily obtained. In this paper, we propose a method to directly assign 3D LiDAR point clouds to keypoints to generate dense and accurate 3D reference maps. The proposed method avoids feature matching and achieves accurate 3D reconstruction for almost all keypoints. To estimate camera pose over a wide area, we use the wide-area LiDAR point cloud to remove points that are not visible to the camera and reduce 2D-3D correspondence errors. Using indoor and outdoor datasets, we apply the proposed method to several state-of-the-art local features and confirm that it improves the accuracy of camera pose estimation.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 6 figures  
+  
+### [Multiview Image-Based Localization](http://arxiv.org/abs/2503.23577)  
+Cameron Fiore, Hongyi Fan, Benjamin Kimia  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The image retrieval (IR) approach to image localization has distinct advantages to the 3D and the deep learning (DNN) approaches: it is seen-agnostic, simpler to implement and use, has no privacy issues, and is computationally efficient. The main drawback of this approach is relatively poor localization in both position and orientation of the query camera when compared to the competing approaches. This paper represents a hybrid approach that stores only image features in the database like some IR methods, but relies on a latent 3D reconstruction, like 3D methods but without retaining a 3D scene reconstruction. The approach is based on two ideas: {\em (i)} a novel proposal where query camera center estimation relies only on relative translation estimates but not relative rotation estimates through a decoupling of the two, and {\em (ii)} a shift from computing optimal pose from estimated relative pose to computing optimal pose from multiview correspondences, thus cutting out the ``middle-man''. Our approach shows improved performance on the 7-Scenes and Cambridge Landmarks datasets while also improving on timing and memory footprint as compared to state-of-the-art.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Deep Visual Servoing of an Aerial Robot Using Keypoint Feature Extraction](http://arxiv.org/abs/2503.23171)  
+Shayan Sepahvand, Niloufar Amiri, Farrokh Janabi-Sharifi  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The problem of image-based visual servoing (IBVS) of an aerial robot using deep-learning-based keypoint detection is addressed in this article. A monocular RGB camera mounted on the platform is utilized to collect the visual data. A convolutional neural network (CNN) is then employed to extract the features serving as the visual data for the servoing task. This paper contributes to the field by circumventing not only the challenge stemming from the need for man-made marker detection in conventional visual servoing techniques, but also enhancing the robustness against undesirable factors including occlusion, varying illumination, clutter, and background changes, thereby broadening the applicability of perception-guided motion control tasks in aerial robots. Additionally, extensive physics-based ROS Gazebo simulations are conducted to assess the effectiveness of this method, in contrast to many existing studies that rely solely on physics-less simulations. A demonstration video is available at https://youtu.be/Dd2Her8Ly-E.  
+  </ol>  
+</details>  
+**comments**: 7 Pages, Accepted for presentation in the 2025 International
+  Conference on Unmanned Aircraft Systems (ICUAS 2025)  
+  
+  
+
+
+
+## Image Matching  
+
+### [CoMatch: Dynamic Covisibility-Aware Transformer for Bilateral Subpixel-Level Semi-Dense Image Matching](http://arxiv.org/abs/2503.23925)  
+Zizhuo Li, Yifan Lu, Linfeng Tang, Shihua Zhang, Jiayi Ma  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This prospective study proposes CoMatch, a novel semi-dense image matcher with dynamic covisibility awareness and bilateral subpixel accuracy. Firstly, observing that modeling context interaction over the entire coarse feature map elicits highly redundant computation due to the neighboring representation similarity of tokens, a covisibility-guided token condenser is introduced to adaptively aggregate tokens in light of their covisibility scores that are dynamically estimated, thereby ensuring computational efficiency while improving the representational capacity of aggregated tokens simultaneously. Secondly, considering that feature interaction with massive non-covisible areas is distracting, which may degrade feature distinctiveness, a covisibility-assisted attention mechanism is deployed to selectively suppress irrelevant message broadcast from non-covisible reduced tokens, resulting in robust and compact attention to relevant rather than all ones. Thirdly, we find that at the fine-level stage, current methods adjust only the target view's keypoints to subpixel level, while those in the source view remain restricted at the coarse level and thus not informative enough, detrimental to keypoint location-sensitive usages. A simple yet potent fine correlation module is developed to refine the matching candidates in both source and target views to subpixel level, attaining attractive performance improvement. Thorough experimentation across an array of public benchmarks affirms CoMatch's promising accuracy, efficiency, and generalizability.  
+  </ol>  
+</details>  
+  
+### [Pairwise Matching of Intermediate Representations for Fine-grained Explainability](http://arxiv.org/abs/2503.22881)  
+[[code](https://github.com/pairx-explains/pairx)]  
+Lauren Shrack, Timm Haucke, Antoine Salaün, Arjun Subramonian, Sara Beery  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The differences between images belonging to fine-grained categories are often subtle and highly localized, and existing explainability techniques for deep learning models are often too diffuse to provide useful and interpretable explanations. We propose a new explainability method (PAIR-X) that leverages both intermediate model activations and backpropagated relevance scores to generate fine-grained, highly-localized pairwise visual explanations. We use animal and building re-identification (re-ID) as a primary case study of our method, and we demonstrate qualitatively improved results over a diverse set of explainability baselines on 35 public re-ID datasets. In interviews, animal re-ID experts were in unanimous agreement that PAIR-X was an improvement over existing baselines for deep model explainability, and suggested that its visualizations would be directly applicable to their work. We also propose a novel quantitative evaluation metric for our method, and demonstrate that PAIR-X visualizations appear more plausible for correct image matches than incorrect ones even when the model similarity score for the pairs is the same. By improving interpretability, PAIR-X enables humans to better distinguish correct and incorrect matches. Our code is available at: https://github.com/pairx-explains/pairx  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## NeRF  
 
-### [ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting](http://arxiv.org/abs/2503.22218)  
-Wenjie Liu, Zhongliang Liu, Xiaoyan Yang, Man Sha, Yang Li  
+### [ERUPT: Efficient Rendering with Unposed Patch Transformer](http://arxiv.org/abs/2503.24374)  
+Maxim V. Shugaev, Vincent Chen, Maxim Karrenbach, Kyle Ashley, Bridget Kennedy, Naresh P. Cuntoor  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D scene stylization approaches based on Neural Radiance Fields (NeRF) achieve promising results by optimizing with Nearest Neighbor Feature Matching (NNFM) loss. However, NNFM loss does not consider global style information. In addition, the implicit representation of NeRF limits their fine-grained control over the resulting scenes. In this paper, we introduce ABC-GS, a novel framework based on 3D Gaussian Splatting to achieve high-quality 3D style transfer. To this end, a controllable matching stage is designed to achieve precise alignment between scene content and style features through segmentation masks. Moreover, a style transfer loss function based on feature alignment is proposed to ensure that the outcomes of style transfer accurately reflect the global style of the reference image. Furthermore, the original geometric information of the scene is preserved with the depth loss and Gaussian regularization terms. Extensive experiments show that our ABC-GS provides controllability of style transfer and achieves stylization results that are more faithfully aligned with the global style of the chosen artistic reference. Our homepage is available at https://vpx-ecnu.github.io/ABC-GS-website.  
+    This work addresses the problem of novel view synthesis in diverse scenes from small collections of RGB images. We propose ERUPT (Efficient Rendering with Unposed Patch Transformer) a state-of-the-art scene reconstruction model capable of efficient scene rendering using unposed imagery. We introduce patch-based querying, in contrast to existing pixel-based queries, to reduce the compute required to render a target view. This makes our model highly efficient both during training and at inference, capable of rendering at 600 fps on commercial hardware. Notably, our model is designed to use a learned latent camera pose which allows for training using unposed targets in datasets with sparse or inaccurate ground truth camera pose. We show that our approach can generalize on large real-world data and introduce a new benchmark dataset (MSVS-1M) for latent view synthesis using street-view imagery collected from Mapillary. In contrast to NeRF and Gaussian Splatting, which require dense imagery and precise metadata, ERUPT can render novel views of arbitrary scenes with as few as five unposed input images. ERUPT achieves better rendered image quality than current state-of-the-art methods for unposed image synthesis tasks, reduces labeled data requirements by ~95\% and decreases computational requirements by an order of magnitude, providing efficient novel view synthesis for diverse real-world scenes.  
   </ol>  
 </details>  
-**comments**: 10 pages, 14 figures  
+**comments**: Accepted to CVPR 2025  
   
-### [NeRF-based Point Cloud Reconstruction using a Stationary Camera for Agricultural Applications](http://arxiv.org/abs/2503.21958)  
-Kibon Ku, Talukder Z Jubery, Elijah Rodriguez, Aditya Balu, Soumik Sarkar, Adarsh Krishnamurthy, Baskar Ganapathysubramanian  
+### [NeuralGS: Bridging Neural Fields and 3D Gaussian Splatting for Compact 3D Representations](http://arxiv.org/abs/2503.23162)  
+Zhenyu Tang, Chaoran Feng, Xinhua Cheng, Wangbo Yu, Junwu Zhang, Yuan Liu, Xiaoxiao Long, Wenping Wang, Li Yuan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper presents a NeRF-based framework for point cloud (PCD) reconstruction, specifically designed for indoor high-throughput plant phenotyping facilities. Traditional NeRF-based reconstruction methods require cameras to move around stationary objects, but this approach is impractical for high-throughput environments where objects are rapidly imaged while moving on conveyors or rotating pedestals. To address this limitation, we develop a variant of NeRF-based PCD reconstruction that uses a single stationary camera to capture images as the object rotates on a pedestal. Our workflow comprises COLMAP-based pose estimation, a straightforward pose transformation to simulate camera movement, and subsequent standard NeRF training. A defined Region of Interest (ROI) excludes irrelevant scene data, enabling the generation of high-resolution point clouds (10M points). Experimental results demonstrate excellent reconstruction fidelity, with precision-recall analyses yielding an F-score close to 100.00 across all evaluated plant objects. Although pose estimation remains computationally intensive with a stationary camera setup, overall training and reconstruction times are competitive, validating the method's feasibility for practical high-throughput indoor phenotyping applications. Our findings indicate that high-quality NeRF-based 3D reconstructions are achievable using a stationary camera, eliminating the need for complex camera motion or costly imaging equipment. This approach is especially beneficial when employing expensive and delicate instruments, such as hyperspectral cameras, for 3D plant phenotyping. Future work will focus on optimizing pose estimation techniques and further streamlining the methodology to facilitate seamless integration into automated, high-throughput 3D phenotyping pipelines.  
+    3D Gaussian Splatting (3DGS) demonstrates superior quality and rendering speed, but with millions of 3D Gaussians and significant storage and transmission costs. Recent 3DGS compression methods mainly concentrate on compressing Scaffold-GS, achieving impressive performance but with an additional voxel structure and a complex encoding and quantization strategy. In this paper, we aim to develop a simple yet effective method called NeuralGS that explores in another way to compress the original 3DGS into a compact representation without the voxel structure and complex quantization strategies. Our observation is that neural fields like NeRF can represent complex 3D scenes with Multi-Layer Perceptron (MLP) neural networks using only a few megabytes. Thus, NeuralGS effectively adopts the neural field representation to encode the attributes of 3D Gaussians with MLPs, only requiring a small storage size even for a large-scale scene. To achieve this, we adopt a clustering strategy and fit the Gaussians with different tiny MLPs for each cluster, based on importance scores of Gaussians as fitting weights. We experiment on multiple datasets, achieving a 45-times average model size reduction without harming the visual quality. The compression performance of our method on original 3DGS is comparable to the dedicated Scaffold-GS-based compression methods, which demonstrate the huge potential of directly compressing original 3DGS with neural fields.  
   </ol>  
 </details>  
-  
-### [Refined Geometry-guided Head Avatar Reconstruction from Monocular RGB Video](http://arxiv.org/abs/2503.21886)  
-Pilseo Park, Ze Zhang, Michel Sarkis, Ning Bi, Xiaoming Liu, Yiying Tong  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    High-fidelity reconstruction of head avatars from monocular videos is highly desirable for virtual human applications, but it remains a challenge in the fields of computer graphics and computer vision. In this paper, we propose a two-phase head avatar reconstruction network that incorporates a refined 3D mesh representation. Our approach, in contrast to existing methods that rely on coarse template-based 3D representations derived from 3DMM, aims to learn a refined mesh representation suitable for a NeRF that captures complex facial nuances. In the first phase, we train 3DMM-stored NeRF with an initial mesh to utilize geometric priors and integrate observations across frames using a consistent set of latent codes. In the second phase, we leverage a novel mesh refinement procedure based on an SDF constructed from the density field of the initial NeRF. To mitigate the typical noise in the NeRF density field without compromising the features of the 3DMM, we employ Laplace smoothing on the displacement field. Subsequently, we apply a second-phase training with these refined meshes, directing the learning process of the network towards capturing intricate facial details. Our experiments demonstrate that our method further enhances the NeRF rendering based on the initial mesh and achieves performance superior to state-of-the-art methods in reconstructing high-fidelity head avatars with such input.  
-  </ol>  
-</details>  
+**comments**: Project page: https://pku-yuangroup.github.io/NeuralGS/  
   
   
 
