@@ -3,32 +3,43 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Incorporating-GNSS-Information-with-LIDAR-Inertial-Odometry-for-Accurate-Land-Vehicle-Localization>Incorporating GNSS Information with LIDAR-Inertial Odometry for Accurate Land-Vehicle Localization</a></li>
-        <li><a href=#Towards-Mobile-Sensing-with-Event-Cameras-on-High-mobility-Resource-constrained-Devices:-A-Survey>Towards Mobile Sensing with Event Cameras on High-mobility Resource-constrained Devices: A Survey</a></li>
+        <li><a href=#ForestVO:-Enhancing-Visual-Odometry-in-Forest-Environments-through-ForestGlue>ForestVO: Enhancing Visual Odometry in Forest Environments through ForestGlue</a></li>
+      </ul>
+    </li>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#FIORD:-A-Fisheye-Indoor-Outdoor-Dataset-with-LIDAR-Ground-Truth-for-3D-Scene-Reconstruction-and-Benchmarking>FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking</a></li>
+        <li><a href=#LITA-GS:-Illumination-Agnostic-Novel-View-Synthesis-via-Reference-Free-3D-Gaussian-Splatting-and-Physical-Priors>LITA-GS: Illumination-Agnostic Novel View Synthesis via Reference-Free 3D Gaussian Splatting and Physical Priors</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#CIBR:-Cross-modal-Information-Bottleneck-Regularization-for-Robust-CLIP-Generalization>CIBR: Cross-modal Information Bottleneck Regularization for Robust CLIP Generalization</a></li>
-        <li><a href=#LiM-Loc:-Visual-Localization-with-Dense-and-Accurate-3D-Reference-Maps-Directly-Corresponding-2D-Keypoints-to-3D-LiDAR-Point-Clouds>LiM-Loc: Visual Localization with Dense and Accurate 3D Reference Maps Directly Corresponding 2D Keypoints to 3D LiDAR Point Clouds</a></li>
-        <li><a href=#Multiview-Image-Based-Localization>Multiview Image-Based Localization</a></li>
+        <li><a href=#Prompt-Guided-Attention-Head-Selection-for-Focus-Oriented-Image-Retrieval>Prompt-Guided Attention Head Selection for Focus-Oriented Image Retrieval</a></li>
+        <li><a href=#IDMR:-Towards-Instance-Driven-Precise-Visual-Correspondence-in-Multimodal-Retrieval>IDMR: Towards Instance-Driven Precise Visual Correspondence in Multimodal Retrieval</a></li>
+        <li><a href=#Scaling-Prompt-Instructed-Zero-Shot-Composed-Image-Retrieval-with-Image-Only-Data>Scaling Prompt Instructed Zero Shot Composed Image Retrieval with Image-Only Data</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Deep-Visual-Servoing-of-an-Aerial-Robot-Using-Keypoint-Feature-Extraction>Deep Visual Servoing of an Aerial Robot Using Keypoint Feature Extraction</a></li>
+        <li><a href=#SuperEvent:-Cross-Modal-Learning-of-Event-based-Keypoint-Detection>SuperEvent: Cross-Modal Learning of Event-based Keypoint Detection</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#CoMatch:-Dynamic-Covisibility-Aware-Transformer-for-Bilateral-Subpixel-Level-Semi-Dense-Image-Matching>CoMatch: Dynamic Covisibility-Aware Transformer for Bilateral Subpixel-Level Semi-Dense Image Matching</a></li>
-        <li><a href=#Pairwise-Matching-of-Intermediate-Representations-for-Fine-grained-Explainability>Pairwise Matching of Intermediate Representations for Fine-grained Explainability</a></li>
+        <li><a href=#Scaling-Prompt-Instructed-Zero-Shot-Composed-Image-Retrieval-with-Image-Only-Data>Scaling Prompt Instructed Zero Shot Composed Image Retrieval with Image-Only Data</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#ERUPT:-Efficient-Rendering-with-Unposed-Patch-Transformer>ERUPT: Efficient Rendering with Unposed Patch Transformer</a></li>
-        <li><a href=#NeuralGS:-Bridging-Neural-Fields-and-3D-Gaussian-Splatting-for-Compact-3D-Representations>NeuralGS: Bridging Neural Fields and 3D Gaussian Splatting for Compact 3D Representations</a></li>
+        <li><a href=#Diffusion-Guided-Gaussian-Splatting-for-Large-Scale-Unconstrained-3D-Reconstruction-and-Novel-View-Synthesis>Diffusion-Guided Gaussian Splatting for Large-Scale Unconstrained 3D Reconstruction and Novel View Synthesis</a></li>
+        <li><a href=#BOGausS:-Better-Optimized-Gaussian-Splatting>BOGausS: Better Optimized Gaussian Splatting</a></li>
+        <li><a href=#FIORD:-A-Fisheye-Indoor-Outdoor-Dataset-with-LIDAR-Ground-Truth-for-3D-Scene-Reconstruction-and-Benchmarking>FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking</a></li>
+        <li><a href=#RealityAvatar:-Towards-Realistic-Loose-Clothing-Modeling-in-Animatable-3D-Gaussian-Avatars>RealityAvatar: Towards Realistic Loose Clothing Modeling in Animatable 3D Gaussian Avatars</a></li>
+        <li><a href=#Luminance-GS:-Adapting-3D-Gaussian-Splatting-to-Challenging-Lighting-Conditions-with-View-Adaptive-Curve-Adjustment>Luminance-GS: Adapting 3D Gaussian Splatting to Challenging Lighting Conditions with View-Adaptive Curve Adjustment</a></li>
+        <li><a href=#Neural-Pruning-for-3D-Scene-Reconstruction:-Efficient-NeRF-Acceleration>Neural Pruning for 3D Scene Reconstruction: Efficient NeRF Acceleration</a></li>
+        <li><a href=#NeuRadar:-Neural-Radiance-Fields-for-Automotive-Radar-Point-Clouds>NeuRadar: Neural Radiance Fields for Automotive Radar Point Clouds</a></li>
+        <li><a href=#NeRF-Based-defect-detection>NeRF-Based defect detection</a></li>
+        <li><a href=#LITA-GS:-Illumination-Agnostic-Novel-View-Synthesis-via-Reference-Free-3D-Gaussian-Splatting-and-Physical-Priors>LITA-GS: Illumination-Agnostic Novel View Synthesis via Reference-Free 3D Gaussian Splatting and Physical Priors</a></li>
       </ul>
     </li>
   </ol>
@@ -36,24 +47,42 @@
 
 ## SLAM  
 
-### [Incorporating GNSS Information with LIDAR-Inertial Odometry for Accurate Land-Vehicle Localization](http://arxiv.org/abs/2503.23199)  
-Jintao Cheng, Bohuan Xue, Shiyang Chen, Qiuchi Xiang, Xiaoyu Tang  
+### [ForestVO: Enhancing Visual Odometry in Forest Environments through ForestGlue](http://arxiv.org/abs/2504.01261)  
+Thomas Pritchard, Saifullah Ijaz, Ronald Clark, Basaran Bahadir Kocer  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Currently, visual odometry and LIDAR odometry are performing well in pose estimation in some typical environments, but they still cannot recover the localization state at high speed or reduce accumulated drifts. In order to solve these problems, we propose a novel LIDAR-based localization framework, which achieves high accuracy and provides robust localization in 3D pointcloud maps with information of multi-sensors. The system integrates global information with LIDAR-based odometry to optimize the localization state. To improve robustness and enable fast resumption of localization, this paper uses offline pointcloud maps for prior knowledge and presents a novel registration method to speed up the convergence rate. The algorithm is tested on various maps of different data sets and has higher robustness and accuracy than other localization algorithms.  
+    Recent advancements in visual odometry systems have improved autonomous navigation; however, challenges persist in complex environments like forests, where dense foliage, variable lighting, and repetitive textures compromise feature correspondence accuracy. To address these challenges, we introduce ForestGlue, enhancing the SuperPoint feature detector through four configurations - grayscale, RGB, RGB-D, and stereo-vision - optimised for various sensing modalities. For feature matching, we employ LightGlue or SuperGlue, retrained with synthetic forest data. ForestGlue achieves comparable pose estimation accuracy to baseline models but requires only 512 keypoints - just 25% of the baseline's 2048 - to reach an LO-RANSAC AUC score of 0.745 at a 10{\deg} threshold. With only a quarter of keypoints needed, ForestGlue significantly reduces computational overhead, demonstrating effectiveness in dynamic forest environments, and making it suitable for real-time deployment on resource-constrained platforms. By combining ForestGlue with a transformer-based pose estimation model, we propose ForestVO, which estimates relative camera poses using matched 2D pixel coordinates between frames. On challenging TartanAir forest sequences, ForestVO achieves an average relative pose error (RPE) of 1.09 m and a kitti_score of 2.33%, outperforming direct-based methods like DSO by 40% in dynamic scenes. Despite using only 10% of the dataset for training, ForestVO maintains competitive performance with TartanVO while being a significantly lighter model. This work establishes an end-to-end deep learning pipeline specifically tailored for visual odometry in forested environments, leveraging forest-specific training data to optimise feature correspondence and pose estimation, thereby enhancing the accuracy and robustness of autonomous navigation systems.  
   </ol>  
 </details>  
+**comments**: Accepted to the IEEE Robotics and Automation Letters  
   
-### [Towards Mobile Sensing with Event Cameras on High-mobility Resource-constrained Devices: A Survey](http://arxiv.org/abs/2503.22943)  
-Haoyang Wang, Ruishan Guo, Pengtao Ma, Ciyu Ruan, Xinyu Luo, Wenhua Ding, Tianyang Zhong, Jingao Xu, Yunhao Liu, Xinlei Chen  
+  
+
+
+
+## SFM  
+
+### [FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking](http://arxiv.org/abs/2504.01732)  
+Ulas Gunes, Matias Turkulainen, Xuqian Ren, Arno Solin, Juho Kannala, Esa Rahtu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    With the increasing complexity of mobile device applications, these devices are evolving toward high mobility. This shift imposes new demands on mobile sensing, particularly in terms of achieving high accuracy and low latency. Event-based vision has emerged as a disruptive paradigm, offering high temporal resolution, low latency, and energy efficiency, making it well-suited for high-accuracy and low-latency sensing tasks on high-mobility platforms. However, the presence of substantial noisy events, the lack of inherent semantic information, and the large data volume pose significant challenges for event-based data processing on resource-constrained mobile devices. This paper surveys the literature over the period 2014-2024, provides a comprehensive overview of event-based mobile sensing systems, covering fundamental principles, event abstraction methods, algorithmic advancements, hardware and software acceleration strategies. We also discuss key applications of event cameras in mobile sensing, including visual odometry, object tracking, optical flow estimation, and 3D reconstruction, while highlighting the challenges associated with event data processing, sensor fusion, and real-time deployment. Furthermore, we outline future research directions, such as improving event camera hardware with advanced optics, leveraging neuromorphic computing for efficient processing, and integrating bio-inspired algorithms to enhance perception. To support ongoing research, we provide an open-source \textit{Online Sheet} with curated resources and recent developments. We hope this survey serves as a valuable reference, facilitating the adoption of event-based vision across diverse applications.  
+    The development of large-scale 3D scene reconstruction and novel view synthesis methods mostly rely on datasets comprising perspective images with narrow fields of view (FoV). While effective for small-scale scenes, these datasets require large image sets and extensive structure-from-motion (SfM) processing, limiting scalability. To address this, we introduce a fisheye image dataset tailored for scene reconstruction tasks. Using dual 200-degree fisheye lenses, our dataset provides full 360-degree coverage of 5 indoor and 5 outdoor scenes. Each scene has sparse SfM point clouds and precise LIDAR-derived dense point clouds that can be used as geometric ground-truth, enabling robust benchmarking under challenging conditions such as occlusions and reflections. While the baseline experiments focus on vanilla Gaussian Splatting and NeRF based Nerfacto methods, the dataset supports diverse approaches for scene reconstruction, novel view synthesis, and image-based rendering.  
   </ol>  
 </details>  
-**comments**: 32 pages, 9 figures  
+**comments**: SCIA 2025  
+  
+### [LITA-GS: Illumination-Agnostic Novel View Synthesis via Reference-Free 3D Gaussian Splatting and Physical Priors](http://arxiv.org/abs/2504.00219)  
+Han Zhou, Wei Dong, Jun Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Directly employing 3D Gaussian Splatting (3DGS) on images with adverse illumination conditions exhibits considerable difficulty in achieving high-quality, normally-exposed representations due to: (1) The limited Structure from Motion (SfM) points estimated in adverse illumination scenarios fail to capture sufficient scene details; (2) Without ground-truth references, the intensive information loss, significant noise, and color distortion pose substantial challenges for 3DGS to produce high-quality results; (3) Combining existing exposure correction methods with 3DGS does not achieve satisfactory performance due to their individual enhancement processes, which lead to the illumination inconsistency between enhanced images from different viewpoints. To address these issues, we propose LITA-GS, a novel illumination-agnostic novel view synthesis method via reference-free 3DGS and physical priors. Firstly, we introduce an illumination-invariant physical prior extraction pipeline. Secondly, based on the extracted robust spatial structure prior, we develop the lighting-agnostic structure rendering strategy, which facilitates the optimization of the scene structure and object appearance. Moreover, a progressive denoising module is introduced to effectively mitigate the noise within the light-invariant representation. We adopt the unsupervised strategy for the training of LITA-GS and extensive experiments demonstrate that LITA-GS surpasses the state-of-the-art (SOTA) NeRF-based method while enjoying faster inference speed and costing reduced training time. The code is released at https://github.com/LowLevelAI/LITA-GS.  
+  </ol>  
+</details>  
+**comments**: Accepted by CVPR 2025. 3DGS, Adverse illumination conditions,
+  Reference-free, Physical priors  
   
   
 
@@ -61,31 +90,31 @@ Haoyang Wang, Ruishan Guo, Pengtao Ma, Ciyu Ruan, Xinyu Luo, Wenhua Ding, Tianya
 
 ## Visual Localization  
 
-### [CIBR: Cross-modal Information Bottleneck Regularization for Robust CLIP Generalization](http://arxiv.org/abs/2503.24182)  
-Yingrui Ji, Xi Xiao, Gaofei Chen, Hao Xu, Chenrui Ma, Lijing Zhu, Aokun Liang, Jiansheng Chen  
+### [Prompt-Guided Attention Head Selection for Focus-Oriented Image Retrieval](http://arxiv.org/abs/2504.01348)  
+Yuji Nozawa, Yu-Chieh Lin, Kazumoto Nakamura, Youyang Ng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Contrastive Language-Image Pretraining (CLIP) has achieved remarkable success in cross-modal tasks such as zero-shot image classification and text-image retrieval by effectively aligning visual and textual representations. However, the theoretical foundations underlying CLIP's strong generalization remain unclear. In this work, we address this gap by proposing the Cross-modal Information Bottleneck (CIB) framework. CIB offers a principled interpretation of CLIP's contrastive learning objective as an implicit Information Bottleneck optimization. Under this view, the model maximizes shared cross-modal information while discarding modality-specific redundancies, thereby preserving essential semantic alignment across modalities. Building on this insight, we introduce a Cross-modal Information Bottleneck Regularization (CIBR) method that explicitly enforces these IB principles during training. CIBR introduces a penalty term to discourage modality-specific redundancy, thereby enhancing semantic alignment between image and text features. We validate CIBR on extensive vision-language benchmarks, including zero-shot classification across seven diverse image datasets and text-image retrieval on MSCOCO and Flickr30K. The results show consistent performance gains over standard CLIP. These findings provide the first theoretical understanding of CLIP's generalization through the IB lens. They also demonstrate practical improvements, offering guidance for future cross-modal representation learning.  
+    The goal of this paper is to enhance pretrained Vision Transformer (ViT) models for focus-oriented image retrieval with visual prompting. In real-world image retrieval scenarios, both query and database images often exhibit complexity, with multiple objects and intricate backgrounds. Users often want to retrieve images with specific object, which we define as the Focus-Oriented Image Retrieval (FOIR) task. While a standard image encoder can be employed to extract image features for similarity matching, it may not perform optimally in the multi-object-based FOIR task. This is because each image is represented by a single global feature vector. To overcome this, a prompt-based image retrieval solution is required. We propose an approach called Prompt-guided attention Head Selection (PHS) to leverage the head-wise potential of the multi-head attention mechanism in ViT in a promptable manner. PHS selects specific attention heads by matching their attention maps with user's visual prompts, such as a point, box, or segmentation. This empowers the model to focus on specific object of interest while preserving the surrounding visual context. Notably, PHS does not necessitate model re-training and avoids any image alteration. Experimental results show that PHS substantially improves performance on multiple datasets, offering a practical and training-free solution to enhance model performance in the FOIR task.  
+  </ol>  
+</details>  
+**comments**: Accepted to CVPR 2025 PixFoundation Workshop  
+  
+### [IDMR: Towards Instance-Driven Precise Visual Correspondence in Multimodal Retrieval](http://arxiv.org/abs/2504.00954)  
+Bangwei Liu, Yicheng Bao, Shaohui Lin, Xuhong Wang, Xin Tan, Yingchun Wang, Yuan Xie, Chaochao Lu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Multimodal retrieval systems are becoming increasingly vital for cutting-edge AI technologies, such as embodied AI and AI-driven digital content industries. However, current multimodal retrieval tasks lack sufficient complexity and demonstrate limited practical application value. It spires us to design Instance-Driven Multimodal Image Retrieval (IDMR), a novel task that requires models to retrieve images containing the same instance as a query image while matching a text-described scenario. Unlike existing retrieval tasks focused on global image similarity or category-level matching, IDMR demands fine-grained instance-level consistency across diverse contexts. To benchmark this capability, we develop IDMR-bench using real-world object tracking and first-person video data. Addressing the scarcity of training data, we propose a cross-domain synthesis method that creates 557K training samples by cropping objects from standard detection datasets. Our Multimodal Large Language Model (MLLM) based retrieval model, trained on 1.2M samples, outperforms state-of-the-art approaches on both traditional benchmarks and our zero-shot IDMR-bench. Experimental results demonstrate previous models' limitations in instance-aware retrieval and highlight the potential of MLLM for advanced retrieval applications. The whole training dataset, codes and models, with wide ranges of sizes, are available at https://github.com/BwLiu01/IDMR.  
   </ol>  
 </details>  
   
-### [LiM-Loc: Visual Localization with Dense and Accurate 3D Reference Maps Directly Corresponding 2D Keypoints to 3D LiDAR Point Clouds](http://arxiv.org/abs/2503.23664)  
-Masahiko Tsuji, Hitoshi Niigaki, Ryuichi Tanida  
+### [Scaling Prompt Instructed Zero Shot Composed Image Retrieval with Image-Only Data](http://arxiv.org/abs/2504.00812)  
+Yiqun Duan, Sameera Ramasinghe, Stephen Gould, Ajanthan Thalaiyasingam  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual localization is to estimate the 6-DOF camera pose of a query image in a 3D reference map. We extract keypoints from the reference image and generate a 3D reference map with 3D reconstruction of the keypoints in advance. We emphasize that the more keypoints in the 3D reference map and the smaller the error of the 3D positions of the keypoints, the higher the accuracy of the camera pose estimation. However, previous image-only methods require a huge number of images, and it is difficult to 3D-reconstruct keypoints without error due to inevitable mismatches and failures in feature matching. As a result, the 3D reference map is sparse and inaccurate. In contrast, accurate 3D reference maps can be generated by combining images and 3D sensors. Recently, 3D-LiDAR has been widely used around the world. LiDAR, which measures a large space with high density, has become inexpensive. In addition, accurately calibrated cameras are also widely used, so images that record the external parameters of the camera without errors can be easily obtained. In this paper, we propose a method to directly assign 3D LiDAR point clouds to keypoints to generate dense and accurate 3D reference maps. The proposed method avoids feature matching and achieves accurate 3D reconstruction for almost all keypoints. To estimate camera pose over a wide area, we use the wide-area LiDAR point cloud to remove points that are not visible to the camera and reduce 2D-3D correspondence errors. Using indoor and outdoor datasets, we apply the proposed method to several state-of-the-art local features and confirm that it improves the accuracy of camera pose estimation.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 6 figures  
-  
-### [Multiview Image-Based Localization](http://arxiv.org/abs/2503.23577)  
-Cameron Fiore, Hongyi Fan, Benjamin Kimia  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The image retrieval (IR) approach to image localization has distinct advantages to the 3D and the deep learning (DNN) approaches: it is seen-agnostic, simpler to implement and use, has no privacy issues, and is computationally efficient. The main drawback of this approach is relatively poor localization in both position and orientation of the query camera when compared to the competing approaches. This paper represents a hybrid approach that stores only image features in the database like some IR methods, but relies on a latent 3D reconstruction, like 3D methods but without retaining a 3D scene reconstruction. The approach is based on two ideas: {\em (i)} a novel proposal where query camera center estimation relies only on relative translation estimates but not relative rotation estimates through a decoupling of the two, and {\em (ii)} a shift from computing optimal pose from estimated relative pose to computing optimal pose from multiview correspondences, thus cutting out the ``middle-man''. Our approach shows improved performance on the 7-Scenes and Cambridge Landmarks datasets while also improving on timing and memory footprint as compared to state-of-the-art.  
+    Composed Image Retrieval (CIR) is the task of retrieving images matching a reference image augmented with a text, where the text describes changes to the reference image in natural language. Traditionally, models designed for CIR have relied on triplet data containing a reference image, reformulation text, and a target image. However, curating such triplet data often necessitates human intervention, leading to prohibitive costs. This challenge has hindered the scalability of CIR model training even with the availability of abundant unlabeled data. With the recent advances in foundational models, we advocate a shift in the CIR training paradigm where human annotations can be efficiently replaced by large language models (LLMs). Specifically, we demonstrate the capability of large captioning and language models in efficiently generating data for CIR only relying on unannotated image collections. Additionally, we introduce an embedding reformulation architecture that effectively combines image and text modalities. Our model, named InstructCIR, outperforms state-of-the-art methods in zero-shot composed image retrieval on CIRR and FashionIQ datasets. Furthermore, we demonstrate that by increasing the amount of generated data, our zero-shot model gets closer to the performance of supervised baselines.  
   </ol>  
 </details>  
   
@@ -95,16 +124,15 @@ Cameron Fiore, Hongyi Fan, Benjamin Kimia
 
 ## Keypoint Detection  
 
-### [Deep Visual Servoing of an Aerial Robot Using Keypoint Feature Extraction](http://arxiv.org/abs/2503.23171)  
-Shayan Sepahvand, Niloufar Amiri, Farrokh Janabi-Sharifi  
+### [SuperEvent: Cross-Modal Learning of Event-based Keypoint Detection](http://arxiv.org/abs/2504.00139)  
+Yannick Burkhardt, Simon Schaefer, Stefan Leutenegger  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The problem of image-based visual servoing (IBVS) of an aerial robot using deep-learning-based keypoint detection is addressed in this article. A monocular RGB camera mounted on the platform is utilized to collect the visual data. A convolutional neural network (CNN) is then employed to extract the features serving as the visual data for the servoing task. This paper contributes to the field by circumventing not only the challenge stemming from the need for man-made marker detection in conventional visual servoing techniques, but also enhancing the robustness against undesirable factors including occlusion, varying illumination, clutter, and background changes, thereby broadening the applicability of perception-guided motion control tasks in aerial robots. Additionally, extensive physics-based ROS Gazebo simulations are conducted to assess the effectiveness of this method, in contrast to many existing studies that rely solely on physics-less simulations. A demonstration video is available at https://youtu.be/Dd2Her8Ly-E.  
+    Event-based keypoint detection and matching holds significant potential, enabling the integration of event sensors into highly optimized Visual SLAM systems developed for frame cameras over decades of research. Unfortunately, existing approaches struggle with the motion-dependent appearance of keypoints and the complex noise prevalent in event streams, resulting in severely limited feature matching capabilities and poor performance on downstream tasks. To mitigate this problem, we propose SuperEvent, a data-driven approach to predict stable keypoints with expressive descriptors. Due to the absence of event datasets with ground truth keypoint labels, we leverage existing frame-based keypoint detectors on readily available event-aligned and synchronized gray-scale frames for self-supervision: we generate temporally sparse keypoint pseudo-labels considering that events are a product of both scene appearance and camera motion. Combined with our novel, information-rich event representation, we enable SuperEvent to effectively learn robust keypoint detection and description in event streams. Finally, we demonstrate the usefulness of SuperEvent by its integration into a modern sparse keypoint and descriptor-based SLAM framework originally developed for traditional cameras, surpassing the state-of-the-art in event-based SLAM by a wide margin. Source code and multimedia material are available at smartroboticslab.github.io/SuperEvent.  
   </ol>  
 </details>  
-**comments**: 7 Pages, Accepted for presentation in the 2025 International
-  Conference on Unmanned Aircraft Systems (ICUAS 2025)  
+**comments**: In Review for ICCV25  
   
   
 
@@ -112,22 +140,12 @@ Shayan Sepahvand, Niloufar Amiri, Farrokh Janabi-Sharifi
 
 ## Image Matching  
 
-### [CoMatch: Dynamic Covisibility-Aware Transformer for Bilateral Subpixel-Level Semi-Dense Image Matching](http://arxiv.org/abs/2503.23925)  
-Zizhuo Li, Yifan Lu, Linfeng Tang, Shihua Zhang, Jiayi Ma  
+### [Scaling Prompt Instructed Zero Shot Composed Image Retrieval with Image-Only Data](http://arxiv.org/abs/2504.00812)  
+Yiqun Duan, Sameera Ramasinghe, Stephen Gould, Ajanthan Thalaiyasingam  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This prospective study proposes CoMatch, a novel semi-dense image matcher with dynamic covisibility awareness and bilateral subpixel accuracy. Firstly, observing that modeling context interaction over the entire coarse feature map elicits highly redundant computation due to the neighboring representation similarity of tokens, a covisibility-guided token condenser is introduced to adaptively aggregate tokens in light of their covisibility scores that are dynamically estimated, thereby ensuring computational efficiency while improving the representational capacity of aggregated tokens simultaneously. Secondly, considering that feature interaction with massive non-covisible areas is distracting, which may degrade feature distinctiveness, a covisibility-assisted attention mechanism is deployed to selectively suppress irrelevant message broadcast from non-covisible reduced tokens, resulting in robust and compact attention to relevant rather than all ones. Thirdly, we find that at the fine-level stage, current methods adjust only the target view's keypoints to subpixel level, while those in the source view remain restricted at the coarse level and thus not informative enough, detrimental to keypoint location-sensitive usages. A simple yet potent fine correlation module is developed to refine the matching candidates in both source and target views to subpixel level, attaining attractive performance improvement. Thorough experimentation across an array of public benchmarks affirms CoMatch's promising accuracy, efficiency, and generalizability.  
-  </ol>  
-</details>  
-  
-### [Pairwise Matching of Intermediate Representations for Fine-grained Explainability](http://arxiv.org/abs/2503.22881)  
-[[code](https://github.com/pairx-explains/pairx)]  
-Lauren Shrack, Timm Haucke, Antoine Salaün, Arjun Subramonian, Sara Beery  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The differences between images belonging to fine-grained categories are often subtle and highly localized, and existing explainability techniques for deep learning models are often too diffuse to provide useful and interpretable explanations. We propose a new explainability method (PAIR-X) that leverages both intermediate model activations and backpropagated relevance scores to generate fine-grained, highly-localized pairwise visual explanations. We use animal and building re-identification (re-ID) as a primary case study of our method, and we demonstrate qualitatively improved results over a diverse set of explainability baselines on 35 public re-ID datasets. In interviews, animal re-ID experts were in unanimous agreement that PAIR-X was an improvement over existing baselines for deep model explainability, and suggested that its visualizations would be directly applicable to their work. We also propose a novel quantitative evaluation metric for our method, and demonstrate that PAIR-X visualizations appear more plausible for correct image matches than incorrect ones even when the model similarity score for the pairs is the same. By improving interpretability, PAIR-X enables humans to better distinguish correct and incorrect matches. Our code is available at: https://github.com/pairx-explains/pairx  
+    Composed Image Retrieval (CIR) is the task of retrieving images matching a reference image augmented with a text, where the text describes changes to the reference image in natural language. Traditionally, models designed for CIR have relied on triplet data containing a reference image, reformulation text, and a target image. However, curating such triplet data often necessitates human intervention, leading to prohibitive costs. This challenge has hindered the scalability of CIR model training even with the availability of abundant unlabeled data. With the recent advances in foundational models, we advocate a shift in the CIR training paradigm where human annotations can be efficiently replaced by large language models (LLMs). Specifically, we demonstrate the capability of large captioning and language models in efficiently generating data for CIR only relying on unannotated image collections. Additionally, we introduce an embedding reformulation architecture that effectively combines image and text modalities. Our model, named InstructCIR, outperforms state-of-the-art methods in zero-shot composed image retrieval on CIRR and FashionIQ datasets. Furthermore, we demonstrate that by increasing the amount of generated data, our zero-shot model gets closer to the performance of supervised baselines.  
   </ol>  
 </details>  
   
@@ -137,25 +155,96 @@ Lauren Shrack, Timm Haucke, Antoine Salaün, Arjun Subramonian, Sara Beery
 
 ## NeRF  
 
-### [ERUPT: Efficient Rendering with Unposed Patch Transformer](http://arxiv.org/abs/2503.24374)  
-Maxim V. Shugaev, Vincent Chen, Maxim Karrenbach, Kyle Ashley, Bridget Kennedy, Naresh P. Cuntoor  
+### [Diffusion-Guided Gaussian Splatting for Large-Scale Unconstrained 3D Reconstruction and Novel View Synthesis](http://arxiv.org/abs/2504.01960)  
+Niluthpol Chowdhury Mithun, Tuan Pham, Qiao Wang, Ben Southall, Kshitij Minhas, Bogdan Matei, Stephan Mandt, Supun Samarasekera, Rakesh Kumar  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This work addresses the problem of novel view synthesis in diverse scenes from small collections of RGB images. We propose ERUPT (Efficient Rendering with Unposed Patch Transformer) a state-of-the-art scene reconstruction model capable of efficient scene rendering using unposed imagery. We introduce patch-based querying, in contrast to existing pixel-based queries, to reduce the compute required to render a target view. This makes our model highly efficient both during training and at inference, capable of rendering at 600 fps on commercial hardware. Notably, our model is designed to use a learned latent camera pose which allows for training using unposed targets in datasets with sparse or inaccurate ground truth camera pose. We show that our approach can generalize on large real-world data and introduce a new benchmark dataset (MSVS-1M) for latent view synthesis using street-view imagery collected from Mapillary. In contrast to NeRF and Gaussian Splatting, which require dense imagery and precise metadata, ERUPT can render novel views of arbitrary scenes with as few as five unposed input images. ERUPT achieves better rendered image quality than current state-of-the-art methods for unposed image synthesis tasks, reduces labeled data requirements by ~95\% and decreases computational requirements by an order of magnitude, providing efficient novel view synthesis for diverse real-world scenes.  
+    Recent advancements in 3D Gaussian Splatting (3DGS) and Neural Radiance Fields (NeRF) have achieved impressive results in real-time 3D reconstruction and novel view synthesis. However, these methods struggle in large-scale, unconstrained environments where sparse and uneven input coverage, transient occlusions, appearance variability, and inconsistent camera settings lead to degraded quality. We propose GS-Diff, a novel 3DGS framework guided by a multi-view diffusion model to address these limitations. By generating pseudo-observations conditioned on multi-view inputs, our method transforms under-constrained 3D reconstruction problems into well-posed ones, enabling robust optimization even with sparse data. GS-Diff further integrates several enhancements, including appearance embedding, monocular depth priors, dynamic object modeling, anisotropy regularization, and advanced rasterization techniques, to tackle geometric and photometric challenges in real-world settings. Experiments on four benchmarks demonstrate that GS-Diff consistently outperforms state-of-the-art baselines by significant margins.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR 2025  
+**comments**: WACV ULTRRA Workshop 2025  
   
-### [NeuralGS: Bridging Neural Fields and 3D Gaussian Splatting for Compact 3D Representations](http://arxiv.org/abs/2503.23162)  
-Zhenyu Tang, Chaoran Feng, Xinhua Cheng, Wangbo Yu, Junwu Zhang, Yuan Liu, Xiaoxiao Long, Wenping Wang, Li Yuan  
+### [BOGausS: Better Optimized Gaussian Splatting](http://arxiv.org/abs/2504.01844)  
+Stéphane Pateux, Matthieu Gendrin, Luce Morin, Théo Ladune, Xiaoran Jiang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) demonstrates superior quality and rendering speed, but with millions of 3D Gaussians and significant storage and transmission costs. Recent 3DGS compression methods mainly concentrate on compressing Scaffold-GS, achieving impressive performance but with an additional voxel structure and a complex encoding and quantization strategy. In this paper, we aim to develop a simple yet effective method called NeuralGS that explores in another way to compress the original 3DGS into a compact representation without the voxel structure and complex quantization strategies. Our observation is that neural fields like NeRF can represent complex 3D scenes with Multi-Layer Perceptron (MLP) neural networks using only a few megabytes. Thus, NeuralGS effectively adopts the neural field representation to encode the attributes of 3D Gaussians with MLPs, only requiring a small storage size even for a large-scale scene. To achieve this, we adopt a clustering strategy and fit the Gaussians with different tiny MLPs for each cluster, based on importance scores of Gaussians as fitting weights. We experiment on multiple datasets, achieving a 45-times average model size reduction without harming the visual quality. The compression performance of our method on original 3DGS is comparable to the dedicated Scaffold-GS-based compression methods, which demonstrate the huge potential of directly compressing original 3DGS with neural fields.  
+    3D Gaussian Splatting (3DGS) proposes an efficient solution for novel view synthesis. Its framework provides fast and high-fidelity rendering. Although less complex than other solutions such as Neural Radiance Fields (NeRF), there are still some challenges building smaller models without sacrificing quality. In this study, we perform a careful analysis of 3DGS training process and propose a new optimization methodology. Our Better Optimized Gaussian Splatting (BOGausS) solution is able to generate models up to ten times lighter than the original 3DGS with no quality degradation, thus significantly boosting the performance of Gaussian Splatting compared to the state of the art.  
   </ol>  
 </details>  
-**comments**: Project page: https://pku-yuangroup.github.io/NeuralGS/  
+  
+### [FIORD: A Fisheye Indoor-Outdoor Dataset with LIDAR Ground Truth for 3D Scene Reconstruction and Benchmarking](http://arxiv.org/abs/2504.01732)  
+Ulas Gunes, Matias Turkulainen, Xuqian Ren, Arno Solin, Juho Kannala, Esa Rahtu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The development of large-scale 3D scene reconstruction and novel view synthesis methods mostly rely on datasets comprising perspective images with narrow fields of view (FoV). While effective for small-scale scenes, these datasets require large image sets and extensive structure-from-motion (SfM) processing, limiting scalability. To address this, we introduce a fisheye image dataset tailored for scene reconstruction tasks. Using dual 200-degree fisheye lenses, our dataset provides full 360-degree coverage of 5 indoor and 5 outdoor scenes. Each scene has sparse SfM point clouds and precise LIDAR-derived dense point clouds that can be used as geometric ground-truth, enabling robust benchmarking under challenging conditions such as occlusions and reflections. While the baseline experiments focus on vanilla Gaussian Splatting and NeRF based Nerfacto methods, the dataset supports diverse approaches for scene reconstruction, novel view synthesis, and image-based rendering.  
+  </ol>  
+</details>  
+**comments**: SCIA 2025  
+  
+### [RealityAvatar: Towards Realistic Loose Clothing Modeling in Animatable 3D Gaussian Avatars](http://arxiv.org/abs/2504.01559)  
+Yahui Li, Zhi Zeng, Liming Pang, Guixuan Zhang, Shuwu Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Modeling animatable human avatars from monocular or multi-view videos has been widely studied, with recent approaches leveraging neural radiance fields (NeRFs) or 3D Gaussian Splatting (3DGS) achieving impressive results in novel-view and novel-pose synthesis. However, existing methods often struggle to accurately capture the dynamics of loose clothing, as they primarily rely on global pose conditioning or static per-frame representations, leading to oversmoothing and temporal inconsistencies in non-rigid regions. To address this, We propose RealityAvatar, an efficient framework for high-fidelity digital human modeling, specifically targeting loosely dressed avatars. Our method leverages 3D Gaussian Splatting to capture complex clothing deformations and motion dynamics while ensuring geometric consistency. By incorporating a motion trend module and a latentbone encoder, we explicitly model pose-dependent deformations and temporal variations in clothing behavior. Extensive experiments on benchmark datasets demonstrate the effectiveness of our approach in capturing fine-grained clothing deformations and motion-driven shape variations. Our method significantly enhances structural fidelity and perceptual quality in dynamic human reconstruction, particularly in non-rigid regions, while achieving better consistency across temporal frames.  
+  </ol>  
+</details>  
+  
+### [Luminance-GS: Adapting 3D Gaussian Splatting to Challenging Lighting Conditions with View-Adaptive Curve Adjustment](http://arxiv.org/abs/2504.01503)  
+Ziteng Cui, Xuangeng Chu, Tatsuya Harada  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Capturing high-quality photographs under diverse real-world lighting conditions is challenging, as both natural lighting (e.g., low-light) and camera exposure settings (e.g., exposure time) significantly impact image quality. This challenge becomes more pronounced in multi-view scenarios, where variations in lighting and image signal processor (ISP) settings across viewpoints introduce photometric inconsistencies. Such lighting degradations and view-dependent variations pose substantial challenges to novel view synthesis (NVS) frameworks based on Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS). To address this, we introduce Luminance-GS, a novel approach to achieving high-quality novel view synthesis results under diverse challenging lighting conditions using 3DGS. By adopting per-view color matrix mapping and view-adaptive curve adjustments, Luminance-GS achieves state-of-the-art (SOTA) results across various lighting conditions -- including low-light, overexposure, and varying exposure -- while not altering the original 3DGS explicit representation. Compared to previous NeRF- and 3DGS-based baselines, Luminance-GS provides real-time rendering speed with improved reconstruction quality.  
+  </ol>  
+</details>  
+**comments**: CVPR 2025, project page:
+  https://cuiziteng.github.io/Luminance_GS_web/  
+  
+### [Neural Pruning for 3D Scene Reconstruction: Efficient NeRF Acceleration](http://arxiv.org/abs/2504.00950)  
+Tianqi Ding, Dawei Xiang, Pablo Rivas, Liang Dong  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have become a popular 3D reconstruction approach in recent years. While they produce high-quality results, they also demand lengthy training times, often spanning days. This paper studies neural pruning as a strategy to address these concerns. We compare pruning approaches, including uniform sampling, importance-based methods, and coreset-based techniques, to reduce the model size and speed up training. Our findings show that coreset-driven pruning can achieve a 50% reduction in model size and a 35% speedup in training, with only a slight decrease in accuracy. These results suggest that pruning can be an effective method for improving the efficiency of NeRF models in resource-limited settings.  
+  </ol>  
+</details>  
+**comments**: 12 pages, 4 figures, accepted by International Conference on the AI
+  Revolution: Research, Ethics, and Society (AIR-RES 2025)  
+  
+### [NeuRadar: Neural Radiance Fields for Automotive Radar Point Clouds](http://arxiv.org/abs/2504.00859)  
+Mahan Rafidashti, Ji Lan, Maryam Fatemi, Junsheng Fu, Lars Hammarstrand, Lennart Svensson  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Radar is an important sensor for autonomous driving (AD) systems due to its robustness to adverse weather and different lighting conditions. Novel view synthesis using neural radiance fields (NeRFs) has recently received considerable attention in AD due to its potential to enable efficient testing and validation but remains unexplored for radar point clouds. In this paper, we present NeuRadar, a NeRF-based model that jointly generates radar point clouds, camera images, and lidar point clouds. We explore set-based object detection methods such as DETR, and propose an encoder-based solution grounded in the NeRF geometry for improved generalizability. We propose both a deterministic and a probabilistic point cloud representation to accurately model the radar behavior, with the latter being able to capture radar's stochastic behavior. We achieve realistic reconstruction results for two automotive datasets, establishing a baseline for NeRF-based radar point cloud simulation models. In addition, we release radar data for ZOD's Sequences and Drives to enable further research in this field. To encourage further development of radar NeRFs, we release the source code for NeuRadar.  
+  </ol>  
+</details>  
+  
+### [NeRF-Based defect detection](http://arxiv.org/abs/2504.00270)  
+Tianqi, Ding, Dawei Xiang, Yijiashun Qi, Ze Yang, Zunduo Zhao, Tianyao Sun, Pengbin Feng, Haoyu Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The rapid growth of industrial automation has highlighted the need for precise and efficient defect detection in large-scale machinery. Traditional inspection techniques, involving manual procedures such as scaling tall structures for visual evaluation, are labor-intensive, subjective, and often hazardous. To overcome these challenges, this paper introduces an automated defect detection framework built on Neural Radiance Fields (NeRF) and the concept of digital twins. The system utilizes UAVs to capture images and reconstruct 3D models of machinery, producing both a standard reference model and a current-state model for comparison. Alignment of the models is achieved through the Iterative Closest Point (ICP) algorithm, enabling precise point cloud analysis to detect deviations that signify potential defects. By eliminating manual inspection, this method improves accuracy, enhances operational safety, and offers a scalable solution for defect detection. The proposed approach demonstrates great promise for reliable and efficient industrial applications.  
+  </ol>  
+</details>  
+**comments**: 6 pages, 11 figures, 2025 2nd International Conference on Remote
+  Sensing, Mapping and Image Processing (RSMIP 2025)  
+  
+### [LITA-GS: Illumination-Agnostic Novel View Synthesis via Reference-Free 3D Gaussian Splatting and Physical Priors](http://arxiv.org/abs/2504.00219)  
+Han Zhou, Wei Dong, Jun Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Directly employing 3D Gaussian Splatting (3DGS) on images with adverse illumination conditions exhibits considerable difficulty in achieving high-quality, normally-exposed representations due to: (1) The limited Structure from Motion (SfM) points estimated in adverse illumination scenarios fail to capture sufficient scene details; (2) Without ground-truth references, the intensive information loss, significant noise, and color distortion pose substantial challenges for 3DGS to produce high-quality results; (3) Combining existing exposure correction methods with 3DGS does not achieve satisfactory performance due to their individual enhancement processes, which lead to the illumination inconsistency between enhanced images from different viewpoints. To address these issues, we propose LITA-GS, a novel illumination-agnostic novel view synthesis method via reference-free 3DGS and physical priors. Firstly, we introduce an illumination-invariant physical prior extraction pipeline. Secondly, based on the extracted robust spatial structure prior, we develop the lighting-agnostic structure rendering strategy, which facilitates the optimization of the scene structure and object appearance. Moreover, a progressive denoising module is introduced to effectively mitigate the noise within the light-invariant representation. We adopt the unsupervised strategy for the training of LITA-GS and extensive experiments demonstrate that LITA-GS surpasses the state-of-the-art (SOTA) NeRF-based method while enjoying faster inference speed and costing reduced training time. The code is released at https://github.com/LowLevelAI/LITA-GS.  
+  </ol>  
+</details>  
+**comments**: Accepted by CVPR 2025. 3DGS, Adverse illumination conditions,
+  Reference-free, Physical priors  
   
   
 
