@@ -1,56 +1,37 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#3R-GS:-Best-Practice-in-Optimizing-Camera-Poses-Along-with-3DGS>3R-GS: Best Practice in Optimizing Camera Poses Along with 3DGS</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#NCL-CIR:-Noise-aware-Contrastive-Learning-for-Composed-Image-Retrieval>NCL-CIR: Noise-aware Contrastive Learning for Composed Image Retrieval</a></li>
+        <li><a href=#To-Match-or-Not-to-Match:-Revisiting-Image-Matching-for-Reliable-Visual-Place-Recognition>To Match or Not to Match: Revisiting Image Matching for Reliable Visual Place Recognition</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Learning-Affine-Correspondences-by-Integrating-Geometric-Constraints>Learning Affine Correspondences by Integrating Geometric Constraints</a></li>
+        <li><a href=#To-Match-or-Not-to-Match:-Revisiting-Image-Matching-for-Reliable-Visual-Place-Recognition>To Match or Not to Match: Revisiting Image Matching for Reliable Visual Place Recognition</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#DeclutterNeRF:-Generative-Free-3D-Scene-Recovery-for-Occlusion-Removal>DeclutterNeRF: Generative-Free 3D Scene Recovery for Occlusion Removal</a></li>
-        <li><a href=#Thermoxels:-a-voxel-based-method-to-generate-simulation-ready-3D-thermal-models>Thermoxels: a voxel-based method to generate simulation-ready 3D thermal models</a></li>
+        <li><a href=#Meta-Continual-Learning-of-Neural-Fields>Meta-Continual Learning of Neural Fields</a></li>
+        <li><a href=#SE4Lip:-Speech-Lip-Encoder-for-Talking-Head-Synthesis-to-Solve-Phoneme-Viseme-Alignment-Ambiguity>SE4Lip: Speech-Lip Encoder for Talking Head Synthesis to Solve Phoneme-Viseme Alignment Ambiguity</a></li>
+        <li><a href=#InvNeRF-Seg:-Fine-Tuning-a-Pre-Trained-NeRF-for-3D-Object-Segmentation>InvNeRF-Seg: Fine-Tuning a Pre-Trained NeRF for 3D Object Segmentation</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [3R-GS: Best Practice in Optimizing Camera Poses Along with 3DGS](http://arxiv.org/abs/2504.04294)  
-Zhisheng Huang, Peng Wang, Jingdong Zhang, Yuan Liu, Xin Li, Wenping Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    3D Gaussian Splatting (3DGS) has revolutionized neural rendering with its efficiency and quality, but like many novel view synthesis methods, it heavily depends on accurate camera poses from Structure-from-Motion (SfM) systems. Although recent SfM pipelines have made impressive progress, questions remain about how to further improve both their robust performance in challenging conditions (e.g., textureless scenes) and the precision of camera parameter estimation simultaneously. We present 3R-GS, a 3D Gaussian Splatting framework that bridges this gap by jointly optimizing 3D Gaussians and camera parameters from large reconstruction priors MASt3R-SfM. We note that naively performing joint 3D Gaussian and camera optimization faces two challenges: the sensitivity to the quality of SfM initialization, and its limited capacity for global optimization, leading to suboptimal reconstruction results. Our 3R-GS, overcomes these issues by incorporating optimized practices, enabling robust scene reconstruction even with imperfect camera registration. Extensive experiments demonstrate that 3R-GS delivers high-quality novel view synthesis and precise camera pose estimation while remaining computationally efficient. Project page: https://zsh523.github.io/3R-GS/  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [NCL-CIR: Noise-aware Contrastive Learning for Composed Image Retrieval](http://arxiv.org/abs/2504.04339)  
-Peng Gao, Yujian Lee, Zailong Chen, Hui zhang, Xubo Liu, Yiyang Hu, Guquang Jing  
+### [To Match or Not to Match: Revisiting Image Matching for Reliable Visual Place Recognition](http://arxiv.org/abs/2504.06116)  
+Davide Sferrazza, Gabriele Berton, Gabriele Trivigno, Carlo Masone  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) seeks to find a target image using a multi-modal query, which combines an image with modification text to pinpoint the target. While recent CIR methods have shown promise, they mainly focus on exploring relationships between the query pairs (image and text) through data augmentation or model design. These methods often assume perfect alignment between queries and target images, an idealized scenario rarely encountered in practice. In reality, pairs are often partially or completely mismatched due to issues like inaccurate modification texts, low-quality target images, and annotation errors. Ignoring these mismatches leads to numerous False Positive Pair (FFPs) denoted as noise pairs in the dataset, causing the model to overfit and ultimately reducing its performance. To address this problem, we propose the Noise-aware Contrastive Learning for CIR (NCL-CIR), comprising two key components: the Weight Compensation Block (WCB) and the Noise-pair Filter Block (NFB). The WCB coupled with diverse weight maps can ensure more stable token representations of multi-modal queries and target images. Meanwhile, the NFB, in conjunction with the Gaussian Mixture Model (GMM) predicts noise pairs by evaluating loss distributions, and generates soft labels correspondingly, allowing for the design of the soft-label based Noise Contrastive Estimation (NCE) loss function. Consequently, the overall architecture helps to mitigate the influence of mismatched and partially matched samples, with experimental results demonstrating that NCL-CIR achieves exceptional performance on the benchmark datasets.  
+    Visual Place Recognition (VPR) is a critical task in computer vision, traditionally enhanced by re-ranking retrieval results with image matching. However, recent advancements in VPR methods have significantly improved performance, challenging the necessity of re-ranking. In this work, we show that modern retrieval systems often reach a point where re-ranking can degrade results, as current VPR datasets are largely saturated. We propose using image matching as a verification step to assess retrieval confidence, demonstrating that inlier counts can reliably predict when re-ranking is beneficial. Our findings shift the paradigm of retrieval pipelines, offering insights for more robust and adaptive VPR systems.  
   </ol>  
 </details>  
-**comments**: Has been accepted by ICASSP2025  
+**comments**: CVPRW 2025  
   
   
 
@@ -58,14 +39,15 @@ Peng Gao, Yujian Lee, Zailong Chen, Hui zhang, Xubo Liu, Yiyang Hu, Guquang Jing
 
 ## Image Matching  
 
-### [Learning Affine Correspondences by Integrating Geometric Constraints](http://arxiv.org/abs/2504.04834)  
-Pengju Sun, Banglei Guan, Zhenbao Yu, Yang Shang, Qifeng Yu, Daniel Barath  
+### [To Match or Not to Match: Revisiting Image Matching for Reliable Visual Place Recognition](http://arxiv.org/abs/2504.06116)  
+Davide Sferrazza, Gabriele Berton, Gabriele Trivigno, Carlo Masone  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Affine correspondences have received significant attention due to their benefits in tasks like image matching and pose estimation. Existing methods for extracting affine correspondences still have many limitations in terms of performance; thus, exploring a new paradigm is crucial. In this paper, we present a new pipeline designed for extracting accurate affine correspondences by integrating dense matching and geometric constraints. Specifically, a novel extraction framework is introduced, with the aid of dense matching and a novel keypoint scale and orientation estimator. For this purpose, we propose loss functions based on geometric constraints, which can effectively improve accuracy by supervising neural networks to learn feature geometry. The experimental show that the accuracy and robustness of our method outperform the existing ones in image matching tasks. To further demonstrate the effectiveness of the proposed method, we applied it to relative pose estimation. Affine correspondences extracted by our method lead to more accurate poses than the baselines on a range of real-world datasets. The code is available at https://github.com/stilcrad/DenseAffine.  
+    Visual Place Recognition (VPR) is a critical task in computer vision, traditionally enhanced by re-ranking retrieval results with image matching. However, recent advancements in VPR methods have significantly improved performance, challenging the necessity of re-ranking. In this work, we show that modern retrieval systems often reach a point where re-ranking can degrade results, as current VPR datasets are largely saturated. We propose using image matching as a verification step to assess retrieval confidence, demonstrating that inlier counts can reliably predict when re-ranking is beneficial. Our findings shift the paradigm of retrieval pipelines, offering insights for more robust and adaptive VPR systems.  
   </ol>  
 </details>  
+**comments**: CVPRW 2025  
   
   
 
@@ -73,26 +55,32 @@ Pengju Sun, Banglei Guan, Zhenbao Yu, Yang Shang, Qifeng Yu, Daniel Barath
 
 ## NeRF  
 
-### [DeclutterNeRF: Generative-Free 3D Scene Recovery for Occlusion Removal](http://arxiv.org/abs/2504.04679)  
-Wanzhou Liu, Zhexiao Xiong, Xinyu Li, Nathan Jacobs  
+### [Meta-Continual Learning of Neural Fields](http://arxiv.org/abs/2504.05806)  
+Seungyoon Woo, Junhyeog Yun, Gunhee Kim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent novel view synthesis (NVS) techniques, including Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) have greatly advanced 3D scene reconstruction with high-quality rendering and realistic detail recovery. Effectively removing occlusions while preserving scene details can further enhance the robustness and applicability of these techniques. However, existing approaches for object and occlusion removal predominantly rely on generative priors, which, despite filling the resulting holes, introduce new artifacts and blurriness. Moreover, existing benchmark datasets for evaluating occlusion removal methods lack realistic complexity and viewpoint variations. To address these issues, we introduce DeclutterSet, a novel dataset featuring diverse scenes with pronounced occlusions distributed across foreground, midground, and background, exhibiting substantial relative motion across viewpoints. We further introduce DeclutterNeRF, an occlusion removal method free from generative priors. DeclutterNeRF introduces joint multi-view optimization of learnable camera parameters, occlusion annealing regularization, and employs an explainable stochastic structural similarity loss, ensuring high-quality, artifact-free reconstructions from incomplete images. Experiments demonstrate that DeclutterNeRF significantly outperforms state-of-the-art methods on our proposed DeclutterSet, establishing a strong baseline for future research.  
+    Neural Fields (NF) have gained prominence as a versatile framework for complex data representation. This work unveils a new problem setting termed \emph{Meta-Continual Learning of Neural Fields} (MCL-NF) and introduces a novel strategy that employs a modular architecture combined with optimization-based meta-learning. Focused on overcoming the limitations of existing methods for continual learning of neural fields, such as catastrophic forgetting and slow convergence, our strategy achieves high-quality reconstruction with significantly improved learning speed. We further introduce Fisher Information Maximization loss for neural radiance fields (FIM-NeRF), which maximizes information gains at the sample level to enhance learning generalization, with proved convergence guarantee and generalization bound. We perform extensive evaluations across image, audio, video reconstruction, and view synthesis tasks on six diverse datasets, demonstrating our method's superiority in reconstruction quality and speed over existing MCL and CL-NF approaches. Notably, our approach attains rapid adaptation of neural fields for city-scale NeRF rendering with reduced parameter requirement.  
   </ol>  
 </details>  
-**comments**: Accepted by CVPR 2025 4th CV4Metaverse Workshop. 15 pages, 10
-  figures. Code and data at: https://github.com/wanzhouliu/declutter-nerf  
   
-### [Thermoxels: a voxel-based method to generate simulation-ready 3D thermal models](http://arxiv.org/abs/2504.04448)  
-Etienne Chassaing, Florent Forest, Olga Fink, Malcolm Mielle  
+### [SE4Lip: Speech-Lip Encoder for Talking Head Synthesis to Solve Phoneme-Viseme Alignment Ambiguity](http://arxiv.org/abs/2504.05803)  
+Yihuan Huang, Jiajun Liu, Yanzhen Ren, Wuyang Liu, Juhua Tang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In the European Union, buildings account for 42% of energy use and 35% of greenhouse gas emissions. Since most existing buildings will still be in use by 2050, retrofitting is crucial for emissions reduction. However, current building assessment methods rely mainly on qualitative thermal imaging, which limits data-driven decisions for energy savings. On the other hand, quantitative assessments using finite element analysis (FEA) offer precise insights but require manual CAD design, which is tedious and error-prone. Recent advances in 3D reconstruction, such as Neural Radiance Fields (NeRF) and Gaussian Splatting, enable precise 3D modeling from sparse images but lack clearly defined volumes and the interfaces between them needed for FEA. We propose Thermoxels, a novel voxel-based method able to generate FEA-compatible models, including both geometry and temperature, from a sparse set of RGB and thermal images. Using pairs of RGB and thermal images as input, Thermoxels represents a scene's geometry as a set of voxels comprising color and temperature information. After optimization, a simple process is used to transform Thermoxels' models into tetrahedral meshes compatible with FEA. We demonstrate Thermoxels' capability to generate RGB+Thermal meshes of 3D scenes, surpassing other state-of-the-art methods. To showcase the practical applications of Thermoxels' models, we conduct a simple heat conduction simulation using FEA, achieving convergence from an initial state defined by Thermoxels' thermal reconstruction. Additionally, we compare Thermoxels' image synthesis abilities with current state-of-the-art methods, showing competitive results, and discuss the limitations of existing metrics in assessing mesh quality.  
+    Speech-driven talking head synthesis tasks commonly use general acoustic features (such as HuBERT and DeepSpeech) as guided speech features. However, we discovered that these features suffer from phoneme-viseme alignment ambiguity, which refers to the uncertainty and imprecision in matching phonemes (speech) with visemes (lip). To address this issue, we propose the Speech Encoder for Lip (SE4Lip) to encode lip features from speech directly, aligning speech and lip features in the joint embedding space by a cross-modal alignment framework. The STFT spectrogram with the GRU-based model is designed in SE4Lip to preserve the fine-grained speech features. Experimental results show that SE4Lip achieves state-of-the-art performance in both NeRF and 3DGS rendering models. Its lip sync accuracy improves by 13.7% and 14.2% compared to the best baseline and produces results close to the ground truth videos.  
   </ol>  
 </details>  
-**comments**: 7 pages, 2 figures  
+  
+### [InvNeRF-Seg: Fine-Tuning a Pre-Trained NeRF for 3D Object Segmentation](http://arxiv.org/abs/2504.05751)  
+Jiangsan Zhao, Jakob Geipel, Krzysztof Kusnierek, Xuean Cui  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) have been widely adopted for reconstructing high quality 3D point clouds from 2D RGB images. However, the segmentation of these reconstructed 3D scenes is more essential for downstream tasks such as object counting, size estimation, and scene understanding. While segmentation on raw 3D point clouds using deep learning requires labor intensive and time-consuming manual annotation, directly training NeRF on binary masks also fails due to the absence of color and shading cues essential for geometry learning. We propose Invariant NeRF for Segmentation (InvNeRFSeg), a two step, zero change fine tuning strategy for 3D segmentation. We first train a standard NeRF on RGB images and then fine tune it using 2D segmentation masks without altering either the model architecture or loss function. This approach produces higher quality, cleaner segmented point clouds directly from the refined radiance field with minimal computational overhead or complexity. Field density analysis reveals consistent semantic refinement: densities of object regions increase while background densities are suppressed, ensuring clean and interpretable segmentations. We demonstrate InvNeRFSegs superior performance over both SA3D and FruitNeRF on both synthetic fruit and real world soybean datasets. This approach effectively extends 2D segmentation to high quality 3D segmentation.  
+  </ol>  
+</details>  
   
   
 
