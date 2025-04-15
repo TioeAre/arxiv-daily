@@ -3,24 +3,22 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Stereophotoclinometry-Revisited>Stereophotoclinometry Revisited</a></li>
+        <li><a href=#A-Constrained-Optimization-Approach-for-Gaussian-Splatting-from-Coarsely-posed-Images-and-Noisy-Lidar-Point-Clouds>A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Hypergraph-Vision-Transformers:-Images-are-More-than-Nodes,-More-than-Edges>Hypergraph Vision Transformers: Images are More than Nodes, More than Edges</a></li>
-        <li><a href=#FocalLens:-Instruction-Tuning-Enables-Zero-Shot-Conditional-Image-Representations>FocalLens: Instruction Tuning Enables Zero-Shot Conditional Image Representations</a></li>
-        <li><a href=#PNE-SGAN:-Probabilistic-NDT-Enhanced-Semantic-Graph-Attention-Network-for-LiDAR-Loop-Closure-Detection>PNE-SGAN: Probabilistic NDT-Enhanced Semantic Graph Attention Network for LiDAR Loop Closure Detection</a></li>
+        <li><a href=#Focus-on-Local:-Finding-Reliable-Discriminative-Regions-for-Visual-Place-Recognition>Focus on Local: Finding Reliable Discriminative Regions for Visual Place Recognition</a></li>
+        <li><a href=#Evolved-Hierarchical-Masking-for-Self-Supervised-Learning>Evolved Hierarchical Masking for Self-Supervised Learning</a></li>
+        <li><a href=#HAL-NeRF:-High-Accuracy-Localization-Leveraging-Neural-Radiance-Fields>HAL-NeRF: High Accuracy Localization Leveraging Neural Radiance Fields</a></li>
       </ul>
     </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Stereophotoclinometry-Revisited>Stereophotoclinometry Revisited</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Geometric-Consistency-Refinement-for-Single-Image-Novel-View-Synthesis-via-Test-Time-Adaptation-of-Diffusion-Models>Geometric Consistency Refinement for Single Image Novel View Synthesis via Test-Time Adaptation of Diffusion Models</a></li>
+        <li><a href=#LL-Gaussian:-Low-Light-Scene-Reconstruction-and-Enhancement-via-Gaussian-Splatting-for-Novel-View-Synthesis>LL-Gaussian: Low-Light Scene Reconstruction and Enhancement via Gaussian Splatting for Novel View Synthesis</a></li>
+        <li><a href=#MCBlock:-Boosting-Neural-Radiance-Field-Training-Speed-by-MCTS-based-Dynamic-Resolution-Ray-Sampling>MCBlock: Boosting Neural Radiance Field Training Speed by MCTS-based Dynamic-Resolution Ray Sampling</a></li>
+        <li><a href=#NeRF-Based-Transparent-Object-Grasping-Enhanced-by-Shape-Priors>NeRF-Based Transparent Object Grasping Enhanced by Shape Priors</a></li>
+        <li><a href=#HAL-NeRF:-High-Accuracy-Localization-Leveraging-Neural-Radiance-Fields>HAL-NeRF: High Accuracy Localization Leveraging Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
@@ -28,15 +26,14 @@
 
 ## SFM  
 
-### [Stereophotoclinometry Revisited](http://arxiv.org/abs/2504.08252)  
-Travis Driver, Andrew Vaughan, Yang Cheng, Adnan Ansar, John Christian, Panagiotis Tsiotras  
+### [A Constrained Optimization Approach for Gaussian Splatting from Coarsely-posed Images and Noisy Lidar Point Clouds](http://arxiv.org/abs/2504.09129)  
+Jizong Peng, Tze Ho Elden Tse, Kai Xu, Wenchao Gao, Angela Yao  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image-based surface reconstruction and characterization is crucial for missions to small celestial bodies, as it informs mission planning, navigation, and scientific analysis. However, current state-of-the-practice methods, such as stereophotoclinometry (SPC), rely heavily on human-in-the-loop verification and high-fidelity a priori information. This paper proposes Photoclinometry-from-Motion (PhoMo), a novel framework that incorporates photoclinometry techniques into a keypoint-based structure-from-motion (SfM) system to estimate the surface normal and albedo at detected landmarks to improve autonomous surface and shape characterization of small celestial bodies from in-situ imagery. In contrast to SPC, we forego the expensive maplet estimation step and instead use dense keypoint measurements and correspondences from an autonomous keypoint detection and matching method based on deep learning. Moreover, we develop a factor graph-based approach allowing for simultaneous optimization of the spacecraft's pose, landmark positions, Sun-relative direction, and surface normals and albedos via fusion of Sun vector measurements and image keypoint measurements. The proposed framework is validated on real imagery taken by the Dawn mission to the asteroid 4 Vesta and the minor planet 1 Ceres and compared against an SPC reconstruction, where we demonstrate superior rendering performance compared to an SPC solution and precise alignment to a stereophotogrammetry (SPG) solution without relying on any a priori camera pose and topography information or humans-in-the-loop.  
+    3D Gaussian Splatting (3DGS) is a powerful reconstruction technique, but it needs to be initialized from accurate camera poses and high-fidelity point clouds. Typically, the initialization is taken from Structure-from-Motion (SfM) algorithms; however, SfM is time-consuming and restricts the application of 3DGS in real-world scenarios and large-scale scene reconstruction. We introduce a constrained optimization method for simultaneous camera pose estimation and 3D reconstruction that does not require SfM support. Core to our approach is decomposing a camera pose into a sequence of camera-to-(device-)center and (device-)center-to-world optimizations. To facilitate, we propose two optimization constraints conditioned to the sensitivity of each parameter group and restricts each parameter's search space. In addition, as we learn the scene geometry directly from the noisy point clouds, we propose geometric constraints to improve the reconstruction quality. Experiments demonstrate that the proposed method significantly outperforms the existing (multi-modal) 3DGS baseline and methods supplemented by COLMAP on both our collected dataset and two public benchmarks.  
   </ol>  
 </details>  
-**comments**: arXiv admin note: substantial text overlap with arXiv:2312.06865  
   
   
 
@@ -44,66 +41,77 @@ Travis Driver, Andrew Vaughan, Yang Cheng, Adnan Ansar, John Christian, Panagiot
 
 ## Visual Localization  
 
-### [Hypergraph Vision Transformers: Images are More than Nodes, More than Edges](http://arxiv.org/abs/2504.08710)  
-Joshua Fixelle  
+### [Focus on Local: Finding Reliable Discriminative Regions for Visual Place Recognition](http://arxiv.org/abs/2504.09881)  
+Changwei Wang, Shunpeng Chen, Yukun Song, Rongtao Xu, Zherui Zhang, Jiguang Zhang, Haoran Yang, Yu Zhang, Kexue Fu, Shide Du, Zhiwei Xu, Longxiang Gao, Li Guo, Shibiao Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in computer vision have highlighted the scalability of Vision Transformers (ViTs) across various tasks, yet challenges remain in balancing adaptability, computational efficiency, and the ability to model higher-order relationships. Vision Graph Neural Networks (ViGs) offer an alternative by leveraging graph-based methodologies but are hindered by the computational bottlenecks of clustering algorithms used for edge generation. To address these issues, we propose the Hypergraph Vision Transformer (HgVT), which incorporates a hierarchical bipartite hypergraph structure into the vision transformer framework to capture higher-order semantic relationships while maintaining computational efficiency. HgVT leverages population and diversity regularization for dynamic hypergraph construction without clustering, and expert edge pooling to enhance semantic extraction and facilitate graph-based image retrieval. Empirical results demonstrate that HgVT achieves strong performance on image classification and retrieval, positioning it as an efficient framework for semantic-based vision tasks.  
+    Visual Place Recognition (VPR) is aimed at predicting the location of a query image by referencing a database of geotagged images. For VPR task, often fewer discriminative local regions in an image produce important effects while mundane background regions do not contribute or even cause perceptual aliasing because of easy overlap. However, existing methods lack precisely modeling and full exploitation of these discriminative regions. In this paper, we propose the Focus on Local (FoL) approach to stimulate the performance of image retrieval and re-ranking in VPR simultaneously by mining and exploiting reliable discriminative local regions in images and introducing pseudo-correlation supervision. First, we design two losses, Extraction-Aggregation Spatial Alignment Loss (SAL) and Foreground-Background Contrast Enhancement Loss (CEL), to explicitly model reliable discriminative local regions and use them to guide the generation of global representations and efficient re-ranking. Second, we introduce a weakly-supervised local feature training strategy based on pseudo-correspondences obtained from aggregating global features to alleviate the lack of local correspondences ground truth for the VPR task. Third, we suggest an efficient re-ranking pipeline that is efficiently and precisely based on discriminative region guidance. Finally, experimental results show that our FoL achieves the state-of-the-art on multiple VPR benchmarks in both image retrieval and re-ranking stages and also significantly outperforms existing two-stage VPR methods in terms of computational efficiency. Code and models are available at https://github.com/chenshunpeng/FoL  
   </ol>  
 </details>  
-**comments**: Accepted by CVPR 2025  
+**comments**: Accepted by AAAI 2025  
   
-### [FocalLens: Instruction Tuning Enables Zero-Shot Conditional Image Representations](http://arxiv.org/abs/2504.08368)  
-Cheng-Yu Hsieh, Pavan Kumar Anasosalu Vasu, Fartash Faghri, Raviteja Vemulapalli, Chun-Liang Li, Ranjay Krishna, Oncel Tuzel, Hadi Pouransari  
+### [Evolved Hierarchical Masking for Self-Supervised Learning](http://arxiv.org/abs/2504.09155)  
+Zhanzhou Feng, Shiliang Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Visual understanding is inherently contextual -- what we focus on in an image depends on the task at hand. For instance, given an image of a person holding a bouquet of flowers, we may focus on either the person such as their clothing, or the type of flowers, depending on the context of interest. Yet, most existing image encoding paradigms represent an image as a fixed, generic feature vector, overlooking the potential needs of prioritizing varying visual information for different downstream use cases. In this work, we introduce FocalLens, a conditional visual encoding method that produces different representations for the same image based on the context of interest, expressed flexibly through natural language. We leverage vision instruction tuning data and contrastively finetune a pretrained vision encoder to take natural language instructions as additional inputs for producing conditional image representations. Extensive experiments validate that conditional image representation from FocalLens better pronounce the visual features of interest compared to generic features produced by standard vision encoders like CLIP. In addition, we show FocalLens further leads to performance improvements on a range of downstream tasks including image-image retrieval, image classification, and image-text retrieval, with an average gain of 5 and 10 points on the challenging SugarCrepe and MMVP-VLM benchmarks, respectively.  
+    Existing Masked Image Modeling methods apply fixed mask patterns to guide the self-supervised training. As those mask patterns resort to different criteria to depict image contents, sticking to a fixed pattern leads to a limited vision cues modeling capability.This paper introduces an evolved hierarchical masking method to pursue general visual cues modeling in self-supervised learning. The proposed method leverages the vision model being trained to parse the input visual cues into a hierarchy structure, which is hence adopted to generate masks accordingly. The accuracy of hierarchy is on par with the capability of the model being trained, leading to evolved mask patterns at different training stages. Initially, generated masks focus on low-level visual cues to grasp basic textures, then gradually evolve to depict higher-level cues to reinforce the learning of more complicated object semantics and contexts. Our method does not require extra pre-trained models or annotations and ensures training efficiency by evolving the training difficulty. We conduct extensive experiments on seven downstream tasks including partial-duplicate image retrieval relying on low-level details, as well as image classification and semantic segmentation that require semantic parsing capability. Experimental results demonstrate that it substantially boosts performance across these tasks. For instance, it surpasses the recent MAE by 1.1\% in imageNet-1K classification and 1.4\% in ADE20K segmentation with the same training epochs. We also align the proposed method with the current research focus on LLMs. The proposed approach bridges the gap with large-scale pre-training on semantic demanding tasks and enhances intricate detail perception in tasks requiring low-level feature recognition.  
   </ol>  
 </details>  
   
-### [PNE-SGAN: Probabilistic NDT-Enhanced Semantic Graph Attention Network for LiDAR Loop Closure Detection](http://arxiv.org/abs/2504.08280)  
-Xiong Li, Shulei Liu, Xingning Chen, Yisong Wu, Dong Zhu  
+### [HAL-NeRF: High Accuracy Localization Leveraging Neural Radiance Fields](http://arxiv.org/abs/2504.08901)  
+Asterios Reppas, Grigorios-Aris Cheimariotis, Panos K. Papadopoulos, Panagiotis Frasiolas, Dimitrios Zarpalas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    LiDAR loop closure detection (LCD) is crucial for consistent Simultaneous Localization and Mapping (SLAM) but faces challenges in robustness and accuracy. Existing methods, including semantic graph approaches, often suffer from coarse geometric representations and lack temporal robustness against noise, dynamics, and viewpoint changes. We introduce PNE-SGAN, a Probabilistic NDT-Enhanced Semantic Graph Attention Network, to overcome these limitations. PNE-SGAN enhances semantic graphs by using Normal Distributions Transform (NDT) covariance matrices as rich, discriminative geometric node features, processed via a Graph Attention Network (GAT). Crucially, it integrates graph similarity scores into a probabilistic temporal filtering framework (modeled as an HMM/Bayes filter), incorporating uncertain odometry for motion modeling and utilizing forward-backward smoothing to effectively handle ambiguities. Evaluations on challenging KITTI sequences (00 and 08) demonstrate state-of-the-art performance, achieving Average Precision of 96.2\% and 95.1\%, respectively. PNE-SGAN significantly outperforms existing methods, particularly in difficult bidirectional loop scenarios where others falter. By synergizing detailed NDT geometry with principled probabilistic temporal reasoning, PNE-SGAN offers a highly accurate and robust solution for LiDAR LCD, enhancing SLAM reliability in complex, large-scale environments.  
+    Precise camera localization is a critical task in XR applications and robotics. Using only the camera captures as input to a system is an inexpensive option that enables localization in large indoor and outdoor environments, but it presents challenges in achieving high accuracy. Specifically, camera relocalization methods, such as Absolute Pose Regression (APR), can localize cameras with a median translation error of more than $0.5m$ in outdoor scenes. This paper presents HAL-NeRF, a high-accuracy localization method that combines a CNN pose regressor with a refinement module based on a Monte Carlo particle filter. The Nerfacto model, an implementation of Neural Radiance Fields (NeRFs), is used to augment the data for training the pose regressor and to measure photometric loss in the particle filter refinement module. HAL-NeRF leverages Nerfacto's ability to synthesize high-quality novel views, significantly improving the performance of the localization pipeline. HAL-NeRF achieves state-of-the-art results that are conventionally measured as the average of the median per scene errors. The translation error was $0.025m$ and the rotation error was $0.59$ degrees and 0.04m and 0.58 degrees on the 7-Scenes dataset and Cambridge Landmarks datasets respectively, with the trade-off of increased computational time. This work highlights the potential of combining APR with NeRF-based refinement techniques to advance monocular camera relocalization accuracy.  
   </ol>  
 </details>  
+**comments**: 8 pages, 4 figures  
   
   
 
 
 
-## Keypoint Detection  
+## NeRF  
 
-### [Stereophotoclinometry Revisited](http://arxiv.org/abs/2504.08252)  
-Travis Driver, Andrew Vaughan, Yang Cheng, Adnan Ansar, John Christian, Panagiotis Tsiotras  
+### [LL-Gaussian: Low-Light Scene Reconstruction and Enhancement via Gaussian Splatting for Novel View Synthesis](http://arxiv.org/abs/2504.10331)  
+Hao Sun, Fenggen Yu, Huiyao Xu, Tao Zhang, Changqing Zou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image-based surface reconstruction and characterization is crucial for missions to small celestial bodies, as it informs mission planning, navigation, and scientific analysis. However, current state-of-the-practice methods, such as stereophotoclinometry (SPC), rely heavily on human-in-the-loop verification and high-fidelity a priori information. This paper proposes Photoclinometry-from-Motion (PhoMo), a novel framework that incorporates photoclinometry techniques into a keypoint-based structure-from-motion (SfM) system to estimate the surface normal and albedo at detected landmarks to improve autonomous surface and shape characterization of small celestial bodies from in-situ imagery. In contrast to SPC, we forego the expensive maplet estimation step and instead use dense keypoint measurements and correspondences from an autonomous keypoint detection and matching method based on deep learning. Moreover, we develop a factor graph-based approach allowing for simultaneous optimization of the spacecraft's pose, landmark positions, Sun-relative direction, and surface normals and albedos via fusion of Sun vector measurements and image keypoint measurements. The proposed framework is validated on real imagery taken by the Dawn mission to the asteroid 4 Vesta and the minor planet 1 Ceres and compared against an SPC reconstruction, where we demonstrate superior rendering performance compared to an SPC solution and precise alignment to a stereophotogrammetry (SPG) solution without relying on any a priori camera pose and topography information or humans-in-the-loop.  
+    Novel view synthesis (NVS) in low-light scenes remains a significant challenge due to degraded inputs characterized by severe noise, low dynamic range (LDR) and unreliable initialization. While recent NeRF-based approaches have shown promising results, most suffer from high computational costs, and some rely on carefully captured or pre-processed data--such as RAW sensor inputs or multi-exposure sequences--which severely limits their practicality. In contrast, 3D Gaussian Splatting (3DGS) enables real-time rendering with competitive visual fidelity; however, existing 3DGS-based methods struggle with low-light sRGB inputs, resulting in unstable Gaussian initialization and ineffective noise suppression. To address these challenges, we propose LL-Gaussian, a novel framework for 3D reconstruction and enhancement from low-light sRGB images, enabling pseudo normal-light novel view synthesis. Our method introduces three key innovations: 1) an end-to-end Low-Light Gaussian Initialization Module (LLGIM) that leverages dense priors from learning-based MVS approach to generate high-quality initial point clouds; 2) a dual-branch Gaussian decomposition model that disentangles intrinsic scene properties (reflectance and illumination) from transient interference, enabling stable and interpretable optimization; 3) an unsupervised optimization strategy guided by both physical constrains and diffusion prior to jointly steer decomposition and enhancement. Additionally, we contribute a challenging dataset collected in extreme low-light environments and demonstrate the effectiveness of LL-Gaussian. Compared to state-of-the-art NeRF-based methods, LL-Gaussian achieves up to 2,000 times faster inference and reduces training time to just 2%, while delivering superior reconstruction and rendering quality.  
   </ol>  
 </details>  
-**comments**: arXiv admin note: substantial text overlap with arXiv:2312.06865  
   
-  
-
-
-
-## Image Matching  
-
-### [Geometric Consistency Refinement for Single Image Novel View Synthesis via Test-Time Adaptation of Diffusion Models](http://arxiv.org/abs/2504.08348)  
-Josef Bengtson, David Nilsson, Fredrik Kahl  
+### [MCBlock: Boosting Neural Radiance Field Training Speed by MCTS-based Dynamic-Resolution Ray Sampling](http://arxiv.org/abs/2504.09878)  
+Yunpeng Tan, Junlin Hao, Jiangkai Wu, Liming Liu, Qingyang Li, Xinggong Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Diffusion models for single image novel view synthesis (NVS) can generate highly realistic and plausible images, but they are limited in the geometric consistency to the given relative poses. The generated images often show significant errors with respect to the epipolar constraints that should be fulfilled, as given by the target pose. In this paper we address this issue by proposing a methodology to improve the geometric correctness of images generated by a diffusion model for single image NVS. We formulate a loss function based on image matching and epipolar constraints, and optimize the starting noise in a diffusion sampling process such that the generated image should both be a realistic image and fulfill geometric constraints derived from the given target pose. Our method does not require training data or fine-tuning of the diffusion models, and we show that we can apply it to multiple state-of-the-art models for single image NVS. The method is evaluated on the MegaScenes dataset and we show that geometric consistency is improved compared to the baseline models while retaining the quality of the generated images.  
+    Neural Radiance Field (NeRF) is widely known for high-fidelity novel view synthesis. However, even the state-of-the-art NeRF model, Gaussian Splatting, requires minutes for training, far from the real-time performance required by multimedia scenarios like telemedicine. One of the obstacles is its inefficient sampling, which is only partially addressed by existing works. Existing point-sampling algorithms uniformly sample simple-texture regions (easy to fit) and complex-texture regions (hard to fit), while existing ray-sampling algorithms sample these regions all in the finest granularity (i.e. the pixel level), both wasting GPU training resources. Actually, regions with different texture intensities require different sampling granularities. To this end, we propose a novel dynamic-resolution ray-sampling algorithm, MCBlock, which employs Monte Carlo Tree Search (MCTS) to partition each training image into pixel blocks with different sizes for active block-wise training. Specifically, the trees are initialized according to the texture of training images to boost the initialization speed, and an expansion/pruning module dynamically optimizes the block partition. MCBlock is implemented in Nerfstudio, an open-source toolset, and achieves a training acceleration of up to 2.33x, surpassing other ray-sampling algorithms. We believe MCBlock can apply to any cone-tracing NeRF model and contribute to the multimedia community.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR 2025 EDGE Workshop. Project page:
-  https://gc-ref.github.io/  
+  
+### [NeRF-Based Transparent Object Grasping Enhanced by Shape Priors](http://arxiv.org/abs/2504.09868)  
+Yi Han, Zixin Lin, Dongjie Li, Lvping Chen, Yongliang Shi, Gan Ma  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Transparent object grasping remains a persistent challenge in robotics, largely due to the difficulty of acquiring precise 3D information. Conventional optical 3D sensors struggle to capture transparent objects, and machine learning methods are often hindered by their reliance on high-quality datasets. Leveraging NeRF's capability for continuous spatial opacity modeling, our proposed architecture integrates a NeRF-based approach for reconstructing the 3D information of transparent objects. Despite this, certain portions of the reconstructed 3D information may remain incomplete. To address these deficiencies, we introduce a shape-prior-driven completion mechanism, further refined by a geometric pose estimation method we have developed. This allows us to obtain a complete and reliable 3D information of transparent objects. Utilizing this refined data, we perform scene-level grasp prediction and deploy the results in real-world robotic systems. Experimental validation demonstrates the efficacy of our architecture, showcasing its capability to reliably capture 3D information of various transparent objects in cluttered scenes, and correspondingly, achieve high-quality, stables, and executable grasp predictions.  
+  </ol>  
+</details>  
+  
+### [HAL-NeRF: High Accuracy Localization Leveraging Neural Radiance Fields](http://arxiv.org/abs/2504.08901)  
+Asterios Reppas, Grigorios-Aris Cheimariotis, Panos K. Papadopoulos, Panagiotis Frasiolas, Dimitrios Zarpalas  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Precise camera localization is a critical task in XR applications and robotics. Using only the camera captures as input to a system is an inexpensive option that enables localization in large indoor and outdoor environments, but it presents challenges in achieving high accuracy. Specifically, camera relocalization methods, such as Absolute Pose Regression (APR), can localize cameras with a median translation error of more than $0.5m$ in outdoor scenes. This paper presents HAL-NeRF, a high-accuracy localization method that combines a CNN pose regressor with a refinement module based on a Monte Carlo particle filter. The Nerfacto model, an implementation of Neural Radiance Fields (NeRFs), is used to augment the data for training the pose regressor and to measure photometric loss in the particle filter refinement module. HAL-NeRF leverages Nerfacto's ability to synthesize high-quality novel views, significantly improving the performance of the localization pipeline. HAL-NeRF achieves state-of-the-art results that are conventionally measured as the average of the median per scene errors. The translation error was $0.025m$ and the rotation error was $0.59$ degrees and 0.04m and 0.58 degrees on the 7-Scenes dataset and Cambridge Landmarks datasets respectively, with the trade-off of increased computational time. This work highlights the potential of combining APR with NeRF-based refinement techniques to advance monocular camera relocalization accuracy.  
+  </ol>  
+</details>  
+**comments**: 8 pages, 4 figures  
   
   
 
