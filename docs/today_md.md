@@ -1,67 +1,66 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Visual-Re-Ranking-with-Non-Visual-Side-Information>Visual Re-Ranking with Non-Visual Side Information</a></li>
-        <li><a href=#TMCIR:-Token-Merge-Benefits-Composed-Image-Retrieval>TMCIR: Token Merge Benefits Composed Image Retrieval</a></li>
+        <li><a href=#An-Online-Adaptation-Method-for-Robust-Depth-Estimation-and-Visual-Odometry-in-the-Open-World>An Online Adaptation Method for Robust Depth Estimation and Visual Odometry in the Open World</a></li>
       </ul>
     </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#UKDM:-Underwater-keypoint-detection-and-matching-using-underwater-image-enhancement-techniques>UKDM: Underwater keypoint detection and matching using underwater image enhancement techniques</a></li>
-        <li><a href=#Acquisition-of-high-quality-images-for-camera-calibration-in-robotics-applications-via-speech-prompts>Acquisition of high-quality images for camera calibration in robotics applications via speech prompts</a></li>
+        <li><a href=#Generalized-Visual-Relation-Detection-with-Diffusion-Models>Generalized Visual Relation Detection with Diffusion Models</a></li>
+      </ul>
+    </li>
+    <li><a href=#nerf>NeRF</a></li>
+      <ul>
+        <li><a href=#R-Meshfusion:-Reinforcement-Learning-Powered-Sparse-View-Mesh-Reconstruction-with-Diffusion-Priors>R-Meshfusion: Reinforcement Learning Powered Sparse-View Mesh Reconstruction with Diffusion Priors</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [An Online Adaptation Method for Robust Depth Estimation and Visual Odometry in the Open World](http://arxiv.org/abs/2504.11698)  
+Xingwu Ji, Haochen Niu, Dexin Duan, Rendong Ying, Fei Wen, Peilin Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recently, learning-based robotic navigation systems have gained extensive research attention and made significant progress. However, the diversity of open-world scenarios poses a major challenge for the generalization of such systems to practical scenarios. Specifically, learned systems for scene measurement and state estimation tend to degrade when the application scenarios deviate from the training data, resulting to unreliable depth and pose estimation. Toward addressing this problem, this work aims to develop a visual odometry system that can fast adapt to diverse novel environments in an online manner. To this end, we construct a self-supervised online adaptation framework for monocular visual odometry aided by an online-updated depth estimation module. Firstly, we design a monocular depth estimation network with lightweight refiner modules, which enables efficient online adaptation. Then, we construct an objective for self-supervised learning of the depth estimation module based on the output of the visual odometry system and the contextual semantic information of the scene. Specifically, a sparse depth densification module and a dynamic consistency enhancement module are proposed to leverage camera poses and contextual semantics to generate pseudo-depths and valid masks for the online adaptation. Finally, we demonstrate the robustness and generalization capability of the proposed method in comparison with state-of-the-art learning-based approaches on urban, in-house datasets and a robot platform. Code is publicly available at: https://github.com/jixingwu/SOL-SLAM.  
+  </ol>  
+</details>  
+**comments**: 11 pages, 14 figures  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [Visual Re-Ranking with Non-Visual Side Information](http://arxiv.org/abs/2504.11134)  
-Gustav Hanning, Gabrielle Flood, Viktor Larsson  
+### [Generalized Visual Relation Detection with Diffusion Models](http://arxiv.org/abs/2504.12100)  
+Kaifeng Gao, Siqi Chen, Hanwang Zhang, Jun Xiao, Yueting Zhuang, Qianru Sun  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The standard approach for visual place recognition is to use global image descriptors to retrieve the most similar database images for a given query image. The results can then be further improved with re-ranking methods that re-order the top scoring images. However, existing methods focus on re-ranking based on the same image descriptors that were used for the initial retrieval, which we argue provides limited additional signal.   In this work we propose Generalized Contextual Similarity Aggregation (GCSA), which is a graph neural network-based re-ranking method that, in addition to the visual descriptors, can leverage other types of available side information. This can for example be other sensor data (such as signal strength of nearby WiFi or BlueTooth endpoints) or geometric properties such as camera poses for database images. In many applications this information is already present or can be acquired with low effort. Our architecture leverages the concept of affinity vectors to allow for a shared encoding of the heterogeneous multi-modal input. Two large-scale datasets, covering both outdoor and indoor localization scenarios, are utilized for training and evaluation. In experiments we show significant improvement not only on image retrieval metrics, but also for the downstream visual localization task.  
+    Visual relation detection (VRD) aims to identify relationships (or interactions) between object pairs in an image. Although recent VRD models have achieved impressive performance, they are all restricted to pre-defined relation categories, while failing to consider the semantic ambiguity characteristic of visual relations. Unlike objects, the appearance of visual relations is always subtle and can be described by multiple predicate words from different perspectives, e.g., ``ride'' can be depicted as ``race'' and ``sit on'', from the sports and spatial position views, respectively. To this end, we propose to model visual relations as continuous embeddings, and design diffusion models to achieve generalized VRD in a conditional generative manner, termed Diff-VRD. We model the diffusion process in a latent space and generate all possible relations in the image as an embedding sequence. During the generation, the visual and text embeddings of subject-object pairs serve as conditional signals and are injected via cross-attention. After the generation, we design a subsequent matching stage to assign the relation words to subject-object pairs by considering their semantic similarities. Benefiting from the diffusion-based generative process, our Diff-VRD is able to generate visual relations beyond the pre-defined category labels of datasets. To properly evaluate this generalized VRD task, we introduce two evaluation metrics, i.e., text-to-image retrieval and SPICE PR Curve inspired by image captioning. Extensive experiments in both human-object interaction (HOI) detection and scene graph generation (SGG) benchmarks attest to the superiority and effectiveness of Diff-VRD.  
   </ol>  
 </details>  
-**comments**: Accepted at Scandinavian Conference on Image Analysis (SCIA) 2025  
-  
-### [TMCIR: Token Merge Benefits Composed Image Retrieval](http://arxiv.org/abs/2504.10995)  
-Chaoyang Wang, Zeyu Zhang, Long Teng, Zijun Li, Shichao Kan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Composed Image Retrieval (CIR) retrieves target images using a multi-modal query that combines a reference image with text describing desired modifications. The primary challenge is effectively fusing this visual and textual information. Current cross-modal feature fusion approaches for CIR exhibit an inherent bias in intention interpretation. These methods tend to disproportionately emphasize either the reference image features (visual-dominant fusion) or the textual modification intent (text-dominant fusion through image-to-text conversion). Such an imbalanced representation often fails to accurately capture and reflect the actual search intent of the user in the retrieval results. To address this challenge, we propose TMCIR, a novel framework that advances composed image retrieval through two key innovations: 1) Intent-Aware Cross-Modal Alignment. We first fine-tune CLIP encoders contrastively using intent-reflecting pseudo-target images, synthesized from reference images and textual descriptions via a diffusion model. This step enhances the encoder ability of text to capture nuanced intents in textual descriptions. 2) Adaptive Token Fusion. We further fine-tune all encoders contrastively by comparing adaptive token-fusion features with the target image. This mechanism dynamically balances visual and textual representations within the contrastive learning pipeline, optimizing the composed feature for retrieval. Extensive experiments on Fashion-IQ and CIRR datasets demonstrate that TMCIR significantly outperforms state-of-the-art methods, particularly in capturing nuanced user intent.  
-  </ol>  
-</details>  
-**comments**: arXiv admin note: text overlap with arXiv:2310.05473 by other authors  
+**comments**: Under review at IEEE TCSVT. The Appendix is provided additionally  
   
   
 
 
 
-## Keypoint Detection  
+## NeRF  
 
-### [UKDM: Underwater keypoint detection and matching using underwater image enhancement techniques](http://arxiv.org/abs/2504.11063)  
-Pedro Diaz-Garcia, Felix Escalona, Miguel Cazorla  
+### [R-Meshfusion: Reinforcement Learning Powered Sparse-View Mesh Reconstruction with Diffusion Priors](http://arxiv.org/abs/2504.11946)  
+Haoyang Wang, Liming Liu, Peiheng Wang, Junlin Hao, Jiangkai Wu, Xinggong Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The purpose of this paper is to explore the use of underwater image enhancement techniques to improve keypoint detection and matching. By applying advanced deep learning models, including generative adversarial networks and convolutional neural networks, we aim to find the best method which improves the accuracy of keypoint detection and the robustness of matching algorithms. We evaluate the performance of these techniques on various underwater datasets, demonstrating significant improvements over traditional methods.  
+    Mesh reconstruction from multi-view images is a fundamental problem in computer vision, but its performance degrades significantly under sparse-view conditions, especially in unseen regions where no ground-truth observations are available. While recent advances in diffusion models have demonstrated strong capabilities in synthesizing novel views from limited inputs, their outputs often suffer from visual artifacts and lack 3D consistency, posing challenges for reliable mesh optimization. In this paper, we propose a novel framework that leverages diffusion models to enhance sparse-view mesh reconstruction in a principled and reliable manner. To address the instability of diffusion outputs, we propose a Consensus Diffusion Module that filters unreliable generations via interquartile range (IQR) analysis and performs variance-aware image fusion to produce robust pseudo-supervision. Building on this, we design an online reinforcement learning strategy based on the Upper Confidence Bound (UCB) to adaptively select the most informative viewpoints for enhancement, guided by diffusion loss. Finally, the fused images are used to jointly supervise a NeRF-based model alongside sparse-view ground truth, ensuring consistency across both geometry and appearance. Extensive experiments demonstrate that our method achieves significant improvements in both geometric quality and rendering quality.  
   </ol>  
 </details>  
-  
-### [Acquisition of high-quality images for camera calibration in robotics applications via speech prompts](http://arxiv.org/abs/2504.11031)  
-Timm Linder, Kadir Yilmaz, David B. Adrian, Bastian Leibe  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Accurate intrinsic and extrinsic camera calibration can be an important prerequisite for robotic applications that rely on vision as input. While there is ongoing research on enabling camera calibration using natural images, many systems in practice still rely on using designated calibration targets with e.g. checkerboard patterns or April tag grids. Once calibration images from different perspectives have been acquired and feature descriptors detected, those are typically used in an optimization process to minimize the geometric reprojection error. For this optimization to converge, input images need to be of sufficient quality and particularly sharpness; they should neither contain motion blur nor rolling-shutter artifacts that can arise when the calibration board was not static during image capture. In this work, we present a novel calibration image acquisition technique controlled via voice commands recorded with a clip-on microphone, that can be more robust and user-friendly than e.g. triggering capture with a remote control, or filtering out blurry frames from a video sequence in postprocessing. To achieve this, we use a state-of-the-art speech-to-text transcription model with accurate per-word timestamping to capture trigger words with precise temporal alignment. Our experiments show that the proposed method improves user experience by being fast and efficient, allowing us to successfully calibrate complex multi-camera setups.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 6 figures  
   
   
 
