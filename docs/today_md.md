@@ -1,62 +1,30 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Volume-Encoding-Gaussians:-Transfer-Function-Agnostic-3D-Gaussians-for-Volume-Rendering>Volume Encoding Gaussians: Transfer Function-Agnostic 3D Gaussians for Volume Rendering</a></li>
-        <li><a href=#EDGS:-Eliminating-Densification-for-Efficient-Convergence-of-3DGS>EDGS: Eliminating Densification for Efficient Convergence of 3DGS</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Outlier-Robust-Multi-Model-Fitting-on-Quantum-Annealers>Outlier-Robust Multi-Model Fitting on Quantum Annealers</a></li>
+        <li><a href=#A-Multimodal-Recaptioning-Framework-to-Account-for-Perceptual-Diversity-in-Multilingual-Vision-Language-Modeling>A Multimodal Recaptioning Framework to Account for Perceptual Diversity in Multilingual Vision-Language Modeling</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#SLAM&Render:-A-Benchmark-for-the-Intersection-Between-Neural-Rendering,-Gaussian-Splatting-and-SLAM>SLAM&Render: A Benchmark for the Intersection Between Neural Rendering, Gaussian Splatting and SLAM</a></li>
-        <li><a href=#BEV-GS:-Feed-forward-Gaussian-Splatting-in-Bird's-Eye-View-for-Road-Reconstruction>BEV-GS: Feed-forward Gaussian Splatting in Bird's-Eye-View for Road Reconstruction</a></li>
+        <li><a href=#StyleMe3D:-Stylization-with-Disentangled-Priors-by-Multiple-Encoders-on-3D-Gaussians>StyleMe3D: Stylization with Disentangled Priors by Multiple Encoders on 3D Gaussians</a></li>
+        <li><a href=#Scaling-LLaNA:-Advancing-NeRF-Language-Understanding-Through-Large-Scale-Training>Scaling LLaNA: Advancing NeRF-Language Understanding Through Large-Scale Training</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## Visual Localization  
 
-### [Volume Encoding Gaussians: Transfer Function-Agnostic 3D Gaussians for Volume Rendering](http://arxiv.org/abs/2504.13339)  
-Landon Dyken, Andres Sewell, Will Usher, Steve Petruzza, Sidharth Kumar  
+### [A Multimodal Recaptioning Framework to Account for Perceptual Diversity in Multilingual Vision-Language Modeling](http://arxiv.org/abs/2504.14359)  
+Kyle Buettner, Jacob Emmerson, Adriana Kovashka  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    While HPC resources are increasingly being used to produce adaptively refined or unstructured volume datasets, current research in applying machine learning-based representation to visualization has largely ignored this type of data. To address this, we introduce Volume Encoding Gaussians (VEG), a novel 3D Gaussian-based representation for scientific volume visualization focused on unstructured volumes. Unlike prior 3D Gaussian Splatting (3DGS) methods that store view-dependent color and opacity for each Gaussian, VEG decouple the visual appearance from the data representation by encoding only scalar values, enabling transfer-function-agnostic rendering of 3DGS models for interactive scientific visualization. VEG are directly initialized from volume datasets, eliminating the need for structure-from-motion pipelines like COLMAP. To ensure complete scalar field coverage, we introduce an opacity-guided training strategy, using differentiable rendering with multiple transfer functions to optimize our data representation. This allows VEG to preserve fine features across the full scalar range of a dataset while remaining independent of any specific transfer function. Each Gaussian is scaled and rotated to adapt to local geometry, allowing for efficient representation of unstructured meshes without storing mesh connectivity and while using far fewer primitives. Across a diverse set of data, VEG achieve high reconstruction quality, compress large volume datasets by up to 3600x, and support lightning-fast rendering on commodity GPUs, enabling interactive visualization of large-scale structured and unstructured volumes.  
+    There are many ways to describe, name, and group objects when captioning an image. Differences are evident when speakers come from diverse cultures due to the unique experiences that shape perception. Machine translation of captions has pushed multilingual capabilities in vision-language models (VLMs), but data comes mainly from English speakers, indicating a perceptual bias and lack of model flexibility. In this work, we address this challenge and outline a data-efficient framework to instill multilingual VLMs with greater understanding of perceptual diversity. We specifically propose an LLM-based, multimodal recaptioning strategy that alters the object descriptions of English captions before translation. The greatest benefits are demonstrated in a targeted multimodal mechanism guided by native speaker data. By adding produced rewrites as augmentations in training, we improve on German and Japanese text-image retrieval cases studies (up to +3.5 mean recall overall, +4.7 on non-native error cases). We further propose a mechanism to analyze the specific object description differences across datasets, and we offer insights into cross-dataset and cross-language generalization.  
   </ol>  
 </details>  
-  
-### [EDGS: Eliminating Densification for Efficient Convergence of 3DGS](http://arxiv.org/abs/2504.13204)  
-Dmytro Kotovenko, Olga Grebenkova, Björn Ommer  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    3D Gaussian Splatting reconstructs scenes by starting from a sparse Structure-from-Motion initialization and iteratively refining under-reconstructed regions. This process is inherently slow, as it requires multiple densification steps where Gaussians are repeatedly split and adjusted, following a lengthy optimization path. Moreover, this incremental approach often leads to suboptimal renderings, particularly in high-frequency regions where detail is critical.   We propose a fundamentally different approach: we eliminate densification process with a one-step approximation of scene geometry using triangulated pixels from dense image correspondences. This dense initialization allows us to estimate rough geometry of the scene while preserving rich details from input RGB images, providing each Gaussian with well-informed colors, scales, and positions. As a result, we dramatically shorten the optimization path and remove the need for densification. Unlike traditional methods that rely on sparse keypoints, our dense initialization ensures uniform detail across the scene, even in high-frequency regions where 3DGS and other methods struggle. Moreover, since all splats are initialized in parallel at the start of optimization, we eliminate the need to wait for densification to adjust new Gaussians.   Our method not only outperforms speed-optimized models in training efficiency but also achieves higher rendering quality than state-of-the-art approaches, all while using only half the splats of standard 3DGS. It is fully compatible with other 3DGS acceleration techniques, making it a versatile and efficient solution that can be integrated with existing approaches.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## Image Matching  
-
-### [Outlier-Robust Multi-Model Fitting on Quantum Annealers](http://arxiv.org/abs/2504.13836)  
-Saurabh Pandey, Luca Magri, Federica Arrigoni, Vladislav Golyanik  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Multi-model fitting (MMF) presents a significant challenge in Computer Vision, particularly due to its combinatorial nature. While recent advancements in quantum computing offer promise for addressing NP-hard problems, existing quantum-based approaches for model fitting are either limited to a single model or consider multi-model scenarios within outlier-free datasets. This paper introduces a novel approach, the robust quantum multi-model fitting (R-QuMF) algorithm, designed to handle outliers effectively. Our method leverages the intrinsic capabilities of quantum hardware to tackle combinatorial challenges inherent in MMF tasks, and it does not require prior knowledge of the exact number of models, thereby enhancing its practical applicability. By formulating the problem as a maximum set coverage task for adiabatic quantum computers (AQC), R-QuMF outperforms existing quantum techniques, demonstrating superior performance across various synthetic and real-world 3D datasets. Our findings underscore the potential of quantum computing in addressing the complexities of MMF, especially in real-world scenarios with noisy and outlier-prone data.  
-  </ol>  
-</details>  
-**comments**: Accepted at CVPR 2025 Workshop "Image Matching: Local Features &
-  Beyond"  
   
   
 
@@ -64,24 +32,26 @@ Saurabh Pandey, Luca Magri, Federica Arrigoni, Vladislav Golyanik
 
 ## NeRF  
 
-### [SLAM&Render: A Benchmark for the Intersection Between Neural Rendering, Gaussian Splatting and SLAM](http://arxiv.org/abs/2504.13713)  
-[[code](https://github.com/samuel-cerezo/SLAM-Render)]  
-Samuel Cerezo, Gaetano Meli, Tomás Berriel Martins, Kirill Safronov, Javier Civera  
+### [StyleMe3D: Stylization with Disentangled Priors by Multiple Encoders on 3D Gaussians](http://arxiv.org/abs/2504.15281)  
+Cailin Zhuang, Yaoqi Hu, Xuanyang Zhang, Wei Cheng, Jiacheng Bao, Shengqi Liu, Yiying Yang, Xianfang Zeng, Gang Yu, Ming Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Models and methods originally developed for novel view synthesis and scene rendering, such as Neural Radiance Fields (NeRF) and Gaussian Splatting, are increasingly being adopted as representations in Simultaneous Localization and Mapping (SLAM). However, existing datasets fail to include the specific challenges of both fields, such as multimodality and sequentiality in SLAM or generalization across viewpoints and illumination conditions in neural rendering. To bridge this gap, we introduce SLAM&Render, a novel dataset designed to benchmark methods in the intersection between SLAM and novel view rendering. It consists of 40 sequences with synchronized RGB, depth, IMU, robot kinematic data, and ground-truth pose streams. By releasing robot kinematic data, the dataset also enables the assessment of novel SLAM strategies when applied to robot manipulators. The dataset sequences span five different setups featuring consumer and industrial objects under four different lighting conditions, with separate training and test trajectories per scene, as well as object rearrangements. Our experimental results, obtained with several baselines from the literature, validate SLAM&Render as a relevant benchmark for this emerging research area.  
+    3D Gaussian Splatting (3DGS) excels in photorealistic scene reconstruction but struggles with stylized scenarios (e.g., cartoons, games) due to fragmented textures, semantic misalignment, and limited adaptability to abstract aesthetics. We propose StyleMe3D, a holistic framework for 3D GS style transfer that integrates multi-modal style conditioning, multi-level semantic alignment, and perceptual quality enhancement. Our key insights include: (1) optimizing only RGB attributes preserves geometric integrity during stylization; (2) disentangling low-, medium-, and high-level semantics is critical for coherent style transfer; (3) scalability across isolated objects and complex scenes is essential for practical deployment. StyleMe3D introduces four novel components: Dynamic Style Score Distillation (DSSD), leveraging Stable Diffusion's latent space for semantic alignment; Contrastive Style Descriptor (CSD) for localized, content-aware texture transfer; Simultaneously Optimized Scale (SOS) to decouple style details and structural coherence; and 3D Gaussian Quality Assessment (3DG-QA), a differentiable aesthetic prior trained on human-rated data to suppress artifacts and enhance visual harmony. Evaluated on NeRF synthetic dataset (objects) and tandt db (scenes) datasets, StyleMe3D outperforms state-of-the-art methods in preserving geometric details (e.g., carvings on sculptures) and ensuring stylistic consistency across scenes (e.g., coherent lighting in landscapes), while maintaining real-time rendering. This work bridges photorealistic 3D GS and artistic stylization, unlocking applications in gaming, virtual worlds, and digital art.  
   </ol>  
 </details>  
+**comments**: 16 pages; Project page: https://styleme3d.github.io/  
   
-### [BEV-GS: Feed-forward Gaussian Splatting in Bird's-Eye-View for Road Reconstruction](http://arxiv.org/abs/2504.13207)  
-Wenhua Wu, Tong Zhao, Chensheng Peng, Lei Yang, Yintao Wei, Zhe Liu, Hesheng Wang  
+### [Scaling LLaNA: Advancing NeRF-Language Understanding Through Large-Scale Training](http://arxiv.org/abs/2504.13995)  
+Andrea Amaduzzi, Pierluigi Zama Ramirez, Giuseppe Lisanti, Samuele Salti, Luigi Di Stefano  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Road surface is the sole contact medium for wheels or robot feet. Reconstructing road surface is crucial for unmanned vehicles and mobile robots. Recent studies on Neural Radiance Fields (NeRF) and Gaussian Splatting (GS) have achieved remarkable results in scene reconstruction. However, they typically rely on multi-view image inputs and require prolonged optimization times. In this paper, we propose BEV-GS, a real-time single-frame road surface reconstruction method based on feed-forward Gaussian splatting. BEV-GS consists of a prediction module and a rendering module. The prediction module introduces separate geometry and texture networks following Bird's-Eye-View paradigm. Geometric and texture parameters are directly estimated from a single frame, avoiding per-scene optimization. In the rendering module, we utilize grid Gaussian for road surface representation and novel view synthesis, which better aligns with road surface characteristics. Our method achieves state-of-the-art performance on the real-world dataset RSRD. The road elevation error reduces to 1.73 cm, and the PSNR of novel view synthesis reaches 28.36 dB. The prediction and rendering FPS is 26, and 2061, respectively, enabling high-accuracy and real-time applications. The code will be available at: \href{https://github.com/cat-wwh/BEV-GS}{\texttt{https://github.com/cat-wwh/BEV-GS}}  
+    Recent advances in Multimodal Large Language Models (MLLMs) have shown remarkable capabilities in understanding both images and 3D data, yet these modalities face inherent limitations in comprehensively representing object geometry and appearance. Neural Radiance Fields (NeRFs) have emerged as a promising alternative, encoding both geometric and photorealistic properties within the weights of a simple Multi-Layer Perceptron (MLP). This work investigates the feasibility and effectiveness of ingesting NeRFs into an MLLM. We introduce LLaNA, the first MLLM able to perform new tasks such as NeRF captioning and Q\&A, by directly processing the weights of a NeRF's MLP. Notably, LLaNA is able to extract information about the represented objects without the need to render images or materialize 3D data structures. In addition, we build the first large-scale NeRF-language dataset, composed by more than 300K NeRFs trained on ShapeNet and Objaverse, with paired textual annotations that enable various NeRF-language tasks. Based on this dataset, we develop a benchmark to evaluate the NeRF understanding capability of our method. Results show that directly processing NeRF weights leads to better performance on NeRF-Language tasks compared to approaches that rely on either 2D or 3D representations derived from NeRFs.  
   </ol>  
 </details>  
+**comments**: Under submission. Project page at
+  https://andreamaduzzi.github.io/llana/  
   
   
 
