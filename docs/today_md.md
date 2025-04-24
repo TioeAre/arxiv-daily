@@ -3,12 +3,26 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Towards-Understanding-Camera-Motions-in-Any-Video>Towards Understanding Camera Motions in Any Video</a></li>
+        <li><a href=#A-Low-Cost-Photogrammetry-System-for-3D-Plant-Modeling-and-Phenotyping>A Low-Cost Photogrammetry System for 3D Plant Modeling and Phenotyping</a></li>
+        <li><a href=#PRaDA:-Projective-Radial-Distortion-Averaging>PRaDA: Projective Radial Distortion Averaging</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#Rethinking-Vision-Transformer-for-Large-Scale-Fine-Grained-Image-Retrieval>Rethinking Vision Transformer for Large-Scale Fine-Grained Image Retrieval</a></li>
+        <li><a href=#Media-Content-Atlas:-A-Pipeline-to-Explore-and-Investigate-Multidimensional-Media-Space-using-Multimodal-LLMs>Media Content Atlas: A Pipeline to Explore and Investigate Multidimensional Media Space using Multimodal LLMs</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Road-Similarity-Based-BEV-Satellite-Image-Matching-for-UGV-Localization>Road Similarity-Based BEV-Satellite Image Matching for UGV Localization</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Pose-Optimization-for-Autonomous-Driving-Datasets-using-Neural-Rendering-Models>Pose Optimization for Autonomous Driving Datasets using Neural Rendering Models</a></li>
+        <li><a href=#Dual-Camera-All-in-Focus-Neural-Radiance-Fields>Dual-Camera All-in-Focus Neural Radiance Fields</a></li>
+        <li><a href=#Beyond-Anonymization:-Object-Scrubbing-for-Privacy-Preserving-2D-and-3D-Vision-Tasks>Beyond Anonymization: Object Scrubbing for Privacy-Preserving 2D and 3D Vision Tasks</a></li>
+        <li><a href=#SaENeRF:-Suppressing-Artifacts-in-Event-based-Neural-Radiance-Fields>SaENeRF: Suppressing Artifacts in Event-based Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
@@ -16,15 +30,67 @@
 
 ## SFM  
 
-### [Towards Understanding Camera Motions in Any Video](http://arxiv.org/abs/2504.15376)  
-Zhiqiu Lin, Siyuan Cen, Daniel Jiang, Jay Karhade, Hewei Wang, Chancharik Mitra, Tiffany Ling, Yuhan Huang, Sifan Liu, Mingyu Chen, Rushikesh Zawar, Xue Bai, Yilun Du, Chuang Gan, Deva Ramanan  
+### [A Low-Cost Photogrammetry System for 3D Plant Modeling and Phenotyping](http://arxiv.org/abs/2504.16840)  
+Joe Hrzich, Michael A. Beck, Christopher P. Bidinosti, Christopher J. Henry, Kalhari Manawasinghe, Karen Tanino  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce CameraBench, a large-scale dataset and benchmark designed to assess and improve camera motion understanding. CameraBench consists of ~3,000 diverse internet videos, annotated by experts through a rigorous multi-stage quality control process. One of our contributions is a taxonomy of camera motion primitives, designed in collaboration with cinematographers. We find, for example, that some motions like "follow" (or tracking) require understanding scene content like moving subjects. We conduct a large-scale human study to quantify human annotation performance, revealing that domain expertise and tutorial-based training can significantly enhance accuracy. For example, a novice may confuse zoom-in (a change of intrinsics) with translating forward (a change of extrinsics), but can be trained to differentiate the two. Using CameraBench, we evaluate Structure-from-Motion (SfM) and Video-Language Models (VLMs), finding that SfM models struggle to capture semantic primitives that depend on scene content, while VLMs struggle to capture geometric primitives that require precise estimation of trajectories. We then fine-tune a generative VLM on CameraBench to achieve the best of both worlds and showcase its applications, including motion-augmented captioning, video question answering, and video-text retrieval. We hope our taxonomy, benchmark, and tutorials will drive future efforts towards the ultimate goal of understanding camera motions in any video.  
+    We present an open-source, low-cost photogrammetry system for 3D plant modeling and phenotyping. The system uses a structure-from-motion approach to reconstruct 3D representations of the plants via point clouds. Using wheat as an example, we demonstrate how various phenotypic traits can be computed easily from the point clouds. These include standard measurements such as plant height and radius, as well as features that would be more cumbersome to measure by hand, such as leaf angles and convex hull. We further demonstrate the utility of the system through the investigation of specific metrics that may yield objective classifications of erectophile versus planophile wheat canopy architectures.  
   </ol>  
 </details>  
-**comments**: Project site: https://linzhiqiu.github.io/papers/camerabench/  
+  
+### [PRaDA: Projective Radial Distortion Averaging](http://arxiv.org/abs/2504.16499)  
+Daniil Sinitsyn, Linus Härenstam-Nielsen, Daniel Cremers  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We tackle the problem of automatic calibration of radially distorted cameras in challenging conditions. Accurately determining distortion parameters typically requires either 1) solving the full Structure from Motion (SfM) problem involving camera poses, 3D points, and the distortion parameters, which is only possible if many images with sufficient overlap are provided, or 2) relying heavily on learning-based methods that are comparatively less accurate. In this work, we demonstrate that distortion calibration can be decoupled from 3D reconstruction, maintaining the accuracy of SfM-based methods while avoiding many of the associated complexities. This is achieved by working in Projective Space, where the geometry is unique up to a homography, which encapsulates all camera parameters except for distortion. Our proposed method, Projective Radial Distortion Averaging, averages multiple distortion estimates in a fully projective framework without creating 3d points and full bundle adjustment. By relying on pairwise projective relations, our methods support any feature-matching approaches without constructing point tracks across multiple images.  
+  </ol>  
+</details>  
+**comments**: Accepted at CVPR 2025. 8 pages + references  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Rethinking Vision Transformer for Large-Scale Fine-Grained Image Retrieval](http://arxiv.org/abs/2504.16691)  
+Xin Jiang, Hao Tang, Yonghua Pan, Zechao Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Large-scale fine-grained image retrieval (FGIR) aims to retrieve images belonging to the same subcategory as a given query by capturing subtle differences in a large-scale setting. Recently, Vision Transformers (ViT) have been employed in FGIR due to their powerful self-attention mechanism for modeling long-range dependencies. However, most Transformer-based methods focus primarily on leveraging self-attention to distinguish fine-grained details, while overlooking the high computational complexity and redundant dependencies inherent to these models, limiting their scalability and effectiveness in large-scale FGIR. In this paper, we propose an Efficient and Effective ViT-based framework, termed \textbf{EET}, which integrates token pruning module with a discriminative transfer strategy to address these limitations. Specifically, we introduce a content-based token pruning scheme to enhance the efficiency of the vanilla ViT, progressively removing background or low-discriminative tokens at different stages by exploiting feature responses and self-attention mechanism. To ensure the resulting efficient ViT retains strong discriminative power, we further present a discriminative transfer strategy comprising both \textit{discriminative knowledge transfer} and \textit{discriminative region guidance}. Using a distillation paradigm, these components transfer knowledge from a larger ``teacher'' ViT to a more efficient ``student'' model, guiding the latter to focus on subtle yet crucial regions in a cost-free manner. Extensive experiments on two widely-used fine-grained datasets and four large-scale fine-grained datasets demonstrate the effectiveness of our method. Specifically, EET reduces the inference latency of ViT-Small by 42.7\% and boosts the retrieval performance of 16-bit hash codes by 5.15\% on the challenging NABirds dataset.  
+  </ol>  
+</details>  
+**comments**: Accepted by IEEE TMM  
+  
+### [Media Content Atlas: A Pipeline to Explore and Investigate Multidimensional Media Space using Multimodal LLMs](http://arxiv.org/abs/2504.16323)  
+Merve Cerit, Eric Zelikman, Mu-Jung Cho, Thomas N. Robinson, Byron Reeves, Nilam Ram, Nick Haber  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    As digital media use continues to evolve and influence various aspects of life, developing flexible and scalable tools to study complex media experiences is essential. This study introduces the Media Content Atlas (MCA), a novel pipeline designed to help researchers investigate large-scale screen data beyond traditional screen-use metrics. Leveraging multimodal large language models (MLLMs), MCA enables moment-by-moment content analysis, content-based clustering, topic modeling, image retrieval, and interactive visualizations. Evaluated on 1.12 million smartphone screenshots continuously captured during screen use from 112 adults over an entire month, MCA facilitates open-ended exploration and hypothesis generation as well as hypothesis-driven investigations at an unprecedented scale. Expert evaluators underscored its usability and potential for research and intervention design, with clustering results rated 96% relevant and descriptions 83% accurate. By bridging methodological possibilities with domain-specific needs, MCA accelerates both inductive and deductive inquiry, presenting new opportunities for media and HCI research.  
+  </ol>  
+</details>  
+**comments**: Accepted to CHI 2025, in press. See the project page at
+  mediacontentatlas.github.io  
+  
+  
+
+
+
+## Image Matching  
+
+### [Road Similarity-Based BEV-Satellite Image Matching for UGV Localization](http://arxiv.org/abs/2504.16346)  
+Zhenping Sun, Chuang Yang, Yafeng Bu, Bokai Liu, Jun Zeng, Xiaohui Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    To address the challenge of autonomous UGV localization in GNSS-denied off-road environments,this study proposes a matching-based localization method that leverages BEV perception image and satellite map within a road similarity space to achieve high-precision positioning.We first implement a robust LiDAR-inertial odometry system, followed by the fusion of LiDAR and image data to generate a local BEV perception image of the UGV. This approach mitigates the significant viewpoint discrepancy between ground-view images and satellite map. The BEV image and satellite map are then projected into the road similarity space, where normalized cross correlation (NCC) is computed to assess the matching score.Finally, a particle filter is employed to estimate the probability distribution of the vehicle's pose.By comparing with GNSS ground truth, our localization system demonstrated stability without divergence over a long-distance test of 10 km, achieving an average lateral error of only 0.89 meters and an average planar Euclidean error of 3.41 meters. Furthermore, it maintained accurate and stable global localization even under nighttime conditions, further validating its robustness and adaptability.  
+  </ol>  
+</details>  
+**comments**: 7 pages,9 figures,published to IROS2025  
   
   
 
@@ -32,15 +98,35 @@ Zhiqiu Lin, Siyuan Cen, Daniel Jiang, Jay Karhade, Hewei Wang, Chancharik Mitra,
 
 ## NeRF  
 
-### [Pose Optimization for Autonomous Driving Datasets using Neural Rendering Models](http://arxiv.org/abs/2504.15776)  
-Quentin Herau, Nathan Piasco, Moussab Bennehar, Luis Rolado, Dzmitry Tsishkou, Bingbing Liu, Cyrille Migniot, Pascal Vasseur, Cédric Demonceaux  
+### [Dual-Camera All-in-Focus Neural Radiance Fields](http://arxiv.org/abs/2504.16636)  
+Xianrui Luo, Zijin Wu, Juewen Peng, Huiqiang Sun, Zhiguo Cao, Guosheng Lin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Autonomous driving systems rely on accurate perception and localization of the ego car to ensure safety and reliability in challenging real-world driving scenarios. Public datasets play a vital role in benchmarking and guiding advancement in research by providing standardized resources for model development and evaluation. However, potential inaccuracies in sensor calibration and vehicle poses within these datasets can lead to erroneous evaluations of downstream tasks, adversely impacting the reliability and performance of the autonomous systems. To address this challenge, we propose a robust optimization method based on Neural Radiance Fields (NeRF) to refine sensor poses and calibration parameters, enhancing the integrity of dataset benchmarks. To validate improvement in accuracy of our optimized poses without ground truth, we present a thorough evaluation process, relying on reprojection metrics, Novel View Synthesis rendering quality, and geometric alignment. We demonstrate that our method achieves significant improvements in sensor pose accuracy. By optimizing these critical parameters, our approach not only improves the utility of existing datasets but also paves the way for more reliable autonomous driving models. To foster continued progress in this field, we make the optimized sensor poses publicly available, providing a valuable resource for the research community.  
+    We present the first framework capable of synthesizing the all-in-focus neural radiance field (NeRF) from inputs without manual refocusing. Without refocusing, the camera will automatically focus on the fixed object for all views, and current NeRF methods typically using one camera fail due to the consistent defocus blur and a lack of sharp reference. To restore the all-in-focus NeRF, we introduce the dual-camera from smartphones, where the ultra-wide camera has a wider depth-of-field (DoF) and the main camera possesses a higher resolution. The dual camera pair saves the high-fidelity details from the main camera and uses the ultra-wide camera's deep DoF as reference for all-in-focus restoration. To this end, we first implement spatial warping and color matching to align the dual camera, followed by a defocus-aware fusion module with learnable defocus parameters to predict a defocus map and fuse the aligned camera pair. We also build a multi-view dataset that includes image pairs of the main and ultra-wide cameras in a smartphone. Extensive experiments on this dataset verify that our solution, termed DC-NeRF, can produce high-quality all-in-focus novel views and compares favorably against strong baselines quantitatively and qualitatively. We further show DoF applications of DC-NeRF with adjustable blur intensity and focal plane, including refocusing and split diopter.  
   </ol>  
 </details>  
-**comments**: under review  
+**comments**: Published by IEEE TPAMI 2025  
+  
+### [Beyond Anonymization: Object Scrubbing for Privacy-Preserving 2D and 3D Vision Tasks](http://arxiv.org/abs/2504.16557)  
+Murat Bilgehan Ertan, Ronak Sahu, Phuong Ha Nguyen, Kaleel Mahmood, Marten van Dijk  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce ROAR (Robust Object Removal and Re-annotation), a scalable framework for privacy-preserving dataset obfuscation that eliminates sensitive objects instead of modifying them. Our method integrates instance segmentation with generative inpainting to remove identifiable entities while preserving scene integrity. Extensive evaluations on 2D COCO-based object detection show that ROAR achieves 87.5% of the baseline detection average precision (AP), whereas image dropping achieves only 74.2% of the baseline AP, highlighting the advantage of scrubbing in preserving dataset utility. The degradation is even more severe for small objects due to occlusion and loss of fine-grained details. Furthermore, in NeRF-based 3D reconstruction, our method incurs a PSNR loss of at most 1.66 dB while maintaining SSIM and improving LPIPS, demonstrating superior perceptual quality. Our findings establish object removal as an effective privacy framework, achieving strong privacy guarantees with minimal performance trade-offs. The results highlight key challenges in generative inpainting, occlusion-robust segmentation, and task-specific scrubbing, setting the foundation for future advancements in privacy-preserving vision systems.  
+  </ol>  
+</details>  
+**comments**: Submitted to ICCV 2025  
+  
+### [SaENeRF: Suppressing Artifacts in Event-based Neural Radiance Fields](http://arxiv.org/abs/2504.16389)  
+Yuanjian Wang, Yufei Deng, Rong Xiao, Jiahao Fan, Chenwei Tang, Deng Xiong, Jiancheng Lv  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Event cameras are neuromorphic vision sensors that asynchronously capture changes in logarithmic brightness changes, offering significant advantages such as low latency, low power consumption, low bandwidth, and high dynamic range. While these characteristics make them ideal for high-speed scenarios, reconstructing geometrically consistent and photometrically accurate 3D representations from event data remains fundamentally challenging. Current event-based Neural Radiance Fields (NeRF) methods partially address these challenges but suffer from persistent artifacts caused by aggressive network learning in early stages and the inherent noise of event cameras. To overcome these limitations, we present SaENeRF, a novel self-supervised framework that effectively suppresses artifacts and enables 3D-consistent, dense, and photorealistic NeRF reconstruction of static scenes solely from event streams. Our approach normalizes predicted radiance variations based on accumulated event polarities, facilitating progressive and rapid learning for scene representation construction. Additionally, we introduce regularization losses specifically designed to suppress artifacts in regions where photometric changes fall below the event threshold and simultaneously enhance the light intensity difference of non-zero events, thereby improving the visual fidelity of the reconstructed scene. Extensive qualitative and quantitative experiments demonstrate that our method significantly reduces artifacts and achieves superior reconstruction quality compared to existing methods. The code is available at https://github.com/Mr-firework/SaENeRF.  
+  </ol>  
+</details>  
+**comments**: Accepted by IJCNN 2025  
   
   
 
