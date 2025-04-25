@@ -1,53 +1,72 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#Bias-Eliminated-PnP-for-Stereo-Visual-Odometry:-Provably-Consistent-and-Large-Scale-Localization>Bias-Eliminated PnP for Stereo Visual Odometry: Provably Consistent and Large-Scale Localization</a></li>
+      </ul>
+    </li>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#A-Low-Cost-Photogrammetry-System-for-3D-Plant-Modeling-and-Phenotyping>A Low-Cost Photogrammetry System for 3D Plant Modeling and Phenotyping</a></li>
-        <li><a href=#PRaDA:-Projective-Radial-Distortion-Averaging>PRaDA: Projective Radial Distortion Averaging</a></li>
+        <li><a href=#Dynamic-Camera-Poses-and-Where-to-Find-Them>Dynamic Camera Poses and Where to Find Them</a></li>
+        <li><a href=#EdgePoint2:-Compact-Descriptors-for-Superior-Efficiency-and-Accuracy>EdgePoint2: Compact Descriptors for Superior Efficiency and Accuracy</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Rethinking-Vision-Transformer-for-Large-Scale-Fine-Grained-Image-Retrieval>Rethinking Vision Transformer for Large-Scale Fine-Grained Image Retrieval</a></li>
-        <li><a href=#Media-Content-Atlas:-A-Pipeline-to-Explore-and-Investigate-Multidimensional-Media-Space-using-Multimodal-LLMs>Media Content Atlas: A Pipeline to Explore and Investigate Multidimensional Media Space using Multimodal LLMs</a></li>
+        <li><a href=#A-Guide-to-Structureless-Visual-Localization>A Guide to Structureless Visual Localization</a></li>
       </ul>
     </li>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Road-Similarity-Based-BEV-Satellite-Image-Matching-for-UGV-Localization>Road Similarity-Based BEV-Satellite Image Matching for UGV Localization</a></li>
+        <li><a href=#EdgePoint2:-Compact-Descriptors-for-Superior-Efficiency-and-Accuracy>EdgePoint2: Compact Descriptors for Superior Efficiency and Accuracy</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Dual-Camera-All-in-Focus-Neural-Radiance-Fields>Dual-Camera All-in-Focus Neural Radiance Fields</a></li>
-        <li><a href=#Beyond-Anonymization:-Object-Scrubbing-for-Privacy-Preserving-2D-and-3D-Vision-Tasks>Beyond Anonymization: Object Scrubbing for Privacy-Preserving 2D and 3D Vision Tasks</a></li>
-        <li><a href=#SaENeRF:-Suppressing-Artifacts-in-Event-based-Neural-Radiance-Fields>SaENeRF: Suppressing Artifacts in Event-based Neural Radiance Fields</a></li>
+        <li><a href=#CasualHDRSplat:-Robust-High-Dynamic-Range-3D-Gaussian-Splatting-from-Casually-Captured-Videos>CasualHDRSplat: Robust High Dynamic Range 3D Gaussian Splatting from Casually Captured Videos</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [Bias-Eliminated PnP for Stereo Visual Odometry: Provably Consistent and Large-Scale Localization](http://arxiv.org/abs/2504.17410)  
+Guangyang Zeng, Yuan Shen, Ziyang Hong, Yuze Hong, Viorela Ila, Guodong Shi, Junfeng Wu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In this paper, we first present a bias-eliminated weighted (Bias-Eli-W) perspective-n-point (PnP) estimator for stereo visual odometry (VO) with provable consistency. Specifically, leveraging statistical theory, we develop an asymptotically unbiased and $\sqrt {n}$ -consistent PnP estimator that accounts for varying 3D triangulation uncertainties, ensuring that the relative pose estimate converges to the ground truth as the number of features increases. Next, on the stereo VO pipeline side, we propose a framework that continuously triangulates contemporary features for tracking new frames, effectively decoupling temporal dependencies between pose and 3D point errors. We integrate the Bias-Eli-W PnP estimator into the proposed stereo VO pipeline, creating a synergistic effect that enhances the suppression of pose estimation errors. We validate the performance of our method on the KITTI and Oxford RobotCar datasets. Experimental results demonstrate that our method: 1) achieves significant improvements in both relative pose error and absolute trajectory error in large-scale environments; 2) provides reliable localization under erratic and unpredictable robot motions. The successful implementation of the Bias-Eli-W PnP in stereo VO indicates the importance of information screening in robotic estimation tasks with high-uncertainty measurements, shedding light on diverse applications where PnP is a key ingredient.  
+  </ol>  
+</details>  
+**comments**: 10 pages, 7 figures  
+  
+  
+
+
+
 ## SFM  
 
-### [A Low-Cost Photogrammetry System for 3D Plant Modeling and Phenotyping](http://arxiv.org/abs/2504.16840)  
-Joe Hrzich, Michael A. Beck, Christopher P. Bidinosti, Christopher J. Henry, Kalhari Manawasinghe, Karen Tanino  
+### [Dynamic Camera Poses and Where to Find Them](http://arxiv.org/abs/2504.17788)  
+Chris Rockwell, Joseph Tung, Tsung-Yi Lin, Ming-Yu Liu, David F. Fouhey, Chen-Hsuan Lin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present an open-source, low-cost photogrammetry system for 3D plant modeling and phenotyping. The system uses a structure-from-motion approach to reconstruct 3D representations of the plants via point clouds. Using wheat as an example, we demonstrate how various phenotypic traits can be computed easily from the point clouds. These include standard measurements such as plant height and radius, as well as features that would be more cumbersome to measure by hand, such as leaf angles and convex hull. We further demonstrate the utility of the system through the investigation of specific metrics that may yield objective classifications of erectophile versus planophile wheat canopy architectures.  
+    Annotating camera poses on dynamic Internet videos at scale is critical for advancing fields like realistic video generation and simulation. However, collecting such a dataset is difficult, as most Internet videos are unsuitable for pose estimation. Furthermore, annotating dynamic Internet videos present significant challenges even for state-of-theart methods. In this paper, we introduce DynPose-100K, a large-scale dataset of dynamic Internet videos annotated with camera poses. Our collection pipeline addresses filtering using a carefully combined set of task-specific and generalist models. For pose estimation, we combine the latest techniques of point tracking, dynamic masking, and structure-from-motion to achieve improvements over the state-of-the-art approaches. Our analysis and experiments demonstrate that DynPose-100K is both large-scale and diverse across several key attributes, opening up avenues for advancements in various downstream applications.  
   </ol>  
 </details>  
+**comments**: Accepted to CVPR 2025. Project Page:
+  https://research.nvidia.com/labs/dir/dynpose-100k  
   
-### [PRaDA: Projective Radial Distortion Averaging](http://arxiv.org/abs/2504.16499)  
-Daniil Sinitsyn, Linus Härenstam-Nielsen, Daniel Cremers  
+### [EdgePoint2: Compact Descriptors for Superior Efficiency and Accuracy](http://arxiv.org/abs/2504.17280)  
+Haodi Yao, Fenghua He, Ning Hao, Chen Xie  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We tackle the problem of automatic calibration of radially distorted cameras in challenging conditions. Accurately determining distortion parameters typically requires either 1) solving the full Structure from Motion (SfM) problem involving camera poses, 3D points, and the distortion parameters, which is only possible if many images with sufficient overlap are provided, or 2) relying heavily on learning-based methods that are comparatively less accurate. In this work, we demonstrate that distortion calibration can be decoupled from 3D reconstruction, maintaining the accuracy of SfM-based methods while avoiding many of the associated complexities. This is achieved by working in Projective Space, where the geometry is unique up to a homography, which encapsulates all camera parameters except for distortion. Our proposed method, Projective Radial Distortion Averaging, averages multiple distortion estimates in a fully projective framework without creating 3d points and full bundle adjustment. By relying on pairwise projective relations, our methods support any feature-matching approaches without constructing point tracks across multiple images.  
+    The field of keypoint extraction, which is essential for vision applications like Structure from Motion (SfM) and Simultaneous Localization and Mapping (SLAM), has evolved from relying on handcrafted methods to leveraging deep learning techniques. While deep learning approaches have significantly improved performance, they often incur substantial computational costs, limiting their deployment in real-time edge applications. Efforts to create lightweight neural networks have seen some success, yet they often result in trade-offs between efficiency and accuracy. Additionally, the high-dimensional descriptors generated by these networks poses challenges for distributed applications requiring efficient communication and coordination, highlighting the need for compact yet competitively accurate descriptors. In this paper, we present EdgePoint2, a series of lightweight keypoint detection and description neural networks specifically tailored for edge computing applications on embedded system. The network architecture is optimized for efficiency without sacrificing accuracy. To train compact descriptors, we introduce a combination of Orthogonal Procrustes loss and similarity loss, which can serve as a general approach for hypersphere embedding distillation tasks. Additionally, we offer 14 sub-models to satisfy diverse application requirements. Our experiments demonstrate that EdgePoint2 consistently achieves state-of-the-art (SOTA) accuracy and efficiency across various challenging scenarios while employing lower-dimensional descriptors (32/48/64). Beyond its accuracy, EdgePoint2 offers significant advantages in flexibility, robustness, and versatility. Consequently, EdgePoint2 emerges as a highly competitive option for visual tasks, especially in contexts demanding adaptability to diverse computational and communication constraints.  
   </ol>  
 </details>  
-**comments**: Accepted at CVPR 2025. 8 pages + references  
   
   
 
@@ -55,42 +74,29 @@ Daniil Sinitsyn, Linus Härenstam-Nielsen, Daniel Cremers
 
 ## Visual Localization  
 
-### [Rethinking Vision Transformer for Large-Scale Fine-Grained Image Retrieval](http://arxiv.org/abs/2504.16691)  
-Xin Jiang, Hao Tang, Yonghua Pan, Zechao Li  
+### [A Guide to Structureless Visual Localization](http://arxiv.org/abs/2504.17636)  
+Vojtech Panek, Qunjie Zhou, Yaqing Ding, Sérgio Agostinho, Zuzana Kukelova, Torsten Sattler, Laura Leal-Taixé  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large-scale fine-grained image retrieval (FGIR) aims to retrieve images belonging to the same subcategory as a given query by capturing subtle differences in a large-scale setting. Recently, Vision Transformers (ViT) have been employed in FGIR due to their powerful self-attention mechanism for modeling long-range dependencies. However, most Transformer-based methods focus primarily on leveraging self-attention to distinguish fine-grained details, while overlooking the high computational complexity and redundant dependencies inherent to these models, limiting their scalability and effectiveness in large-scale FGIR. In this paper, we propose an Efficient and Effective ViT-based framework, termed \textbf{EET}, which integrates token pruning module with a discriminative transfer strategy to address these limitations. Specifically, we introduce a content-based token pruning scheme to enhance the efficiency of the vanilla ViT, progressively removing background or low-discriminative tokens at different stages by exploiting feature responses and self-attention mechanism. To ensure the resulting efficient ViT retains strong discriminative power, we further present a discriminative transfer strategy comprising both \textit{discriminative knowledge transfer} and \textit{discriminative region guidance}. Using a distillation paradigm, these components transfer knowledge from a larger ``teacher'' ViT to a more efficient ``student'' model, guiding the latter to focus on subtle yet crucial regions in a cost-free manner. Extensive experiments on two widely-used fine-grained datasets and four large-scale fine-grained datasets demonstrate the effectiveness of our method. Specifically, EET reduces the inference latency of ViT-Small by 42.7\% and boosts the retrieval performance of 16-bit hash codes by 5.15\% on the challenging NABirds dataset.  
+    Visual localization algorithms, i.e., methods that estimate the camera pose of a query image in a known scene, are core components of many applications, including self-driving cars and augmented / mixed reality systems. State-of-the-art visual localization algorithms are structure-based, i.e., they store a 3D model of the scene and use 2D-3D correspondences between the query image and 3D points in the model for camera pose estimation. While such approaches are highly accurate, they are also rather inflexible when it comes to adjusting the underlying 3D model after changes in the scene. Structureless localization approaches represent the scene as a database of images with known poses and thus offer a much more flexible representation that can be easily updated by adding or removing images. Although there is a large amount of literature on structure-based approaches, there is significantly less work on structureless methods. Hence, this paper is dedicated to providing the, to the best of our knowledge, first comprehensive discussion and comparison of structureless methods. Extensive experiments show that approaches that use a higher degree of classical geometric reasoning generally achieve higher pose accuracy. In particular, approaches based on classical absolute or semi-generalized relative pose estimation outperform very recent methods based on pose regression by a wide margin. Compared with state-of-the-art structure-based approaches, the flexibility of structureless methods comes at the cost of (slightly) lower pose accuracy, indicating an interesting direction for future work.  
   </ol>  
 </details>  
-**comments**: Accepted by IEEE TMM  
-  
-### [Media Content Atlas: A Pipeline to Explore and Investigate Multidimensional Media Space using Multimodal LLMs](http://arxiv.org/abs/2504.16323)  
-Merve Cerit, Eric Zelikman, Mu-Jung Cho, Thomas N. Robinson, Byron Reeves, Nilam Ram, Nick Haber  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    As digital media use continues to evolve and influence various aspects of life, developing flexible and scalable tools to study complex media experiences is essential. This study introduces the Media Content Atlas (MCA), a novel pipeline designed to help researchers investigate large-scale screen data beyond traditional screen-use metrics. Leveraging multimodal large language models (MLLMs), MCA enables moment-by-moment content analysis, content-based clustering, topic modeling, image retrieval, and interactive visualizations. Evaluated on 1.12 million smartphone screenshots continuously captured during screen use from 112 adults over an entire month, MCA facilitates open-ended exploration and hypothesis generation as well as hypothesis-driven investigations at an unprecedented scale. Expert evaluators underscored its usability and potential for research and intervention design, with clustering results rated 96% relevant and descriptions 83% accurate. By bridging methodological possibilities with domain-specific needs, MCA accelerates both inductive and deductive inquiry, presenting new opportunities for media and HCI research.  
-  </ol>  
-</details>  
-**comments**: Accepted to CHI 2025, in press. See the project page at
-  mediacontentatlas.github.io  
   
   
 
 
 
-## Image Matching  
+## Keypoint Detection  
 
-### [Road Similarity-Based BEV-Satellite Image Matching for UGV Localization](http://arxiv.org/abs/2504.16346)  
-Zhenping Sun, Chuang Yang, Yafeng Bu, Bokai Liu, Jun Zeng, Xiaohui Li  
+### [EdgePoint2: Compact Descriptors for Superior Efficiency and Accuracy](http://arxiv.org/abs/2504.17280)  
+Haodi Yao, Fenghua He, Ning Hao, Chen Xie  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    To address the challenge of autonomous UGV localization in GNSS-denied off-road environments,this study proposes a matching-based localization method that leverages BEV perception image and satellite map within a road similarity space to achieve high-precision positioning.We first implement a robust LiDAR-inertial odometry system, followed by the fusion of LiDAR and image data to generate a local BEV perception image of the UGV. This approach mitigates the significant viewpoint discrepancy between ground-view images and satellite map. The BEV image and satellite map are then projected into the road similarity space, where normalized cross correlation (NCC) is computed to assess the matching score.Finally, a particle filter is employed to estimate the probability distribution of the vehicle's pose.By comparing with GNSS ground truth, our localization system demonstrated stability without divergence over a long-distance test of 10 km, achieving an average lateral error of only 0.89 meters and an average planar Euclidean error of 3.41 meters. Furthermore, it maintained accurate and stable global localization even under nighttime conditions, further validating its robustness and adaptability.  
+    The field of keypoint extraction, which is essential for vision applications like Structure from Motion (SfM) and Simultaneous Localization and Mapping (SLAM), has evolved from relying on handcrafted methods to leveraging deep learning techniques. While deep learning approaches have significantly improved performance, they often incur substantial computational costs, limiting their deployment in real-time edge applications. Efforts to create lightweight neural networks have seen some success, yet they often result in trade-offs between efficiency and accuracy. Additionally, the high-dimensional descriptors generated by these networks poses challenges for distributed applications requiring efficient communication and coordination, highlighting the need for compact yet competitively accurate descriptors. In this paper, we present EdgePoint2, a series of lightweight keypoint detection and description neural networks specifically tailored for edge computing applications on embedded system. The network architecture is optimized for efficiency without sacrificing accuracy. To train compact descriptors, we introduce a combination of Orthogonal Procrustes loss and similarity loss, which can serve as a general approach for hypersphere embedding distillation tasks. Additionally, we offer 14 sub-models to satisfy diverse application requirements. Our experiments demonstrate that EdgePoint2 consistently achieves state-of-the-art (SOTA) accuracy and efficiency across various challenging scenarios while employing lower-dimensional descriptors (32/48/64). Beyond its accuracy, EdgePoint2 offers significant advantages in flexibility, robustness, and versatility. Consequently, EdgePoint2 emerges as a highly competitive option for visual tasks, especially in contexts demanding adaptability to diverse computational and communication constraints.  
   </ol>  
 </details>  
-**comments**: 7 pages,9 figures,published to IROS2025  
   
   
 
@@ -98,35 +104,15 @@ Zhenping Sun, Chuang Yang, Yafeng Bu, Bokai Liu, Jun Zeng, Xiaohui Li
 
 ## NeRF  
 
-### [Dual-Camera All-in-Focus Neural Radiance Fields](http://arxiv.org/abs/2504.16636)  
-Xianrui Luo, Zijin Wu, Juewen Peng, Huiqiang Sun, Zhiguo Cao, Guosheng Lin  
+### [CasualHDRSplat: Robust High Dynamic Range 3D Gaussian Splatting from Casually Captured Videos](http://arxiv.org/abs/2504.17728)  
+Shucheng Gong, Lingzhe Zhao, Wenpu Li, Hong Xie, Yin Zhang, Shiyu Zhao, Peidong Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We present the first framework capable of synthesizing the all-in-focus neural radiance field (NeRF) from inputs without manual refocusing. Without refocusing, the camera will automatically focus on the fixed object for all views, and current NeRF methods typically using one camera fail due to the consistent defocus blur and a lack of sharp reference. To restore the all-in-focus NeRF, we introduce the dual-camera from smartphones, where the ultra-wide camera has a wider depth-of-field (DoF) and the main camera possesses a higher resolution. The dual camera pair saves the high-fidelity details from the main camera and uses the ultra-wide camera's deep DoF as reference for all-in-focus restoration. To this end, we first implement spatial warping and color matching to align the dual camera, followed by a defocus-aware fusion module with learnable defocus parameters to predict a defocus map and fuse the aligned camera pair. We also build a multi-view dataset that includes image pairs of the main and ultra-wide cameras in a smartphone. Extensive experiments on this dataset verify that our solution, termed DC-NeRF, can produce high-quality all-in-focus novel views and compares favorably against strong baselines quantitatively and qualitatively. We further show DoF applications of DC-NeRF with adjustable blur intensity and focal plane, including refocusing and split diopter.  
+    Recently, photo-realistic novel view synthesis from multi-view images, such as neural radiance field (NeRF) and 3D Gaussian Splatting (3DGS), have garnered widespread attention due to their superior performance. However, most works rely on low dynamic range (LDR) images, which limits the capturing of richer scene details. Some prior works have focused on high dynamic range (HDR) scene reconstruction, typically require capturing of multi-view sharp images with different exposure times at fixed camera positions during exposure times, which is time-consuming and challenging in practice. For a more flexible data acquisition, we propose a one-stage method: \textbf{CasualHDRSplat} to easily and robustly reconstruct the 3D HDR scene from casually captured videos with auto-exposure enabled, even in the presence of severe motion blur and varying unknown exposure time. \textbf{CasualHDRSplat} contains a unified differentiable physical imaging model which first applies continuous-time trajectory constraint to imaging process so that we can jointly optimize exposure time, camera response function (CRF), camera poses, and sharp 3D HDR scene. Extensive experiments demonstrate that our approach outperforms existing methods in terms of robustness and rendering quality. Our source code will be available at https://github.com/WU-CVGL/CasualHDRSplat  
   </ol>  
 </details>  
-**comments**: Published by IEEE TPAMI 2025  
-  
-### [Beyond Anonymization: Object Scrubbing for Privacy-Preserving 2D and 3D Vision Tasks](http://arxiv.org/abs/2504.16557)  
-Murat Bilgehan Ertan, Ronak Sahu, Phuong Ha Nguyen, Kaleel Mahmood, Marten van Dijk  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce ROAR (Robust Object Removal and Re-annotation), a scalable framework for privacy-preserving dataset obfuscation that eliminates sensitive objects instead of modifying them. Our method integrates instance segmentation with generative inpainting to remove identifiable entities while preserving scene integrity. Extensive evaluations on 2D COCO-based object detection show that ROAR achieves 87.5% of the baseline detection average precision (AP), whereas image dropping achieves only 74.2% of the baseline AP, highlighting the advantage of scrubbing in preserving dataset utility. The degradation is even more severe for small objects due to occlusion and loss of fine-grained details. Furthermore, in NeRF-based 3D reconstruction, our method incurs a PSNR loss of at most 1.66 dB while maintaining SSIM and improving LPIPS, demonstrating superior perceptual quality. Our findings establish object removal as an effective privacy framework, achieving strong privacy guarantees with minimal performance trade-offs. The results highlight key challenges in generative inpainting, occlusion-robust segmentation, and task-specific scrubbing, setting the foundation for future advancements in privacy-preserving vision systems.  
-  </ol>  
-</details>  
-**comments**: Submitted to ICCV 2025  
-  
-### [SaENeRF: Suppressing Artifacts in Event-based Neural Radiance Fields](http://arxiv.org/abs/2504.16389)  
-Yuanjian Wang, Yufei Deng, Rong Xiao, Jiahao Fan, Chenwei Tang, Deng Xiong, Jiancheng Lv  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Event cameras are neuromorphic vision sensors that asynchronously capture changes in logarithmic brightness changes, offering significant advantages such as low latency, low power consumption, low bandwidth, and high dynamic range. While these characteristics make them ideal for high-speed scenarios, reconstructing geometrically consistent and photometrically accurate 3D representations from event data remains fundamentally challenging. Current event-based Neural Radiance Fields (NeRF) methods partially address these challenges but suffer from persistent artifacts caused by aggressive network learning in early stages and the inherent noise of event cameras. To overcome these limitations, we present SaENeRF, a novel self-supervised framework that effectively suppresses artifacts and enables 3D-consistent, dense, and photorealistic NeRF reconstruction of static scenes solely from event streams. Our approach normalizes predicted radiance variations based on accumulated event polarities, facilitating progressive and rapid learning for scene representation construction. Additionally, we introduce regularization losses specifically designed to suppress artifacts in regions where photometric changes fall below the event threshold and simultaneously enhance the light intensity difference of non-zero events, thereby improving the visual fidelity of the reconstructed scene. Extensive qualitative and quantitative experiments demonstrate that our method significantly reduces artifacts and achieves superior reconstruction quality compared to existing methods. The code is available at https://github.com/Mr-firework/SaENeRF.  
-  </ol>  
-</details>  
-**comments**: Accepted by IJCNN 2025  
+**comments**: Source Code: https://github.com/WU-CVGL/CasualHDRSplat  
   
   
 
