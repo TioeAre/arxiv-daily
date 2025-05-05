@@ -1,25 +1,66 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Are-Minimal-Radial-Distortion-Solvers-Really-Necessary-for-Relative-Pose-Estimation?>Are Minimal Radial Distortion Solvers Really Necessary for Relative Pose Estimation?</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#NeuroLoc:-Encoding-Navigation-Cells-for-6-DOF-Camera-Localization>NeuroLoc: Encoding Navigation Cells for 6-DOF Camera Localization</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Cues3D:-Unleashing-the-Power-of-Sole-NeRF-for-Consistent-and-Unique-Instances-in-Open-Vocabulary-3D-Panoptic-Segmentation>Cues3D: Unleashing the Power of Sole NeRF for Consistent and Unique Instances in Open-Vocabulary 3D Panoptic Segmentation</a></li>
+        <li><a href=#A-Survey-on-3D-Reconstruction-Techniques-in-Plant-Phenotyping:-From-Classical-Methods-to-Neural-Radiance-Fields-(NeRF),-3D-Gaussian-Splatting-(3DGS),-and-Beyond>A Survey on 3D Reconstruction Techniques in Plant Phenotyping: From Classical Methods to Neural Radiance Fields (NeRF), 3D Gaussian Splatting (3DGS), and Beyond</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## NeRF  
+## SFM  
 
-### [Cues3D: Unleashing the Power of Sole NeRF for Consistent and Unique Instances in Open-Vocabulary 3D Panoptic Segmentation](http://arxiv.org/abs/2505.00378)  
-Feng Xue, Wenzhuang Xu, Guofeng Zhong, Anlong Minga, Nicu Sebe  
+### [Are Minimal Radial Distortion Solvers Really Necessary for Relative Pose Estimation?](http://arxiv.org/abs/2505.00866)  
+Viktor Kocur, Charalambos Tzamos, Yaqing Ding, Zuzana Berger Haladova, Torsten Sattler, Zuzana Kukelova  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Open-vocabulary 3D panoptic segmentation has recently emerged as a significant trend. Top-performing methods currently integrate 2D segmentation with geometry-aware 3D primitives. However, the advantage would be lost without high-fidelity 3D point clouds, such as methods based on Neural Radiance Field (NeRF). These methods are limited by the insufficient capacity to maintain consistency across partial observations. To address this, recent works have utilized contrastive loss or cross-view association pre-processing for view consensus. In contrast to them, we present Cues3D, a compact approach that relies solely on NeRF instead of pre-associations. The core idea is that NeRF's implicit 3D field inherently establishes a globally consistent geometry, enabling effective object distinction without explicit cross-view supervision. We propose a three-phase training framework for NeRF, initialization-disambiguation-refinement, whereby the instance IDs are corrected using the initially-learned knowledge. Additionally, an instance disambiguation method is proposed to match NeRF-rendered 3D masks and ensure globally unique 3D instance identities. With the aid of Cues3D, we obtain highly consistent and unique 3D instance ID for each object across views with a balanced version of NeRF. Our experiments are conducted on ScanNet v2, ScanNet200, ScanNet++, and Replica datasets for 3D instance, panoptic, and semantic segmentation tasks. Cues3D outperforms other 2D image-based methods and competes with the latest 2D-3D merging based methods, while even surpassing them when using additional 3D point clouds. The code link could be found in the appendix and will be released on \href{https://github.com/mRobotit/Cues3D}{github}  
+    Estimating the relative pose between two cameras is a fundamental step in many applications such as Structure-from-Motion. The common approach to relative pose estimation is to apply a minimal solver inside a RANSAC loop. Highly efficient solvers exist for pinhole cameras. Yet, (nearly) all cameras exhibit radial distortion. Not modeling radial distortion leads to (significantly) worse results. However, minimal radial distortion solvers are significantly more complex than pinhole solvers, both in terms of run-time and implementation efforts. This paper compares radial distortion solvers with two simple-to-implement approaches that do not use minimal radial distortion solvers: The first approach combines an efficient pinhole solver with sampled radial undistortion parameters, where the sampled parameters are used for undistortion prior to applying the pinhole solver. The second approach uses a state-of-the-art neural network to estimate the distortion parameters rather than sampling them from a set of potential values. Extensive experiments on multiple datasets, and different camera setups, show that complex minimal radial distortion solvers are not necessary in practice. We discuss under which conditions a simple sampling of radial undistortion parameters is preferable over calibrating cameras using a learning-based prior approach. Code and newly created benchmark for relative pose estimation under radial distortion are available at https://github.com/kocurvik/rdnet.  
   </ol>  
 </details>  
-**comments**: Accepted by Information Fusion  
+**comments**: arXiv admin note: substantial text overlap with arXiv:2410.05984  
+  
+  
+
+
+
+## Visual Localization  
+
+### [NeuroLoc: Encoding Navigation Cells for 6-DOF Camera Localization](http://arxiv.org/abs/2505.01113)  
+Xun Li, Jian Yang, Fenli Jia, Muyu Wang, Qi Wu, Jun Wu, Jinpeng Mi, Jilin Hu, Peidong Liang, Xuan Tang, Ke Li, Xiong You, Xian Wei  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Recently, camera localization has been widely adopted in autonomous robotic navigation due to its efficiency and convenience. However, autonomous navigation in unknown environments often suffers from scene ambiguity, environmental disturbances, and dynamic object transformation in camera localization. To address this problem, inspired by the biological brain navigation mechanism (such as grid cells, place cells, and head direction cells), we propose a novel neurobiological camera location method, namely NeuroLoc. Firstly, we designed a Hebbian learning module driven by place cells to save and replay historical information, aiming to restore the details of historical representations and solve the issue of scene fuzziness. Secondly, we utilized the head direction cell-inspired internal direction learning as multi-head attention embedding to help restore the true orientation in similar scenes. Finally, we added a 3D grid center prediction in the pose regression module to reduce the final wrong prediction. We evaluate the proposed NeuroLoc on commonly used benchmark indoor and outdoor datasets. The experimental results show that our NeuroLoc can enhance the robustness in complex environments and improve the performance of pose regression by using only a single image.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## NeRF  
+
+### [A Survey on 3D Reconstruction Techniques in Plant Phenotyping: From Classical Methods to Neural Radiance Fields (NeRF), 3D Gaussian Splatting (3DGS), and Beyond](http://arxiv.org/abs/2505.00737)  
+Jiajia Li, Xinda Qi, Seyed Hamidreza Nabaei, Meiqi Liu, Dong Chen, Xin Zhang, Xunyuan Yin, Zhaojian Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Plant phenotyping plays a pivotal role in understanding plant traits and their interactions with the environment, making it crucial for advancing precision agriculture and crop improvement. 3D reconstruction technologies have emerged as powerful tools for capturing detailed plant morphology and structure, offering significant potential for accurate and automated phenotyping. This paper provides a comprehensive review of the 3D reconstruction techniques for plant phenotyping, covering classical reconstruction methods, emerging Neural Radiance Fields (NeRF), and the novel 3D Gaussian Splatting (3DGS) approach. Classical methods, which often rely on high-resolution sensors, are widely adopted due to their simplicity and flexibility in representing plant structures. However, they face challenges such as data density, noise, and scalability. NeRF, a recent advancement, enables high-quality, photorealistic 3D reconstructions from sparse viewpoints, but its computational cost and applicability in outdoor environments remain areas of active research. The emerging 3DGS technique introduces a new paradigm in reconstructing plant structures by representing geometry through Gaussian primitives, offering potential benefits in both efficiency and scalability. We review the methodologies, applications, and performance of these approaches in plant phenotyping and discuss their respective strengths, limitations, and future prospects (https://github.com/JiajiaLi04/3D-Reconstruction-Plants). Through this review, we aim to provide insights into how these diverse 3D reconstruction techniques can be effectively leveraged for automated and high-throughput plant phenotyping, contributing to the next generation of agricultural technology.  
+  </ol>  
+</details>  
+**comments**: 17 pages, 7 figures, 4 tables  
   
   
 
