@@ -3,17 +3,12 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#FastMap:-Revisiting-Dense-and-Scalable-Structure-from-Motion>FastMap: Revisiting Dense and Scalable Structure from Motion</a></li>
+        <li><a href=#DiffusionSfM:-Predicting-Structure-and-Motion-via-Ray-Origin-and-Endpoint-Diffusion>DiffusionSfM: Predicting Structure and Motion via Ray Origin and Endpoint Diffusion</a></li>
       </ul>
     </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#OBD-Finder:-Explainable-Coarse-to-Fine-Text-Centric-Oracle-Bone-Duplicates-Discovery>OBD-Finder: Explainable Coarse-to-Fine Text-Centric Oracle Bone Duplicates Discovery</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#OBD-Finder:-Explainable-Coarse-to-Fine-Text-Centric-Oracle-Bone-Duplicates-Discovery>OBD-Finder: Explainable Coarse-to-Fine Text-Centric Oracle Bone Duplicates Discovery</a></li>
+        <li><a href=#3D-Scene-Generation:-A-Survey>3D Scene Generation: A Survey</a></li>
       </ul>
     </li>
   </ol>
@@ -21,57 +16,32 @@
 
 ## SFM  
 
-### [FastMap: Revisiting Dense and Scalable Structure from Motion](http://arxiv.org/abs/2505.04612)  
-Jiahao Li, Haochen Wang, Muhammad Zubair Irshad, Igor Vasiljevic, Matthew R. Walter, Vitor Campagnolo Guizilini, Greg Shakhnarovich  
+### [DiffusionSfM: Predicting Structure and Motion via Ray Origin and Endpoint Diffusion](http://arxiv.org/abs/2505.05473)  
+Qitao Zhao, Amy Lin, Jeff Tan, Jason Y. Zhang, Deva Ramanan, Shubham Tulsiani  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose FastMap, a new global structure from motion method focused on speed and simplicity. Previous methods like COLMAP and GLOMAP are able to estimate high-precision camera poses, but suffer from poor scalability when the number of matched keypoint pairs becomes large. We identify two key factors leading to this problem: poor parallelization and computationally expensive optimization steps. To overcome these issues, we design an SfM framework that relies entirely on GPU-friendly operations, making it easily parallelizable. Moreover, each optimization step runs in time linear to the number of image pairs, independent of keypoint pairs or 3D points. Through extensive experiments, we show that FastMap is one to two orders of magnitude faster than COLMAP and GLOMAP on large-scale scenes with comparable pose accuracy.  
+    Current Structure-from-Motion (SfM) methods typically follow a two-stage pipeline, combining learned or geometric pairwise reasoning with a subsequent global optimization step. In contrast, we propose a data-driven multi-view reasoning approach that directly infers 3D scene geometry and camera poses from multi-view images. Our framework, DiffusionSfM, parameterizes scene geometry and cameras as pixel-wise ray origins and endpoints in a global frame and employs a transformer-based denoising diffusion model to predict them from multi-view inputs. To address practical challenges in training diffusion models with missing data and unbounded scene coordinates, we introduce specialized mechanisms that ensure robust learning. We empirically validate DiffusionSfM on both synthetic and real datasets, demonstrating that it outperforms classical and learning-based approaches while naturally modeling uncertainty.  
   </ol>  
 </details>  
-**comments**: Project webpage: https://jiahao.ai/fastmap  
+**comments**: CVPR 2025. Project website: https://qitaozhao.github.io/DiffusionSfM  
   
   
 
 
 
-## Visual Localization  
+## NeRF  
 
-### [OBD-Finder: Explainable Coarse-to-Fine Text-Centric Oracle Bone Duplicates Discovery](http://arxiv.org/abs/2505.03836)  
-[[code](https://github.com/cszhanglmu/obd-finder)]  
-Chongsheng Zhang, Shuwen Wu, Yingqi Chen, Matthias Aßenmacher, Christian Heumann, Yi Men, Gaojuan Fan, João Gama  
+### [3D Scene Generation: A Survey](http://arxiv.org/abs/2505.05474)  
+[[code](https://github.com/hzxie/awesome-3d-scene-generation)]  
+Beichen Wen, Haozhe Xie, Zhaoxi Chen, Fangzhou Hong, Ziwei Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Oracle Bone Inscription (OBI) is the earliest systematic writing system in China, while the identification of Oracle Bone (OB) duplicates is a fundamental issue in OBI research. In this work, we design a progressive OB duplicate discovery framework that combines unsupervised low-level keypoints matching with high-level text-centric content-based matching to refine and rank the candidate OB duplicates with semantic awareness and interpretability. We compare our approach with state-of-the-art content-based image retrieval and image matching methods, showing that our approach yields comparable recall performance and the highest simplified mean reciprocal rank scores for both Top-5 and Top-15 retrieval results, and with significantly accelerated computation efficiency. We have discovered over 60 pairs of new OB duplicates in real-world deployment, which were missed by OBI researchers for decades. The models, video illustration and demonstration of this work are available at: https://github.com/cszhangLMU/OBD-Finder/.  
+    3D scene generation seeks to synthesize spatially structured, semantically meaningful, and photorealistic environments for applications such as immersive media, robotics, autonomous driving, and embodied AI. Early methods based on procedural rules offered scalability but limited diversity. Recent advances in deep generative models (e.g., GANs, diffusion models) and 3D representations (e.g., NeRF, 3D Gaussians) have enabled the learning of real-world scene distributions, improving fidelity, diversity, and view consistency. Recent advances like diffusion models bridge 3D scene synthesis and photorealism by reframing generation as image or video synthesis problems. This survey provides a systematic overview of state-of-the-art approaches, organizing them into four paradigms: procedural generation, neural 3D-based generation, image-based generation, and video-based generation. We analyze their technical foundations, trade-offs, and representative results, and review commonly used datasets, evaluation protocols, and downstream applications. We conclude by discussing key challenges in generation capacity, 3D representation, data and annotations, and evaluation, and outline promising directions including higher fidelity, physics-aware and interactive generation, and unified perception-generation models. This review organizes recent advances in 3D scene generation and highlights promising directions at the intersection of generative AI, 3D vision, and embodied intelligence. To track ongoing developments, we maintain an up-to-date project page: https://github.com/hzxie/Awesome-3D-Scene-Generation.  
   </ol>  
 </details>  
-**comments**: This is the long version of our OBD-Finder paper for AI-enabled
-  Oracle Bone Duplicates Discovery (currently under review at the ECML PKDD
-  2025 Demo Track). The models, video illustration and demonstration of this
-  paper are available at: https://github.com/cszhangLMU/OBD-Finder/.
-  Illustration video: https://www.youtube.com/watch?v=5QT4f0YIo0Q  
-  
-  
-
-
-
-## Image Matching  
-
-### [OBD-Finder: Explainable Coarse-to-Fine Text-Centric Oracle Bone Duplicates Discovery](http://arxiv.org/abs/2505.03836)  
-[[code](https://github.com/cszhanglmu/obd-finder)]  
-Chongsheng Zhang, Shuwen Wu, Yingqi Chen, Matthias Aßenmacher, Christian Heumann, Yi Men, Gaojuan Fan, João Gama  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Oracle Bone Inscription (OBI) is the earliest systematic writing system in China, while the identification of Oracle Bone (OB) duplicates is a fundamental issue in OBI research. In this work, we design a progressive OB duplicate discovery framework that combines unsupervised low-level keypoints matching with high-level text-centric content-based matching to refine and rank the candidate OB duplicates with semantic awareness and interpretability. We compare our approach with state-of-the-art content-based image retrieval and image matching methods, showing that our approach yields comparable recall performance and the highest simplified mean reciprocal rank scores for both Top-5 and Top-15 retrieval results, and with significantly accelerated computation efficiency. We have discovered over 60 pairs of new OB duplicates in real-world deployment, which were missed by OBI researchers for decades. The models, video illustration and demonstration of this work are available at: https://github.com/cszhangLMU/OBD-Finder/.  
-  </ol>  
-</details>  
-**comments**: This is the long version of our OBD-Finder paper for AI-enabled
-  Oracle Bone Duplicates Discovery (currently under review at the ECML PKDD
-  2025 Demo Track). The models, video illustration and demonstration of this
-  paper are available at: https://github.com/cszhangLMU/OBD-Finder/.
-  Illustration video: https://www.youtube.com/watch?v=5QT4f0YIo0Q  
+**comments**: Project Page: https://github.com/hzxie/Awesome-3D-Scene-Generation  
   
   
 
