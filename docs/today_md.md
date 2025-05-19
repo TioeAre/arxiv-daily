@@ -1,22 +1,118 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#sfm>SFM</a></li>
+      <ul>
+        <li><a href=#Mapping-Semantic-Segmentation-to-Point-Clouds-Using-Structure-from-Motion-for-Forest-Analysis>Mapping Semantic Segmentation to Point Clouds Using Structure from Motion for Forest Analysis</a></li>
+      </ul>
+    </li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
+      <ul>
+        <li><a href=#Redundancy-Aware-Pretraining-of-Vision-Language-Foundation-Models-in-Remote-Sensing>Redundancy-Aware Pretraining of Vision-Language Foundation Models in Remote Sensing</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Deepfake-Forensic-Analysis:-Source-Dataset-Attribution-and-Legal-Implications-of-Synthetic-Media-Manipulation>Deepfake Forensic Analysis: Source Dataset Attribution and Legal Implications of Synthetic Media Manipulation</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Multi-view-dense-image-matching-with-similarity-learning-and-geometry-priors>Multi-view dense image matching with similarity learning and geometry priors</a></li>
+      </ul>
+    </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Large-Scale-Gaussian-Splatting-SLAM>Large-Scale Gaussian Splatting SLAM</a></li>
+        <li><a href=#MutualNeRF:-Improve-the-Performance-of-NeRF-under-Limited-Samples-with-Mutual-Information-Theory>MutualNeRF: Improve the Performance of NeRF under Limited Samples with Mutual Information Theory</a></li>
+        <li><a href=#EA-3DGS:-Efficient-and-Adaptive-3D-Gaussians-with-Highly-Enhanced-Quality-for-outdoor-scenes>EA-3DGS: Efficient and Adaptive 3D Gaussians with Highly Enhanced Quality for outdoor scenes</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## NeRF  
+## SFM  
 
-### [Large-Scale Gaussian Splatting SLAM](http://arxiv.org/abs/2505.09915)  
-Zhe Xin, Chenyang Wu, Penghui Huang, Yanyong Zhang, Yinian Mao, Guoquan Huang  
+### [Mapping Semantic Segmentation to Point Clouds Using Structure from Motion for Forest Analysis](http://arxiv.org/abs/2505.10751)  
+Francisco Raverta Capua, Pablo De Cristoforis  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The recently developed Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) have shown encouraging and impressive results for visual SLAM. However, most representative methods require RGBD sensors and are only available for indoor environments. The robustness of reconstruction in large-scale outdoor scenarios remains unexplored. This paper introduces a large-scale 3DGS-based visual SLAM with stereo cameras, termed LSG-SLAM. The proposed LSG-SLAM employs a multi-modality strategy to estimate prior poses under large view changes. In tracking, we introduce feature-alignment warping constraints to alleviate the adverse effects of appearance similarity in rendering losses. For the scalability of large-scale scenarios, we introduce continuous Gaussian Splatting submaps to tackle unbounded scenes with limited memory. Loops are detected between GS submaps by place recognition and the relative pose between looped keyframes is optimized utilizing rendering and feature warping losses. After the global optimization of camera poses and Gaussian points, a structure refinement module enhances the reconstruction quality. With extensive evaluations on the EuRoc and KITTI datasets, LSG-SLAM achieves superior performance over existing Neural, 3DGS-based, and even traditional approaches. Project page: https://lsg-slam.github.io.  
+    Although the use of remote sensing technologies for monitoring forested environments has gained increasing attention, publicly available point cloud datasets remain scarce due to the high costs, sensor requirements, and time-intensive nature of their acquisition. Moreover, as far as we are aware, there are no public annotated datasets generated through Structure From Motion (SfM) algorithms applied to imagery, which may be due to the lack of SfM algorithms that can map semantic segmentation information into an accurate point cloud, especially in a challenging environment like forests.   In this work, we present a novel pipeline for generating semantically segmented point clouds of forest environments. Using a custom-built forest simulator, we generate realistic RGB images of diverse forest scenes along with their corresponding semantic segmentation masks. These labeled images are then processed using modified open-source SfM software capable of preserving semantic information during 3D reconstruction. The resulting point clouds provide both geometric and semantic detail, offering a valuable resource for training and evaluating deep learning models aimed at segmenting real forest point clouds obtained via SfM.  
+  </ol>  
+</details>  
+**comments**: Work in progress, accepted in Novel Approaches for Precision
+  Agriculture and Forestry with Autonomous Robots, ICRA 2025 Workshop - May 23,
+  2025 - Atlanta, GA  
+  
+  
+
+
+
+## Visual Localization  
+
+### [Redundancy-Aware Pretraining of Vision-Language Foundation Models in Remote Sensing](http://arxiv.org/abs/2505.11121)  
+Mathis Jürgen Adler, Leonard Hackel, Gencer Sumbul, Begüm Demir  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The development of foundation models through pretraining of vision-language models (VLMs) has recently attracted great attention in remote sensing (RS). VLM pretraining aims to learn image and language alignments from a large number of image-text pairs. Each pretraining image is often associated with multiple captions containing redundant information due to repeated or semantically similar phrases, resulting in increased pretraining and inference time. To overcome this, we introduce a weighted feature aggregation (WFA) strategy for VLM pretraining in RS. Our strategy aims to extract and exploit complementary information from multiple captions per image while reducing redundancies through feature aggregation with importance weighting. To calculate adaptive importance weights for different captions of each image, we propose two techniques: (i) non-parametric uniqueness and (ii) learning-based attention. In the first technique, importance weights are calculated based on the bilingual evaluation understudy (BLEU) scores of the captions to emphasize unique sentences and reduce the influence of repetitive ones. In the second technique, importance weights are learned through an attention mechanism instead of relying on hand-crafted features. The effectiveness of the proposed WFA strategy with the two techniques is analyzed in terms of downstream performance on text-to-image retrieval in RS. Experimental results show that the proposed strategy enables efficient and effective pretraining of VLMs in RS. Based on the experimental analysis, we derive guidelines for selecting appropriate techniques depending on downstream task requirements and resource constraints. The code of this work is publicly available at https://git.tu-berlin.de/rsim/redundacy-aware-rs-vlm.  
+  </ol>  
+</details>  
+**comments**: Accepted at IEEE International Geoscience and Remote Sensing
+  Symposium (IGARSS) 2025. Our code is available at
+  https://git.tu-berlin.de/rsim/redundacy-aware-rs-vlm  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Deepfake Forensic Analysis: Source Dataset Attribution and Legal Implications of Synthetic Media Manipulation](http://arxiv.org/abs/2505.11110)  
+Massimiliano Cassia, Luca Guarnera, Mirko Casu, Ignazio Zangara, Sebastiano Battiato  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Synthetic media generated by Generative Adversarial Networks (GANs) pose significant challenges in verifying authenticity and tracing dataset origins, raising critical concerns in copyright enforcement, privacy protection, and legal compliance. This paper introduces a novel forensic framework for identifying the training dataset (e.g., CelebA or FFHQ) of GAN-generated images through interpretable feature analysis. By integrating spectral transforms (Fourier/DCT), color distribution metrics, and local feature descriptors (SIFT), our pipeline extracts discriminative statistical signatures embedded in synthetic outputs. Supervised classifiers (Random Forest, SVM, XGBoost) achieve 98-99% accuracy in binary classification (real vs. synthetic) and multi-class dataset attribution across diverse GAN architectures (StyleGAN, AttGAN, GDWCT, StarGAN, and StyleGAN2). Experimental results highlight the dominance of frequency-domain features (DCT/FFT) in capturing dataset-specific artifacts, such as upsampling patterns and spectral irregularities, while color histograms reveal implicit regularization strategies in GAN training. We further examine legal and ethical implications, showing how dataset attribution can address copyright infringement, unauthorized use of personal data, and regulatory compliance under frameworks like GDPR and California's AB 602. Our framework advances accountability and governance in generative modeling, with applications in digital forensics, content moderation, and intellectual property litigation.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [Multi-view dense image matching with similarity learning and geometry priors](http://arxiv.org/abs/2505.11264)  
+Mohamed Ali Chebbi, Ewelina Rupnik, Paul Lopes, Marc Pierrot-Deseilligny  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We introduce MV-DeepSimNets, a comprehensive suite of deep neural networks designed for multi-view similarity learning, leveraging epipolar geometry for training. Our approach incorporates an online geometry prior to characterize pixel relationships, either along the epipolar line or through homography rectification. This enables the generation of geometry-aware features from native images, which are then projected across candidate depth hypotheses using plane sweeping. Our method geometric preconditioning effectively adapts epipolar-based features for enhanced multi-view reconstruction, without requiring the laborious multi-view training dataset creation. By aggregating learned similarities, we construct and regularize the cost volume, leading to improved multi-view surface reconstruction over traditional dense matching approaches. MV-DeepSimNets demonstrates superior performance against leading similarity learning networks and end-to-end regression models, especially in terms of generalization capabilities across both aerial and satellite imagery with varied ground sampling distances. Our pipeline is integrated into MicMac software and can be readily adopted in standard multi-resolution image matching pipelines.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## NeRF  
+
+### [MutualNeRF: Improve the Performance of NeRF under Limited Samples with Mutual Information Theory](http://arxiv.org/abs/2505.11386)  
+Zifan Wang, Jingwei Li, Yitang Li, Yunze Liu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    This paper introduces MutualNeRF, a framework enhancing Neural Radiance Field (NeRF) performance under limited samples using Mutual Information Theory. While NeRF excels in 3D scene synthesis, challenges arise with limited data and existing methods that aim to introduce prior knowledge lack theoretical support in a unified framework. We introduce a simple but theoretically robust concept, Mutual Information, as a metric to uniformly measure the correlation between images, considering both macro (semantic) and micro (pixel) levels.   For sparse view sampling, we strategically select additional viewpoints containing more non-overlapping scene information by minimizing mutual information without knowing ground truth images beforehand. Our framework employs a greedy algorithm, offering a near-optimal solution.   For few-shot view synthesis, we maximize the mutual information between inferred images and ground truth, expecting inferred images to gain more relevant information from known images. This is achieved by incorporating efficient, plug-and-play regularization terms.   Experiments under limited samples show consistent improvement over state-of-the-art baselines in different settings, affirming the efficacy of our framework.  
+  </ol>  
+</details>  
+  
+### [EA-3DGS: Efficient and Adaptive 3D Gaussians with Highly Enhanced Quality for outdoor scenes](http://arxiv.org/abs/2505.10787)  
+Jianlin Guo, Haihong Xiao, Wenxiong Kang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Efficient scene representations are essential for many real-world applications, especially those involving spatial measurement. Although current NeRF-based methods have achieved impressive results in reconstructing building-scale scenes, they still suffer from slow training and inference speeds due to time-consuming stochastic sampling. Recently, 3D Gaussian Splatting (3DGS) has demonstrated excellent performance with its high-quality rendering and real-time speed, especially for objects and small-scale scenes. However, in outdoor scenes, its point-based explicit representation lacks an effective adjustment mechanism, and the millions of Gaussian points required often lead to memory constraints during training. To address these challenges, we propose EA-3DGS, a high-quality real-time rendering method designed for outdoor scenes. First, we introduce a mesh structure to regulate the initialization of Gaussian components by leveraging an adaptive tetrahedral mesh that partitions the grid and initializes Gaussian components on each face, effectively capturing geometric structures in low-texture regions. Second, we propose an efficient Gaussian pruning strategy that evaluates each 3D Gaussian's contribution to the view and prunes accordingly. To retain geometry-critical Gaussian points, we also present a structure-aware densification strategy that densifies Gaussian points in low-curvature regions. Additionally, we employ vector quantization for parameter quantization of Gaussian components, significantly reducing disk space requirements with only a minimal impact on rendering quality. Extensive experiments on 13 scenes, including eight from four public datasets (MatrixCity-Aerial, Mill-19, Tanks \& Temples, WHU) and five self-collected scenes acquired through UAV photogrammetry measurement from SCUT-CA and plateau regions, further demonstrate the superiority of our method.  
   </ol>  
 </details>  
   
