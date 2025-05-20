@@ -1,48 +1,53 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Mapping-Semantic-Segmentation-to-Point-Clouds-Using-Structure-from-Motion-for-Forest-Analysis>Mapping Semantic Segmentation to Point Clouds Using Structure from Motion for Forest Analysis</a></li>
+        <li><a href=#eStonefish-scenes:-A-synthetically-generated-dataset-for-underwater-event-based-optical-flow-prediction-tasks>eStonefish-scenes: A synthetically generated dataset for underwater event-based optical flow prediction tasks</a></li>
+        <li><a href=#Structureless-VIO>Structureless VIO</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Redundancy-Aware-Pretraining-of-Vision-Language-Foundation-Models-in-Remote-Sensing>Redundancy-Aware Pretraining of Vision-Language Foundation Models in Remote Sensing</a></li>
+        <li><a href=#MMS-VPR:-Multimodal-Street-Level-Visual-Place-Recognition-Dataset-and-Benchmark>MMS-VPR: Multimodal Street-Level Visual Place Recognition Dataset and Benchmark</a></li>
+        <li><a href=#Improved-Bag-of-Words-Image-Retrieval-with-Geometric-Constraints-for-Ground-Texture-Localization>Improved Bag-of-Words Image Retrieval with Geometric Constraints for Ground Texture Localization</a></li>
       </ul>
     </li>
     <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#Deepfake-Forensic-Analysis:-Source-Dataset-Attribution-and-Legal-Implications-of-Synthetic-Media-Manipulation>Deepfake Forensic Analysis: Source Dataset Attribution and Legal Implications of Synthetic Media Manipulation</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#Multi-view-dense-image-matching-with-similarity-learning-and-geometry-priors>Multi-view dense image matching with similarity learning and geometry priors</a></li>
+        <li><a href=#SEPT:-Standard-Definition-Map-Enhanced-Scene-Perception-and-Topology-Reasoning-for-Autonomous-Driving>SEPT: Standard-Definition Map Enhanced Scene Perception and Topology Reasoning for Autonomous Driving</a></li>
+        <li><a href=#Keypoints-as-Dynamic-Centroids-for-Unified-Human-Pose-and-Segmentation>Keypoints as Dynamic Centroids for Unified Human Pose and Segmentation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MutualNeRF:-Improve-the-Performance-of-NeRF-under-Limited-Samples-with-Mutual-Information-Theory>MutualNeRF: Improve the Performance of NeRF under Limited Samples with Mutual Information Theory</a></li>
-        <li><a href=#EA-3DGS:-Efficient-and-Adaptive-3D-Gaussians-with-Highly-Enhanced-Quality-for-outdoor-scenes>EA-3DGS: Efficient and Adaptive 3D Gaussians with Highly Enhanced Quality for outdoor scenes</a></li>
+        <li><a href=#3D-Gaussian-Adaptive-Reconstruction-for-Fourier-Light-Field-Microscopy>3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy</a></li>
+        <li><a href=#Is-Semantic-SLAM-Ready-for-Embedded-Systems-?-A-Comparative-Survey>Is Semantic SLAM Ready for Embedded Systems ? A Comparative Survey</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [Mapping Semantic Segmentation to Point Clouds Using Structure from Motion for Forest Analysis](http://arxiv.org/abs/2505.10751)  
-Francisco Raverta Capua, Pablo De Cristoforis  
+### [eStonefish-scenes: A synthetically generated dataset for underwater event-based optical flow prediction tasks](http://arxiv.org/abs/2505.13309)  
+Jad Mansour, Sebastian Realpe, Hayat Rajani, Michele Grimaldi, Rafael Garcia, Nuno Gracias  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Although the use of remote sensing technologies for monitoring forested environments has gained increasing attention, publicly available point cloud datasets remain scarce due to the high costs, sensor requirements, and time-intensive nature of their acquisition. Moreover, as far as we are aware, there are no public annotated datasets generated through Structure From Motion (SfM) algorithms applied to imagery, which may be due to the lack of SfM algorithms that can map semantic segmentation information into an accurate point cloud, especially in a challenging environment like forests.   In this work, we present a novel pipeline for generating semantically segmented point clouds of forest environments. Using a custom-built forest simulator, we generate realistic RGB images of diverse forest scenes along with their corresponding semantic segmentation masks. These labeled images are then processed using modified open-source SfM software capable of preserving semantic information during 3D reconstruction. The resulting point clouds provide both geometric and semantic detail, offering a valuable resource for training and evaluating deep learning models aimed at segmenting real forest point clouds obtained via SfM.  
+    The combined use of event-based vision and Spiking Neural Networks (SNNs) is expected to significantly impact robotics, particularly in tasks like visual odometry and obstacle avoidance. While existing real-world event-based datasets for optical flow prediction, typically captured with Unmanned Aerial Vehicles (UAVs), offer valuable insights, they are limited in diversity, scalability, and are challenging to collect. Moreover, there is a notable lack of labelled datasets for underwater applications, which hinders the integration of event-based vision with Autonomous Underwater Vehicles (AUVs). To address this, synthetic datasets could provide a scalable solution while bridging the gap between simulation and reality. In this work, we introduce eStonefish-scenes, a synthetic event-based optical flow dataset based on the Stonefish simulator. Along with the dataset, we present a data generation pipeline that enables the creation of customizable underwater environments. This pipeline allows for simulating dynamic scenarios, such as biologically inspired schools of fish exhibiting realistic motion patterns, including obstacle avoidance and reactive navigation around corals. Additionally, we introduce a scene generator that can build realistic reef seabeds by randomly distributing coral across the terrain. To streamline data accessibility, we present eWiz, a comprehensive library designed for processing event-based data, offering tools for data loading, augmentation, visualization, encoding, and training data generation, along with loss functions and performance metrics.  
   </ol>  
 </details>  
-**comments**: Work in progress, accepted in Novel Approaches for Precision
-  Agriculture and Forestry with Autonomous Robots, ICRA 2025 Workshop - May 23,
-  2025 - Atlanta, GA  
+**comments**: Submitted to IJRR  
+  
+### [Structureless VIO](http://arxiv.org/abs/2505.12337)  
+Junlin Song, Miguel Olivares-Mendez  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Visual odometry (VO) is typically considered as a chicken-and-egg problem, as the localization and mapping modules are tightly-coupled. The estimation of visual map relies on accurate localization information. Meanwhile, localization requires precise map points to provide motion constraints. This classical design principle is naturally inherited by visual-inertial odometry (VIO). Efficient localization solution that does not require a map has not been fully investigated. To this end, we propose a novel structureless VIO, where the visual map is removed from the odometry framework. Experimental results demonstrated that, compared to the structure-based VIO baseline, our structureless VIO not only substantially improves computational efficiency but also has advantages in accuracy.  
+  </ol>  
+</details>  
   
   
 
@@ -50,17 +55,24 @@ Francisco Raverta Capua, Pablo De Cristoforis
 
 ## Visual Localization  
 
-### [Redundancy-Aware Pretraining of Vision-Language Foundation Models in Remote Sensing](http://arxiv.org/abs/2505.11121)  
-Mathis Jürgen Adler, Leonard Hackel, Gencer Sumbul, Begüm Demir  
+### [MMS-VPR: Multimodal Street-Level Visual Place Recognition Dataset and Benchmark](http://arxiv.org/abs/2505.12254)  
+Yiwei Ou, Xiaobin Ren, Ronggui Sun, Guansong Gao, Ziyi Jiang, Kaiqi Zhao, Manfredo Manfredini  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The development of foundation models through pretraining of vision-language models (VLMs) has recently attracted great attention in remote sensing (RS). VLM pretraining aims to learn image and language alignments from a large number of image-text pairs. Each pretraining image is often associated with multiple captions containing redundant information due to repeated or semantically similar phrases, resulting in increased pretraining and inference time. To overcome this, we introduce a weighted feature aggregation (WFA) strategy for VLM pretraining in RS. Our strategy aims to extract and exploit complementary information from multiple captions per image while reducing redundancies through feature aggregation with importance weighting. To calculate adaptive importance weights for different captions of each image, we propose two techniques: (i) non-parametric uniqueness and (ii) learning-based attention. In the first technique, importance weights are calculated based on the bilingual evaluation understudy (BLEU) scores of the captions to emphasize unique sentences and reduce the influence of repetitive ones. In the second technique, importance weights are learned through an attention mechanism instead of relying on hand-crafted features. The effectiveness of the proposed WFA strategy with the two techniques is analyzed in terms of downstream performance on text-to-image retrieval in RS. Experimental results show that the proposed strategy enables efficient and effective pretraining of VLMs in RS. Based on the experimental analysis, we derive guidelines for selecting appropriate techniques depending on downstream task requirements and resource constraints. The code of this work is publicly available at https://git.tu-berlin.de/rsim/redundacy-aware-rs-vlm.  
+    Existing visual place recognition (VPR) datasets predominantly rely on vehicle-mounted imagery, lack multimodal diversity and underrepresent dense, mixed-use street-level spaces, especially in non-Western urban contexts. To address these gaps, we introduce MMS-VPR, a large-scale multimodal dataset for street-level place recognition in complex, pedestrian-only environments. The dataset comprises 78,575 annotated images and 2,512 video clips captured across 207 locations in a ~70,800 $\mathrm{m}^2$ open-air commercial district in Chengdu, China. Each image is labeled with precise GPS coordinates, timestamp, and textual metadata, and covers varied lighting conditions, viewpoints, and timeframes. MMS-VPR follows a systematic and replicable data collection protocol with minimal device requirements, lowering the barrier for scalable dataset creation. Importantly, the dataset forms an inherent spatial graph with 125 edges, 81 nodes, and 1 subgraph, enabling structure-aware place recognition. We further define two application-specific subsets -- Dataset_Edges and Dataset_Points -- to support fine-grained and graph-based evaluation tasks. Extensive benchmarks using conventional VPR models, graph neural networks, and multimodal baselines show substantial improvements when leveraging multimodal and structural cues. MMS-VPR facilitates future research at the intersection of computer vision, geospatial understanding, and multimodal reasoning. The dataset is publicly available at https://huggingface.co/datasets/Yiwei-Ou/MMS-VPR.  
   </ol>  
 </details>  
-**comments**: Accepted at IEEE International Geoscience and Remote Sensing
-  Symposium (IGARSS) 2025. Our code is available at
-  https://git.tu-berlin.de/rsim/redundacy-aware-rs-vlm  
+  
+### [Improved Bag-of-Words Image Retrieval with Geometric Constraints for Ground Texture Localization](http://arxiv.org/abs/2505.11620)  
+Aaron Wilhelm, Nils Napp  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Ground texture localization using a downward-facing camera offers a low-cost, high-precision localization solution that is robust to dynamic environments and requires no environmental modification. We present a significantly improved bag-of-words (BoW) image retrieval system for ground texture localization, achieving substantially higher accuracy for global localization and higher precision and recall for loop closure detection in SLAM. Our approach leverages an approximate $k$ -means (AKM) vocabulary with soft assignment, and exploits the consistent orientation and constant scale constraints inherent to ground texture localization. Identifying the different needs of global localization vs. loop closure detection for SLAM, we present both high-accuracy and high-speed versions of our algorithm. We test the effect of each of our proposed improvements through an ablation study and demonstrate our method's effectiveness for both global localization and loop closure detection. With numerous ground texture localization systems already using BoW, our method can readily replace other generic BoW systems in their pipeline and immediately improve their results.  
+  </ol>  
+</details>  
+**comments**: Accepted to ICRA 2025  
   
   
 
@@ -68,27 +80,22 @@ Mathis Jürgen Adler, Leonard Hackel, Gencer Sumbul, Begüm Demir
 
 ## Keypoint Detection  
 
-### [Deepfake Forensic Analysis: Source Dataset Attribution and Legal Implications of Synthetic Media Manipulation](http://arxiv.org/abs/2505.11110)  
-Massimiliano Cassia, Luca Guarnera, Mirko Casu, Ignazio Zangara, Sebastiano Battiato  
+### [SEPT: Standard-Definition Map Enhanced Scene Perception and Topology Reasoning for Autonomous Driving](http://arxiv.org/abs/2505.12246)  
+Muleilan Pei, Jiayao Shan, Peiliang Li, Jieqi Shi, Jing Huo, Yang Gao, Shaojie Shen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Synthetic media generated by Generative Adversarial Networks (GANs) pose significant challenges in verifying authenticity and tracing dataset origins, raising critical concerns in copyright enforcement, privacy protection, and legal compliance. This paper introduces a novel forensic framework for identifying the training dataset (e.g., CelebA or FFHQ) of GAN-generated images through interpretable feature analysis. By integrating spectral transforms (Fourier/DCT), color distribution metrics, and local feature descriptors (SIFT), our pipeline extracts discriminative statistical signatures embedded in synthetic outputs. Supervised classifiers (Random Forest, SVM, XGBoost) achieve 98-99% accuracy in binary classification (real vs. synthetic) and multi-class dataset attribution across diverse GAN architectures (StyleGAN, AttGAN, GDWCT, StarGAN, and StyleGAN2). Experimental results highlight the dominance of frequency-domain features (DCT/FFT) in capturing dataset-specific artifacts, such as upsampling patterns and spectral irregularities, while color histograms reveal implicit regularization strategies in GAN training. We further examine legal and ethical implications, showing how dataset attribution can address copyright infringement, unauthorized use of personal data, and regulatory compliance under frameworks like GDPR and California's AB 602. Our framework advances accountability and governance in generative modeling, with applications in digital forensics, content moderation, and intellectual property litigation.  
+    Online scene perception and topology reasoning are critical for autonomous vehicles to understand their driving environments, particularly for mapless driving systems that endeavor to reduce reliance on costly High-Definition (HD) maps. However, recent advances in online scene understanding still face limitations, especially in long-range or occluded scenarios, due to the inherent constraints of onboard sensors. To address this challenge, we propose a Standard-Definition (SD) Map Enhanced scene Perception and Topology reasoning (SEPT) framework, which explores how to effectively incorporate the SD map as prior knowledge into existing perception and reasoning pipelines. Specifically, we introduce a novel hybrid feature fusion strategy that combines SD maps with Bird's-Eye-View (BEV) features, considering both rasterized and vectorized representations, while mitigating potential misalignment between SD maps and BEV feature spaces. Additionally, we leverage the SD map characteristics to design an auxiliary intersection-aware keypoint detection task, which further enhances the overall scene understanding performance. Experimental results on the large-scale OpenLane-V2 dataset demonstrate that by effectively integrating SD map priors, our framework significantly improves both scene perception and topology reasoning, outperforming existing methods by a substantial margin.  
   </ol>  
 </details>  
+**comments**: Accepted by IEEE Robotics and Automation Letters  
   
-  
-
-
-
-## Image Matching  
-
-### [Multi-view dense image matching with similarity learning and geometry priors](http://arxiv.org/abs/2505.11264)  
-Mohamed Ali Chebbi, Ewelina Rupnik, Paul Lopes, Marc Pierrot-Deseilligny  
+### [Keypoints as Dynamic Centroids for Unified Human Pose and Segmentation](http://arxiv.org/abs/2505.12130)  
+Niaz Ahmad, Jawad Khan, Kang G. Shin, Youngmoon Lee, Guanghui Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We introduce MV-DeepSimNets, a comprehensive suite of deep neural networks designed for multi-view similarity learning, leveraging epipolar geometry for training. Our approach incorporates an online geometry prior to characterize pixel relationships, either along the epipolar line or through homography rectification. This enables the generation of geometry-aware features from native images, which are then projected across candidate depth hypotheses using plane sweeping. Our method geometric preconditioning effectively adapts epipolar-based features for enhanced multi-view reconstruction, without requiring the laborious multi-view training dataset creation. By aggregating learned similarities, we construct and regularize the cost volume, leading to improved multi-view surface reconstruction over traditional dense matching approaches. MV-DeepSimNets demonstrates superior performance against leading similarity learning networks and end-to-end regression models, especially in terms of generalization capabilities across both aerial and satellite imagery with varied ground sampling distances. Our pipeline is integrated into MicMac software and can be readily adopted in standard multi-resolution image matching pipelines.  
+    The dynamic movement of the human body presents a fundamental challenge for human pose estimation and body segmentation. State-of-the-art approaches primarily rely on combining keypoint heatmaps with segmentation masks but often struggle in scenarios involving overlapping joints or rapidly changing poses during instance-level segmentation. To address these limitations, we propose Keypoints as Dynamic Centroid (KDC), a new centroid-based representation for unified human pose estimation and instance-level segmentation. KDC adopts a bottom-up paradigm to generate keypoint heatmaps for both easily distinguishable and complex keypoints and improves keypoint detection and confidence scores by introducing KeyCentroids using a keypoint disk. It leverages high-confidence keypoints as dynamic centroids in the embedding space to generate MaskCentroids, allowing for swift clustering of pixels to specific human instances during rapid body movements in live environments. Our experimental evaluations on the CrowdPose, OCHuman, and COCO benchmarks demonstrate KDC's effectiveness and generalizability in challenging scenarios in terms of both accuracy and runtime performance. The implementation is available at: https://sites.google.com/view/niazahmad/projects/kdc.  
   </ol>  
 </details>  
   
@@ -98,21 +105,21 @@ Mohamed Ali Chebbi, Ewelina Rupnik, Paul Lopes, Marc Pierrot-Deseilligny
 
 ## NeRF  
 
-### [MutualNeRF: Improve the Performance of NeRF under Limited Samples with Mutual Information Theory](http://arxiv.org/abs/2505.11386)  
-Zifan Wang, Jingwei Li, Yitang Li, Yunze Liu  
+### [3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy](http://arxiv.org/abs/2505.12875)  
+Chenyu Xu, Zhouyu Jin, Chengkang Shen, Hao Zhu, Zhan Ma, Bo Xiong, You Zhou, Xun Cao, Ning Gu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    This paper introduces MutualNeRF, a framework enhancing Neural Radiance Field (NeRF) performance under limited samples using Mutual Information Theory. While NeRF excels in 3D scene synthesis, challenges arise with limited data and existing methods that aim to introduce prior knowledge lack theoretical support in a unified framework. We introduce a simple but theoretically robust concept, Mutual Information, as a metric to uniformly measure the correlation between images, considering both macro (semantic) and micro (pixel) levels.   For sparse view sampling, we strategically select additional viewpoints containing more non-overlapping scene information by minimizing mutual information without knowing ground truth images beforehand. Our framework employs a greedy algorithm, offering a near-optimal solution.   For few-shot view synthesis, we maximize the mutual information between inferred images and ground truth, expecting inferred images to gain more relevant information from known images. This is achieved by incorporating efficient, plug-and-play regularization terms.   Experiments under limited samples show consistent improvement over state-of-the-art baselines in different settings, affirming the efficacy of our framework.  
+    Compared to light-field microscopy (LFM), which enables high-speed volumetric imaging but suffers from non-uniform spatial sampling, Fourier light-field microscopy (FLFM) introduces sub-aperture division at the pupil plane, thereby ensuring spatially invariant sampling and enhancing spatial resolution. Conventional FLFM reconstruction methods, such as Richardson-Lucy (RL) deconvolution, exhibit poor axial resolution and signal degradation due to the ill-posed nature of the inverse problem. While data-driven approaches enhance spatial resolution by leveraging high-quality paired datasets or imposing structural priors, Neural Radiance Fields (NeRF)-based methods employ physics-informed self-supervised learning to overcome these limitations, yet they are hindered by substantial computational costs and memory demands. Therefore, we propose 3D Gaussian Adaptive Tomography (3DGAT) for FLFM, a 3D gaussian splatting based self-supervised learning framework that significantly improves the volumetric reconstruction quality of FLFM while maintaining computational efficiency. Experimental results indicate that our approach achieves higher resolution and improved reconstruction accuracy, highlighting its potential to advance FLFM imaging and broaden its applications in 3D optical microscopy.  
   </ol>  
 </details>  
   
-### [EA-3DGS: Efficient and Adaptive 3D Gaussians with Highly Enhanced Quality for outdoor scenes](http://arxiv.org/abs/2505.10787)  
-Jianlin Guo, Haihong Xiao, Wenxiong Kang  
+### [Is Semantic SLAM Ready for Embedded Systems ? A Comparative Survey](http://arxiv.org/abs/2505.12384)  
+Calvin Galagain, Martyna Poreba, François Goulette  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Efficient scene representations are essential for many real-world applications, especially those involving spatial measurement. Although current NeRF-based methods have achieved impressive results in reconstructing building-scale scenes, they still suffer from slow training and inference speeds due to time-consuming stochastic sampling. Recently, 3D Gaussian Splatting (3DGS) has demonstrated excellent performance with its high-quality rendering and real-time speed, especially for objects and small-scale scenes. However, in outdoor scenes, its point-based explicit representation lacks an effective adjustment mechanism, and the millions of Gaussian points required often lead to memory constraints during training. To address these challenges, we propose EA-3DGS, a high-quality real-time rendering method designed for outdoor scenes. First, we introduce a mesh structure to regulate the initialization of Gaussian components by leveraging an adaptive tetrahedral mesh that partitions the grid and initializes Gaussian components on each face, effectively capturing geometric structures in low-texture regions. Second, we propose an efficient Gaussian pruning strategy that evaluates each 3D Gaussian's contribution to the view and prunes accordingly. To retain geometry-critical Gaussian points, we also present a structure-aware densification strategy that densifies Gaussian points in low-curvature regions. Additionally, we employ vector quantization for parameter quantization of Gaussian components, significantly reducing disk space requirements with only a minimal impact on rendering quality. Extensive experiments on 13 scenes, including eight from four public datasets (MatrixCity-Aerial, Mill-19, Tanks \& Temples, WHU) and five self-collected scenes acquired through UAV photogrammetry measurement from SCUT-CA and plateau regions, further demonstrate the superiority of our method.  
+    In embedded systems, robots must perceive and interpret their environment efficiently to operate reliably in real-world conditions. Visual Semantic SLAM (Simultaneous Localization and Mapping) enhances standard SLAM by incorporating semantic information into the map, enabling more informed decision-making. However, implementing such systems on resource-limited hardware involves trade-offs between accuracy, computing efficiency, and power usage.   This paper provides a comparative review of recent Semantic Visual SLAM methods with a focus on their applicability to embedded platforms. We analyze three main types of architectures - Geometric SLAM, Neural Radiance Fields (NeRF), and 3D Gaussian Splatting - and evaluate their performance on constrained hardware, specifically the NVIDIA Jetson AGX Orin. We compare their accuracy, segmentation quality, memory usage, and energy consumption.   Our results show that methods based on NeRF and Gaussian Splatting achieve high semantic detail but demand substantial computing resources, limiting their use on embedded devices. In contrast, Semantic Geometric SLAM offers a more practical balance between computational cost and accuracy. The review highlights a need for SLAM algorithms that are better adapted to embedded environments, and it discusses key directions for improving their efficiency through algorithm-hardware co-design.  
   </ol>  
 </details>  
   
