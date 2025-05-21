@@ -1,103 +1,32 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#eStonefish-scenes:-A-synthetically-generated-dataset-for-underwater-event-based-optical-flow-prediction-tasks>eStonefish-scenes: A synthetically generated dataset for underwater event-based optical flow prediction tasks</a></li>
-        <li><a href=#Structureless-VIO>Structureless VIO</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#MMS-VPR:-Multimodal-Street-Level-Visual-Place-Recognition-Dataset-and-Benchmark>MMS-VPR: Multimodal Street-Level Visual Place Recognition Dataset and Benchmark</a></li>
-        <li><a href=#Improved-Bag-of-Words-Image-Retrieval-with-Geometric-Constraints-for-Ground-Texture-Localization>Improved Bag-of-Words Image Retrieval with Geometric Constraints for Ground Texture Localization</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#SEPT:-Standard-Definition-Map-Enhanced-Scene-Perception-and-Topology-Reasoning-for-Autonomous-Driving>SEPT: Standard-Definition Map Enhanced Scene Perception and Topology Reasoning for Autonomous Driving</a></li>
-        <li><a href=#Keypoints-as-Dynamic-Centroids-for-Unified-Human-Pose-and-Segmentation>Keypoints as Dynamic Centroids for Unified Human Pose and Segmentation</a></li>
+        <li><a href=#Multimodal-RAG-driven-Anomaly-Detection-and-Classification-in-Laser-Powder-Bed-Fusion-using-Large-Language-Models>Multimodal RAG-driven Anomaly Detection and Classification in Laser Powder Bed Fusion using Large Language Models</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#3D-Gaussian-Adaptive-Reconstruction-for-Fourier-Light-Field-Microscopy>3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy</a></li>
-        <li><a href=#Is-Semantic-SLAM-Ready-for-Embedded-Systems-?-A-Comparative-Survey>Is Semantic SLAM Ready for Embedded Systems ? A Comparative Survey</a></li>
+        <li><a href=#IPENS:Interactive-Unsupervised-Framework-for-Rapid-Plant-Phenotyping-Extraction-via-NeRF-SAM2-Fusion>IPENS:Interactive Unsupervised Framework for Rapid Plant Phenotyping Extraction via NeRF-SAM2 Fusion</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [eStonefish-scenes: A synthetically generated dataset for underwater event-based optical flow prediction tasks](http://arxiv.org/abs/2505.13309)  
-Jad Mansour, Sebastian Realpe, Hayat Rajani, Michele Grimaldi, Rafael Garcia, Nuno Gracias  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The combined use of event-based vision and Spiking Neural Networks (SNNs) is expected to significantly impact robotics, particularly in tasks like visual odometry and obstacle avoidance. While existing real-world event-based datasets for optical flow prediction, typically captured with Unmanned Aerial Vehicles (UAVs), offer valuable insights, they are limited in diversity, scalability, and are challenging to collect. Moreover, there is a notable lack of labelled datasets for underwater applications, which hinders the integration of event-based vision with Autonomous Underwater Vehicles (AUVs). To address this, synthetic datasets could provide a scalable solution while bridging the gap between simulation and reality. In this work, we introduce eStonefish-scenes, a synthetic event-based optical flow dataset based on the Stonefish simulator. Along with the dataset, we present a data generation pipeline that enables the creation of customizable underwater environments. This pipeline allows for simulating dynamic scenarios, such as biologically inspired schools of fish exhibiting realistic motion patterns, including obstacle avoidance and reactive navigation around corals. Additionally, we introduce a scene generator that can build realistic reef seabeds by randomly distributing coral across the terrain. To streamline data accessibility, we present eWiz, a comprehensive library designed for processing event-based data, offering tools for data loading, augmentation, visualization, encoding, and training data generation, along with loss functions and performance metrics.  
-  </ol>  
-</details>  
-**comments**: Submitted to IJRR  
-  
-### [Structureless VIO](http://arxiv.org/abs/2505.12337)  
-Junlin Song, Miguel Olivares-Mendez  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Visual odometry (VO) is typically considered as a chicken-and-egg problem, as the localization and mapping modules are tightly-coupled. The estimation of visual map relies on accurate localization information. Meanwhile, localization requires precise map points to provide motion constraints. This classical design principle is naturally inherited by visual-inertial odometry (VIO). Efficient localization solution that does not require a map has not been fully investigated. To this end, we propose a novel structureless VIO, where the visual map is removed from the odometry framework. Experimental results demonstrated that, compared to the structure-based VIO baseline, our structureless VIO not only substantially improves computational efficiency but also has advantages in accuracy.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [MMS-VPR: Multimodal Street-Level Visual Place Recognition Dataset and Benchmark](http://arxiv.org/abs/2505.12254)  
-Yiwei Ou, Xiaobin Ren, Ronggui Sun, Guansong Gao, Ziyi Jiang, Kaiqi Zhao, Manfredo Manfredini  
+### [Multimodal RAG-driven Anomaly Detection and Classification in Laser Powder Bed Fusion using Large Language Models](http://arxiv.org/abs/2505.13828)  
+Kiarash Naghavi Khanghah, Zhiling Chen, Lela Romeo, Qian Yang, Rajiv Malhotra, Farhad Imani, Hongyi Xu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Existing visual place recognition (VPR) datasets predominantly rely on vehicle-mounted imagery, lack multimodal diversity and underrepresent dense, mixed-use street-level spaces, especially in non-Western urban contexts. To address these gaps, we introduce MMS-VPR, a large-scale multimodal dataset for street-level place recognition in complex, pedestrian-only environments. The dataset comprises 78,575 annotated images and 2,512 video clips captured across 207 locations in a ~70,800 $\mathrm{m}^2$ open-air commercial district in Chengdu, China. Each image is labeled with precise GPS coordinates, timestamp, and textual metadata, and covers varied lighting conditions, viewpoints, and timeframes. MMS-VPR follows a systematic and replicable data collection protocol with minimal device requirements, lowering the barrier for scalable dataset creation. Importantly, the dataset forms an inherent spatial graph with 125 edges, 81 nodes, and 1 subgraph, enabling structure-aware place recognition. We further define two application-specific subsets -- Dataset_Edges and Dataset_Points -- to support fine-grained and graph-based evaluation tasks. Extensive benchmarks using conventional VPR models, graph neural networks, and multimodal baselines show substantial improvements when leveraging multimodal and structural cues. MMS-VPR facilitates future research at the intersection of computer vision, geospatial understanding, and multimodal reasoning. The dataset is publicly available at https://huggingface.co/datasets/Yiwei-Ou/MMS-VPR.  
+    Additive manufacturing enables the fabrication of complex designs while minimizing waste, but faces challenges related to defects and process anomalies. This study presents a novel multimodal Retrieval-Augmented Generation-based framework that automates anomaly detection across various Additive Manufacturing processes leveraging retrieved information from literature, including images and descriptive text, rather than training datasets. This framework integrates text and image retrieval from scientific literature and multimodal generation models to perform zero-shot anomaly identification, classification, and explanation generation in a Laser Powder Bed Fusion setting. The proposed framework is evaluated on four L-PBF manufacturing datasets from Oak Ridge National Laboratory, featuring various printer makes, models, and materials. This evaluation demonstrates the framework's adaptability and generalizability across diverse images without requiring additional training. Comparative analysis using Qwen2-VL-2B and GPT-4o-mini as MLLM within the proposed framework highlights that GPT-4o-mini outperforms Qwen2-VL-2B and proportional random baseline in manufacturing anomalies classification. Additionally, the evaluation of the RAG system confirms that incorporating retrieval mechanisms improves average accuracy by 12% by reducing the risk of hallucination and providing additional information. The proposed framework can be continuously updated by integrating emerging research, allowing seamless adaptation to the evolving landscape of AM technologies. This scalable, automated, and zero-shot-capable framework streamlines AM anomaly analysis, enhancing efficiency and accuracy.  
   </ol>  
 </details>  
-  
-### [Improved Bag-of-Words Image Retrieval with Geometric Constraints for Ground Texture Localization](http://arxiv.org/abs/2505.11620)  
-Aaron Wilhelm, Nils Napp  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Ground texture localization using a downward-facing camera offers a low-cost, high-precision localization solution that is robust to dynamic environments and requires no environmental modification. We present a significantly improved bag-of-words (BoW) image retrieval system for ground texture localization, achieving substantially higher accuracy for global localization and higher precision and recall for loop closure detection in SLAM. Our approach leverages an approximate $k$ -means (AKM) vocabulary with soft assignment, and exploits the consistent orientation and constant scale constraints inherent to ground texture localization. Identifying the different needs of global localization vs. loop closure detection for SLAM, we present both high-accuracy and high-speed versions of our algorithm. We test the effect of each of our proposed improvements through an ablation study and demonstrate our method's effectiveness for both global localization and loop closure detection. With numerous ground texture localization systems already using BoW, our method can readily replace other generic BoW systems in their pipeline and immediately improve their results.  
-  </ol>  
-</details>  
-**comments**: Accepted to ICRA 2025  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [SEPT: Standard-Definition Map Enhanced Scene Perception and Topology Reasoning for Autonomous Driving](http://arxiv.org/abs/2505.12246)  
-Muleilan Pei, Jiayao Shan, Peiliang Li, Jieqi Shi, Jing Huo, Yang Gao, Shaojie Shen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Online scene perception and topology reasoning are critical for autonomous vehicles to understand their driving environments, particularly for mapless driving systems that endeavor to reduce reliance on costly High-Definition (HD) maps. However, recent advances in online scene understanding still face limitations, especially in long-range or occluded scenarios, due to the inherent constraints of onboard sensors. To address this challenge, we propose a Standard-Definition (SD) Map Enhanced scene Perception and Topology reasoning (SEPT) framework, which explores how to effectively incorporate the SD map as prior knowledge into existing perception and reasoning pipelines. Specifically, we introduce a novel hybrid feature fusion strategy that combines SD maps with Bird's-Eye-View (BEV) features, considering both rasterized and vectorized representations, while mitigating potential misalignment between SD maps and BEV feature spaces. Additionally, we leverage the SD map characteristics to design an auxiliary intersection-aware keypoint detection task, which further enhances the overall scene understanding performance. Experimental results on the large-scale OpenLane-V2 dataset demonstrate that by effectively integrating SD map priors, our framework significantly improves both scene perception and topology reasoning, outperforming existing methods by a substantial margin.  
-  </ol>  
-</details>  
-**comments**: Accepted by IEEE Robotics and Automation Letters  
-  
-### [Keypoints as Dynamic Centroids for Unified Human Pose and Segmentation](http://arxiv.org/abs/2505.12130)  
-Niaz Ahmad, Jawad Khan, Kang G. Shin, Youngmoon Lee, Guanghui Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The dynamic movement of the human body presents a fundamental challenge for human pose estimation and body segmentation. State-of-the-art approaches primarily rely on combining keypoint heatmaps with segmentation masks but often struggle in scenarios involving overlapping joints or rapidly changing poses during instance-level segmentation. To address these limitations, we propose Keypoints as Dynamic Centroid (KDC), a new centroid-based representation for unified human pose estimation and instance-level segmentation. KDC adopts a bottom-up paradigm to generate keypoint heatmaps for both easily distinguishable and complex keypoints and improves keypoint detection and confidence scores by introducing KeyCentroids using a keypoint disk. It leverages high-confidence keypoints as dynamic centroids in the embedding space to generate MaskCentroids, allowing for swift clustering of pixels to specific human instances during rapid body movements in live environments. Our experimental evaluations on the CrowdPose, OCHuman, and COCO benchmarks demonstrate KDC's effectiveness and generalizability in challenging scenarios in terms of both accuracy and runtime performance. The implementation is available at: https://sites.google.com/view/niazahmad/projects/kdc.  
-  </ol>  
-</details>  
+**comments**: ASME 2025 International Design Engineering Technical Conferences and
+  Computers and Information in Engineering Conference IDETC/CIE2025, August
+  17-20, 2025, Anaheim, CA (IDETC2025-168615)  
   
   
 
@@ -105,21 +34,12 @@ Niaz Ahmad, Jawad Khan, Kang G. Shin, Youngmoon Lee, Guanghui Wang
 
 ## NeRF  
 
-### [3D Gaussian Adaptive Reconstruction for Fourier Light-Field Microscopy](http://arxiv.org/abs/2505.12875)  
-Chenyu Xu, Zhouyu Jin, Chengkang Shen, Hao Zhu, Zhan Ma, Bo Xiong, You Zhou, Xun Cao, Ning Gu  
+### [IPENS:Interactive Unsupervised Framework for Rapid Plant Phenotyping Extraction via NeRF-SAM2 Fusion](http://arxiv.org/abs/2505.13633)  
+Wentao Song, He Huang, Youqiang Sun, Fang Qu, Jiaqi Zhang, Longhui Fang, Yuwei Hao, Chenyang Peng  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Compared to light-field microscopy (LFM), which enables high-speed volumetric imaging but suffers from non-uniform spatial sampling, Fourier light-field microscopy (FLFM) introduces sub-aperture division at the pupil plane, thereby ensuring spatially invariant sampling and enhancing spatial resolution. Conventional FLFM reconstruction methods, such as Richardson-Lucy (RL) deconvolution, exhibit poor axial resolution and signal degradation due to the ill-posed nature of the inverse problem. While data-driven approaches enhance spatial resolution by leveraging high-quality paired datasets or imposing structural priors, Neural Radiance Fields (NeRF)-based methods employ physics-informed self-supervised learning to overcome these limitations, yet they are hindered by substantial computational costs and memory demands. Therefore, we propose 3D Gaussian Adaptive Tomography (3DGAT) for FLFM, a 3D gaussian splatting based self-supervised learning framework that significantly improves the volumetric reconstruction quality of FLFM while maintaining computational efficiency. Experimental results indicate that our approach achieves higher resolution and improved reconstruction accuracy, highlighting its potential to advance FLFM imaging and broaden its applications in 3D optical microscopy.  
-  </ol>  
-</details>  
-  
-### [Is Semantic SLAM Ready for Embedded Systems ? A Comparative Survey](http://arxiv.org/abs/2505.12384)  
-Calvin Galagain, Martyna Poreba, François Goulette  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In embedded systems, robots must perceive and interpret their environment efficiently to operate reliably in real-world conditions. Visual Semantic SLAM (Simultaneous Localization and Mapping) enhances standard SLAM by incorporating semantic information into the map, enabling more informed decision-making. However, implementing such systems on resource-limited hardware involves trade-offs between accuracy, computing efficiency, and power usage.   This paper provides a comparative review of recent Semantic Visual SLAM methods with a focus on their applicability to embedded platforms. We analyze three main types of architectures - Geometric SLAM, Neural Radiance Fields (NeRF), and 3D Gaussian Splatting - and evaluate their performance on constrained hardware, specifically the NVIDIA Jetson AGX Orin. We compare their accuracy, segmentation quality, memory usage, and energy consumption.   Our results show that methods based on NeRF and Gaussian Splatting achieve high semantic detail but demand substantial computing resources, limiting their use on embedded devices. In contrast, Semantic Geometric SLAM offers a more practical balance between computational cost and accuracy. The review highlights a need for SLAM algorithms that are better adapted to embedded environments, and it discusses key directions for improving their efficiency through algorithm-hardware co-design.  
+    Advanced plant phenotyping technologies play a crucial role in targeted trait improvement and accelerating intelligent breeding. Due to the species diversity of plants, existing methods heavily rely on large-scale high-precision manually annotated data. For self-occluded objects at the grain level, unsupervised methods often prove ineffective. This study proposes IPENS, an interactive unsupervised multi-target point cloud extraction method. The method utilizes radiance field information to lift 2D masks, which are segmented by SAM2 (Segment Anything Model 2), into 3D space for target point cloud extraction. A multi-target collaborative optimization strategy is designed to effectively resolve the single-interaction multi-target segmentation challenge. Experimental validation demonstrates that IPENS achieves a grain-level segmentation accuracy (mIoU) of 63.72% on a rice dataset, with strong phenotypic estimation capabilities: grain volume prediction yields R2 = 0.7697 (RMSE = 0.0025), leaf surface area R2 = 0.84 (RMSE = 18.93), and leaf length and width predictions achieve R2 = 0.97 and 0.87 (RMSE = 1.49 and 0.21). On a wheat dataset,IPENS further improves segmentation accuracy to 89.68% (mIoU), with equally outstanding phenotypic estimation performance: spike volume prediction achieves R2 = 0.9956 (RMSE = 0.0055), leaf surface area R2 = 1.00 (RMSE = 0.67), and leaf length and width predictions reach R2 = 0.99 and 0.92 (RMSE = 0.23 and 0.15). This method provides a non-invasive, high-quality phenotyping extraction solution for rice and wheat. Without requiring annotated data, it rapidly extracts grain-level point clouds within 3 minutes through simple single-round interactions on images for multiple targets, demonstrating significant potential to accelerate intelligent breeding efficiency.  
   </ol>  
 </details>  
   
