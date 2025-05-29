@@ -3,18 +3,27 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Intern-GS:-Vision-Model-Guided-Sparse-View-3D-Gaussian-Splatting>Intern-GS: Vision Model Guided Sparse-View 3D Gaussian Splatting</a></li>
+        <li><a href=#Fast-Feature-Matching-of-UAV-Images-via-Matrix-Band-Reduction-based-GPU-Data-Schedule>Fast Feature Matching of UAV Images via Matrix Band Reduction-based GPU Data Schedule</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#ConText-CIR:-Learning-from-Concepts-in-Text-for-Composed-Image-Retrieval>ConText-CIR: Learning from Concepts in Text for Composed Image Retrieval</a></li>
-        <li><a href=#Visualized-Text-to-Image-Retrieval>Visualized Text-to-Image Retrieval</a></li>
+        <li><a href=#UAVPairs:-A-Challenging-Benchmark-for-Match-Pair-Retrieval-of-Large-scale-UAV-Images>UAVPairs: A Challenging Benchmark for Match Pair Retrieval of Large-scale UAV Images</a></li>
+        <li><a href=#Fast-Feature-Matching-of-UAV-Images-via-Matrix-Band-Reduction-based-GPU-Data-Schedule>Fast Feature Matching of UAV Images via Matrix Band Reduction-based GPU Data Schedule</a></li>
+        <li><a href=#Visual-Loop-Closure-Detection-Through-Deep-Graph-Consensus>Visual Loop Closure Detection Through Deep Graph Consensus</a></li>
+        <li><a href=#QuARI:-Query-Adaptive-Retrieval-Improvement>QuARI: Query Adaptive Retrieval Improvement</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Universal-Domain-Adaptation-for-Semantic-Segmentation>Universal Domain Adaptation for Semantic Segmentation</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Structure-from-Collision>Structure from Collision</a></li>
+        <li><a href=#Can-NeRFs-See-without-Cameras?>Can NeRFs See without Cameras?</a></li>
+        <li><a href=#Learning-Fine-Grained-Geometry-for-Sparse-View-Splatting-via-Cascade-Depth-Loss>Learning Fine-Grained Geometry for Sparse-View Splatting via Cascade Depth Loss</a></li>
+        <li><a href=#Hyperspectral-Gaussian-Splatting>Hyperspectral Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
@@ -22,12 +31,12 @@
 
 ## SFM  
 
-### [Intern-GS: Vision Model Guided Sparse-View 3D Gaussian Splatting](http://arxiv.org/abs/2505.20729)  
-Xiangyu Sun, Runnan Chen, Mingming Gong, Dong Xu, Tongliang Liu  
+### [Fast Feature Matching of UAV Images via Matrix Band Reduction-based GPU Data Schedule](http://arxiv.org/abs/2505.22089)  
+San Jiang, Kan You, Wanshou Jiang, Qingquan Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Sparse-view scene reconstruction often faces significant challenges due to the constraints imposed by limited observational data. These limitations result in incomplete information, leading to suboptimal reconstructions using existing methodologies. To address this, we present Intern-GS, a novel approach that effectively leverages rich prior knowledge from vision foundation models to enhance the process of sparse-view Gaussian Splatting, thereby enabling high-quality scene reconstruction. Specifically, Intern-GS utilizes vision foundation models to guide both the initialization and the optimization process of 3D Gaussian splatting, effectively addressing the limitations of sparse inputs. In the initialization process, our method employs DUSt3R to generate a dense and non-redundant gaussian point cloud. This approach significantly alleviates the limitations encountered by traditional structure-from-motion (SfM) methods, which often struggle under sparse-view constraints. During the optimization process, vision foundation models predict depth and appearance for unobserved views, refining the 3D Gaussians to compensate for missing information in unseen regions. Extensive experiments demonstrate that Intern-GS achieves state-of-the-art rendering quality across diverse datasets, including both forward-facing and large-scale scenes, such as LLFF, DTU, and Tanks and Temples.  
+    Feature matching dominats the time costs in structure from motion (SfM). The primary contribution of this study is a GPU data schedule algorithm for efficient feature matching of Unmanned aerial vehicle (UAV) images. The core idea is to divide the whole dataset into blocks based on the matrix band reduction (MBR) and achieve efficient feature matching via GPU-accelerated cascade hashing. First, match pairs are selected by using an image retrieval technique, which converts images into global descriptors and searches high-dimension nearest neighbors with graph indexing. Second, compact image blocks are iteratively generated from a MBR-based data schedule strategy, which exploits image connections to avoid redundant data IO (input/output) burden and increases the usage of GPU computing power. Third, guided by the generated image blocks, feature matching is executed sequentially within the framework of GPU-accelerated cascade hashing, and initial candidate matches are refined by combining a local geometric constraint and RANSAC-based global verification. For further performance improvement, these two seps are designed to execute parallelly in GPU and CPU. Finally, the performance of the proposed solution is evaluated by using large-scale UAV datasets. The results demonstrate that it increases the efficiency of feature matching with speedup ratios ranging from 77.0 to 100.0 compared with KD-Tree based matching methods, and achieves comparable accuracy in relative and absolute bundle adjustment (BA). The proposed algorithm is an efficient solution for feature matching of UAV images.  
   </ol>  
 </details>  
   
@@ -37,25 +46,58 @@ Xiangyu Sun, Runnan Chen, Mingming Gong, Dong Xu, Tongliang Liu
 
 ## Visual Localization  
 
-### [ConText-CIR: Learning from Concepts in Text for Composed Image Retrieval](http://arxiv.org/abs/2505.20764)  
-Eric Xing, Pranavi Kolouju, Robert Pless, Abby Stylianou, Nathan Jacobs  
+### [UAVPairs: A Challenging Benchmark for Match Pair Retrieval of Large-scale UAV Images](http://arxiv.org/abs/2505.22098)  
+Junhuan Liu, San Jiang, Wei Ge, Wei Huang, Bingxuan Guo, Qingquan Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed image retrieval (CIR) is the task of retrieving a target image specified by a query image and a relative text that describes a semantic modification to the query image. Existing methods in CIR struggle to accurately represent the image and the text modification, resulting in subpar performance. To address this limitation, we introduce a CIR framework, ConText-CIR, trained with a Text Concept-Consistency loss that encourages the representations of noun phrases in the text modification to better attend to the relevant parts of the query image. To support training with this loss function, we also propose a synthetic data generation pipeline that creates training data from existing CIR datasets or unlabeled images. We show that these components together enable stronger performance on CIR tasks, setting a new state-of-the-art in composed image retrieval in both the supervised and zero-shot settings on multiple benchmark datasets, including CIRR and CIRCO. Source code, model checkpoints, and our new datasets are available at https://github.com/mvrl/ConText-CIR.  
+    The primary contribution of this paper is a challenging benchmark dataset, UAVPairs, and a training pipeline designed for match pair retrieval of large-scale UAV images. First, the UAVPairs dataset, comprising 21,622 high-resolution images across 30 diverse scenes, is constructed; the 3D points and tracks generated by SfM-based 3D reconstruction are employed to define the geometric similarity of image pairs, ensuring genuinely matchable image pairs are used for training. Second, to solve the problem of expensive mining cost for global hard negative mining, a batched nontrivial sample mining strategy is proposed, leveraging the geometric similarity and multi-scene structure of the UAVPairs to generate training samples as to accelerate training. Third, recognizing the limitation of pair-based losses, the ranked list loss is designed to improve the discrimination of image retrieval models, which optimizes the global similarity structure constructed from the positive set and negative set. Finally, the effectiveness of the UAVPairs dataset and training pipeline is validated through comprehensive experiments on three distinct large-scale UAV datasets. The experiment results demonstrate that models trained with the UAVPairs dataset and the ranked list loss achieve significantly improved retrieval accuracy compared to models trained on existing datasets or with conventional losses. Furthermore, these improvements translate to enhanced view graph connectivity and higher quality of reconstructed 3D models. The models trained by the proposed approach perform more robustly compared with hand-crafted global features, particularly in challenging repetitively textured scenes and weakly textured scenes. For match pair retrieval of large-scale UAV images, the trained image retrieval models offer an effective solution. The dataset would be made publicly available at https://github.com/json87/UAVPairs.  
   </ol>  
 </details>  
-**comments**: 15 pages, 8 figures, 6 tables. CVPR 2025  
   
-### [Visualized Text-to-Image Retrieval](http://arxiv.org/abs/2505.20291)  
-Di Wu, Yixin Wan, Kai-Wei Chang  
+### [Fast Feature Matching of UAV Images via Matrix Band Reduction-based GPU Data Schedule](http://arxiv.org/abs/2505.22089)  
+San Jiang, Kan You, Wanshou Jiang, Qingquan Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose Visualize-then-Retrieve (VisRet), a new paradigm for Text-to-Image (T2I) retrieval that mitigates the limitations of cross-modal similarity alignment of existing multi-modal embeddings. VisRet first projects textual queries into the image modality via T2I generation. Then, it performs retrieval within the image modality to bypass the weaknesses of cross-modal retrievers in recognizing subtle visual-spatial features. Experiments on three knowledge-intensive T2I retrieval benchmarks, including a newly introduced multi-entity benchmark, demonstrate that VisRet consistently improves T2I retrieval by 24.5% to 32.7% NDCG@10 across different embedding models. VisRet also significantly benefits downstream visual question answering accuracy when used in retrieval-augmented generation pipelines. The method is plug-and-play and compatible with off-the-shelf retrievers, making it an effective module for knowledge-intensive multi-modal systems. Our code and the new benchmark are publicly available at https://github.com/xiaowu0162/Visualize-then-Retrieve.  
+    Feature matching dominats the time costs in structure from motion (SfM). The primary contribution of this study is a GPU data schedule algorithm for efficient feature matching of Unmanned aerial vehicle (UAV) images. The core idea is to divide the whole dataset into blocks based on the matrix band reduction (MBR) and achieve efficient feature matching via GPU-accelerated cascade hashing. First, match pairs are selected by using an image retrieval technique, which converts images into global descriptors and searches high-dimension nearest neighbors with graph indexing. Second, compact image blocks are iteratively generated from a MBR-based data schedule strategy, which exploits image connections to avoid redundant data IO (input/output) burden and increases the usage of GPU computing power. Third, guided by the generated image blocks, feature matching is executed sequentially within the framework of GPU-accelerated cascade hashing, and initial candidate matches are refined by combining a local geometric constraint and RANSAC-based global verification. For further performance improvement, these two seps are designed to execute parallelly in GPU and CPU. Finally, the performance of the proposed solution is evaluated by using large-scale UAV datasets. The results demonstrate that it increases the efficiency of feature matching with speedup ratios ranging from 77.0 to 100.0 compared with KD-Tree based matching methods, and achieves comparable accuracy in relative and absolute bundle adjustment (BA). The proposed algorithm is an efficient solution for feature matching of UAV images.  
   </ol>  
 </details>  
-**comments**: Work in Progress  
+  
+### [Visual Loop Closure Detection Through Deep Graph Consensus](http://arxiv.org/abs/2505.21754)  
+Martin Büchner, Liza Dahiya, Simon Dorer, Vipul Ramtekkar, Kenji Nishimiya, Daniele Cattaneo, Abhinav Valada  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Visual loop closure detection traditionally relies on place recognition methods to retrieve candidate loops that are validated using computationally expensive RANSAC-based geometric verification. As false positive loop closures significantly degrade downstream pose graph estimates, verifying a large number of candidates in online simultaneous localization and mapping scenarios is constrained by limited time and compute resources. While most deep loop closure detection approaches only operate on pairs of keyframes, we relax this constraint by considering neighborhoods of multiple keyframes when detecting loops. In this work, we introduce LoopGNN, a graph neural network architecture that estimates loop closure consensus by leveraging cliques of visually similar keyframes retrieved through place recognition. By propagating deep feature encodings among nodes of the clique, our method yields high-precision estimates while maintaining high recall. Extensive experimental evaluations on the TartanDrive 2.0 and NCLT datasets demonstrate that LoopGNN outperforms traditional baselines. Additionally, an ablation study across various keypoint extractors demonstrates that our method is robust, regardless of the type of deep feature encodings used, and exhibits higher computational efficiency compared to classical geometric verification baselines. We release our code, supplementary material, and keyframe data at https://loopgnn.cs.uni-freiburg.de.  
+  </ol>  
+</details>  
+  
+### [QuARI: Query Adaptive Retrieval Improvement](http://arxiv.org/abs/2505.21647)  
+Eric Xing, Abby Stylianou, Robert Pless, Nathan Jacobs  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Massive-scale pretraining has made vision-language models increasingly popular for image-to-image and text-to-image retrieval across a broad collection of domains. However, these models do not perform well when used for challenging retrieval tasks, such as instance retrieval in very large-scale image collections. Recent work has shown that linear transformations of VLM features trained for instance retrieval can improve performance by emphasizing subspaces that relate to the domain of interest. In this paper, we explore a more extreme version of this specialization by learning to map a given query to a query-specific feature space transformation. Because this transformation is linear, it can be applied with minimal computational cost to millions of image embeddings, making it effective for large-scale retrieval or re-ranking. Results show that this method consistently outperforms state-of-the-art alternatives, including those that require many orders of magnitude more computation at query time.  
+  </ol>  
+</details>  
+**comments**: 13 pages, 4 figures, 4 tables  
+  
+  
+
+
+
+## Image Matching  
+
+### [Universal Domain Adaptation for Semantic Segmentation](http://arxiv.org/abs/2505.22458)  
+Seun-An Choe, Keon-Hee Park, Jinwoo Choi, Gyeong-Moon Park  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Unsupervised domain adaptation for semantic segmentation (UDA-SS) aims to transfer knowledge from labeled source data to unlabeled target data. However, traditional UDA-SS methods assume that category settings between source and target domains are known, which is unrealistic in real-world scenarios. This leads to performance degradation if private classes exist. To address this limitation, we propose Universal Domain Adaptation for Semantic Segmentation (UniDA-SS), achieving robust adaptation even without prior knowledge of category settings. We define the problem in the UniDA-SS scenario as low confidence scores of common classes in the target domain, which leads to confusion with private classes. To solve this problem, we propose UniMAP: UniDA-SS with Image Matching and Prototype-based Distinction, a novel framework composed of two key components. First, Domain-Specific Prototype-based Distinction (DSPD) divides each class into two domain-specific prototypes, enabling finer separation of domain-specific features and enhancing the identification of common classes across domains. Second, Target-based Image Matching (TIM) selects a source image containing the most common-class pixels based on the target pseudo-label and pairs it in a batch to promote effective learning of common classes. We also introduce a new UniDA-SS benchmark and demonstrate through various experiments that UniMAP significantly outperforms baselines. The code is available at \href{https://github.com/KU-VGI/UniMAP}{this https URL}.  
+  </ol>  
+</details>  
+**comments**: Accepted by CVPR 2025  
   
   
 
@@ -63,16 +105,32 @@ Di Wu, Yixin Wan, Kai-Wei Chang
 
 ## NeRF  
 
-### [Structure from Collision](http://arxiv.org/abs/2505.21335)  
-Takuhiro Kaneko  
+### [Can NeRFs See without Cameras?](http://arxiv.org/abs/2505.22441)  
+Chaitanya Amballa, Sattwik Basu, Yu-Lin Wei, Zhijian Yang, Mehmet Ergezer, Romit Roy Choudhury  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in neural 3D representations, such as neural radiance fields (NeRF) and 3D Gaussian splatting (3DGS), have enabled the accurate estimation of 3D structures from multiview images. However, this capability is limited to estimating the visible external structure, and identifying the invisible internal structure hidden behind the surface is difficult. To overcome this limitation, we address a new task called Structure from Collision (SfC), which aims to estimate the structure (including the invisible internal structure) of an object from appearance changes during collision. To solve this problem, we propose a novel model called SfC-NeRF that optimizes the invisible internal structure of an object through a video sequence under physical, appearance (i.e., visible external structure)-preserving, and keyframe constraints. In particular, to avoid falling into undesirable local optima owing to its ill-posed nature, we propose volume annealing; that is, searching for global optima by repeatedly reducing and expanding the volume. Extensive experiments on 115 objects involving diverse structures (i.e., various cavity shapes, locations, and sizes) and material properties revealed the properties of SfC and demonstrated the effectiveness of the proposed SfC-NeRF.  
+    Neural Radiance Fields (NeRFs) have been remarkably successful at synthesizing novel views of 3D scenes by optimizing a volumetric scene function. This scene function models how optical rays bring color information from a 3D object to the camera pixels. Radio frequency (RF) or audio signals can also be viewed as a vehicle for delivering information about the environment to a sensor. However, unlike camera pixels, an RF/audio sensor receives a mixture of signals that contain many environmental reflections (also called "multipath"). Is it still possible to infer the environment using such multipath signals? We show that with redesign, NeRFs can be taught to learn from multipath signals, and thereby "see" the environment. As a grounding application, we aim to infer the indoor floorplan of a home from sparse WiFi measurements made at multiple locations inside the home. Although a difficult inverse problem, our implicitly learnt floorplans look promising, and enables forward applications, such as indoor signal prediction and basic ray tracing.  
   </ol>  
 </details>  
-**comments**: Accepted to CVPR 2025 (Highlight). Project page:
-  https://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/sfc/  
+  
+### [Learning Fine-Grained Geometry for Sparse-View Splatting via Cascade Depth Loss](http://arxiv.org/abs/2505.22279)  
+Wenjun Lu, Haodong Chen, Anqi Yi, Yuk Ying Chung, Zhiyong Wang, Kun Hu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Novel view synthesis is a fundamental task in 3D computer vision that aims to reconstruct realistic images from a set of posed input views. However, reconstruction quality degrades significantly under sparse-view conditions due to limited geometric cues. Existing methods, such as Neural Radiance Fields (NeRF) and the more recent 3D Gaussian Splatting (3DGS), often suffer from blurred details and structural artifacts when trained with insufficient views. Recent works have identified the quality of rendered depth as a key factor in mitigating these artifacts, as it directly affects geometric accuracy and view consistency. In this paper, we address these challenges by introducing Hierarchical Depth-Guided Splatting (HDGS), a depth supervision framework that progressively refines geometry from coarse to fine levels. Central to HDGS is a novel Cascade Pearson Correlation Loss (CPCL), which aligns rendered and estimated monocular depths across multiple spatial scales. By enforcing multi-scale depth consistency, our method substantially improves structural fidelity in sparse-view scenarios. Extensive experiments on the LLFF and DTU benchmarks demonstrate that HDGS achieves state-of-the-art performance under sparse-view settings while maintaining efficient and high-quality rendering  
+  </ol>  
+</details>  
+  
+### [Hyperspectral Gaussian Splatting](http://arxiv.org/abs/2505.21890)  
+Sunil Kumar Narayanan, Lingjun Zhao, Lu Gan, Yongsheng Chen  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Hyperspectral imaging (HSI) has been widely used in agricultural applications for non-destructive estimation of plant nutrient composition and precise determination of nutritional elements in samples. Recently, 3D reconstruction methods have been used to create implicit neural representations of HSI scenes, which can help localize the target object's nutrient composition spatially and spectrally. Neural Radiance Field (NeRF) is a cutting-edge implicit representation that can render hyperspectral channel compositions of each spatial location from any viewing direction. However, it faces limitations in training time and rendering speed. In this paper, we propose Hyperspectral Gaussian Splatting (HS-GS), which combines the state-of-the-art 3D Gaussian Splatting (3DGS) with a diffusion model to enable 3D explicit reconstruction of the hyperspectral scenes and novel view synthesis for the entire spectral range. To enhance the model's ability to capture fine-grained reflectance variations across the light spectrum and leverage correlations between adjacent wavelengths for denoising, we introduce a wavelength encoder to generate wavelength-specific spherical harmonics offsets. We also introduce a novel Kullback--Leibler divergence-based loss to mitigate the spectral distribution gap between the rendered image and the ground truth. A diffusion model is further applied for denoising the rendered images and generating photorealistic hyperspectral images. We present extensive evaluations on five diverse hyperspectral scenes from the Hyper-NeRF dataset to show the effectiveness of our proposed HS-GS framework. The results demonstrate that HS-GS achieves new state-of-the-art performance among all previously published methods. Code will be released upon publication.  
+  </ol>  
+</details>  
   
   
 
