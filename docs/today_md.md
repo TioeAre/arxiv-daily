@@ -1,112 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#Rooms-from-Motion:-Un-posed-Indoor-3D-Object-Detection-as-Localization-and-Mapping>Rooms from Motion: Un-posed Indoor 3D Object Detection as Localization and Mapping</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Sketch-Down-the-FLOPs:-Towards-Efficient-Networks-for-Human-Sketch>Sketch Down the FLOPs: Towards Efficient Networks for Human Sketch</a></li>
-        <li><a href=#4DTAM:-Non-Rigid-Tracking-and-Mapping-via-Dynamic-Surface-Gaussians>4DTAM: Non-Rigid Tracking and Mapping via Dynamic Surface Gaussians</a></li>
+        <li><a href=#SORCE:-Small-Object-Retrieval-in-Complex-Environments>SORCE: Small Object Retrieval in Complex Environments</a></li>
       </ul>
     </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+    <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#TimePoint:-Accelerated-Time-Series-Alignment-via-Self-Supervised-Keypoint-and-Descriptor-Learning>TimePoint: Accelerated Time Series Alignment via Self-Supervised Keypoint and Descriptor Learning</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#PhysicsNeRF:-Physics-Guided-3D-Reconstruction-from-Sparse-Views>PhysicsNeRF: Physics-Guided 3D Reconstruction from Sparse Views</a></li>
-        <li><a href=#LODGE:-Level-of-Detail-Large-Scale-Gaussian-Splatting-with-Efficient-Rendering>LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering</a></li>
+        <li><a href=#SR3D:-Unleashing-Single-view-3D-Reconstruction-for-Transparent-and-Specular-Object-Grasping>SR3D: Unleashing Single-view 3D Reconstruction for Transparent and Specular Object Grasping</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [Rooms from Motion: Un-posed Indoor 3D Object Detection as Localization and Mapping](http://arxiv.org/abs/2505.23756)  
-Justin Lazarow, Kai Kang, Afshin Dehghan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We revisit scene-level 3D object detection as the output of an object-centric framework capable of both localization and mapping using 3D oriented boxes as the underlying geometric primitive. While existing 3D object detection approaches operate globally and implicitly rely on the a priori existence of metric camera poses, our method, Rooms from Motion (RfM) operates on a collection of un-posed images. By replacing the standard 2D keypoint-based matcher of structure-from-motion with an object-centric matcher based on image-derived 3D boxes, we estimate metric camera poses, object tracks, and finally produce a global, semantic 3D object map. When a priori pose is available, we can significantly improve map quality through optimization of global 3D boxes against individual observations. RfM shows strong localization performance and subsequently produces maps of higher quality than leading point-based and multi-view 3D object detection methods on CA-1M and ScanNet++, despite these global methods relying on overparameterization through point clouds or dense volumes. Rooms from Motion achieves a general, object-centric representation which not only extends the work of Cubify Anything to full scenes but also allows for inherently sparse localization and parametric mapping proportional to the number of objects in a scene.  
-  </ol>  
-</details>  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Sketch Down the FLOPs: Towards Efficient Networks for Human Sketch](http://arxiv.org/abs/2505.23763)  
-Aneeshan Sain, Subhajit Maity, Pinaki Nath Chowdhury, Subhadeep Koley, Ayan Kumar Bhunia, Yi-Zhe Song  
+### [SORCE: Small Object Retrieval in Complex Environments](http://arxiv.org/abs/2505.24441)  
+Chunxu Liu, Chi Xie, Xiaxu Chen, Wei Li, Feng Zhu, Rui Zhao, Limin Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    As sketch research has collectively matured over time, its adaptation for at-mass commercialisation emerges on the immediate horizon. Despite an already mature research endeavour for photos, there is no research on the efficient inference specifically designed for sketch data. In this paper, we first demonstrate existing state-of-the-art efficient light-weight models designed for photos do not work on sketches. We then propose two sketch-specific components which work in a plug-n-play manner on any photo efficient network to adapt them to work on sketch data. We specifically chose fine-grained sketch-based image retrieval (FG-SBIR) as a demonstrator as the most recognised sketch problem with immediate commercial value. Technically speaking, we first propose a cross-modal knowledge distillation network to transfer existing photo efficient networks to be compatible with sketch, which brings down number of FLOPs and model parameters by 97.96% percent and 84.89% respectively. We then exploit the abstract trait of sketch to introduce a RL-based canvas selector that dynamically adjusts to the abstraction level which further cuts down number of FLOPs by two thirds. The end result is an overall reduction of 99.37% of FLOPs (from 40.18G to 0.254G) when compared with a full network, while retaining the accuracy (33.03% vs 32.77%) -- finally making an efficient network for the sparse sketch data that exhibit even fewer FLOPs than the best photo counterpart.  
+    Text-to-Image Retrieval (T2IR) is a highly valuable task that aims to match a given textual query to images in a gallery. Existing benchmarks primarily focus on textual queries describing overall image semantics or foreground salient objects, possibly overlooking inconspicuous small objects, especially in complex environments. Such small object retrieval is crucial, as in real-world applications, the targets of interest are not always prominent in the image. Thus, we introduce SORCE (Small Object Retrieval in Complex Environments), a new subfield of T2IR, focusing on retrieving small objects in complex images with textual queries. We propose a new benchmark, SORCE-1K, consisting of images with complex environments and textual queries describing less conspicuous small objects with minimal contextual cues from other salient objects. Preliminary analysis on SORCE-1K finds that existing T2IR methods struggle to capture small objects and encode all the semantics into a single embedding, leading to poor retrieval performance on SORCE-1K. Therefore, we propose to represent each image with multiple distinctive embeddings. We leverage Multimodal Large Language Models (MLLMs) to extract multiple embeddings for each image instructed by a set of Regional Prompts (ReP). Experimental results show that our multi-embedding approach through MLLM and ReP significantly outperforms existing T2IR methods on SORCE-1K. Our experiments validate the effectiveness of SORCE-1K for benchmarking SORCE performances, highlighting the potential of multi-embedding representation and text-customized MLLM features for addressing this task.  
   </ol>  
 </details>  
-**comments**: Accepted at CVPR 2025, Project Page:
-  https://subhajitmaity.me/SketchDownTheFLOPs  
+**comments**: Project Page: https://github.com/MCG-NJU/SORCE  
   
-### [4DTAM: Non-Rigid Tracking and Mapping via Dynamic Surface Gaussians](http://arxiv.org/abs/2505.22859)  
-Hidenobu Matsuki, Gwangbin Bae, Andrew J. Davison  
+  
+
+
+
+## Image Matching  
+
+### [SR3D: Unleashing Single-view 3D Reconstruction for Transparent and Specular Object Grasping](http://arxiv.org/abs/2505.24305)  
+Mingxu Zhang, Xiaoqi Li, Jiahui Xu, Kaichen Zhou, Hojin Bae, Yan Shen, Chuyan Xiong, Jiaming Liu, Hao Dong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose the first 4D tracking and mapping method that jointly performs camera localization and non-rigid surface reconstruction via differentiable rendering. Our approach captures 4D scenes from an online stream of color images with depth measurements or predictions by jointly optimizing scene geometry, appearance, dynamics, and camera ego-motion. Although natural environments exhibit complex non-rigid motions, 4D-SLAM remains relatively underexplored due to its inherent challenges; even with 2.5D signals, the problem is ill-posed because of the high dimensionality of the optimization space. To overcome these challenges, we first introduce a SLAM method based on Gaussian surface primitives that leverages depth signals more effectively than 3D Gaussians, thereby achieving accurate surface reconstruction. To further model non-rigid deformations, we employ a warp-field represented by a multi-layer perceptron (MLP) and introduce a novel camera pose estimation technique along with surface regularization terms that facilitate spatio-temporal reconstruction. In addition to these algorithmic challenges, a significant hurdle in 4D SLAM research is the lack of reliable ground truth and evaluation protocols, primarily due to the difficulty of 4D capture using commodity sensors. To address this, we present a novel open synthetic dataset of everyday objects with diverse motions, leveraging large-scale object models and animation modeling. In summary, we open up the modern 4D-SLAM research by introducing a novel method and evaluation protocols grounded in modern vision and rendering techniques.  
+    Recent advancements in 3D robotic manipulation have improved grasping of everyday objects, but transparent and specular materials remain challenging due to depth sensing limitations. While several 3D reconstruction and depth completion approaches address these challenges, they suffer from setup complexity or limited observation information utilization. To address this, leveraging the power of single view 3D object reconstruction approaches, we propose a training free framework SR3D that enables robotic grasping of transparent and specular objects from a single view observation. Specifically, given single view RGB and depth images, SR3D first uses the external visual models to generate 3D reconstructed object mesh based on RGB image. Then, the key idea is to determine the 3D object's pose and scale to accurately localize the reconstructed object back into its original depth corrupted 3D scene. Therefore, we propose view matching and keypoint matching mechanisms,which leverage both the 2D and 3D's inherent semantic and geometric information in the observation to determine the object's 3D state within the scene, thereby reconstructing an accurate 3D depth map for effective grasp detection. Experiments in both simulation and real world show the reconstruction effectiveness of SR3D.  
   </ol>  
 </details>  
-**comments**: CVPR 2025. Project Page: https://muskie82.github.io/4dtam/  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [TimePoint: Accelerated Time Series Alignment via Self-Supervised Keypoint and Descriptor Learning](http://arxiv.org/abs/2505.23475)  
-Ron Shapira Weber, Shahar Ben Ishay, Andrey Lavrinenko, Shahaf E. Finder, Oren Freifeld  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Fast and scalable alignment of time series is a fundamental challenge in many domains. The standard solution, Dynamic Time Warping (DTW), struggles with poor scalability and sensitivity to noise. We introduce TimePoint, a self-supervised method that dramatically accelerates DTW-based alignment while typically improving alignment accuracy by learning keypoints and descriptors from synthetic data. Inspired by 2D keypoint detection but carefully adapted to the unique challenges of 1D signals, TimePoint leverages efficient 1D diffeomorphisms, which effectively model nonlinear time warping, to generate realistic training data. This approach, along with fully convolutional and wavelet convolutional architectures, enables the extraction of informative keypoints and descriptors. Applying DTW to these sparse representations yield major speedups and typically higher alignment accuracy than standard DTW applied to the full signals. TimePoint demonstrates strong generalization to real-world time series when trained solely on synthetic data, and further improves with fine-tuning on real data. Extensive experiments demonstrate that TimePoint consistently achieves faster and more accurate alignments than standard DTW, making it a scalable solution for time-series analysis. Our code is available at https://github.com/BGU-CS-VIL/TimePoint  
-  </ol>  
-</details>  
-**comments**: ICML 2025  
-  
-  
-
-
-
-## NeRF  
-
-### [PhysicsNeRF: Physics-Guided 3D Reconstruction from Sparse Views](http://arxiv.org/abs/2505.23481)  
-Mohamed Rayan Barhdadi, Hasan Kurban, Hussein Alnuweiri  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    PhysicsNeRF is a physically grounded framework for 3D reconstruction from sparse views, extending Neural Radiance Fields with four complementary constraints: depth ranking, RegNeRF-style consistency, sparsity priors, and cross-view alignment. While standard NeRFs fail under sparse supervision, PhysicsNeRF employs a compact 0.67M-parameter architecture and achieves 21.4 dB average PSNR using only 8 views, outperforming prior methods. A generalization gap of 5.7-6.2 dB is consistently observed and analyzed, revealing fundamental limitations of sparse-view reconstruction. PhysicsNeRF enables physically consistent, generalizable 3D representations for agent interaction and simulation, and clarifies the expressiveness-generalization trade-off in constrained NeRF models.  
-  </ol>  
-</details>  
-**comments**: 4 pages, 2 figures, 2 tables. Preliminary work. Under review by the
-  Building Physically Plausible World Models Workshop at the 42nd International
-  Conference on Machine Learning (ICML 2025), Vancouver, Canada  
-  
-### [LODGE: Level-of-Detail Large-Scale Gaussian Splatting with Efficient Rendering](http://arxiv.org/abs/2505.23158)  
-Jonas Kulhanek, Marie-Julie Rakotosaona, Fabian Manhardt, Christina Tsalicoglou, Michael Niemeyer, Torsten Sattler, Songyou Peng, Federico Tombari  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In this work, we present a novel level-of-detail (LOD) method for 3D Gaussian Splatting that enables real-time rendering of large-scale scenes on memory-constrained devices. Our approach introduces a hierarchical LOD representation that iteratively selects optimal subsets of Gaussians based on camera distance, thus largely reducing both rendering time and GPU memory usage. We construct each LOD level by applying a depth-aware 3D smoothing filter, followed by importance-based pruning and fine-tuning to maintain visual fidelity. To further reduce memory overhead, we partition the scene into spatial chunks and dynamically load only relevant Gaussians during rendering, employing an opacity-blending mechanism to avoid visual artifacts at chunk boundaries. Our method achieves state-of-the-art performance on both outdoor (Hierarchical 3DGS) and indoor (Zip-NeRF) datasets, delivering high-quality renderings with reduced latency and memory requirements.  
-  </ol>  
-</details>  
-**comments**: Web: https://lodge-gs.github.io/  
   
   
 
