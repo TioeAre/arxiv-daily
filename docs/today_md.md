@@ -1,43 +1,73 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#SORCE:-Small-Object-Retrieval-in-Complex-Environments>SORCE: Small Object Retrieval in Complex Environments</a></li>
+        <li><a href=#Fast-and-Robust-Rotation-Averaging-with-Anisotropic-Coordinate-Descent>Fast and Robust Rotation Averaging with Anisotropic Coordinate Descent</a></li>
       </ul>
     </li>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#SR3D:-Unleashing-Single-view-3D-Reconstruction-for-Transparent-and-Specular-Object-Grasping>SR3D: Unleashing Single-view 3D Reconstruction for Transparent and Specular Object Grasping</a></li>
+        <li><a href=#Entity-Image-and-Mixed-Modal-Image-Retrieval-Datasets>Entity Image and Mixed-Modal Image Retrieval Datasets</a></li>
+        <li><a href=#Quantization-based-Bounds-on-the-Wasserstein-Metric>Quantization-based Bounds on the Wasserstein Metric</a></li>
+      </ul>
+    </li>
+    <li><a href=#nerf>NeRF</a></li>
+      <ul>
+        <li><a href=#Hi-Dyna-Graph:-Hierarchical-Dynamic-Scene-Graph-for-Robotic-Autonomy-in-Human-Centric-Environments>Hi-Dyna Graph: Hierarchical Dynamic Scene Graph for Robotic Autonomy in Human-Centric Environments</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## Visual Localization  
+## SFM  
 
-### [SORCE: Small Object Retrieval in Complex Environments](http://arxiv.org/abs/2505.24441)  
-Chunxu Liu, Chi Xie, Xiaxu Chen, Wei Li, Feng Zhu, Rui Zhao, Limin Wang  
+### [Fast and Robust Rotation Averaging with Anisotropic Coordinate Descent](http://arxiv.org/abs/2506.01940)  
+Yaroslava Lochman, Carl Olsson, Christopher Zach  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Text-to-Image Retrieval (T2IR) is a highly valuable task that aims to match a given textual query to images in a gallery. Existing benchmarks primarily focus on textual queries describing overall image semantics or foreground salient objects, possibly overlooking inconspicuous small objects, especially in complex environments. Such small object retrieval is crucial, as in real-world applications, the targets of interest are not always prominent in the image. Thus, we introduce SORCE (Small Object Retrieval in Complex Environments), a new subfield of T2IR, focusing on retrieving small objects in complex images with textual queries. We propose a new benchmark, SORCE-1K, consisting of images with complex environments and textual queries describing less conspicuous small objects with minimal contextual cues from other salient objects. Preliminary analysis on SORCE-1K finds that existing T2IR methods struggle to capture small objects and encode all the semantics into a single embedding, leading to poor retrieval performance on SORCE-1K. Therefore, we propose to represent each image with multiple distinctive embeddings. We leverage Multimodal Large Language Models (MLLMs) to extract multiple embeddings for each image instructed by a set of Regional Prompts (ReP). Experimental results show that our multi-embedding approach through MLLM and ReP significantly outperforms existing T2IR methods on SORCE-1K. Our experiments validate the effectiveness of SORCE-1K for benchmarking SORCE performances, highlighting the potential of multi-embedding representation and text-customized MLLM features for addressing this task.  
+    Anisotropic rotation averaging has recently been explored as a natural extension of respective isotropic methods. In the anisotropic formulation, uncertainties of the estimated relative rotations -- obtained via standard two-view optimization -- are propagated to the optimization of absolute rotations. The resulting semidefinite relaxations are able to recover global minima but scale poorly with the problem size. Local methods are fast and also admit robust estimation but are sensitive to initialization. They usually employ minimum spanning trees and therefore suffer from drift accumulation and can get trapped in poor local minima. In this paper, we attempt to bridge the gap between optimality, robustness and efficiency of anisotropic rotation averaging. We analyze a family of block coordinate descent methods initially proposed to optimize the standard chordal distances, and derive a much simpler formulation and an anisotropic extension obtaining a fast general solver. We integrate this solver into the extended anisotropic large-scale robust rotation averaging pipeline. The resulting algorithm achieves state-of-the-art performance on public structure-from-motion datasets. Project page: https://ylochman.github.io/acd  
   </ol>  
 </details>  
-**comments**: Project Page: https://github.com/MCG-NJU/SORCE  
   
   
 
 
 
-## Image Matching  
+## Visual Localization  
 
-### [SR3D: Unleashing Single-view 3D Reconstruction for Transparent and Specular Object Grasping](http://arxiv.org/abs/2505.24305)  
-Mingxu Zhang, Xiaoqi Li, Jiahui Xu, Kaichen Zhou, Hojin Bae, Yan Shen, Chuyan Xiong, Jiaming Liu, Hao Dong  
+### [Entity Image and Mixed-Modal Image Retrieval Datasets](http://arxiv.org/abs/2506.02291)  
+Cristian-Ioan Blaga, Paul Suganthan, Sahil Dua, Krishna Srinivasan, Enrique Alfonseca, Peter Dornbach, Tom Duerig, Imed Zitouni, Zhe Dong  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Recent advancements in 3D robotic manipulation have improved grasping of everyday objects, but transparent and specular materials remain challenging due to depth sensing limitations. While several 3D reconstruction and depth completion approaches address these challenges, they suffer from setup complexity or limited observation information utilization. To address this, leveraging the power of single view 3D object reconstruction approaches, we propose a training free framework SR3D that enables robotic grasping of transparent and specular objects from a single view observation. Specifically, given single view RGB and depth images, SR3D first uses the external visual models to generate 3D reconstructed object mesh based on RGB image. Then, the key idea is to determine the 3D object's pose and scale to accurately localize the reconstructed object back into its original depth corrupted 3D scene. Therefore, we propose view matching and keypoint matching mechanisms,which leverage both the 2D and 3D's inherent semantic and geometric information in the observation to determine the object's 3D state within the scene, thereby reconstructing an accurate 3D depth map for effective grasp detection. Experiments in both simulation and real world show the reconstruction effectiveness of SR3D.  
+    Despite advances in multimodal learning, challenging benchmarks for mixed-modal image retrieval that combines visual and textual information are lacking. This paper introduces a novel benchmark to rigorously evaluate image retrieval that demands deep cross-modal contextual understanding. We present two new datasets: the Entity Image Dataset (EI), providing canonical images for Wikipedia entities, and the Mixed-Modal Image Retrieval Dataset (MMIR), derived from the WIT dataset. The MMIR benchmark features two challenging query types requiring models to ground textual descriptions in the context of provided visual entities: single entity-image queries (one entity image with descriptive text) and multi-entity-image queries (multiple entity images with relational text). We empirically validate the benchmark's utility as both a training corpus and an evaluation set for mixed-modal retrieval. The quality of both datasets is further affirmed through crowd-sourced human annotations. The datasets are accessible through the GitHub page: https://github.com/google-research-datasets/wit-retrieval.  
+  </ol>  
+</details>  
+  
+### [Quantization-based Bounds on the Wasserstein Metric](http://arxiv.org/abs/2506.00976)  
+Jonathan Bobrutsky, Amit Moscovich  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The Wasserstein metric has become increasingly important in many machine learning applications such as generative modeling, image retrieval and domain adaptation. Despite its appeal, it is often too costly to compute. This has motivated approximation methods like entropy-regularized optimal transport, downsampling, and subsampling, which trade accuracy for computational efficiency. In this paper, we consider the challenge of computing efficient approximations to the Wasserstein metric that also serve as strict upper or lower bounds. Focusing on discrete measures on regular grids, our approach involves formulating and exactly solving a Kantorovich problem on a coarse grid using a quantized measure and specially designed cost matrix, followed by an upscaling and correction stage. This is done either in the primal or dual space to obtain valid upper and lower bounds on the Wasserstein metric of the full-resolution inputs. We evaluate our methods on the DOTmark optimal transport images benchmark, demonstrating a 10x-100x speedup compared to entropy-regularized OT while keeping the approximation error below 2%.  
+  </ol>  
+</details>  
+**comments**: 23 pages, 8 figures, 7 tables  
+  
+  
+
+
+
+## NeRF  
+
+### [Hi-Dyna Graph: Hierarchical Dynamic Scene Graph for Robotic Autonomy in Human-Centric Environments](http://arxiv.org/abs/2506.00083)  
+Jiawei Hou, Xiangyang Xue, Taiping Zeng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Autonomous operation of service robotics in human-centric scenes remains challenging due to the need for understanding of changing environments and context-aware decision-making. While existing approaches like topological maps offer efficient spatial priors, they fail to model transient object relationships, whereas dense neural representations (e.g., NeRF) incur prohibitive computational costs. Inspired by the hierarchical scene representation and video scene graph generation works, we propose Hi-Dyna Graph, a hierarchical dynamic scene graph architecture that integrates persistent global layouts with localized dynamic semantics for embodied robotic autonomy. Our framework constructs a global topological graph from posed RGB-D inputs, encoding room-scale connectivity and large static objects (e.g., furniture), while environmental and egocentric cameras populate dynamic subgraphs with object position relations and human-object interaction patterns. A hybrid architecture is conducted by anchoring these subgraphs to the global topology using semantic and spatial constraints, enabling seamless updates as the environment evolves. An agent powered by large language models (LLMs) is employed to interpret the unified graph, infer latent task triggers, and generate executable instructions grounded in robotic affordances. We conduct complex experiments to demonstrate Hi-Dyna Grap's superior scene representation effectiveness. Real-world deployments validate the system's practicality with a mobile manipulator: robotics autonomously complete complex tasks with no further training or complex rewarding in a dynamic scene as cafeteria assistant. See https://anonymous.4open.science/r/Hi-Dyna-Graph-B326 for video demonstration and more details.  
   </ol>  
 </details>  
   
