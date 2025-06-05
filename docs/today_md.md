@@ -3,18 +3,8 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Fast-and-Robust-Rotation-Averaging-with-Anisotropic-Coordinate-Descent>Fast and Robust Rotation Averaging with Anisotropic Coordinate Descent</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#Entity-Image-and-Mixed-Modal-Image-Retrieval-Datasets>Entity Image and Mixed-Modal Image Retrieval Datasets</a></li>
-        <li><a href=#Quantization-based-Bounds-on-the-Wasserstein-Metric>Quantization-based Bounds on the Wasserstein Metric</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#Hi-Dyna-Graph:-Hierarchical-Dynamic-Scene-Graph-for-Robotic-Autonomy-in-Human-Centric-Environments>Hi-Dyna Graph: Hierarchical Dynamic Scene Graph for Robotic Autonomy in Human-Centric Environments</a></li>
+        <li><a href=#Voyager:-Long-Range-and-World-Consistent-Video-Diffusion-for-Explorable-3D-Scene-Generation>Voyager: Long-Range and World-Consistent Video Diffusion for Explorable 3D Scene Generation</a></li>
+        <li><a href=#Accelerating-SfM-based-Pose-Estimation-with-Dominating-Set>Accelerating SfM-based Pose Estimation with Dominating Set</a></li>
       </ul>
     </li>
   </ol>
@@ -22,52 +12,21 @@
 
 ## SFM  
 
-### [Fast and Robust Rotation Averaging with Anisotropic Coordinate Descent](http://arxiv.org/abs/2506.01940)  
-Yaroslava Lochman, Carl Olsson, Christopher Zach  
+### [Voyager: Long-Range and World-Consistent Video Diffusion for Explorable 3D Scene Generation](http://arxiv.org/abs/2506.04225)  
+Tianyu Huang, Wangguandong Zheng, Tengfei Wang, Yuhao Liu, Zhenwei Wang, Junta Wu, Jie Jiang, Hui Li, Rynson W. H. Lau, Wangmeng Zuo, Chunchao Guo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Anisotropic rotation averaging has recently been explored as a natural extension of respective isotropic methods. In the anisotropic formulation, uncertainties of the estimated relative rotations -- obtained via standard two-view optimization -- are propagated to the optimization of absolute rotations. The resulting semidefinite relaxations are able to recover global minima but scale poorly with the problem size. Local methods are fast and also admit robust estimation but are sensitive to initialization. They usually employ minimum spanning trees and therefore suffer from drift accumulation and can get trapped in poor local minima. In this paper, we attempt to bridge the gap between optimality, robustness and efficiency of anisotropic rotation averaging. We analyze a family of block coordinate descent methods initially proposed to optimize the standard chordal distances, and derive a much simpler formulation and an anisotropic extension obtaining a fast general solver. We integrate this solver into the extended anisotropic large-scale robust rotation averaging pipeline. The resulting algorithm achieves state-of-the-art performance on public structure-from-motion datasets. Project page: https://ylochman.github.io/acd  
+    Real-world applications like video gaming and virtual reality often demand the ability to model 3D scenes that users can explore along custom camera trajectories. While significant progress has been made in generating 3D objects from text or images, creating long-range, 3D-consistent, explorable 3D scenes remains a complex and challenging problem. In this work, we present Voyager, a novel video diffusion framework that generates world-consistent 3D point-cloud sequences from a single image with user-defined camera path. Unlike existing approaches, Voyager achieves end-to-end scene generation and reconstruction with inherent consistency across frames, eliminating the need for 3D reconstruction pipelines (e.g., structure-from-motion or multi-view stereo). Our method integrates three key components: 1) World-Consistent Video Diffusion: A unified architecture that jointly generates aligned RGB and depth video sequences, conditioned on existing world observation to ensure global coherence 2) Long-Range World Exploration: An efficient world cache with point culling and an auto-regressive inference with smooth video sampling for iterative scene extension with context-aware consistency, and 3) Scalable Data Engine: A video reconstruction pipeline that automates camera pose estimation and metric depth prediction for arbitrary videos, enabling large-scale, diverse training data curation without manual 3D annotations. Collectively, these designs result in a clear improvement over existing methods in visual quality and geometric accuracy, with versatile applications.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Visual Localization  
-
-### [Entity Image and Mixed-Modal Image Retrieval Datasets](http://arxiv.org/abs/2506.02291)  
-Cristian-Ioan Blaga, Paul Suganthan, Sahil Dua, Krishna Srinivasan, Enrique Alfonseca, Peter Dornbach, Tom Duerig, Imed Zitouni, Zhe Dong  
+### [Accelerating SfM-based Pose Estimation with Dominating Set](http://arxiv.org/abs/2506.03667)  
+Joji Joseph, Bharadwaj Amrutur, Shalabh Bhatnagar  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Despite advances in multimodal learning, challenging benchmarks for mixed-modal image retrieval that combines visual and textual information are lacking. This paper introduces a novel benchmark to rigorously evaluate image retrieval that demands deep cross-modal contextual understanding. We present two new datasets: the Entity Image Dataset (EI), providing canonical images for Wikipedia entities, and the Mixed-Modal Image Retrieval Dataset (MMIR), derived from the WIT dataset. The MMIR benchmark features two challenging query types requiring models to ground textual descriptions in the context of provided visual entities: single entity-image queries (one entity image with descriptive text) and multi-entity-image queries (multiple entity images with relational text). We empirically validate the benchmark's utility as both a training corpus and an evaluation set for mixed-modal retrieval. The quality of both datasets is further affirmed through crowd-sourced human annotations. The datasets are accessible through the GitHub page: https://github.com/google-research-datasets/wit-retrieval.  
-  </ol>  
-</details>  
-  
-### [Quantization-based Bounds on the Wasserstein Metric](http://arxiv.org/abs/2506.00976)  
-Jonathan Bobrutsky, Amit Moscovich  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The Wasserstein metric has become increasingly important in many machine learning applications such as generative modeling, image retrieval and domain adaptation. Despite its appeal, it is often too costly to compute. This has motivated approximation methods like entropy-regularized optimal transport, downsampling, and subsampling, which trade accuracy for computational efficiency. In this paper, we consider the challenge of computing efficient approximations to the Wasserstein metric that also serve as strict upper or lower bounds. Focusing on discrete measures on regular grids, our approach involves formulating and exactly solving a Kantorovich problem on a coarse grid using a quantized measure and specially designed cost matrix, followed by an upscaling and correction stage. This is done either in the primal or dual space to obtain valid upper and lower bounds on the Wasserstein metric of the full-resolution inputs. We evaluate our methods on the DOTmark optimal transport images benchmark, demonstrating a 10x-100x speedup compared to entropy-regularized OT while keeping the approximation error below 2%.  
-  </ol>  
-</details>  
-**comments**: 23 pages, 8 figures, 7 tables  
-  
-  
-
-
-
-## NeRF  
-
-### [Hi-Dyna Graph: Hierarchical Dynamic Scene Graph for Robotic Autonomy in Human-Centric Environments](http://arxiv.org/abs/2506.00083)  
-Jiawei Hou, Xiangyang Xue, Taiping Zeng  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Autonomous operation of service robotics in human-centric scenes remains challenging due to the need for understanding of changing environments and context-aware decision-making. While existing approaches like topological maps offer efficient spatial priors, they fail to model transient object relationships, whereas dense neural representations (e.g., NeRF) incur prohibitive computational costs. Inspired by the hierarchical scene representation and video scene graph generation works, we propose Hi-Dyna Graph, a hierarchical dynamic scene graph architecture that integrates persistent global layouts with localized dynamic semantics for embodied robotic autonomy. Our framework constructs a global topological graph from posed RGB-D inputs, encoding room-scale connectivity and large static objects (e.g., furniture), while environmental and egocentric cameras populate dynamic subgraphs with object position relations and human-object interaction patterns. A hybrid architecture is conducted by anchoring these subgraphs to the global topology using semantic and spatial constraints, enabling seamless updates as the environment evolves. An agent powered by large language models (LLMs) is employed to interpret the unified graph, infer latent task triggers, and generate executable instructions grounded in robotic affordances. We conduct complex experiments to demonstrate Hi-Dyna Grap's superior scene representation effectiveness. Real-world deployments validate the system's practicality with a mobile manipulator: robotics autonomously complete complex tasks with no further training or complex rewarding in a dynamic scene as cafeteria assistant. See https://anonymous.4open.science/r/Hi-Dyna-Graph-B326 for video demonstration and more details.  
+    This paper introduces a preprocessing technique to speed up Structure-from-Motion (SfM) based pose estimation, which is critical for real-time applications like augmented reality (AR), virtual reality (VR), and robotics. Our method leverages the concept of a dominating set from graph theory to preprocess SfM models, significantly enhancing the speed of the pose estimation process without losing significant accuracy. Using the OnePose dataset, we evaluated our method across various SfM-based pose estimation techniques. The results demonstrate substantial improvements in processing speed, ranging from 1.5 to 14.48 times, and a reduction in reference images and point cloud size by factors of 17-23 and 2.27-4, respectively. This work offers a promising solution for efficient and accurate 3D pose estimation, balancing speed and accuracy in real-time applications.  
   </ol>  
 </details>  
   
