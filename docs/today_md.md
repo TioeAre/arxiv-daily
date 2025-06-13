@@ -1,57 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
-      <ul>
-        <li><a href=#UFM:-A-Simple-Path-towards-Unified-Dense-Correspondence-with-Flow>UFM: A Simple Path towards Unified Dense Correspondence with Flow</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Hierarchical-Image-Matching-for-UAV-Absolute-Visual-Localization-via-Semantic-and-Structural-Constraints>Hierarchical Image Matching for UAV Absolute Visual Localization via Semantic and Structural Constraints</a></li>
+        <li><a href=#Improving-Personalized-Search-with-Regularized-Low-Rank-Parameter-Updates>Improving Personalized Search with Regularized Low-Rank Parameter Updates</a></li>
+        <li><a href=#Safeguarding-Multimodal-Knowledge-Copyright-in-the-RAG-as-a-Service-Environment>Safeguarding Multimodal Knowledge Copyright in the RAG-as-a-Service Environment</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Hierarchical-Image-Matching-for-UAV-Absolute-Visual-Localization-via-Semantic-and-Structural-Constraints>Hierarchical Image Matching for UAV Absolute Visual Localization via Semantic and Structural Constraints</a></li>
-        <li><a href=#ScaleLSD:-Scalable-Deep-Line-Segment-Detection-Streamlined>ScaleLSD: Scalable Deep Line Segment Detection Streamlined</a></li>
+        <li><a href=#RealKeyMorph:-Keypoints-in-Real-world-Coordinates-for-Resolution-agnostic-Image-Registration>RealKeyMorph: Keypoints in Real-world Coordinates for Resolution-agnostic Image Registration</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#The-Less-You-Depend,-The-More-You-Learn:-Synthesizing-Novel-Views-from-Sparse,-Unposed-Images-without-Any-3D-Knowledge>The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge</a></li>
+        <li><a href=#PointGS:-Point-Attention-Aware-Sparse-View-Synthesis-with-Gaussian-Splatting>PointGS: Point Attention-Aware Sparse View Synthesis with Gaussian Splatting</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
-
-### [UFM: A Simple Path towards Unified Dense Correspondence with Flow](http://arxiv.org/abs/2506.09278)  
-Yuchen Zhang, Nikhil Keetha, Chenwei Lyu, Bhuvan Jhamb, Yutian Chen, Yuheng Qiu, Jay Karhade, Shreyas Jha, Yaoyu Hu, Deva Ramanan, Sebastian Scherer, Wenshan Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Dense image correspondence is central to many applications, such as visual odometry, 3D reconstruction, object association, and re-identification. Historically, dense correspondence has been tackled separately for wide-baseline scenarios and optical flow estimation, despite the common goal of matching content between two images. In this paper, we develop a Unified Flow & Matching model (UFM), which is trained on unified data for pixels that are co-visible in both source and target images. UFM uses a simple, generic transformer architecture that directly regresses the (u,v) flow. It is easier to train and more accurate for large flows compared to the typical coarse-to-fine cost volumes in prior work. UFM is 28% more accurate than state-of-the-art flow methods (Unimatch), while also having 62% less error and 6.7x faster than dense wide-baseline matchers (RoMa). UFM is the first to demonstrate that unified training can outperform specialized approaches across both domains. This result enables fast, general-purpose correspondence and opens new directions for multi-modal, long-range, and real-time correspondence tasks.  
-  </ol>  
-</details>  
-**comments**: Project Page: https://uniflowmatch.github.io/  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [Hierarchical Image Matching for UAV Absolute Visual Localization via Semantic and Structural Constraints](http://arxiv.org/abs/2506.09748)  
-Xiangkai Zhang, Xiang Zhou, Mao Chen, Yuchen Lu, Xu Yang, Zhiyong Liu  
+### [Improving Personalized Search with Regularized Low-Rank Parameter Updates](http://arxiv.org/abs/2506.10182)  
+Fiona Ryan, Josef Sivic, Fabian Caba Heilbron, Judy Hoffman, James M. Rehg, Bryan Russell  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Absolute localization, aiming to determine an agent's location with respect to a global reference, is crucial for unmanned aerial vehicles (UAVs) in various applications, but it becomes challenging when global navigation satellite system (GNSS) signals are unavailable. Vision-based absolute localization methods, which locate the current view of the UAV in a reference satellite map to estimate its position, have become popular in GNSS-denied scenarios. However, existing methods mostly rely on traditional and low-level image matching, suffering from difficulties due to significant differences introduced by cross-source discrepancies and temporal variations. To overcome these limitations, in this paper, we introduce a hierarchical cross-source image matching method designed for UAV absolute localization, which integrates a semantic-aware and structure-constrained coarse matching module with a lightweight fine-grained matching module. Specifically, in the coarse matching module, semantic features derived from a vision foundation model first establish region-level correspondences under semantic and structural constraints. Then, the fine-grained matching module is applied to extract fine features and establish pixel-level correspondences. Building upon this, a UAV absolute visual localization pipeline is constructed without any reliance on relative localization techniques, mainly by employing an image retrieval module before the proposed hierarchical image matching modules. Experimental evaluations on public benchmark datasets and a newly introduced CS-UAV dataset demonstrate superior accuracy and robustness of the proposed method under various challenging conditions, confirming its effectiveness.  
+    Personalized vision-language retrieval seeks to recognize new concepts (e.g. "my dog Fido") from only a few examples. This task is challenging because it requires not only learning a new concept from a few images, but also integrating the personal and general knowledge together to recognize the concept in different contexts. In this paper, we show how to effectively adapt the internal representation of a vision-language dual encoder model for personalized vision-language retrieval. We find that regularized low-rank adaption of a small set of parameters in the language encoder's final layer serves as a highly effective alternative to textual inversion for recognizing the personal concept while preserving general knowledge. Additionally, we explore strategies for combining parameters of multiple learned personal concepts, finding that parameter addition is effective. To evaluate how well general knowledge is preserved in a finetuned representation, we introduce a metric that measures image retrieval accuracy based on captions generated by a vision language model (VLM). Our approach achieves state-of-the-art accuracy on two benchmarks for personalized image retrieval with natural language queries - DeepFashion2 and ConCon-Chi - outperforming the prior art by 4%-22% on personal retrievals.  
   </ol>  
 </details>  
-**comments**: 8 pages, 6 figures  
+**comments**: CVPR 2025 Highlight. Code: http://github.com/adobe-research/polar-vl  
+  
+### [Safeguarding Multimodal Knowledge Copyright in the RAG-as-a-Service Environment](http://arxiv.org/abs/2506.10030)  
+Tianyu Chen, Jian Lou, Wenjie Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    As Retrieval-Augmented Generation (RAG) evolves into service-oriented platforms (Rag-as-a-Service) with shared knowledge bases, protecting the copyright of contributed data becomes essential. Existing watermarking methods in RAG focus solely on textual knowledge, leaving image knowledge unprotected. In this work, we propose AQUA, the first watermark framework for image knowledge protection in Multimodal RAG systems. AQUA embeds semantic signals into synthetic images using two complementary methods: acronym-based triggers and spatial relationship cues. These techniques ensure watermark signals survive indirect watermark propagation from image retriever to textual generator, being efficient, effective and imperceptible. Experiments across diverse models and datasets show that AQUA enables robust, stealthy, and reliable copyright tracing, filling a key gap in multimodal RAG protection.  
+  </ol>  
+</details>  
   
   
 
@@ -59,25 +47,15 @@ Xiangkai Zhang, Xiang Zhou, Mao Chen, Yuchen Lu, Xu Yang, Zhiyong Liu
 
 ## Image Matching  
 
-### [Hierarchical Image Matching for UAV Absolute Visual Localization via Semantic and Structural Constraints](http://arxiv.org/abs/2506.09748)  
-Xiangkai Zhang, Xiang Zhou, Mao Chen, Yuchen Lu, Xu Yang, Zhiyong Liu  
+### [RealKeyMorph: Keypoints in Real-world Coordinates for Resolution-agnostic Image Registration](http://arxiv.org/abs/2506.10344)  
+Mina C. Moghadam, Alan Q. Wang, Omer Taub, Martin R. Prince, Mert R. Sabuncu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Absolute localization, aiming to determine an agent's location with respect to a global reference, is crucial for unmanned aerial vehicles (UAVs) in various applications, but it becomes challenging when global navigation satellite system (GNSS) signals are unavailable. Vision-based absolute localization methods, which locate the current view of the UAV in a reference satellite map to estimate its position, have become popular in GNSS-denied scenarios. However, existing methods mostly rely on traditional and low-level image matching, suffering from difficulties due to significant differences introduced by cross-source discrepancies and temporal variations. To overcome these limitations, in this paper, we introduce a hierarchical cross-source image matching method designed for UAV absolute localization, which integrates a semantic-aware and structure-constrained coarse matching module with a lightweight fine-grained matching module. Specifically, in the coarse matching module, semantic features derived from a vision foundation model first establish region-level correspondences under semantic and structural constraints. Then, the fine-grained matching module is applied to extract fine features and establish pixel-level correspondences. Building upon this, a UAV absolute visual localization pipeline is constructed without any reliance on relative localization techniques, mainly by employing an image retrieval module before the proposed hierarchical image matching modules. Experimental evaluations on public benchmark datasets and a newly introduced CS-UAV dataset demonstrate superior accuracy and robustness of the proposed method under various challenging conditions, confirming its effectiveness.  
+    Many real-world settings require registration of a pair of medical images that differ in spatial resolution, which may arise from differences in image acquisition parameters like pixel spacing, slice thickness, and field-of-view. However, all previous machine learning-based registration techniques resample images onto a fixed resolution. This is suboptimal because resampling can introduce artifacts due to interpolation. To address this, we present RealKeyMorph (RKM), a resolution-agnostic method for image registration. RKM is an extension of KeyMorph, a registration framework which works by training a network to learn corresponding keypoints for a given pair of images, after which a closed-form keypoint matching step is used to derive the transformation that aligns them. To avoid resampling and enable operating on the raw data, RKM outputs keypoints in real-world coordinates of the scanner. To do this, we leverage the affine matrix produced by the scanner (e.g., MRI machine) that encodes the mapping from voxel coordinates to real world coordinates. By transforming keypoints into real-world space and integrating this into the training process, RKM effectively enables the extracted keypoints to be resolution-agnostic. In our experiments, we demonstrate the advantages of RKM on the registration task for orthogonal 2D stacks of abdominal MRIs, as well as 3D volumes with varying resolutions in brain datasets.  
   </ol>  
 </details>  
-**comments**: 8 pages, 6 figures  
-  
-### [ScaleLSD: Scalable Deep Line Segment Detection Streamlined](http://arxiv.org/abs/2506.09369)  
-Zeran Ke, Bin Tan, Xianwei Zheng, Yujun Shen, Tianfu Wu, Nan Xue  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    This paper studies the problem of Line Segment Detection (LSD) for the characterization of line geometry in images, with the aim of learning a domain-agnostic robust LSD model that works well for any natural images. With the focus of scalable self-supervised learning of LSD, we revisit and streamline the fundamental designs of (deep and non-deep) LSD approaches to have a high-performing and efficient LSD learner, dubbed as ScaleLSD, for the curation of line geometry at scale from over 10M unlabeled real-world images. Our ScaleLSD works very well to detect much more number of line segments from any natural images even than the pioneered non-deep LSD approach, having a more complete and accurate geometric characterization of images using line segments. Experimentally, our proposed ScaleLSD is comprehensively testified under zero-shot protocols in detection performance, single-view 3D geometry estimation, two-view line segment matching, and multiview 3D line mapping, all with excellent performance obtained. Based on the thorough evaluation, our ScaleLSD is observed to be the first deep approach that outperforms the pioneered non-deep LSD in all aspects we have tested, significantly expanding and reinforcing the versatility of the line geometry of images. Code and Models are available at https://github.com/ant-research/scalelsd  
-  </ol>  
-</details>  
-**comments**: accepted to CVPR 2025; 17 pages, appendices included  
+**comments**: 23 pages, 8 figures, to be submitted to MELBA  
   
   
 
@@ -85,12 +63,12 @@ Zeran Ke, Bin Tan, Xianwei Zheng, Yujun Shen, Tianfu Wu, Nan Xue
 
 ## NeRF  
 
-### [The Less You Depend, The More You Learn: Synthesizing Novel Views from Sparse, Unposed Images without Any 3D Knowledge](http://arxiv.org/abs/2506.09885)  
-Haoru Wang, Kai Ye, Yangyan Li, Wenzheng Chen, Baoquan Chen  
+### [PointGS: Point Attention-Aware Sparse View Synthesis with Gaussian Splatting](http://arxiv.org/abs/2506.10335)  
+Lintao Xiang, Hongpei Zheng, Yating Huang, Qijun Yang, Hujun Yin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We consider the problem of generalizable novel view synthesis (NVS), which aims to generate photorealistic novel views from sparse or even unposed 2D images without per-scene optimization. This task remains fundamentally challenging, as it requires inferring 3D structure from incomplete and ambiguous 2D observations. Early approaches typically rely on strong 3D knowledge, including architectural 3D inductive biases (e.g., embedding explicit 3D representations, such as NeRF or 3DGS, into network design) and ground-truth camera poses for both input and target views. While recent efforts have sought to reduce the 3D inductive bias or the dependence on known camera poses of input views, critical questions regarding the role of 3D knowledge and the necessity of circumventing its use remain under-explored. In this work, we conduct a systematic analysis on the 3D knowledge and uncover a critical trend: the performance of methods that requires less 3D knowledge accelerates more as data scales, eventually achieving performance on par with their 3D knowledge-driven counterparts, which highlights the increasing importance of reducing dependence on 3D knowledge in the era of large-scale data. Motivated by and following this trend, we propose a novel NVS framework that minimizes 3D inductive bias and pose dependence for both input and target views. By eliminating this 3D knowledge, our method fully leverages data scaling and learns implicit 3D awareness directly from sparse 2D images, without any 3D inductive bias or pose annotation during training. Extensive experiments demonstrate that our model generates photorealistic and 3D-consistent novel views, achieving even comparable performance with methods that rely on posed inputs, thereby validating the feasibility and effectiveness of our data-centric paradigm. Project page: https://pku-vcl-geometry.github.io/Less3Depend/ .  
+    3D Gaussian splatting (3DGS) is an innovative rendering technique that surpasses the neural radiance field (NeRF) in both rendering speed and visual quality by leveraging an explicit 3D scene representation. Existing 3DGS approaches require a large number of calibrated views to generate a consistent and complete scene representation. When input views are limited, 3DGS tends to overfit the training views, leading to noticeable degradation in rendering quality. To address this limitation, we propose a Point-wise Feature-Aware Gaussian Splatting framework that enables real-time, high-quality rendering from sparse training views. Specifically, we first employ the latest stereo foundation model to estimate accurate camera poses and reconstruct a dense point cloud for Gaussian initialization. We then encode the colour attributes of each 3D Gaussian by sampling and aggregating multiscale 2D appearance features from sparse inputs. To enhance point-wise appearance representation, we design a point interaction network based on a self-attention mechanism, allowing each Gaussian point to interact with its nearest neighbors. These enriched features are subsequently decoded into Gaussian parameters through two lightweight multi-layer perceptrons (MLPs) for final rendering. Extensive experiments on diverse benchmarks demonstrate that our method significantly outperforms NeRF-based approaches and achieves competitive performance under few-shot settings compared to the state-of-the-art 3DGS methods.  
   </ol>  
 </details>  
   
