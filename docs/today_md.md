@@ -3,8 +3,18 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#HARMONY:-A-Scalable-Distributed-Vector-Database-for-High-Throughput-Approximate-Nearest-Neighbor-Search>HARMONY: A Scalable Distributed Vector Database for High-Throughput Approximate Nearest Neighbor Search</a></li>
-        <li><a href=#TACS-Graphs:-Traversability-Aware-Consistent-Scene-Graphs-for-Ground-Robot-Indoor-Localization-and-Mapping>TACS-Graphs: Traversability-Aware Consistent Scene Graphs for Ground Robot Indoor Localization and Mapping</a></li>
+        <li><a href=#ReSeDis:-A-Dataset-for-Referring-based-Object-Search-across-Large-Scale-Image-Collections>ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#ReSeDis:-A-Dataset-for-Referring-based-Object-Search-across-Large-Scale-Image-Collections>ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections</a></li>
+      </ul>
+    </li>
+    <li><a href=#nerf>NeRF</a></li>
+      <ul>
+        <li><a href=#RA-NeRF:-Robust-Neural-Radiance-Field-Reconstruction-with-Accurate-Camera-Pose-Estimation-under-Complex-Trajectories>RA-NeRF: Robust Neural Radiance Field Reconstruction with Accurate Camera Pose Estimation under Complex Trajectories</a></li>
+        <li><a href=#Peering-into-the-Unknown:-Active-View-Selection-with-Neural-Uncertainty-Maps-for-3D-Reconstruction>Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction</a></li>
       </ul>
     </li>
   </ol>
@@ -12,24 +22,55 @@
 
 ## Visual Localization  
 
-### [HARMONY: A Scalable Distributed Vector Database for High-Throughput Approximate Nearest Neighbor Search](http://arxiv.org/abs/2506.14707)  
-Qian Xu, Feng Zhang, Chengxi Li, Lei Cao, Zheng Chen, Jidong Zhai, Xiaoyong Du  
+### [ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections](http://arxiv.org/abs/2506.15180)  
+Ziling Huang, Yidan Zhang, Shin'ichi Satoh  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Approximate Nearest Neighbor Search (ANNS) is essential for various data-intensive applications, including recommendation systems, image retrieval, and machine learning. Scaling ANNS to handle billions of high-dimensional vectors on a single machine presents significant challenges in memory capacity and processing efficiency. To address these challenges, distributed vector databases leverage multiple nodes for the parallel storage and processing of vectors. However, existing solutions often suffer from load imbalance and high communication overhead, primarily due to traditional partition strategies that fail to effectively distribute the workload. In this paper, we introduce Harmony, a distributed ANNS system that employs a novel multi-granularity partition strategy, combining dimension-based and vector-based partition. This strategy ensures a balanced distribution of computational load across all nodes while effectively minimizing communication costs. Furthermore, Harmony incorporates an early-stop pruning mechanism that leverages the monotonicity of distance computations in dimension-based partition, resulting in significant reductions in both computational and communication overhead. We conducted extensive experiments on diverse real-world datasets, demonstrating that Harmony outperforms leading distributed vector databases, achieving 4.63 times throughput on average in four nodes and 58% performance improvement over traditional distribution for skewed workloads.  
+    Large-scale visual search engines are expected to solve a dual problem at once: (i) locate every image that truly contains the object described by a sentence and (ii) identify the object's bounding box or exact pixels within each hit. Existing techniques address only one side of this challenge. Visual grounding yields tight boxes and masks but rests on the unrealistic assumption that the object is present in every test image, producing a flood of false alarms when applied to web-scale collections. Text-to-image retrieval excels at sifting through massive databases to rank relevant images, yet it stops at whole-image matches and offers no fine-grained localization. We introduce Referring Search and Discovery (ReSeDis), the first task that unifies corpus-level retrieval with pixel-level grounding. Given a free-form description, a ReSeDis model must decide whether the queried object appears in each image and, if so, where it is, returning bounding boxes or segmentation masks. To enable rigorous study, we curate a benchmark in which every description maps uniquely to object instances scattered across a large, diverse corpus, eliminating unintended matches. We further design a task-specific metric that jointly scores retrieval recall and localization precision. Finally, we provide a straightforward zero-shot baseline using a frozen vision-language model, revealing significant headroom for future study. ReSeDis offers a realistic, end-to-end testbed for building the next generation of robust and scalable multimodal search systems.  
   </ol>  
 </details>  
   
-### [TACS-Graphs: Traversability-Aware Consistent Scene Graphs for Ground Robot Indoor Localization and Mapping](http://arxiv.org/abs/2506.14178)  
-Jeewon Kim, Minho Oh, Hyun Myung  
+  
+
+
+
+## Image Matching  
+
+### [ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections](http://arxiv.org/abs/2506.15180)  
+Ziling Huang, Yidan Zhang, Shin'ichi Satoh  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Scene graphs have emerged as a powerful tool for robots, providing a structured representation of spatial and semantic relationships for advanced task planning. Despite their potential, conventional 3D indoor scene graphs face critical limitations, particularly under- and over-segmentation of room layers in structurally complex environments. Under-segmentation misclassifies non-traversable areas as part of a room, often in open spaces, while over-segmentation fragments a single room into overlapping segments in complex environments. These issues stem from naive voxel-based map representations that rely solely on geometric proximity, disregarding the structural constraints of traversable spaces and resulting in inconsistent room layers within scene graphs. To the best of our knowledge, this work is the first to tackle segmentation inconsistency as a challenge and address it with Traversability-Aware Consistent Scene Graphs (TACS-Graphs), a novel framework that integrates ground robot traversability with room segmentation. By leveraging traversability as a key factor in defining room boundaries, the proposed method achieves a more semantically meaningful and topologically coherent segmentation, effectively mitigating the inaccuracies of voxel-based scene graph approaches in complex environments. Furthermore, the enhanced segmentation consistency improves loop closure detection efficiency in the proposed Consistent Scene Graph-leveraging Loop Closure Detection (CoSG-LCD) leading to higher pose estimation accuracy. Experimental results confirm that the proposed approach outperforms state-of-the-art methods in terms of scene graph consistency and pose graph optimization performance.  
+    Large-scale visual search engines are expected to solve a dual problem at once: (i) locate every image that truly contains the object described by a sentence and (ii) identify the object's bounding box or exact pixels within each hit. Existing techniques address only one side of this challenge. Visual grounding yields tight boxes and masks but rests on the unrealistic assumption that the object is present in every test image, producing a flood of false alarms when applied to web-scale collections. Text-to-image retrieval excels at sifting through massive databases to rank relevant images, yet it stops at whole-image matches and offers no fine-grained localization. We introduce Referring Search and Discovery (ReSeDis), the first task that unifies corpus-level retrieval with pixel-level grounding. Given a free-form description, a ReSeDis model must decide whether the queried object appears in each image and, if so, where it is, returning bounding boxes or segmentation masks. To enable rigorous study, we curate a benchmark in which every description maps uniquely to object instances scattered across a large, diverse corpus, eliminating unintended matches. We further design a task-specific metric that jointly scores retrieval recall and localization precision. Finally, we provide a straightforward zero-shot baseline using a frozen vision-language model, revealing significant headroom for future study. ReSeDis offers a realistic, end-to-end testbed for building the next generation of robust and scalable multimodal search systems.  
   </ol>  
 </details>  
-**comments**: Accepted by IROS 2025  
+  
+  
+
+
+
+## NeRF  
+
+### [RA-NeRF: Robust Neural Radiance Field Reconstruction with Accurate Camera Pose Estimation under Complex Trajectories](http://arxiv.org/abs/2506.15242)  
+Qingsong Yan, Qiang Wang, Kaiyong Zhao, Jie Chen, Bo Li, Xiaowen Chu, Fei Deng  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) have emerged as powerful tools for 3D reconstruction and SLAM tasks. However, their performance depends heavily on accurate camera pose priors. Existing approaches attempt to address this issue by introducing external constraints but fall short of achieving satisfactory accuracy, particularly when camera trajectories are complex. In this paper, we propose a novel method, RA-NeRF, capable of predicting highly accurate camera poses even with complex camera trajectories. Following the incremental pipeline, RA-NeRF reconstructs the scene using NeRF with photometric consistency and incorporates flow-driven pose regulation to enhance robustness during initialization and localization. Additionally, RA-NeRF employs an implicit pose filter to capture the camera movement pattern and eliminate the noise for pose estimation. To validate our method, we conduct extensive experiments on the Tanks\&Temple dataset for standard evaluation, as well as the NeRFBuster dataset, which presents challenging camera pose trajectories. On both datasets, RA-NeRF achieves state-of-the-art results in both camera pose estimation and visual quality, demonstrating its effectiveness and robustness in scene reconstruction under complex pose trajectories.  
+  </ol>  
+</details>  
+**comments**: IROS 2025  
+  
+### [Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction](http://arxiv.org/abs/2506.14856)  
+Zhengquan Zhang, Feng Xu, Mengmi Zhang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Some perspectives naturally provide more information than others. How can an AI system determine which viewpoint offers the most valuable insight for accurate and efficient 3D object reconstruction? Active view selection (AVS) for 3D reconstruction remains a fundamental challenge in computer vision. The aim is to identify the minimal set of views that yields the most accurate 3D reconstruction. Instead of learning radiance fields, like NeRF or 3D Gaussian Splatting, from a current observation and computing uncertainty for each candidate viewpoint, we introduce a novel AVS approach guided by neural uncertainty maps predicted by a lightweight feedforward deep neural network, named UPNet. UPNet takes a single input image of a 3D object and outputs a predicted uncertainty map, representing uncertainty values across all possible candidate viewpoints. By leveraging heuristics derived from observing many natural objects and their associated uncertainty patterns, we train UPNet to learn a direct mapping from viewpoint appearance to uncertainty in the underlying volumetric representations. Next, our approach aggregates all previously predicted neural uncertainty maps to suppress redundant candidate viewpoints and effectively select the most informative one. Using these selected viewpoints, we train 3D neural rendering models and evaluate the quality of novel view synthesis against other competitive AVS methods. Remarkably, despite using half of the viewpoints than the upper bound, our method achieves comparable reconstruction accuracy. In addition, it significantly reduces computational overhead during AVS, achieving up to a 400 times speedup along with over 50\% reductions in CPU, RAM, and GPU usage compared to baseline methods. Notably, our approach generalizes effectively to AVS tasks involving novel object categories, without requiring any additional training.  
+  </ol>  
+</details>  
+**comments**: 9 pages, 3 figures in the main text. Under review for NeurIPS 2025  
   
   
 
