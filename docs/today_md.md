@@ -3,18 +3,16 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#ReSeDis:-A-Dataset-for-Referring-based-Object-Search-across-Large-Scale-Image-Collections>ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#ReSeDis:-A-Dataset-for-Referring-based-Object-Search-across-Large-Scale-Image-Collections>ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections</a></li>
+        <li><a href=#Class-Agnostic-Instance-level-Descriptor-for-Visual-Instance-Search>Class Agnostic Instance-level Descriptor for Visual Instance Search</a></li>
+        <li><a href=#MambaHash:-Visual-State-Space-Deep-Hashing-Model-for-Large-Scale-Image-Retrieval>MambaHash: Visual State Space Deep Hashing Model for Large-Scale Image Retrieval</a></li>
+        <li><a href=#Fine-grained-Image-Retrieval-via-Dual-Vision-Adaptation>Fine-grained Image Retrieval via Dual-Vision Adaptation</a></li>
+        <li><a href=#Adversarial-Attacks-and-Detection-in-Visual-Place-Recognition-for-Safer-Robot-Navigation>Adversarial Attacks and Detection in Visual Place Recognition for Safer Robot Navigation</a></li>
+        <li><a href=#Semantic-and-Feature-Guided-Uncertainty-Quantification-of-Visual-Localization-for-Autonomous-Vehicles>Semantic and Feature Guided Uncertainty Quantification of Visual Localization for Autonomous Vehicles</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#RA-NeRF:-Robust-Neural-Radiance-Field-Reconstruction-with-Accurate-Camera-Pose-Estimation-under-Complex-Trajectories>RA-NeRF: Robust Neural Radiance Field Reconstruction with Accurate Camera Pose Estimation under Complex Trajectories</a></li>
-        <li><a href=#Peering-into-the-Unknown:-Active-View-Selection-with-Neural-Uncertainty-Maps-for-3D-Reconstruction>Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction</a></li>
+        <li><a href=#R3eVision:-A-Survey-on-Robust-Rendering,-Restoration,-and-Enhancement-for-3D-Low-Level-Vision>R3eVision: A Survey on Robust Rendering, Restoration, and Enhancement for 3D Low-Level Vision</a></li>
       </ul>
     </li>
   </ol>
@@ -22,29 +20,53 @@
 
 ## Visual Localization  
 
-### [ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections](http://arxiv.org/abs/2506.15180)  
-Ziling Huang, Yidan Zhang, Shin'ichi Satoh  
+### [Class Agnostic Instance-level Descriptor for Visual Instance Search](http://arxiv.org/abs/2506.16745)  
+Qi-Ying Sun, Wan-Lei Zhao, Yi-Bo Miao, Chong-Wah Ngo  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large-scale visual search engines are expected to solve a dual problem at once: (i) locate every image that truly contains the object described by a sentence and (ii) identify the object's bounding box or exact pixels within each hit. Existing techniques address only one side of this challenge. Visual grounding yields tight boxes and masks but rests on the unrealistic assumption that the object is present in every test image, producing a flood of false alarms when applied to web-scale collections. Text-to-image retrieval excels at sifting through massive databases to rank relevant images, yet it stops at whole-image matches and offers no fine-grained localization. We introduce Referring Search and Discovery (ReSeDis), the first task that unifies corpus-level retrieval with pixel-level grounding. Given a free-form description, a ReSeDis model must decide whether the queried object appears in each image and, if so, where it is, returning bounding boxes or segmentation masks. To enable rigorous study, we curate a benchmark in which every description maps uniquely to object instances scattered across a large, diverse corpus, eliminating unintended matches. We further design a task-specific metric that jointly scores retrieval recall and localization precision. Finally, we provide a straightforward zero-shot baseline using a frozen vision-language model, revealing significant headroom for future study. ReSeDis offers a realistic, end-to-end testbed for building the next generation of robust and scalable multimodal search systems.  
+    Despite the great success of the deep features in content-based image retrieval, the visual instance search remains challenging due to the lack of effective instance level feature representation. Supervised or weakly supervised object detection methods are not among the options due to their poor performance on the unknown object categories. In this paper, based on the feature set output from self-supervised ViT, the instance level region discovery is modeled as detecting the compact feature subsets in a hierarchical fashion. The hierarchical decomposition results in a hierarchy of feature subsets. The non-leaf nodes and leaf nodes on the hierarchy correspond to the various instance regions in an image of different semantic scales. The hierarchical decomposition well addresses the problem of object embedding and occlusions, which are widely observed in the real scenarios. The features derived from the nodes on the hierarchy make up a comprehensive representation for the latent instances in the image. Our instance-level descriptor remains effective on both the known and unknown object categories. Empirical studies on three instance search benchmarks show that it outperforms state-of-the-art methods considerably.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Image Matching  
-
-### [ReSeDis: A Dataset for Referring-based Object Search across Large-Scale Image Collections](http://arxiv.org/abs/2506.15180)  
-Ziling Huang, Yidan Zhang, Shin'ichi Satoh  
+### [MambaHash: Visual State Space Deep Hashing Model for Large-Scale Image Retrieval](http://arxiv.org/abs/2506.16353)  
+Chao He, Hongxi Wei  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Large-scale visual search engines are expected to solve a dual problem at once: (i) locate every image that truly contains the object described by a sentence and (ii) identify the object's bounding box or exact pixels within each hit. Existing techniques address only one side of this challenge. Visual grounding yields tight boxes and masks but rests on the unrealistic assumption that the object is present in every test image, producing a flood of false alarms when applied to web-scale collections. Text-to-image retrieval excels at sifting through massive databases to rank relevant images, yet it stops at whole-image matches and offers no fine-grained localization. We introduce Referring Search and Discovery (ReSeDis), the first task that unifies corpus-level retrieval with pixel-level grounding. Given a free-form description, a ReSeDis model must decide whether the queried object appears in each image and, if so, where it is, returning bounding boxes or segmentation masks. To enable rigorous study, we curate a benchmark in which every description maps uniquely to object instances scattered across a large, diverse corpus, eliminating unintended matches. We further design a task-specific metric that jointly scores retrieval recall and localization precision. Finally, we provide a straightforward zero-shot baseline using a frozen vision-language model, revealing significant headroom for future study. ReSeDis offers a realistic, end-to-end testbed for building the next generation of robust and scalable multimodal search systems.  
+    Deep image hashing aims to enable effective large-scale image retrieval by mapping the input images into simple binary hash codes through deep neural networks. More recently, Vision Mamba with linear time complexity has attracted extensive attention from researchers by achieving outstanding performance on various computer tasks. Nevertheless, the suitability of Mamba for large-scale image retrieval tasks still needs to be explored. Towards this end, we propose a visual state space hashing model, called MambaHash. Concretely, we propose a backbone network with stage-wise architecture, in which grouped Mamba operation is introduced to model local and global information by utilizing Mamba to perform multi-directional scanning along different groups of the channel. Subsequently, the proposed channel interaction attention module is used to enhance information communication across channels. Finally, we meticulously design an adaptive feature enhancement module to increase feature diversity and enhance the visual representation capability of the model. We have conducted comprehensive experiments on three widely used datasets: CIFAR-10, NUS-WIDE and IMAGENET. The experimental results demonstrate that compared with the state-of-the-art deep hashing methods, our proposed MambaHash has well efficiency and superior performance to effectively accomplish large-scale image retrieval tasks. Source code is available https://github.com/shuaichaochao/MambaHash.git  
   </ol>  
 </details>  
+**comments**: Accepted by ICMR2025. arXiv admin note: text overlap with
+  arXiv:2405.07524  
+  
+### [Fine-grained Image Retrieval via Dual-Vision Adaptation](http://arxiv.org/abs/2506.16273)  
+Xin Jiang, Meiqi Cao, Hao Tang, Fei Shen, Zechao Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Fine-Grained Image Retrieval~(FGIR) faces challenges in learning discriminative visual representations to retrieve images with similar fine-grained features. Current leading FGIR solutions typically follow two regimes: enforce pairwise similarity constraints in the semantic embedding space, or incorporate a localization sub-network to fine-tune the entire model. However, such two regimes tend to overfit the training data while forgetting the knowledge gained from large-scale pre-training, thus reducing their generalization ability. In this paper, we propose a Dual-Vision Adaptation (DVA) approach for FGIR, which guides the frozen pre-trained model to perform FGIR through collaborative sample and feature adaptation. Specifically, we design Object-Perceptual Adaptation, which modifies input samples to help the pre-trained model perceive critical objects and elements within objects that are helpful for category prediction. Meanwhile, we propose In-Context Adaptation, which introduces a small set of parameters for feature adaptation without modifying the pre-trained parameters. This makes the FGIR task using these adjusted features closer to the task solved during the pre-training. Additionally, to balance retrieval efficiency and performance, we propose Discrimination Perception Transfer to transfer the discriminative knowledge in the object-perceptual adaptation to the image encoder using the knowledge distillation mechanism. Extensive experiments show that DVA has fewer learnable parameters and performs well on three in-distribution and three out-of-distribution fine-grained datasets.  
+  </ol>  
+</details>  
+  
+### [Adversarial Attacks and Detection in Visual Place Recognition for Safer Robot Navigation](http://arxiv.org/abs/2506.15988)  
+Connor Malone, Owen Claxton, Iman Shames, Michael Milford  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Stand-alone Visual Place Recognition (VPR) systems have little defence against a well-designed adversarial attack, which can lead to disastrous consequences when deployed for robot navigation. This paper extensively analyzes the effect of four adversarial attacks common in other perception tasks and four novel VPR-specific attacks on VPR localization performance. We then propose how to close the loop between VPR, an Adversarial Attack Detector (AAD), and active navigation decisions by demonstrating the performance benefit of simulated AADs in a novel experiment paradigm -- which we detail for the robotics community to use as a system framework. In the proposed experiment paradigm, we see the addition of AADs across a range of detection accuracies can improve performance over baseline; demonstrating a significant improvement -- such as a ~50% reduction in the mean along-track localization error -- can be achieved with True Positive and False Positive detection rates of only 75% and up to 25% respectively. We examine a variety of metrics including: Along-Track Error, Percentage of Time Attacked, Percentage of Time in an `Unsafe' State, and Longest Continuous Time Under Attack. Expanding further on these results, we provide the first investigation into the efficacy of the Fast Gradient Sign Method (FGSM) adversarial attack for VPR. The analysis in this work highlights the need for AADs in real-world systems for trustworthy navigation, and informs quantitative requirements for system design.  
+  </ol>  
+</details>  
+  
+### [Semantic and Feature Guided Uncertainty Quantification of Visual Localization for Autonomous Vehicles](http://arxiv.org/abs/2506.15851)  
+Qiyuan Wu, Mark Campbell  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The uncertainty quantification of sensor measurements coupled with deep learning networks is crucial for many robotics systems, especially for safety-critical applications such as self-driving cars. This paper develops an uncertainty quantification approach in the context of visual localization for autonomous driving, where locations are selected based on images. Key to our approach is to learn the measurement uncertainty using light-weight sensor error model, which maps both image feature and semantic information to 2-dimensional error distribution. Our approach enables uncertainty estimation conditioned on the specific context of the matched image pair, implicitly capturing other critical, unannotated factors (e.g., city vs highway, dynamic vs static scenes, winter vs summer) in a latent manner. We demonstrate the accuracy of our uncertainty prediction framework using the Ithaca365 dataset, which includes variations in lighting and weather (sunny, night, snowy). Both the uncertainty quantification of the sensor+network is evaluated, along with Bayesian localization filters using unique sensor gating method. Results show that the measurement error does not follow a Gaussian distribution with poor weather and lighting conditions, and is better predicted by our Gaussian Mixture model.  
+  </ol>  
+</details>  
+**comments**: Accepted by ICRA 2025  
   
   
 
@@ -52,25 +74,16 @@ Ziling Huang, Yidan Zhang, Shin'ichi Satoh
 
 ## NeRF  
 
-### [RA-NeRF: Robust Neural Radiance Field Reconstruction with Accurate Camera Pose Estimation under Complex Trajectories](http://arxiv.org/abs/2506.15242)  
-Qingsong Yan, Qiang Wang, Kaiyong Zhao, Jie Chen, Bo Li, Xiaowen Chu, Fei Deng  
+### [R3eVision: A Survey on Robust Rendering, Restoration, and Enhancement for 3D Low-Level Vision](http://arxiv.org/abs/2506.16262)  
+Weeyoung Kwon, Jeahun Sung, Minkyu Jeon, Chanho Eom, Jihyong Oh  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) have emerged as powerful tools for 3D reconstruction and SLAM tasks. However, their performance depends heavily on accurate camera pose priors. Existing approaches attempt to address this issue by introducing external constraints but fall short of achieving satisfactory accuracy, particularly when camera trajectories are complex. In this paper, we propose a novel method, RA-NeRF, capable of predicting highly accurate camera poses even with complex camera trajectories. Following the incremental pipeline, RA-NeRF reconstructs the scene using NeRF with photometric consistency and incorporates flow-driven pose regulation to enhance robustness during initialization and localization. Additionally, RA-NeRF employs an implicit pose filter to capture the camera movement pattern and eliminate the noise for pose estimation. To validate our method, we conduct extensive experiments on the Tanks\&Temple dataset for standard evaluation, as well as the NeRFBuster dataset, which presents challenging camera pose trajectories. On both datasets, RA-NeRF achieves state-of-the-art results in both camera pose estimation and visual quality, demonstrating its effectiveness and robustness in scene reconstruction under complex pose trajectories.  
+    Neural rendering methods such as Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) have achieved significant progress in photorealistic 3D scene reconstruction and novel view synthesis. However, most existing models assume clean and high-resolution (HR) multi-view inputs, which limits their robustness under real-world degradations such as noise, blur, low-resolution (LR), and weather-induced artifacts. To address these limitations, the emerging field of 3D Low-Level Vision (3D LLV) extends classical 2D Low-Level Vision tasks including super-resolution (SR), deblurring, weather degradation removal, restoration, and enhancement into the 3D spatial domain. This survey, referred to as R\textsuperscript{3}eVision, provides a comprehensive overview of robust rendering, restoration, and enhancement for 3D LLV by formalizing the degradation-aware rendering problem and identifying key challenges related to spatio-temporal consistency and ill-posed optimization. Recent methods that integrate LLV into neural rendering frameworks are categorized to illustrate how they enable high-fidelity 3D reconstruction under adverse conditions. Application domains such as autonomous driving, AR/VR, and robotics are also discussed, where reliable 3D perception from degraded inputs is critical. By reviewing representative methods, datasets, and evaluation protocols, this work positions 3D LLV as a fundamental direction for robust 3D content generation and scene-level reconstruction in real-world environments.  
   </ol>  
 </details>  
-**comments**: IROS 2025  
-  
-### [Peering into the Unknown: Active View Selection with Neural Uncertainty Maps for 3D Reconstruction](http://arxiv.org/abs/2506.14856)  
-Zhengquan Zhang, Feng Xu, Mengmi Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Some perspectives naturally provide more information than others. How can an AI system determine which viewpoint offers the most valuable insight for accurate and efficient 3D object reconstruction? Active view selection (AVS) for 3D reconstruction remains a fundamental challenge in computer vision. The aim is to identify the minimal set of views that yields the most accurate 3D reconstruction. Instead of learning radiance fields, like NeRF or 3D Gaussian Splatting, from a current observation and computing uncertainty for each candidate viewpoint, we introduce a novel AVS approach guided by neural uncertainty maps predicted by a lightweight feedforward deep neural network, named UPNet. UPNet takes a single input image of a 3D object and outputs a predicted uncertainty map, representing uncertainty values across all possible candidate viewpoints. By leveraging heuristics derived from observing many natural objects and their associated uncertainty patterns, we train UPNet to learn a direct mapping from viewpoint appearance to uncertainty in the underlying volumetric representations. Next, our approach aggregates all previously predicted neural uncertainty maps to suppress redundant candidate viewpoints and effectively select the most informative one. Using these selected viewpoints, we train 3D neural rendering models and evaluate the quality of novel view synthesis against other competitive AVS methods. Remarkably, despite using half of the viewpoints than the upper bound, our method achieves comparable reconstruction accuracy. In addition, it significantly reduces computational overhead during AVS, achieving up to a 400 times speedup along with over 50\% reductions in CPU, RAM, and GPU usage compared to baseline methods. Notably, our approach generalizes effectively to AVS tasks involving novel object categories, without requiring any additional training.  
-  </ol>  
-</details>  
-**comments**: 9 pages, 3 figures in the main text. Under review for NeurIPS 2025  
+**comments**: Please visit our project page at
+  https://github.com/CMLab-Korea/Awesome-3D-Low-Level-Vision  
   
   
 
