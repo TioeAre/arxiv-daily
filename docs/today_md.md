@@ -3,21 +3,14 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#ViDAR:-Video-Diffusion-Aware-4D-Reconstruction-From-Monocular-Inputs>ViDAR: Video Diffusion-Aware 4D Reconstruction From Monocular Inputs</a></li>
-      </ul>
-    </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
-      <ul>
-        <li><a href=#jina-embeddings-v4:-Universal-Embeddings-for-Multimodal-Multilingual-Retrieval>jina-embeddings-v4: Universal Embeddings for Multimodal Multilingual Retrieval</a></li>
-        <li><a href=#Referring-Expression-Instance-Retrieval-and-A-Strong-End-to-End-Baseline>Referring Expression Instance Retrieval and A Strong End-to-End Baseline</a></li>
+        <li><a href=#Experimental-Assessment-of-Neural-3D-Reconstruction-for-Small-UAV-based-Applications>Experimental Assessment of Neural 3D Reconstruction for Small UAV-based Applications</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#MCN-SLAM:-Multi-Agent-Collaborative-Neural-SLAM-with-Hybrid-Implicit-Neural-Scene-Representation>MCN-SLAM: Multi-Agent Collaborative Neural SLAM with Hybrid Implicit Neural Scene Representation</a></li>
-        <li><a href=#2D-Triangle-Splatting-for-Direct-Differentiable-Mesh-Training>2D Triangle Splatting for Direct Differentiable Mesh Training</a></li>
-        <li><a href=#Limitations-of-NERF-with-pre-trained-Vision-Features-for-Few-Shot-3D-Reconstruction>Limitations of NERF with pre-trained Vision Features for Few-Shot 3D Reconstruction</a></li>
-        <li><a href=#3D-Gaussian-Splatting-for-Fine-Detailed-Surface-Reconstruction-in-Large-Scale-Scene>3D Gaussian Splatting for Fine-Detailed Surface Reconstruction in Large-Scale Scene</a></li>
+        <li><a href=#NeRF-based-CBCT-Reconstruction-needs-Normalization-and-Initialization>NeRF-based CBCT Reconstruction needs Normalization and Initialization</a></li>
+        <li><a href=#Self-Supervised-Multimodal-NeRF-for-Autonomous-Driving>Self-Supervised Multimodal NeRF for Autonomous Driving</a></li>
+        <li><a href=#HoliGS:-Holistic-Gaussian-Splatting-for-Embodied-View-Synthesis>HoliGS: Holistic Gaussian Splatting for Embodied View Synthesis</a></li>
       </ul>
     </li>
   </ol>
@@ -25,39 +18,16 @@
 
 ## SFM  
 
-### [ViDAR: Video Diffusion-Aware 4D Reconstruction From Monocular Inputs](http://arxiv.org/abs/2506.18792)  
-Michal Nazarczuk, Sibi Catley-Chandar, Thomas Tanay, Zhensong Zhang, Gregory Slabaugh, Eduardo Pérez-Pellitero  
+### [Experimental Assessment of Neural 3D Reconstruction for Small UAV-based Applications](http://arxiv.org/abs/2506.19491)  
+Genís Castillo Gómez-Raya, Álmos Veres-Vitályos, Filip Lemic, Pablo Royo, Mario Montagud, Sergi Fernández, Sergi Abadal, Xavier Costa-Pérez  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Dynamic Novel View Synthesis aims to generate photorealistic views of moving subjects from arbitrary viewpoints. This task is particularly challenging when relying on monocular video, where disentangling structure from motion is ill-posed and supervision is scarce. We introduce Video Diffusion-Aware Reconstruction (ViDAR), a novel 4D reconstruction framework that leverages personalised diffusion models to synthesise a pseudo multi-view supervision signal for training a Gaussian splatting representation. By conditioning on scene-specific features, ViDAR recovers fine-grained appearance details while mitigating artefacts introduced by monocular ambiguity. To address the spatio-temporal inconsistency of diffusion-based supervision, we propose a diffusion-aware loss function and a camera pose optimisation strategy that aligns synthetic views with the underlying scene geometry. Experiments on DyCheck, a challenging benchmark with extreme viewpoint variation, show that ViDAR outperforms all state-of-the-art baselines in visual quality and geometric consistency. We further highlight ViDAR's strong improvement over baselines on dynamic regions and provide a new benchmark to compare performance in reconstructing motion-rich parts of the scene. Project page: https://vidar-4d.github.io  
+    The increasing miniaturization of Unmanned Aerial Vehicles (UAVs) has expanded their deployment potential to indoor and hard-to-reach areas. However, this trend introduces distinct challenges, particularly in terms of flight dynamics and power consumption, which limit the UAVs' autonomy and mission capabilities. This paper presents a novel approach to overcoming these limitations by integrating Neural 3D Reconstruction (N3DR) with small UAV systems for fine-grained 3-Dimensional (3D) digital reconstruction of small static objects. Specifically, we design, implement, and evaluate an N3DR-based pipeline that leverages advanced models, i.e., Instant-ngp, Nerfacto, and Splatfacto, to improve the quality of 3D reconstructions using images of the object captured by a fleet of small UAVs. We assess the performance of the considered models using various imagery and pointcloud metrics, comparing them against the baseline Structure from Motion (SfM) algorithm. The experimental results demonstrate that the N3DR-enhanced pipeline significantly improves reconstruction quality, making it feasible for small UAVs to support high-precision 3D mapping and anomaly detection in constrained environments. In more general terms, our results highlight the potential of N3DR in advancing the capabilities of miniaturized UAV systems.  
   </ol>  
 </details>  
-  
-  
-
-
-
-## Visual Localization  
-
-### [jina-embeddings-v4: Universal Embeddings for Multimodal Multilingual Retrieval](http://arxiv.org/abs/2506.18902)  
-Michael Günther, Saba Sturua, Mohammad Kalim Akram, Isabelle Mohr, Andrei Ungureanu, Sedigheh Eslami, Scott Martens, Bo Wang, Nan Wang, Han Xiao  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce jina-embeddings-v4, a 3.8 billion parameter multimodal embedding model that unifies text and image representations through a novel architecture supporting both single-vector and multi-vector embeddings in the late interaction style. The model incorporates task-specific Low-Rank Adaptation (LoRA) adapters to optimize performance across diverse retrieval scenarios, including query-based information retrieval, cross-modal semantic similarity, and programming code search. Comprehensive evaluations demonstrate that jina-embeddings-v4 achieves state-of-the-art performance on both single- modal and cross-modal retrieval tasks, with particular strength in processing visually rich content such as tables, charts, diagrams, and mixed-media formats. To facilitate evaluation of this capability, we also introduce Jina-VDR, a novel benchmark specifically designed for visually rich image retrieval.  
-  </ol>  
-</details>  
-**comments**: 22 pages, 1-10 main, 14-22 experimental results, benchmark tables  
-  
-### [Referring Expression Instance Retrieval and A Strong End-to-End Baseline](http://arxiv.org/abs/2506.18246)  
-Xiangzhao Hao, Kuan Zhu, Hongyu Guo, Haiyun Guo, Ming Tang, JinQiao Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Natural language querying of visual content underpins many vision-language tasks, typically categorized by text granularity and visual search scope. Text-Image Retrieval (TIR) retrieves whole images using coarse descriptions, while Referring Expression Comprehension (REC) localizes objects using fine-grained expressions within a single image. However, real-world scenarios often require both instance-level retrieval and localization across large galleries -- tasks where TIR lacks precision and REC lacks scalability. To address this gap, we propose a new task: Referring Expression Instance Retrieval (REIR), which jointly supports instance-level retrieval and localization. We introduce REIRCOCO, a large-scale benchmark constructed by prompting vision-language models to generate fine-grained expressions for MSCOCO and RefCOCO instances. We also present a baseline method, CLARE, featuring a dual-stream architecture with a Mix of Relation Experts (MORE) module for capturing inter-instance relationships. CLARE integrates object detection and REC pretraining with Contrastive Language-Instance Alignment (CLIA) for end-to-end optimization. Experiments show that CLARE achieves state-of-the-art performance on REIR and generalizes well to TIR and REC, highlighting its effectiveness and versatility.  
-  </ol>  
-</details>  
+**comments**: 6 pages, 7 figures, 2 tables, accepted at IEEE International
+  Symposium on Personal, Indoor and Mobile Radio Communications 2025  
   
   
 
@@ -65,45 +35,32 @@ Xiangzhao Hao, Kuan Zhu, Hongyu Guo, Haiyun Guo, Ming Tang, JinQiao Wang
 
 ## NeRF  
 
-### [MCN-SLAM: Multi-Agent Collaborative Neural SLAM with Hybrid Implicit Neural Scene Representation](http://arxiv.org/abs/2506.18678)  
-Tianchen Deng, Guole Shen, Xun Chen, Shenghai Yuan, Hongming Shen, Guohao Peng, Zhenyu Wu, Jingchuan Wang, Lihua Xie, Danwei Wang, Hesheng Wang, Weidong Chen  
+### [NeRF-based CBCT Reconstruction needs Normalization and Initialization](http://arxiv.org/abs/2506.19742)  
+Zhuowei Xu, Han Li, Dai Sun, Zhicheng Li, Yujia Li, Qingpeng Kong, Zhiwei Cheng, Nassir Navab, S. Kevin Zhou  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural implicit scene representations have recently shown promising results in dense visual SLAM. However, existing implicit SLAM algorithms are constrained to single-agent scenarios, and fall difficulties in large-scale scenes and long sequences. Existing NeRF-based multi-agent SLAM frameworks cannot meet the constraints of communication bandwidth. To this end, we propose the first distributed multi-agent collaborative neural SLAM framework with hybrid scene representation, distributed camera tracking, intra-to-inter loop closure, and online distillation for multiple submap fusion. A novel triplane-grid joint scene representation method is proposed to improve scene reconstruction. A novel intra-to-inter loop closure method is designed to achieve local (single-agent) and global (multi-agent) consistency. We also design a novel online distillation method to fuse the information of different submaps to achieve global consistency. Furthermore, to the best of our knowledge, there is no real-world dataset for NeRF-based/GS-based SLAM that provides both continuous-time trajectories groundtruth and high-accuracy 3D meshes groundtruth. To this end, we propose the first real-world Dense slam (DES) dataset covering both single-agent and multi-agent scenarios, ranging from small rooms to large-scale outdoor scenes, with high-accuracy ground truth for both 3D mesh and continuous-time camera trajectory. This dataset can advance the development of the research in both SLAM, 3D reconstruction, and visual foundation model. Experiments on various datasets demonstrate the superiority of the proposed method in both mapping, tracking, and communication. The dataset and code will open-source on https://github.com/dtc111111/mcnslam.  
+    Cone Beam Computed Tomography (CBCT) is widely used in medical imaging. However, the limited number and intensity of X-ray projections make reconstruction an ill-posed problem with severe artifacts. NeRF-based methods have achieved great success in this task. However, they suffer from a local-global training mismatch between their two key components: the hash encoder and the neural network. Specifically, in each training step, only a subset of the hash encoder's parameters is used (local sparse), whereas all parameters in the neural network participate (global dense). Consequently, hash features generated in each step are highly misaligned, as they come from different subsets of the hash encoder. These misalignments from different training steps are then fed into the neural network, causing repeated inconsistent global updates in training, which leads to unstable training, slower convergence, and degraded reconstruction quality. Aiming to alleviate the impact of this local-global optimization mismatch, we introduce a Normalized Hash Encoder, which enhances feature consistency and mitigates the mismatch. Additionally, we propose a Mapping Consistency Initialization(MCI) strategy that initializes the neural network before training by leveraging the global mapping property from a well-trained model. The initialized neural network exhibits improved stability during early training, enabling faster convergence and enhanced reconstruction performance. Our method is simple yet effective, requiring only a few lines of code while substantially improving training efficiency on 128 CT cases collected from 4 different datasets, covering 7 distinct anatomical regions.  
   </ol>  
 </details>  
   
-### [2D Triangle Splatting for Direct Differentiable Mesh Training](http://arxiv.org/abs/2506.18575)  
-Kaifeng Sheng, Zheng Zhou, Yingliang Peng, Qianwei Wang  
+### [Self-Supervised Multimodal NeRF for Autonomous Driving](http://arxiv.org/abs/2506.19615)  
+Gaurav Sharma, Ravi Kothari, Josef Schmid  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Differentiable rendering with 3D Gaussian primitives has emerged as a powerful method for reconstructing high-fidelity 3D scenes from multi-view images. While it offers improvements over NeRF-based methods, this representation still encounters challenges with rendering speed and advanced rendering effects, such as relighting and shadow rendering, compared to mesh-based models. In this paper, we propose 2D Triangle Splatting (2DTS), a novel method that replaces 3D Gaussian primitives with 2D triangle facelets. This representation naturally forms a discrete mesh-like structure while retaining the benefits of continuous volumetric modeling. By incorporating a compactness parameter into the triangle primitives, we enable direct training of photorealistic meshes. Our experimental results demonstrate that our triangle-based method, in its vanilla version (without compactness tuning), achieves higher fidelity compared to state-of-the-art Gaussian-based methods. Furthermore, our approach produces reconstructed meshes with superior visual quality compared to existing mesh reconstruction methods.  
+    In this paper, we propose a Neural Radiance Fields (NeRF) based framework, referred to as Novel View Synthesis Framework (NVSF). It jointly learns the implicit neural representation of space and time-varying scene for both LiDAR and Camera. We test this on a real-world autonomous driving scenario containing both static and dynamic scenes. Compared to existing multimodal dynamic NeRFs, our framework is self-supervised, thus eliminating the need for 3D labels. For efficient training and faster convergence, we introduce heuristic-based image pixel sampling to focus on pixels with rich information. To preserve the local features of LiDAR points, a Double Gradient based mask is employed. Extensive experiments on the KITTI-360 dataset show that, compared to the baseline models, our framework has reported best performance on both LiDAR and Camera domain. Code of the model is available at https://github.com/gaurav00700/Selfsupervised-NVSF  
   </ol>  
 </details>  
-**comments**: 13 pages, 8 figures  
   
-### [Limitations of NERF with pre-trained Vision Features for Few-Shot 3D Reconstruction](http://arxiv.org/abs/2506.18208)  
-Ankit Sanjyal  
+### [HoliGS: Holistic Gaussian Splatting for Embodied View Synthesis](http://arxiv.org/abs/2506.19291)  
+Xiaoyuan Wang, Yizhou Zhao, Botao Ye, Xiaojun Shan, Weijie Lyu, Lu Qi, Kelvin C. K. Chan, Yinxiao Li, Ming-Hsuan Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have revolutionized 3D scene reconstruction from sparse image collections. Recent work has explored integrating pre-trained vision features, particularly from DINO, to enhance few-shot reconstruction capabilities. However, the effectiveness of such approaches remains unclear, especially in extreme few-shot scenarios. In this paper, we present a systematic evaluation of DINO-enhanced NeRF models, comparing baseline NeRF, frozen DINO features, LoRA fine-tuned features, and multi-scale feature fusion. Surprisingly, our experiments reveal that all DINO variants perform worse than the baseline NeRF, achieving PSNR values around 12.9 to 13.0 compared to the baseline's 14.71. This counterintuitive result suggests that pre-trained vision features may not be beneficial for few-shot 3D reconstruction and may even introduce harmful biases. We analyze potential causes including feature-task mismatch, overfitting to limited data, and integration challenges. Our findings challenge common assumptions in the field and suggest that simpler architectures focusing on geometric consistency may be more effective for few-shot scenarios.  
+    We propose HoliGS, a novel deformable Gaussian splatting framework that addresses embodied view synthesis from long monocular RGB videos. Unlike prior 4D Gaussian splatting and dynamic NeRF pipelines, which struggle with training overhead in minute-long captures, our method leverages invertible Gaussian Splatting deformation networks to reconstruct large-scale, dynamic environments accurately. Specifically, we decompose each scene into a static background plus time-varying objects, each represented by learned Gaussian primitives undergoing global rigid transformations, skeleton-driven articulation, and subtle non-rigid deformations via an invertible neural flow. This hierarchical warping strategy enables robust free-viewpoint novel-view rendering from various embodied camera trajectories by attaching Gaussians to a complete canonical foreground shape (\eg, egocentric or third-person follow), which may involve substantial viewpoint changes and interactions between multiple actors. Our experiments demonstrate that \ourmethod~ achieves superior reconstruction quality on challenging datasets while significantly reducing both training and rendering time compared to state-of-the-art monocular deformable NeRFs. These results highlight a practical and scalable solution for EVS in real-world scenarios. The source code will be released.  
   </ol>  
 </details>  
-**comments**: 5 pages, 1 table, 2 figures. First submission. Code available at:
-  \url{https://github.com/ANKITSANJYAL/nerf-few-shot-limitations}  
-  
-### [3D Gaussian Splatting for Fine-Detailed Surface Reconstruction in Large-Scale Scene](http://arxiv.org/abs/2506.17636)  
-Shihan Chen, Zhaojin Li, Zeyu Chen, Qingsong Yan, Gaoyang Shen, Ran Duan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Recent developments in 3D Gaussian Splatting have made significant advances in surface reconstruction. However, scaling these methods to large-scale scenes remains challenging due to high computational demands and the complex dynamic appearances typical of outdoor environments. These challenges hinder the application in aerial surveying and autonomous driving. This paper proposes a novel solution to reconstruct large-scale surfaces with fine details, supervised by full-sized images. Firstly, we introduce a coarse-to-fine strategy to reconstruct a coarse model efficiently, followed by adaptive scene partitioning and sub-scene refining from image segments. Additionally, we integrate a decoupling appearance model to capture global appearance variations and a transient mask model to mitigate interference from moving objects. Finally, we expand the multi-view constraint and introduce a single-view regularization for texture-less areas. Our experiments were conducted on the publicly available dataset GauU-Scene V2, which was captured using unmanned aerial vehicles. To the best of our knowledge, our method outperforms existing NeRF-based and Gaussian-based methods, achieving high-fidelity visual results and accurate surface from full-size image optimization. Open-source code will be available on GitHub.  
-  </ol>  
-</details>  
-**comments**: IROS 2025  
   
   
 
