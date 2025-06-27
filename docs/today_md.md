@@ -1,60 +1,50 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Visualizing-intercalation-effects-in-2D-materials-using-AFM-based-techniques>Visualizing intercalation effects in 2D materials using AFM based techniques</a></li>
-        <li><a href=#On-the-Burstiness-of-Faces-in-Set>On the Burstiness of Faces in Set</a></li>
+        <li><a href=#Wild-refitting-for-black-box-prediction>Wild refitting for black box prediction</a></li>
       </ul>
     </li>
-    <li><a href=#image-matching>Image Matching</a></li>
+    <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Fast-entropy-regularized-SDP-relaxations-for-permutation-synchronization>Fast entropy-regularized SDP relaxations for permutation synchronization</a></li>
+        <li><a href=#OracleFusion:-Assisting-the-Decipherment-of-Oracle-Bone-Script-with-Structurally-Constrained-Semantic-Typography>OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Joint-attitude-estimation-and-3D-neural-reconstruction-of-non-cooperative-space-objects>Joint attitude estimation and 3D neural reconstruction of non-cooperative space objects</a></li>
+        <li><a href=#PanSt3R:-Multi-view-Consistent-Panoptic-Segmentation>PanSt3R: Multi-view Consistent Panoptic Segmentation</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SFM  
+
+### [Wild refitting for black box prediction](http://arxiv.org/abs/2506.21460)  
+Martin J. Wainwright  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    We describe and analyze a computionally efficient refitting procedure for computing high-probability upper bounds on the instance-wise mean-squared prediction error of penalized nonparametric estimates based on least-squares minimization. Requiring only a single dataset and black box access to the prediction method, it consists of three steps: computing suitable residuals, symmetrizing and scaling them with a pre-factor $\rho$, and using them to define and solve a modified prediction problem recentered at the current estimate. We refer to it as wild refitting, since it uses Rademacher residual symmetrization as in a wild bootstrap variant. Under relatively mild conditions allowing for noise heterogeneity, we establish a high probability guarantee on its performance, showing that the wild refit with a suitably chosen wild noise scale $\rho$ gives an upper bound on prediction error. This theoretical analysis provides guidance into the design of such procedures, including how the residuals should be formed, the amount of noise rescaling in the wild sub-problem needed for upper bounds, and the local stability properties of the block-box procedure. We illustrate the applicability of this procedure to various problems, including non-rigid structure-from-motion recovery with structured matrix penalties; plug-and-play image restoration with deep neural network priors; and randomized sketching with kernel methods.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## Visual Localization  
 
-### [Visualizing intercalation effects in 2D materials using AFM based techniques](http://arxiv.org/abs/2506.20467)  
-Karmen Kapustić, Cosme G. Ayani, Borna Pielić, Kateřina Plevová, Šimun Mandić, Iva Šrut Rakić  
+### [OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography](http://arxiv.org/abs/2506.21101)  
+Caoshuo Li, Zengmao Ding, Xiaobin Hu, Bang Li, Donghao Luo, AndyPian Wu, Chaoyang Wang, Chengjie Wang, Taisong Jin, SevenShu, Yunsheng Wu, Yongge Liu, Rongrong Ji  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Intercalation of two dimensional materials, particularly transition metal dichalcogenides, is a noninvasive way to modify electronic, optical and structural properties of these materials. However, research of these atomic-scale phenomena usually relies on using Ultra High Vacuum techniques which is time consuming, expensive and spatially limited. Here we utilize Atomic Force Microscopy (AFM) based techniques to visualize local structural and electronic changes of the MoS2 on graphene on Ir(111), caused by sulfur intercalation. AFM topography reveals structural changes, while phase imaging and mechanical measurements show reduced Young's modulus and adhesion. Kelvin Probe Force Microscopy highlights variations in surface potential and work function, aligning with intercalation signatures, while Photoinduced Force Microscopy detects enhanced optical response in intercalated regions. These results demonstrate the efficacy of AFM based techniques in mapping intercalation, offering insights into tailoring 2D materials electronic and optical properties. This work underscores the potential of AFM techniques for advanced material characterization and the development of 2D material applications.  
+    As one of the earliest ancient languages, Oracle Bone Script (OBS) encapsulates the cultural records and intellectual expressions of ancient civilizations. Despite the discovery of approximately 4,500 OBS characters, only about 1,600 have been deciphered. The remaining undeciphered ones, with their complex structure and abstract imagery, pose significant challenges for interpretation. To address these challenges, this paper proposes a novel two-stage semantic typography framework, named OracleFusion. In the first stage, this approach leverages the Multimodal Large Language Model (MLLM) with enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure of the OBS character and perform visual localization of key components. In the second stage, we introduce Oracle Structural Vector Fusion (OSVF), incorporating glyph structure constraints and glyph maintenance constraints to ensure the accurate generation of semantically enriched vector fonts. This approach preserves the objective integrity of the glyph structure, offering visually enhanced representations that assist experts in deciphering OBS. Extensive qualitative and quantitative experiments demonstrate that OracleFusion outperforms state-of-the-art baseline models in terms of semantics, visual appeal, and glyph maintenance, significantly enhancing both readability and aesthetic quality. Furthermore, OracleFusion provides expert-like insights on unseen oracle characters, making it a valuable tool for advancing the decipherment of OBS.  
   </ol>  
 </details>  
-  
-### [On the Burstiness of Faces in Set](http://arxiv.org/abs/2506.20312)  
-Jiong Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Burstiness, a phenomenon observed in text and image retrieval, refers to that particular elements appear more times in a set than a statistically independent model assumes. We argue that in the context of set-based face recognition (SFR), burstiness exists widely and degrades the performance in two aspects: Firstly, the bursty faces, where faces with particular attributes %exist frequently in a face set, dominate the training instances and dominate the training face sets and lead to poor generalization ability to unconstrained scenarios. Secondly, the bursty faces %dominating the evaluation sets interfere with the similarity comparison in set verification and identification when evaluation. To detect the bursty faces in a set, we propose three strategies based on Quickshift++, feature self-similarity, and generalized max-pooling (GMP). We apply the burst detection results on training and evaluation stages to enhance the sampling ratios or contributions of the infrequent faces. When evaluation, we additionally propose the quality-aware GMP that enables awareness of the face quality and robustness to the low-quality faces for the original GMP. We give illustrations and extensive experiments on the SFR benchmarks to demonstrate that burstiness is widespread and suppressing burstiness considerably improves the recognition performance.  
-  </ol>  
-</details>  
-**comments**: 18 pages, 5 figures  
-  
-  
-
-
-
-## Image Matching  
-
-### [Fast entropy-regularized SDP relaxations for permutation synchronization](http://arxiv.org/abs/2506.20191)  
-Michael Lindsey, Yunpeng Shi  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce fast randomized algorithms for solving semidefinite programming (SDP) relaxations of the partial permutation synchronization (PPS) problem, a core task in multi-image matching with significant relevance to 3D reconstruction. Our methods build on recent advances in entropy-regularized semidefinite programming and are tailored to the unique structure of PPS, in which the unknowns are partial permutation matrices aligning sparse and noisy pairwise correspondences across images. We prove that entropy regularization resolves optimizer non-uniqueness in standard relaxations, and we develop a randomized solver with nearly optimal scaling in the number of observed correspondences. We also develop several rounding procedures for recovering combinatorial solutions from the implicitly represented primal solution variable, maintaining cycle consistency if desired without harming computational scaling. We demonstrate that our approach achieves state-of-the-art performance on synthetic and real-world datasets in terms of speed and accuracy. Our results highlight PPS as a paradigmatic setting in which entropy-regularized SDP admits both theoretical and practical advantages over traditional low-rank or spectral techniques.  
-  </ol>  
-</details>  
+**comments**: Accepted to ICCV 2025  
   
   
 
@@ -62,15 +52,15 @@ Michael Lindsey, Yunpeng Shi
 
 ## NeRF  
 
-### [Joint attitude estimation and 3D neural reconstruction of non-cooperative space objects](http://arxiv.org/abs/2506.20638)  
-Clément Forray, Pauline Delporte, Nicolas Delaygue, Florence Genin, Dawa Derksen  
+### [PanSt3R: Multi-view Consistent Panoptic Segmentation](http://arxiv.org/abs/2506.21348)  
+Lojze Zust, Yohann Cabon, Juliette Marrie, Leonid Antsfeld, Boris Chidlovskii, Jerome Revaud, Gabriela Csurka  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Obtaining a better knowledge of the current state and behavior of objects orbiting Earth has proven to be essential for a range of applications such as active debris removal, in-orbit maintenance, or anomaly detection. 3D models represent a valuable source of information in the field of Space Situational Awareness (SSA). In this work, we leveraged Neural Radiance Fields (NeRF) to perform 3D reconstruction of non-cooperative space objects from simulated images. This scenario is challenging for NeRF models due to unusual camera characteristics and environmental conditions : mono-chromatic images, unknown object orientation, limited viewing angles, absence of diffuse lighting etc. In this work we focus primarly on the joint optimization of camera poses alongside the NeRF. Our experimental results show that the most accurate 3D reconstruction is achieved when training with successive images one-by-one. We estimate camera poses by optimizing an uniform rotation and use regularization to prevent successive poses from being too far apart.  
+    Panoptic segmentation of 3D scenes, involving the segmentation and classification of object instances in a dense 3D reconstruction of a scene, is a challenging problem, especially when relying solely on unposed 2D images. Existing approaches typically leverage off-the-shelf models to extract per-frame 2D panoptic segmentations, before optimizing an implicit geometric representation (often based on NeRF) to integrate and fuse the 2D predictions. We argue that relying on 2D panoptic segmentation for a problem inherently 3D and multi-view is likely suboptimal as it fails to leverage the full potential of spatial relationships across views. In addition to requiring camera parameters, these approaches also necessitate computationally expensive test-time optimization for each scene. Instead, in this work, we propose a unified and integrated approach PanSt3R, which eliminates the need for test-time optimization by jointly predicting 3D geometry and multi-view panoptic segmentation in a single forward pass. Our approach builds upon recent advances in 3D reconstruction, specifically upon MUSt3R, a scalable multi-view version of DUSt3R, and enhances it with semantic awareness and multi-view panoptic segmentation capabilities. We additionally revisit the standard post-processing mask merging procedure and introduce a more principled approach for multi-view segmentation. We also introduce a simple method for generating novel-view predictions based on the predictions of PanSt3R and vanilla 3DGS. Overall, the proposed PanSt3R is conceptually simple, yet fast and scalable, and achieves state-of-the-art performance on several benchmarks, while being orders of magnitude faster than existing methods.  
   </ol>  
 </details>  
-**comments**: accepted for CVPR 2025 NFBCC workshop  
+**comments**: Accepted at ICCV 2025  
   
   
 
