@@ -3,17 +3,32 @@
   <ol>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Wild-refitting-for-black-box-prediction>Wild refitting for black box prediction</a></li>
+        <li><a href=#Single-Scanline-Relative-Pose-Estimation-for-Rolling-Shutter-Cameras>Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras</a></li>
+        <li><a href=#ICP-3DGS:-SfM-free-3D-Gaussian-Splatting-for-Large-scale-Unbounded-Scenes>ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#OracleFusion:-Assisting-the-Decipherment-of-Oracle-Bone-Script-with-Structurally-Constrained-Semantic-Typography>OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography</a></li>
+        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
+        <li><a href=#SDRNET:-Stacked-Deep-Residual-Network-for-Accurate-Semantic-Segmentation-of-Fine-Resolution-Remotely-Sensed-Images>SDRNET: Stacked Deep Residual Network for Accurate Semantic Segmentation of Fine-Resolution Remotely Sensed Images</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
+        <li><a href=#Q-Frame:-Query-aware-Frame-Selection-and-Multi-Resolution-Adaptation-for-Video-LLMs>Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs</a></li>
+        <li><a href=#ZeroReg3D:-A-Zero-shot-Registration-Pipeline-for-3D-Consecutive-Histopathology-Image-Reconstruction>ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#PanSt3R:-Multi-view-Consistent-Panoptic-Segmentation>PanSt3R: Multi-view Consistent Panoptic Segmentation</a></li>
+        <li><a href=#UnMix-NeRF:-Spectral-Unmixing-Meets-Neural-Radiance-Fields>UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields</a></li>
+        <li><a href=#ICP-3DGS:-SfM-free-3D-Gaussian-Splatting-for-Large-scale-Unbounded-Scenes>ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes</a></li>
       </ul>
     </li>
   </ol>
@@ -21,14 +36,26 @@
 
 ## SFM  
 
-### [Wild refitting for black box prediction](http://arxiv.org/abs/2506.21460)  
-Martin J. Wainwright  
+### [Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](http://arxiv.org/abs/2506.22069)  
+Petr Hruby, Marc Pollefeys  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We describe and analyze a computionally efficient refitting procedure for computing high-probability upper bounds on the instance-wise mean-squared prediction error of penalized nonparametric estimates based on least-squares minimization. Requiring only a single dataset and black box access to the prediction method, it consists of three steps: computing suitable residuals, symmetrizing and scaling them with a pre-factor $\rho$, and using them to define and solve a modified prediction problem recentered at the current estimate. We refer to it as wild refitting, since it uses Rademacher residual symmetrization as in a wild bootstrap variant. Under relatively mild conditions allowing for noise heterogeneity, we establish a high probability guarantee on its performance, showing that the wild refit with a suitably chosen wild noise scale $\rho$ gives an upper bound on prediction error. This theoretical analysis provides guidance into the design of such procedures, including how the residuals should be formed, the amount of noise rescaling in the wild sub-problem needed for upper bounds, and the local stability properties of the block-box procedure. We illustrate the applicability of this procedure to various problems, including non-rigid structure-from-motion recovery with structured matrix penalties; plug-and-play image restoration with deep neural network priors; and randomized sketching with kernel methods.  
+    We propose a novel approach for estimating the relative pose between rolling shutter cameras using the intersections of line projections with a single scanline per image. This allows pose estimation without explicitly modeling camera motion. Alternatively, scanlines can be selected within a single image, enabling single-view relative pose estimation for scanlines of rolling shutter cameras. Our approach is designed as a foundational building block for rolling shutter structure-from-motion (SfM), where no motion model is required, and each scanline's pose can be computed independently. % We classify minimal solvers for this problem in both generic and specialized settings, including cases with parallel lines and known gravity direction, assuming known intrinsics and no lens distortion. Furthermore, we develop minimal solvers for the parallel-lines scenario, both with and without gravity priors, by leveraging connections between this problem and the estimation of 2D structure from 1D cameras. % Experiments on rolling shutter images from the Fastec dataset demonstrate the feasibility of our approach for initializing rolling shutter SfM, highlighting its potential for further development. % The code will be made publicly available.  
   </ol>  
 </details>  
+**comments**: ICCV 2025, 15 pages, 5 figures, 12 tables  
+  
+### [ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes](http://arxiv.org/abs/2506.21629)  
+Chenhao Zhang, Yezhi Shen, Fengqing Zhu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In recent years, neural rendering methods such as NeRFs and 3D Gaussian Splatting (3DGS) have made significant progress in scene reconstruction and novel view synthesis. However, they heavily rely on preprocessed camera poses and 3D structural priors from structure-from-motion (SfM), which are challenging to obtain in outdoor scenarios. To address this challenge, we propose to incorporate Iterative Closest Point (ICP) with optimization-based refinement to achieve accurate camera pose estimation under large camera movements. Additionally, we introduce a voxel-based scene densification approach to guide the reconstruction in large-scale scenes. Experiments demonstrate that our approach ICP-3DGS outperforms existing methods in both camera pose estimation and novel view synthesis across indoor and outdoor scenes of various scales. Source code is available at https://github.com/Chenhao-Z/ICP-3DGS.  
+  </ol>  
+</details>  
+**comments**: 6 pages, Source code is available at
+  https://github.com/Chenhao-Z/ICP-3DGS. To appear at ICIP 2025  
   
   
 
@@ -36,15 +63,72 @@ Martin J. Wainwright
 
 ## Visual Localization  
 
-### [OracleFusion: Assisting the Decipherment of Oracle Bone Script with Structurally Constrained Semantic Typography](http://arxiv.org/abs/2506.21101)  
-Caoshuo Li, Zengmao Ding, Xiaobin Hu, Bang Li, Donghao Luo, AndyPian Wu, Chaoyang Wang, Chengjie Wang, Taisong Jin, SevenShu, Yunsheng Wu, Yongge Liu, Rongrong Ji  
+### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
+Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    As one of the earliest ancient languages, Oracle Bone Script (OBS) encapsulates the cultural records and intellectual expressions of ancient civilizations. Despite the discovery of approximately 4,500 OBS characters, only about 1,600 have been deciphered. The remaining undeciphered ones, with their complex structure and abstract imagery, pose significant challenges for interpretation. To address these challenges, this paper proposes a novel two-stage semantic typography framework, named OracleFusion. In the first stage, this approach leverages the Multimodal Large Language Model (MLLM) with enhanced Spatial Awareness Reasoning (SAR) to analyze the glyph structure of the OBS character and perform visual localization of key components. In the second stage, we introduce Oracle Structural Vector Fusion (OSVF), incorporating glyph structure constraints and glyph maintenance constraints to ensure the accurate generation of semantically enriched vector fonts. This approach preserves the objective integrity of the glyph structure, offering visually enhanced representations that assist experts in deciphering OBS. Extensive qualitative and quantitative experiments demonstrate that OracleFusion outperforms state-of-the-art baseline models in terms of semantics, visual appeal, and glyph maintenance, significantly enhancing both readability and aesthetic quality. Furthermore, OracleFusion provides expert-like insights on unseen oracle characters, making it a valuable tool for advancing the decipherment of OBS.  
+    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
   </ol>  
 </details>  
-**comments**: Accepted to ICCV 2025  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
+Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
+  </ol>  
+</details>  
+  
+### [SDRNET: Stacked Deep Residual Network for Accurate Semantic Segmentation of Fine-Resolution Remotely Sensed Images](http://arxiv.org/abs/2506.21945)  
+Naftaly Wambugu, Ruisheng Wang, Bo Guo, Tianshu Yu, Sheng Xu, Mohammed Elhassan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Land cover maps generated from semantic segmentation of high-resolution remotely sensed images have drawn mucon in the photogrammetry and remote sensing research community. Currently, massive fine-resolution remotely sensed (FRRS) images acquired by improving sensing and imaging technologies become available. However, accurate semantic segmentation of such FRRS images is greatly affected by substantial class disparities, the invisibility of key ground objects due to occlusion, and object size variation. Despite the extraordinary potential in deep convolutional neural networks (DCNNs) in image feature learning and representation, extracting sufficient features from FRRS images for accurate semantic segmentation is still challenging. These challenges demand the deep learning models to learn robust features and generate sufficient feature descriptors. Specifically, learning multi-contextual features to guarantee adequate coverage of varied object sizes from the ground scene and harnessing global-local contexts to overcome class disparities challenge even profound networks. Deeper networks significantly lose spatial details due to gradual downsampling processes resulting in poor segmentation results and coarse boundaries. This article presents a stacked deep residual network (SDRNet) for semantic segmentation from FRRS images. The proposed framework utilizes two stacked encoder-decoder networks to harness long-range semantics yet preserve spatial information and dilated residual blocks (DRB) between each encoder and decoder network to capture sufficient global dependencies thus improving segmentation performance. Our experimental results obtained using the ISPRS Vaihingen and Potsdam datasets demonstrate that the SDRNet performs effectively and competitively against current DCNNs in semantic segmentation.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
+Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
+  </ol>  
+</details>  
+  
+### [Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](http://arxiv.org/abs/2506.22139)  
+Shaojie Zhang, Jiahui Yang, Jianqin Yin, Zhenbo Luo, Jian Luan  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Multimodal Large Language Models (MLLMs) have demonstrated significant success in visual understanding tasks. However, challenges persist in adapting these models for video comprehension due to the large volume of data and temporal complexity. Existing Video-LLMs using uniform frame sampling often struggle to capture the query-related crucial spatiotemporal clues of videos effectively. In this paper, we introduce Q-Frame, a novel approach for adaptive frame selection and multi-resolution scaling tailored to the video's content and the specific query. Q-Frame employs a training-free, plug-and-play strategy generated by a text-image matching network like CLIP, utilizing the Gumbel-Max trick for efficient frame selection. Q-Frame allows Video-LLMs to process more frames without exceeding computational limits, thereby preserving critical temporal and spatial information. We demonstrate Q-Frame's effectiveness through extensive experiments on benchmark datasets, including MLVU, LongVideoBench, and Video-MME, illustrating its superiority over existing methods and its applicability across various video understanding tasks.  
+  </ol>  
+</details>  
+**comments**: Accepted at ICCV 2025  
+  
+### [ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction](http://arxiv.org/abs/2506.21923)  
+Juming Xiong, Ruining Deng, Jialin Yue, Siqi Lu, Junlin Guo, Marilyn Lionts, Tianyuan Yao, Can Cui, Junchao Zhu, Chongyu Qu, Mengmeng Yin, Haichun Yang, Yuankai Huo  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Histological analysis plays a crucial role in understanding tissue structure and pathology. While recent advancements in registration methods have improved 2D histological analysis, they often struggle to preserve critical 3D spatial relationships, limiting their utility in both clinical and research applications. Specifically, constructing accurate 3D models from 2D slices remains challenging due to tissue deformation, sectioning artifacts, variability in imaging techniques, and inconsistent illumination. Deep learning-based registration methods have demonstrated improved performance but suffer from limited generalizability and require large-scale training data. In contrast, non-deep-learning approaches offer better generalizability but often compromise on accuracy. In this study, we introduced ZeroReg3D, a novel zero-shot registration pipeline tailored for accurate 3D reconstruction from serial histological sections. By combining zero-shot deep learning-based keypoint matching with optimization-based affine and non-rigid registration techniques, ZeroReg3D effectively addresses critical challenges such as tissue deformation, sectioning artifacts, staining variability, and inconsistent illumination without requiring retraining or fine-tuning. The code has been made publicly available at https://github.com/hrlblab/ZeroReg3D  
+  </ol>  
+</details>  
   
   
 
@@ -52,15 +136,26 @@ Caoshuo Li, Zengmao Ding, Xiaobin Hu, Bang Li, Donghao Luo, AndyPian Wu, Chaoyan
 
 ## NeRF  
 
-### [PanSt3R: Multi-view Consistent Panoptic Segmentation](http://arxiv.org/abs/2506.21348)  
-Lojze Zust, Yohann Cabon, Juliette Marrie, Leonid Antsfeld, Boris Chidlovskii, Jerome Revaud, Gabriela Csurka  
+### [UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields](http://arxiv.org/abs/2506.21884)  
+Fabian Perez, Sara Rojas, Carlos Hinojosa, Hoover Rueda-Chacón, Bernard Ghanem  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Panoptic segmentation of 3D scenes, involving the segmentation and classification of object instances in a dense 3D reconstruction of a scene, is a challenging problem, especially when relying solely on unposed 2D images. Existing approaches typically leverage off-the-shelf models to extract per-frame 2D panoptic segmentations, before optimizing an implicit geometric representation (often based on NeRF) to integrate and fuse the 2D predictions. We argue that relying on 2D panoptic segmentation for a problem inherently 3D and multi-view is likely suboptimal as it fails to leverage the full potential of spatial relationships across views. In addition to requiring camera parameters, these approaches also necessitate computationally expensive test-time optimization for each scene. Instead, in this work, we propose a unified and integrated approach PanSt3R, which eliminates the need for test-time optimization by jointly predicting 3D geometry and multi-view panoptic segmentation in a single forward pass. Our approach builds upon recent advances in 3D reconstruction, specifically upon MUSt3R, a scalable multi-view version of DUSt3R, and enhances it with semantic awareness and multi-view panoptic segmentation capabilities. We additionally revisit the standard post-processing mask merging procedure and introduce a more principled approach for multi-view segmentation. We also introduce a simple method for generating novel-view predictions based on the predictions of PanSt3R and vanilla 3DGS. Overall, the proposed PanSt3R is conceptually simple, yet fast and scalable, and achieves state-of-the-art performance on several benchmarks, while being orders of magnitude faster than existing methods.  
+    Neural Radiance Field (NeRF)-based segmentation methods focus on object semantics and rely solely on RGB data, lacking intrinsic material properties. This limitation restricts accurate material perception, which is crucial for robotics, augmented reality, simulation, and other applications. We introduce UnMix-NeRF, a framework that integrates spectral unmixing into NeRF, enabling joint hyperspectral novel view synthesis and unsupervised material segmentation. Our method models spectral reflectance via diffuse and specular components, where a learned dictionary of global endmembers represents pure material signatures, and per-point abundances capture their distribution. For material segmentation, we use spectral signature predictions along learned endmembers, allowing unsupervised material clustering. Additionally, UnMix-NeRF enables scene editing by modifying learned endmember dictionaries for flexible material-based appearance manipulation. Extensive experiments validate our approach, demonstrating superior spectral reconstruction and material segmentation to existing methods. Project page: https://www.factral.co/UnMix-NeRF.  
   </ol>  
 </details>  
-**comments**: Accepted at ICCV 2025  
+**comments**: Paper accepted at ICCV 2025 main conference  
+  
+### [ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes](http://arxiv.org/abs/2506.21629)  
+Chenhao Zhang, Yezhi Shen, Fengqing Zhu  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    In recent years, neural rendering methods such as NeRFs and 3D Gaussian Splatting (3DGS) have made significant progress in scene reconstruction and novel view synthesis. However, they heavily rely on preprocessed camera poses and 3D structural priors from structure-from-motion (SfM), which are challenging to obtain in outdoor scenarios. To address this challenge, we propose to incorporate Iterative Closest Point (ICP) with optimization-based refinement to achieve accurate camera pose estimation under large camera movements. Additionally, we introduce a voxel-based scene densification approach to guide the reconstruction in large-scale scenes. Experiments demonstrate that our approach ICP-3DGS outperforms existing methods in both camera pose estimation and novel view synthesis across indoor and outdoor scenes of various scales. Source code is available at https://github.com/Chenhao-Z/ICP-3DGS.  
+  </ol>  
+</details>  
+**comments**: 6 pages, Source code is available at
+  https://github.com/Chenhao-Z/ICP-3DGS. To appear at ICIP 2025  
   
   
 
