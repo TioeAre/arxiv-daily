@@ -1,61 +1,62 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
+    <li><a href=#slam>SLAM</a></li>
+      <ul>
+        <li><a href=#Event-based-Stereo-Visual-Inertial-Odometry-with-Voxel-Map>Event-based Stereo Visual-Inertial Odometry with Voxel Map</a></li>
+      </ul>
+    </li>
     <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Single-Scanline-Relative-Pose-Estimation-for-Rolling-Shutter-Cameras>Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras</a></li>
-        <li><a href=#ICP-3DGS:-SfM-free-3D-Gaussian-Splatting-for-Large-scale-Unbounded-Scenes>ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes</a></li>
+        <li><a href=#AttentionGS:-Towards-Initialization-Free-3D-Gaussian-Splatting-via-Structural-Attention>AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
-        <li><a href=#SDRNET:-Stacked-Deep-Residual-Network-for-Accurate-Semantic-Segmentation-of-Fine-Resolution-Remotely-Sensed-Images>SDRNET: Stacked Deep Residual Network for Accurate Semantic Segmentation of Fine-Resolution Remotely Sensed Images</a></li>
+        <li><a href=#Utilizing-a-Novel-Deep-Learning-Method-for-Scene-Categorization-in-Remote-Sensing-Data>Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data</a></li>
+        <li><a href=#Mask-aware-Text-to-Image-Retrieval:-Referring-Expression-Segmentation-Meets-Cross-modal-Retrieval>Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#MatChA:-Cross-Algorithm-Matching-with-Feature-Augmentation>MatChA: Cross-Algorithm Matching with Feature Augmentation</a></li>
-        <li><a href=#Q-Frame:-Query-aware-Frame-Selection-and-Multi-Resolution-Adaptation-for-Video-LLMs>Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs</a></li>
-        <li><a href=#ZeroReg3D:-A-Zero-shot-Registration-Pipeline-for-3D-Consecutive-Histopathology-Image-Reconstruction>ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction</a></li>
+        <li><a href=#Efficient-and-Accurate-Image-Provenance-Analysis:-A-Scalable-Pipeline-for-Large-scale-Images>Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images</a></li>
+        <li><a href=#Dynamic-Contrastive-Learning-for-Hierarchical-Retrieval:-A-Case-Study-of-Distance-Aware-Cross-View-Geo-Localization>Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#UnMix-NeRF:-Spectral-Unmixing-Meets-Neural-Radiance-Fields>UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields</a></li>
-        <li><a href=#ICP-3DGS:-SfM-free-3D-Gaussian-Splatting-for-Large-scale-Unbounded-Scenes>ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes</a></li>
+        <li><a href=#AttentionGS:-Towards-Initialization-Free-3D-Gaussian-Splatting-via-Structural-Attention>AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention</a></li>
+        <li><a href=#Dynamic-View-Synthesis-from-Small-Camera-Motion-Videos>Dynamic View Synthesis from Small Camera Motion Videos</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
+## SLAM  
+
+### [Event-based Stereo Visual-Inertial Odometry with Voxel Map](http://arxiv.org/abs/2506.23078)  
+Zhaoxing Zhang, Xiaoxiang Wang, Chengliang Zhang, Yangyang Guo, Zikang Yuan, Xin Yang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    The event camera, renowned for its high dynamic range and exceptional temporal resolution, is recognized as an important sensor for visual odometry. However, the inherent noise in event streams complicates the selection of high-quality map points, which critically determine the precision of state estimation. To address this challenge, we propose Voxel-ESVIO, an event-based stereo visual-inertial odometry system that utilizes voxel map management, which efficiently filter out high-quality 3D points. Specifically, our methodology utilizes voxel-based point selection and voxel-aware point management to collectively optimize the selection and updating of map points on a per-voxel basis. These synergistic strategies enable the efficient retrieval of noise-resilient map points with the highest observation likelihood in current frames, thereby ensureing the state estimation accuracy. Extensive evaluations on three public benchmarks demonstrate that our Voxel-ESVIO outperforms state-of-the-art methods in both accuracy and computational efficiency.  
+  </ol>  
+</details>  
+  
+  
+
+
+
 ## SFM  
 
-### [Single-Scanline Relative Pose Estimation for Rolling Shutter Cameras](http://arxiv.org/abs/2506.22069)  
-Petr Hruby, Marc Pollefeys  
+### [AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention](http://arxiv.org/abs/2506.23611)  
+Ziao Liu, Zhenjia Li, Yifeng Shi, Xiangang Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose a novel approach for estimating the relative pose between rolling shutter cameras using the intersections of line projections with a single scanline per image. This allows pose estimation without explicitly modeling camera motion. Alternatively, scanlines can be selected within a single image, enabling single-view relative pose estimation for scanlines of rolling shutter cameras. Our approach is designed as a foundational building block for rolling shutter structure-from-motion (SfM), where no motion model is required, and each scanline's pose can be computed independently. % We classify minimal solvers for this problem in both generic and specialized settings, including cases with parallel lines and known gravity direction, assuming known intrinsics and no lens distortion. Furthermore, we develop minimal solvers for the parallel-lines scenario, both with and without gravity priors, by leveraging connections between this problem and the estimation of 2D structure from 1D cameras. % Experiments on rolling shutter images from the Fastec dataset demonstrate the feasibility of our approach for initializing rolling shutter SfM, highlighting its potential for further development. % The code will be made publicly available.  
+    3D Gaussian Splatting (3DGS) is a powerful alternative to Neural Radiance Fields (NeRF), excelling in complex scene reconstruction and efficient rendering. However, it relies on high-quality point clouds from Structure-from-Motion (SfM), limiting its applicability. SfM also fails in texture-deficient or constrained-view scenarios, causing severe degradation in 3DGS reconstruction. To address this limitation, we propose AttentionGS, a novel framework that eliminates the dependency on high-quality initial point clouds by leveraging structural attention for direct 3D reconstruction from randomly initialization. In the early training stage, we introduce geometric attention to rapidly recover the global scene structure. As training progresses, we incorporate texture attention to refine fine-grained details and enhance rendering quality. Furthermore, we employ opacity-weighted gradients to guide Gaussian densification, leading to improved surface reconstruction. Extensive experiments on multiple benchmark datasets demonstrate that AttentionGS significantly outperforms state-of-the-art methods, particularly in scenarios where point cloud initialization is unreliable. Our approach paves the way for more robust and flexible 3D Gaussian Splatting in real-world applications.  
   </ol>  
 </details>  
-**comments**: ICCV 2025, 15 pages, 5 figures, 12 tables  
-  
-### [ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes](http://arxiv.org/abs/2506.21629)  
-Chenhao Zhang, Yezhi Shen, Fengqing Zhu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In recent years, neural rendering methods such as NeRFs and 3D Gaussian Splatting (3DGS) have made significant progress in scene reconstruction and novel view synthesis. However, they heavily rely on preprocessed camera poses and 3D structural priors from structure-from-motion (SfM), which are challenging to obtain in outdoor scenarios. To address this challenge, we propose to incorporate Iterative Closest Point (ICP) with optimization-based refinement to achieve accurate camera pose estimation under large camera movements. Additionally, we introduce a voxel-based scene densification approach to guide the reconstruction in large-scale scenes. Experiments demonstrate that our approach ICP-3DGS outperforms existing methods in both camera pose estimation and novel view synthesis across indoor and outdoor scenes of various scales. Source code is available at https://github.com/Chenhao-Z/ICP-3DGS.  
-  </ol>  
-</details>  
-**comments**: 6 pages, Source code is available at
-  https://github.com/Chenhao-Z/ICP-3DGS. To appear at ICIP 2025  
   
   
 
@@ -63,38 +64,24 @@ Chenhao Zhang, Yezhi Shen, Fengqing Zhu
 
 ## Visual Localization  
 
-### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
-Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
+### [Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data](http://arxiv.org/abs/2506.22939)  
+Ghufran A. Omran, Wassan Saad Abduljabbar Hayale, Ahmad AbdulQadir AlRababah, Israa Ibraheem Al-Barazanchi, Ravi Sekhar, Pritesh Shah, Sushma Parihar, Harshavardhan Reddy Penubadi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
+    Scene categorization (SC) in remotely acquired images is an important subject with broad consequences in different fields, including catastrophe control, ecological observation, architecture for cities, and more. Nevertheless, its several apps, reaching a high degree of accuracy in SC from distant observation data has demonstrated to be difficult. This is because traditional conventional deep learning models require large databases with high variety and high levels of noise to capture important visual features. To address these problems, this investigation file introduces an innovative technique referred to as the Cuttlefish Optimized Bidirectional Recurrent Neural Network (CO- BRNN) for type of scenes in remote sensing data. The investigation compares the execution of CO-BRNN with current techniques, including Multilayer Perceptron- Convolutional Neural Network (MLP-CNN), Convolutional Neural Network-Long Short Term Memory (CNN-LSTM), and Long Short Term Memory-Conditional Random Field (LSTM-CRF), Graph-Based (GB), Multilabel Image Retrieval Model (MIRM-CF), Convolutional Neural Networks Data Augmentation (CNN-DA). The results demonstrate that CO-BRNN attained the maximum accuracy of 97%, followed by LSTM-CRF with 90%, MLP-CNN with 85%, and CNN-LSTM with 80%. The study highlights the significance of physical confirmation to ensure the efficiency of satellite data.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Keypoint Detection  
-
-### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
-Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
+### [Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval](http://arxiv.org/abs/2506.22864)  
+Li-Cheng Shen, Jih-Kang Hsieh, Wei-Hua Li, Chu-Song Chen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
+    Text-to-image retrieval (TIR) aims to find relevant images based on a textual query, but existing approaches are primarily based on whole-image captions and lack interpretability. Meanwhile, referring expression segmentation (RES) enables precise object localization based on natural language descriptions but is computationally expensive when applied across large image collections. To bridge this gap, we introduce Mask-aware TIR (MaTIR), a new task that unifies TIR and RES, requiring both efficient image search and accurate object segmentation. To address this task, we propose a two-stage framework, comprising a first stage for segmentation-aware image retrieval and a second stage for reranking and object grounding with a multimodal large language model (MLLM). We leverage SAM 2 to generate object masks and Alpha-CLIP to extract region-level embeddings offline at first, enabling effective and scalable online retrieval. Secondly, MLLM is used to refine retrieval rankings and generate bounding boxes, which are matched to segmentation masks. We evaluate our approach on COCO and D $^3$ datasets, demonstrating significant improvements in both retrieval accuracy and segmentation quality over previous methods.  
   </ol>  
 </details>  
-  
-### [SDRNET: Stacked Deep Residual Network for Accurate Semantic Segmentation of Fine-Resolution Remotely Sensed Images](http://arxiv.org/abs/2506.21945)  
-Naftaly Wambugu, Ruisheng Wang, Bo Guo, Tianshu Yu, Sheng Xu, Mohammed Elhassan  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Land cover maps generated from semantic segmentation of high-resolution remotely sensed images have drawn mucon in the photogrammetry and remote sensing research community. Currently, massive fine-resolution remotely sensed (FRRS) images acquired by improving sensing and imaging technologies become available. However, accurate semantic segmentation of such FRRS images is greatly affected by substantial class disparities, the invisibility of key ground objects due to occlusion, and object size variation. Despite the extraordinary potential in deep convolutional neural networks (DCNNs) in image feature learning and representation, extracting sufficient features from FRRS images for accurate semantic segmentation is still challenging. These challenges demand the deep learning models to learn robust features and generate sufficient feature descriptors. Specifically, learning multi-contextual features to guarantee adequate coverage of varied object sizes from the ground scene and harnessing global-local contexts to overcome class disparities challenge even profound networks. Deeper networks significantly lose spatial details due to gradual downsampling processes resulting in poor segmentation results and coarse boundaries. This article presents a stacked deep residual network (SDRNet) for semantic segmentation from FRRS images. The proposed framework utilizes two stacked encoder-decoder networks to harness long-range semantics yet preserve spatial information and dilated residual blocks (DRB) between each encoder and decoder network to capture sufficient global dependencies thus improving segmentation performance. Our experimental results obtained using the ISPRS Vaihingen and Potsdam datasets demonstrate that the SDRNet performs effectively and competitively against current DCNNs in semantic segmentation.  
-  </ol>  
-</details>  
+**comments**: ICMR 2025  
   
   
 
@@ -102,31 +89,22 @@ Naftaly Wambugu, Ruisheng Wang, Bo Guo, Tianshu Yu, Sheng Xu, Mohammed Elhassan
 
 ## Image Matching  
 
-### [MatChA: Cross-Algorithm Matching with Feature Augmentation](http://arxiv.org/abs/2506.22336)  
-Paula Carbó Cubero, Alberto Jaenal Gálvez, André Mateus, José Araújo, Patric Jensfelt  
+### [Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images](http://arxiv.org/abs/2506.23707)  
+Jiewei Lai, Lan Zhang, Chen Tang, Pengcheng Sun  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    State-of-the-art methods fail to solve visual localization in scenarios where different devices use different sparse feature extraction algorithms to obtain keypoints and their corresponding descriptors. Translating feature descriptors is enough to enable matching. However, performance is drastically reduced in cross-feature detector cases, because current solutions assume common keypoints. This means that the same detector has to be used, which is rarely the case in practice when different descriptors are used. The low repeatability of keypoints, in addition to non-discriminatory and non-distinctive descriptors, make the identification of true correspondences extremely challenging. We present the first method tackling this problem, which performs feature descriptor augmentation targeting cross-detector feature matching, and then feature translation to a latent space. We show that our method significantly improves image matching and visual localization in the cross-feature scenario and evaluate the proposed method on several benchmarks.  
+    The rapid proliferation of modified images on social networks that are driven by widely accessible editing tools demands robust forensic tools for digital governance. Image provenance analysis, which filters various query image variants and constructs a directed graph to trace their phylogeny history, has emerged as a critical solution. However, existing methods face two fundamental limitations: First, accuracy issues arise from overlooking heavily modified images due to low similarity while failing to exclude unrelated images and determine modification directions under diverse modification scenarios. Second, scalability bottlenecks stem from pairwise image analysis incurs quadratic complexity, hindering application in large-scale scenarios. This paper presents a scalable end-to-end pipeline for image provenance analysis that achieves high precision with linear complexity. This improves filtering effectiveness through modification relationship tracing, which enables the comprehensive discovery of image variants regardless of their visual similarity to the query. In addition, the proposed pipeline integrates local features matching and compression artifact capturing, enhancing robustness against diverse modifications and enabling accurate analysis of images' relationships. This allows the generation of a directed provenance graph that accurately characterizes the image's phylogeny history. Furthermore, by optimizing similarity calculations and eliminating redundant pairwise analysis during graph construction, the pipeline achieves a linear time complexity, ensuring its scalability for large-scale scenarios. Experiments demonstrate pipeline's superior performance, achieving a 16.7-56.1% accuracy improvement. Notably, it exhibits significant scalability with an average 3.0-second response time on 10 million scale images, which is far shorter than the SOTA approach's 12-minute duration.  
   </ol>  
 </details>  
+**comments**: 25 pages, 6 figures  
   
-### [Q-Frame: Query-aware Frame Selection and Multi-Resolution Adaptation for Video-LLMs](http://arxiv.org/abs/2506.22139)  
-Shaojie Zhang, Jiahui Yang, Jianqin Yin, Zhenbo Luo, Jian Luan  
+### [Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization](http://arxiv.org/abs/2506.23077)  
+Suofei Zhang, Xinxin Wang, Xiaofu Wu, Quan Zhou, Haifeng Hu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Multimodal Large Language Models (MLLMs) have demonstrated significant success in visual understanding tasks. However, challenges persist in adapting these models for video comprehension due to the large volume of data and temporal complexity. Existing Video-LLMs using uniform frame sampling often struggle to capture the query-related crucial spatiotemporal clues of videos effectively. In this paper, we introduce Q-Frame, a novel approach for adaptive frame selection and multi-resolution scaling tailored to the video's content and the specific query. Q-Frame employs a training-free, plug-and-play strategy generated by a text-image matching network like CLIP, utilizing the Gumbel-Max trick for efficient frame selection. Q-Frame allows Video-LLMs to process more frames without exceeding computational limits, thereby preserving critical temporal and spatial information. We demonstrate Q-Frame's effectiveness through extensive experiments on benchmark datasets, including MLVU, LongVideoBench, and Video-MME, illustrating its superiority over existing methods and its applicability across various video understanding tasks.  
-  </ol>  
-</details>  
-**comments**: Accepted at ICCV 2025  
-  
-### [ZeroReg3D: A Zero-shot Registration Pipeline for 3D Consecutive Histopathology Image Reconstruction](http://arxiv.org/abs/2506.21923)  
-Juming Xiong, Ruining Deng, Jialin Yue, Siqi Lu, Junlin Guo, Marilyn Lionts, Tianyuan Yao, Can Cui, Junchao Zhu, Chongyu Qu, Mengmeng Yin, Haichun Yang, Yuankai Huo  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Histological analysis plays a crucial role in understanding tissue structure and pathology. While recent advancements in registration methods have improved 2D histological analysis, they often struggle to preserve critical 3D spatial relationships, limiting their utility in both clinical and research applications. Specifically, constructing accurate 3D models from 2D slices remains challenging due to tissue deformation, sectioning artifacts, variability in imaging techniques, and inconsistent illumination. Deep learning-based registration methods have demonstrated improved performance but suffer from limited generalizability and require large-scale training data. In contrast, non-deep-learning approaches offer better generalizability but often compromise on accuracy. In this study, we introduced ZeroReg3D, a novel zero-shot registration pipeline tailored for accurate 3D reconstruction from serial histological sections. By combining zero-shot deep learning-based keypoint matching with optimization-based affine and non-rigid registration techniques, ZeroReg3D effectively addresses critical challenges such as tissue deformation, sectioning artifacts, staining variability, and inconsistent illumination without requiring retraining or fine-tuning. The code has been made publicly available at https://github.com/hrlblab/ZeroReg3D  
+    Existing deep learning-based cross-view geo-localization methods primarily focus on improving the accuracy of cross-domain image matching, rather than enabling models to comprehensively capture contextual information around the target and minimize the cost of localization errors. To support systematic research into this Distance-Aware Cross-View Geo-Localization (DACVGL) problem, we construct Distance-Aware Campus (DA-Campus), the first benchmark that pairs multi-view imagery with precise distance annotations across three spatial resolutions. Based on DA-Campus, we formulate DACVGL as a hierarchical retrieval problem across different domains. Our study further reveals that, due to the inherent complexity of spatial relationships among buildings, this problem can only be addressed via a contrastive learning paradigm, rather than conventional metric learning. To tackle this challenge, we propose Dynamic Contrastive Learning (DyCL), a novel framework that progressively aligns feature representations according to hierarchical spatial margins. Extensive experiments demonstrate that DyCL is highly complementary to existing multi-scale metric learning methods and yields substantial improvements in both hierarchical retrieval performance and overall cross-view geo-localization accuracy. Our code and benchmark are publicly available at https://github.com/anocodetest1/DyCL.  
   </ol>  
 </details>  
   
@@ -136,26 +114,24 @@ Juming Xiong, Ruining Deng, Jialin Yue, Siqi Lu, Junlin Guo, Marilyn Lionts, Tia
 
 ## NeRF  
 
-### [UnMix-NeRF: Spectral Unmixing Meets Neural Radiance Fields](http://arxiv.org/abs/2506.21884)  
-Fabian Perez, Sara Rojas, Carlos Hinojosa, Hoover Rueda-Chacón, Bernard Ghanem  
+### [AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention](http://arxiv.org/abs/2506.23611)  
+Ziao Liu, Zhenjia Li, Yifeng Shi, Xiangang Li  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Field (NeRF)-based segmentation methods focus on object semantics and rely solely on RGB data, lacking intrinsic material properties. This limitation restricts accurate material perception, which is crucial for robotics, augmented reality, simulation, and other applications. We introduce UnMix-NeRF, a framework that integrates spectral unmixing into NeRF, enabling joint hyperspectral novel view synthesis and unsupervised material segmentation. Our method models spectral reflectance via diffuse and specular components, where a learned dictionary of global endmembers represents pure material signatures, and per-point abundances capture their distribution. For material segmentation, we use spectral signature predictions along learned endmembers, allowing unsupervised material clustering. Additionally, UnMix-NeRF enables scene editing by modifying learned endmember dictionaries for flexible material-based appearance manipulation. Extensive experiments validate our approach, demonstrating superior spectral reconstruction and material segmentation to existing methods. Project page: https://www.factral.co/UnMix-NeRF.  
+    3D Gaussian Splatting (3DGS) is a powerful alternative to Neural Radiance Fields (NeRF), excelling in complex scene reconstruction and efficient rendering. However, it relies on high-quality point clouds from Structure-from-Motion (SfM), limiting its applicability. SfM also fails in texture-deficient or constrained-view scenarios, causing severe degradation in 3DGS reconstruction. To address this limitation, we propose AttentionGS, a novel framework that eliminates the dependency on high-quality initial point clouds by leveraging structural attention for direct 3D reconstruction from randomly initialization. In the early training stage, we introduce geometric attention to rapidly recover the global scene structure. As training progresses, we incorporate texture attention to refine fine-grained details and enhance rendering quality. Furthermore, we employ opacity-weighted gradients to guide Gaussian densification, leading to improved surface reconstruction. Extensive experiments on multiple benchmark datasets demonstrate that AttentionGS significantly outperforms state-of-the-art methods, particularly in scenarios where point cloud initialization is unreliable. Our approach paves the way for more robust and flexible 3D Gaussian Splatting in real-world applications.  
   </ol>  
 </details>  
-**comments**: Paper accepted at ICCV 2025 main conference  
   
-### [ICP-3DGS: SfM-free 3D Gaussian Splatting for Large-scale Unbounded Scenes](http://arxiv.org/abs/2506.21629)  
-Chenhao Zhang, Yezhi Shen, Fengqing Zhu  
+### [Dynamic View Synthesis from Small Camera Motion Videos](http://arxiv.org/abs/2506.23153)  
+Huiqiang Sun, Xingyi Li, Juewen Peng, Liao Shen, Zhiguo Cao, Ke Xian, Guosheng Lin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    In recent years, neural rendering methods such as NeRFs and 3D Gaussian Splatting (3DGS) have made significant progress in scene reconstruction and novel view synthesis. However, they heavily rely on preprocessed camera poses and 3D structural priors from structure-from-motion (SfM), which are challenging to obtain in outdoor scenarios. To address this challenge, we propose to incorporate Iterative Closest Point (ICP) with optimization-based refinement to achieve accurate camera pose estimation under large camera movements. Additionally, we introduce a voxel-based scene densification approach to guide the reconstruction in large-scale scenes. Experiments demonstrate that our approach ICP-3DGS outperforms existing methods in both camera pose estimation and novel view synthesis across indoor and outdoor scenes of various scales. Source code is available at https://github.com/Chenhao-Z/ICP-3DGS.  
+    Novel view synthesis for dynamic $3$ D scenes poses a significant challenge. Many notable efforts use NeRF-based approaches to address this task and yield impressive results. However, these methods rely heavily on sufficient motion parallax in the input images or videos. When the camera motion range becomes limited or even stationary (i.e., small camera motion), existing methods encounter two primary challenges: incorrect representation of scene geometry and inaccurate estimation of camera parameters. These challenges make prior methods struggle to produce satisfactory results or even become invalid. To address the first challenge, we propose a novel Distribution-based Depth Regularization (DDR) that ensures the rendering weight distribution to align with the true distribution. Specifically, unlike previous methods that use depth loss to calculate the error of the expectation, we calculate the expectation of the error by using Gumbel-softmax to differentiably sample points from discrete rendering weight distribution. Additionally, we introduce constraints that enforce the volume density of spatial points before the object boundary along the ray to be near zero, ensuring that our model learns the correct geometry of the scene. To demystify the DDR, we further propose a visualization tool that enables observing the scene geometry representation at the rendering weight level. For the second challenge, we incorporate camera parameter learning during training to enhance the robustness of our model to camera parameters. We conduct extensive experiments to demonstrate the effectiveness of our approach in representing scenes with small camera motion input, and our results compare favorably to state-of-the-art methods.  
   </ol>  
 </details>  
-**comments**: 6 pages, Source code is available at
-  https://github.com/Chenhao-Z/ICP-3DGS. To appear at ICIP 2025  
+**comments**: Accepted by TVCG  
   
   
 
