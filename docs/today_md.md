@@ -3,30 +3,24 @@
   <ol>
     <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#Event-based-Stereo-Visual-Inertial-Odometry-with-Voxel-Map>Event-based Stereo Visual-Inertial Odometry with Voxel Map</a></li>
-      </ul>
-    </li>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#AttentionGS:-Towards-Initialization-Free-3D-Gaussian-Splatting-via-Structural-Attention>AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention</a></li>
+        <li><a href=#VOCAL:-Visual-Odometry-via-ContrAstive-Learning>VOCAL: Visual Odometry via ContrAstive Learning</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Utilizing-a-Novel-Deep-Learning-Method-for-Scene-Categorization-in-Remote-Sensing-Data>Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data</a></li>
-        <li><a href=#Mask-aware-Text-to-Image-Retrieval:-Referring-Expression-Segmentation-Meets-Cross-modal-Retrieval>Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval</a></li>
+        <li><a href=#LoD-Loc-v2:-Aerial-Visual-Localization-over-Low-Level-of-Detail-City-Models-using-Explicit-Silhouette-Alignment>LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#Efficient-and-Accurate-Image-Provenance-Analysis:-A-Scalable-Pipeline-for-Large-scale-Images>Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images</a></li>
-        <li><a href=#Dynamic-Contrastive-Learning-for-Hierarchical-Retrieval:-A-Case-Study-of-Distance-Aware-Cross-View-Geo-Localization>Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization</a></li>
+        <li><a href=#What-does-really-matter-in-image-goal-navigation?>What does really matter in image goal navigation?</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#AttentionGS:-Towards-Initialization-Free-3D-Gaussian-Splatting-via-Structural-Attention>AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention</a></li>
-        <li><a href=#Dynamic-View-Synthesis-from-Small-Camera-Motion-Videos>Dynamic View Synthesis from Small Camera Motion Videos</a></li>
+        <li><a href=#Tile-and-Slide-:-A-New-Framework-for-Scaling-NeRF-from-Local-to-Global-3D-Earth-Observation>Tile and Slide : A New Framework for Scaling NeRF from Local to Global 3D Earth Observation</a></li>
+        <li><a href=#Surgical-Neural-Radiance-Fields-from-One-Image>Surgical Neural Radiance Fields from One Image</a></li>
+        <li><a href=#PlantSegNeRF:-A-few-shot,-cross-dataset-method-for-plant-3D-instance-point-cloud-reconstruction-via-joint-channel-NeRF-with-multi-view-image-instance-matching>PlantSegNeRF: A few-shot, cross-dataset method for plant 3D instance point cloud reconstruction via joint-channel NeRF with multi-view image instance matching</a></li>
       </ul>
     </li>
   </ol>
@@ -34,27 +28,12 @@
 
 ## SLAM  
 
-### [Event-based Stereo Visual-Inertial Odometry with Voxel Map](http://arxiv.org/abs/2506.23078)  
-Zhaoxing Zhang, Xiaoxiang Wang, Chengliang Zhang, Yangyang Guo, Zikang Yuan, Xin Yang  
+### [VOCAL: Visual Odometry via ContrAstive Learning](http://arxiv.org/abs/2507.00243)  
+Chi-Yao Huang, Zeel Bhatt, Yezhou Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The event camera, renowned for its high dynamic range and exceptional temporal resolution, is recognized as an important sensor for visual odometry. However, the inherent noise in event streams complicates the selection of high-quality map points, which critically determine the precision of state estimation. To address this challenge, we propose Voxel-ESVIO, an event-based stereo visual-inertial odometry system that utilizes voxel map management, which efficiently filter out high-quality 3D points. Specifically, our methodology utilizes voxel-based point selection and voxel-aware point management to collectively optimize the selection and updating of map points on a per-voxel basis. These synergistic strategies enable the efficient retrieval of noise-resilient map points with the highest observation likelihood in current frames, thereby ensureing the state estimation accuracy. Extensive evaluations on three public benchmarks demonstrate that our Voxel-ESVIO outperforms state-of-the-art methods in both accuracy and computational efficiency.  
-  </ol>  
-</details>  
-  
-  
-
-
-
-## SFM  
-
-### [AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention](http://arxiv.org/abs/2506.23611)  
-Ziao Liu, Zhenjia Li, Yifeng Shi, Xiangang Li  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    3D Gaussian Splatting (3DGS) is a powerful alternative to Neural Radiance Fields (NeRF), excelling in complex scene reconstruction and efficient rendering. However, it relies on high-quality point clouds from Structure-from-Motion (SfM), limiting its applicability. SfM also fails in texture-deficient or constrained-view scenarios, causing severe degradation in 3DGS reconstruction. To address this limitation, we propose AttentionGS, a novel framework that eliminates the dependency on high-quality initial point clouds by leveraging structural attention for direct 3D reconstruction from randomly initialization. In the early training stage, we introduce geometric attention to rapidly recover the global scene structure. As training progresses, we incorporate texture attention to refine fine-grained details and enhance rendering quality. Furthermore, we employ opacity-weighted gradients to guide Gaussian densification, leading to improved surface reconstruction. Extensive experiments on multiple benchmark datasets demonstrate that AttentionGS significantly outperforms state-of-the-art methods, particularly in scenarios where point cloud initialization is unreliable. Our approach paves the way for more robust and flexible 3D Gaussian Splatting in real-world applications.  
+    Breakthroughs in visual odometry (VO) have fundamentally reshaped the landscape of robotics, enabling ultra-precise camera state estimation that is crucial for modern autonomous systems. Despite these advances, many learning-based VO techniques rely on rigid geometric assumptions, which often fall short in interpretability and lack a solid theoretical basis within fully data-driven frameworks. To overcome these limitations, we introduce VOCAL (Visual Odometry via ContrAstive Learning), a novel framework that reimagines VO as a label ranking challenge. By integrating Bayesian inference with a representation learning framework, VOCAL organizes visual features to mirror camera states. The ranking mechanism compels similar camera states to converge into consistent and spatially coherent representations within the latent space. This strategic alignment not only bolsters the interpretability of the learned features but also ensures compatibility with multimodal data sources. Extensive evaluations on the KITTI dataset highlight VOCAL's enhanced interpretability and flexibility, pushing VO toward more general and explainable spatial intelligence.  
   </ol>  
 </details>  
   
@@ -64,24 +43,15 @@ Ziao Liu, Zhenjia Li, Yifeng Shi, Xiangang Li
 
 ## Visual Localization  
 
-### [Utilizing a Novel Deep Learning Method for Scene Categorization in Remote Sensing Data](http://arxiv.org/abs/2506.22939)  
-Ghufran A. Omran, Wassan Saad Abduljabbar Hayale, Ahmad AbdulQadir AlRababah, Israa Ibraheem Al-Barazanchi, Ravi Sekhar, Pritesh Shah, Sushma Parihar, Harshavardhan Reddy Penubadi  
+### [LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment](http://arxiv.org/abs/2507.00659)  
+Juelin Zhu, Shuaibang Peng, Long Wang, Hanlin Tan, Yu Liu, Maojun Zhang, Shen Yan  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Scene categorization (SC) in remotely acquired images is an important subject with broad consequences in different fields, including catastrophe control, ecological observation, architecture for cities, and more. Nevertheless, its several apps, reaching a high degree of accuracy in SC from distant observation data has demonstrated to be difficult. This is because traditional conventional deep learning models require large databases with high variety and high levels of noise to capture important visual features. To address these problems, this investigation file introduces an innovative technique referred to as the Cuttlefish Optimized Bidirectional Recurrent Neural Network (CO- BRNN) for type of scenes in remote sensing data. The investigation compares the execution of CO-BRNN with current techniques, including Multilayer Perceptron- Convolutional Neural Network (MLP-CNN), Convolutional Neural Network-Long Short Term Memory (CNN-LSTM), and Long Short Term Memory-Conditional Random Field (LSTM-CRF), Graph-Based (GB), Multilabel Image Retrieval Model (MIRM-CF), Convolutional Neural Networks Data Augmentation (CNN-DA). The results demonstrate that CO-BRNN attained the maximum accuracy of 97%, followed by LSTM-CRF with 90%, MLP-CNN with 85%, and CNN-LSTM with 80%. The study highlights the significance of physical confirmation to ensure the efficiency of satellite data.  
+    We propose a novel method for aerial visual localization over low Level-of-Detail (LoD) city models. Previous wireframe-alignment-based method LoD-Loc has shown promising localization results leveraging LoD models. However, LoD-Loc mainly relies on high-LoD (LoD3 or LoD2) city models, but the majority of available models and those many countries plan to construct nationwide are low-LoD (LoD1). Consequently, enabling localization on low-LoD city models could unlock drones' potential for global urban localization. To address these issues, we introduce LoD-Loc v2, which employs a coarse-to-fine strategy using explicit silhouette alignment to achieve accurate localization over low-LoD city models in the air. Specifically, given a query image, LoD-Loc v2 first applies a building segmentation network to shape building silhouettes. Then, in the coarse pose selection stage, we construct a pose cost volume by uniformly sampling pose hypotheses around a prior pose to represent the pose probability distribution. Each cost of the volume measures the degree of alignment between the projected and predicted silhouettes. We select the pose with maximum value as the coarse pose. In the fine pose estimation stage, a particle filtering method incorporating a multi-beam tracking approach is used to efficiently explore the hypothesis space and obtain the final pose estimation. To further facilitate research in this field, we release two datasets with LoD1 city models covering 10.7 km , along with real RGB queries and ground-truth pose annotations. Experimental results show that LoD-Loc v2 improves estimation accuracy with high-LoD models and enables localization with low-LoD models for the first time. Moreover, it outperforms state-of-the-art baselines by large margins, even surpassing texture-model-based methods, and broadens the convergence basin to accommodate larger prior errors.  
   </ol>  
 </details>  
-  
-### [Mask-aware Text-to-Image Retrieval: Referring Expression Segmentation Meets Cross-modal Retrieval](http://arxiv.org/abs/2506.22864)  
-Li-Cheng Shen, Jih-Kang Hsieh, Wei-Hua Li, Chu-Song Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Text-to-image retrieval (TIR) aims to find relevant images based on a textual query, but existing approaches are primarily based on whole-image captions and lack interpretability. Meanwhile, referring expression segmentation (RES) enables precise object localization based on natural language descriptions but is computationally expensive when applied across large image collections. To bridge this gap, we introduce Mask-aware TIR (MaTIR), a new task that unifies TIR and RES, requiring both efficient image search and accurate object segmentation. To address this task, we propose a two-stage framework, comprising a first stage for segmentation-aware image retrieval and a second stage for reranking and object grounding with a multimodal large language model (MLLM). We leverage SAM 2 to generate object masks and Alpha-CLIP to extract region-level embeddings offline at first, enabling effective and scalable online retrieval. Secondly, MLLM is used to refine retrieval rankings and generate bounding boxes, which are matched to segmentation masks. We evaluate our approach on COCO and D $^3$ datasets, demonstrating significant improvements in both retrieval accuracy and segmentation quality over previous methods.  
-  </ol>  
-</details>  
-**comments**: ICMR 2025  
+**comments**: Accepted by ICCV 2025  
   
   
 
@@ -89,22 +59,12 @@ Li-Cheng Shen, Jih-Kang Hsieh, Wei-Hua Li, Chu-Song Chen
 
 ## Image Matching  
 
-### [Efficient and Accurate Image Provenance Analysis: A Scalable Pipeline for Large-scale Images](http://arxiv.org/abs/2506.23707)  
-Jiewei Lai, Lan Zhang, Chen Tang, Pengcheng Sun  
+### [What does really matter in image goal navigation?](http://arxiv.org/abs/2507.01667)  
+Gianluca Monaci, Philippe Weinzaepfel, Christian Wolf  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The rapid proliferation of modified images on social networks that are driven by widely accessible editing tools demands robust forensic tools for digital governance. Image provenance analysis, which filters various query image variants and constructs a directed graph to trace their phylogeny history, has emerged as a critical solution. However, existing methods face two fundamental limitations: First, accuracy issues arise from overlooking heavily modified images due to low similarity while failing to exclude unrelated images and determine modification directions under diverse modification scenarios. Second, scalability bottlenecks stem from pairwise image analysis incurs quadratic complexity, hindering application in large-scale scenarios. This paper presents a scalable end-to-end pipeline for image provenance analysis that achieves high precision with linear complexity. This improves filtering effectiveness through modification relationship tracing, which enables the comprehensive discovery of image variants regardless of their visual similarity to the query. In addition, the proposed pipeline integrates local features matching and compression artifact capturing, enhancing robustness against diverse modifications and enabling accurate analysis of images' relationships. This allows the generation of a directed provenance graph that accurately characterizes the image's phylogeny history. Furthermore, by optimizing similarity calculations and eliminating redundant pairwise analysis during graph construction, the pipeline achieves a linear time complexity, ensuring its scalability for large-scale scenarios. Experiments demonstrate pipeline's superior performance, achieving a 16.7-56.1% accuracy improvement. Notably, it exhibits significant scalability with an average 3.0-second response time on 10 million scale images, which is far shorter than the SOTA approach's 12-minute duration.  
-  </ol>  
-</details>  
-**comments**: 25 pages, 6 figures  
-  
-### [Dynamic Contrastive Learning for Hierarchical Retrieval: A Case Study of Distance-Aware Cross-View Geo-Localization](http://arxiv.org/abs/2506.23077)  
-Suofei Zhang, Xinxin Wang, Xiaofu Wu, Quan Zhou, Haifeng Hu  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Existing deep learning-based cross-view geo-localization methods primarily focus on improving the accuracy of cross-domain image matching, rather than enabling models to comprehensively capture contextual information around the target and minimize the cost of localization errors. To support systematic research into this Distance-Aware Cross-View Geo-Localization (DACVGL) problem, we construct Distance-Aware Campus (DA-Campus), the first benchmark that pairs multi-view imagery with precise distance annotations across three spatial resolutions. Based on DA-Campus, we formulate DACVGL as a hierarchical retrieval problem across different domains. Our study further reveals that, due to the inherent complexity of spatial relationships among buildings, this problem can only be addressed via a contrastive learning paradigm, rather than conventional metric learning. To tackle this challenge, we propose Dynamic Contrastive Learning (DyCL), a novel framework that progressively aligns feature representations according to hierarchical spatial margins. Extensive experiments demonstrate that DyCL is highly complementary to existing multi-scale metric learning methods and yields substantial improvements in both hierarchical retrieval performance and overall cross-view geo-localization accuracy. Our code and benchmark are publicly available at https://github.com/anocodetest1/DyCL.  
+    Image goal navigation requires two different skills: firstly, core navigation skills, including the detection of free space and obstacles, and taking decisions based on an internal representation; and secondly, computing directional information by comparing visual observations to the goal image. Current state-of-the-art methods either rely on dedicated image-matching, or pre-training of computer vision modules on relative pose estimation. In this paper, we study whether this task can be efficiently solved with end-to-end training of full agents with RL, as has been claimed by recent work. A positive answer would have impact beyond Embodied AI and allow training of relative pose estimation from reward for navigation alone. In a large study we investigate the effect of architectural choices like late fusion, channel stacking, space-to-depth projections and cross-attention, and their role in the emergence of relative pose estimators from navigation training. We show that the success of recent methods is influenced up to a certain extent by simulator settings, leading to shortcuts in simulation. However, we also show that these capabilities can be transferred to more realistic setting, up to some extend. We also find evidence for correlations between navigation performance and probed (emerging) relative pose estimation performance, an important sub skill.  
   </ol>  
 </details>  
   
@@ -114,24 +74,35 @@ Suofei Zhang, Xinxin Wang, Xiaofu Wu, Quan Zhou, Haifeng Hu
 
 ## NeRF  
 
-### [AttentionGS: Towards Initialization-Free 3D Gaussian Splatting via Structural Attention](http://arxiv.org/abs/2506.23611)  
-Ziao Liu, Zhenjia Li, Yifeng Shi, Xiangang Li  
+### [Tile and Slide : A New Framework for Scaling NeRF from Local to Global 3D Earth Observation](http://arxiv.org/abs/2507.01631)  
+Camille Billouard, Dawa Derksen, Alexandre Constantin, Bruno Vallet  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    3D Gaussian Splatting (3DGS) is a powerful alternative to Neural Radiance Fields (NeRF), excelling in complex scene reconstruction and efficient rendering. However, it relies on high-quality point clouds from Structure-from-Motion (SfM), limiting its applicability. SfM also fails in texture-deficient or constrained-view scenarios, causing severe degradation in 3DGS reconstruction. To address this limitation, we propose AttentionGS, a novel framework that eliminates the dependency on high-quality initial point clouds by leveraging structural attention for direct 3D reconstruction from randomly initialization. In the early training stage, we introduce geometric attention to rapidly recover the global scene structure. As training progresses, we incorporate texture attention to refine fine-grained details and enhance rendering quality. Furthermore, we employ opacity-weighted gradients to guide Gaussian densification, leading to improved surface reconstruction. Extensive experiments on multiple benchmark datasets demonstrate that AttentionGS significantly outperforms state-of-the-art methods, particularly in scenarios where point cloud initialization is unreliable. Our approach paves the way for more robust and flexible 3D Gaussian Splatting in real-world applications.  
+    Neural Radiance Fields (NeRF) have recently emerged as a paradigm for 3D reconstruction from multiview satellite imagery. However, state-of-the-art NeRF methods are typically constrained to small scenes due to the memory footprint during training, which we study in this paper. Previous work on large-scale NeRFs palliate this by dividing the scene into NeRFs. This paper introduces Snake-NeRF, a framework that scales to large scenes. Our out-of-core method eliminates the need to load all images and networks simultaneously, and operates on a single device. We achieve this by dividing the region of interest into NeRFs that 3D tile without overlap. Importantly, we crop the images with overlap to ensure each NeRFs is trained with all the necessary pixels. We introduce a novel $2\times 2$ 3D tile progression strategy and segmented sampler, which together prevent 3D reconstruction errors along the tile edges. Our experiments conclude that large satellite images can effectively be processed with linear time complexity, on a single GPU, and without compromise in quality.  
+  </ol>  
+</details>  
+**comments**: Accepted at ICCV 2025 Workshop 3D-VAST (From street to space: 3D
+  Vision Across Altitudes). Version before camera ready. Our code will be made
+  public after the conference  
+  
+### [Surgical Neural Radiance Fields from One Image](http://arxiv.org/abs/2507.00969)  
+Alberto Neri, Maximilan Fehrentz, Veronica Penza, Leonardo S. Mattos, Nazim Haouchine  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Purpose: Neural Radiance Fields (NeRF) offer exceptional capabilities for 3D reconstruction and view synthesis, yet their reliance on extensive multi-view data limits their application in surgical intraoperative settings where only limited data is available. In particular, collecting such extensive data intraoperatively is impractical due to time constraints. This work addresses this challenge by leveraging a single intraoperative image and preoperative data to train NeRF efficiently for surgical scenarios.   Methods: We leverage preoperative MRI data to define the set of camera viewpoints and images needed for robust and unobstructed training. Intraoperatively, the appearance of the surgical image is transferred to the pre-constructed training set through neural style transfer, specifically combining WTC2 and STROTSS to prevent over-stylization. This process enables the creation of a dataset for instant and fast single-image NeRF training.   Results: The method is evaluated with four clinical neurosurgical cases. Quantitative comparisons to NeRF models trained on real surgical microscope images demonstrate strong synthesis agreement, with similarity metrics indicating high reconstruction fidelity and stylistic alignment. When compared with ground truth, our method demonstrates high structural similarity, confirming good reconstruction quality and texture preservation.   Conclusion: Our approach demonstrates the feasibility of single-image NeRF training in surgical settings, overcoming the limitations of traditional multi-view methods.  
   </ol>  
 </details>  
   
-### [Dynamic View Synthesis from Small Camera Motion Videos](http://arxiv.org/abs/2506.23153)  
-Huiqiang Sun, Xingyi Li, Juewen Peng, Liao Shen, Zhiguo Cao, Ke Xian, Guosheng Lin  
+### [PlantSegNeRF: A few-shot, cross-dataset method for plant 3D instance point cloud reconstruction via joint-channel NeRF with multi-view image instance matching](http://arxiv.org/abs/2507.00371)  
+Xin Yang, Ruiming Du, Hanyang Huang, Jiayang Xie, Pengyao Xie, Leisen Fang, Ziyue Guo, Nanjun Jiang, Yu Jiang, Haiyan Cen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Novel view synthesis for dynamic $3$ D scenes poses a significant challenge. Many notable efforts use NeRF-based approaches to address this task and yield impressive results. However, these methods rely heavily on sufficient motion parallax in the input images or videos. When the camera motion range becomes limited or even stationary (i.e., small camera motion), existing methods encounter two primary challenges: incorrect representation of scene geometry and inaccurate estimation of camera parameters. These challenges make prior methods struggle to produce satisfactory results or even become invalid. To address the first challenge, we propose a novel Distribution-based Depth Regularization (DDR) that ensures the rendering weight distribution to align with the true distribution. Specifically, unlike previous methods that use depth loss to calculate the error of the expectation, we calculate the expectation of the error by using Gumbel-softmax to differentiably sample points from discrete rendering weight distribution. Additionally, we introduce constraints that enforce the volume density of spatial points before the object boundary along the ray to be near zero, ensuring that our model learns the correct geometry of the scene. To demystify the DDR, we further propose a visualization tool that enables observing the scene geometry representation at the rendering weight level. For the second challenge, we incorporate camera parameter learning during training to enhance the robustness of our model to camera parameters. We conduct extensive experiments to demonstrate the effectiveness of our approach in representing scenes with small camera motion input, and our results compare favorably to state-of-the-art methods.  
+    Organ segmentation of plant point clouds is a prerequisite for the high-resolution and accurate extraction of organ-level phenotypic traits. Although the fast development of deep learning has boosted much research on segmentation of plant point clouds, the existing techniques for organ segmentation still face limitations in resolution, segmentation accuracy, and generalizability across various plant species. In this study, we proposed a novel approach called plant segmentation neural radiance fields (PlantSegNeRF), aiming to directly generate high-precision instance point clouds from multi-view RGB image sequences for a wide range of plant species. PlantSegNeRF performed 2D instance segmentation on the multi-view images to generate instance masks for each organ with a corresponding ID. The multi-view instance IDs corresponding to the same plant organ were then matched and refined using a specially designed instance matching module. The instance NeRF was developed to render an implicit scene, containing color, density, semantic and instance information. The implicit scene was ultimately converted into high-precision plant instance point clouds based on the volume density. The results proved that in semantic segmentation of point clouds, PlantSegNeRF outperformed the commonly used methods, demonstrating an average improvement of 16.1%, 18.3%, 17.8%, and 24.2% in precision, recall, F1-score, and IoU compared to the second-best results on structurally complex datasets. More importantly, PlantSegNeRF exhibited significant advantages in plant point cloud instance segmentation tasks. Across all plant datasets, it achieved average improvements of 11.7%, 38.2%, 32.2% and 25.3% in mPrec, mRec, mCov, mWCov, respectively. This study extends the organ-level plant phenotyping and provides a high-throughput way to supply high-quality 3D data for the development of large-scale models in plant science.  
   </ol>  
 </details>  
-**comments**: Accepted by TVCG  
   
   
 
