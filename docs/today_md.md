@@ -1,41 +1,45 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#VOCAL:-Visual-Odometry-via-ContrAstive-Learning>VOCAL: Visual Odometry via ContrAstive Learning</a></li>
+        <li><a href=#MGSfM:-Multi-Camera-Geometry-Driven-Global-Structure-from-Motion>MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#LoD-Loc-v2:-Aerial-Visual-Localization-over-Low-Level-of-Detail-City-Models-using-Explicit-Silhouette-Alignment>LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment</a></li>
+        <li><a href=#An-analysis-of-vision-language-models-for-fabric-retrieval>An analysis of vision-language models for fabric retrieval</a></li>
+        <li><a href=#What's-Making-That-Sound-Right-Now?-Video-centric-Audio-Visual-Localization>What's Making That Sound Right Now? Video-centric Audio-Visual Localization</a></li>
+        <li><a href=#Simultaneous-Localization-and-Mapping-Using-Active-mmWave-Sensing-in-5G-NR>Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR</a></li>
+        <li><a href=#U-ViLAR:-Uncertainty-Aware-Visual-Localization-for-Autonomous-Driving-via-Differentiable-Association-and-Registration>U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration</a></li>
+        <li><a href=#Query-Based-Adaptive-Aggregation-for-Multi-Dataset-Joint-Training-Toward-Universal-Visual-Place-Recognition>Query-Based Adaptive Aggregation for Multi-Dataset Joint Training Toward Universal Visual Place Recognition</a></li>
       </ul>
     </li>
     <li><a href=#image-matching>Image Matching</a></li>
       <ul>
-        <li><a href=#What-does-really-matter-in-image-goal-navigation?>What does really matter in image goal navigation?</a></li>
+        <li><a href=#From-Query-to-Explanation:-Uni-RAG-for-Multi-Modal-Retrieval-Augmented-Learning-in-STEM>From Query to Explanation: Uni-RAG for Multi-Modal Retrieval-Augmented Learning in STEM</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Tile-and-Slide-:-A-New-Framework-for-Scaling-NeRF-from-Local-to-Global-3D-Earth-Observation>Tile and Slide : A New Framework for Scaling NeRF from Local to Global 3D Earth Observation</a></li>
-        <li><a href=#Surgical-Neural-Radiance-Fields-from-One-Image>Surgical Neural Radiance Fields from One Image</a></li>
-        <li><a href=#PlantSegNeRF:-A-few-shot,-cross-dataset-method-for-plant-3D-instance-point-cloud-reconstruction-via-joint-channel-NeRF-with-multi-view-image-instance-matching>PlantSegNeRF: A few-shot, cross-dataset method for plant 3D instance point cloud reconstruction via joint-channel NeRF with multi-view image instance matching</a></li>
+        <li><a href=#A-View-consistent-Sampling-Method-for-Regularized-Training-of-Neural-Radiance-Fields>A View-consistent Sampling Method for Regularized Training of Neural Radiance Fields</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [VOCAL: Visual Odometry via ContrAstive Learning](http://arxiv.org/abs/2507.00243)  
-Chi-Yao Huang, Zeel Bhatt, Yezhou Yang  
+### [MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion](http://arxiv.org/abs/2507.03306)  
+Peilin Tao, Hainan Cui, Diantao Tu, Shuhan Shen  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Breakthroughs in visual odometry (VO) have fundamentally reshaped the landscape of robotics, enabling ultra-precise camera state estimation that is crucial for modern autonomous systems. Despite these advances, many learning-based VO techniques rely on rigid geometric assumptions, which often fall short in interpretability and lack a solid theoretical basis within fully data-driven frameworks. To overcome these limitations, we introduce VOCAL (Visual Odometry via ContrAstive Learning), a novel framework that reimagines VO as a label ranking challenge. By integrating Bayesian inference with a representation learning framework, VOCAL organizes visual features to mirror camera states. The ranking mechanism compels similar camera states to converge into consistent and spatially coherent representations within the latent space. This strategic alignment not only bolsters the interpretability of the learned features but also ensures compatibility with multimodal data sources. Extensive evaluations on the KITTI dataset highlight VOCAL's enhanced interpretability and flexibility, pushing VO toward more general and explainable spatial intelligence.  
+    Multi-camera systems are increasingly vital in the environmental perception of autonomous vehicles and robotics. Their physical configuration offers inherent fixed relative pose constraints that benefit Structure-from-Motion (SfM). However, traditional global SfM systems struggle with robustness due to their optimization framework. We propose a novel global motion averaging framework for multi-camera systems, featuring two core components: a decoupled rotation averaging module and a hybrid translation averaging module. Our rotation averaging employs a hierarchical strategy by first estimating relative rotations within rigid camera units and then computing global rigid unit rotations. To enhance the robustness of translation averaging, we incorporate both camera-to-camera and camera-to-point constraints to initialize camera positions and 3D points with a convex distance-based objective function and refine them with an unbiased non-bilinear angle-based objective function. Experiments on large-scale datasets show that our system matches or exceeds incremental SfM accuracy while significantly improving efficiency. Our framework outperforms existing global SfM methods, establishing itself as a robust solution for real-world multi-camera SfM applications. The code is available at https://github.com/3dv-casia/MGSfM/.  
   </ol>  
 </details>  
+**comments**: Accepted at ICCV 2025, The code is available at
+  https://github.com/3dv-casia/MGSfM/  
   
   
 
@@ -43,15 +47,59 @@ Chi-Yao Huang, Zeel Bhatt, Yezhou Yang
 
 ## Visual Localization  
 
-### [LoD-Loc v2: Aerial Visual Localization over Low Level-of-Detail City Models using Explicit Silhouette Alignment](http://arxiv.org/abs/2507.00659)  
-Juelin Zhu, Shuaibang Peng, Long Wang, Hanlin Tan, Yu Liu, Maojun Zhang, Shen Yan  
+### [An analysis of vision-language models for fabric retrieval](http://arxiv.org/abs/2507.04735)  
+Francesco Giuliari, Asif Khan Pattan, Mohamed Lamine Mekhalfi, Fabio Poiesi  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    We propose a novel method for aerial visual localization over low Level-of-Detail (LoD) city models. Previous wireframe-alignment-based method LoD-Loc has shown promising localization results leveraging LoD models. However, LoD-Loc mainly relies on high-LoD (LoD3 or LoD2) city models, but the majority of available models and those many countries plan to construct nationwide are low-LoD (LoD1). Consequently, enabling localization on low-LoD city models could unlock drones' potential for global urban localization. To address these issues, we introduce LoD-Loc v2, which employs a coarse-to-fine strategy using explicit silhouette alignment to achieve accurate localization over low-LoD city models in the air. Specifically, given a query image, LoD-Loc v2 first applies a building segmentation network to shape building silhouettes. Then, in the coarse pose selection stage, we construct a pose cost volume by uniformly sampling pose hypotheses around a prior pose to represent the pose probability distribution. Each cost of the volume measures the degree of alignment between the projected and predicted silhouettes. We select the pose with maximum value as the coarse pose. In the fine pose estimation stage, a particle filtering method incorporating a multi-beam tracking approach is used to efficiently explore the hypothesis space and obtain the final pose estimation. To further facilitate research in this field, we release two datasets with LoD1 city models covering 10.7 km , along with real RGB queries and ground-truth pose annotations. Experimental results show that LoD-Loc v2 improves estimation accuracy with high-LoD models and enables localization with low-LoD models for the first time. Moreover, it outperforms state-of-the-art baselines by large margins, even surpassing texture-model-based methods, and broadens the convergence basin to accommodate larger prior errors.  
+    Effective cross-modal retrieval is essential for applications like information retrieval and recommendation systems, particularly in specialized domains such as manufacturing, where product information often consists of visual samples paired with a textual description. This paper investigates the use of Vision Language Models(VLMs) for zero-shot text-to-image retrieval on fabric samples. We address the lack of publicly available datasets by introducing an automated annotation pipeline that uses Multimodal Large Language Models (MLLMs) to generate two types of textual descriptions: freeform natural language and structured attribute-based descriptions. We produce these descriptions to evaluate retrieval performance across three Vision-Language Models: CLIP, LAION-CLIP, and Meta's Perception Encoder. Our experiments demonstrate that structured, attribute-rich descriptions significantly enhance retrieval accuracy, particularly for visually complex fabric classes, with the Perception Encoder outperforming other models due to its robust feature alignment capabilities. However, zero-shot retrieval remains challenging in this fine-grained domain, underscoring the need for domain-adapted approaches. Our findings highlight the importance of combining technical textual descriptions with advanced VLMs to optimize cross-modal retrieval in industrial applications.  
   </ol>  
 </details>  
-**comments**: Accepted by ICCV 2025  
+**comments**: Accepted at Ital-IA 2025  
+  
+### [What's Making That Sound Right Now? Video-centric Audio-Visual Localization](http://arxiv.org/abs/2507.04667)  
+Hahyeon Choi, Junhoo Lee, Nojun Kwak  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Audio-Visual Localization (AVL) aims to identify sound-emitting sources within a visual scene. However, existing studies focus on image-level audio-visual associations, failing to capture temporal dynamics. Moreover, they assume simplified scenarios where sound sources are always visible and involve only a single object. To address these limitations, we propose AVATAR, a video-centric AVL benchmark that incorporates high-resolution temporal information. AVATAR introduces four distinct scenarios -- Single-sound, Mixed-sound, Multi-entity, and Off-screen -- enabling a more comprehensive evaluation of AVL models. Additionally, we present TAVLO, a novel video-centric AVL model that explicitly integrates temporal information. Experimental results show that conventional methods struggle to track temporal variations due to their reliance on global audio features and frame-level mappings. In contrast, TAVLO achieves robust and precise audio-visual alignment by leveraging high-resolution temporal modeling. Our work empirically demonstrates the importance of temporal dynamics in AVL and establishes a new standard for video-centric audio-visual localization.  
+  </ol>  
+</details>  
+**comments**: Published at ICCV 2025. Project page:
+  https://hahyeon610.github.io/Video-centric_Audio_Visual_Localization/  
+  
+### [Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR](http://arxiv.org/abs/2507.04662)  
+Tao Du, Jie Yang, Fan Liu, Jiaxiang Guo, Shuqiang Xia, Chao-Kai Wen, Shi Jin  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Millimeter-wave (mmWave) 5G New Radio (NR) communication systems, with their high-resolution antenna arrays and extensive bandwidth, offer a transformative opportunity for high-throughput data transmission and advanced environmental sensing. Although passive sensing-based SLAM techniques can estimate user locations and environmental reflections simultaneously, their effectiveness is often constrained by assumptions of specular reflections and oversimplified map representations. To overcome these limitations, this work employs a mmWave 5G NR system for active sensing, enabling it to function similarly to a laser scanner for point cloud generation. Specifically, point clouds are extracted from the power delay profile estimated from each beam direction using a binary search approach. To ensure accuracy, hardware delays are calibrated with multiple predefined target points. Pose variations of the terminal are then estimated from point cloud data gathered along continuous trajectory viewpoints using point cloud registration algorithms. Loop closure detection and pose graph optimization are subsequently applied to refine the sensing results, achieving precise terminal localization and detailed radio map reconstruction. The system is implemented and validated through both simulations and experiments, confirming the effectiveness of the proposed approach.  
+  </ol>  
+</details>  
+**comments**: 7 pages, 7 figures. Accepted for publication at the 2025 IEEE
+  International Conference on Communications (ICC). \c{opyright} 2025 IEEE.
+  Personal use is permitted, but permission from IEEE must be obtained for all
+  other uses  
+  
+### [U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration](http://arxiv.org/abs/2507.04503)  
+Xiaofan Li, Zhihao Xu, Chenming Wu, Zhao Yang, Yumeng Zhang, Jiang-Jiang Liu, Haibao Yu, Fan Duan, Xiaoqing Ye, Yuan Wang, Shirui Li, Xun Sun, Ji Wan, Jun Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Accurate localization using visual information is a critical yet challenging task, especially in urban environments where nearby buildings and construction sites significantly degrade GNSS (Global Navigation Satellite System) signal quality. This issue underscores the importance of visual localization techniques in scenarios where GNSS signals are unreliable. This paper proposes U-ViLAR, a novel uncertainty-aware visual localization framework designed to address these challenges while enabling adaptive localization using high-definition (HD) maps or navigation maps. Specifically, our method first extracts features from the input visual data and maps them into Bird's-Eye-View (BEV) space to enhance spatial consistency with the map input. Subsequently, we introduce: a) Perceptual Uncertainty-guided Association, which mitigates errors caused by perception uncertainty, and b) Localization Uncertainty-guided Registration, which reduces errors introduced by localization uncertainty. By effectively balancing the coarse-grained large-scale localization capability of association with the fine-grained precise localization capability of registration, our approach achieves robust and accurate localization. Experimental results demonstrate that our method achieves state-of-the-art performance across multiple localization tasks. Furthermore, our model has undergone rigorous testing on large-scale autonomous driving fleets and has demonstrated stable performance in various challenging urban scenarios.  
+  </ol>  
+</details>  
+**comments**: Vision Localization, Autonomous Driving, Bird's-Eye-View  
+  
+### [Query-Based Adaptive Aggregation for Multi-Dataset Joint Training Toward Universal Visual Place Recognition](http://arxiv.org/abs/2507.03831)  
+Jiuhong Xiao, Yang Zhou, Giuseppe Loianno  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Deep learning methods for Visual Place Recognition (VPR) have advanced significantly, largely driven by large-scale datasets. However, most existing approaches are trained on a single dataset, which can introduce dataset-specific inductive biases and limit model generalization. While multi-dataset joint training offers a promising solution for developing universal VPR models, divergences among training datasets can saturate limited information capacity in feature aggregation layers, leading to suboptimal performance. To address these challenges, we propose Query-based Adaptive Aggregation (QAA), a novel feature aggregation technique that leverages learned queries as reference codebooks to effectively enhance information capacity without significant computational or parameter complexity. We show that computing the Cross-query Similarity (CS) between query-level image features and reference codebooks provides a simple yet effective way to generate robust descriptors. Our results demonstrate that QAA outperforms state-of-the-art models, achieving balanced generalization across diverse datasets while maintaining peak performance comparable to dataset-specific models. Ablation studies further explore QAA's mechanisms and scalability. Visualizations reveal that the learned queries exhibit diverse attention patterns across datasets. Code will be publicly released.  
+  </ol>  
+</details>  
+**comments**: 9 pages, 4 figures  
   
   
 
@@ -59,12 +107,12 @@ Juelin Zhu, Shuaibang Peng, Long Wang, Hanlin Tan, Yu Liu, Maojun Zhang, Shen Ya
 
 ## Image Matching  
 
-### [What does really matter in image goal navigation?](http://arxiv.org/abs/2507.01667)  
-Gianluca Monaci, Philippe Weinzaepfel, Christian Wolf  
+### [From Query to Explanation: Uni-RAG for Multi-Modal Retrieval-Augmented Learning in STEM](http://arxiv.org/abs/2507.03868)  
+Xinyi Wu, Yanhao Jia, Luwei Xiao, Shuai Zhao, Fengkuang Chiang, Erik Cambria  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Image goal navigation requires two different skills: firstly, core navigation skills, including the detection of free space and obstacles, and taking decisions based on an internal representation; and secondly, computing directional information by comparing visual observations to the goal image. Current state-of-the-art methods either rely on dedicated image-matching, or pre-training of computer vision modules on relative pose estimation. In this paper, we study whether this task can be efficiently solved with end-to-end training of full agents with RL, as has been claimed by recent work. A positive answer would have impact beyond Embodied AI and allow training of relative pose estimation from reward for navigation alone. In a large study we investigate the effect of architectural choices like late fusion, channel stacking, space-to-depth projections and cross-attention, and their role in the emergence of relative pose estimators from navigation training. We show that the success of recent methods is influenced up to a certain extent by simulator settings, leading to shortcuts in simulation. However, we also show that these capabilities can be transferred to more realistic setting, up to some extend. We also find evidence for correlations between navigation performance and probed (emerging) relative pose estimation performance, an important sub skill.  
+    In AI-facilitated teaching, leveraging various query styles to interpret abstract educational content is crucial for delivering effective and accessible learning experiences. However, existing retrieval systems predominantly focus on natural text-image matching and lack the capacity to address the diversity and ambiguity inherent in real-world educational scenarios. To address this limitation, we develop a lightweight and efficient multi-modal retrieval module, named Uni-Retrieval, which extracts query-style prototypes and dynamically matches them with tokens from a continually updated Prompt Bank. This Prompt Bank encodes and stores domain-specific knowledge by leveraging a Mixture-of-Expert Low-Rank Adaptation (MoE-LoRA) module and can be adapted to enhance Uni-Retrieval's capability to accommodate unseen query types at test time. To enable natural language educational content generation, we integrate the original Uni-Retrieval with a compact instruction-tuned language model, forming a complete retrieval-augmented generation pipeline named Uni-RAG. Given a style-conditioned query, Uni-RAG first retrieves relevant educational materials and then generates human-readable explanations, feedback, or instructional content aligned with the learning objective. Experimental results on SER and other multi-modal benchmarks show that Uni-RAG outperforms baseline retrieval and RAG systems in both retrieval accuracy and generation quality, while maintaining low computational cost. Our framework provides a scalable, pedagogically grounded solution for intelligent educational systems, bridging retrieval and generation to support personalized, explainable, and efficient learning assistance across diverse STEM scenarios.  
   </ol>  
 </details>  
   
@@ -74,35 +122,15 @@ Gianluca Monaci, Philippe Weinzaepfel, Christian Wolf
 
 ## NeRF  
 
-### [Tile and Slide : A New Framework for Scaling NeRF from Local to Global 3D Earth Observation](http://arxiv.org/abs/2507.01631)  
-Camille Billouard, Dawa Derksen, Alexandre Constantin, Bruno Vallet  
+### [A View-consistent Sampling Method for Regularized Training of Neural Radiance Fields](http://arxiv.org/abs/2507.04408)  
+Aoxiang Fan, Corentin Dumery, Nicolas Talabot, Pascal Fua  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) have recently emerged as a paradigm for 3D reconstruction from multiview satellite imagery. However, state-of-the-art NeRF methods are typically constrained to small scenes due to the memory footprint during training, which we study in this paper. Previous work on large-scale NeRFs palliate this by dividing the scene into NeRFs. This paper introduces Snake-NeRF, a framework that scales to large scenes. Our out-of-core method eliminates the need to load all images and networks simultaneously, and operates on a single device. We achieve this by dividing the region of interest into NeRFs that 3D tile without overlap. Importantly, we crop the images with overlap to ensure each NeRFs is trained with all the necessary pixels. We introduce a novel $2\times 2$ 3D tile progression strategy and segmented sampler, which together prevent 3D reconstruction errors along the tile edges. Our experiments conclude that large satellite images can effectively be processed with linear time complexity, on a single GPU, and without compromise in quality.  
+    Neural Radiance Fields (NeRF) has emerged as a compelling framework for scene representation and 3D recovery. To improve its performance on real-world data, depth regularizations have proven to be the most effective ones. However, depth estimation models not only require expensive 3D supervision in training, but also suffer from generalization issues. As a result, the depth estimations can be erroneous in practice, especially for outdoor unbounded scenes. In this paper, we propose to employ view-consistent distributions instead of fixed depth value estimations to regularize NeRF training. Specifically, the distribution is computed by utilizing both low-level color features and high-level distilled features from foundation models at the projected 2D pixel-locations from per-ray sampled 3D points. By sampling from the view-consistency distributions, an implicit regularization is imposed on the training of NeRF. We also utilize a depth-pushing loss that works in conjunction with the sampling technique to jointly provide effective regularizations for eliminating the failure modes. Extensive experiments conducted on various scenes from public datasets demonstrate that our proposed method can generate significantly better novel view synthesis results than state-of-the-art NeRF variants as well as different depth regularization methods.  
   </ol>  
 </details>  
-**comments**: Accepted at ICCV 2025 Workshop 3D-VAST (From street to space: 3D
-  Vision Across Altitudes). Version before camera ready. Our code will be made
-  public after the conference  
-  
-### [Surgical Neural Radiance Fields from One Image](http://arxiv.org/abs/2507.00969)  
-Alberto Neri, Maximilan Fehrentz, Veronica Penza, Leonardo S. Mattos, Nazim Haouchine  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Purpose: Neural Radiance Fields (NeRF) offer exceptional capabilities for 3D reconstruction and view synthesis, yet their reliance on extensive multi-view data limits their application in surgical intraoperative settings where only limited data is available. In particular, collecting such extensive data intraoperatively is impractical due to time constraints. This work addresses this challenge by leveraging a single intraoperative image and preoperative data to train NeRF efficiently for surgical scenarios.   Methods: We leverage preoperative MRI data to define the set of camera viewpoints and images needed for robust and unobstructed training. Intraoperatively, the appearance of the surgical image is transferred to the pre-constructed training set through neural style transfer, specifically combining WTC2 and STROTSS to prevent over-stylization. This process enables the creation of a dataset for instant and fast single-image NeRF training.   Results: The method is evaluated with four clinical neurosurgical cases. Quantitative comparisons to NeRF models trained on real surgical microscope images demonstrate strong synthesis agreement, with similarity metrics indicating high reconstruction fidelity and stylistic alignment. When compared with ground truth, our method demonstrates high structural similarity, confirming good reconstruction quality and texture preservation.   Conclusion: Our approach demonstrates the feasibility of single-image NeRF training in surgical settings, overcoming the limitations of traditional multi-view methods.  
-  </ol>  
-</details>  
-  
-### [PlantSegNeRF: A few-shot, cross-dataset method for plant 3D instance point cloud reconstruction via joint-channel NeRF with multi-view image instance matching](http://arxiv.org/abs/2507.00371)  
-Xin Yang, Ruiming Du, Hanyang Huang, Jiayang Xie, Pengyao Xie, Leisen Fang, Ziyue Guo, Nanjun Jiang, Yu Jiang, Haiyan Cen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Organ segmentation of plant point clouds is a prerequisite for the high-resolution and accurate extraction of organ-level phenotypic traits. Although the fast development of deep learning has boosted much research on segmentation of plant point clouds, the existing techniques for organ segmentation still face limitations in resolution, segmentation accuracy, and generalizability across various plant species. In this study, we proposed a novel approach called plant segmentation neural radiance fields (PlantSegNeRF), aiming to directly generate high-precision instance point clouds from multi-view RGB image sequences for a wide range of plant species. PlantSegNeRF performed 2D instance segmentation on the multi-view images to generate instance masks for each organ with a corresponding ID. The multi-view instance IDs corresponding to the same plant organ were then matched and refined using a specially designed instance matching module. The instance NeRF was developed to render an implicit scene, containing color, density, semantic and instance information. The implicit scene was ultimately converted into high-precision plant instance point clouds based on the volume density. The results proved that in semantic segmentation of point clouds, PlantSegNeRF outperformed the commonly used methods, demonstrating an average improvement of 16.1%, 18.3%, 17.8%, and 24.2% in precision, recall, F1-score, and IoU compared to the second-best results on structurally complex datasets. More importantly, PlantSegNeRF exhibited significant advantages in plant point cloud instance segmentation tasks. Across all plant datasets, it achieved average improvements of 11.7%, 38.2%, 32.2% and 25.3% in mPrec, mRec, mCov, mWCov, respectively. This study extends the organ-level plant phenotyping and provides a high-throughput way to supply high-quality 3D data for the development of large-scale models in plant science.  
-  </ol>  
-</details>  
+**comments**: ICCV 2025 accepted  
   
   
 
