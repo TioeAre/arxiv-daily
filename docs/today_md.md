@@ -1,118 +1,49 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
-      <ul>
-        <li><a href=#MGSfM:-Multi-Camera-Geometry-Driven-Global-Structure-from-Motion>MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion</a></li>
-      </ul>
-    </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#An-analysis-of-vision-language-models-for-fabric-retrieval>An analysis of vision-language models for fabric retrieval</a></li>
-        <li><a href=#What's-Making-That-Sound-Right-Now?-Video-centric-Audio-Visual-Localization>What's Making That Sound Right Now? Video-centric Audio-Visual Localization</a></li>
-        <li><a href=#Simultaneous-Localization-and-Mapping-Using-Active-mmWave-Sensing-in-5G-NR>Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR</a></li>
-        <li><a href=#U-ViLAR:-Uncertainty-Aware-Visual-Localization-for-Autonomous-Driving-via-Differentiable-Association-and-Registration>U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration</a></li>
-        <li><a href=#Query-Based-Adaptive-Aggregation-for-Multi-Dataset-Joint-Training-Toward-Universal-Visual-Place-Recognition>Query-Based Adaptive Aggregation for Multi-Dataset Joint Training Toward Universal Visual Place Recognition</a></li>
-      </ul>
-    </li>
-    <li><a href=#image-matching>Image Matching</a></li>
-      <ul>
-        <li><a href=#From-Query-to-Explanation:-Uni-RAG-for-Multi-Modal-Retrieval-Augmented-Learning-in-STEM>From Query to Explanation: Uni-RAG for Multi-Modal Retrieval-Augmented Learning in STEM</a></li>
+        <li><a href=#Automatic-Synthesis-of-High-Quality-Triplet-Data-for-Composed-Image-Retrieval>Automatic Synthesis of High-Quality Triplet Data for Composed Image Retrieval</a></li>
+        <li><a href=#OFFSET:-Segmentation-based-Focus-Shift-Revision-for-Composed-Image-Retrieval>OFFSET: Segmentation-based Focus Shift Revision for Composed Image Retrieval</a></li>
+        <li><a href=#Llama-Nemoretriever-Colembed:-Top-Performing-Text-Image-Retrieval-Model>Llama Nemoretriever Colembed: Top-Performing Text-Image Retrieval Model</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#A-View-consistent-Sampling-Method-for-Regularized-Training-of-Neural-Radiance-Fields>A View-consistent Sampling Method for Regularized Training of Neural Radiance Fields</a></li>
+        <li><a href=#Reflections-Unlock:-Geometry-Aware-Reflection-Disentanglement-in-3D-Gaussian-Splatting-for-Photorealistic-Scenes-Rendering>Reflections Unlock: Geometry-Aware Reflection Disentanglement in 3D Gaussian Splatting for Photorealistic Scenes Rendering</a></li>
+        <li><a href=#DreamArt:-Generating-Interactable-Articulated-Objects-from-a-Single-Image>DreamArt: Generating Interactable Articulated Objects from a Single Image</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
-
-### [MGSfM: Multi-Camera Geometry Driven Global Structure-from-Motion](http://arxiv.org/abs/2507.03306)  
-Peilin Tao, Hainan Cui, Diantao Tu, Shuhan Shen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Multi-camera systems are increasingly vital in the environmental perception of autonomous vehicles and robotics. Their physical configuration offers inherent fixed relative pose constraints that benefit Structure-from-Motion (SfM). However, traditional global SfM systems struggle with robustness due to their optimization framework. We propose a novel global motion averaging framework for multi-camera systems, featuring two core components: a decoupled rotation averaging module and a hybrid translation averaging module. Our rotation averaging employs a hierarchical strategy by first estimating relative rotations within rigid camera units and then computing global rigid unit rotations. To enhance the robustness of translation averaging, we incorporate both camera-to-camera and camera-to-point constraints to initialize camera positions and 3D points with a convex distance-based objective function and refine them with an unbiased non-bilinear angle-based objective function. Experiments on large-scale datasets show that our system matches or exceeds incremental SfM accuracy while significantly improving efficiency. Our framework outperforms existing global SfM methods, establishing itself as a robust solution for real-world multi-camera SfM applications. The code is available at https://github.com/3dv-casia/MGSfM/.  
-  </ol>  
-</details>  
-**comments**: Accepted at ICCV 2025, The code is available at
-  https://github.com/3dv-casia/MGSfM/  
-  
-  
-
-
-
 ## Visual Localization  
 
-### [An analysis of vision-language models for fabric retrieval](http://arxiv.org/abs/2507.04735)  
-Francesco Giuliari, Asif Khan Pattan, Mohamed Lamine Mekhalfi, Fabio Poiesi  
+### [Automatic Synthesis of High-Quality Triplet Data for Composed Image Retrieval](http://arxiv.org/abs/2507.05970)  
+Haiwen Li, Delong Liu, Zhaohui Hou, Zhicheng Zhao, Fei Su  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Effective cross-modal retrieval is essential for applications like information retrieval and recommendation systems, particularly in specialized domains such as manufacturing, where product information often consists of visual samples paired with a textual description. This paper investigates the use of Vision Language Models(VLMs) for zero-shot text-to-image retrieval on fabric samples. We address the lack of publicly available datasets by introducing an automated annotation pipeline that uses Multimodal Large Language Models (MLLMs) to generate two types of textual descriptions: freeform natural language and structured attribute-based descriptions. We produce these descriptions to evaluate retrieval performance across three Vision-Language Models: CLIP, LAION-CLIP, and Meta's Perception Encoder. Our experiments demonstrate that structured, attribute-rich descriptions significantly enhance retrieval accuracy, particularly for visually complex fabric classes, with the Perception Encoder outperforming other models due to its robust feature alignment capabilities. However, zero-shot retrieval remains challenging in this fine-grained domain, underscoring the need for domain-adapted approaches. Our findings highlight the importance of combining technical textual descriptions with advanced VLMs to optimize cross-modal retrieval in industrial applications.  
+    As a challenging vision-language (VL) task, Composed Image Retrieval (CIR) aims to retrieve target images using multimodal (image+text) queries. Although many existing CIR methods have attained promising performance, their reliance on costly, manually labeled triplets hinders scalability and zero-shot capability. To address this issue, we propose a scalable pipeline for automatic triplet generation, along with a fully synthetic dataset named Composed Image Retrieval on High-quality Synthetic Triplets (CIRHS). Our pipeline leverages a large language model (LLM) to generate diverse prompts, controlling a text-to-image generative model to produce image pairs with identical elements in each pair, which are then filtered and reorganized to form the CIRHS dataset. In addition, we introduce Hybrid Contextual Alignment (CoAlign), a novel CIR framework, which can accomplish global alignment and local reasoning within a broader context, enabling the model to learn more robust and informative representations. By utilizing the synthetic CIRHS dataset, CoAlign achieves outstanding zero-shot performance on three commonly used benchmarks, demonstrating for the first time the feasibility of training CIR models on a fully synthetic dataset. Furthermore, under supervised training, our method outperforms all the state-of-the-art supervised CIR approaches, validating the effectiveness of our proposed retrieval framework. The code and the CIRHS dataset will be released soon.  
   </ol>  
 </details>  
-**comments**: Accepted at Ital-IA 2025  
+**comments**: This paper was originally submitted to ACM MM 2025 on April 12, 2025  
   
-### [What's Making That Sound Right Now? Video-centric Audio-Visual Localization](http://arxiv.org/abs/2507.04667)  
-Hahyeon Choi, Junhoo Lee, Nojun Kwak  
+### [OFFSET: Segmentation-based Focus Shift Revision for Composed Image Retrieval](http://arxiv.org/abs/2507.05631)  
+Zhiwei Chen, Yupeng Hu, Zixu Li, Zhiheng Fu, Xuemeng Song, Liqiang Nie  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Audio-Visual Localization (AVL) aims to identify sound-emitting sources within a visual scene. However, existing studies focus on image-level audio-visual associations, failing to capture temporal dynamics. Moreover, they assume simplified scenarios where sound sources are always visible and involve only a single object. To address these limitations, we propose AVATAR, a video-centric AVL benchmark that incorporates high-resolution temporal information. AVATAR introduces four distinct scenarios -- Single-sound, Mixed-sound, Multi-entity, and Off-screen -- enabling a more comprehensive evaluation of AVL models. Additionally, we present TAVLO, a novel video-centric AVL model that explicitly integrates temporal information. Experimental results show that conventional methods struggle to track temporal variations due to their reliance on global audio features and frame-level mappings. In contrast, TAVLO achieves robust and precise audio-visual alignment by leveraging high-resolution temporal modeling. Our work empirically demonstrates the importance of temporal dynamics in AVL and establishes a new standard for video-centric audio-visual localization.  
+    Composed Image Retrieval (CIR) represents a novel retrieval paradigm that is capable of expressing users' intricate retrieval requirements flexibly. It enables the user to give a multimodal query, comprising a reference image and a modification text, and subsequently retrieve the target image. Notwithstanding the considerable advances made by prevailing methodologies, CIR remains in its nascent stages due to two limitations: 1) inhomogeneity between dominant and noisy portions in visual data is ignored, leading to query feature degradation, and 2) the priority of textual data in the image modification process is overlooked, which leads to a visual focus bias. To address these two limitations, this work presents a focus mapping-based feature extractor, which consists of two modules: dominant portion segmentation and dual focus mapping. It is designed to identify significant dominant portions in images and guide the extraction of visual and textual data features, thereby reducing the impact of noise interference. Subsequently, we propose a textually guided focus revision module, which can utilize the modification requirements implied in the text to perform adaptive focus revision on the reference image, thereby enhancing the perception of the modification focus on the composed features. The aforementioned modules collectively constitute the segmentatiOn-based Focus shiFt reviSion nETwork (\mbox{OFFSET}), and comprehensive experiments on four benchmark datasets substantiate the superiority of our proposed method. The codes and data are available on https://zivchen-ty.github.io/OFFSET.github.io/  
   </ol>  
 </details>  
-**comments**: Published at ICCV 2025. Project page:
-  https://hahyeon610.github.io/Video-centric_Audio_Visual_Localization/  
   
-### [Simultaneous Localization and Mapping Using Active mmWave Sensing in 5G NR](http://arxiv.org/abs/2507.04662)  
-Tao Du, Jie Yang, Fan Liu, Jiaxiang Guo, Shuqiang Xia, Chao-Kai Wen, Shi Jin  
+### [Llama Nemoretriever Colembed: Top-Performing Text-Image Retrieval Model](http://arxiv.org/abs/2507.05513)  
+Mengyao Xu, Gabriel Moreira, Ronay Ak, Radek Osmulski, Yauhen Babakhin, Zhiding Yu, Benedikt Schifferer, Even Oldridge  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Millimeter-wave (mmWave) 5G New Radio (NR) communication systems, with their high-resolution antenna arrays and extensive bandwidth, offer a transformative opportunity for high-throughput data transmission and advanced environmental sensing. Although passive sensing-based SLAM techniques can estimate user locations and environmental reflections simultaneously, their effectiveness is often constrained by assumptions of specular reflections and oversimplified map representations. To overcome these limitations, this work employs a mmWave 5G NR system for active sensing, enabling it to function similarly to a laser scanner for point cloud generation. Specifically, point clouds are extracted from the power delay profile estimated from each beam direction using a binary search approach. To ensure accuracy, hardware delays are calibrated with multiple predefined target points. Pose variations of the terminal are then estimated from point cloud data gathered along continuous trajectory viewpoints using point cloud registration algorithms. Loop closure detection and pose graph optimization are subsequently applied to refine the sensing results, achieving precise terminal localization and detailed radio map reconstruction. The system is implemented and validated through both simulations and experiments, confirming the effectiveness of the proposed approach.  
-  </ol>  
-</details>  
-**comments**: 7 pages, 7 figures. Accepted for publication at the 2025 IEEE
-  International Conference on Communications (ICC). \c{opyright} 2025 IEEE.
-  Personal use is permitted, but permission from IEEE must be obtained for all
-  other uses  
-  
-### [U-ViLAR: Uncertainty-Aware Visual Localization for Autonomous Driving via Differentiable Association and Registration](http://arxiv.org/abs/2507.04503)  
-Xiaofan Li, Zhihao Xu, Chenming Wu, Zhao Yang, Yumeng Zhang, Jiang-Jiang Liu, Haibao Yu, Fan Duan, Xiaoqing Ye, Yuan Wang, Shirui Li, Xun Sun, Ji Wan, Jun Wang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Accurate localization using visual information is a critical yet challenging task, especially in urban environments where nearby buildings and construction sites significantly degrade GNSS (Global Navigation Satellite System) signal quality. This issue underscores the importance of visual localization techniques in scenarios where GNSS signals are unreliable. This paper proposes U-ViLAR, a novel uncertainty-aware visual localization framework designed to address these challenges while enabling adaptive localization using high-definition (HD) maps or navigation maps. Specifically, our method first extracts features from the input visual data and maps them into Bird's-Eye-View (BEV) space to enhance spatial consistency with the map input. Subsequently, we introduce: a) Perceptual Uncertainty-guided Association, which mitigates errors caused by perception uncertainty, and b) Localization Uncertainty-guided Registration, which reduces errors introduced by localization uncertainty. By effectively balancing the coarse-grained large-scale localization capability of association with the fine-grained precise localization capability of registration, our approach achieves robust and accurate localization. Experimental results demonstrate that our method achieves state-of-the-art performance across multiple localization tasks. Furthermore, our model has undergone rigorous testing on large-scale autonomous driving fleets and has demonstrated stable performance in various challenging urban scenarios.  
-  </ol>  
-</details>  
-**comments**: Vision Localization, Autonomous Driving, Bird's-Eye-View  
-  
-### [Query-Based Adaptive Aggregation for Multi-Dataset Joint Training Toward Universal Visual Place Recognition](http://arxiv.org/abs/2507.03831)  
-Jiuhong Xiao, Yang Zhou, Giuseppe Loianno  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Deep learning methods for Visual Place Recognition (VPR) have advanced significantly, largely driven by large-scale datasets. However, most existing approaches are trained on a single dataset, which can introduce dataset-specific inductive biases and limit model generalization. While multi-dataset joint training offers a promising solution for developing universal VPR models, divergences among training datasets can saturate limited information capacity in feature aggregation layers, leading to suboptimal performance. To address these challenges, we propose Query-based Adaptive Aggregation (QAA), a novel feature aggregation technique that leverages learned queries as reference codebooks to effectively enhance information capacity without significant computational or parameter complexity. We show that computing the Cross-query Similarity (CS) between query-level image features and reference codebooks provides a simple yet effective way to generate robust descriptors. Our results demonstrate that QAA outperforms state-of-the-art models, achieving balanced generalization across diverse datasets while maintaining peak performance comparable to dataset-specific models. Ablation studies further explore QAA's mechanisms and scalability. Visualizations reveal that the learned queries exhibit diverse attention patterns across datasets. Code will be publicly released.  
-  </ol>  
-</details>  
-**comments**: 9 pages, 4 figures  
-  
-  
-
-
-
-## Image Matching  
-
-### [From Query to Explanation: Uni-RAG for Multi-Modal Retrieval-Augmented Learning in STEM](http://arxiv.org/abs/2507.03868)  
-Xinyi Wu, Yanhao Jia, Luwei Xiao, Shuai Zhao, Fengkuang Chiang, Erik Cambria  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    In AI-facilitated teaching, leveraging various query styles to interpret abstract educational content is crucial for delivering effective and accessible learning experiences. However, existing retrieval systems predominantly focus on natural text-image matching and lack the capacity to address the diversity and ambiguity inherent in real-world educational scenarios. To address this limitation, we develop a lightweight and efficient multi-modal retrieval module, named Uni-Retrieval, which extracts query-style prototypes and dynamically matches them with tokens from a continually updated Prompt Bank. This Prompt Bank encodes and stores domain-specific knowledge by leveraging a Mixture-of-Expert Low-Rank Adaptation (MoE-LoRA) module and can be adapted to enhance Uni-Retrieval's capability to accommodate unseen query types at test time. To enable natural language educational content generation, we integrate the original Uni-Retrieval with a compact instruction-tuned language model, forming a complete retrieval-augmented generation pipeline named Uni-RAG. Given a style-conditioned query, Uni-RAG first retrieves relevant educational materials and then generates human-readable explanations, feedback, or instructional content aligned with the learning objective. Experimental results on SER and other multi-modal benchmarks show that Uni-RAG outperforms baseline retrieval and RAG systems in both retrieval accuracy and generation quality, while maintaining low computational cost. Our framework provides a scalable, pedagogically grounded solution for intelligent educational systems, bridging retrieval and generation to support personalized, explainable, and efficient learning assistance across diverse STEM scenarios.  
+    Motivated by the growing demand for retrieval systems that operate across modalities, we introduce llama-nemoretriever-colembed, a unified text-image retrieval model that delivers state-of-the-art performance across multiple benchmarks. We release two model variants, 1B and 3B. The 3B model achieves state of the art performance, scoring NDCG@5 91.0 on ViDoRe V1 and 63.5 on ViDoRe V2, placing first on both leaderboards as of June 27, 2025.   Our approach leverages the NVIDIA Eagle2 Vision-Language model (VLM), modifies its architecture by replacing causal attention with bidirectional attention, and integrates a ColBERT-style late interaction mechanism to enable fine-grained multimodal retrieval in a shared embedding space. While this mechanism delivers superior retrieval accuracy, it introduces trade-offs in storage and efficiency. We provide a comprehensive analysis of these trade-offs. Additionally, we adopt a two-stage training strategy to enhance the model's retrieval capabilities.  
   </ol>  
 </details>  
   
@@ -122,15 +53,24 @@ Xinyi Wu, Yanhao Jia, Luwei Xiao, Shuai Zhao, Fengkuang Chiang, Erik Cambria
 
 ## NeRF  
 
-### [A View-consistent Sampling Method for Regularized Training of Neural Radiance Fields](http://arxiv.org/abs/2507.04408)  
-Aoxiang Fan, Corentin Dumery, Nicolas Talabot, Pascal Fua  
+### [Reflections Unlock: Geometry-Aware Reflection Disentanglement in 3D Gaussian Splatting for Photorealistic Scenes Rendering](http://arxiv.org/abs/2507.06103)  
+Jiayi Song, Zihan Ye, Qingyuan Zhou, Weidong Yang, Ben Fei, Jingyi Xu, Ying He, Wanli Ouyang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Neural Radiance Fields (NeRF) has emerged as a compelling framework for scene representation and 3D recovery. To improve its performance on real-world data, depth regularizations have proven to be the most effective ones. However, depth estimation models not only require expensive 3D supervision in training, but also suffer from generalization issues. As a result, the depth estimations can be erroneous in practice, especially for outdoor unbounded scenes. In this paper, we propose to employ view-consistent distributions instead of fixed depth value estimations to regularize NeRF training. Specifically, the distribution is computed by utilizing both low-level color features and high-level distilled features from foundation models at the projected 2D pixel-locations from per-ray sampled 3D points. By sampling from the view-consistency distributions, an implicit regularization is imposed on the training of NeRF. We also utilize a depth-pushing loss that works in conjunction with the sampling technique to jointly provide effective regularizations for eliminating the failure modes. Extensive experiments conducted on various scenes from public datasets demonstrate that our proposed method can generate significantly better novel view synthesis results than state-of-the-art NeRF variants as well as different depth regularization methods.  
+    Accurately rendering scenes with reflective surfaces remains a significant challenge in novel view synthesis, as existing methods like Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) often misinterpret reflections as physical geometry, resulting in degraded reconstructions. Previous methods rely on incomplete and non-generalizable geometric constraints, leading to misalignment between the positions of Gaussian splats and the actual scene geometry. When dealing with real-world scenes containing complex geometry, the accumulation of Gaussians further exacerbates surface artifacts and results in blurred reconstructions. To address these limitations, in this work, we propose Ref-Unlock, a novel geometry-aware reflection modeling framework based on 3D Gaussian Splatting, which explicitly disentangles transmitted and reflected components to better capture complex reflections and enhance geometric consistency in real-world scenes. Our approach employs a dual-branch representation with high-order spherical harmonics to capture high-frequency reflective details, alongside a reflection removal module providing pseudo reflection-free supervision to guide clean decomposition. Additionally, we incorporate pseudo-depth maps and a geometry-aware bilateral smoothness constraint to enhance 3D geometric consistency and stability in decomposition. Extensive experiments demonstrate that Ref-Unlock significantly outperforms classical GS-based reflection methods and achieves competitive results with NeRF-based models, while enabling flexible vision foundation models (VFMs) driven reflection editing. Our method thus offers an efficient and generalizable solution for realistic rendering of reflective scenes. Our code is available at https://ref-unlock.github.io/.  
   </ol>  
 </details>  
-**comments**: ICCV 2025 accepted  
+  
+### [DreamArt: Generating Interactable Articulated Objects from a Single Image](http://arxiv.org/abs/2507.05763)  
+Ruijie Lu, Yu Liu, Jiaxiang Tang, Junfeng Ni, Yuxiang Wang, Diwen Wan, Gang Zeng, Yixin Chen, Siyuan Huang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Generating articulated objects, such as laptops and microwaves, is a crucial yet challenging task with extensive applications in Embodied AI and AR/VR. Current image-to-3D methods primarily focus on surface geometry and texture, neglecting part decomposition and articulation modeling. Meanwhile, neural reconstruction approaches (e.g., NeRF or Gaussian Splatting) rely on dense multi-view or interaction data, limiting their scalability. In this paper, we introduce DreamArt, a novel framework for generating high-fidelity, interactable articulated assets from single-view images. DreamArt employs a three-stage pipeline: firstly, it reconstructs part-segmented and complete 3D object meshes through a combination of image-to-3D generation, mask-prompted 3D segmentation, and part amodal completion. Second, we fine-tune a video diffusion model to capture part-level articulation priors, leveraging movable part masks as prompt and amodal images to mitigate ambiguities caused by occlusion. Finally, DreamArt optimizes the articulation motion, represented by a dual quaternion, and conducts global texture refinement and repainting to ensure coherent, high-quality textures across all parts. Experimental results demonstrate that DreamArt effectively generates high-quality articulated objects, possessing accurate part shape, high appearance fidelity, and plausible articulation, thereby providing a scalable solution for articulated asset generation. Our project page is available at https://dream-art-0.github.io/DreamArt/.  
+  </ol>  
+</details>  
+**comments**: Technical Report  
   
   
 
