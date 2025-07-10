@@ -3,15 +3,24 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#Automatic-Synthesis-of-High-Quality-Triplet-Data-for-Composed-Image-Retrieval>Automatic Synthesis of High-Quality Triplet Data for Composed Image Retrieval</a></li>
-        <li><a href=#OFFSET:-Segmentation-based-Focus-Shift-Revision-for-Composed-Image-Retrieval>OFFSET: Segmentation-based Focus Shift Revision for Composed Image Retrieval</a></li>
-        <li><a href=#Llama-Nemoretriever-Colembed:-Top-Performing-Text-Image-Retrieval-Model>Llama Nemoretriever Colembed: Top-Performing Text-Image Retrieval Model</a></li>
+        <li><a href=#Evaluating-Attribute-Confusion-in-Fashion-Text-to-Image-Generation>Evaluating Attribute Confusion in Fashion Text-to-Image Generation</a></li>
+        <li><a href=#MS-DPPs:-Multi-Source-Determinantal-Point-Processes-for-Contextual-Diversity-Refinement-of-Composite-Attributes-in-Text-to-Image-Retrieval>MS-DPPs: Multi-Source Determinantal Point Processes for Contextual Diversity Refinement of Composite Attributes in Text to Image Retrieval</a></li>
+      </ul>
+    </li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
+      <ul>
+        <li><a href=#Reading-a-Ruler-in-the-Wild>Reading a Ruler in the Wild</a></li>
+        <li><a href=#MK-Pose:-Category-Level-Object-Pose-Estimation-via-Multimodal-Based-Keypoint-Learning>MK-Pose: Category-Level Object Pose Estimation via Multimodal-Based Keypoint Learning</a></li>
+      </ul>
+    </li>
+    <li><a href=#image-matching>Image Matching</a></li>
+      <ul>
+        <li><a href=#Dual-Granularity-Cross-Modal-Identity-Association-for-Weakly-Supervised-Text-to-Person-Image-Matching>Dual-Granularity Cross-Modal Identity Association for Weakly-Supervised Text-to-Person Image Matching</a></li>
       </ul>
     </li>
     <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#Reflections-Unlock:-Geometry-Aware-Reflection-Disentanglement-in-3D-Gaussian-Splatting-for-Photorealistic-Scenes-Rendering>Reflections Unlock: Geometry-Aware Reflection Disentanglement in 3D Gaussian Splatting for Photorealistic Scenes Rendering</a></li>
-        <li><a href=#DreamArt:-Generating-Interactable-Articulated-Objects-from-a-Single-Image>DreamArt: Generating Interactable Articulated Objects from a Single Image</a></li>
+        <li><a href=#A-Probabilistic-Approach-to-Uncertainty-Quantification-Leveraging-3D-Geometry>A Probabilistic Approach to Uncertainty Quantification Leveraging 3D Geometry</a></li>
       </ul>
     </li>
   </ol>
@@ -19,31 +28,63 @@
 
 ## Visual Localization  
 
-### [Automatic Synthesis of High-Quality Triplet Data for Composed Image Retrieval](http://arxiv.org/abs/2507.05970)  
-Haiwen Li, Delong Liu, Zhaohui Hou, Zhicheng Zhao, Fei Su  
+### [Evaluating Attribute Confusion in Fashion Text-to-Image Generation](http://arxiv.org/abs/2507.07079)  
+Ziyue Liu, Federico Girella, Yiming Wang, Davide Talon  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    As a challenging vision-language (VL) task, Composed Image Retrieval (CIR) aims to retrieve target images using multimodal (image+text) queries. Although many existing CIR methods have attained promising performance, their reliance on costly, manually labeled triplets hinders scalability and zero-shot capability. To address this issue, we propose a scalable pipeline for automatic triplet generation, along with a fully synthetic dataset named Composed Image Retrieval on High-quality Synthetic Triplets (CIRHS). Our pipeline leverages a large language model (LLM) to generate diverse prompts, controlling a text-to-image generative model to produce image pairs with identical elements in each pair, which are then filtered and reorganized to form the CIRHS dataset. In addition, we introduce Hybrid Contextual Alignment (CoAlign), a novel CIR framework, which can accomplish global alignment and local reasoning within a broader context, enabling the model to learn more robust and informative representations. By utilizing the synthetic CIRHS dataset, CoAlign achieves outstanding zero-shot performance on three commonly used benchmarks, demonstrating for the first time the feasibility of training CIR models on a fully synthetic dataset. Furthermore, under supervised training, our method outperforms all the state-of-the-art supervised CIR approaches, validating the effectiveness of our proposed retrieval framework. The code and the CIRHS dataset will be released soon.  
+    Despite the rapid advances in Text-to-Image (T2I) generation models, their evaluation remains challenging in domains like fashion, involving complex compositional generation. Recent automated T2I evaluation methods leverage pre-trained vision-language models to measure cross-modal alignment. However, our preliminary study reveals that they are still limited in assessing rich entity-attribute semantics, facing challenges in attribute confusion, i.e., when attributes are correctly depicted but associated to the wrong entities. To address this, we build on a Visual Question Answering (VQA) localization strategy targeting one single entity at a time across both visual and textual modalities. We propose a localized human evaluation protocol and introduce a novel automatic metric, Localized VQAScore (L-VQAScore), that combines visual localization with VQA probing both correct (reflection) and miss-localized (leakage) attribute generation. On a newly curated dataset featuring challenging compositional alignment scenarios, L-VQAScore outperforms state-of-the-art T2I evaluation methods in terms of correlation with human judgments, demonstrating its strength in capturing fine-grained entity-attribute associations. We believe L-VQAScore can be a reliable and scalable alternative to subjective evaluations.  
   </ol>  
 </details>  
-**comments**: This paper was originally submitted to ACM MM 2025 on April 12, 2025  
+**comments**: Accepted to ICIAP25. Project page: site
+  [https://intelligolabs.github.io/L-VQAScore/\  
   
-### [OFFSET: Segmentation-based Focus Shift Revision for Composed Image Retrieval](http://arxiv.org/abs/2507.05631)  
-Zhiwei Chen, Yupeng Hu, Zixu Li, Zhiheng Fu, Xuemeng Song, Liqiang Nie  
+### [MS-DPPs: Multi-Source Determinantal Point Processes for Contextual Diversity Refinement of Composite Attributes in Text to Image Retrieval](http://arxiv.org/abs/2507.06654)  
+Naoya Sogi, Takashi Shibata, Makoto Terao, Masanori Suganuma, Takayuki Okatani  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) represents a novel retrieval paradigm that is capable of expressing users' intricate retrieval requirements flexibly. It enables the user to give a multimodal query, comprising a reference image and a modification text, and subsequently retrieve the target image. Notwithstanding the considerable advances made by prevailing methodologies, CIR remains in its nascent stages due to two limitations: 1) inhomogeneity between dominant and noisy portions in visual data is ignored, leading to query feature degradation, and 2) the priority of textual data in the image modification process is overlooked, which leads to a visual focus bias. To address these two limitations, this work presents a focus mapping-based feature extractor, which consists of two modules: dominant portion segmentation and dual focus mapping. It is designed to identify significant dominant portions in images and guide the extraction of visual and textual data features, thereby reducing the impact of noise interference. Subsequently, we propose a textually guided focus revision module, which can utilize the modification requirements implied in the text to perform adaptive focus revision on the reference image, thereby enhancing the perception of the modification focus on the composed features. The aforementioned modules collectively constitute the segmentatiOn-based Focus shiFt reviSion nETwork (\mbox{OFFSET}), and comprehensive experiments on four benchmark datasets substantiate the superiority of our proposed method. The codes and data are available on https://zivchen-ty.github.io/OFFSET.github.io/  
+    Result diversification (RD) is a crucial technique in Text-to-Image Retrieval for enhancing the efficiency of a practical application. Conventional methods focus solely on increasing the diversity metric of image appearances. However, the diversity metric and its desired value vary depending on the application, which limits the applications of RD. This paper proposes a novel task called CDR-CA (Contextual Diversity Refinement of Composite Attributes). CDR-CA aims to refine the diversities of multiple attributes, according to the application's context. To address this task, we propose Multi-Source DPPs, a simple yet strong baseline that extends the Determinantal Point Process (DPP) to multi-sources. We model MS-DPP as a single DPP model with a unified similarity matrix based on a manifold representation. We also introduce Tangent Normalization to reflect contexts. Extensive experiments demonstrate the effectiveness of the proposed method. Our code is publicly available at https://github.com/NEC-N-SOGI/msdpp.  
+  </ol>  
+</details>  
+**comments**: IJCAI 2025. Code: https://github.com/NEC-N-SOGI/msdpp  
+  
+  
+
+
+
+## Keypoint Detection  
+
+### [Reading a Ruler in the Wild](http://arxiv.org/abs/2507.07077)  
+Yimu Pan, Manas Mehta, Gwen Sincerbeaux, Jeffery A. Goldstein, Alison D. Gernand, James Z. Wang  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Accurately converting pixel measurements into absolute real-world dimensions remains a fundamental challenge in computer vision and limits progress in key applications such as biomedicine, forensics, nutritional analysis, and e-commerce. We introduce RulerNet, a deep learning framework that robustly infers scale "in the wild" by reformulating ruler reading as a unified keypoint-detection problem and by representing the ruler with geometric-progression parameters that are invariant to perspective transformations. Unlike traditional methods that rely on handcrafted thresholds or rigid, ruler-specific pipelines, RulerNet directly localizes centimeter marks using a distortion-invariant annotation and training strategy, enabling strong generalization across diverse ruler types and imaging conditions while mitigating data scarcity. We also present a scalable synthetic-data pipeline that combines graphics-based ruler generation with ControlNet to add photorealistic context, greatly increasing training diversity and improving performance. To further enhance robustness and efficiency, we propose DeepGP, a lightweight feed-forward network that regresses geometric-progression parameters from noisy marks and eliminates iterative optimization, enabling real-time scale estimation on mobile or edge devices. Experiments show that RulerNet delivers accurate, consistent, and efficient scale estimates under challenging real-world conditions. These results underscore its utility as a generalizable measurement tool and its potential for integration with other vision components for automated, scale-aware analysis in high-impact domains. A live demo is available at https://huggingface.co/spaces/ymp5078/RulerNet-Demo.  
   </ol>  
 </details>  
   
-### [Llama Nemoretriever Colembed: Top-Performing Text-Image Retrieval Model](http://arxiv.org/abs/2507.05513)  
-Mengyao Xu, Gabriel Moreira, Ronay Ak, Radek Osmulski, Yauhen Babakhin, Zhiding Yu, Benedikt Schifferer, Even Oldridge  
+### [MK-Pose: Category-Level Object Pose Estimation via Multimodal-Based Keypoint Learning](http://arxiv.org/abs/2507.06662)  
+Yifan Yang, Peili Song, Enfan Lan, Dong Liu, Jingtai Liu  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Motivated by the growing demand for retrieval systems that operate across modalities, we introduce llama-nemoretriever-colembed, a unified text-image retrieval model that delivers state-of-the-art performance across multiple benchmarks. We release two model variants, 1B and 3B. The 3B model achieves state of the art performance, scoring NDCG@5 91.0 on ViDoRe V1 and 63.5 on ViDoRe V2, placing first on both leaderboards as of June 27, 2025.   Our approach leverages the NVIDIA Eagle2 Vision-Language model (VLM), modifies its architecture by replacing causal attention with bidirectional attention, and integrates a ColBERT-style late interaction mechanism to enable fine-grained multimodal retrieval in a shared embedding space. While this mechanism delivers superior retrieval accuracy, it introduces trade-offs in storage and efficiency. We provide a comprehensive analysis of these trade-offs. Additionally, we adopt a two-stage training strategy to enhance the model's retrieval capabilities.  
+    Category-level object pose estimation, which predicts the pose of objects within a known category without prior knowledge of individual instances, is essential in applications like warehouse automation and manufacturing. Existing methods relying on RGB images or point cloud data often struggle with object occlusion and generalization across different instances and categories. This paper proposes a multimodal-based keypoint learning framework (MK-Pose) that integrates RGB images, point clouds, and category-level textual descriptions. The model uses a self-supervised keypoint detection module enhanced with attention-based query generation, soft heatmap matching and graph-based relational modeling. Additionally, a graph-enhanced feature fusion module is designed to integrate local geometric information and global context. MK-Pose is evaluated on CAMERA25 and REAL275 dataset, and is further tested for cross-dataset capability on HouseCat6D dataset. The results demonstrate that MK-Pose outperforms existing state-of-the-art methods in both IoU and average precision without shape priors. Codes will be released at \href{https://github.com/yangyifanYYF/MK-Pose}{https://github.com/yangyifanYYF/MK-Pose}.  
+  </ol>  
+</details>  
+  
+  
+
+
+
+## Image Matching  
+
+### [Dual-Granularity Cross-Modal Identity Association for Weakly-Supervised Text-to-Person Image Matching](http://arxiv.org/abs/2507.06744)  
+Yafei Zhang, Yongle Shang, Huafeng Li  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Weakly supervised text-to-person image matching, as a crucial approach to reducing models' reliance on large-scale manually labeled samples, holds significant research value. However, existing methods struggle to predict complex one-to-many identity relationships, severely limiting performance improvements. To address this challenge, we propose a local-and-global dual-granularity identity association mechanism. Specifically, at the local level, we explicitly establish cross-modal identity relationships within a batch, reinforcing identity constraints across different modalities and enabling the model to better capture subtle differences and correlations. At the global level, we construct a dynamic cross-modal identity association network with the visual modality as the anchor and introduce a confidence-based dynamic adjustment mechanism, effectively enhancing the model's ability to identify weakly associated samples while improving overall sensitivity. Additionally, we propose an information-asymmetric sample pair construction method combined with consistency learning to tackle hard sample mining and enhance model robustness. Experimental results demonstrate that the proposed method substantially boosts cross-modal matching accuracy, providing an efficient and practical solution for text-to-person image matching.  
   </ol>  
 </details>  
   
@@ -53,24 +94,15 @@ Mengyao Xu, Gabriel Moreira, Ronay Ak, Radek Osmulski, Yauhen Babakhin, Zhiding 
 
 ## NeRF  
 
-### [Reflections Unlock: Geometry-Aware Reflection Disentanglement in 3D Gaussian Splatting for Photorealistic Scenes Rendering](http://arxiv.org/abs/2507.06103)  
-Jiayi Song, Zihan Ye, Qingyuan Zhou, Weidong Yang, Ben Fei, Jingyi Xu, Ying He, Wanli Ouyang  
+### [A Probabilistic Approach to Uncertainty Quantification Leveraging 3D Geometry](http://arxiv.org/abs/2507.06269)  
+Rushil Desai, Frederik Warburg, Trevor Darrell, Marissa Ramirez de Chanlatte  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Accurately rendering scenes with reflective surfaces remains a significant challenge in novel view synthesis, as existing methods like Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS) often misinterpret reflections as physical geometry, resulting in degraded reconstructions. Previous methods rely on incomplete and non-generalizable geometric constraints, leading to misalignment between the positions of Gaussian splats and the actual scene geometry. When dealing with real-world scenes containing complex geometry, the accumulation of Gaussians further exacerbates surface artifacts and results in blurred reconstructions. To address these limitations, in this work, we propose Ref-Unlock, a novel geometry-aware reflection modeling framework based on 3D Gaussian Splatting, which explicitly disentangles transmitted and reflected components to better capture complex reflections and enhance geometric consistency in real-world scenes. Our approach employs a dual-branch representation with high-order spherical harmonics to capture high-frequency reflective details, alongside a reflection removal module providing pseudo reflection-free supervision to guide clean decomposition. Additionally, we incorporate pseudo-depth maps and a geometry-aware bilateral smoothness constraint to enhance 3D geometric consistency and stability in decomposition. Extensive experiments demonstrate that Ref-Unlock significantly outperforms classical GS-based reflection methods and achieves competitive results with NeRF-based models, while enabling flexible vision foundation models (VFMs) driven reflection editing. Our method thus offers an efficient and generalizable solution for realistic rendering of reflective scenes. Our code is available at https://ref-unlock.github.io/.  
+    Quantifying uncertainty in neural implicit 3D representations, particularly those utilizing Signed Distance Functions (SDFs), remains a substantial challenge due to computational inefficiencies, scalability issues, and geometric inconsistencies. Existing methods typically neglect direct geometric integration, leading to poorly calibrated uncertainty maps. We introduce BayesSDF, a novel probabilistic framework for uncertainty quantification in neural implicit SDF models, motivated by scientific simulation applications with 3D environments (e.g., forests) such as modeling fluid flow through forests, where precise surface geometry and awareness of fidelity surface geometric uncertainty are essential. Unlike radiance-based models such as NeRF or 3D Gaussian splatting, which lack explicit surface formulations, SDFs define continuous and differentiable geometry, making them better suited for physical modeling and analysis. BayesSDF leverages a Laplace approximation to quantify local surface instability via Hessian-based metrics, enabling computationally efficient, surface-aware uncertainty estimation. Our method shows that uncertainty predictions correspond closely with poorly reconstructed geometry, providing actionable confidence measures for downstream use. Extensive evaluations on synthetic and real-world datasets demonstrate that BayesSDF outperforms existing methods in both calibration and geometric consistency, establishing a strong foundation for uncertainty-aware 3D scene reconstruction, simulation, and robotic decision-making.  
   </ol>  
 </details>  
-  
-### [DreamArt: Generating Interactable Articulated Objects from a Single Image](http://arxiv.org/abs/2507.05763)  
-Ruijie Lu, Yu Liu, Jiaxiang Tang, Junfeng Ni, Yuxiang Wang, Diwen Wan, Gang Zeng, Yixin Chen, Siyuan Huang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Generating articulated objects, such as laptops and microwaves, is a crucial yet challenging task with extensive applications in Embodied AI and AR/VR. Current image-to-3D methods primarily focus on surface geometry and texture, neglecting part decomposition and articulation modeling. Meanwhile, neural reconstruction approaches (e.g., NeRF or Gaussian Splatting) rely on dense multi-view or interaction data, limiting their scalability. In this paper, we introduce DreamArt, a novel framework for generating high-fidelity, interactable articulated assets from single-view images. DreamArt employs a three-stage pipeline: firstly, it reconstructs part-segmented and complete 3D object meshes through a combination of image-to-3D generation, mask-prompted 3D segmentation, and part amodal completion. Second, we fine-tune a video diffusion model to capture part-level articulation priors, leveraging movable part masks as prompt and amodal images to mitigate ambiguities caused by occlusion. Finally, DreamArt optimizes the articulation motion, represented by a dual quaternion, and conducts global texture refinement and repainting to ensure coherent, high-quality textures across all parts. Experimental results demonstrate that DreamArt effectively generates high-quality articulated objects, possessing accurate part shape, high appearance fidelity, and plausible articulation, thereby providing a scalable solution for articulated asset generation. Our project page is available at https://dream-art-0.github.io/DreamArt/.  
-  </ol>  
-</details>  
-**comments**: Technical Report  
+**comments**: ICCV 2025 Workshops (8 Pages, 6 Figures, 2 Tables)  
   
   
 
