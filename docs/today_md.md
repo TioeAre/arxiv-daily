@@ -1,42 +1,32 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#Hardware-Aware-Feature-Extraction-Quantisation-for-Real-Time-Visual-Odometry-on-FPGA-Platforms>Hardware-Aware Feature Extraction Quantisation for Real-Time Visual Odometry on FPGA Platforms</a></li>
+        <li><a href=#Review-of-Feed-forward-3D-Reconstruction:-From-DUSt3R-to-VGGT>Review of Feed-forward 3D Reconstruction: From DUSt3R to VGGT</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#SCREP:-Scene-Coordinate-Regression-and-Evidential-Learning-based-Perception-Aware-Trajectory-Generation>SCREP: Scene Coordinate Regression and Evidential Learning-based Perception-Aware Trajectory Generation</a></li>
-        <li><a href=#VP-SelDoA:-Visual-prompted-Selective-DoA-Estimation-of-Target-Sound-via-Semantic-Spatial-Matching>VP-SelDoA: Visual-prompted Selective DoA Estimation of Target Sound via Semantic-Spatial Matching</a></li>
-        <li><a href=#FACap:-A-Large-scale-Fashion-Dataset-for-Fine-grained-Composed-Image-Retrieval>FACap: A Large-scale Fashion Dataset for Fine-grained Composed Image Retrieval</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#Doodle-Your-Keypoints:-Sketch-Based-Few-Shot-Keypoint-Detection>Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection</a></li>
-      </ul>
-    </li>
-    <li><a href=#nerf>NeRF</a></li>
-      <ul>
-        <li><a href=#MUVOD:-A-Novel-Multi-view-Video-Object-Segmentation-Dataset-and-A-Benchmark-for-3D-Segmentation>MUVOD: A Novel Multi-view Video Object Segmentation Dataset and A Benchmark for 3D Segmentation</a></li>
+        <li><a href=#RadiomicsRetrieval:-A-Customizable-Framework-for-Medical-Image-Retrieval-Using-Radiomics-Features>RadiomicsRetrieval: A Customizable Framework for Medical Image Retrieval Using Radiomics Features</a></li>
+        <li><a href=#LiDAR,-GNSS-and-IMU-Sensor-Alignment-through-Dynamic-Time-Warping-to-Construct-3D-City-Maps>LiDAR, GNSS and IMU Sensor Alignment through Dynamic Time Warping to Construct 3D City Maps</a></li>
+        <li><a href=#Deep-Hashing-with-Semantic-Hash-Centers-for-Image-Retrieval>Deep Hashing with Semantic Hash Centers for Image Retrieval</a></li>
+        <li><a href=#Unveiling-Effective-In-Context-Configurations-for-Image-Captioning:-An-External-&-Internal-Analysis>Unveiling Effective In-Context Configurations for Image Captioning: An External & Internal Analysis</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [Hardware-Aware Feature Extraction Quantisation for Real-Time Visual Odometry on FPGA Platforms](http://arxiv.org/abs/2507.07903)  
-Mateusz Wasala, Mateusz Smolarczyk, Michal Danilowicz, Tomasz Kryjak  
+### [Review of Feed-forward 3D Reconstruction: From DUSt3R to VGGT](http://arxiv.org/abs/2507.08448)  
+Wei Zhang, Yihang Wu, Songhua Li, Wenjie Ma, Xin Ma, Qiang Li, Qi Wang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Accurate position estimation is essential for modern navigation systems deployed in autonomous platforms, including ground vehicles, marine vessels, and aerial drones. In this context, Visual Simultaneous Localisation and Mapping (VSLAM) - which includes Visual Odometry - relies heavily on the reliable extraction of salient feature points from the visual input data. In this work, we propose an embedded implementation of an unsupervised architecture capable of detecting and describing feature points. It is based on a quantised SuperPoint convolutional neural network. Our objective is to minimise the computational demands of the model while preserving high detection quality, thus facilitating efficient deployment on platforms with limited resources, such as mobile or embedded systems. We implemented the solution on an FPGA System-on-Chip (SoC) platform, specifically the AMD/Xilinx Zynq UltraScale+, where we evaluated the performance of Deep Learning Processing Units (DPUs) and we also used the Brevitas library and the FINN framework to perform model quantisation and hardware-aware optimisation. This allowed us to process 640 x 480 pixel images at up to 54 fps on an FPGA platform, outperforming state-of-the-art solutions in the field. We conducted experiments on the TUM dataset to demonstrate and discuss the impact of different quantisation techniques on the accuracy and performance of the model in a visual odometry task.  
+    3D reconstruction, which aims to recover the dense three-dimensional structure of a scene, is a cornerstone technology for numerous applications, including augmented/virtual reality, autonomous driving, and robotics. While traditional pipelines like Structure from Motion (SfM) and Multi-View Stereo (MVS) achieve high precision through iterative optimization, they are limited by complex workflows, high computational cost, and poor robustness in challenging scenarios like texture-less regions. Recently, deep learning has catalyzed a paradigm shift in 3D reconstruction. A new family of models, exemplified by DUSt3R, has pioneered a feed-forward approach. These models employ a unified deep network to jointly infer camera poses and dense geometry directly from an Unconstrained set of images in a single forward pass. This survey provides a systematic review of this emerging domain. We begin by dissecting the technical framework of these feed-forward models, including their Transformer-based correspondence modeling, joint pose and geometry regression mechanisms, and strategies for scaling from two-view to multi-view scenarios. To highlight the disruptive nature of this new paradigm, we contrast it with both traditional pipelines and earlier learning-based methods like MVSNet. Furthermore, we provide an overview of relevant datasets and evaluation metrics. Finally, we discuss the technology's broad application prospects and identify key future challenges and opportunities, such as model accuracy and scalability, and handling dynamic scenes.  
   </ol>  
 </details>  
-**comments**: Accepted for the DSD 2025 conference in Salerno, Italy  
   
   
 
@@ -44,65 +34,45 @@ Mateusz Wasala, Mateusz Smolarczyk, Michal Danilowicz, Tomasz Kryjak
 
 ## Visual Localization  
 
-### [SCREP: Scene Coordinate Regression and Evidential Learning-based Perception-Aware Trajectory Generation](http://arxiv.org/abs/2507.07467)  
-Juyeop Han, Lukas Lao Beyer, Guilherme V. Cavalheiro, Sertac Karaman  
+### [RadiomicsRetrieval: A Customizable Framework for Medical Image Retrieval Using Radiomics Features](http://arxiv.org/abs/2507.08546)  
+Inye Na, Nejung Rue, Jiwon Chung, Hyunjin Park  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Autonomous flight in GPS denied indoor spaces requires trajectories that keep visual localization error tightly bounded across varied missions. Whereas visual inertial odometry (VIO) accumulates drift over time, scene coordinate regression (SCR) yields drift-free, high accuracy absolute pose estimation. We present a perception-aware framework that couples an evidential learning-based SCR pose estimator with a receding horizon trajectory optimizer. The optimizer steers the onboard camera toward pixels whose uncertainty predicts reliable scene coordinates, while a fixed-lag smoother fuses the low rate SCR stream with high rate IMU data to close the perception control loop in real time. In simulation, our planner reduces translation (rotation) mean error by 54% / 15% (40% / 31%) relative to yaw fixed and forward-looking baselines, respectively. Moreover, hardware in the loop experiment validates the feasibility of our proposed framework.  
+    Medical image retrieval is a valuable field for supporting clinical decision-making, yet current methods primarily support 2D images and require fully annotated queries, limiting clinical flexibility. To address this, we propose RadiomicsRetrieval, a 3D content-based retrieval framework bridging handcrafted radiomics descriptors with deep learning-based embeddings at the tumor level. Unlike existing 2D approaches, RadiomicsRetrieval fully exploits volumetric data to leverage richer spatial context in medical images. We employ a promptable segmentation model (e.g., SAM) to derive tumor-specific image embeddings, which are aligned with radiomics features extracted from the same tumor via contrastive learning. These representations are further enriched by anatomical positional embedding (APE). As a result, RadiomicsRetrieval enables flexible querying based on shape, location, or partial feature sets. Extensive experiments on both lung CT and brain MRI public datasets demonstrate that radiomics features significantly enhance retrieval specificity, while APE provides global anatomical context essential for location-based searches. Notably, our framework requires only minimal user prompts (e.g., a single point), minimizing segmentation overhead and supporting diverse clinical scenarios. The capability to query using either image embeddings or selected radiomics attributes highlights its adaptability, potentially benefiting diagnosis, treatment planning, and research on large-scale medical imaging repositories. Our code is available at https://github.com/nainye/RadiomicsRetrieval.  
   </ol>  
 </details>  
-**comments**: 8 pages, 7 figures, 3 tables  
+**comments**: Accepted at MICCAI 2025  
   
-### [VP-SelDoA: Visual-prompted Selective DoA Estimation of Target Sound via Semantic-Spatial Matching](http://arxiv.org/abs/2507.07384)  
-Yu Chen, Xinyuan Qian, Hongxu Zhu, Jiadong Wang, Kainan Chen, Haizhou Li  
+### [LiDAR, GNSS and IMU Sensor Alignment through Dynamic Time Warping to Construct 3D City Maps](http://arxiv.org/abs/2507.08420)  
+Haitian Wang, Hezam Albaqami, Xinyu Wang, Muhammad Ibrahim, Zainy M. Malakan, Abdullah M. Algamdi, Mohammed H. Alghamdi, Ajmal Mian  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Audio-visual sound source localization (AV-SSL) identifies the position of a sound source by exploiting the complementary strengths of auditory and visual signals. However, existing AV-SSL methods encounter three major challenges: 1) inability to selectively isolate the target sound source in multi-source scenarios, 2) misalignment between semantic visual features and spatial acoustic features, and 3) overreliance on paired audio-visual data. To overcome these limitations, we introduce Cross-Instance Audio-Visual Localization (CI-AVL), a novel task that leverages images from different instances of the same sound event category to localize target sound sources, thereby reducing dependence on paired data while enhancing generalization capabilities. Our proposed VP-SelDoA tackles this challenging task through a semantic-level modality fusion and employs a Frequency-Temporal ConMamba architecture to generate target-selective masks for sound isolation. We further develop a Semantic-Spatial Matching mechanism that aligns the heterogeneous semantic and spatial features via integrated cross- and self-attention mechanisms. To facilitate the CI-AVL research, we construct a large-scale dataset named VGG-SSL, comprising 13,981 spatial audio clips across 296 sound event categories. Extensive experiments show that our proposed method outperforms state-of-the-art audio-visual localization methods, achieving a mean absolute error (MAE) of 12.04 and an accuracy (ACC) of 78.23%.  
+    LiDAR-based 3D mapping suffers from cumulative drift causing global misalignment, particularly in GNSS-constrained environments. To address this, we propose a unified framework that fuses LiDAR, GNSS, and IMU data for high-resolution city-scale mapping. The method performs velocity-based temporal alignment using Dynamic Time Warping and refines GNSS and IMU signals via extended Kalman filtering. Local maps are built using Normal Distributions Transform-based registration and pose graph optimization with loop closure detection, while global consistency is enforced using GNSS-constrained anchors followed by fine registration of overlapping segments. We also introduce a large-scale multimodal dataset captured in Perth, Western Australia to facilitate future research in this direction. Our dataset comprises 144{,}000 frames acquired with a 128-channel Ouster LiDAR, synchronized RTK-GNSS trajectories, and MEMS-IMU measurements across 21 urban loops. To assess geometric consistency, we evaluated our method using alignment metrics based on road centerlines and intersections to capture both global and local accuracy. Our method reduces the average global alignment error from 3.32\,m to 1.24\,m, achieving a 61.4\% improvement. The constructed high-fidelity map supports a wide range of applications, including smart city planning, geospatial data integration, infrastructure monitoring, and GPS-free navigation. Our method, and dataset together establish a new benchmark for evaluating 3D city mapping in GNSS-constrained environments. The dataset and code will be released publicly.  
   </ol>  
 </details>  
-**comments**: Under Review  
+**comments**: Preparing to submit to International Journal of Applied Earth
+  Observation and Geoinformation  
   
-### [FACap: A Large-scale Fashion Dataset for Fine-grained Composed Image Retrieval](http://arxiv.org/abs/2507.07135)  
-François Gardères, Shizhe Chen, Camille-Sovanneary Gauthier, Jean Ponce  
+### [Deep Hashing with Semantic Hash Centers for Image Retrieval](http://arxiv.org/abs/2507.08404)  
+Li Chen, Rui Liu, Yuxiang Zhou, Xudong Ma, Yong Chen, Dell Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    The composed image retrieval (CIR) task is to retrieve target images given a reference image and a modification text. Recent methods for CIR leverage large pretrained vision-language models (VLMs) and achieve good performance on general-domain concepts like color and texture. However, they still struggle with application domains like fashion, because the rich and diverse vocabulary used in fashion requires specific fine-grained vision and language understanding. An additional difficulty is the lack of large-scale fashion datasets with detailed and relevant annotations, due to the expensive cost of manual annotation by specialists. To address these challenges, we introduce FACap, a large-scale, automatically constructed fashion-domain CIR dataset. It leverages web-sourced fashion images and a two-stage annotation pipeline powered by a VLM and a large language model (LLM) to generate accurate and detailed modification texts. Then, we propose a new CIR model FashionBLIP-2, which fine-tunes the general-domain BLIP-2 model on FACap with lightweight adapters and multi-head query-candidate matching to better account for fine-grained fashion-specific information. FashionBLIP-2 is evaluated with and without additional fine-tuning on the Fashion IQ benchmark and the enhanced evaluation dataset enhFashionIQ, leveraging our pipeline to obtain higher-quality annotations. Experimental results show that the combination of FashionBLIP-2 and pretraining with FACap significantly improves the model's performance in fashion CIR especially for retrieval with fine-grained modification texts, demonstrating the value of our dataset and approach in a highly demanding environment such as e-commerce websites. Code is available at https://fgxaos.github.io/facap-paper-website/.  
+    Deep hashing is an effective approach for large-scale image retrieval. Current methods are typically classified by their supervision types: point-wise, pair-wise, and list-wise. Recent point-wise techniques (e.g., CSQ, MDS) have improved retrieval performance by pre-assigning a hash center to each class, enhancing the discriminability of hash codes across various datasets. However, these methods rely on data-independent algorithms to generate hash centers, which neglect the semantic relationships between classes and may degrade retrieval performance.   This paper introduces the concept of semantic hash centers, building on the idea of traditional hash centers. We hypothesize that hash centers of semantically related classes should have closer Hamming distances, while those of unrelated classes should be more distant. To this end, we propose a three-stage framework, SHC, to generate hash codes that preserve semantic structure.   First, we develop a classification network to identify semantic similarities between classes using a data-dependent similarity calculation that adapts to varying data distributions. Second, we introduce an optimization algorithm to generate semantic hash centers, preserving semantic relatedness while enforcing a minimum distance between centers to avoid excessively similar hash codes. Finally, a deep hashing network is trained using these semantic centers to convert images into binary hash codes.   Experimental results on large-scale retrieval tasks across several public datasets show that SHC significantly improves retrieval performance. Specifically, SHC achieves average improvements of +7.26%, +7.62%, and +11.71% in MAP@100, MAP@1000, and MAP@ALL metrics, respectively, over state-of-the-art methods.  
   </ol>  
 </details>  
   
-  
-
-
-
-## Keypoint Detection  
-
-### [Doodle Your Keypoints: Sketch-Based Few-Shot Keypoint Detection](http://arxiv.org/abs/2507.07994)  
-Subhajit Maity, Ayan Kumar Bhunia, Subhadeep Koley, Pinaki Nath Chowdhury, Aneeshan Sain, Yi-Zhe Song  
+### [Unveiling Effective In-Context Configurations for Image Captioning: An External & Internal Analysis](http://arxiv.org/abs/2507.08021)  
+Li Li, Yongliang Wu, Jingze Zhu, Jiawei Peng, Jianfei Cai, Xu Yang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Keypoint detection, integral to modern machine perception, faces challenges in few-shot learning, particularly when source data from the same distribution as the query is unavailable. This gap is addressed by leveraging sketches, a popular form of human expression, providing a source-free alternative. However, challenges arise in mastering cross-modal embeddings and handling user-specific sketch styles. Our proposed framework overcomes these hurdles with a prototypical setup, combined with a grid-based locator and prototypical domain adaptation. We also demonstrate success in few-shot convergence across novel keypoints and classes through extensive experiments.  
+    The evolution of large models has witnessed the emergence of In-Context Learning (ICL) capabilities. In Natural Language Processing (NLP), numerous studies have demonstrated the effectiveness of ICL. Inspired by the success of Large Language Models (LLMs), researchers have developed Large Multimodal Models (LMMs) with ICL capabilities. However, explorations of demonstration configuration for multimodal ICL remain preliminary. Additionally, the controllability of In-Context Examples (ICEs) provides an efficient and cost-effective means to observe and analyze the inference characteristics of LMMs under varying inputs. This paper conducts a comprehensive external and internal investigation of multimodal in-context learning on the image captioning task. Externally, we explore demonstration configuration strategies through three dimensions: shot number, image retrieval, and caption assignment. We employ multiple metrics to systematically and thoroughly evaluate and summarize key findings. Internally, we analyze typical LMM attention characteristics and develop attention-based metrics to quantify model behaviors. We also conduct auxiliary experiments to explore the feasibility of attention-driven model acceleration and compression. We further compare performance variations between LMMs with identical model design and pretraining strategies and explain the differences from the angles of pre-training data features. Our study reveals both how ICEs configuration strategies impact model performance through external experiments and characteristic typical patterns through internal inspection, providing dual perspectives for understanding multimodal ICL in LMMs. Our method of combining external and internal analysis to investigate large models, along with our newly proposed metrics, can be applied to broader research areas.  
   </ol>  
 </details>  
-**comments**: Accepted at ICCV 2025. Project Page: https://subhajitmaity.me/DYKp  
-  
-  
-
-
-
-## NeRF  
-
-### [MUVOD: A Novel Multi-view Video Object Segmentation Dataset and A Benchmark for 3D Segmentation](http://arxiv.org/abs/2507.07519)  
-Bangning Wei, Joshua Maraval, Meriem Outtas, Kidiyo Kpalma, Nicolas Ramin, Lu Zhang  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    The application of methods based on Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3D GS) have steadily gained popularity in the field of 3D object segmentation in static scenes. These approaches demonstrate efficacy in a range of 3D scene understanding and editing tasks. Nevertheless, the 4D object segmentation of dynamic scenes remains an underexplored field due to the absence of a sufficiently extensive and accurately labelled multi-view video dataset. In this paper, we present MUVOD, a new multi-view video dataset for training and evaluating object segmentation in reconstructed real-world scenarios. The 17 selected scenes, describing various indoor or outdoor activities, are collected from different sources of datasets originating from various types of camera rigs. Each scene contains a minimum of 9 views and a maximum of 46 views. We provide 7830 RGB images (30 frames per video) with their corresponding segmentation mask in 4D motion, meaning that any object of interest in the scene could be tracked across temporal frames of a given view or across different views belonging to the same camera rig. This dataset, which contains 459 instances of 73 categories, is intended as a basic benchmark for the evaluation of multi-view video segmentation methods. We also present an evaluation metric and a baseline segmentation approach to encourage and evaluate progress in this evolving field. Additionally, we propose a new benchmark for 3D object segmentation task with a subset of annotated multi-view images selected from our MUVOD dataset. This subset contains 50 objects of different conditions in different scenarios, providing a more comprehensive analysis of state-of-the-art 3D object segmentation methods. Our proposed MUVOD dataset is available at https://volumetric-repository.labs.b-com.com/#/muvod.  
-  </ol>  
-</details>  
+**comments**: 16 pages, 11 figures  
   
   
 
