@@ -3,16 +3,14 @@
   <ol>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#GT-Loc:-Unifying-When-and-Where-in-Images-Through-a-Joint-Embedding-Space>GT-Loc: Unifying When and Where in Images Through a Joint Embedding Space</a></li>
-        <li><a href=#Text-to-Remote-Sensing-Image-Retrieval-beyond-RGB-Sources>Text-to-Remote-Sensing-Image Retrieval beyond RGB Sources</a></li>
-        <li><a href=#Kaleidoscopic-Background-Attack:-Disrupting-Pose-Estimation-with-Multi-Fold-Radial-Symmetry-Textures>Kaleidoscopic Background Attack: Disrupting Pose Estimation with Multi-Fold Radial Symmetry Textures</a></li>
+        <li><a href=#Orchestrator-Agent-Trust:-A-Modular-Agentic-AI-Visual-Classification-System-with-Trust-Aware-Orchestration-and-RAG-Based-Reasoning>Orchestrator-Agent Trust: A Modular Agentic AI Visual Classification System with Trust-Aware Orchestration and RAG-Based Reasoning</a></li>
       </ul>
     </li>
-    <li><a href=#nerf>NeRF</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#VoxelRF:-Voxelized-Radiance-Field-for-Fast-Wireless-Channel-Modeling>VoxelRF: Voxelized Radiance Field for Fast Wireless Channel Modeling</a></li>
-        <li><a href=#Stable-Score-Distillation>Stable Score Distillation</a></li>
-        <li><a href=#From-images-to-properties:-a-NeRF-driven-framework-for-granular-material-parameter-inversion>From images to properties: a NeRF-driven framework for granular material parameter inversion</a></li>
+        <li><a href=#KptLLM++:-Towards-Generic-Keypoint-Comprehension-with-Large-Language-Model>KptLLM++: Towards Generic Keypoint Comprehension with Large Language Model</a></li>
+        <li><a href=#GKNet:-Graph-based-Keypoints-Network-for-Monocular-Pose-Estimation-of-Non-cooperative-Spacecraft>GKNet: Graph-based Keypoints Network for Monocular Pose Estimation of Non-cooperative Spacecraft</a></li>
+        <li><a href=#FPC-Net:-Revisiting-SuperPoint-with-Descriptor-Free-Keypoint-Detection-via-Feature-Pyramids-and-Consistency-Based-Implicit-Matching>FPC-Net: Revisiting SuperPoint with Descriptor-Free Keypoint Detection via Feature Pyramids and Consistency-Based Implicit Matching</a></li>
       </ul>
     </li>
   </ol>
@@ -20,66 +18,47 @@
 
 ## Visual Localization  
 
-### [GT-Loc: Unifying When and Where in Images Through a Joint Embedding Space](http://arxiv.org/abs/2507.10473)  
-David G. Shatwell, Ishan Rajendrakumar Dave, Sirnam Swetha, Mubarak Shah  
+### [Orchestrator-Agent Trust: A Modular Agentic AI Visual Classification System with Trust-Aware Orchestration and RAG-Based Reasoning](http://arxiv.org/abs/2507.10571)  
+Konstantinos I. Roumeliotis, Ranjan Sapkota, Manoj Karkee, Nikolaos D. Tselikas  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Timestamp prediction aims to determine when an image was captured using only visual information, supporting applications such as metadata correction, retrieval, and digital forensics. In outdoor scenarios, hourly estimates rely on cues like brightness, hue, and shadow positioning, while seasonal changes and weather inform date estimation. However, these visual cues significantly depend on geographic context, closely linking timestamp prediction to geo-localization. To address this interdependence, we introduce GT-Loc, a novel retrieval-based method that jointly predicts the capture time (hour and month) and geo-location (GPS coordinates) of an image. Our approach employs separate encoders for images, time, and location, aligning their embeddings within a shared high-dimensional feature space. Recognizing the cyclical nature of time, instead of conventional contrastive learning with hard positives and negatives, we propose a temporal metric-learning objective providing soft targets by modeling pairwise time differences over a cyclical toroidal surface. We present new benchmarks demonstrating that our joint optimization surpasses previous time prediction methods, even those using the ground-truth geo-location as an input during inference. Additionally, our approach achieves competitive results on standard geo-localization tasks, and the unified embedding space facilitates compositional and text-based image retrieval.  
+    Modern Artificial Intelligence (AI) increasingly relies on multi-agent architectures that blend visual and language understanding. Yet, a pressing challenge remains: How can we trust these agents especially in zero-shot settings with no fine-tuning? We introduce a novel modular Agentic AI visual classification framework that integrates generalist multimodal agents with a non-visual reasoning orchestrator and a Retrieval-Augmented Generation (RAG) module. Applied to apple leaf disease diagnosis, we benchmark three configurations: (I) zero-shot with confidence-based orchestration, (II) fine-tuned agents with improved performance, and (III) trust-calibrated orchestration enhanced by CLIP-based image retrieval and re-evaluation loops. Using confidence calibration metrics (ECE, OCR, CCC), the orchestrator modulates trust across agents. Our results demonstrate a 77.94\% accuracy improvement in the zero-shot setting using trust-aware orchestration and RAG, achieving 85.63\% overall. GPT-4o showed better calibration, while Qwen-2.5-VL displayed overconfidence. Furthermore, image-RAG grounded predictions with visually similar cases, enabling correction of agent overconfidence via iterative re-evaluation. The proposed system separates perception (vision agents) from meta-reasoning (orchestrator), enabling scalable and interpretable multi-agent AI. This blueprint is extensible to diagnostics, biology, and other trust-critical domains. All models, prompts, results, and system components including the complete software source code are openly released to support reproducibility, transparency, and community benchmarking at Github: https://github.com/Applied-AI-Research-Lab/Orchestrator-Agent-Trust  
   </ol>  
 </details>  
-**comments**: Accepted in ICCV2025  
-  
-### [Text-to-Remote-Sensing-Image Retrieval beyond RGB Sources](http://arxiv.org/abs/2507.10403)  
-Daniele Rege Cambrin, Lorenzo Vaiani, Giuseppe Gallipoli, Luca Cagliero, Paolo Garza  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Retrieving relevant imagery from vast satellite archives is crucial for applications like disaster response and long-term climate monitoring. However, most text-to-image retrieval systems are limited to RGB data, failing to exploit the unique physical information captured by other sensors, such as the all-weather structural sensitivity of Synthetic Aperture Radar (SAR) or the spectral signatures in optical multispectral data. To bridge this gap, we introduce CrisisLandMark, a new large-scale corpus of over 647,000 Sentinel-1 SAR and Sentinel-2 multispectral images paired with structured textual annotations for land cover, land use, and crisis events harmonized from authoritative land cover systems (CORINE and Dynamic World) and crisis-specific sources. We then present CLOSP (Contrastive Language Optical SAR Pretraining), a novel framework that uses text as a bridge to align unpaired optical and SAR images into a unified embedding space. Our experiments show that CLOSP achieves a new state-of-the-art, improving retrieval nDGC by 54% over existing models. Additionally, we find that the unified training strategy overcomes the inherent difficulty of interpreting SAR imagery by transferring rich semantic knowledge from the optical domain with indirect interaction. Furthermore, GeoCLOSP, which integrates geographic coordinates into our framework, creates a powerful trade-off between generality and specificity: while the CLOSP excels at general semantic tasks, the GeoCLOSP becomes a specialized expert for retrieving location-dependent crisis events and rare geographic features. This work highlights that the integration of diverse sensor data and geographic context is essential for unlocking the full potential of remote sensing archives.  
-  </ol>  
-</details>  
-  
-### [Kaleidoscopic Background Attack: Disrupting Pose Estimation with Multi-Fold Radial Symmetry Textures](http://arxiv.org/abs/2507.10265)  
-Xinlong Ding, Hongwei Yu, Jiawei Li, Feifan Li, Yu Shang, Bochao Zou, Huimin Ma, Jiansheng Chen  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Camera pose estimation is a fundamental computer vision task that is essential for applications like visual localization and multi-view stereo reconstruction. In the object-centric scenarios with sparse inputs, the accuracy of pose estimation can be significantly influenced by background textures that occupy major portions of the images across different viewpoints. In light of this, we introduce the Kaleidoscopic Background Attack (KBA), which uses identical segments to form discs with multi-fold radial symmetry. These discs maintain high similarity across different viewpoints, enabling effective attacks on pose estimation models even with natural texture segments. Additionally, a projected orientation consistency loss is proposed to optimize the kaleidoscopic segments, leading to significant enhancement in the attack effectiveness. Experimental results show that optimized adversarial kaleidoscopic backgrounds can effectively attack various camera pose estimation models.  
-  </ol>  
-</details>  
-**comments**: Accepted at ICCV 2025. Project page is available at
-  https://wakuwu.github.io/KBA  
   
   
 
 
 
-## NeRF  
+## Keypoint Detection  
 
-### [VoxelRF: Voxelized Radiance Field for Fast Wireless Channel Modeling](http://arxiv.org/abs/2507.09987)  
-Zihang Zeng, Shu Sun, Meixia Tao, Yin Xu, Xianghao Yu  
+### [KptLLM++: Towards Generic Keypoint Comprehension with Large Language Model](http://arxiv.org/abs/2507.11102)  
+Jie Yang, Wang Zeng, Sheng Jin, Lumin Xu, Wentao Liu, Chen Qian, Zhen Li, Ruimao Zhang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Wireless channel modeling in complex environments is crucial for wireless communication system design and deployment. Traditional channel modeling approaches face challenges in balancing accuracy, efficiency, and scalability, while recent neural approaches such as neural radiance field (NeRF) suffer from long training and slow inference. To tackle these challenges, we propose voxelized radiance field (VoxelRF), a novel neural representation for wireless channel modeling that enables fast and accurate synthesis of spatial spectra. VoxelRF replaces the costly multilayer perception (MLP) used in NeRF-based methods with trilinear interpolation of voxel grid-based representation, and two shallow MLPs to model both propagation and transmitter-dependent effects. To further accelerate training and improve generalization, we introduce progressive learning, empty space skipping, and an additional background entropy loss function. Experimental results demonstrate that VoxelRF achieves competitive accuracy with significantly reduced computation and limited training data, making it more practical for real-time and resource-constrained wireless applications.  
+    The emergence of Multimodal Large Language Models (MLLMs) has revolutionized image understanding by bridging textual and visual modalities. However, these models often struggle with capturing fine-grained semantic information, such as the precise identification and analysis of object keypoints. Keypoints, as structure-aware, pixel-level, and compact representations of objects, particularly articulated ones, play a crucial role in applications such as fine-grained image analysis, object retrieval, and behavior recognition. In this paper, we propose KptLLM++, a novel multimodal large language model that specifically designed for generic keypoint comprehension through the integration of diverse input modalities guided by user-defined instructions. By unifying keypoint detection across varied contexts, KptLLM++ establishes itself as an advanced interface, fostering more effective human-AI collaboration. The model is built upon a novel identify-then-detect paradigm, which first interprets keypoint semantics and subsequently localizes their precise positions through a structured chain-of-thought reasoning mechanism. To push the boundaries of performance, we have scaled up the training dataset to over 500K samples, encompassing diverse objects, keypoint categories, image styles, and scenarios with complex occlusions. This extensive scaling enables KptLLM++ to unlock its potential, achieving remarkable accuracy and generalization. Comprehensive experiments on multiple keypoint detection benchmarks demonstrate its state-of-the-art performance, underscoring its potential as a unified solution for fine-grained image understanding and its transformative implications for human-AI interaction.  
+  </ol>  
+</details>  
+**comments**: Extended Version of KptLLM. arXiv admin note: text overlap with
+  arXiv:2411.01846  
+  
+### [GKNet: Graph-based Keypoints Network for Monocular Pose Estimation of Non-cooperative Spacecraft](http://arxiv.org/abs/2507.11077)  
+Weizhao Ma, Dong Zhou, Yuhui Hu, Zipeng He  
+<details>  
+  <summary>Abstract</summary>  
+  <ol>  
+    Monocular pose estimation of non-cooperative spacecraft is significant for on-orbit service (OOS) tasks, such as satellite maintenance, space debris removal, and station assembly. Considering the high demands on pose estimation accuracy, mainstream monocular pose estimation methods typically consist of keypoint detectors and PnP solver. However, current keypoint detectors remain vulnerable to structural symmetry and partial occlusion of non-cooperative spacecraft. To this end, we propose a graph-based keypoints network for the monocular pose estimation of non-cooperative spacecraft, GKNet, which leverages the geometric constraint of keypoints graph. In order to better validate keypoint detectors, we present a moderate-scale dataset for the spacecraft keypoint detection, named SKD, which consists of 3 spacecraft targets, 90,000 simulated images, and corresponding high-precise keypoint annotations. Extensive experiments and an ablation study have demonstrated the high accuracy and effectiveness of our GKNet, compared to the state-of-the-art spacecraft keypoint detectors. The code for GKNet and the SKD dataset is available at https://github.com/Dongzhou-1996/GKNet.  
   </ol>  
 </details>  
   
-### [Stable Score Distillation](http://arxiv.org/abs/2507.09168)  
-Haiming Zhu, Yangyang Xu, Chenshu Xu, Tingrui Shen, Wenxi Liu, Yong Du, Jun Yu, Shengfeng He  
+### [FPC-Net: Revisiting SuperPoint with Descriptor-Free Keypoint Detection via Feature Pyramids and Consistency-Based Implicit Matching](http://arxiv.org/abs/2507.10770)  
+Ionuţ Grigore, Călin-Adrian Popa, Claudiu Leoveanu-Condrei  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Text-guided image and 3D editing have advanced with diffusion-based models, yet methods like Delta Denoising Score often struggle with stability, spatial control, and editing strength. These limitations stem from reliance on complex auxiliary structures, which introduce conflicting optimization signals and restrict precise, localized edits. We introduce Stable Score Distillation (SSD), a streamlined framework that enhances stability and alignment in the editing process by anchoring a single classifier to the source prompt. Specifically, SSD utilizes Classifier-Free Guidance (CFG) equation to achieves cross-prompt alignment, and introduces a constant term null-text branch to stabilize the optimization process. This approach preserves the original content's structure and ensures that editing trajectories are closely aligned with the source prompt, enabling smooth, prompt-specific modifications while maintaining coherence in surrounding regions. Additionally, SSD incorporates a prompt enhancement branch to boost editing strength, particularly for style transformations. Our method achieves state-of-the-art results in 2D and 3D editing tasks, including NeRF and text-driven style edits, with faster convergence and reduced complexity, providing a robust and efficient solution for text-guided editing.  
-  </ol>  
-</details>  
-  
-### [From images to properties: a NeRF-driven framework for granular material parameter inversion](http://arxiv.org/abs/2507.09005)  
-Cheng-Hsi Hsiao, Krishna Kumar  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    We introduce a novel framework that integrates Neural Radiance Fields (NeRF) with Material Point Method (MPM) simulation to infer granular material properties from visual observations. Our approach begins by generating synthetic experimental data, simulating an plow interacting with sand. The experiment is rendered into realistic images as the photographic observations. These observations include multi-view images of the experiment's initial state and time-sequenced images from two fixed cameras. Using NeRF, we reconstruct the 3D geometry from the initial multi-view images, leveraging its capability to synthesize novel viewpoints and capture intricate surface details. The reconstructed geometry is then used to initialize material point positions for the MPM simulation, where the friction angle remains unknown. We render images of the simulation under the same camera setup and compare them to the observed images. By employing Bayesian optimization, we minimize the image loss to estimate the best-fitting friction angle. Our results demonstrate that friction angle can be estimated with an error within 2 degrees, highlighting the effectiveness of inverse analysis through purely visual observations. This approach offers a promising solution for characterizing granular materials in real-world scenarios where direct measurement is impractical or impossible.  
+    The extraction and matching of interest points are fundamental to many geometric computer vision tasks. Traditionally, matching is performed by assigning descriptors to interest points and identifying correspondences based on descriptor similarity. This work introduces a technique where interest points are inherently associated during detection, eliminating the need for computing, storing, transmitting, or matching descriptors. Although the matching accuracy is marginally lower than that of conventional approaches, our method completely eliminates the need for descriptors, leading to a drastic reduction in memory usage for localization systems. We assess its effectiveness by comparing it against both classical handcrafted methods and modern learned approaches.  
   </ol>  
 </details>  
   
