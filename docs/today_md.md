@@ -1,36 +1,37 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#sfm>SFM</a></li>
+    <li><a href=#slam>SLAM</a></li>
       <ul>
-        <li><a href=#BRUM:-Robust-3D-Vehicle-Reconstruction-from-360-Sparse-Images>BRUM: Robust 3D Vehicle Reconstruction from 360 Sparse Images</a></li>
+        <li><a href=#DINO-VO:-A-Feature-based-Visual-Odometry-Leveraging-a-Visual-Foundation-Model>DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model</a></li>
       </ul>
     </li>
     <li><a href=#visual-localization>Visual Localization</a></li>
       <ul>
-        <li><a href=#QuRe:-Query-Relevant-Retrieval-through-Hard-Negative-Sampling-in-Composed-Image-Retrieval>QuRe: Query-Relevant Retrieval through Hard Negative Sampling in Composed Image Retrieval</a></li>
-        <li><a href=#CorrMoE:-Mixture-of-Experts-with-De-stylization-Learning-for-Cross-Scene-and-Cross-Domain-Correspondence-Pruning>CorrMoE: Mixture of Experts with De-stylization Learning for Cross-Scene and Cross-Domain Correspondence Pruning</a></li>
+        <li><a href=#FAR-Net:-Multi-Stage-Fusion-Network-with-Enhanced-Semantic-Alignment-and-Adaptive-Reconciliation-for-Composed-Image-Retrieval>FAR-Net: Multi-Stage Fusion Network with Enhanced Semantic Alignment and Adaptive Reconciliation for Composed Image Retrieval</a></li>
+        <li><a href=#MCoT-RE:-Multi-Faceted-Chain-of-Thought-and-Re-Ranking-for-Training-Free-Zero-Shot-Composed-Image-Retrieval>MCoT-RE: Multi-Faceted Chain-of-Thought and Re-Ranking for Training-Free Zero-Shot Composed Image Retrieval</a></li>
       </ul>
     </li>
-    <li><a href=#nerf>NeRF</a></li>
+    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
       <ul>
-        <li><a href=#DoRF:-Doppler-Radiance-Fields-for-Robust-Human-Activity-Recognition-Using-Wi-Fi>DoRF: Doppler Radiance Fields for Robust Human Activity Recognition Using Wi-Fi</a></li>
-        <li><a href=#HPR3D:-Hierarchical-Proxy-Representation-for-High-Fidelity-3D-Reconstruction-and-Controllable-Editing>HPR3D: Hierarchical Proxy Representation for High-Fidelity 3D Reconstruction and Controllable Editing</a></li>
+        <li><a href=#DINO-VO:-A-Feature-based-Visual-Odometry-Leveraging-a-Visual-Foundation-Model>DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SFM  
+## SLAM  
 
-### [BRUM: Robust 3D Vehicle Reconstruction from 360 Sparse Images](http://arxiv.org/abs/2507.12095)  
-Davide Di Nucci, Matteo Tomei, Guido Borghi, Luca Ciuffreda, Roberto Vezzani, Rita Cucchiara  
+### [DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model](http://arxiv.org/abs/2507.13145)  
+Maulana Bisyir Azhari, David Hyunchul Shim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Accurate 3D reconstruction of vehicles is vital for applications such as vehicle inspection, predictive maintenance, and urban planning. Existing methods like Neural Radiance Fields and Gaussian Splatting have shown impressive results but remain limited by their reliance on dense input views, which hinders real-world applicability. This paper addresses the challenge of reconstructing vehicles from sparse-view inputs, leveraging depth maps and a robust pose estimation architecture to synthesize novel views and augment training data. Specifically, we enhance Gaussian Splatting by integrating a selective photometric loss, applied only to high-confidence pixels, and replacing standard Structure-from-Motion pipelines with the DUSt3R architecture to improve camera pose estimation. Furthermore, we present a novel dataset featuring both synthetic and real-world public transportation vehicles, enabling extensive evaluation of our approach. Experimental results demonstrate state-of-the-art performance across multiple benchmarks, showcasing the method's ability to achieve high-quality reconstructions even under constrained input conditions.  
+    Learning-based monocular visual odometry (VO) poses robustness, generalization, and efficiency challenges in robotics. Recent advances in visual foundation models, such as DINOv2, have improved robustness and generalization in various vision tasks, yet their integration in VO remains limited due to coarse feature granularity. In this paper, we present DINO-VO, a feature-based VO system leveraging DINOv2 visual foundation model for its sparse feature matching. To address the integration challenge, we propose a salient keypoints detector tailored to DINOv2's coarse features. Furthermore, we complement DINOv2's robust-semantic features with fine-grained geometric features, resulting in more localizable representations. Finally, a transformer-based matcher and differentiable pose estimation layer enable precise camera motion estimation by learning good matches. Against prior detector-descriptor networks like SuperPoint, DINO-VO demonstrates greater robustness in challenging environments. Furthermore, we show superior accuracy and generalization of the proposed feature descriptors against standalone DINOv2 coarse features. DINO-VO outperforms prior frame-to-frame VO methods on the TartanAir and KITTI datasets and is competitive on EuRoC dataset, while running efficiently at 72 FPS with less than 1GB of memory usage on a single GPU. Moreover, it performs competitively against Visual SLAM systems on outdoor driving scenarios, showcasing its generalization capabilities.  
   </ol>  
 </details>  
+**comments**: 8 pages, 6 figures. Accepted for publication in IEEE Robotics and
+  Automation Letters (RA-L), July 2025  
   
   
 
@@ -38,49 +39,43 @@ Davide Di Nucci, Matteo Tomei, Guido Borghi, Luca Ciuffreda, Roberto Vezzani, Ri
 
 ## Visual Localization  
 
-### [QuRe: Query-Relevant Retrieval through Hard Negative Sampling in Composed Image Retrieval](http://arxiv.org/abs/2507.12416)  
-Jaehyun Kwak, Ramahdani Muhammad Izaaz Inhar, Se-Young Yun, Sung-Ju Lee  
+### [FAR-Net: Multi-Stage Fusion Network with Enhanced Semantic Alignment and Adaptive Reconciliation for Composed Image Retrieval](http://arxiv.org/abs/2507.12823)  
+Jeong-Woo Park, Young-Eun Kim, Seong-Whan Lee  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) retrieves relevant images based on a reference image and accompanying text describing desired modifications. However, existing CIR methods only focus on retrieving the target image and disregard the relevance of other images. This limitation arises because most methods employing contrastive learning-which treats the target image as positive and all other images in the batch as negatives-can inadvertently include false negatives. This may result in retrieving irrelevant images, reducing user satisfaction even when the target image is retrieved. To address this issue, we propose Query-Relevant Retrieval through Hard Negative Sampling (QuRe), which optimizes a reward model objective to reduce false negatives. Additionally, we introduce a hard negative sampling strategy that selects images positioned between two steep drops in relevance scores following the target image, to effectively filter false negatives. In order to evaluate CIR models on their alignment with human satisfaction, we create Human-Preference FashionIQ (HP-FashionIQ), a new dataset that explicitly captures user preferences beyond target retrieval. Extensive experiments demonstrate that QuRe achieves state-of-the-art performance on FashionIQ and CIRR datasets while exhibiting the strongest alignment with human preferences on the HP-FashionIQ dataset. The source code is available at https://github.com/jackwaky/QuRe.  
+    Composed image retrieval (CIR) is a vision language task that retrieves a target image using a reference image and modification text, enabling intuitive specification of desired changes. While effectively fusing visual and textual modalities is crucial, existing methods typically adopt either early or late fusion. Early fusion tends to excessively focus on explicitly mentioned textual details and neglect visual context, whereas late fusion struggles to capture fine-grained semantic alignments between image regions and textual tokens. To address these issues, we propose FAR-Net, a multi-stage fusion framework designed with enhanced semantic alignment and adaptive reconciliation, integrating two complementary modules. The enhanced semantic alignment module (ESAM) employs late fusion with cross-attention to capture fine-grained semantic relationships, while the adaptive reconciliation module (ARM) applies early fusion with uncertainty embeddings to enhance robustness and adaptability. Experiments on CIRR and FashionIQ show consistent performance gains, improving Recall@1 by up to 2.4% and Recall@50 by 1.04% over existing state-of-the-art methods, empirically demonstrating that FAR Net provides a robust and scalable solution to CIR tasks.  
   </ol>  
 </details>  
-**comments**: Accepted to ICML 2025  
+**comments**: 6 pages, 3 figures, 3 tables  
   
-### [CorrMoE: Mixture of Experts with De-stylization Learning for Cross-Scene and Cross-Domain Correspondence Pruning](http://arxiv.org/abs/2507.11834)  
-Peiwen Xia, Tangfei Liao, Wei Zhu, Danhuai Zhao, Jianjun Ke, Kaihao Zhang, Tong Lu, Tao Wang  
+### [MCoT-RE: Multi-Faceted Chain-of-Thought and Re-Ranking for Training-Free Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2507.12819)  
+Jeong-Woo Park, Seong-Whan Lee  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Establishing reliable correspondences between image pairs is a fundamental task in computer vision, underpinning applications such as 3D reconstruction and visual localization. Although recent methods have made progress in pruning outliers from dense correspondence sets, they often hypothesize consistent visual domains and overlook the challenges posed by diverse scene structures. In this paper, we propose CorrMoE, a novel correspondence pruning framework that enhances robustness under cross-domain and cross-scene variations. To address domain shift, we introduce a De-stylization Dual Branch, performing style mixing on both implicit and explicit graph features to mitigate the adverse influence of domain-specific representations. For scene diversity, we design a Bi-Fusion Mixture of Experts module that adaptively integrates multi-perspective features through linear-complexity attention and dynamic expert routing. Extensive experiments on benchmark datasets demonstrate that CorrMoE achieves superior accuracy and generalization compared to state-of-the-art methods. The code and pre-trained models are available at https://github.com/peiwenxia/CorrMoE.  
+    Composed Image Retrieval (CIR) is the task of retrieving a target image from a gallery using a composed query consisting of a reference image and a modification text. Among various CIR approaches, training-free zero-shot methods based on pre-trained models are cost-effective but still face notable limitations. For example, sequential VLM-LLM pipelines process each modality independently, which often results in information loss and limits cross-modal interaction. In contrast, methods based on multimodal large language models (MLLMs) often focus exclusively on applying changes indicated by the text, without fully utilizing the contextual visual information from the reference image. To address these issues, we propose multi-faceted Chain-of-Thought with re-ranking (MCoT-RE), a training-free zero-shot CIR framework. MCoT-RE utilizes multi-faceted Chain-of-Thought to guide the MLLM to balance explicit modifications and contextual visual cues, generating two distinct captions: one focused on modification and the other integrating comprehensive visual-textual context. The first caption is used to filter candidate images. Subsequently, we combine these two captions and the reference image to perform multi-grained re-ranking. This two-stage approach facilitates precise retrieval by aligning with the textual modification instructions while preserving the visual context of the reference image. Through extensive experiments, MCoT-RE achieves state-of-the-art results among training-free methods, yielding improvements of up to 6.24% in Recall@10 on FashionIQ and 8.58% in Recall@1 on CIRR.  
   </ol>  
 </details>  
-**comments**: Accepted by ECAI 2025  
+**comments**: 6 pages, 4 figures, 2025 IEEE International Conference on Systems,
+  Man, and Cybernetics  
   
   
 
 
 
-## NeRF  
+## Keypoint Detection  
 
-### [DoRF: Doppler Radiance Fields for Robust Human Activity Recognition Using Wi-Fi](http://arxiv.org/abs/2507.12132)  
-Navid Hasanzadeh, Shahrokh Valaee  
+### [DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model](http://arxiv.org/abs/2507.13145)  
+Maulana Bisyir Azhari, David Hyunchul Shim  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Wi-Fi Channel State Information (CSI) has gained increasing interest for remote sensing applications. Recent studies show that Doppler velocity projections extracted from CSI can enable human activity recognition (HAR) that is robust to environmental changes and generalizes to new users. However, despite these advances, generalizability still remains insufficient for practical deployment. Inspired by neural radiance fields (NeRF), which learn a volumetric representation of a 3D scene from 2D images, this work proposes a novel approach to reconstruct an informative 3D latent motion representation from one-dimensional Doppler velocity projections extracted from Wi-Fi CSI. The resulting latent representation is then used to construct a uniform Doppler radiance field (DoRF) of the motion, providing a comprehensive view of the performed activity and improving the robustness to environmental variability. The results show that the proposed approach noticeably enhances the generalization accuracy of Wi-Fi-based HAR, highlighting the strong potential of DoRFs for practical sensing applications.  
+    Learning-based monocular visual odometry (VO) poses robustness, generalization, and efficiency challenges in robotics. Recent advances in visual foundation models, such as DINOv2, have improved robustness and generalization in various vision tasks, yet their integration in VO remains limited due to coarse feature granularity. In this paper, we present DINO-VO, a feature-based VO system leveraging DINOv2 visual foundation model for its sparse feature matching. To address the integration challenge, we propose a salient keypoints detector tailored to DINOv2's coarse features. Furthermore, we complement DINOv2's robust-semantic features with fine-grained geometric features, resulting in more localizable representations. Finally, a transformer-based matcher and differentiable pose estimation layer enable precise camera motion estimation by learning good matches. Against prior detector-descriptor networks like SuperPoint, DINO-VO demonstrates greater robustness in challenging environments. Furthermore, we show superior accuracy and generalization of the proposed feature descriptors against standalone DINOv2 coarse features. DINO-VO outperforms prior frame-to-frame VO methods on the TartanAir and KITTI datasets and is competitive on EuRoC dataset, while running efficiently at 72 FPS with less than 1GB of memory usage on a single GPU. Moreover, it performs competitively against Visual SLAM systems on outdoor driving scenarios, showcasing its generalization capabilities.  
   </ol>  
 </details>  
-  
-### [HPR3D: Hierarchical Proxy Representation for High-Fidelity 3D Reconstruction and Controllable Editing](http://arxiv.org/abs/2507.11971)  
-Tielong Wang, Yuxuan Xiong, Jinfan Liu, Zhifan Zhang, Ye Chen, Yue Shi, Bingbing Ni  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Current 3D representations like meshes, voxels, point clouds, and NeRF-based neural implicit fields exhibit significant limitations: they are often task-specific, lacking universal applicability across reconstruction, generation, editing, and driving. While meshes offer high precision, their dense vertex data complicates editing; NeRFs deliver excellent rendering but suffer from structural ambiguity, hindering animation and manipulation; all representations inherently struggle with the trade-off between data complexity and fidelity. To overcome these issues, we introduce a novel 3D Hierarchical Proxy Node representation. Its core innovation lies in representing an object's shape and texture via a sparse set of hierarchically organized (tree-structured) proxy nodes distributed on its surface and interior. Each node stores local shape and texture information (implicitly encoded by a small MLP) within its neighborhood. Querying any 3D coordinate's properties involves efficient neural interpolation and lightweight decoding from relevant nearby and parent nodes. This framework yields a highly compact representation where nodes align with local semantics, enabling direct drag-and-edit manipulation, and offers scalable quality-complexity control. Extensive experiments across 3D reconstruction and editing demonstrate our method's expressive efficiency, high-fidelity rendering quality, and superior editability.  
-  </ol>  
-</details>  
+**comments**: 8 pages, 6 figures. Accepted for publication in IEEE Robotics and
+  Automation Letters (RA-L), July 2025  
   
   
 
