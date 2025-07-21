@@ -1,81 +1,57 @@
 <details>
   <summary><b>TOC</b></summary>
   <ol>
-    <li><a href=#slam>SLAM</a></li>
+    <li><a href=#sfm>SFM</a></li>
       <ul>
-        <li><a href=#DINO-VO:-A-Feature-based-Visual-Odometry-Leveraging-a-Visual-Foundation-Model>DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model</a></li>
+        <li><a href=#Uncertainty-Quantification-Framework-for-Aerial-and-UAV-Photogrammetry-through-Error-Propagation>Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation</a></li>
       </ul>
     </li>
-    <li><a href=#visual-localization>Visual Localization</a></li>
+    <li><a href=#nerf>NeRF</a></li>
       <ul>
-        <li><a href=#FAR-Net:-Multi-Stage-Fusion-Network-with-Enhanced-Semantic-Alignment-and-Adaptive-Reconciliation-for-Composed-Image-Retrieval>FAR-Net: Multi-Stage Fusion Network with Enhanced Semantic Alignment and Adaptive Reconciliation for Composed Image Retrieval</a></li>
-        <li><a href=#MCoT-RE:-Multi-Faceted-Chain-of-Thought-and-Re-Ranking-for-Training-Free-Zero-Shot-Composed-Image-Retrieval>MCoT-RE: Multi-Faceted Chain-of-Thought and Re-Ranking for Training-Free Zero-Shot Composed Image Retrieval</a></li>
-      </ul>
-    </li>
-    <li><a href=#keypoint-detection>Keypoint Detection</a></li>
-      <ul>
-        <li><a href=#DINO-VO:-A-Feature-based-Visual-Odometry-Leveraging-a-Visual-Foundation-Model>DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model</a></li>
+        <li><a href=#TimeNeRF:-Building-Generalizable-Neural-Radiance-Fields-across-Time-from-Few-Shot-Input-Views>TimeNeRF: Building Generalizable Neural Radiance Fields across Time from Few-Shot Input Views</a></li>
+        <li><a href=#EPSilon:-Efficient-Point-Sampling-for-Lightening-of-Hybrid-based-3D-Avatar-Generation>EPSilon: Efficient Point Sampling for Lightening of Hybrid-based 3D Avatar Generation</a></li>
       </ul>
     </li>
   </ol>
 </details>
 
-## SLAM  
+## SFM  
 
-### [DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model](http://arxiv.org/abs/2507.13145)  
-Maulana Bisyir Azhari, David Hyunchul Shim  
+### [Uncertainty Quantification Framework for Aerial and UAV Photogrammetry through Error Propagation](http://arxiv.org/abs/2507.13486)  
+Debao Huang, Rongjun Qin  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Learning-based monocular visual odometry (VO) poses robustness, generalization, and efficiency challenges in robotics. Recent advances in visual foundation models, such as DINOv2, have improved robustness and generalization in various vision tasks, yet their integration in VO remains limited due to coarse feature granularity. In this paper, we present DINO-VO, a feature-based VO system leveraging DINOv2 visual foundation model for its sparse feature matching. To address the integration challenge, we propose a salient keypoints detector tailored to DINOv2's coarse features. Furthermore, we complement DINOv2's robust-semantic features with fine-grained geometric features, resulting in more localizable representations. Finally, a transformer-based matcher and differentiable pose estimation layer enable precise camera motion estimation by learning good matches. Against prior detector-descriptor networks like SuperPoint, DINO-VO demonstrates greater robustness in challenging environments. Furthermore, we show superior accuracy and generalization of the proposed feature descriptors against standalone DINOv2 coarse features. DINO-VO outperforms prior frame-to-frame VO methods on the TartanAir and KITTI datasets and is competitive on EuRoC dataset, while running efficiently at 72 FPS with less than 1GB of memory usage on a single GPU. Moreover, it performs competitively against Visual SLAM systems on outdoor driving scenarios, showcasing its generalization capabilities.  
+    Uncertainty quantification of the photogrammetry process is essential for providing per-point accuracy credentials of the point clouds. Unlike airborne LiDAR, which typically delivers consistent accuracy across various scenes, the accuracy of photogrammetric point clouds is highly scene-dependent, since it relies on algorithm-generated measurements (i.e., stereo or multi-view stereo). Generally, errors of the photogrammetric point clouds propagate through a two-step process: Structure-from-Motion (SfM) with Bundle adjustment (BA), followed by Multi-view Stereo (MVS). While uncertainty estimation in the SfM stage has been well studied using the first-order statistics of the reprojection error function, that in the MVS stage remains largely unsolved and non-standardized, primarily due to its non-differentiable and multi-modal nature (i.e., from pixel values to geometry). In this paper, we present an uncertainty quantification framework closing this gap by associating an error covariance matrix per point accounting for this two-step photogrammetry process. Specifically, to estimate the uncertainty in the MVS stage, we propose a novel, self-calibrating method by taking reliable n-view points (n>=6) per-view to regress the disparity uncertainty using highly relevant cues (such as matching cost values) from the MVS stage. Compared to existing approaches, our method uses self-contained, reliable 3D points extracted directly from the MVS process, with the benefit of being self-supervised and naturally adhering to error propagation path of the photogrammetry process, thereby providing a robust and certifiable uncertainty quantification across diverse scenes. We evaluate the framework using a variety of publicly available airborne and UAV imagery datasets. Results demonstrate that our method outperforms existing approaches by achieving high bounding rates without overestimating uncertainty.  
   </ol>  
 </details>  
-**comments**: 8 pages, 6 figures. Accepted for publication in IEEE Robotics and
-  Automation Letters (RA-L), July 2025  
+**comments**: 16 pages, 9 figures, this manuscript has been submitted to ISPRS
+  Journal of Photogrammetry and Remote Sensing for consideration  
   
   
 
 
 
-## Visual Localization  
+## NeRF  
 
-### [FAR-Net: Multi-Stage Fusion Network with Enhanced Semantic Alignment and Adaptive Reconciliation for Composed Image Retrieval](http://arxiv.org/abs/2507.12823)  
-Jeong-Woo Park, Young-Eun Kim, Seong-Whan Lee  
+### [TimeNeRF: Building Generalizable Neural Radiance Fields across Time from Few-Shot Input Views](http://arxiv.org/abs/2507.13929)  
+Hsiang-Hui Hung, Huu-Phu Do, Yung-Hui Li, Ching-Chun Huang  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed image retrieval (CIR) is a vision language task that retrieves a target image using a reference image and modification text, enabling intuitive specification of desired changes. While effectively fusing visual and textual modalities is crucial, existing methods typically adopt either early or late fusion. Early fusion tends to excessively focus on explicitly mentioned textual details and neglect visual context, whereas late fusion struggles to capture fine-grained semantic alignments between image regions and textual tokens. To address these issues, we propose FAR-Net, a multi-stage fusion framework designed with enhanced semantic alignment and adaptive reconciliation, integrating two complementary modules. The enhanced semantic alignment module (ESAM) employs late fusion with cross-attention to capture fine-grained semantic relationships, while the adaptive reconciliation module (ARM) applies early fusion with uncertainty embeddings to enhance robustness and adaptability. Experiments on CIRR and FashionIQ show consistent performance gains, improving Recall@1 by up to 2.4% and Recall@50 by 1.04% over existing state-of-the-art methods, empirically demonstrating that FAR Net provides a robust and scalable solution to CIR tasks.  
+    We present TimeNeRF, a generalizable neural rendering approach for rendering novel views at arbitrary viewpoints and at arbitrary times, even with few input views. For real-world applications, it is expensive to collect multiple views and inefficient to re-optimize for unseen scenes. Moreover, as the digital realm, particularly the metaverse, strives for increasingly immersive experiences, the ability to model 3D environments that naturally transition between day and night becomes paramount. While current techniques based on Neural Radiance Fields (NeRF) have shown remarkable proficiency in synthesizing novel views, the exploration of NeRF's potential for temporal 3D scene modeling remains limited, with no dedicated datasets available for this purpose. To this end, our approach harnesses the strengths of multi-view stereo, neural radiance fields, and disentanglement strategies across diverse datasets. This equips our model with the capability for generalizability in a few-shot setting, allows us to construct an implicit content radiance field for scene representation, and further enables the building of neural radiance fields at any arbitrary time. Finally, we synthesize novel views of that time via volume rendering. Experiments show that TimeNeRF can render novel views in a few-shot setting without per-scene optimization. Most notably, it excels in creating realistic novel views that transition smoothly across different times, adeptly capturing intricate natural scene changes from dawn to dusk.  
   </ol>  
 </details>  
-**comments**: 6 pages, 3 figures, 3 tables  
+**comments**: Accepted by MM 2024  
   
-### [MCoT-RE: Multi-Faceted Chain-of-Thought and Re-Ranking for Training-Free Zero-Shot Composed Image Retrieval](http://arxiv.org/abs/2507.12819)  
-Jeong-Woo Park, Seong-Whan Lee  
+### [EPSilon: Efficient Point Sampling for Lightening of Hybrid-based 3D Avatar Generation](http://arxiv.org/abs/2507.13648)  
+Seungjun Moon, Sangjoon Yu, Gyeong-Moon Park  
 <details>  
   <summary>Abstract</summary>  
   <ol>  
-    Composed Image Retrieval (CIR) is the task of retrieving a target image from a gallery using a composed query consisting of a reference image and a modification text. Among various CIR approaches, training-free zero-shot methods based on pre-trained models are cost-effective but still face notable limitations. For example, sequential VLM-LLM pipelines process each modality independently, which often results in information loss and limits cross-modal interaction. In contrast, methods based on multimodal large language models (MLLMs) often focus exclusively on applying changes indicated by the text, without fully utilizing the contextual visual information from the reference image. To address these issues, we propose multi-faceted Chain-of-Thought with re-ranking (MCoT-RE), a training-free zero-shot CIR framework. MCoT-RE utilizes multi-faceted Chain-of-Thought to guide the MLLM to balance explicit modifications and contextual visual cues, generating two distinct captions: one focused on modification and the other integrating comprehensive visual-textual context. The first caption is used to filter candidate images. Subsequently, we combine these two captions and the reference image to perform multi-grained re-ranking. This two-stage approach facilitates precise retrieval by aligning with the textual modification instructions while preserving the visual context of the reference image. Through extensive experiments, MCoT-RE achieves state-of-the-art results among training-free methods, yielding improvements of up to 6.24% in Recall@10 on FashionIQ and 8.58% in Recall@1 on CIRR.  
+    The rapid advancement of neural radiance fields (NeRF) has paved the way to generate animatable human avatars from a monocular video. However, the sole usage of NeRF suffers from a lack of details, which results in the emergence of hybrid representation that utilizes SMPL-based mesh together with NeRF representation. While hybrid-based models show photo-realistic human avatar generation qualities, they suffer from extremely slow inference due to their deformation scheme: to be aligned with the mesh, hybrid-based models use the deformation based on SMPL skinning weights, which needs high computational costs on each sampled point. We observe that since most of the sampled points are located in empty space, they do not affect the generation quality but result in inference latency with deformation. In light of this observation, we propose EPSilon, a hybrid-based 3D avatar generation scheme with novel efficient point sampling strategies that boost both training and inference. In EPSilon, we propose two methods to omit empty points at rendering; empty ray omission (ERO) and empty interval omission (EIO). In ERO, we wipe out rays that progress through the empty space. Then, EIO narrows down the sampling interval on the ray, which wipes out the region not occupied by either clothes or mesh. The delicate sampling scheme of EPSilon enables not only great computational cost reduction during deformation but also the designation of the important regions to be sampled, which enables a single-stage NeRF structure without hierarchical sampling. Compared to existing methods, EPSilon maintains the generation quality while using only 3.9% of sampled points and achieves around 20 times faster inference, together with 4 times faster training convergence. We provide video results on https://github.com/seungjun-moon/epsilon.  
   </ol>  
 </details>  
-**comments**: 6 pages, 4 figures, 2025 IEEE International Conference on Systems,
-  Man, and Cybernetics  
-  
-  
-
-
-
-## Keypoint Detection  
-
-### [DINO-VO: A Feature-based Visual Odometry Leveraging a Visual Foundation Model](http://arxiv.org/abs/2507.13145)  
-Maulana Bisyir Azhari, David Hyunchul Shim  
-<details>  
-  <summary>Abstract</summary>  
-  <ol>  
-    Learning-based monocular visual odometry (VO) poses robustness, generalization, and efficiency challenges in robotics. Recent advances in visual foundation models, such as DINOv2, have improved robustness and generalization in various vision tasks, yet their integration in VO remains limited due to coarse feature granularity. In this paper, we present DINO-VO, a feature-based VO system leveraging DINOv2 visual foundation model for its sparse feature matching. To address the integration challenge, we propose a salient keypoints detector tailored to DINOv2's coarse features. Furthermore, we complement DINOv2's robust-semantic features with fine-grained geometric features, resulting in more localizable representations. Finally, a transformer-based matcher and differentiable pose estimation layer enable precise camera motion estimation by learning good matches. Against prior detector-descriptor networks like SuperPoint, DINO-VO demonstrates greater robustness in challenging environments. Furthermore, we show superior accuracy and generalization of the proposed feature descriptors against standalone DINOv2 coarse features. DINO-VO outperforms prior frame-to-frame VO methods on the TartanAir and KITTI datasets and is competitive on EuRoC dataset, while running efficiently at 72 FPS with less than 1GB of memory usage on a single GPU. Moreover, it performs competitively against Visual SLAM systems on outdoor driving scenarios, showcasing its generalization capabilities.  
-  </ol>  
-</details>  
-**comments**: 8 pages, 6 figures. Accepted for publication in IEEE Robotics and
-  Automation Letters (RA-L), July 2025  
   
   
 
